@@ -482,7 +482,7 @@ label.f {
   "use strict";
 
   const TZ = "Europe/Helsinki";
-  const STORE_KEY = "raisa-tanaan-v5";
+  const STORE_KEY = "raisa-tanaan-v6";
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -787,7 +787,7 @@ label.f {
         weekday: "to",
         start: "17:00",
         end: "19:00",
-        depart: "",
+        depart: "16:30",
         place: "Puijonsarvi",
         driver: "Manen äiti / Topias",
         ride: "",
@@ -1372,14 +1372,14 @@ label.f {
   }
 
   function countdownHtml(ev, nowMin) {
-    const dep = parseMin(ev.depart) ?? parseMin(ev.start);
-    const start = parseMin(ev.start) ?? dep;
+    const leave = parseMin(ev.depart);
+    const start = parseMin(ev.start);
     const end = parseMin(ev.end);
-    if (dep != null && nowMin < dep) {
-      return "Lähtö <span class=\"num\">" + durPhrase(dep - nowMin) + "</span> päästä · klo " + fmtHm(ev.depart || ev.start);
+    if (leave != null && nowMin < leave) {
+      return "Lähtö <span class=\"num\">" + durPhrase(leave - nowMin) + "</span> päästä · klo " + fmtHm(ev.depart);
     }
     if (start != null && nowMin < start) {
-      return "Matkalla · alkaa klo " + fmtHm(ev.start);
+      return (leave != null ? "Matkalla · alkaa klo " : "Alkaa <span class=\"num\">" + durPhrase(start - nowMin) + "</span> päästä · klo ") + fmtHm(ev.start);
     }
     if (end != null && nowMin < end) {
       return "Käynnissä · haku " + fmtHm(ev.end);

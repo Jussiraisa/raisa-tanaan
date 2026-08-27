@@ -206,6 +206,25 @@ body {
 }
 .school .hrs.empty { font-weight: 500; color: var(--ink3) }
 
+a.school-link { display: block; color: inherit; text-decoration: none }
+a.school-link .lbl2 { color: var(--accent) }
+.dayrow.dayprog { grid-template-columns: 40px 1fr; align-items: start; padding: 10px 0 }
+.dayrow.today.dayprog { padding: 10px }
+.prog .hrs { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink2) }
+.aineet { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px }
+.aine {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 5px 9px;
+  border-radius: 10px;
+}
+.dayrow.today .aine { background: var(--accent); color: #fff }
+.huom { font-size: 13px; color: var(--ink2); margin-top: 4px }
+.kh .ks { font-weight: 500; font-size: 13px; color: var(--ink3); margin-left: 8px }
+
+
 .dot {
   width: 10px;
   height: 10px;
@@ -451,6 +470,31 @@ label.f {
     { id: "mea", name: "Mea", color: "var(--mea)" }
   ];
   const SCHOOL_DAYS = ["ma", "ti", "ke", "to", "pe"];
+
+  const HOURS = {
+    ellen: { luokka: "4C", koulu: "alakoulu", tunnit: {
+      ke: { alku: "08:45", loppu: "15:00", aineet: ["MA","YM","AI","YH","ENA","MU"] },
+      to: { alku: "10:00", loppu: "15:00", aineet: ["YM","KU","KU","LI","LI"], huom: "LI 13.15 & 14.15, varusteet" },
+      pe: { alku: "08:00", loppu: "12:15" }
+    }},
+    samuel: { luokka: "2B", koulu: "Aurinkorinteen koulu", tunnit: {
+      ma: { alku: "08:45", loppu: "12:15" },
+      ti: { alku: "08:45", loppu: "12:15" },
+      ke: { alku: "08:45", loppu: "13:00", aineet: ["LI"], huom: "LI 8.45, varusteet" },
+      to: { alku: "08:00", loppu: "12:00" },
+      pe: { alku: "08:00", loppu: "12:15" }
+    }},
+    milla: { luokka: "1. vsk", koulu: "Klassillinen lukio", tunnit: {
+      ke: { alku: "09:40", loppu: "14:20" },
+      to: { alku: "08:10", loppu: "15:50", huom: "pitkä päivä" }
+    }},
+    mea: { luokka: "8F", koulu: "Jynkänlahden koulu", tunnit: {
+      ma: { alku: "08:00", huom: "alkaa 8.00 valinnaisilla" },
+      ke: { alku: "10:00", loppu: "14:50", aineet: ["RUB","HI","MA","kotitalous"], huom: "liikunta-varusteet" },
+      to: { alku: "08:00", loppu: "14:45", aineet: ["Val.KU"], huom: "Val.KU 8.00; LI 13.15, varusteet" }
+    }}
+  };
+
   const WMO = {
     0: ["selkeää", "☀️"],
     1: ["enimmäkseen selkeää", "🌤️"],
@@ -1467,20 +1511,16 @@ label.f {
       + renderHero(now, todayEvents)
       + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>Tänään</h2><span class=\"ln\"></span></div>"
       + "<div class=\"rv\" style=\"animation-delay:.18s\">"
-      + "<div class=\"lbl2\">Koulu · alku–loppu</div>"
-      + "<div class=\"school\">" + schoolRows(now.key) + "</div>"
+      + "<a class=\"school-link\" href=\"#/lukujarjestys\"><div class=\"lbl2\">Koulu · tunnit</div>"
+      + "<div class=\"school\">" + schoolRows(now.key) + "</div></a>"
       + (kyydit ? "<div class=\"lbl2\">Kyydit</div>" + kyydit : "")
       + (ruoka ? "<div class=\"lbl2\">Ruoka</div>" + ruoka : "")
-      + "<div class=\"lbl2\">Kauppalista · " + String((store.groceries||[]).filter(function(g){return !g.done;}).length) + " riviä</div>"
-      + "<ul class=\"shop\">" + (store.groceries||[]).filter(function(g){return !g.done;}).map(function(g){
-          return "<li><span>" + esc(g.text) + "</span></li>";
-        }).join("") + "</ul>"
       + "</div>"
       + "<section class=\"tom rv\" style=\"animation-delay:.24s\">"
       + "<div class=\"th\">Huomenna · " + tomDay.abbr + " " + fmtDot(tom.year, tom.month, tom.day) + "</div>"
       + "<div class=\"tw\" id=\"wx2\">" + wTom + "</div>"
-      + "<div class=\"lbl2\">Koulu · alku–loppu</div>"
-      + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div>"
+      + "<a class=\"school-link\" href=\"#/lukujarjestys\"><div class=\"lbl2\">Koulu · tunnit</div>"
+      + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div></a>"
       + (tomMenot ? "<div class=\"lbl2\">Menot &amp; ruoka</div>" + tomMenot : "")
       + "</section>"
       + footer();
@@ -1489,25 +1529,35 @@ label.f {
   function renderSchool() {
     const todayKey = helsinkiNow().key;
     const blocks = KIDS.map(k => {
+      const meta = HOURS[k.id] || {};
       const days = SCHOOL_DAYS.map(dk => {
-        const h = (store.school[k.id] || {})[dk] || {};
-        const d = dayByKey(dk);
+        const times = (store.school[k.id] || {})[dk] || {};
+        const tunti = ((meta.tunnit) || {})[dk] || {};
+        const start = times.start || tunti.alku || "";
+        const end = times.end || tunti.loppu || "";
+        const aineet = tunti.aineet || [];
+        const huom = tunti.huom || "";
         const todayCls = dk === todayKey ? " today" : "";
-        return "<div class=\"dayrow" + todayCls + "\"><span class=\"da\">" + d.abbr + "</span>"
-          + "<input class=\"inp\" type=\"time\" data-kid=\"" + k.id + "\" data-day=\"" + dk + "\" data-which=\"start\" value=\"" + esc(h.start || "") + "\">"
-          + "<span class=\"dash\">–</span>"
-          + "<input class=\"inp\" type=\"time\" data-kid=\"" + k.id + "\" data-day=\"" + dk + "\" data-which=\"end\" value=\"" + esc(h.end || "") + "\">"
-          + "</div>";
+        const time = (start || end) ? fmtSchool({ start: start, end: end }) : "—";
+        const aineHtml = aineet.length
+          ? "<div class=\"aineet\">" + aineet.map(function(a, i) {
+              return "<span class=\"aine\">" + (i + 1) + ". " + esc(a) + "</span>";
+            }).join("") + "</div>"
+          : "";
+        const huomHtml = huom ? "<div class=\"huom\">" + esc(huom) + "</div>" : "";
+        return "<div class=\"dayrow dayprog" + todayCls + "\"><span class=\"da\">" + dayByKey(dk).abbr + "</span>"
+          + "<div class=\"prog\"><div class=\"hrs\">" + esc(time) + "</div>" + aineHtml + huomHtml + "</div></div>";
       }).join("");
+      const sub = [meta.luokka, meta.koulu].filter(Boolean).join(" · ");
       return "<div class=\"kidblock\"><div class=\"kh\"><span class=\"dot\" style=\"background:" + k.color + "\"></span>"
-        + esc(k.name) + "</div>" + days + "</div>";
+        + esc(k.name)
+        + (sub ? "<span class=\"ks\">" + esc(sub) + "</span>" : "")
+        + "</div>" + days + "</div>";
     }).join("");
     return backLink()
       + "<h1 class=\"vtitle\">Lukujärjestykset</h1>"
-      + "<p class=\"lede\">Arkipäivät, alku–loppu. Tyhjä kenttä = ei merkattu.</p>"
+      + "<p class=\"lede\">Tuntiohjelma. Tämä päivä on korostettu.</p>"
       + blocks
-      + "<div class=\"btn-row\"><button class=\"btn\" type=\"button\" data-act=\"save-school\">Tallenna</button></div>"
-      + "<div class=\"status\" id=\"status\"></div>"
       + footer();
   }
 

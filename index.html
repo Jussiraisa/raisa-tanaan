@@ -421,7 +421,7 @@ label.f {
   "use strict";
 
   const TZ = "Europe/Helsinki";
-  const STORE_KEY = "raisa-tanaan-v2";
+  const STORE_KEY = "raisa-tanaan-v3";
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -873,8 +873,44 @@ label.f {
       su: { emoji: "🍣", dish: "Sushi", note: "Jussi: kala + kasvis", cook: "" }
     },
     groceries: [
-      { id: "g-maito", text: "sininen maito", done: false },
-      { id: "g-oatly", text: "Oatly iKaffe", done: false }
+      { id: "g-1", text: "Broilerin fileesuikale 900g", done: false },
+      { id: "g-2", text: "naudan jauheliha 1kg", done: false },
+      { id: "g-3", text: "naudan jauheliha 400g", done: false },
+      { id: "g-4", text: "lohifile 600g", done: false },
+      { id: "g-5", text: "graavilohi 300g", done: false },
+      { id: "g-6", text: "avokado 4", done: false },
+      { id: "g-7", text: "salaatti", done: false },
+      { id: "g-8", text: "tomaatti", done: false },
+      { id: "g-9", text: "kurkku", done: false },
+      { id: "g-10", text: "peruna", done: false },
+      { id: "g-11", text: "sipuli", done: false },
+      { id: "g-12", text: "porkkana", done: false },
+      { id: "g-13", text: "parsakaali", done: false },
+      { id: "g-14", text: "banaani", done: false },
+      { id: "g-15", text: "omena", done: false },
+      { id: "g-16", text: "puolukka pakaste", done: false },
+      { id: "g-17", text: "sininen maito 2", done: false },
+      { id: "g-18", text: "Oatly iKaffe 2", done: false },
+      { id: "g-19", text: "ruokakerma 2", done: false },
+      { id: "g-20", text: "juusto", done: false },
+      { id: "g-21", text: "voi", done: false },
+      { id: "g-22", text: "kananmunat 12", done: false },
+      { id: "g-23", text: "jogurtti", done: false },
+      { id: "g-24", text: "raejuusto", done: false },
+      { id: "g-25", text: "feta", done: false },
+      { id: "g-26", text: "basmatiriisi", done: false },
+      { id: "g-27", text: "sushiriisi", done: false },
+      { id: "g-28", text: "nori", done: false },
+      { id: "g-29", text: "spaghetti", done: false },
+      { id: "g-30", text: "tomaattimurska", done: false },
+      { id: "g-31", text: "Wewalka pizzakit", done: false },
+      { id: "g-32", text: "bagelit", done: false },
+      { id: "g-33", text: "ruisleipä", done: false },
+      { id: "g-34", text: "pähkinät", done: false },
+      { id: "g-mysli", text: "mysli / granola", done: false },
+      { id: "g-kaura", text: "kaurahiutaleet", done: false },
+      { id: "g-rahka", text: "rahka", done: false },
+      { id: "g-kinkku", text: "kinkku / leikkele", done: false }
     ]
   };
 
@@ -1399,6 +1435,10 @@ label.f {
       + "<div class=\"school\">" + schoolRows(now.key) + "</div>"
       + (kyydit ? "<div class=\"lbl2\">Kyydit</div>" + kyydit : "")
       + (ruoka ? "<div class=\"lbl2\">Ruoka</div>" + ruoka : "")
+      + "<div class=\"lbl2\">Kauppalista · " + String((store.groceries||[]).filter(function(g){return !g.done;}).length) + " riviä</div>"
+      + "<ul class=\"shop\">" + (store.groceries||[]).filter(function(g){return !g.done;}).map(function(g){
+          return "<li><span>" + esc(g.text) + "</span></li>";
+        }).join("") + "</ul>"
       + "</div>"
       + "<section class=\"tom rv\" style=\"animation-delay:.24s\">"
       + "<div class=\"th\">Huomenna · " + tomDay.abbr + " " + fmtDot(tom.year, tom.month, tom.day) + "</div>"
@@ -1562,7 +1602,7 @@ label.f {
     ).join("");
     return backLink()
       + "<h1 class=\"vtitle\">Kauppalista</h1>"
-      + "<p class=\"lede\">Tässä selaimessa. Ruksaa ostettu, tyhjennä tehdyt kun kauppa on käyty.</p>"
+      + "<p class=\"lede\">Sama lista menee S-kaupan koriin. Maksun vahvistaa Jussi.</p>"
       + "<form class=\"addrow\" data-add-g>"
       + "<input class=\"inp\" name=\"text\" placeholder=\"esim. Wewalka pizzakit\" autocomplete=\"off\">"
       + "<button class=\"btn\" type=\"submit\">Lisää</button>"

@@ -482,7 +482,7 @@ label.f {
   "use strict";
 
   const TZ = "Europe/Helsinki";
-  const STORE_KEY = "raisa-tanaan-v4";
+  const STORE_KEY = "raisa-tanaan-v5";
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -506,27 +506,34 @@ label.f {
   const SCHOOL_DAYS = ["ma", "ti", "ke", "to", "pe"];
 
   const HOURS = {
-    ellen: { luokka: "4C", koulu: "alakoulu", tunnit: {
-      ke: { alku: "08:45", loppu: "15:00", aineet: ["MA","YM","AI","YH","ENA","MU"] },
-      to: { alku: "10:00", loppu: "15:00", aineet: ["YM","KU","KU","LI","LI"], huom: "LI 13.15 & 14.15, varusteet" },
-      pe: { alku: "08:00", loppu: "12:15" }
+    ellen: { luokka: "4C", koulu: "Aurinkorinteen koulu", tunnit: {
+      ma: { alku: "10:00", loppu: "13:00", aineet: ["AI", "MA", "AI.a"], tunnit: [{ alku: "10:00", loppu: "10:45", aine: "AI" }, { alku: "11:15", loppu: "12:00", aine: "MA" }, { alku: "12:15", loppu: "13:00", aine: "AI.a" }] },
+      ti: { alku: "08:00", loppu: "13:00", aineet: ["ENA.a", "MA", "AI", "AI", "LI"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "ENA.a" }, { alku: "08:45", loppu: "09:30", aine: "MA" }, { alku: "10:00", loppu: "10:45", aine: "AI" }, { alku: "11:15", loppu: "12:00", aine: "AI" }, { alku: "12:15", loppu: "13:00", aine: "LI" }], huom: "LI 12.15, varusteet", varusteet: true },
+      ke: { alku: "08:45", loppu: "15:00", aineet: ["MA.a", "YM", "AI", "YH", "ENA", "MU"], tunnit: [{ alku: "08:45", loppu: "09:30", aine: "MA.a" }, { alku: "10:00", loppu: "10:45", aine: "YM" }, { alku: "11:15", loppu: "12:00", aine: "AI" }, { alku: "12:15", loppu: "13:00", aine: "YH" }, { alku: "13:15", loppu: "14:00", aine: "ENA" }, { alku: "14:15", loppu: "15:00", aine: "MU" }] },
+      to: { alku: "10:00", loppu: "15:00", aineet: ["YM", "KU", "KU", "LI", "LI"], tunnit: [{ alku: "10:00", loppu: "10:45", aine: "YM" }, { alku: "11:15", loppu: "12:00", aine: "KU" }, { alku: "12:15", loppu: "13:00", aine: "KU" }, { alku: "13:15", loppu: "14:00", aine: "LI" }, { alku: "14:15", loppu: "15:00", aine: "LI" }], huom: "LI 13.15 & 14.15, varusteet", varusteet: true },
+      pe: { alku: "08:00", loppu: "13:00", aineet: ["MU", "MA", "KS", "KS", "UE"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "MU" }, { alku: "08:45", loppu: "09:30", aine: "MA" }, { alku: "10:00", loppu: "10:45", aine: "KS" }, { alku: "11:15", loppu: "12:00", aine: "KS" }, { alku: "12:15", loppu: "13:00", aine: "UE" }] },
     }},
     samuel: { luokka: "2B", koulu: "Aurinkorinteen koulu", tunnit: {
-      ma: { alku: "08:45", loppu: "12:15" },
-      ti: { alku: "08:45", loppu: "12:15" },
-      ke: { alku: "08:45", loppu: "13:00", aineet: ["LI"], huom: "LI 8.45, varusteet" },
-      to: { alku: "08:00", loppu: "12:00" },
-      pe: { alku: "08:00", loppu: "12:15" }
+      ma: { alku: "08:45", loppu: "13:00", aineet: ["UE", "KU", "AI", "MA"], tunnit: [{ alku: "08:45", loppu: "09:30", aine: "UE" }, { alku: "10:00", loppu: "10:45", aine: "KU" }, { alku: "11:15", loppu: "12:00", aine: "AI" }, { alku: "12:15", loppu: "13:00", aine: "MA" }] },
+      ti: { alku: "08:45", loppu: "13:00", aineet: ["AI", "MU", "LI", "MA.b"], tunnit: [{ alku: "08:45", loppu: "09:30", aine: "AI" }, { alku: "10:00", loppu: "10:45", aine: "MU" }, { alku: "11:15", loppu: "12:00", aine: "LI" }, { alku: "12:15", loppu: "13:00", aine: "MA.b" }], huom: "LI 11.15, varusteet", varusteet: true },
+      ke: { alku: "08:45", loppu: "13:00", aineet: ["LI", "YM", "AI", "MA"], tunnit: [{ alku: "08:45", loppu: "09:30", aine: "LI" }, { alku: "10:00", loppu: "10:45", aine: "YM" }, { alku: "11:15", loppu: "12:00", aine: "AI" }, { alku: "12:15", loppu: "13:00", aine: "MA" }], huom: "LI 08.45, varusteet", varusteet: true },
+      to: { alku: "08:00", loppu: "12:00", aineet: ["ENA", "MA", "AI", "AI"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "ENA" }, { alku: "08:45", loppu: "09:30", aine: "MA" }, { alku: "10:00", loppu: "10:45", aine: "AI" }, { alku: "11:15", loppu: "12:00", aine: "AI" }] },
+      pe: { alku: "08:00", loppu: "13:00", aineet: ["AI.b", "AI", "KS", "KS.b", "YM"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "AI.b" }, { alku: "08:45", loppu: "09:30", aine: "AI" }, { alku: "10:00", loppu: "10:45", aine: "KS" }, { alku: "11:15", loppu: "12:00", aine: "KS.b" }, { alku: "12:15", loppu: "13:00", aine: "YM" }] },
     }},
     milla: { luokka: "1. vsk", koulu: "Klassillinen lukio", tunnit: {
-      ke: { alku: "09:40", loppu: "14:20" },
-      to: { alku: "08:10", loppu: "15:50", huom: "pitkä päivä" }
+      ma: { alku: "09:40", loppu: "15:50", aineet: ["OP01.F 7: OP05.F", "RUB11.F 6: RUB12.F", "KE01.F 3: KE02.F", "MAY01.F"], tunnit: [{ alku: "09:40", loppu: "10:55", aine: "OP01.F 7: OP05.F" }, { alku: "11:05", loppu: "12:20", aine: "RUB11.F 6: RUB12.F" }, { alku: "13:05", loppu: "14:20", aine: "KE01.F 3: KE02.F" }, { alku: "14:35", loppu: "15:50", aine: "MAY01.F" }] },
+      ti: { alku: "09:40", loppu: "14:20", aineet: ["HI01.2", "KE01.F 3: KE02.F", "ÄI01.F"], tunnit: [{ alku: "09:40", loppu: "10:55", aine: "HI01.2" }, { alku: "11:05", loppu: "12:20", aine: "KE01.F 3: KE02.F" }, { alku: "13:05", loppu: "14:20", aine: "ÄI01.F" }] },
+      ke: { alku: "09:40", loppu: "14:20", aineet: ["HI01.2", "MAY01.F", "OP01.F 7: OP05.F"], tunnit: [{ alku: "09:40", loppu: "10:55", aine: "HI01.2" }, { alku: "11:05", loppu: "12:20", aine: "MAY01.F" }, { alku: "13:05", loppu: "14:20", aine: "OP01.F 7: OP05.F" }] },
+      to: { alku: "08:10", loppu: "15:50", aineet: ["OP01.F 7: OP05.F", "RUB11.F 6: RUB12.F", "ÄI01.F", "MAY01.F", "KE01.F 3: KE02.F"], tunnit: [{ alku: "08:10", loppu: "09:25", aine: "OP01.F 7: OP05.F" }, { alku: "09:40", loppu: "10:55", aine: "RUB11.F 6: RUB12.F" }, { alku: "11:05", loppu: "12:20", aine: "ÄI01.F" }, { alku: "13:05", loppu: "14:20", aine: "MAY01.F" }, { alku: "14:35", loppu: "15:50", aine: "KE01.F 3: KE02.F" }] },
+      pe: { alku: "09:40", loppu: "14:20", aineet: ["HI01.2", "RUB11.F 6: RUB12.F", "ÄI01.F"], tunnit: [{ alku: "09:40", loppu: "10:55", aine: "HI01.2" }, { alku: "11:05", loppu: "12:20", aine: "RUB11.F 6: RUB12.F" }, { alku: "13:05", loppu: "14:20", aine: "ÄI01.F" }] },
     }},
     mea: { luokka: "8F", koulu: "Jynkänlahden koulu", tunnit: {
-      ma: { alku: "08:00", huom: "alkaa 8.00 valinnaisilla" },
-      ke: { alku: "10:00", loppu: "14:50", aineet: ["RUB","HI","MA","kotitalous"], huom: "liikunta-varusteet" },
-      to: { alku: "08:00", loppu: "14:45", aineet: ["Val.KU"], huom: "Val.KU 8.00; LI 13.15, varusteet" }
-    }}
+      ma: { alku: "08:00", loppu: "13:00", aineet: ["vxAI", "vxAI", "BI.6 A-KS", "ruokailu", "LI", "LI"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "vxAI" }, { alku: "09:00", loppu: "09:45", aine: "vxAI" }, { alku: "10:00", loppu: "10:45", aine: "BI.6 A-KS" }, { alku: "10:45", loppu: "11:00", aine: "ruokailu" }, { alku: "11:15", loppu: "12:00", aine: "LI" }, { alku: "12:15", loppu: "13:00", aine: "LI" }], huom: "LI 11.15 & 12.15, varusteet", varusteet: true },
+      ti: { alku: "08:00", loppu: "13:00", aineet: ["BI.6 A-KS", "HI", "AI AKa", "AI AKa", "ruokailu", "MA"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "BI.6 A-KS" }, { alku: "08:50", loppu: "09:35", aine: "HI" }, { alku: "10:00", loppu: "10:45", aine: "AI AKa" }, { alku: "10:45", loppu: "11:30", aine: "AI AKa" }, { alku: "11:30", loppu: "11:45", aine: "ruokailu" }, { alku: "12:15", loppu: "13:00", aine: "MA" }] },
+      ke: { alku: "10:00", loppu: "14:50", aineet: ["RUB", "HI", "ruokailu", "MA", "vKO.1", "vKO.1"], tunnit: [{ alku: "10:00", loppu: "10:45", aine: "RUB" }, { alku: "10:45", loppu: "11:30", aine: "HI" }, { alku: "11:30", loppu: "11:45", aine: "ruokailu" }, { alku: "12:15", loppu: "13:00", aine: "MA" }, { alku: "13:20", loppu: "14:05", aine: "vKO.1" }, { alku: "14:05", loppu: "14:50", aine: "vKO.1" }] },
+      to: { alku: "08:00", loppu: "14:45", aineet: ["sKU.2", "sKU.2", "UE", "ruokailu", "MA", "ENA", "sxLI.2", "sxLI.2"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "sKU.2" }, { alku: "09:00", loppu: "09:45", aine: "sKU.2" }, { alku: "10:00", loppu: "10:45", aine: "UE" }, { alku: "10:45", loppu: "11:00", aine: "ruokailu" }, { alku: "11:15", loppu: "12:00", aine: "MA" }, { alku: "12:15", loppu: "13:00", aine: "ENA" }, { alku: "13:15", loppu: "14:00", aine: "sxLI.2" }, { alku: "14:00", loppu: "14:45", aine: "sxLI.2" }], huom: "LI 13.15 & 14.00, varusteet", varusteet: true },
+      pe: { alku: "08:00", loppu: "14:45", aineet: ["AI AKa", "AI AKa", "RUB", "ENA", "ruokailu", "MA", "KE.6", "KE.6"], tunnit: [{ alku: "08:00", loppu: "08:45", aine: "AI AKa" }, { alku: "08:50", loppu: "09:35", aine: "AI AKa" }, { alku: "10:00", loppu: "10:45", aine: "RUB" }, { alku: "11:00", loppu: "11:45", aine: "ENA" }, { alku: "11:45", loppu: "12:00", aine: "ruokailu" }, { alku: "12:15", loppu: "13:00", aine: "MA" }, { alku: "13:15", loppu: "14:00", aine: "KE.6" }, { alku: "14:00", loppu: "14:45", aine: "KE.6" }] },
+    }},
   };
 
   const WMO = {
@@ -563,33 +570,33 @@ label.f {
   const SEED = {
     school: {
       ellen: {
-        ma: { start: "10:00", end: "12:15" },
-        ti: { start: "08:00", end: "12:15" },
+        ma: { start: "10:00", end: "13:00" },
+        ti: { start: "08:00", end: "13:00" },
         ke: { start: "08:45", end: "15:00" },
         to: { start: "10:00", end: "15:00" },
-        pe: { start: "08:00", end: "12:15" }
+        pe: { start: "08:00", end: "13:00" },
       },
       samuel: {
-        ma: { start: "08:45", end: "12:15" },
-        ti: { start: "08:45", end: "12:15" },
+        ma: { start: "08:45", end: "13:00" },
+        ti: { start: "08:45", end: "13:00" },
         ke: { start: "08:45", end: "13:00" },
         to: { start: "08:00", end: "12:00" },
-        pe: { start: "08:00", end: "12:15" }
+        pe: { start: "08:00", end: "13:00" },
       },
       milla: {
-        ma: { start: "09:40", end: "16:05" },
+        ma: { start: "09:40", end: "15:50" },
         ti: { start: "09:40", end: "14:20" },
         ke: { start: "09:40", end: "14:20" },
         to: { start: "08:10", end: "15:50" },
-        pe: { start: "09:40", end: "14:20" }
+        pe: { start: "09:40", end: "14:20" },
       },
       mea: {
-        ma: { start: "08:00", end: "12:15" },
-        ti: { start: "08:00", end: "12:15" },
+        ma: { start: "08:00", end: "13:00" },
+        ti: { start: "08:00", end: "13:00" },
         ke: { start: "10:00", end: "14:50" },
         to: { start: "08:00", end: "14:45" },
-        pe: { start: "08:00", end: "14:05" }
-      }
+        pe: { start: "08:00", end: "14:45" },
+      },
     },
     events: [
       {
@@ -1608,9 +1615,12 @@ label.f {
     const tunti = ((meta.tunnit) || {})[day.key] || {};
     const start = times.start || tunti.alku || "";
     const end = times.end || tunti.loppu || "";
-    const aineet = tunti.aineet || [];
     const huom = tunti.huom || "";
-    const plans = periodPlan(start, end, aineet);
+    const plans = (tunti.tunnit && tunti.tunnit.length)
+      ? tunti.tunnit.map(function(p, i) {
+          return { start: p.alku, end: p.loppu, name: p.aine, n: i + 1 };
+        })
+      : periodPlan(start, end, tunti.aineet || []);
     const range = (start || end) ? fmtSchool({ start: start, end: end }) : "ei merkattu";
     let body = "";
     if (plans.length) {
@@ -1666,7 +1676,7 @@ label.f {
     }).join("");
     return backLink()
       + "<h1 class=\"vtitle\">Lukujärjestykset</h1>"
-      + "<p class=\"lede\">Tuntiohjelma. Tämä päivä on korostettu.</p>"
+      + "<p class=\"lede\">Tuntiohjelma Wilmasta. Tämä päivä on korostettu.</p>"
       + blocks
       + footer();
   }

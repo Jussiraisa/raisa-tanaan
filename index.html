@@ -207,6 +207,40 @@ body {
 .school .hrs.empty { font-weight: 500; color: var(--ink3) }
 
 a.school-link { display: block; color: inherit; text-decoration: none }
+
+.school a.sr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 16.5px;
+  color: inherit;
+  text-decoration: none;
+}
+.school a.sr:last-child { border-bottom: 0 }
+.school a.sr:active, .school a.sr:hover { opacity: .85 }
+.period {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.period:last-child { border-bottom: 0 }
+.period .pt {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink3);
+  min-width: 4.5em;
+}
+.period .pn {
+  font-size: 22px;
+  font-weight: 700;
+}
+.period .ps { font-size: 14px; color: var(--ink2); margin-top: 2px }
+
 a.school-link .lbl2 { color: var(--accent) }
 .dayrow.dayprog { grid-template-columns: 40px 1fr; align-items: start; padding: 10px 0 }
 .dayrow.today.dayprog { padding: 10px }
@@ -1349,21 +1383,61 @@ label.f {
 
   function route() {
     const h = (location.hash || "#/").replace(/^#/, "");
-    const p = h.replace(/^\//, "").split("/")[0];
-    if (p === "lukujarjestys" || p === "lukujärjestys") return "lukujarjestys";
-    if (p === "treenit") return "treenit";
-    if (p === "ruoka") return "ruoka";
-    if (p === "kauppa") return "kauppa";
-    return "tanaan";
+    const parts = h.replace(/^\//, "").split("/").filter(Boolean);
+    const p = parts[0] || "";
+    if (p === "lukujarjestys" || p === "lukujärjestys") {
+      return { name: "lukujarjestys", kid: parts[1] || "", day: parts[2] || "" };
+    }
+    if (p === "treenit") return { name: "treenit" };
+    if (p === "ruoka") return { name: "ruoka" };
+    if (p === "kauppa") return { name: "kauppa" };
+    return { name: "tanaan" };
+  }
+
+  function parseHmToMin(hm) {
+    if (!hm) return null;
+    const m = String(hm).match(/^(\d{1,2}):(\d{2})$/);
+    if (!m) return null;
+    return (+m[1]) * 60 + (+m[2]);
+  }
+
+  function minToHm(mins) {
+    const h = Math.floor(mins / 60);
+    const m = mins % 60;
+    return pad(h, 2) + ":" + pad(m, 2);
+  }
+
+  function periodPlan(start, end, aineet) {
+    const list = aineet && aineet.length ? aineet.slice() : [];
+    if (!list.length) return [];
+    const s = parseHmToMin(start);
+    const e = parseHmToMin(end);
+    if (s == null || e == null || e <= s) {
+      return list.map(function(a, i) {
+        return { start: "", end: "", name: a, n: i + 1 };
+      });
+    }
+    const n = list.length;
+    const slot = Math.floor((e - s) / n);
+    return list.map(function(a, i) {
+      const a0 = s + i * slot;
+      const a1 = (i === n - 1) ? e : s + (i + 1) * slot;
+      return { start: minToHm(a0), end: minToHm(a1), name: a, n: i + 1 };
+    });
   }
 
   function schoolRows(dayKey) {
     return KIDS.map(k => {
-      const h = (store.school[k.id] || {})[dayKey];
-      const marked = h && (h.start || h.end);
-      return "<div class=\"sr\"><span class=\"nm\"><span class=\"dot\" style=\"background:" + k.color
+      const times = (store.school[k.id] || {})[dayKey] || {};
+      const tunti = (((HOURS[k.id] || {}).tunnit) || {})[dayKey] || {};
+      const h = {
+        start: times.start || tunti.alku || "",
+        end: times.end || tunti.loppu || ""
+      };
+      const marked = h.start || h.end;
+      return "<a class=\"sr\" href=\"#/lukujarjestys/" + k.id + "/" + dayKey + "\"><span class=\"nm\"><span class=\"dot\" style=\"background:" + k.color
         + "\"></span>" + esc(k.name) + "</span><span class=\"hrs"
-        + (marked ? "" : " empty") + "\">" + esc(fmtSchool(h)) + "</span></div>";
+        + (marked ? "" : " empty") + "\">" + esc(fmtSchool(h)) + "</span></a>";
     }).join("");
   }
 
@@ -1511,18 +1585,54 @@ label.f {
       + renderHero(now, todayEvents)
       + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>Tänään</h2><span class=\"ln\"></span></div>"
       + "<div class=\"rv\" style=\"animation-delay:.18s\">"
-      + "<a class=\"school-link\" href=\"#/lukujarjestys\"><div class=\"lbl2\">Koulu · tunnit</div>"
-      + "<div class=\"school\">" + schoolRows(now.key) + "</div></a>"
+      + "<div class=\"lbl2\">Koulu · tunnit</div>"
+      + "<div class=\"school\">" + schoolRows(now.key) + "</div>"
       + (kyydit ? "<div class=\"lbl2\">Kyydit</div>" + kyydit : "")
       + (ruoka ? "<div class=\"lbl2\">Ruoka</div>" + ruoka : "")
       + "</div>"
       + "<section class=\"tom rv\" style=\"animation-delay:.24s\">"
       + "<div class=\"th\">Huomenna · " + tomDay.abbr + " " + fmtDot(tom.year, tom.month, tom.day) + "</div>"
       + "<div class=\"tw\" id=\"wx2\">" + wTom + "</div>"
-      + "<a class=\"school-link\" href=\"#/lukujarjestys\"><div class=\"lbl2\">Koulu · tunnit</div>"
-      + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div></a>"
+      + "<div class=\"lbl2\">Koulu · tunnit</div>"
+      + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div>"
       + (tomMenot ? "<div class=\"lbl2\">Menot &amp; ruoka</div>" + tomMenot : "")
       + "</section>"
+      + footer();
+  }
+
+  function renderKidDay(kidId, dayKey) {
+    const k = kidById(kidId) || KIDS[0];
+    const day = dayByKey(dayKey) || dayByKey(helsinkiNow().key);
+    const meta = HOURS[k.id] || {};
+    const times = (store.school[k.id] || {})[day.key] || {};
+    const tunti = ((meta.tunnit) || {})[day.key] || {};
+    const start = times.start || tunti.alku || "";
+    const end = times.end || tunti.loppu || "";
+    const aineet = tunti.aineet || [];
+    const huom = tunti.huom || "";
+    const plans = periodPlan(start, end, aineet);
+    const range = (start || end) ? fmtSchool({ start: start, end: end }) : "ei merkattu";
+    let body = "";
+    if (plans.length) {
+      body = plans.map(function(p) {
+        const tm = p.start ? (fmtHm(p.start) + (p.end ? "–" + fmtHm(p.end) : "")) : "—";
+        return "<div class=\"period\"><div class=\"pt\">" + esc(tm) + "</div>"
+          + "<div><div class=\"pn\">" + p.n + ". " + esc(p.name) + "</div></div></div>";
+      }).join("");
+    } else {
+      body = "<div class=\"period\"><div class=\"pt\">" + esc(range) + "</div>"
+        + "<div><div class=\"pn\">Koulupäivä</div>"
+        + "<div class=\"ps\">Tuntikohtaisia aineita ei ole vielä merkitty.</div></div></div>";
+    }
+    const sub = [meta.luokka, meta.koulu].filter(Boolean).join(" · ");
+    return backLink()
+      + "<h1 class=\"vtitle\"><span class=\"dot\" style=\"background:" + k.color + ";display:inline-block;margin-right:10px;vertical-align:middle\"></span>"
+      + esc(k.name) + "</h1>"
+      + "<p class=\"lede\">" + esc(day.full) + " · " + esc(range)
+      + (sub ? "<br>" + esc(sub) : "") + "</p>"
+      + (huom ? "<p class=\"huom\">" + esc(huom) + "</p>" : "")
+      + body
+      + "<div class=\"btn-row\"><a class=\"btn quiet\" href=\"#/lukujarjestys\">Kaikki lapset</a></div>"
       + footer();
   }
 
@@ -1729,16 +1839,21 @@ label.f {
     const root = document.getElementById("app");
     const r = route();
     let html;
-    if (r === "lukujarjestys") html = renderSchool();
-    else if (r === "treenit") html = renderTreenit();
-    else if (r === "ruoka") html = renderRuoka();
-    else if (r === "kauppa") html = renderKauppa();
+    if (r.name === "lukujarjestys") {
+      if (r.kid && kidById(r.kid)) {
+        const day = r.day || helsinkiNow().key;
+        html = renderKidDay(r.kid, day);
+      } else html = renderSchool();
+    }
+    else if (r.name === "treenit") html = renderTreenit();
+    else if (r.name === "ruoka") html = renderRuoka();
+    else if (r.name === "kauppa") html = renderKauppa();
     else html = renderToday();
     root.innerHTML = html;
   }
 
   function tickToday() {
-    if (route() !== "tanaan") return;
+    if (route().name !== "tanaan") return;
     const now = helsinkiNow();
     if (now.iso !== lastIso) {
       paint();
@@ -1931,7 +2046,7 @@ label.f {
     const tom = addCalendarDays(now.year, now.month, now.day, 1);
     const tomIso = pad(tom.year, 4) + "-" + pad(tom.month, 2) + "-" + pad(tom.day, 2);
     await loadWeather(now.iso, tomIso);
-    if (route() === "tanaan") {
+    if (route().name === "tanaan") {
       const wx = document.getElementById("wx");
       const wx2 = document.getElementById("wx2");
       if (wx) wx.innerHTML = renderWeather("today");

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Räisä · Talo</title>
+  <style>
+    html, body { height: 100%; margin: 0; overflow: hidden; background: #070707; color: #f2eee4; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    * { box-sizing: border-box }
+    .tv { height: 100vh; width: 100vw; padding: 1.6vh 2vw 1.4vh; display: flex; flex-direction: column; }
+    .head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2vh; }
+    .kicker { font-size: 1.7vmin; font-weight: 800; letter-spacing: .32em; text-transform: uppercase; color: #c6a15a; }
+    .date { font-size: 3.2vmin; margin-top: .3vh; font-weight: 650; }
+    .clock { font-size: 8.4vmin; font-weight: 700; letter-spacing: -.07em; line-height: .8; font-variant-numeric: tabular-nums; color: #fff; }
+    .chip { display: inline-block; margin-top: .6vh; font-size: 2vmin; font-weight: 800; color: #3ec4b2; }
+    .hero {
+      background: #111; border: 1px solid #1c1c1c; border-radius: 1.2vmin;
+      padding: 1.6vh 2vw 1.4vh; margin-bottom: 1.2vh; position: relative;
+    }
+    .hero .lbl { font-size: 1.7vmin; font-weight: 800; letter-spacing: .28em; text-transform: uppercase; color: #3ec4b2; }
+    .hero .w { font-size: 11vmin; font-weight: 800; letter-spacing: -.06em; line-height: .9; margin-top: .4vh; }
+    .hero .sub { display: flex; gap: 2.2vw; margin-top: .8vh; font-size: 2.3vmin; font-weight: 700; color: #c9c3b5; }
+    .badge {
+      position: absolute; top: 1.6vh; right: 2vw;
+      padding: .6vh 1.2vw; border-radius: 999px; font-size: 2.1vmin; font-weight: 800;
+    }
+    .badge.bad { background: #3a1515; color: #ff8a80; border: 1px solid #6b2a2a; }
+    .badge.ok { background: #123028; color: #3ec4b2; border: 1px solid #1e5c50; }
+    .row { display: flex; gap: 1.1vw; margin-bottom: 1.2vh; }
+    .card {
+      flex: 1; min-width: 0; background: #111; border: 1px solid #1c1c1c; border-radius: 1.2vmin;
+      padding: 1.4vh 1.4vw;
+    }
+    .card .lbl { font-size: 1.55vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; }
+    .card .v { font-size: 4.6vmin; font-weight: 800; letter-spacing: -.03em; margin-top: .3vh; }
+    .card .s { font-size: 1.9vmin; color: #9a9486; font-weight: 650; margin-top: .2vh; }
+    .cols { flex: 1; min-height: 0; display: flex; gap: 1.1vw; }
+    .col { flex: 1; min-width: 0; background: #111; border: 1px solid #1c1c1c; border-radius: 1.2vmin; padding: 1.5vh 1.5vw; display: flex; flex-direction: column; }
+    .car { padding: 1.2vh 0; border-bottom: 1px solid #1c1c1c; }
+    .car:last-child { border-bottom: 0; }
+    .plate { font-size: 3.8vmin; font-weight: 800; letter-spacing: .08em; }
+    .cname { font-size: 2.2vmin; color: #c9c3b5; font-weight: 650; }
+    .where { font-size: 2.4vmin; font-weight: 800; color: #3ec4b2; margin-top: .2vh; }
+    .where.off { color: #c6a15a; }
+    .on { font-size: 3vmin; font-weight: 700; padding: .8vh 0; border-bottom: 1px solid #1c1c1c; }
+    .on:last-child { border-bottom: 0; }
+    .empty { color: #6d685c; font-size: 2.4vmin; font-weight: 600; }
+    .alert { margin-top: 1.1vh; padding: 1.2vh 1.6vw; background: #16120c; border: 2px solid #c6a15a; border-radius: 1.2vmin; font-size: 2.6vmin; font-weight: 800; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="tv" id="app">Räisä · Talo</div>
+  <script>
+(function () {
+  var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var DATA = null;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function helsinkiNow() {
+    var d = new Date(new Date().getTime() + 3 * 3600 * 1000);
+    return { wd: d.getUTCDay(), day: d.getUTCDate(), month: d.getUTCMonth() + 1, hour: d.getUTCHours(), minute: d.getUTCMinutes() };
+  }
+  function num(n, d) {
+    if (n == null || isNaN(n)) return "—";
+    var s = Number(n).toFixed(d == null ? 0 : d);
+    return s.replace(".", ",");
+  }
+  function getJSON(url, cb) {
+    var x = new XMLHttpRequest();
+    x.open("GET", url, true);
+    x.onreadystatechange = function () {
+      if (x.readyState !== 4) return;
+      if (x.status >= 200 && x.status < 300) {
+        try { cb(JSON.parse(x.responseText)); } catch (e) {}
+      }
+    };
+    x.send();
+  }
+
+  function paint() {
+    var now = helsinkiNow();
+    var d = DATA || {};
+    var badge = d.priceLevel === "kallis"
+      ? "<div class=\"badge bad\">Sähkö kallista · " + num(d.priceSnt, 1) + " snt/kWh</div>"
+      : "<div class=\"badge ok\">Sähkö ok · " + num(d.priceSnt, 1) + " snt/kWh</div>";
+    var cars = d.cars || [];
+    var carHtml = "";
+    var i;
+    for (i = 0; i < cars.length; i++) {
+      var c = cars[i];
+      carHtml += "<div class=\"car\"><div class=\"plate\">" + c.plate + "</div>"
+        + "<div class=\"cname\">" + (c.name || "") + "</div>"
+        + "<div class=\"where" + (c.known ? "" : " off") + "\">" + (c.where || "") + "</div></div>";
+    }
+    var lights = d.lightsOn || [];
+    if (d.saunaOn) lights = ["Sauna"].concat(lights);
+    var lightHtml = "";
+    if (!lights.length) lightHtml = "<div class=\"empty\">Kaikki pois</div>";
+    for (i = 0; i < lights.length; i++) {
+      lightHtml += "<div class=\"on\">" + lights[i] + "</div>";
+    }
+    var alerts = d.alerts || [];
+    var alertHtml = alerts.length ? "<div class=\"alert\">" + alerts.join(" · ") + "</div>" : "";
+    document.getElementById("app").innerHTML =
+      "<div class=\"head\"><div><div class=\"kicker\">Räisä · Talo</div>"
+      + "<div class=\"date\">" + DAYS[now.wd] + " " + now.day + "." + now.month + ".</div>"
+      + "<div class=\"chip\">" + (d.home ? "Kotona" : "Poissa") + " · " + (d.online ? "Koti verkossa" : "Koti poissa verkosta") + "</div></div>"
+      + "<div class=\"right\"><div class=\"clock\" id=\"clock\">" + pad(now.hour) + "." + pad(now.minute) + "</div></div></div>"
+      + "<div class=\"hero\"><div class=\"lbl\">Sähköä nyt</div>"
+      + "<div class=\"w\">" + Math.round(d.powerW || 0) + " W</div>" + badge
+      + "<div class=\"sub\"><span>Tänään " + num(d.costToday, 2) + " € · " + num(d.kwhToday, 1) + " kWh</span>"
+      + "<span>Pörssi " + num(d.spotSnt, 1) + " snt</span>"
+      + "<span>Aurinko " + Math.round(d.solarW || 0) + " W</span></div></div>"
+      + "<div class=\"row\">"
+      + "<div class=\"card\"><div class=\"lbl\">Ulkona</div><div class=\"v\">" + num(d.outC, 1) + "°</div><div class=\"s\">" + (d.weather || "") + "</div></div>"
+      + "<div class=\"card\"><div class=\"lbl\">Sisällä</div><div class=\"v\">" + num(d.inC, 1) + "°</div><div class=\"s\">tavoite " + num(d.targetC, 1) + "°</div></div>"
+      + "<div class=\"card\"><div class=\"lbl\">Aurinko</div><div class=\"v\">" + Math.round(d.solarW || 0) + " W</div><div class=\"s\">omavaraisuus " + Math.round(d.selfPct || 0) + " %</div></div>"
+      + "<div class=\"card\"><div class=\"lbl\">Lämpövarasto</div><div class=\"v\">" + Math.round(d.heatStoreH || 0) + " h</div><div class=\"s\">" + Math.round(d.heatStorePct || 0) + " % · käyttövesi " + num(d.dhwC, 0) + "°</div></div>"
+      + "</div>"
+      + "<div class=\"cols\">"
+      + "<div class=\"col\"><div class=\"lbl\">Autot</div>" + (carHtml || "<div class=\"empty\">Ei autoja</div>") + "</div>"
+      + "<div class=\"col\"><div class=\"lbl\">Päällä</div>" + lightHtml + "</div>"
+      + "</div>"
+      + alertHtml;
+  }
+
+  function tickClock() {
+    var el = document.getElementById("clock");
+    if (!el) return;
+    var now = helsinkiNow();
+    el.innerHTML = pad(now.hour) + "." + pad(now.minute);
+  }
+  function pull() {
+    getJSON("https://raw.githubusercontent.com/Jussiraisa/raisa-tanaan/main/ha.json?t=" + new Date().getTime(), function (data) {
+      DATA = data;
+      paint();
+    });
+  }
+  paint();
+  pull();
+  setInterval(tickClock, 1000);
+  setInterval(pull, 5000);
+})();
+  </script>
+</body>
+</html>

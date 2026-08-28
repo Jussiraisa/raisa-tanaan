@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1787913153636,
+  "updated": 1787913177579,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Jussi",
@@ -73,7 +73,7 @@
       "ride": ""
     },
     "ellen-samuel-syyskirkko": {
-      "driver": "",
+      "driver": "kävvellen",
       "status": "us",
       "ride": ""
     },
@@ -118,8 +118,8 @@
     "ti": "",
     "ke": "",
     "to": "",
-    "pe": "Milla ja muut auttaa",
-    "la": "",
+    "pe": "",
+    "la": "äiti",
     "su": ""
   },
   "dishes": {

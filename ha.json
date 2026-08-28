@@ -1,9 +1,9 @@
 {
   "v": 1,
-  "updated": 1787906997502,
-  "powerW": 825,
+  "updated": 1787907590025,
+  "powerW": 808,
   "gridW": 0,
-  "solarW": 4211,
+  "solarW": 4375,
   "selfPct": 100,
   "spotSnt": 3.6,
   "priceSnt": 10.6,
@@ -14,11 +14,11 @@
   "kwhToday": 0.0,
   "soldToday": 2.23,
   "outC": 16.0,
-  "inC": 20.7,
+  "inC": 20.6,
   "targetC": 21.0,
-  "dhwC": 43.5,
+  "dhwC": 43.0,
   "heatStorePct": 11,
-  "heatStoreH": 165,
+  "heatStoreH": 162,
   "compressor": "seis",
   "weather": "Aurinkoinen",
   "weatherIcon": "☀️",
@@ -32,7 +32,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 1060,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",

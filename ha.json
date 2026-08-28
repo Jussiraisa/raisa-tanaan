@@ -1,22 +1,22 @@
 {
   "v": 1,
-  "updated": 1787922439882,
-  "powerW": 1064,
+  "updated": 1787924364115,
+  "powerW": 1031,
   "gridW": 0,
-  "solarW": 5545,
+  "solarW": 5261,
   "selfPct": 100,
   "spotSnt": 4.0,
-  "priceSnt": 10.1,
+  "priceSnt": 11.3,
   "priceRank": "17/24",
   "priceLevel": "halpaa",
   "costNow": -0.499,
   "costToday": 1.88,
   "kwhToday": -19.9,
-  "soldToday": 0.8,
+  "soldToday": 0.88,
   "outC": 16.5,
   "inC": 20.8,
   "targetC": 21.0,
-  "dhwC": 48.0,
+  "dhwC": 47.5,
   "heatStorePct": 13,
   "heatStoreH": 216,
   "compressor": "seis",
@@ -30,7 +30,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 0,
+  "saunaW": 1050,
   "cars": [
     {
       "plate": "KYP-452",
@@ -82,7 +82,7 @@
     }
   ],
   "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T16:10:00+03:00",
+  "capturedAt": "2026-08-28T16:40:00+03:00",
   "heatOffset": -10,
-  "notes": "powerW 1064 W (Sähköä nyt), solar 5545 W, person.jussi=not_home, coarse location Kuopio (city only). Only person entities in HA: jussi (plus Eino IT / mqtt_frigate, excluded). No weather text besides Ulkona 16.5 C."
+  "notes": "Koti Pro -näkymästä luetut arvot; sää/energia päivän summa Yleiskatsauksesta (18,4 °C puolipilvistä, ~25,6 kWh); person.jussi = not_home, karkea sijainti Kuopio (ei tarkkaa osoitetta). Vain Jussi löytyi person.* -entiteeteistä (Eino IT ja mqtt_frigate jätetty pois). Koti Pro:n tilapainike näytti 'kotona'. Aurinko 5261 W (heilui 5273 W). costNow/costToday eivät näkyneet."
 }

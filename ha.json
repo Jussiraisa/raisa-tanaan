@@ -1,36 +1,36 @@
 {
   "v": 1,
-  "updated": 1787925115023,
-  "powerW": 1045,
+  "updated": 1787926179812,
+  "powerW": 966,
   "gridW": 0,
-  "solarW": 5106,
+  "solarW": 4912,
   "selfPct": 100,
-  "spotSnt": 4.0,
-  "priceSnt": 12.0,
-  "priceRank": "8/24",
-  "priceLevel": "keskitaso",
-  "costNow": -0.499,
+  "spotSnt": 3.9,
+  "priceSnt": 9.8,
+  "priceRank": "15/24",
+  "priceLevel": "halpa",
+  "costNow": -0.385,
   "costToday": 1.88,
-  "kwhToday": -25.6,
-  "soldToday": 0.92,
+  "kwhToday": 56.3,
+  "soldToday": 0.97,
   "outC": 16.5,
   "inC": 20.8,
   "targetC": 21.0,
-  "dhwC": 47.5,
+  "dhwC": 47.0,
   "heatStorePct": 13,
   "heatStoreH": 216,
   "compressor": "seis",
-  "weather": "Puolipilvistä",
+  "weather": "Puolipilvinen",
   "weatherIcon": "⛅",
   "online": true,
-  "home": true,
+  "home": false,
   "alerts": [],
   "lightsOn": [
     "Olohuone",
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 1050,
+  "saunaW": 1047,
   "cars": [
     {
       "plate": "KYP-452",
@@ -78,11 +78,11 @@
     {
       "name": "Jussi",
       "home": false,
-      "where": "Kuopio"
+      "where": "Poissa"
     }
   ],
   "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T16:49:00+03:00",
+  "capturedAt": "2026-08-28T17:10:00+03:00",
   "heatOffset": -10,
-  "notes": "Koti Pro -näkymästä luetut arvot; sää/energia päivän summa Yleiskatsauksesta (18,4 °C puolipilvistä). person.jussi = not_home, karkea sijainti Kuopio (ei tarkkaa osoitetta). Vain Jussi löytyi person.* -entiteeteistä (Eino IT ja mqtt_frigate jätetty pois). Koti Pro:n tilapainike näytti 'kotona'. costNow/costToday eivät näkyneet."
+  "notes": "Koti Pro + Energia Pro + developer-tools/state. person.jussi = Poissa; ei muita person.* (Eino IT / mqtt_frigate pois). NON-983 ei HA:ssa. soldToday muunnettu kWh→€ (0,97). spotSnt tunnin keskiarvo (17:00) api.spot-hinta.fi."
 }

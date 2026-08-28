@@ -5,7 +5,7 @@
   "gridW": 0,
   "solarW": 4545,
   "selfPct": 100,
-  "spotSnt": 6.0,
+  "spotSnt": 4.5,
   "priceSnt": 13.0,
   "priceRank": "73/24",
   "priceLevel": "kallis",
@@ -47,5 +47,34 @@
       "where": "Kotona",
       "known": true
     }
-  ]
+  ],
+  "spotHours": [
+    7.9,
+    5.4,
+    5.4,
+    5.4,
+    5.4,
+    5.3,
+    6.1,
+    7.4,
+    9.5,
+    10.9,
+    9.4,
+    6.0,
+    4.5,
+    4.0,
+    3.7,
+    3.6,
+    4.0,
+    3.9,
+    4.6,
+    4.7,
+    3.6,
+    1.1,
+    0.7,
+    0.4
+  ],
+  "spotMin": 0.4,
+  "spotMax": 10.9,
+  "spotAvg": 5.1
 }

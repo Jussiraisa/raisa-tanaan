@@ -1,24 +1,24 @@
 {
   "v": 1,
-  "updated": 1787930105500,
-  "powerW": 890,
-  "gridW": 280,
-  "solarW": 613,
-  "selfPct": 68,
+  "updated": 1787931442969,
+  "powerW": 864,
+  "gridW": 420,
+  "solarW": 426,
+  "selfPct": 50,
   "spotSnt": 4.6,
-  "priceSnt": 10.3,
-  "priceRank": "20/24",
-  "priceLevel": "Sähkö halpaa",
+  "priceSnt": 12.2,
+  "priceRank": "53/24",
+  "priceLevel": "Sähkö keskitasoa",
   "costNow": 0.0,
-  "costToday": 1.94,
+  "costToday": 1.96,
   "kwhToday": 56.3,
   "soldToday": 1.02,
   "outC": 16.5,
   "inC": 20.8,
   "targetC": 21.0,
   "dhwC": 46.0,
-  "heatStorePct": 13,
-  "heatStoreH": 216,
+  "heatStorePct": 12,
+  "heatStoreH": 205,
   "compressor": "seis",
   "weather": "Puolipilvinen",
   "weatherIcon": "⛅",
@@ -34,7 +34,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 1030,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -45,8 +45,8 @@
     {
       "plate": "NON-983",
       "name": "Auto",
-      "where": "Ei kytketty Home Assistantiin",
-      "known": false
+      "where": "Kotona",
+      "known": true
     }
   ],
   "spotHours": [
@@ -86,7 +86,7 @@
     }
   ],
   "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T18:14:05+03:00",
+  "capturedAt": "2026-08-28T18:35:00+03:00",
   "heatOffset": -10,
-  "notes": "Koti Pro + Energia Pro + developer-tools/state. person.jussi=Poissa (Kuopio); ei muita person.* (Eino IT / mqtt_frigate pois). NON-983 ei HA:ssa. spotSnt tunnin keskiarvo api.spot-hinta.fi."
+  "notes": "Koti Pro + Energia Pro + Yleiskatsaus Pro + developer-tools/state. person.jussi=Poissa (Kuopio); ei muita person.* (Eino IT / mqtt_frigate pois). spotSnt tunnin keskiarvo api.spot-hinta.fi."
 }

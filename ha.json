@@ -1,8 +1,8 @@
 {
   "v": 1,
-  "updated": 1787942003057,
-  "powerW": 1949,
-  "gridW": 1950,
+  "updated": 1787942751692,
+  "powerW": 1910,
+  "gridW": 1910,
   "solarW": 0,
   "selfPct": 0,
   "spotSnt": 1.1,
@@ -30,7 +30,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 1040,
+  "saunaW": 1030,
   "cars": [
     {
       "plate": "KYP-452",
@@ -82,7 +82,7 @@
     }
   ],
   "source": "Home Assistant Koti Pro + Yleiskatsaus Pro",
-  "capturedAt": "2026-08-28T21:33:23.030268+03:00",
+  "capturedAt": "2026-08-28T21:45:00+03:00",
   "heatOffset": -10,
   "notes": "kwhToday/costToday ei näy Koti Prossa (säilytetty edellinen). Sijainti vain koti/poissa, ei osoitetta. Eino IT ohitettu.",
   "soldTodayEur": 1.02,

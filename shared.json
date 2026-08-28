@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1787899268359,
+  "updated": 1787900967529,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Jussi",
@@ -68,7 +68,7 @@
       "ride": ""
     },
     "jussi-kalakisat": {
-      "driver": "",
+      "driver": "Jussi",
       "status": "us",
       "ride": ""
     },
@@ -109,7 +109,7 @@
     },
     "cal-_8oq3gcpg650jeb9i88rk6b9k6h1kcb9o6gp4ab9j711kac9m6gp42d1j8o": {
       "driver": "",
-      "status": "",
+      "status": "open",
       "ride": ""
     }
   },
@@ -126,7 +126,7 @@
     "ma": "Lihapullat + muusi",
     "ti": "Kana + basmati",
     "ke": "Pizzailta (Wewalka pizzakit)",
-    "to": "Lohikeitto + kana &amp; riisi",
+    "to": "Lohikeitto + kana & riisi",
     "pe": "Burgerit",
     "la": "Bolognese",
     "su": "Sushi"

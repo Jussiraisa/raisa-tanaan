@@ -39,5 +39,10 @@
       "end": "09:00",
       "kind": "cal"
     }
-  ]
+  ],
+  "schoolLunch": {
+    "date": "2026-08-28",
+    "dish": "Tonnikalalasagnetta",
+    "veg": "Pinaattinen linssi-pastavuoka"
+  }
 }

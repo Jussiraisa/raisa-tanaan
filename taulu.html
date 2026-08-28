@@ -33,6 +33,8 @@
     .kid:last-child { border-bottom: 0; }
     .kid .nm { font-size: 3.4vmin; font-weight: 700; }
     .kid .hrs { font-size: 3.7vmin; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+    .klunch { margin-top: auto; padding-top: 1.2vh; font-size: 2.15vmin; color: #c9c3b5; font-weight: 650; line-height: 1.3; }
+    .klunch .h { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; margin-bottom: .35vh; }
     .tr { padding: 1.3vh 0; border-bottom: 1px solid #1c1c1c; }
     .tr:last-child { border-bottom: 0; }
     .tr .tm { font-size: 3.4vmin; font-weight: 800; color: #c6a15a; font-variant-numeric: tabular-nums; }
@@ -102,6 +104,7 @@
   };
   var note = "";
   var EXTRA = [];
+  var SCHOOL_LUNCH = { date: "2026-08-28", dish: "Tonnikalalasagnetta", veg: "Pinaattinen linssi-pastavuoka" };
   var weather = { icon: "", temp: "", phrase: "", clothes: "" };
   function wmo(code) {
     if (code === 0) return { icon: "☀️", phrase: "selkeää" };
@@ -236,6 +239,7 @@
     }
     if (typeof remote.note === "string") note = remote.note;
     if (remote.extras) EXTRA = remote.extras;
+    if (remote.schoolLunch) SCHOOL_LUNCH = remote.schoolLunch;
   }
   function readLocal() {
     try {
@@ -303,6 +307,13 @@
       kidsHtml += "<div class=\"kid\" style=\"border-left-color:" + kid.color + "\"><span class=\"nm\">" + esc(kid.name)
         + "</span><span class=\"hrs\">" + esc(h ? fmtRange(h[0], h[1]) : "—") + "</span></div>";
     }
+    var lunchHtml = "";
+    if (SCHOOL_LUNCH && SCHOOL_LUNCH.date === now.iso && SCHOOL_LUNCH.dish) {
+      lunchHtml = "<div class=\"klunch\"><div class=\"h\">kouluruoka</div>"
+        + esc(SCHOOL_LUNCH.dish)
+        + (SCHOOL_LUNCH.veg ? "<br>" + esc("kasvis: " + SCHOOL_LUNCH.veg) : "")
+        + "</div>";
+    }
 
     var treenit = [];
     var muut = [];
@@ -367,7 +378,7 @@
       "<div class=\"head\"><div><div class=\"kicker\">Räisän perhe</div><div class=\"date\">" + DAYS[now.wd].full + " " + now.day + "." + now.month + ".</div></div>"
       + "<div class=\"right\"><div class=\"clock\" id=\"clock\">" + clock + "</div>" + wxHtml() + "</div></div>"
       + "<div class=\"cols\">"
-      + "<div class=\"col\"><div class=\"lbl\">Koulu</div>" + kidsHtml + "</div>"
+      + "<div class=\"col\"><div class=\"lbl\">Koulu</div>" + kidsHtml + lunchHtml + "</div>"
       + "<div class=\"col\"><div class=\"lbl\">Treenit</div>" + trHtml + "</div>"
       + "<div class=\"col\"><div class=\"lbl\">Ruoka</div><div class=\"dish\">" + esc(meal.dish || "") + "</div>" + cook + tomHtml + "</div>"
       + "</div>"

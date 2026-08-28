@@ -1,34 +1,30 @@
 {
   "v": 1,
-  "updated": 1787936793127,
-  "powerW": 715,
-  "gridW": 715,
-  "solarW": 65,
-  "selfPct": 10,
+  "updated": 1787937556868,
+  "powerW": 747,
+  "gridW": 718,
+  "solarW": 29,
+  "selfPct": 4,
   "spotSnt": 3.6,
-  "priceSnt": 12.8,
-  "priceRank": "68",
+  "priceSnt": 11.8,
+  "priceRank": "38",
   "priceLevel": "Sähkö keskitasoa",
-  "costNow": 0.0,
-  "costToday": 2.13,
+  "costNow": 0.08,
+  "costToday": 2.16,
   "kwhToday": 56.3,
   "soldToday": 24.63,
   "outC": 16.5,
   "inC": 20.7,
   "targetC": 21.0,
   "dhwC": 44.5,
-  "heatStorePct": 12,
-  "heatStoreH": 197,
+  "heatStorePct": 11,
+  "heatStoreH": 185.1,
   "compressor": "seis",
   "weather": "Puolipilvinen",
   "weatherIcon": "⛅",
   "online": true,
   "home": false,
-  "alerts": [
-    "Korjaukset: 1 ongelma",
-    "Huolto: 3 laitetta ei käytettävissä",
-    "Päivitykset: 8 päivitystä saatavilla"
-  ],
+  "alerts": [],
   "lightsOn": [
     "Olohuone valot",
     "Tallin valot"
@@ -85,10 +81,11 @@
       "where": "Kuopio"
     }
   ],
-  "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T20:04:57+03:00",
+  "source": "Home Assistant koti-pro + yleiskatsaus-luxe (CDP scrape)",
+  "capturedAt": "2026-08-28T20:17:48.966248+03:00",
   "heatOffset": -10,
-  "notes": "Kerätty työpöydän Chromella HA-sivuilta: /koti-pro/koti-pro, /yleiskatsaus-pro/yleiskatsaus-luxe, /developer-tools/state. Vain person.jussi (Poissa, Kuopio). Sauna päällä, teho 0 W. kwhToday-anturi näytti kumulatiivista lukemaa, pidettiin edellinen päiväluku. Pörssihinta tunti-keskiarvona api.spot-hinta.fi/Today.",
+  "notes": "Sauna-kytkin päällä mutta teho 0 W. kwhToday ei luotettavaa (mittarin kumulatiivinen lukema). Sijainti vain kaupunkitasolla. Eino IT ohitettu.",
   "soldTodayEur": 1.02,
-  "dhwChargePct": 81
+  "dhwChargePct": 81,
+  "weatherC": 17.6
 }

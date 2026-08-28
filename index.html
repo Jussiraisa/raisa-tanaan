@@ -7,6 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#0e6a61">
+  <link rel="manifest" href="manifest.webmanifest?v=8">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Tänään">
@@ -1681,14 +1682,14 @@ label.f {
       const who = kid ? kid.name + " · " : "";
       const tm = fmtRange(ev.start, ev.end);
       const bits = [who + (ev.title || "Meno"), tm, ev.place, ev.driver].filter(Boolean);
-      return "<div class=\\"we\\">" + esc(bits.join(" · ")) + "</div>";
+      return "<div class=\"we\">" + esc(bits.join(" · ")) + "</div>";
     }).join("");
     const mealHtml = (meal && meal.dish)
-      ? "<div class=\\"wm\\">" + esc((meal.emoji ? meal.emoji + " " : "") + meal.dish) + "</div>"
+      ? "<div class=\"wm\">" + esc((meal.emoji ? meal.emoji + " " : "") + meal.dish) + "</div>"
       : "";
-    return "<div class=\\"wday" + (isToday ? " is-today" : "") + "\\"><div class=\\"wd\\">"
+    return "<div class=\"wday" + (isToday ? " is-today" : "") + "\"><div class=\"wd\">"
       + esc(day.full) + "<span>" + fmtDot(d.year, d.month, d.day) + (isToday ? " · tänään" : "") + "</span></div>"
-      + (school ? "<div class=\\"ws\\">" + esc(school) + "</div>" : "")
+      + (school ? "<div class=\"ws\">" + esc(school) + "</div>" : "")
       + evHtml + mealHtml + "</div>";
   }
 
@@ -1700,8 +1701,8 @@ label.f {
     for (let i = 0; i < 7; i++) {
       days += weekDayCard(addCalendarDays(mon.year, mon.month, mon.day, i), todayIso);
     }
-    return "<div class=\\"wblock\\"><h2 class=\\"wtitle\\">" + esc(title) + "</h2>"
-      + "<div class=\\"wsub\\">Viikko " + w + " · " + fmtDot(mon.year, mon.month, mon.day)
+    return "<div class=\"wblock\"><h2 class=\"wtitle\">" + esc(title) + "</h2>"
+      + "<div class=\"wsub\">Viikko " + w + " · " + fmtDot(mon.year, mon.month, mon.day)
       + "–" + fmtDot(last.year, last.month, last.day) + "</div>"
       + days + "</div>";
   }
@@ -1711,8 +1712,8 @@ label.f {
     const mon = mondayOf(now.year, now.month, now.day);
     const next = addCalendarDays(mon.year, mon.month, mon.day, 7);
     return backLink()
-      + "<h1 class=\\"vtitle\\">Viikko</h1>"
-      + "<p class=\\"lede\\">Tämä ja seuraava. Tänään on korostettu.</p>"
+      + "<h1 class=\"vtitle\">Viikko</h1>"
+      + "<p class=\"lede\">Tämä ja seuraava. Tänään on korostettu.</p>"
       + weekBlock(mon, "Tämä viikko")
       + weekBlock(next, "Ensi viikko")
       + footer();

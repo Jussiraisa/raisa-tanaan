@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1787896741764,
+  "updated": 1787896980759,
   "drivers": {
     "ellen-ambrosia-pe": {
       "driver": "Riikka",
@@ -29,7 +29,7 @@
   "dishes": {
     "pe": "Burgerit"
   },
-  "note": "",
+  "note": "Hyvää viikonloppua",
   "extras": [
     {
       "id": "cal-_8oq3gcpg650jeb9i88rk6b9k6h1kcb9o6gp4ab9j711kac9m6gp42d1j8o",

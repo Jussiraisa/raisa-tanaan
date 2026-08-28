@@ -324,8 +324,7 @@
     var treenit = [];
     var muut = [];
     for (var j = 0; j < list.length; j++) {
-      if (list[j].kind === "cal") continue;
-      if (list[j].kind === "info") muut.push(list[j]);
+      if (list[j].kind === "info" || list[j].kind === "cal") muut.push(list[j]);
       else treenit.push(list[j]);
     }
     treenit.sort(function (a, b) { return keyTime(a) - keyTime(b); });
@@ -358,7 +357,6 @@
     var tomBits = "";
     for (var ti = 0; ti < tomList.length; ti++) {
       var te = tomList[ti];
-      if (te.kind === "cal") continue;
       var tk = kidById(te.who);
       var tname = (tk ? tk.name + " · " : "") + (te.title || "");
       var ttime = fmtRange(te.start, te.end) || fmtHm(te.start) || "";
@@ -381,16 +379,8 @@
     var muutHtml = muutBits.length
       ? "<div class=\"muut\"><div class=\"lbl\">Muut</div><div class=\"txt\">" + esc(muutBits.join("    ·    ")) + "</div></div>"
       : "";
-    var viestiBits = [];
-    if (note) viestiBits.push(note);
-    for (var vx = 0; vx < EXTRA.length; vx++) {
-      var ve = EXTRA[vx];
-      if (!ve || !ve.title) continue;
-      if (ve.date && ve.date !== now.iso && ve.date !== tomIso) continue;
-      viestiBits.push(ve.title);
-    }
-    var viestiHtml = viestiBits.length
-      ? "<div class=\"viesti\"><div class=\"lbl\">Viesti</div><div class=\"txt\">" + esc(viestiBits.join("   ·   ")) + "</div></div>"
+    var viestiHtml = note
+      ? "<div class=\"viesti\"><div class=\"lbl\">Viesti</div><div class=\"txt\">" + esc(note) + "</div></div>"
       : "";
 
     document.getElementById("app").innerHTML =

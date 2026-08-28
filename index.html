@@ -551,7 +551,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 12;
+  const PAGE_VER = 13;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1170,7 +1170,7 @@ label.f {
         store.meals[day].cook = remote.cooks[day] || "";
       });
     }
-    if (typeof remote.note === "string") store.note = remote.note;
+    if (typeof remote.note === "string" && remote.note) store.note = remote.note;
     if (remote.dishes) {
       Object.keys(remote.dishes).forEach(function (day) {
         if (!store.meals[day]) store.meals[day] = { emoji: "", dish: "", note: "", cook: "" };

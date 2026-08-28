@@ -1,11 +1,11 @@
 {
   "v": 1,
-  "updated": 1787909411107,
+  "updated": 1787909437335,
   "powerW": 810,
   "gridW": 0,
   "solarW": 4839,
   "selfPct": 100,
-  "spotSnt": 4.5,
+  "spotSnt": 4.9,
   "priceSnt": 11.9,
   "priceRank": "41/24",
   "priceLevel": "normaali",
@@ -25,8 +25,7 @@
   "online": true,
   "home": true,
   "alerts": [
-    "Aurinkoylijäämää — käytä se itse",
-    "Sähkö keskitasoa · 11,9 snt/kWh"
+    "Aurinkoylijäämää — käytä se itse"
   ],
   "lightsOn": [
     "Olohuone",

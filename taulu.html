@@ -101,6 +101,7 @@
     su: { dish: "Sushi", cook: "" }
   };
   var note = "";
+  var EXTRA = [];
   var weather = { icon: "", temp: "", phrase: "", clothes: "" };
   function wmo(code) {
     if (code === 0) return { icon: "☀️", phrase: "selkeää" };
@@ -168,7 +169,7 @@
     return a;
   }
   function driverText(ev) {
-    if (!ev || ev.kind === "info") return null;
+    if (!ev || ev.kind === "info" || ev.kind === "cal") return null;
     if (ev.driver) {
       var act = rideLabel(ev);
       return { warn: false, text: act ? ev.driver + " " + act : ev.driver };
@@ -178,8 +179,9 @@
   }
   function eventsOn(iso, key) {
     var out = [];
-    for (var i = 0; i < EVENTS.length; i++) {
-      var ev = EVENTS[i];
+    var all = EVENTS.concat(EXTRA);
+    for (var i = 0; i < all.length; i++) {
+      var ev = all[i];
       if (ev.date) {
         if (ev.dateEnd) { if (iso >= ev.date && iso <= ev.dateEnd) out.push(ev); }
         else if (ev.date === iso) out.push(ev);
@@ -233,6 +235,7 @@
       }
     }
     if (typeof remote.note === "string") note = remote.note;
+    if (remote.extras) EXTRA = remote.extras;
   }
   function readLocal() {
     try {
@@ -304,7 +307,7 @@
     var treenit = [];
     var muut = [];
     for (var j = 0; j < list.length; j++) {
-      if (list[j].kind === "info") muut.push(list[j]);
+      if (list[j].kind === "info" || list[j].kind === "cal") muut.push(list[j]);
       else treenit.push(list[j]);
     }
     treenit.sort(function (a, b) { return keyTime(a) - keyTime(b); });

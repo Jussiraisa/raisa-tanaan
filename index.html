@@ -551,7 +551,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 11;
+  const PAGE_VER = 12;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1145,8 +1145,14 @@ label.f {
     if (!remote || typeof remote !== "object") return false;
     const remoteT = +remote.updated || 0;
     const localT = +store.sharedUpdated || 0;
-    if (!remoteT) return false;
-    if (localT && remoteT < localT) return false;
+    if (remote.extras) {
+      store.events = (store.events || []).filter(function (e) {
+        return String(e.id || "").indexOf("cal-") !== 0;
+      });
+      remote.extras.forEach(function (ev) { store.events.push(ev); });
+    }
+    if (!remoteT) return !!remote.extras;
+    if (localT && remoteT < localT) { saveStore(); return !!remote.extras; }
     if (remote.drivers) {
       Object.keys(remote.drivers).forEach(function (id) {
         const ev = store.events.find(function (x) { return x.id === id; });
@@ -1165,6 +1171,12 @@ label.f {
       });
     }
     if (typeof remote.note === "string") store.note = remote.note;
+    if (remote.dishes) {
+      Object.keys(remote.dishes).forEach(function (day) {
+        if (!store.meals[day]) store.meals[day] = { emoji: "", dish: "", note: "", cook: "" };
+        if (remote.dishes[day]) store.meals[day].dish = remote.dishes[day];
+      });
+    }
     store.sharedUpdated = remoteT || Date.now();
     saveStore();
     return true;
@@ -1685,7 +1697,7 @@ label.f {
       if (note) sub.push(note);
     }
     let pills = "";
-    if (!reason) {
+    if (!reason && ev.kind !== "cal") {
       if (ui.editingDriver === ev.id) {
         pills = "<input class=\"name-inp\" data-save-driver=\"" + esc(ev.id) + "\" value=\"" + esc(ev.driver || "") + "\" placeholder=\"Kuka vie?\">";
       } else {
@@ -2455,6 +2467,7 @@ label.f {
       if (wx2) wx2.innerHTML = renderWeather("tomorrow");
     }
     setInterval(tickToday, 30000);
+    setInterval(pullShared, 15000);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

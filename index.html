@@ -370,6 +370,7 @@ a.school-link .lbl2 { color: var(--accent) }
 .kytke { margin: 10px 0 0; padding: 14px 18px; border-radius: 18px; background: var(--accent-soft); border: 1px solid var(--line); }
 .kytke .lbl2 { margin: 0; color: var(--accent); }
 .kytke textarea { width: 100%; min-height: 52px; margin-top: 8px; font-size: 16px; padding: 8px 12px; border-radius: 12px; border: 1.5px solid var(--accent); background: var(--panel); color: var(--ink); }
+.kytke .save { display: block; width: 100%; margin-top: 10px; padding: 14px 12px; border: 0; border-radius: 14px; background: var(--accent); color: #fff; font-size: 18px; font-weight: 700; }
 
 .tom {
   margin: 16px 0 0;
@@ -554,7 +555,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 14;
+  const PAGE_VER = 15;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1109,7 +1110,7 @@ label.f {
     ]
   };
 
-  const ui = { editingId: null, adding: false, cancelFor: null, editingDriver: null, editingCook: null, editingNote: false };
+  const ui = { editingId: null, adding: false, cancelFor: null, editingDriver: null, editingCook: null, editingNote: false, editingHook: false, hookDraft: "" };
   let store = loadStore();
   let weather = { today: null, tomorrow: null, error: false, loading: true };
   let lastIso = null;
@@ -1128,7 +1129,7 @@ label.f {
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
 
   function isEditing() {
-    return !!(ui.editingDriver || ui.editingCook || ui.editingNote);
+    return !!(ui.editingDriver || ui.editingCook || ui.editingNote || ui.editingHook);
   }
 
   function buildShared() {
@@ -1209,24 +1210,35 @@ label.f {
     try { return !!(localStorage.getItem("raisa-hook-url") || "").trim(); } catch (e) { return false; }
   }
 
-  function saveHookFromText(raw) {
+  function commitHook(raw) {
     const t = (raw || "").trim();
     if (!t) return false;
-    const lines = t.split(/\n/).map(function (x) { return x.trim(); }).filter(Boolean);
-    let url = "";
+    const found = t.match(/https?:\/\/[^\s]+/i);
+    if (!found) return false;
+    const url = found[0].replace(/[),.;]+$/, "");
     let auth = "";
-    lines.forEach(function (ln) {
+    t.split(/\n/).forEach(function (ln) {
+      ln = ln.trim();
+      if (!ln || ln === url) return;
       const low = ln.toLowerCase();
-      if (/^https?:\/\//i.test(ln)) url = ln;
-      else if (low.indexOf("authorization:") === 0) auth = ln.replace(/^authorization:\s*/i, "");
+      if (low.indexOf("http") === 0) return;
+      if (low.indexOf("authorization:") === 0) auth = ln.replace(/^authorization:\s*/i, "");
       else if (low.indexOf("bearer ") === 0) auth = ln;
       else if (!auth) auth = ln;
     });
-    if (!url) return false;
     try {
       localStorage.setItem("raisa-hook-url", url);
       if (auth) localStorage.setItem("raisa-hook-auth", auth);
     } catch (e) { return false; }
+    ui.editingHook = false;
+    ui.hookDraft = "";
+    return true;
+  }
+
+  function trySaveHook(raw) {
+    if (!commitHook(raw)) return false;
+    queuePushShared();
+    paint();
     return true;
   }
 
@@ -1792,7 +1804,8 @@ label.f {
     if (hookConfigured()) return noteHtml;
     return noteHtml
       + "<div class=\"kytke rv\"><div class=\"lbl2\">Kytke TV</div>"
-      + "<textarea data-save-hook=\"1\" placeholder=\"Liitä webhook-osoite tähän kerran\"></textarea></div>";
+      + "<textarea data-save-hook=\"1\" placeholder=\"Liitä osoite ja paina Tallenna\">" + esc(ui.hookDraft || "") + "</textarea>"
+      + "<button type=\"button\" class=\"save\" data-act=\"save-hook\">Tallenna</button></div>";
   }
 
   function renderHero(now, list) {
@@ -2272,6 +2285,12 @@ label.f {
     const act = t.getAttribute("data-act");
     const id = t.getAttribute("data-id") || "";
 
+    if (act === "save-hook") {
+      const box = document.querySelector("[data-save-hook]");
+      trySaveHook((box && box.value) || ui.hookDraft || "");
+      return;
+    }
+
     if (act === "save-school") {
       const next = clone(store.school);
       document.querySelectorAll("[data-kid][data-day][data-which]").forEach(inp => {
@@ -2484,14 +2503,33 @@ label.f {
     const root = document.getElementById("app");
     root.addEventListener("click", onClick);
     root.addEventListener("submit", onSubmit);
+    root.addEventListener("focusin", function (e) {
+      const el = e.target;
+      if (el && el.getAttribute && el.hasAttribute("data-save-hook")) ui.editingHook = true;
+    });
+    root.addEventListener("input", function (e) {
+      const el = e.target;
+      if (!el || !el.hasAttribute || !el.hasAttribute("data-save-hook")) return;
+      ui.hookDraft = el.value || "";
+      ui.editingHook = true;
+      if (/https?:\/\//i.test(el.value || "")) commitHook(el.value || "");
+    });
+    root.addEventListener("paste", function (e) {
+      const el = e.target;
+      if (!el || !el.hasAttribute || !el.hasAttribute("data-save-hook")) return;
+      ui.editingHook = true;
+      setTimeout(function () {
+        ui.hookDraft = el.value || "";
+        trySaveHook(el.value || "");
+      }, 0);
+    });
     root.addEventListener("focusout", function (e) {
       const el = e.target;
       if (!el || !el.getAttribute) return;
       if (el.hasAttribute("data-save-hook")) {
-        if (saveHookFromText(el.value || "")) {
-          queuePushShared();
-          paint();
-        }
+        ui.hookDraft = el.value || "";
+        ui.editingHook = false;
+        trySaveHook(el.value || "");
         return;
       }
       if (el.getAttribute("data-save-driver") || el.getAttribute("data-save-cook") || el.hasAttribute("data-save-note")) {

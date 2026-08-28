@@ -1,14 +1,14 @@
 {
   "v": 1,
-  "updated": 1787907590025,
-  "powerW": 808,
+  "updated": 1787908310638,
+  "powerW": 898,
   "gridW": 0,
-  "solarW": 4375,
+  "solarW": 4545,
   "selfPct": 100,
-  "spotSnt": 3.6,
-  "priceSnt": 10.6,
-  "priceRank": "26/24",
-  "priceLevel": "halpa",
+  "spotSnt": 6.0,
+  "priceSnt": 13.0,
+  "priceRank": "73/24",
+  "priceLevel": "kallis",
   "costNow": 0.12,
   "costToday": 1.87,
   "kwhToday": 0.0,
@@ -25,6 +25,7 @@
   "online": true,
   "home": true,
   "alerts": [
+    "Sähkö kallista — vältä isoja kuormia",
     "Aurinkoylijäämää — käytä se itse"
   ],
   "lightsOn": [

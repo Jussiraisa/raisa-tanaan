@@ -1,16 +1,16 @@
 {
   "v": 1,
-  "updated": 1787939382708,
-  "powerW": 803,
-  "gridW": 790,
+  "updated": 1787940469877,
+  "powerW": 719,
+  "gridW": 720,
   "solarW": 0,
   "selfPct": 0,
-  "spotSnt": 3.6,
-  "priceSnt": 8.2,
-  "priceRank": "11",
+  "spotSnt": 1.1,
+  "priceSnt": 8.4,
+  "priceRank": "13",
   "priceLevel": "Sähkö halpaa",
-  "costNow": 0.08,
-  "costToday": 2.16,
+  "costNow": 0.06,
+  "costToday": 2.24,
   "kwhToday": 56.3,
   "soldToday": 24.63,
   "outC": 16.0,
@@ -82,10 +82,10 @@
     }
   ],
   "source": "Home Assistant koti-pro + yleiskatsaus-pro",
-  "capturedAt": "2026-08-28T20:49:42.680365+03:00",
+  "capturedAt": "2026-08-28T21:07:49.852629+03:00",
   "heatOffset": -10,
   "notes": "Sauna-kytkin päällä mutta teho 0 W. kwhToday ei luotettavaa (mittarin kumulatiivinen lukema). Sijainti vain kaupunkitasolla. Eino IT ohitettu.",
   "soldTodayEur": 1.02,
   "dhwChargePct": 80,
-  "weatherC": 17.6
+  "weatherC": 16.7
 }

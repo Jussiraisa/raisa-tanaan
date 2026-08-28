@@ -1,32 +1,30 @@
 {
   "v": 1,
-  "updated": 1787912935141,
-  "powerW": 1012,
+  "updated": 1787913798508,
+  "powerW": 3558,
   "gridW": 0,
-  "solarW": 5488,
+  "solarW": 5591,
   "selfPct": 100,
   "spotSnt": 4.0,
-  "priceSnt": 11.5,
-  "priceRank": "36/24",
+  "priceSnt": 10.3,
+  "priceRank": "20/24",
   "priceLevel": "halpaa",
   "costNow": 0.12,
   "costToday": 1.87,
   "kwhToday": 0.0,
-  "soldToday": 0.42,
+  "soldToday": 0.45,
   "outC": 16.5,
   "inC": 20.7,
   "targetC": 21.0,
-  "dhwC": 42.0,
+  "dhwC": 41.5,
   "heatStorePct": 11,
-  "heatStoreH": 187,
+  "heatStoreH": 185,
   "compressor": "seis",
   "weather": "Aurinkoinen",
   "weatherIcon": "☀️",
   "online": true,
   "home": true,
-  "alerts": [
-    "Aurinkoylijäämää — käytä se itse"
-  ],
+  "alerts": [],
   "lightsOn": [
     "Olohuone",
     "Tallin valot"
@@ -80,7 +78,7 @@
     {
       "name": "Jussi",
       "home": false,
-      "where": "Poissa"
+      "where": "Kuopio"
     }
   ]
 }

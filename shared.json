@@ -1,9 +1,33 @@
 {
   "v": 1,
-  "updated": 0,
+  "updated": 1756362000000,
   "drivers": {
-    "ellen-ambrosia-pe": { "driver": "Riikka", "status": "us", "ride": "vie" }
+    "ellen-ambrosia-pe": {
+      "driver": "Riikka",
+      "status": "us",
+      "ride": "vie"
+    },
+    "mea-lianna-pe": {
+      "driver": "Amanda, haku Enni",
+      "status": "us",
+      "ride": ""
+    },
+    "jussi-kalakisat": {
+      "driver": "",
+      "status": "open",
+      "ride": ""
+    },
+    "ellen-samuel-syyskirkko": {
+      "driver": "",
+      "status": "open",
+      "ride": ""
+    }
   },
-  "cooks": {},
+  "cooks": {
+    "pe": "Milla ja muut auttaa"
+  },
+  "dishes": {
+    "pe": "Burgerit"
+  },
   "note": ""
 }

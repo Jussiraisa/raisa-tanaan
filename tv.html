@@ -78,7 +78,7 @@
     { id: "milla-vivida", who: "milla", title: "Vivida", weekday: "ke", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
     { id: "mea-lianna", who: "mea", title: "Lianna", weekday: "ke", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
     { id: "ellen-ambrosia-pe", who: "ellen", title: "Ambrosia", weekday: "pe", start: "16:00", end: "18:30", place: "Luola", driver: "Riikka", ride: "vie", status: "us", kind: "treeni" },
-    { id: "mea-lianna-pe", who: "mea", title: "Lianna", weekday: "pe", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
+    { id: "mea-lianna-pe", who: "mea", title: "Lianna", weekday: "pe", start: "18:00", end: "20:30", place: "BellaCenter", driver: "Amanda, haku Enni", status: "us", kind: "treeni" },
     { id: "samuel-sahly-ma", who: "samuel", title: "sähly", weekday: "ma", start: "17:00", end: "18:00", place: "Ylä-Pyörö", driver: "Sini/Topias", status: "other", kind: "treeni" },
     { id: "samuel-sahly-ti", who: "samuel", title: "sähly", weekday: "ti", start: "16:30", end: "18:00", depart: "16:15", place: "Lippumäki", driver: "Räisä", ride: "vie+hakee", status: "us", kind: "treeni" },
     { id: "samuel-sahly", who: "samuel", title: "sähly", weekday: "to", start: "17:00", end: "19:00", depart: "16:30", place: "Puijonsarvi", driver: "Manen äiti / Topias", status: "other", kind: "treeni" },
@@ -90,7 +90,7 @@
     ti: { dish: "Kana + kasvikset", cook: "" },
     ke: { dish: "Pizzailta", cook: "" },
     to: { dish: "Lohikeitto", cook: "" },
-    pe: { dish: "Pizza", cook: "" },
+    pe: { dish: "Burgerit", cook: "Milla ja muut auttaa" },
     la: { dish: "Bolognese", cook: "" },
     su: { dish: "Sushi", cook: "" }
   };
@@ -217,6 +217,13 @@
         if (!remote.cooks.hasOwnProperty(day)) continue;
         if (!MEALS[day]) MEALS[day] = { dish: "", cook: "" };
         MEALS[day].cook = remote.cooks[day] || "";
+      }
+    }
+    if (remote.dishes) {
+      for (var day2 in remote.dishes) {
+        if (!remote.dishes.hasOwnProperty(day2)) continue;
+        if (!MEALS[day2]) MEALS[day2] = { dish: "", cook: "" };
+        if (remote.dishes[day2]) MEALS[day2].dish = remote.dishes[day2];
       }
     }
     if (typeof remote.note === "string") note = remote.note;

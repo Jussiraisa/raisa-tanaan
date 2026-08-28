@@ -49,6 +49,12 @@
     .tom { margin-top: auto; padding-top: 1.4vh; border-top: 1px solid #1c1c1c; }
     .tom .h { font-size: 1.55vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; margin-bottom: .6vh; }
     .tom .ln { font-size: 2vmin; color: #c9c3b5; font-weight: 650; line-height: 1.3; margin-top: .25vh; }
+    .viesti {
+      margin-bottom: 1.4vh; padding: 1.8vh 2vw 1.6vh;
+      background: #16120c; border: 2px solid #c6a15a; border-radius: 1.2vmin;
+    }
+    .viesti .lbl { font-size: 1.7vmin; font-weight: 800; letter-spacing: .28em; text-transform: uppercase; color: #c6a15a; margin-bottom: .6vh; }
+    .viesti .txt { font-size: 4.2vmin; font-weight: 800; color: #fff; line-height: 1.15; }
     .muut {
       margin-top: 1.2vh; padding: 1.3vh 1.6vw;
       background: #111; border: 1px solid #1c1c1c; border-radius: 1.2vmin;
@@ -318,7 +324,8 @@
     var treenit = [];
     var muut = [];
     for (var j = 0; j < list.length; j++) {
-      if (list[j].kind === "info" || list[j].kind === "cal") muut.push(list[j]);
+      if (list[j].kind === "cal") continue;
+      if (list[j].kind === "info") muut.push(list[j]);
       else treenit.push(list[j]);
     }
     treenit.sort(function (a, b) { return keyTime(a) - keyTime(b); });
@@ -351,6 +358,7 @@
     var tomBits = "";
     for (var ti = 0; ti < tomList.length; ti++) {
       var te = tomList[ti];
+      if (te.kind === "cal") continue;
       var tk = kidById(te.who);
       var tname = (tk ? tk.name + " · " : "") + (te.title || "");
       var ttime = fmtRange(te.start, te.end) || fmtHm(te.start) || "";
@@ -373,10 +381,22 @@
     var muutHtml = muutBits.length
       ? "<div class=\"muut\"><div class=\"lbl\">Muut</div><div class=\"txt\">" + esc(muutBits.join("    ·    ")) + "</div></div>"
       : "";
+    var viestiBits = [];
+    if (note) viestiBits.push(note);
+    for (var vx = 0; vx < EXTRA.length; vx++) {
+      var ve = EXTRA[vx];
+      if (!ve || !ve.title) continue;
+      if (ve.date && ve.date !== now.iso && ve.date !== tomIso) continue;
+      viestiBits.push(ve.title);
+    }
+    var viestiHtml = viestiBits.length
+      ? "<div class=\"viesti\"><div class=\"lbl\">Viesti</div><div class=\"txt\">" + esc(viestiBits.join("   ·   ")) + "</div></div>"
+      : "";
 
     document.getElementById("app").innerHTML =
       "<div class=\"head\"><div><div class=\"kicker\">Räisän perhe</div><div class=\"date\">" + DAYS[now.wd].full + " " + now.day + "." + now.month + ".</div></div>"
       + "<div class=\"right\"><div class=\"clock\" id=\"clock\">" + clock + "</div>" + wxHtml() + "</div></div>"
+      + viestiHtml
       + "<div class=\"cols\">"
       + "<div class=\"col\"><div class=\"lbl\">Koulu</div>" + kidsHtml + lunchHtml + "</div>"
       + "<div class=\"col\"><div class=\"lbl\">Treenit</div>" + trHtml + "</div>"

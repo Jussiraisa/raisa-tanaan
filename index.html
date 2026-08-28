@@ -367,6 +367,9 @@ a.school-link .lbl2 { color: var(--accent) }
 .famtext { font-size: 18px; font-weight: 700; line-height: 1.35; margin-top: 4px; white-space: pre-wrap }
 .famtext.empty { font-weight: 600; color: var(--gold) }
 .famnote textarea.name-inp { width: 100%; min-height: 88px; margin-top: 8px; resize: vertical }
+.kytke { margin: 10px 0 0; padding: 14px 18px; border-radius: 18px; background: var(--accent-soft); border: 1px solid var(--line); }
+.kytke .lbl2 { margin: 0; color: var(--accent); }
+.kytke textarea { width: 100%; min-height: 52px; margin-top: 8px; font-size: 16px; padding: 8px 12px; border-radius: 12px; border: 1.5px solid var(--accent); background: var(--panel); color: var(--ink); }
 
 .tom {
   margin: 16px 0 0;
@@ -551,7 +554,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 13;
+  const PAGE_VER = 14;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1138,7 +1141,11 @@ label.f {
     Object.keys(store.meals || {}).forEach(function (day) {
       cooks[day] = (store.meals[day] && store.meals[day].cook) || "";
     });
-    return { v: 1, updated: store.sharedUpdated || Date.now(), drivers: drivers, cooks: cooks, note: store.note || "" };
+    const dishes = {};
+    Object.keys(store.meals || {}).forEach(function (day) {
+      dishes[day] = (store.meals[day] && store.meals[day].dish) || "";
+    });
+    return { v: 1, updated: store.sharedUpdated || Date.now(), drivers: drivers, cooks: cooks, dishes: dishes, note: store.note || "" };
   }
 
   function applyShared(remote) {
@@ -1198,7 +1205,46 @@ label.f {
     pushSharedRemote(buildShared());
   }
 
+  function hookConfigured() {
+    try { return !!(localStorage.getItem("raisa-hook-url") || "").trim(); } catch (e) { return false; }
+  }
+
+  function saveHookFromText(raw) {
+    const t = (raw || "").trim();
+    if (!t) return false;
+    const lines = t.split(/\n/).map(function (x) { return x.trim(); }).filter(Boolean);
+    let url = "";
+    let auth = "";
+    lines.forEach(function (ln) {
+      const low = ln.toLowerCase();
+      if (/^https?:\/\//i.test(ln)) url = ln;
+      else if (low.indexOf("authorization:") === 0) auth = ln.replace(/^authorization:\s*/i, "");
+      else if (low.indexOf("bearer ") === 0) auth = ln;
+      else if (!auth) auth = ln;
+    });
+    if (!url) return false;
+    try {
+      localStorage.setItem("raisa-hook-url", url);
+      if (auth) localStorage.setItem("raisa-hook-auth", auth);
+    } catch (e) { return false; }
+    return true;
+  }
+
   async function pushSharedRemote(payload) {
+    let hook = "";
+    let auth = "";
+    try {
+      hook = (localStorage.getItem("raisa-hook-url") || "").trim();
+      auth = (localStorage.getItem("raisa-hook-auth") || "").trim();
+    } catch (e) {}
+    if (hook) {
+      try {
+        const headers = { "Content-Type": "application/json" };
+        if (auth) headers.Authorization = /\s/.test(auth) ? auth : ("Bearer " + auth);
+        await fetch(hook, { method: "POST", headers: headers, body: JSON.stringify(payload) });
+      } catch (e) {}
+      return;
+    }
     try {
       const api = "https://api.github.com/repos/Jussiraisa/raisa-tanaan/contents/shared.json";
       const get = await fetch(api, { headers: { Accept: "application/vnd.github+json" } });
@@ -1733,14 +1779,20 @@ label.f {
   }
 
   function familyNote() {
+    let noteHtml;
     if (ui.editingNote) {
-      return "<div class=\"famnote rv\"><div class=\"lbl2\">Viesti</div>"
+      noteHtml = "<div class=\"famnote rv\"><div class=\"lbl2\">Viesti</div>"
         + "<textarea class=\"name-inp\" data-save-note=\"1\" placeholder=\"Viesti kaikille\">" + esc(store.note || "") + "</textarea></div>";
+    } else {
+      const empty = !(store.note && String(store.note).trim());
+      noteHtml = "<div class=\"famnote rv\" data-act=\"edit-note\"><div class=\"lbl2\">Viesti</div>"
+        + "<div class=\"famtext" + (empty ? " empty" : "") + "\">"
+        + (empty ? "Kirjoita viesti kaikille" : esc(store.note)) + "</div></div>";
     }
-    const empty = !(store.note && String(store.note).trim());
-    return "<div class=\"famnote rv\" data-act=\"edit-note\"><div class=\"lbl2\">Viesti</div>"
-      + "<div class=\"famtext" + (empty ? " empty" : "") + "\">"
-      + (empty ? "Kirjoita viesti kaikille" : esc(store.note)) + "</div></div>";
+    if (hookConfigured()) return noteHtml;
+    return noteHtml
+      + "<div class=\"kytke rv\"><div class=\"lbl2\">Kytke TV</div>"
+      + "<textarea data-save-hook=\"1\" placeholder=\"Liitä webhook-osoite tähän kerran\"></textarea></div>";
   }
 
   function renderHero(now, list) {
@@ -2435,6 +2487,13 @@ label.f {
     root.addEventListener("focusout", function (e) {
       const el = e.target;
       if (!el || !el.getAttribute) return;
+      if (el.hasAttribute("data-save-hook")) {
+        if (saveHookFromText(el.value || "")) {
+          queuePushShared();
+          paint();
+        }
+        return;
+      }
       if (el.getAttribute("data-save-driver") || el.getAttribute("data-save-cook") || el.hasAttribute("data-save-note")) {
         commitNameField(el);
       }

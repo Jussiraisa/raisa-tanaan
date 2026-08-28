@@ -1,22 +1,22 @@
 {
   "v": 1,
-  "updated": 1787933522330,
-  "powerW": 3989,
-  "gridW": 3680,
-  "solarW": 306,
-  "selfPct": 8,
+  "updated": 1787934473983,
+  "powerW": 635,
+  "gridW": 450,
+  "solarW": 186,
+  "selfPct": 29,
   "spotSnt": 4.7,
-  "priceSnt": 12.7,
-  "priceRank": "65/24",
+  "priceSnt": 12.0,
+  "priceRank": "44/24",
   "priceLevel": "Sähkö keskitasoa",
   "costNow": 0.0,
-  "costToday": 2.03,
+  "costToday": 2.08,
   "kwhToday": 56.3,
   "soldToday": 24.63,
   "outC": 16.5,
   "inC": 20.7,
   "targetC": 21.0,
-  "dhwC": 45.5,
+  "dhwC": 45.0,
   "heatStorePct": 12,
   "heatStoreH": 197,
   "compressor": "seis",
@@ -34,7 +34,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 1036,
+  "saunaW": 0.0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -86,7 +86,7 @@
     }
   ],
   "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T19:12:02+03:00",
+  "capturedAt": "2026-08-28T19:26:00+03:00",
   "heatOffset": -10,
   "notes": "Koti Pro + Energia Pro + Yleiskatsaus Pro + developer-tools/state. person.jussi=Poissa (Kuopio); ei muita person.* (Eino IT / mqtt_frigate pois). spotSnt tunnin keskiarvo api.spot-hinta.fi."
 }

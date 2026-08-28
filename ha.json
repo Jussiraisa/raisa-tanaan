@@ -1,18 +1,18 @@
 {
   "v": 1,
-  "updated": 1787917927800,
-  "powerW": 898,
+  "updated": 1787918676013,
+  "powerW": 1926,
   "gridW": 0,
-  "solarW": 5936,
+  "solarW": 5925,
   "selfPct": 100,
-  "spotSnt": 3.7,
-  "priceSnt": 10.3,
-  "priceRank": "20/24",
+  "spotSnt": 3.6,
+  "priceSnt": 10.1,
+  "priceRank": "17/24",
   "priceLevel": "halpaa",
   "costNow": -0.4,
   "costToday": 1.88,
   "kwhToday": 0.0,
-  "soldToday": 0.61,
+  "soldToday": 0.64,
   "outC": 16.5,
   "inC": 20.7,
   "targetC": 21.0,
@@ -41,8 +41,8 @@
     {
       "plate": "NON-983",
       "name": "Auto",
-      "where": "Kotona",
-      "known": true
+      "where": "Ei kytketty Home Assistantiin",
+      "known": false
     }
   ],
   "spotHours": [
@@ -77,12 +77,12 @@
   "people": [
     {
       "name": "Jussi",
-      "home": true,
-      "where": "Kotona"
+      "home": false,
+      "where": "Poissa"
     }
   ],
   "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T14:52:00+03:00",
+  "capturedAt": "2026-08-28T15:05:00+03:00",
   "heatOffset": -10,
   "notes": "NON-983, weather, alerts, kwhToday/costToday not shown on Koti Pro view; 'Poissa' tile state = kotona; sauna/solar/power values fluctuate live."
 }

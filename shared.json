@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1787898899507,
+  "updated": 1787899134424,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Jussi",
@@ -109,7 +109,7 @@
     },
     "cal-_8oq3gcpg650jeb9i88rk6b9k6h1kcb9o6gp4ab9j711kac9m6gp42d1j8o": {
       "driver": "",
-      "status": "",
+      "status": "open",
       "ride": ""
     }
   },
@@ -131,7 +131,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Hyvää viikonloppua! Nähdään sunnuntaina -isi",
+  "note": "Hyvää viikonloppua! Nähdään sunnuntaina T:isi",
   "extras": [
     {
       "id": "cal-_8oq3gcpg650jeb9i88rk6b9k6h1kcb9o6gp4ab9j711kac9m6gp42d1j8o",

@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#0e6a61">
-  <link rel="manifest" href="manifest.webmanifest?v=9">
+  <link rel="manifest" href="manifest.webmanifest">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Tänään">
@@ -527,6 +527,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
+  const PAGE_VER = 10;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -2188,7 +2189,31 @@ label.f {
     }
   }
 
+  function installUpdates() {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+    function ping() {
+      fetch("./version.json?t=" + Date.now(), { cache: "no-store" })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (j && j.v && j.v !== PAGE_VER) location.reload();
+        })
+        .catch(function () {});
+    }
+    ping();
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") ping();
+    });
+    if (/\bv=\d+/.test(location.search)) {
+      var u = new URL(location.href);
+      u.searchParams.delete("v");
+      history.replaceState(null, "", u.pathname + u.search + u.hash);
+    }
+  }
+
   async function init() {
+    installUpdates();
     const root = document.getElementById("app");
     root.addEventListener("click", onClick);
     root.addEventListener("submit", onSubmit);

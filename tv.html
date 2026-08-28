@@ -8,46 +8,49 @@
   <style>
     html, body { height: 100%; margin: 0; overflow: hidden; background: #070707; color: #f2eee4; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     * { box-sizing: border-box }
-    .tv { height: 100vh; width: 100vw; padding: 3vh 3.2vw 2.4vh; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
-    .head { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: start; align-items: flex-start; margin-bottom: 2.2vh; }
-    .kicker { font-size: 1.35vmin; font-weight: 800; letter-spacing: .32em; text-transform: uppercase; color: #c6a15a; }
-    .date { font-size: 2.5vmin; margin-top: .45vh; color: #c9c3b5; font-weight: 600; }
-    .clock { font-size: 9.2vmin; font-weight: 650; letter-spacing: -.07em; line-height: .82; font-variant-numeric: tabular-nums; color: #fff; text-align: right; }
-    .wx { margin-top: .7vh; font-size: 1.55vmin; color: #8a8578; font-weight: 600; text-align: right; }
-    .cols { -ms-flex: 1; flex: 1; min-height: 0; display: -ms-flexbox; display: flex; gap: 1.5vw; }
+    .tv { height: 100vh; width: 100vw; padding: 2.4vh 2.8vw 2vh; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+    .head { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: start; align-items: flex-start; margin-bottom: 1.8vh; }
+    .kicker { font-size: 1.7vmin; font-weight: 800; letter-spacing: .32em; text-transform: uppercase; color: #c6a15a; }
+    .date { font-size: 3.3vmin; margin-top: .4vh; color: #e8e2d4; font-weight: 650; }
+    .right { text-align: right; }
+    .clock { font-size: 11vmin; font-weight: 700; letter-spacing: -.07em; line-height: .8; font-variant-numeric: tabular-nums; color: #fff; }
+    .wx { margin-top: 1vh; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: end; justify-content: flex-end; gap: 1.1vw; }
+    .wxicon { font-size: 6.2vmin; line-height: 1; }
+    .wxbody { text-align: left; }
+    .wxtemp { font-size: 3.3vmin; font-weight: 800; letter-spacing: -.03em; }
+    .wxmeta { font-size: 2vmin; color: #b7b1a3; font-weight: 650; margin-top: .2vh; }
+    .cols { -ms-flex: 1; flex: 1; min-height: 0; display: -ms-flexbox; display: flex; gap: 1.4vw; }
     .col {
       -ms-flex: 1; flex: 1; min-width: 0; min-height: 0;
       background: #111; border: 1px solid #1c1c1c; border-radius: 1.2vmin;
-      padding: 2.2vh 1.8vw 2vh; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column;
+      padding: 2vh 1.7vw 1.8vh; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column;
     }
-    .lbl { font-size: 1.45vmin; font-weight: 800; letter-spacing: .3em; text-transform: uppercase; color: #3ec4b2; margin-bottom: 1.8vh; }
+    .lbl { font-size: 1.8vmin; font-weight: 800; letter-spacing: .28em; text-transform: uppercase; color: #3ec4b2; margin-bottom: 1.5vh; }
     .kid {
       display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: baseline; align-items: baseline;
-      padding: 1.35vh 0 1.35vh .9vw; border-bottom: 1px solid #1c1c1c; border-left: .4vw solid #555;
+      padding: 1.55vh 0 1.55vh 1vw; border-bottom: 1px solid #1c1c1c; border-left: .45vw solid #555;
     }
     .kid:last-child { border-bottom: 0; }
-    .kid .nm { font-size: 2.3vmin; font-weight: 700; }
-    .kid .hrs { font-size: 2.6vmin; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
-    .tr {
-      padding: 1.5vh 0; border-bottom: 1px solid #1c1c1c;
-    }
+    .kid .nm { font-size: 3.1vmin; font-weight: 700; }
+    .kid .hrs { font-size: 3.4vmin; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+    .tr { padding: 1.4vh 0; border-bottom: 1px solid #1c1c1c; }
     .tr:last-child { border-bottom: 0; }
-    .tr .tm { font-size: 2.5vmin; font-weight: 800; color: #c6a15a; font-variant-numeric: tabular-nums; }
-    .tr .nm { font-size: 2.5vmin; font-weight: 700; margin-top: .35vh; }
-    .tr .meta { font-size: 1.8vmin; color: #8a8578; font-weight: 600; margin-top: .25vh; }
-    .tr .leave { font-size: 2.05vmin; font-weight: 800; color: #c6a15a; margin-top: .45vh; }
-    .tr .drv { font-size: 1.85vmin; font-weight: 800; color: #3ec4b2; margin-top: .25vh; }
+    .tr .tm { font-size: 3.1vmin; font-weight: 800; color: #c6a15a; font-variant-numeric: tabular-nums; }
+    .tr .nm { font-size: 3.1vmin; font-weight: 700; margin-top: .3vh; }
+    .tr .meta { font-size: 2.2vmin; color: #9a9486; font-weight: 600; margin-top: .2vh; }
+    .tr .leave { font-size: 2.5vmin; font-weight: 800; color: #c6a15a; margin-top: .4vh; }
+    .tr .drv { font-size: 2.2vmin; font-weight: 800; color: #3ec4b2; margin-top: .2vh; }
     .tr .drv.warn { color: #c6a15a; }
-    .empty { color: #6d685c; font-size: 2vmin; font-weight: 600; }
-    .dish { font-family: Georgia, "Times New Roman", serif; font-size: 4.2vmin; line-height: 1.15; margin-top: .4vh; }
-    .cook { margin-top: 1.4vh; font-size: 2.1vmin; font-weight: 800; color: #3ec4b2; }
+    .empty { color: #6d685c; font-size: 2.4vmin; font-weight: 600; }
+    .dish { font-family: Georgia, "Times New Roman", serif; font-size: 5.2vmin; line-height: 1.12; margin-top: .3vh; }
+    .cook { margin-top: 1.3vh; font-size: 2.6vmin; font-weight: 800; color: #3ec4b2; }
     .muut {
-      margin-top: 1.6vh; padding: 1.5vh 1.8vw;
+      margin-top: 1.4vh; padding: 1.5vh 1.8vw;
       background: #111; border: 1px solid #1c1c1c; border-radius: 1.2vmin;
-      display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline; gap: 1.6vw;
+      display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline; gap: 1.5vw;
     }
     .muut .lbl { margin: 0; }
-    .muut .txt { font-size: 2vmin; color: #b7b1a3; font-weight: 600; }
+    .muut .txt { font-size: 2.4vmin; color: #c9c3b5; font-weight: 650; }
   </style>
 </head>
 <body>
@@ -92,7 +95,25 @@
     su: { dish: "Sushi", cook: "" }
   };
   var note = "";
-  var weatherLine = "";
+  var weather = { icon: "", temp: "", phrase: "", clothes: "" };
+  function wmo(code) {
+    if (code === 0) return { icon: "☀️", phrase: "selkeää" };
+    if (code <= 2) return { icon: "🌤️", phrase: "melkein selkeää" };
+    if (code === 3) return { icon: "☁️", phrase: "pilvistä" };
+    if (code === 45 || code === 48) return { icon: "🌫️", phrase: "sumua" };
+    if (code >= 51 && code <= 57) return { icon: "🌦️", phrase: "tihkua" };
+    if (code >= 61 && code <= 67) return { icon: "🌧️", phrase: "sadetta" };
+    if (code >= 71 && code <= 77) return { icon: "❄️", phrase: "lunta" };
+    if (code >= 80 && code <= 82) return { icon: "🌦️", phrase: "kuuroja" };
+    if (code >= 85 && code <= 86) return { icon: "🌨️", phrase: "lumikuuroja" };
+    if (code >= 95) return { icon: "⛈️", phrase: "ukkosta" };
+    return { icon: "🌡️", phrase: "vaihtelevaa" };
+  }
+  function wxHtml() {
+    if (!weather.temp) return "";
+    return "<div class=\"wx\"><div class=\"wxicon\">" + weather.icon + "</div><div class=\"wxbody\"><div class=\"wxtemp\">"
+      + esc(weather.temp) + "</div><div class=\"wxmeta\">" + esc(weather.phrase) + (weather.clothes ? " · " + esc(weather.clothes) : "") + "</div></div></div>";
+  }
 
   function pad(n) { n = parseInt(n, 10); return n < 10 ? "0" + n : "" + n; }
   function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
@@ -308,7 +329,7 @@
 
     document.getElementById("app").innerHTML =
       "<div class=\"head\"><div><div class=\"kicker\">Räisän perhe</div><div class=\"date\">" + DAYS[now.wd].full + " " + now.day + "." + now.month + ".</div></div>"
-      + "<div><div class=\"clock\" id=\"clock\">" + clock + "</div><div class=\"wx\" id=\"wx\">" + esc(weatherLine) + "</div></div></div>"
+      + "<div class=\"right\"><div class=\"clock\" id=\"clock\">" + clock + "</div>" + wxHtml() + "</div></div>"
       + "<div class=\"cols\">"
       + "<div class=\"col\"><div class=\"lbl\">Koulu</div>" + kidsHtml + "</div>"
       + "<div class=\"col\"><div class=\"lbl\">Treenit</div>" + trHtml + "</div>"
@@ -343,12 +364,11 @@
     try {
       var tmin = Math.round(data.daily.temperature_2m_min[0]);
       var tmax = Math.round(data.daily.temperature_2m_max[0]);
-      var code = data.daily.weathercode[0];
-      var phrase = code === 0 ? "selkeää" : (code <= 2 ? "melkein selkeää" : (code === 3 ? "pilvistä" : (code >= 51 ? "sadetta" : "vaihtelevaa")));
+      var w = wmo(data.daily.weathercode[0]);
       var clothes = tmax <= 8 ? "lämmin takki" : (tmax <= 14 ? "takki" : "ohut kerros");
-      weatherLine = tmin + "–" + tmax + "° · " + phrase + " · " + clothes;
-      var wx = document.getElementById("wx");
-      if (wx) wx.innerHTML = esc(weatherLine);
+      if (data.daily.weathercode[0] >= 51) clothes += " · sade";
+      weather = { icon: w.icon, temp: tmin + "–" + tmax + "°", phrase: w.phrase, clothes: clothes };
+      paint();
     } catch (e) {}
   });
 })();

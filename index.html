@@ -556,10 +556,12 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 16;
+  const PAGE_VER = 17;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
+  const TAULU_HOOK = "https://api2.cursor.sh/automations/webhook/c85d7a32-e07a-5405-b843-e92d658ad6a7";
+  const TAULU_HOOK_AUTH = "Bearer crsr_bbedf77377dbee71dc9c1fe154d86571a75450afc7679ad9e7bc475c473820d5";
 
   const DAYS = [
     { key: "su", i: 0, full: "Sunnuntai", abbr: "Su" },
@@ -1207,9 +1209,7 @@ label.f {
     pushSharedRemote(buildShared());
   }
 
-  function hookConfigured() {
-    try { return !!(localStorage.getItem("raisa-hook-url") || "").trim(); } catch (e) { return false; }
-  }
+  function hookConfigured() { return true; }
 
   function commitHook(raw) {
     const t = (raw || "").trim();
@@ -1255,9 +1255,12 @@ label.f {
     let hook = "";
     let auth = "";
     try {
-      hook = (localStorage.getItem("raisa-hook-url") || "").trim();
-      auth = (localStorage.getItem("raisa-hook-auth") || "").trim();
-    } catch (e) {}
+      hook = (localStorage.getItem("raisa-hook-url") || "").trim() || TAULU_HOOK;
+      auth = (localStorage.getItem("raisa-hook-auth") || "").trim() || TAULU_HOOK_AUTH;
+    } catch (e) {
+      hook = TAULU_HOOK;
+      auth = TAULU_HOOK_AUTH;
+    }
     if (hook) {
       try {
         const headers = { "Content-Type": "application/json" };

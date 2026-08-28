@@ -215,8 +215,12 @@
     if (h > 0) return h + " h " + m + " min";
     return m + " min";
   }
+  var sharedT = 0;
   function applyShared(remote) {
     if (!remote) return;
+    var t = +remote.updated || 0;
+    if (sharedT && t && t < sharedT) return;
+    if (t) sharedT = t;
     if (remote.drivers) {
       for (var id in remote.drivers) {
         if (!remote.drivers.hasOwnProperty(id)) continue;
@@ -265,7 +269,7 @@
           if (!saved.meals) return o;
           for (var k in saved.meals) if (saved.meals.hasOwnProperty(k)) o[k] = saved.meals[k].cook || "";
           return o;
-        })(), note: saved.note || "" });
+        })() });
       }
     } catch (e) {}
   }
@@ -406,16 +410,12 @@
       applyShared(data);
       paint();
     });
-    getJSON("shared.json?t=" + new Date().getTime(), function (data) {
-      applyShared(data);
-      paint();
-    });
   }
 
   readLocal();
   paint();
   setInterval(tickClock, 1000);
-  setInterval(function () { pullShared(); }, 15000);
+  setInterval(function () { pullShared(); }, 5000);
   pullShared();
   getJSON("https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FHelsinki&forecast_days=1", function (data) {
     try {

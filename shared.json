@@ -1,35 +1,137 @@
 {
   "v": 1,
-  "updated": 1787897906001,
+  "updated": 1787898658591,
   "drivers": {
+    "ellen-ambrosia": {
+      "driver": "Jussi",
+      "status": "us",
+      "ride": "vie+hakee"
+    },
+    "milla-vivida": {
+      "driver": "",
+      "status": "open",
+      "ride": ""
+    },
+    "mea-lianna": {
+      "driver": "",
+      "status": "other",
+      "ride": ""
+    },
     "ellen-ambrosia-pe": {
       "driver": "Riikka",
       "status": "us",
       "ride": "vie"
+    },
+    "milla-vivida-la": {
+      "driver": "",
+      "status": "open",
+      "ride": ""
+    },
+    "milla-vivida-su": {
+      "driver": "",
+      "status": "open",
+      "ride": ""
     },
     "mea-lianna-pe": {
       "driver": "Amanda, haku Enni",
       "status": "us",
       "ride": ""
     },
+    "mea-lianna-su": {
+      "driver": "Räisä",
+      "status": "us",
+      "ride": "hakee"
+    },
+    "mea-lianna-ma": {
+      "driver": "Räisä",
+      "status": "us",
+      "ride": "vie"
+    },
+    "samuel-sahly-ma": {
+      "driver": "Sini/Topias",
+      "status": "other",
+      "ride": ""
+    },
+    "samuel-sahly-ti": {
+      "driver": "Räisä",
+      "status": "us",
+      "ride": "vie+hakee"
+    },
+    "samuel-sahly": {
+      "driver": "Manen äiti / Topias",
+      "status": "other",
+      "ride": ""
+    },
+    "milla-etainfo": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
     "jussi-kalakisat": {
       "driver": "",
-      "status": "open",
+      "status": "us",
       "ride": ""
     },
     "ellen-samuel-syyskirkko": {
       "driver": "",
-      "status": "open",
+      "status": "us",
+      "ride": ""
+    },
+    "mea-teatteripolku": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
+    "mea-laakari": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
+    "riikka-oulu": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
+    "mea-konsertti": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
+    "mea-kisakallio": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
+    "perhe-alicante": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
+    "cal-_8oq3gcpg650jeb9i88rk6b9k6h1kcb9o6gp4ab9j711kac9m6gp42d1j8o": {
+      "driver": "",
+      "status": "",
       "ride": ""
     }
   },
   "cooks": {
-    "pe": "Milla ja muut auttaa"
+    "ma": "",
+    "ti": "",
+    "ke": "",
+    "to": "",
+    "pe": "Milla ja muut auttaa",
+    "la": "",
+    "su": ""
   },
   "dishes": {
-    "pe": "Burgerit"
+    "ma": "Lihapullat + muusi",
+    "ti": "Kana + basmati",
+    "ke": "Pizzailta (Wewalka pizzakit)",
+    "to": "Lohikeitto + kana & riisi",
+    "pe": "Burgerit",
+    "la": "Bolognese",
+    "su": "Sushi"
   },
-  "note": "Hyvää viikonloppua",
+  "note": "Hyvää viikonloppua!",
   "extras": [
     {
       "id": "cal-_8oq3gcpg650jeb9i88rk6b9k6h1kcb9o6gp4ab9j711kac9m6gp42d1j8o",

@@ -371,6 +371,7 @@ a.school-link .lbl2 { color: var(--accent) }
 .kytke .lbl2 { margin: 0; color: var(--accent); }
 .kytke textarea { width: 100%; min-height: 52px; margin-top: 8px; font-size: 16px; padding: 8px 12px; border-radius: 12px; border: 1.5px solid var(--accent); background: var(--panel); color: var(--ink); }
 .kytke .save { display: block; width: 100%; margin-top: 10px; padding: 14px 12px; border: 0; border-radius: 14px; background: var(--accent); color: #fff; font-size: 18px; font-weight: 700; }
+.kytke .herr { margin-top: 8px; font-size: 15px; font-weight: 700; color: #b42318; }
 
 .tom {
   margin: 16px 0 0;
@@ -555,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 15;
+  const PAGE_VER = 16;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1110,7 +1111,7 @@ label.f {
     ]
   };
 
-  const ui = { editingId: null, adding: false, cancelFor: null, editingDriver: null, editingCook: null, editingNote: false, editingHook: false, hookDraft: "" };
+  const ui = { editingId: null, adding: false, cancelFor: null, editingDriver: null, editingCook: null, editingNote: false, editingHook: false, hookDraft: "", hookError: "" };
   let store = loadStore();
   let weather = { today: null, tomorrow: null, error: false, loading: true };
   let lastIso = null;
@@ -1236,7 +1237,15 @@ label.f {
   }
 
   function trySaveHook(raw) {
-    if (!commitHook(raw)) return false;
+    ui.hookDraft = raw || ui.hookDraft || "";
+    if (!commitHook(ui.hookDraft)) {
+      ui.hookError = (ui.hookDraft || "").trim()
+        ? "Tässä ei ole http-osoitetta. Kopioi Webhook URL."
+        : "Ruutu on tyhjä. Liitä osoite tähän harmaaseen kenttään.";
+      paint();
+      return false;
+    }
+    ui.hookError = "";
     queuePushShared();
     paint();
     return true;
@@ -1804,7 +1813,8 @@ label.f {
     if (hookConfigured()) return noteHtml;
     return noteHtml
       + "<div class=\"kytke rv\"><div class=\"lbl2\">Kytke TV</div>"
-      + "<textarea data-save-hook=\"1\" placeholder=\"Liitä osoite ja paina Tallenna\">" + esc(ui.hookDraft || "") + "</textarea>"
+      + "<textarea data-save-hook=\"1\" placeholder=\"Liitä osoite tähän\">" + esc(ui.hookDraft || "") + "</textarea>"
+      + (ui.hookError ? "<div class=\"herr\">" + esc(ui.hookError) + "</div>" : "")
       + "<button type=\"button\" class=\"save\" data-act=\"save-hook\">Tallenna</button></div>";
   }
 
@@ -2501,6 +2511,13 @@ label.f {
   async function init() {
     installUpdates();
     const root = document.getElementById("app");
+    root.addEventListener("pointerdown", function (e) {
+      const btn = e.target && e.target.closest && e.target.closest("[data-act=\"save-hook\"]");
+      if (!btn) return;
+      e.preventDefault();
+      const box = document.querySelector("[data-save-hook]");
+      trySaveHook((box && box.value) || ui.hookDraft || "");
+    });
     root.addEventListener("click", onClick);
     root.addEventListener("submit", onSubmit);
     root.addEventListener("focusin", function (e) {

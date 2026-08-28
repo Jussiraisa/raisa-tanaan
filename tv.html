@@ -35,7 +35,8 @@
     .tr .tm { font-size: 2.5vmin; font-weight: 800; color: #c6a15a; font-variant-numeric: tabular-nums; }
     .tr .nm { font-size: 2.5vmin; font-weight: 700; margin-top: .35vh; }
     .tr .meta { font-size: 1.8vmin; color: #8a8578; font-weight: 600; margin-top: .25vh; }
-    .tr .drv { font-size: 1.85vmin; font-weight: 800; color: #3ec4b2; margin-top: .35vh; }
+    .tr .leave { font-size: 2.05vmin; font-weight: 800; color: #c6a15a; margin-top: .45vh; }
+    .tr .drv { font-size: 1.85vmin; font-weight: 800; color: #3ec4b2; margin-top: .25vh; }
     .tr .drv.warn { color: #c6a15a; }
     .empty { color: #6d685c; font-size: 2vmin; font-weight: 600; }
     .dish { font-family: Georgia, "Times New Roman", serif; font-size: 4.2vmin; line-height: 1.15; margin-top: .4vh; }
@@ -117,6 +118,18 @@
     if (!a && !b) return "";
     if (a && b) return fmtHm(a) + "–" + fmtHm(b);
     return a ? fmtHm(a) : "";
+  }
+  function minusMin(hm, n) {
+    var m = parseMin(hm);
+    if (m == null) return "";
+    m = m - n;
+    if (m < 0) m += 24 * 60;
+    return pad(Math.floor(m / 60)) + ":" + pad(m % 60);
+  }
+  function leaveTime(ev) {
+    if (ev.depart) return ev.depart;
+    if (ev.start) return minusMin(ev.start, 30);
+    return "";
   }
   function kidById(id) {
     for (var i = 0; i < KIDS.length; i++) if (KIDS[i].id === id) return KIDS[i];
@@ -269,10 +282,12 @@
       var dtt = driverText(e);
       var bits = [];
       if (e.place) bits.push(e.place);
+      var leave = leaveTime(e);
       var rng = fmtRange(e.start, e.end);
       trHtml += "<div class=\"tr\"><div class=\"tm\">" + esc(rng || fmtHm(e.start) || "") + "</div>"
         + "<div class=\"nm\">" + esc((kk ? kk.name : "") + (e.title ? " · " + e.title : "")) + "</div>"
         + (bits.length ? "<div class=\"meta\">" + esc(bits.join(" · ")) + "</div>" : "")
+        + (leave ? "<div class=\"leave\">Lähtö " + esc(fmtHm(leave)) + "</div>" : "")
         + (dtt ? "<div class=\"drv" + (dtt.warn ? " warn" : "") + "\">" + esc(dtt.text) + "</div>" : "")
         + "</div>";
     }

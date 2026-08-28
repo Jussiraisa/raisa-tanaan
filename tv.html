@@ -4,217 +4,89 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache">
-  <meta name="theme-color" content="#0e1110">
   <title>Tänään · TV</title>
   <style>
     html, body {
-      height: 100%;
-      margin: 0;
-      overflow: hidden;
-      background: #0e1110;
-      color: #f3efe4;
-      font-family: Georgia, "Times New Roman", serif;
-      -webkit-font-smoothing: antialiased;
+      height: 100%; margin: 0; overflow: hidden;
+      background: #050505; color: #f4f0e6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box }
     .tv {
-      height: 100vh;
-      width: 100vw;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      padding: 3vh 3.4vw 2.4vh;
-      gap: 0;
+      height: 100vh; width: 100vw;
+      padding: 4vh 4.2vw 3.4vh;
+      display: flex; flex-direction: column;
     }
-    .top {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: baseline;
-      align-items: baseline;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      gap: 2vw;
-      margin-bottom: 2.2vh;
+    .head {
+      display: flex; justify-content: space-between; align-items: flex-start;
     }
-    .brand {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 1.5vmin;
-      font-weight: 700;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: #d4a84a;
+    .kicker {
+      font-size: 1.45vmin; font-weight: 700; letter-spacing: .28em;
+      text-transform: uppercase; color: #c6a15a;
     }
-    .day {
-      font-size: 3.4vmin;
-      font-weight: 400;
-      margin: .3vh 0 0;
-      letter-spacing: -.02em;
+    .date {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.8vmin; margin-top: .6vh; color: #cfc8b8; font-weight: 400;
     }
+    .ticker {
+      margin-top: 1.1vh; font-size: 1.7vmin; color: #8f8a7c; font-weight: 600;
+    }
+    .clockwrap { text-align: right; }
     .clock {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 8vmin;
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -.04em;
-      line-height: .9;
-      color: #fff;
+      font-size: 11vmin; font-weight: 600; letter-spacing: -.06em;
+      line-height: .82; font-variant-numeric: tabular-nums; color: #fff;
     }
-    .wx {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 1.8vmin;
-      color: #b7b1a3;
-      text-align: right;
-      margin-top: .6vh;
-      max-width: 36vw;
-    }
-    .hero {
-      -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
-      background: #171c1a;
-      border: 1px solid #2a322f;
-      border-radius: 1.6vmin;
-      padding: 3vh 3vw 2.6vh;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -ms-flex-pack: center;
-      justify-content: center;
-      min-height: 0;
-      box-shadow: inset 0 0 0 1px rgba(62,196,178,.12);
-    }
+    .wx { margin-top: 1vh; font-size: 1.7vmin; color: #8f8a7c; font-weight: 600; }
+    .stage { flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 2.5vh 0 2vh; }
     .lbl {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 1.55vmin;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: #3ec4b2;
-      margin-bottom: 1.2vh;
+      font-size: 1.5vmin; font-weight: 700; letter-spacing: .26em;
+      text-transform: uppercase; color: #3ec4b2; margin-bottom: 1.4vh;
     }
-    .ev {
-      font-size: 7.2vmin;
-      line-height: .95;
-      letter-spacing: -.03em;
-      font-weight: 400;
-      max-width: 18ch;
+    .word {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 10vmin; line-height: .92; letter-spacing: -.04em; font-weight: 400;
+      max-width: 14ch;
     }
-    .place {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 2.4vmin;
-      color: #c5bfb0;
-      margin-top: 1.6vh;
+    .sub {
+      margin-top: 2.2vh; font-size: 2.5vmin; color: #d8d2c4; font-weight: 500; line-height: 1.35;
+      max-width: 70vw;
     }
-    .who {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 2.6vmin;
-      font-weight: 700;
-      color: #3ec4b2;
-      margin-top: 1vh;
+    .drive {
+      margin-top: 1.4vh; font-size: 2.6vmin; font-weight: 700; color: #3ec4b2;
     }
-    .who.warn { color: #d4a84a }
-    .cd {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 2.3vmin;
-      font-weight: 700;
-      margin-top: 2vh;
-      color: #f3efe4;
+    .drive.warn { color: #c6a15a; }
+    .cd { margin-top: 1.8vh; font-size: 2.2vmin; font-weight: 700; color: #9a9486; }
+    .cd b { color: #c6a15a; font-size: 1.15em; font-weight: 700; }
+    .rule { height: 1px; background: #222; margin: 0 0 2.6vh; border: 0; }
+    .foot {
+      display: flex; gap: 4vw; align-items: flex-end;
     }
-    .cd .num { color: #d4a84a; font-size: 1.15em }
-    .kids {
-      display: -ms-flexbox;
-      display: flex;
-      gap: 1.2vw;
-      margin: 2vh 0;
-    }
-    .kid {
-      -ms-flex: 1;
-      flex: 1;
-      background: #171c1a;
-      border-radius: 1.2vmin;
-      padding: 1.4vh 1.3vw 1.5vh;
-      border: 1px solid #2a322f;
-      min-width: 0;
-    }
-    .kid .nm {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 1.7vmin;
-      font-weight: 800;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      gap: .6vw;
-    }
-    .dot {
-      width: 1.1vmin;
-      height: 1.1vmin;
-      border-radius: 50%;
-      display: inline-block;
-    }
-    .hrs {
-      font-size: 2.8vmin;
-      margin-top: .5vh;
-      letter-spacing: -.02em;
-    }
-    .bottom {
-      display: -ms-flexbox;
-      display: flex;
-      gap: 1.2vw;
-      height: 26vh;
-      min-height: 0;
-    }
-    .card {
-      background: #171c1a;
-      border-radius: 1.2vmin;
-      border: 1px solid #2a322f;
-      padding: 1.6vh 1.5vw;
-      min-width: 0;
-      overflow: hidden;
-    }
-    .card.rides { -ms-flex: 1.25; flex: 1.25 }
-    .card.food { -ms-flex: 1; flex: 1 }
-    .card.note { -ms-flex: 1; flex: 1 }
+    .col { min-width: 0; }
+    .col.later { flex: 1.4; }
+    .col.food { flex: .9; }
     .row {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 1.85vmin;
-      padding: .55vh 0;
-      border-bottom: 1px solid #2a322f;
-      line-height: 1.25;
+      display: flex; align-items: baseline; gap: 1.6vw;
+      padding: .7vh 0; font-size: 2.15vmin;
     }
-    .row:last-child { border-bottom: 0 }
-    .row .t { color: #8e887a; font-weight: 700; margin-right: .6vw }
+    .tm {
+      width: 11vmin; flex: none; font-weight: 700; color: #c6a15a;
+      font-variant-numeric: tabular-nums;
+    }
+    .row .what { color: #f4f0e6; font-weight: 600; }
+    .row .meta { color: #8f8a7c; font-weight: 500; }
     .dish {
-      font-size: 3.1vmin;
-      line-height: 1.15;
-      margin-top: .4vh;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.4vmin; line-height: 1.15;
     }
-    .cook {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 2.1vmin;
-      font-weight: 700;
-      color: #3ec4b2;
-      margin-top: 1vh;
-    }
-    .cook.warn { color: #d4a84a }
-    .notetxt {
-      font-size: 2.6vmin;
-      line-height: 1.25;
-      margin-top: .4vh;
-    }
-    .notetxt.empty { color: #8e887a; font-size: 2vmin }
-    .boot {
-      font-family: sans-serif;
-      padding: 8vh 8vw;
-      font-size: 4vmin;
+    .cook { margin-top: .8vh; font-size: 1.9vmin; font-weight: 700; color: #3ec4b2; }
+    .cook.warn { color: #8f8a7c; font-weight: 600; }
+    .note {
+      margin-top: 1.6vh; font-size: 2vmin; color: #d8d2c4; line-height: 1.3; font-weight: 500;
     }
   </style>
 </head>
 <body>
-  <div class="tv" id="app">
-    <div class="boot">Räisän perhe · Tänään</div>
-  </div>
+  <div class="tv" id="app">Räisän perhe</div>
   <script>
 (function () {
   var DAYS = [
@@ -241,7 +113,7 @@
   var EVENTS = [
     { id: "ellen-ambrosia", who: "ellen", title: "Ambrosia", weekday: "ke", start: "18:00", end: "20:30", depart: "17:40", place: "Kuopiohalli", driver: "Jussi", ride: "vie+hakee", status: "us", kind: "treeni" },
     { id: "milla-vivida", who: "milla", title: "Vivida", weekday: "ke", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
-    { id: "mea-lianna", who: "mea", title: "Lianna", weekday: "ke", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "other", kind: "treeni" },
+    { id: "mea-lianna", who: "mea", title: "Lianna", weekday: "ke", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
     { id: "ellen-ambrosia-pe", who: "ellen", title: "Ambrosia", weekday: "pe", start: "16:00", end: "18:30", place: "Luola", driver: "Riikka", ride: "vie", status: "us", kind: "treeni" },
     { id: "milla-vivida-la", who: "milla", title: "Vivida", weekday: "la", start: "12:30", end: "15:00", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
     { id: "milla-vivida-su", who: "milla", title: "Vivida", weekday: "su", start: "11:30", end: "14:00", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
@@ -251,10 +123,7 @@
     { id: "samuel-sahly-ti", who: "samuel", title: "sähly", weekday: "ti", start: "16:30", end: "18:00", depart: "16:15", place: "Lippumäki", driver: "Räisä", ride: "vie+hakee", status: "us", kind: "treeni" },
     { id: "samuel-sahly", who: "samuel", title: "sähly", weekday: "to", start: "17:00", end: "19:00", depart: "16:30", place: "Puijonsarvi", driver: "Manen äiti / Topias", status: "other", kind: "treeni" },
     { id: "jussi-kalakisat", who: "", title: "Jussi kalassa, kyydit Riikka", date: "2026-08-28", dateEnd: "2026-08-30", start: "15:00", kind: "info", note: "pe 15 – su 12" },
-    { id: "ellen-samuel-syyskirkko", who: "ellen", title: "syyskirkko", date: "2026-08-28", place: "Kallaveden kirkko", kind: "info" },
-    { id: "mea-teatteripolku", who: "mea", title: "Teatteripolku", date: "2026-08-31", start: "11:30", kind: "info" },
-    { id: "mea-laakari", who: "mea", title: "lääkäri", date: "2026-09-02", start: "09:45", kind: "info" },
-    { id: "riikka-oulu", who: "", title: "Riikka Oulussa", date: "2026-09-02", dateEnd: "2026-09-04", place: "Oulu", kind: "info" }
+    { id: "ellen-samuel-syyskirkko", who: "ellen", title: "syyskirkko", date: "2026-08-28", place: "Kallaveden kirkko", kind: "info" }
   ];
   var MEALS = {
     ma: { emoji: "🍖", dish: "Lihapullat + muusi", cook: "" },
@@ -275,26 +144,27 @@
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
+  function lastSunday(year, monthIndex) {
+    var last = new Date(Date.UTC(year, monthIndex + 1, 0));
+    return last.getUTCDate() - last.getUTCDay();
+  }
+  function helsinkiOffset(d) {
+    var y = d.getUTCFullYear();
+    var start = Date.UTC(y, 2, lastSunday(y, 2), 1, 0, 0);
+    var end = Date.UTC(y, 9, lastSunday(y, 9), 1, 0, 0);
+    var t = d.getTime();
+    return (t >= start && t < end) ? 3 : 2;
+  }
   function helsinkiNow() {
     var d = new Date();
-    var y, mo, da, h, mi, wd;
-    try {
-      var parts = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Europe/Helsinki",
-        year: "numeric", month: "2-digit", day: "2-digit",
-        hour: "2-digit", minute: "2-digit", weekday: "short",
-        hourCycle: "h23"
-      }).formatToParts(d);
-      var map = {};
-      for (var i = 0; i < parts.length; i++) map[parts[i].type] = parts[i].value;
-      y = +map.year; mo = +map.month; da = +map.day; h = +map.hour; mi = +map.minute;
-      wd = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[map.weekday];
-    } catch (e) {
-      var utc = d.getTime() + d.getTimezoneOffset() * 60000;
-      var hki = new Date(utc + 3 * 3600000);
-      y = hki.getUTCFullYear(); mo = hki.getUTCMonth() + 1; da = hki.getUTCDate();
-      h = hki.getUTCHours(); mi = hki.getUTCMinutes(); wd = hki.getUTCDay();
-    }
+    var utc = d.getTime() + d.getTimezoneOffset() * 60000;
+    var hki = new Date(utc + helsinkiOffset(d) * 3600000);
+    var y = hki.getUTCFullYear();
+    var mo = hki.getUTCMonth() + 1;
+    var da = hki.getUTCDate();
+    var h = hki.getUTCHours();
+    var mi = hki.getUTCMinutes();
+    var wd = hki.getUTCDay();
     return {
       year: y, month: mo, day: da, hour: h, minute: mi, wd: wd,
       key: DAYS[wd].key,
@@ -317,11 +187,7 @@
   function fmtRange(a, b) {
     if (!a && !b) return "";
     if (a && b) return fmtHm(a) + "–" + fmtHm(b);
-    return a ? fmtHm(a) : "–" + fmtHm(b);
-  }
-  function fmtSchool(arr) {
-    if (!arr || (!arr[0] && !arr[1])) return "—";
-    return fmtRange(arr[0], arr[1]);
+    return a ? fmtHm(a) : "";
   }
   function kidById(id) {
     for (var i = 0; i < KIDS.length; i++) if (KIDS[i].id === id) return KIDS[i];
@@ -333,11 +199,13 @@
     return a;
   }
   function driverText(ev) {
-    if (ev.status === "open" || (!ev.driver && ev.status !== "us")) return { warn: true, text: "Sovi kyyti" };
-    if (!ev.driver) return null;
-    var act = rideLabel(ev);
-    if (act) return { warn: false, text: ev.driver + " " + act };
-    return { warn: false, text: ev.driver };
+    if (!ev || ev.kind === "info") return null;
+    if (ev.driver) {
+      var act = rideLabel(ev);
+      return { warn: false, text: act ? ev.driver + " " + act : ev.driver };
+    }
+    if (ev.kind === "treeni") return { warn: true, text: "Sovi kyyti" };
+    return null;
   }
   function eventsOn(iso, key) {
     var out = [];
@@ -363,49 +231,11 @@
     return s == null ? 24 * 60 : s;
   }
   function durPhrase(diff) {
+    if (diff < 0) diff = 0;
     var h = Math.floor(diff / 60);
     var m = diff % 60;
     if (h > 0) return h + " h " + m + " min";
     return m + " min";
-  }
-  function countdown(ev, nowMin) {
-    var leave = parseMin(ev.depart);
-    var start = parseMin(ev.start);
-    var end = parseMin(ev.end);
-    if (leave != null && nowMin < leave) return "Lähtö <span class=\"num\">" + durPhrase(leave - nowMin) + "</span> · klo " + fmtHm(ev.depart);
-    if (start != null && nowMin < start) return "Alkaa <span class=\"num\">" + durPhrase(start - nowMin) + "</span> · klo " + fmtHm(ev.start);
-    if (end != null && nowMin < end) return "Käynnissä · haku " + fmtHm(ev.end);
-    if (end == null && start != null && nowMin >= start) return "Käynnissä";
-    return "";
-  }
-  function heroTitle(ev) {
-    var k = kidById(ev.who);
-    var name = k ? k.name : "";
-    if (ev.kind === "treeni" && name) return name + " treeneihin";
-    if (name && ev.title) return name + " · " + ev.title;
-    return ev.title || name || "Meno";
-  }
-  function pickHero(now, list) {
-    var remaining = [];
-    for (var i = 0; i < list.length; i++) {
-      if (endTime(list[i]) > now.minutes) remaining.push(list[i]);
-    }
-    remaining.sort(function (a, b) { return keyTime(a) - keyTime(b); });
-    if (remaining.length) return { type: "event", event: remaining[0] };
-    if (list.length) return { type: "done" };
-    var pickups = [];
-    for (var j = 0; j < KIDS.length; j++) {
-      var h = SCHOOL[KIDS[j].id][now.key];
-      if (!h || !h[1]) continue;
-      var end = parseMin(h[1]);
-      if (end == null) continue;
-      pickups.push({ kid: KIDS[j], hours: h, end: end });
-    }
-    pickups.sort(function (a, b) { return a.end - b.end; });
-    for (var p = 0; p < pickups.length; p++) {
-      if (pickups[p].end > now.minutes) return { type: "pickup", pickup: pickups[p] };
-    }
-    return { type: "none" };
   }
   function applyShared(remote) {
     if (!remote) return;
@@ -442,89 +272,145 @@
       x.send();
     } catch (e) {}
   }
+  function infoTicker(list) {
+    var bits = [];
+    for (var i = 0; i < list.length; i++) {
+      var ev = list[i];
+      if (ev.kind !== "info") continue;
+      var t = ev.title || "";
+      if (ev.place) t += " · " + ev.place;
+      bits.push(t);
+    }
+    return bits.join("   ·   ");
+  }
+  function schoolBlock(now) {
+    var lines = [];
+    var anyNow = false;
+    var anySoon = false;
+    for (var i = 0; i < KIDS.length; i++) {
+      var kid = KIDS[i];
+      var h = SCHOOL[kid.id][now.key];
+      if (!h) continue;
+      var a = parseMin(h[0]);
+      var b = parseMin(h[1]);
+      if (a == null) continue;
+      var state = "later";
+      if (now.minutes >= a && (b == null || now.minutes < b)) { state = "now"; anyNow = true; }
+      else if (now.minutes < a && a - now.minutes <= 45) { state = "soon"; anySoon = true; }
+      lines.push({ kid: kid, start: h[0], end: h[1], state: state, a: a });
+    }
+    if (!lines.length) return null;
+    return { anyNow: anyNow, anySoon: anySoon, lines: lines };
+  }
+  function nextRides(now, list) {
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var ev = list[i];
+      if (ev.kind === "info") continue;
+      if (endTime(ev) <= now.minutes) continue;
+      out.push(ev);
+    }
+    out.sort(function (a, b) { return keyTime(a) - keyTime(b); });
+    return out;
+  }
 
   function paint() {
     var now = helsinkiNow();
     var list = eventsOn(now.iso, now.key);
-    var hero = pickHero(now, list);
+    var school = schoolBlock(now);
+    var rides = nextRides(now, list);
     var meal = MEALS[now.key] || {};
     var clock = pad(now.hour) + "." + pad(now.minute);
 
-    var heroHtml = "";
-    if (hero.type === "event") {
-      var ev = hero.event;
+    var word = "";
+    var sub = "";
+    var drive = "";
+    var driveWarn = false;
+    var cd = "";
+    var lbl = "Seuraavaksi";
+
+    if (school && (school.anyNow || school.anySoon)) {
+      lbl = school.anyNow ? "Nyt" : "Seuraavaksi";
+      word = "Koulu";
+      var parts = [];
+      for (var s = 0; s < school.lines.length; s++) {
+        var ln = school.lines[s];
+        parts.push(ln.kid.name + " " + fmtRange(ln.start, ln.end));
+      }
+      sub = parts.join("   ·   ");
+      if (school.anySoon && !school.anyNow) {
+        var soon = null;
+        for (var q = 0; q < school.lines.length; q++) {
+          if (school.lines[q].state === "soon") {
+            if (!soon || school.lines[q].a < soon.a) soon = school.lines[q];
+          }
+        }
+        if (soon) cd = "Alkaa <b>" + durPhrase(soon.a - now.minutes) + "</b> · klo " + fmtHm(soon.start);
+      }
+    } else if (rides.length) {
+      var ev = rides[0];
+      var k = kidById(ev.who);
+      word = (k && ev.kind === "treeni") ? k.name + " treeneihin" : (ev.title || "Meno");
       var bits = [];
-      if (ev.title && ev.kind !== "treeni") bits.push(ev.title);
+      if (k && ev.title) bits.push(ev.title);
       if (ev.place) bits.push(ev.place);
       var tm = fmtRange(ev.start, ev.end);
       if (tm) bits.push(tm);
-      if (ev.note) bits.push(ev.note);
+      sub = bits.join(" · ");
       var dt = driverText(ev);
-      var who = "";
-      if (dt) who = "<div class=\"who" + (dt.warn ? " warn" : "") + "\">" + esc(dt.text) + "</div>";
-      var cd = countdown(ev, now.minutes);
-      heroHtml = "<div class=\"lbl\">Seuraavaksi</div><div class=\"ev\">" + esc(heroTitle(ev)) + "</div>"
-        + (bits.length ? "<div class=\"place\">" + esc(bits.join(" · ")) + "</div>" : "")
-        + who
-        + (cd ? "<div class=\"cd\">" + cd + "</div>" : "");
-    } else if (hero.type === "pickup") {
-      var p = hero.pickup;
-      heroHtml = "<div class=\"lbl\">Seuraavaksi</div><div class=\"ev\">" + esc(p.kid.name) + " kotiin</div>"
-        + "<div class=\"place\">Koulu päättyy · " + esc(fmtSchool(p.hours)) + "</div>"
-        + "<div class=\"cd\">Haku <span class=\"num\">" + durPhrase(p.end - now.minutes) + "</span> · klo " + fmtHm(p.hours[1]) + "</div>";
-    } else if (hero.type === "done") {
-      heroHtml = "<div class=\"lbl\">Seuraavaksi</div><div class=\"ev\">Illan menot hoidettu</div>";
+      if (dt) { drive = dt.text; driveWarn = dt.warn; }
+      var leave = parseMin(ev.depart);
+      var start = parseMin(ev.start);
+      if (leave != null && now.minutes < leave) cd = "Lähtö <b>" + durPhrase(leave - now.minutes) + "</b> · klo " + fmtHm(ev.depart);
+      else if (start != null && now.minutes < start) cd = "Alkaa <b>" + durPhrase(start - now.minutes) + "</b> · klo " + fmtHm(ev.start);
+      else cd = "Käynnissä";
     } else {
-      heroHtml = "<div class=\"lbl\">Seuraavaksi</div><div class=\"ev\">Rauhallinen päivä</div>";
+      word = "Illan menot hoidettu";
+      lbl = "Tänään";
     }
 
-    var kids = "";
-    for (var k = 0; k < KIDS.length; k++) {
-      var kid = KIDS[k];
-      var h = SCHOOL[kid.id][now.key];
-      kids += "<div class=\"kid\"><div class=\"nm\"><span class=\"dot\" style=\"background:" + kid.color + "\"></span>"
-        + esc(kid.name) + "</div><div class=\"hrs\">" + esc(fmtSchool(h)) + "</div></div>";
-    }
-
-    var rides = "";
-    for (var r = 0; r < list.length; r++) {
-      var e = list[r];
+    var rideRows = "";
+    var rest = (school && (school.anyNow || school.anySoon)) ? rides : rides.slice(1);
+    for (var r = 0; r < rest.length && r < 4; r++) {
+      var e = rest[r];
       var kk = kidById(e.who);
-      var title = (kk ? kk.name + " · " : "") + (e.title || "Meno");
-      var sub = [];
-      var tmm = fmtRange(e.start, e.end);
-      if (tmm) sub.push(tmm);
-      if (e.place) sub.push(e.place);
-      var extra = [];
-      if (e.place) extra.push(e.place);
-      var drv = driverText(e);
-      if (drv) extra.push(drv.text);
-      rides += "<div class=\"row\"><span class=\"t\">" + esc(tmm || "·") + "</span>" + esc(title)
-        + (extra.length ? " · " + esc(extra.join(" · ")) : "")
-        + "</div>";
+      var title = (kk ? kk.name : "") + (e.title ? (kk ? " · " : "") + e.title : "");
+      var meta = [];
+      if (e.place) meta.push(e.place);
+      var dtt = driverText(e);
+      if (dtt) meta.push(dtt.text);
+      rideRows += "<div class=\"row\"><div class=\"tm\">" + esc(fmtRange(e.start, e.end) || "·") + "</div>"
+        + "<div><span class=\"what\">" + esc(title) + "</span>"
+        + (meta.length ? " <span class=\"meta\">· " + esc(meta.join(" · ")) + "</span>" : "")
+        + "</div></div>";
     }
-    if (!rides) rides = "<div class=\"row\">Ei kyytejä</div>";
+    if (!rideRows) rideRows = "<div class=\"row\"><div class=\"tm\"></div><div class=\"meta\">Ei enempää kyytejä</div></div>";
 
     var cook = meal.cook
       ? "<div class=\"cook\">" + esc(meal.cook) + " tekee</div>"
-      : "<div class=\"cook warn\">Sovi kuka tekee</div>";
-    var dish = (meal.emoji ? meal.emoji + " " : "") + (meal.dish || "—");
+      : "<div class=\"cook warn\">kokkaaja auki</div>";
+    var dish = (meal.emoji ? meal.emoji + "  " : "") + (meal.dish || "");
     var noteHtml = (note && String(note).replace(/^\s+|\s+$/g, ""))
-      ? esc(note)
-      : "Ei viestiä";
-    var noteEmpty = !(note && String(note).replace(/^\s+|\s+$/g, ""));
+      ? "<div class=\"note\">" + esc(note) + "</div>"
+      : "";
+    var tick = infoTicker(list);
 
     document.getElementById("app").innerHTML =
-      "<div class=\"top\">"
-      + "<div><div class=\"brand\">Räisän perhe</div><div class=\"day\">" + DAYS[now.wd].full + " " + now.day + "." + now.month + ".</div></div>"
-      + "<div><div class=\"clock\" id=\"clock\">" + clock + "</div><div class=\"wx\" id=\"wx\">" + esc(weatherLine || "sää haetaan") + "</div></div>"
+      "<div class=\"head\">"
+      + "<div><div class=\"kicker\">Räisän perhe</div><div class=\"date\">" + DAYS[now.wd].full + " " + now.day + "." + now.month + ".</div>"
+      + (tick ? "<div class=\"ticker\">" + esc(tick) + "</div>" : "")
       + "</div>"
-      + "<div class=\"hero\">" + heroHtml + "</div>"
-      + "<div class=\"kids\">" + kids + "</div>"
-      + "<div class=\"bottom\">"
-      + "<div class=\"card rides\"><div class=\"lbl\">Kyydit</div>" + rides + "</div>"
-      + "<div class=\"card food\"><div class=\"lbl\">Ruoka</div><div class=\"dish\">" + esc(dish) + "</div>" + cook + "</div>"
-      + "<div class=\"card note\"><div class=\"lbl\">Viesti</div><div class=\"notetxt" + (noteEmpty ? " empty" : "") + "\">" + noteHtml + "</div></div>"
+      + "<div class=\"clockwrap\"><div class=\"clock\" id=\"clock\">" + clock + "</div><div class=\"wx\" id=\"wx\">" + esc(weatherLine) + "</div></div>"
+      + "</div>"
+      + "<div class=\"stage\"><div class=\"lbl\">" + lbl + "</div><div class=\"word\">" + esc(word) + "</div>"
+      + (sub ? "<div class=\"sub\">" + esc(sub) + "</div>" : "")
+      + (drive ? "<div class=\"drive" + (driveWarn ? " warn" : "") + "\">" + esc(drive) + "</div>" : "")
+      + (cd ? "<div class=\"cd\">" + cd + "</div>" : "")
+      + "</div>"
+      + "<div class=\"rule\"></div>"
+      + "<div class=\"foot\">"
+      + "<div class=\"col later\"><div class=\"lbl\">Myöhemmin</div>" + rideRows + "</div>"
+      + "<div class=\"col food\"><div class=\"lbl\">Ruoka</div><div class=\"dish\">" + esc(dish) + "</div>" + cook + noteHtml + "</div>"
       + "</div>";
   }
 
@@ -537,12 +423,15 @@
 
   paint();
   setInterval(tickClock, 1000);
-  setInterval(paint, 30000);
+  setInterval(function () { pullShared(); paint(); }, 20000);
 
-  getJSON("shared.json?t=" + new Date().getTime(), function (data) {
-    applyShared(data);
-    paint();
-  });
+  function pullShared() {
+    getJSON("shared.json?t=" + new Date().getTime(), function (data) {
+      applyShared(data);
+      paint();
+    });
+  }
+  pullShared();
   getJSON("https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FHelsinki&forecast_days=1", function (data) {
     try {
       var tmin = Math.round(data.daily.temperature_2m_min[0]);
@@ -552,10 +441,9 @@
       if (code === 0) phrase = "selkeää";
       else if (code <= 2) phrase = "melkein selkeää";
       else if (code === 3) phrase = "pilvistä";
-      else if (code >= 51 && code <= 67) phrase = "sadetta";
-      else if (code >= 80) phrase = "sadekuuroja";
+      else if (code >= 51) phrase = "sadetta";
       var clothes = tmax <= 8 ? "lämmin takki" : (tmax <= 14 ? "takki" : "ohut kerros");
-      if (code >= 51) clothes = clothes + " · sadevaraus";
+      if (code >= 51) clothes += " · sade";
       weatherLine = tmin + "–" + tmax + "° · " + phrase + " · " + clothes;
       var wx = document.getElementById("wx");
       if (wx) wx.innerHTML = esc(weatherLine);

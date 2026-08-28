@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1787912790873,
+  "updated": 1787912935141,
   "powerW": 1012,
   "gridW": 0,
   "solarW": 5488,
@@ -75,5 +75,12 @@
   ],
   "spotMin": 0.4,
   "spotMax": 10.9,
-  "spotAvg": 5.1
+  "spotAvg": 5.1,
+  "people": [
+    {
+      "name": "Jussi",
+      "home": false,
+      "where": "Poissa"
+    }
+  ]
 }

@@ -343,6 +343,30 @@ a.school-link .lbl2 { color: var(--accent) }
 .pill.us { background: var(--accent-soft); color: var(--accent) }
 .pill.other { background: color-mix(in srgb, var(--ink3) 16%, transparent); color: var(--ink2) }
 .pill.warn { background: color-mix(in srgb, var(--gold) 18%, transparent); color: var(--gold) }
+.who, .pill.tap, .famnote { cursor: pointer; -webkit-tap-highlight-color: transparent }
+.pill.tap { padding: 8px 14px }
+.name-inp {
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  width: min(100%, 280px);
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--accent);
+  background: var(--panel);
+  color: var(--ink);
+}
+.famnote {
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.famnote .lbl2 { margin-top: 0 }
+.famtext { font-size: 18px; font-weight: 700; line-height: 1.35; margin-top: 4px; white-space: pre-wrap }
+.famtext.empty { font-weight: 600; color: var(--gold) }
+.famnote textarea.name-inp { width: 100%; min-height: 88px; margin-top: 8px; resize: vertical }
 
 .tom {
   margin: 16px 0 0;
@@ -527,7 +551,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 10;
+  const PAGE_VER = 11;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1010,6 +1034,8 @@ label.f {
       la: { emoji: "🍝", dish: "Bolognese", note: "Jussi: low-carb, ei pastaa", cook: "" },
       su: { emoji: "🍣", dish: "Sushi", note: "Jussi: kala + kasvis", cook: "" }
     },
+    note: "",
+    sharedUpdated: 0,
     groceries: [
       { id: "g-1", text: "Broilerin fileesuikale 900g", done: false },
       { id: "g-2", text: "naudan jauheliha 1kg", done: false },
@@ -1080,7 +1106,7 @@ label.f {
     ]
   };
 
-  const ui = { editingId: null, adding: false, cancelFor: null };
+  const ui = { editingId: null, adding: false, cancelFor: null, editingDriver: null, editingCook: null, editingNote: false };
   let store = loadStore();
   let weather = { today: null, tomorrow: null, error: false, loading: true };
   let lastIso = null;
@@ -1098,7 +1124,124 @@ label.f {
 
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
 
-  function mergeEvents(seedEvs, savedEvs) {
+  function isEditing() {
+    return !!(ui.editingDriver || ui.editingCook || ui.editingNote);
+  }
+
+  function buildShared() {
+    const drivers = {};
+    (store.events || []).forEach(function (ev) {
+      if (!ev || !ev.id) return;
+      drivers[ev.id] = { driver: ev.driver || "", status: ev.status || "", ride: ev.ride || "" };
+    });
+    const cooks = {};
+    Object.keys(store.meals || {}).forEach(function (day) {
+      cooks[day] = (store.meals[day] && store.meals[day].cook) || "";
+    });
+    return { v: 1, updated: store.sharedUpdated || Date.now(), drivers: drivers, cooks: cooks, note: store.note || "" };
+  }
+
+  function applyShared(remote) {
+    if (!remote || typeof remote !== "object") return false;
+    const remoteT = +remote.updated || 0;
+    const localT = +store.sharedUpdated || 0;
+    if (!remoteT) return false;
+    if (localT && remoteT < localT) return false;
+    if (remote.drivers) {
+      Object.keys(remote.drivers).forEach(function (id) {
+        const ev = store.events.find(function (x) { return x.id === id; });
+        const d = remote.drivers[id] || {};
+        if (!ev) return;
+        if (d.driver !== undefined) ev.driver = d.driver;
+        if (d.ride !== undefined) ev.ride = d.ride;
+        if (d.status) ev.status = d.status;
+        else ev.status = ev.driver ? (ev.status === "other" ? "other" : "us") : "open";
+      });
+    }
+    if (remote.cooks) {
+      Object.keys(remote.cooks).forEach(function (day) {
+        if (!store.meals[day]) store.meals[day] = { emoji: "", dish: "", note: "", cook: "" };
+        store.meals[day].cook = remote.cooks[day] || "";
+      });
+    }
+    if (typeof remote.note === "string") store.note = remote.note;
+    store.sharedUpdated = remoteT || Date.now();
+    saveStore();
+    return true;
+  }
+
+  async function pullShared() {
+    if (isEditing()) return;
+    try {
+      const res = await fetch("./shared.json?t=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) return;
+      const remote = await res.json();
+      if (applyShared(remote)) paint();
+    } catch (e) {}
+  }
+
+  function queuePushShared() {
+    store.sharedUpdated = Date.now();
+    saveStore();
+    pushSharedRemote(buildShared());
+  }
+
+  async function pushSharedRemote(payload) {
+    try {
+      const api = "https://api.github.com/repos/Jussiraisa/raisa-tanaan/contents/shared.json";
+      const get = await fetch(api, { headers: { Accept: "application/vnd.github+json" } });
+      if (!get.ok) return;
+      const meta = await get.json();
+      const json = JSON.stringify(payload);
+      const content = btoa(unescape(encodeURIComponent(json)));
+      await fetch(api, {
+        method: "PUT",
+        headers: { Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+        body: JSON.stringify({ message: "Kuski, kokki tai viesti.", content: content, sha: meta.sha })
+      });
+    } catch (e) {}
+  }
+
+  function focusField(sel) {
+    setTimeout(function () {
+      const el = document.querySelector(sel);
+      if (!el) return;
+      el.focus();
+      if (el.select) el.select();
+    }, 30);
+  }
+
+  function commitNameField(el) {
+    if (!el) return;
+    const driverId = el.getAttribute("data-save-driver");
+    const cookDay = el.getAttribute("data-save-cook");
+    const isNote = el.hasAttribute("data-save-note");
+    const val = (el.value || "").trim();
+    if (driverId) {
+      if (ui.editingDriver !== driverId) return;
+      ui.editingDriver = null;
+      const ev = store.events.find(function (x) { return x.id === driverId; });
+      if (ev) {
+        ev.driver = val;
+        if (!val) ev.status = "open";
+        else if (ev.status === "open" || !ev.status) ev.status = "us";
+      }
+    } else if (cookDay) {
+      if (ui.editingCook !== cookDay) return;
+      ui.editingCook = null;
+      if (!store.meals[cookDay]) store.meals[cookDay] = { emoji: "", dish: "", note: "", cook: "" };
+      store.meals[cookDay].cook = val;
+    } else if (isNote) {
+      if (!ui.editingNote) return;
+      ui.editingNote = false;
+      store.note = el.value || "";
+    } else return;
+    queuePushShared();
+    paint();
+  }
+
+  function mergeEvents
+(seedEvs, savedEvs) {
     if (!Array.isArray(savedEvs)) return seedEvs;
     const byId = {};
     seedEvs.forEach(function(e) { byId[e.id] = clone(e); });
@@ -1149,7 +1292,9 @@ label.f {
         school: deepMerge(seed.school, saved.school || {}),
         events: mergeEvents(seed.events, saved.events),
         meals: deepMerge(seed.meals, saved.meals || {}),
-        groceries: Array.isArray(saved.groceries) ? saved.groceries : []
+        groceries: Array.isArray(saved.groceries) ? saved.groceries : [],
+        note: (typeof saved.note === "string") ? saved.note : (seed.note || ""),
+        sharedUpdated: saved.sharedUpdated || 0
       };
     } catch (e) {
       return seed;
@@ -1400,7 +1545,8 @@ label.f {
   }
 
   function keyTime(ev) {
-    const m = parseMin(ev.depart) ?? parseMin(ev.start);
+    const m = parseMin(ev.depart);
+    if (m == null) return parseMin(ev.start) == null ? 24 * 60 : parseMin(ev.start);
     return m == null ? 24 * 60 : m;
   }
 
@@ -1540,8 +1686,14 @@ label.f {
     }
     let pills = "";
     if (!reason) {
-      const p = driverPill(ev);
-      if (p) pills = "<span class=\"pill " + p.cls + "\">" + esc(p.text) + "</span>";
+      if (ui.editingDriver === ev.id) {
+        pills = "<input class=\"name-inp\" data-save-driver=\"" + esc(ev.id) + "\" value=\"" + esc(ev.driver || "") + "\" placeholder=\"Kuka vie?\">";
+      } else {
+        const p = driverPill(ev);
+        const label = p ? p.text : "Sovi kyyti";
+        const cls = p ? p.cls : "warn";
+        pills = "<span class=\"pill tap " + cls + "\" data-act=\"edit-driver\" data-id=\"" + esc(ev.id) + "\">" + esc(label) + "</span>";
+      }
     }
     return "<div class=\"" + cls.trim() + "\"><div class=\"tm\">" + esc(tm)
       + "</div><div class=\"bd\"><div class=\"h\">" + dot + esc(title)
@@ -1549,18 +1701,34 @@ label.f {
       + pills + "</div></div>";
   }
 
-  function mealItem(meal) {
+  function mealItem(meal, dayKey) {
     if (!meal || !meal.dish) return "";
     const title = (meal.emoji ? meal.emoji + " " : "") + meal.dish;
     const bits = [];
     if (meal.note) bits.push(meal.note);
     let pill = "";
-    if (meal.cook) pill = "<span class=\"pill us\">" + esc(meal.cook) + "</span>";
-    else pill = "<span class=\"pill warn\">sovi kuka tekee</span>";
+    if (ui.editingCook === dayKey) {
+      pill = "<input class=\"name-inp\" data-save-cook=\"" + esc(dayKey) + "\" value=\"" + esc(meal.cook || "") + "\" placeholder=\"Kuka tekee ruuan?\">";
+    } else if (meal.cook) {
+      pill = "<span class=\"pill tap us\" data-act=\"edit-cook\" data-id=\"" + esc(dayKey) + "\">" + esc(meal.cook) + "</span>";
+    } else {
+      pill = "<span class=\"pill tap warn\" data-act=\"edit-cook\" data-id=\"" + esc(dayKey) + "\">sovi kuka tekee</span>";
+    }
     return "<div class=\"item\"><div class=\"tm\">Ilta</div><div class=\"bd\"><div class=\"h\">"
       + esc(title) + "</div>"
       + (bits.length ? "<div class=\"s\">" + esc(bits.join(" · ")) + "</div>" : "")
       + pill + "</div></div>";
+  }
+
+  function familyNote() {
+    if (ui.editingNote) {
+      return "<div class=\"famnote rv\"><div class=\"lbl2\">Viesti</div>"
+        + "<textarea class=\"name-inp\" data-save-note=\"1\" placeholder=\"Viesti kaikille\">" + esc(store.note || "") + "</textarea></div>";
+    }
+    const empty = !(store.note && String(store.note).trim());
+    return "<div class=\"famnote rv\" data-act=\"edit-note\"><div class=\"lbl2\">Viesti</div>"
+      + "<div class=\"famtext" + (empty ? " empty" : "") + "\">"
+      + (empty ? "Kirjoita viesti kaikille" : esc(store.note)) + "</div></div>";
   }
 
   function renderHero(now, list) {
@@ -1573,15 +1741,15 @@ label.f {
       const placeBits = [ev.title, ev.place, fmtRange(ev.start, ev.end)].filter(Boolean);
       let who = "";
       const noteHtml = note ? " <span class=\"note\">· " + esc(note) + "</span>" : "";
-      if (!pill) {
-        who = note ? "<div class=\"who\"><span class=\"note\">" + esc(note) + "</span></div>" : "";
-      } else if (pill.cls === "warn") {
-        who = "<div class=\"who\"><span class=\"open\">Sovi kyyti erikseen</span>" + noteHtml + "</div>";
+      if (ui.editingDriver === ev.id) {
+        who = "<div class=\"who\"><input class=\"name-inp\" data-save-driver=\"" + esc(ev.id) + "\" value=\"" + esc(ev.driver || "") + "\" placeholder=\"Kuka vie?\"></div>";
+      } else if (!pill || pill.cls === "warn") {
+        who = "<div class=\"who\" data-act=\"edit-driver\" data-id=\"" + esc(ev.id) + "\"><span class=\"open\">Sovi kyyti erikseen</span>" + noteHtml + "</div>";
       } else if (pill.cls === "us") {
-        who = "<div class=\"who\">🚗 <span class=\"drive\">" + esc(ev.driver) + "</span> "
+        who = "<div class=\"who\" data-act=\"edit-driver\" data-id=\"" + esc(ev.id) + "\">🚗 <span class=\"drive\">" + esc(ev.driver) + "</span> "
           + esc(rideLabel(ev) || "") + noteHtml + "</div>";
       } else {
-        who = "<div class=\"who\">" + esc(pill.text) + noteHtml + "</div>";
+        who = "<div class=\"who\" data-act=\"edit-driver\" data-id=\"" + esc(ev.id) + "\">" + esc(pill.text) + noteHtml + "</div>";
       }
       const cd = countdownHtml(ev, now.minutes);
       const live = cd !== "Illan menot hoidettu";
@@ -1657,8 +1825,8 @@ label.f {
     const wTom = renderWeather("tomorrow");
 
     let kyydit = todayEvents.map(ev => eventItem(ev, now.iso)).join("");
-    let ruoka = mealItem(todayMeal);
-    let tomMenot = tomEvents.map(ev => eventItem(ev, tomIso)).join("") + mealItem(tomMeal);
+    let ruoka = mealItem(todayMeal, now.key);
+    let tomMenot = tomEvents.map(ev => eventItem(ev, tomIso)).join("") + mealItem(tomMeal, tomDay.key);
 
     return "<header class=\"rv\" style=\"animation-delay:.02s\">"
       + "<div class=\"eyebrow\">Räisän perhe · Viikko " + week + "</div>"
@@ -1666,6 +1834,7 @@ label.f {
       + "<div class=\"weather\" id=\"wx\">" + wToday + "</div>"
       + "<div class=\"rule g\"></div></header>"
       + renderHero(now, todayEvents)
+      + familyNote()
       + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>Tänään</h2><a class=\"weeklink\" href=\"#/viikko\">Koko viikko</a></div>"
       + "<div class=\"rv\" style=\"animation-delay:.18s\">"
       + "<div class=\"lbl2\">Koulu · tunnit</div>"
@@ -1715,7 +1884,7 @@ label.f {
       return "<div class=\"we\">" + esc(bits.join(" · ")) + "</div>";
     }).join("");
     const mealHtml = (meal && meal.dish)
-      ? "<div class=\"wm\">" + esc((meal.emoji ? meal.emoji + " " : "") + meal.dish) + "</div>"
+      ? "<div class=\"wm\">" + esc((meal.emoji ? meal.emoji + " " : "") + meal.dish + (meal.cook ? " · " + meal.cook : "")) + "</div>"
       : "";
     return "<div class=\"wday" + (isToday ? " is-today" : "") + "\"><div class=\"wd\">"
       + esc(day.full) + "<span>" + fmtDot(d.year, d.month, d.day) + (isToday ? " · tänään" : "") + "</span></div>"
@@ -2006,6 +2175,8 @@ label.f {
   }
 
   function tickToday() {
+    if (isEditing()) return;
+    if (route().name === "tanaan") pullShared();
     if (route().name !== "tanaan") return;
     const now = helsinkiNow();
     if (now.iso !== lastIso) {
@@ -2029,6 +2200,8 @@ label.f {
   }
 
   function onClick(e) {
+    const tag = e.target && e.target.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
     const t = e.target.closest("[data-act]");
     if (!t) return;
     const act = t.getAttribute("data-act");
@@ -2065,8 +2238,33 @@ label.f {
         next[day][field] = inp.value;
       });
       store.meals = next;
-      saveStore();
+      queuePushShared();
       setStatus("Tallennettu");
+      return;
+    }
+
+    if (act === "edit-driver") {
+      ui.editingDriver = id;
+      ui.editingCook = null;
+      ui.editingNote = false;
+      paint();
+      focusField("[data-save-driver]");
+      return;
+    }
+    if (act === "edit-cook") {
+      ui.editingCook = id;
+      ui.editingDriver = null;
+      ui.editingNote = false;
+      paint();
+      focusField("[data-save-cook]");
+      return;
+    }
+    if (act === "edit-note") {
+      ui.editingNote = true;
+      ui.editingDriver = null;
+      ui.editingCook = null;
+      paint();
+      focusField("[data-save-note]");
       return;
     }
 
@@ -2182,7 +2380,7 @@ label.f {
         const ev = store.events.find(x => x.id === id);
         if (ev) Object.assign(ev, fields);
       }
-      saveStore();
+      queuePushShared();
       ui.adding = false;
       ui.editingId = null;
       paint();
@@ -2190,9 +2388,9 @@ label.f {
   }
 
   function installUpdates() {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./sw.js");
-    }
+    try {
+      if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js");
+    } catch (e) {}
     function ping() {
       fetch("./version.json?t=" + Date.now(), { cache: "no-store" })
         .then(function (r) { return r.json(); })
@@ -2202,8 +2400,12 @@ label.f {
         .catch(function () {});
     }
     ping();
+    pullShared();
     document.addEventListener("visibilitychange", function () {
-      if (document.visibilityState === "visible") ping();
+      if (document.visibilityState === "visible") {
+        ping();
+        pullShared();
+      }
     });
     if (/\bv=\d+/.test(location.search)) {
       var u = new URL(location.href);
@@ -2217,8 +2419,30 @@ label.f {
     const root = document.getElementById("app");
     root.addEventListener("click", onClick);
     root.addEventListener("submit", onSubmit);
+    root.addEventListener("focusout", function (e) {
+      const el = e.target;
+      if (!el || !el.getAttribute) return;
+      if (el.getAttribute("data-save-driver") || el.getAttribute("data-save-cook") || el.hasAttribute("data-save-note")) {
+        commitNameField(el);
+      }
+    });
+    root.addEventListener("keydown", function (e) {
+      const el = e.target;
+      if (!el) return;
+      if (e.key === "Enter" && !e.shiftKey && (el.getAttribute("data-save-driver") || el.getAttribute("data-save-cook"))) {
+        e.preventDefault();
+        el.blur();
+      }
+      if (e.key === "Escape") {
+        ui.editingDriver = null;
+        ui.editingCook = null;
+        ui.editingNote = false;
+        paint();
+      }
+    });
     window.addEventListener("hashchange", paint);
     paint();
+    pullShared();
     const now = helsinkiNow();
     const tom = addCalendarDays(now.year, now.month, now.day, 1);
     const tomIso = pad(tom.year, 4) + "-" + pad(tom.month, 2) + "-" + pad(tom.day, 2);

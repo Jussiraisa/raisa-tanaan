@@ -1,13 +1,13 @@
 {
   "v": 1,
-  "updated": 1787934473983,
-  "powerW": 635,
-  "gridW": 450,
-  "solarW": 186,
-  "selfPct": 29,
+  "updated": 1787935413054,
+  "powerW": 658,
+  "gridW": 480,
+  "solarW": 147,
+  "selfPct": 21,
   "spotSnt": 4.7,
-  "priceSnt": 12.0,
-  "priceRank": "44/24",
+  "priceSnt": 11.8,
+  "priceRank": "38/24",
   "priceLevel": "Sähkö keskitasoa",
   "costNow": 0.0,
   "costToday": 2.08,
@@ -34,7 +34,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 0.0,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -44,7 +44,7 @@
     },
     {
       "plate": "NON-983",
-      "name": "Auto",
+      "name": "Toinen auto",
       "where": "Kotona",
       "known": true
     }
@@ -86,7 +86,9 @@
     }
   ],
   "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T19:26:00+03:00",
+  "capturedAt": "2026-08-28T19:42:47+03:00",
   "heatOffset": -10,
-  "notes": "Koti Pro + Energia Pro + Yleiskatsaus Pro + developer-tools/state. person.jussi=Poissa (Kuopio); ei muita person.* (Eino IT / mqtt_frigate pois). spotSnt tunnin keskiarvo api.spot-hinta.fi."
+  "notes": "Kerätty työpöydän Chromella HA-sivuilta: /koti-pro/koti-pro, /yleiskatsaus-pro/yleiskatsaus-luxe, /developer-tools/state. Vain person.jussi löytyi (person.eino_it ja person.mqtt_frigate ohitettu, tila unknown). Sijainti karkealla tasolla (kaupunki). Sauna näkyi 'päällä', teho vaihteli 0,00–1,04 kW. Koti Pro -kellon aika (09.38) on vanhentunut; capturedAt on todellinen Helsinki-aika. Kulutus/aurinko vaihtelivat hetkittäin (638–658 W / 146–155 W). costNow/costToday/kwhToday eivät näkyneet näillä sivuilla.",
+  "soldTodayEur": 1.02,
+  "dhwChargePct": 82
 }

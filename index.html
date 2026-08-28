@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#0e6a61">
-  <link rel="manifest" href="manifest.webmanifest?v=8">
+  <link rel="manifest" href="manifest.webmanifest?v=9">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Tänään">
@@ -526,7 +526,7 @@ label.f {
   "use strict";
 
   const TZ = "Europe/Helsinki";
-  const STORE_KEY = "raisa-tanaan-v6";
+  const STORE_KEY = "raisa-tanaan-v7";
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -699,13 +699,13 @@ label.f {
         who: "ellen",
         title: "Ambrosia",
         weekday: "pe",
-        start: "",
-        end: "",
+        start: "16:00",
+        end: "18:30",
         depart: "",
         place: "Luola",
-        driver: "",
-        ride: "",
-        status: "open",
+        driver: "Riikka",
+        ride: "vie",
+        status: "us",
         kind: "treeni",
         notesByDate: {},
         cancelledByDate: {}
@@ -1097,6 +1097,35 @@ label.f {
 
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
 
+  function mergeEvents(seedEvs, savedEvs) {
+    if (!Array.isArray(savedEvs)) return seedEvs;
+    const byId = {};
+    seedEvs.forEach(function(e) { byId[e.id] = clone(e); });
+    savedEvs.forEach(function(e) {
+      if (!e || !e.id) return;
+      const seed = byId[e.id];
+      if (!seed) { byId[e.id] = e; return; }
+      const merged = Object.assign({}, seed, e);
+      ["start", "end", "depart", "place", "driver", "ride"].forEach(function(k) {
+        if (!merged[k] && seed[k]) merged[k] = seed[k];
+      });
+      if ((!merged.status || merged.status === "open") && seed.status && seed.status !== "open") {
+        merged.status = seed.status;
+      }
+      byId[e.id] = merged;
+    });
+    const ids = {};
+    const out = [];
+    seedEvs.forEach(function(e) {
+      out.push(byId[e.id]);
+      ids[e.id] = true;
+    });
+    savedEvs.forEach(function(e) {
+      if (e && e.id && !ids[e.id]) { out.push(e); ids[e.id] = true; }
+    });
+    return out;
+  }
+
   function deepMerge(a, b) {
     if (b === null) return null;
     if (b === undefined) return a;
@@ -1117,7 +1146,7 @@ label.f {
       const saved = JSON.parse(raw);
       return {
         school: deepMerge(seed.school, saved.school || {}),
-        events: Array.isArray(saved.events) ? saved.events : seed.events,
+        events: mergeEvents(seed.events, saved.events),
         meals: deepMerge(seed.meals, saved.meals || {}),
         groceries: Array.isArray(saved.groceries) ? saved.groceries : []
       };

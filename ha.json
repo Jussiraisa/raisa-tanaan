@@ -1,24 +1,24 @@
 {
   "v": 1,
-  "updated": 1787921689833,
-  "powerW": 963,
-  "gridW": -4673,
-  "solarW": 5636,
+  "updated": 1787922439882,
+  "powerW": 1064,
+  "gridW": 0,
+  "solarW": 5545,
   "selfPct": 100,
-  "spotSnt": 3.6,
-  "priceSnt": 11.1,
-  "priceRank": "33/24",
+  "spotSnt": 4.0,
+  "priceSnt": 10.1,
+  "priceRank": "17/24",
   "priceLevel": "halpaa",
   "costNow": -0.499,
   "costToday": 1.88,
   "kwhToday": -19.9,
-  "soldToday": 0.77,
+  "soldToday": 0.8,
   "outC": 16.5,
   "inC": 20.8,
   "targetC": 21.0,
   "dhwC": 48.0,
   "heatStorePct": 13,
-  "heatStoreH": 213,
+  "heatStoreH": 216,
   "compressor": "seis",
   "weather": "Puolipilvistä",
   "weatherIcon": "⛅",
@@ -30,7 +30,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 20,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -78,11 +78,11 @@
     {
       "name": "Jussi",
       "home": false,
-      "where": "Poissa"
+      "where": "Kuopio"
     }
   ],
   "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-  "capturedAt": "2026-08-28T15:55:00+03:00",
+  "capturedAt": "2026-08-28T16:10:00+03:00",
   "heatOffset": -10,
-  "notes": "NON-983, weather, alerts, kwhToday/costToday not shown on Koti Pro view; 'Poissa' tile state = kotona; sauna/solar/power values fluctuate live."
+  "notes": "powerW 1064 W (Sähköä nyt), solar 5545 W, person.jussi=not_home, coarse location Kuopio (city only). Only person entities in HA: jussi (plus Eino IT / mqtt_frigate, excluded). No weather text besides Ulkona 16.5 C."
 }

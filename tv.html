@@ -44,8 +44,9 @@
     .empty { color: #6d685c; font-size: 2.5vmin; font-weight: 600; }
     .dish { font-family: Georgia, "Times New Roman", serif; font-size: 5.8vmin; line-height: 1.12; margin-top: .2vh; }
     .cook { margin-top: 1.2vh; font-size: 2.8vmin; font-weight: 800; color: #3ec4b2; }
-    .tom { margin-top: auto; padding-top: 1.6vh; font-size: 2.2vmin; color: #7d786c; font-weight: 650; line-height: 1.25; }
-    .tom .d { color: #c9c3b5; font-weight: 700; }
+    .tom { margin-top: auto; padding-top: 1.4vh; border-top: 1px solid #1c1c1c; }
+    .tom .h { font-size: 1.55vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; margin-bottom: .6vh; }
+    .tom .ln { font-size: 2vmin; color: #c9c3b5; font-weight: 650; line-height: 1.3; margin-top: .25vh; }
     .muut {
       margin-top: 1.2vh; padding: 1.3vh 1.6vw;
       background: #111; border: 1px solid #1c1c1c; border-radius: 1.2vmin;
@@ -84,6 +85,9 @@
     { id: "samuel-sahly-ma", who: "samuel", title: "sähly", weekday: "ma", start: "17:00", end: "18:00", place: "Ylä-Pyörö", driver: "Sini/Topias", status: "other", kind: "treeni" },
     { id: "samuel-sahly-ti", who: "samuel", title: "sähly", weekday: "ti", start: "16:30", end: "18:00", depart: "16:15", place: "Lippumäki", driver: "Räisä", ride: "vie+hakee", status: "us", kind: "treeni" },
     { id: "samuel-sahly", who: "samuel", title: "sähly", weekday: "to", start: "17:00", end: "19:00", depart: "16:30", place: "Puijonsarvi", driver: "Manen äiti / Topias", status: "other", kind: "treeni" },
+    { id: "milla-vivida-la", who: "milla", title: "Vivida", weekday: "la", start: "12:30", end: "15:00", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
+    { id: "milla-vivida-su", who: "milla", title: "Vivida", weekday: "su", start: "11:30", end: "14:00", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
+    { id: "mea-lianna-su", who: "mea", title: "Lianna", weekday: "su", start: "15:30", end: "18:00", place: "BellaCenter", driver: "Räisä", ride: "hakee", status: "us", kind: "treeni" },
     { id: "jussi-kalakisat", who: "", title: "Jussi kalassa, kyydit Riikka", date: "2026-08-28", dateEnd: "2026-08-30", start: "15:00", kind: "info" },
     { id: "ellen-samuel-syyskirkko", who: "ellen", title: "syyskirkko", date: "2026-08-28", place: "Kallaveden kirkko", kind: "info" }
   ];
@@ -325,10 +329,25 @@
 
     var cook = meal.cook ? "<div class=\"cook\">" + esc(meal.cook) + "</div>" : "";
     var tomDay = DAYS[(now.wd + 1) % 7];
+    var tomDate = new Date(Date.UTC(now.year, now.month - 1, now.day + 1));
+    var tomIso = tomDate.getUTCFullYear() + "-" + pad(tomDate.getUTCMonth() + 1) + "-" + pad(tomDate.getUTCDate());
+    var tomList = eventsOn(tomIso, tomDay.key);
+    tomList.sort(function (a, b) { return keyTime(a) - keyTime(b); });
     var tomMeal = MEALS[tomDay.key] || {};
-    var tomHtml = tomMeal.dish
-      ? "<div class=\"tom\">huominen<br><span class=\"d\">" + esc(tomMeal.dish) + "</span></div>"
-      : "";
+    var tomBits = "";
+    for (var ti = 0; ti < tomList.length; ti++) {
+      var te = tomList[ti];
+      var tk = kidById(te.who);
+      var tname = (tk ? tk.name + " · " : "") + (te.title || "");
+      var ttime = fmtRange(te.start, te.end) || fmtHm(te.start) || "";
+      var tline = (ttime ? ttime + "  " : "") + tname;
+      if (te.place) tline += " · " + te.place;
+      var td = driverText(te);
+      if (td) tline += " · " + td.text;
+      tomBits += "<div class=\"ln\">" + esc(tline) + "</div>";
+    }
+    if (tomMeal.dish) tomBits += "<div class=\"ln\">" + esc(tomMeal.dish + (tomMeal.cook ? " · " + tomMeal.cook : "")) + "</div>";
+    var tomHtml = tomBits ? "<div class=\"tom\"><div class=\"h\">huominen</div>" + tomBits + "</div>" : "";
     var muutBits = [];
     for (var m = 0; m < muut.length; m++) {
       var x = muut[m];

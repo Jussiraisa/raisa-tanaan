@@ -1,22 +1,22 @@
 {
   "v": 1,
-  "updated": 1787904286428,
-  "powerW": 1014,
+  "updated": 1787905285433,
+  "powerW": 1966,
   "gridW": 0,
-  "solarW": 3179,
+  "solarW": 3585,
   "selfPct": 100,
-  "spotSnt": 9.2,
-  "priceSnt": 16.2,
-  "priceRank": "83/24",
+  "spotSnt": 6.3,
+  "priceSnt": 13.3,
+  "priceRank": "74/24",
   "priceLevel": "kallis",
-  "costNow": -0.128,
+  "costNow": -0.1,
   "costToday": 1.87,
-  "kwhToday": 13.4,
-  "soldToday": 0.03,
+  "kwhToday": 0.0,
+  "soldToday": 0.85,
   "outC": 16.0,
   "inC": 20.7,
   "targetC": 21.0,
-  "dhwC": 44.0,
+  "dhwC": 43.5,
   "heatStorePct": 12,
   "heatStoreH": 181,
   "compressor": "seis",
@@ -25,14 +25,15 @@
   "online": true,
   "home": true,
   "alerts": [
-    "Sähkö kallista — vältä isoja kuormia"
+    "Sähkö kallista — vältä isoja kuormia",
+    "Aurinkoylijäämää — käytä se itse"
   ],
   "lightsOn": [
     "Olohuone",
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 0,
+  "saunaW": 1040,
   "cars": [
     {
       "plate": "KYP-452",
@@ -43,8 +44,8 @@
     {
       "plate": "NON-983",
       "name": "Auto",
-      "where": "Ei kytketty Home Assistantiin",
-      "known": false
+      "where": "Kotona",
+      "known": true
     }
   ]
 }

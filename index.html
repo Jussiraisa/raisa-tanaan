@@ -180,6 +180,47 @@ body {
 }
 .dayhead .ln { flex: 1; height: 1px; background: var(--hair) }
 
+.weeklink {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--accent);
+  text-decoration: none;
+}
+.wblock { margin: 28px 0 8px }
+.wtitle {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 4px;
+}
+.wsub { font-size: 13px; color: var(--ink3); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px }
+.wday {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px 14px 10px;
+  margin: 8px 0;
+}
+.wday.is-today {
+  background: var(--accent-soft);
+  border-color: transparent;
+}
+.wday .wd {
+  font-weight: 800;
+  font-size: 15px;
+}
+.wday .wd span { font-weight: 600; color: var(--ink3); margin-left: 8px }
+.wday .ws, .wday .we, .wday .wm {
+  font-size: 14px;
+  color: var(--ink2);
+  margin-top: 4px;
+  line-height: 1.35;
+}
+.wday.is-today .wd { color: var(--accent) }
+
+
 .lbl2 {
   font-size: 11px;
   font-weight: 800;
@@ -1397,6 +1438,7 @@ label.f {
     if (p === "lukujarjestys" || p === "lukujärjestys") {
       return { name: "lukujarjestys", kid: parts[1] || "", day: parts[2] || "" };
     }
+    if (p === "viikko") return { name: "viikko" };
     if (p === "treenit") return { name: "treenit" };
     if (p === "ruoka") return { name: "ruoka" };
     if (p === "kauppa") return { name: "kauppa" };
@@ -1554,6 +1596,7 @@ label.f {
       + "Päivä, sää ja lähtölaskenta päivittyvät automaattisesti.<br>"
       + "<div class=\"nav\">"
       + "<a href=\"#/\">Tänään</a>"
+      + "<a href=\"#/viikko\">Viikko</a>"
       + "<a href=\"#/lukujarjestys\">Lukujärjestykset</a>"
       + "<a href=\"#/treenit\">Treenit &amp; kyydit</a>"
       + "<a href=\"#/ruoka\">Ruoka</a>"
@@ -1592,7 +1635,7 @@ label.f {
       + "<div class=\"weather\" id=\"wx\">" + wToday + "</div>"
       + "<div class=\"rule g\"></div></header>"
       + renderHero(now, todayEvents)
-      + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>Tänään</h2><span class=\"ln\"></span></div>"
+      + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>Tänään</h2><a class=\"weeklink\" href=\"#/viikko\">Koko viikko</a></div>"
       + "<div class=\"rv\" style=\"animation-delay:.18s\">"
       + "<div class=\"lbl2\">Koulu · tunnit</div>"
       + "<div class=\"school\">" + schoolRows(now.key) + "</div>"
@@ -1606,6 +1649,72 @@ label.f {
       + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div>"
       + (tomMenot ? "<div class=\"lbl2\">Menot &amp; ruoka</div>" + tomMenot : "")
       + "</section>"
+      + footer();
+  }
+
+  function mondayOf(year, month, day) {
+    const wd = weekdayOf(year, month, day);
+    const back = wd === 0 ? 6 : wd - 1;
+    return addCalendarDays(year, month, day, -back);
+  }
+
+  function schoolOneLine(dayKey) {
+    return KIDS.map(function(k) {
+      const times = (store.school[k.id] || {})[dayKey] || {};
+      const tunti = (((HOURS[k.id] || {}).tunnit) || {})[dayKey] || {};
+      const h = { start: times.start || tunti.alku || "", end: times.end || tunti.loppu || "" };
+      if (!h.start && !h.end) return "";
+      return k.name + " " + fmtSchool(h);
+    }).filter(Boolean).join(" · ");
+  }
+
+  function weekDayCard(d, todayIso) {
+    const wd = weekdayOf(d.year, d.month, d.day);
+    const day = dayByI(wd);
+    const iso = pad(d.year, 4) + "-" + pad(d.month, 2) + "-" + pad(d.day, 2);
+    const isToday = iso === todayIso;
+    const school = schoolOneLine(day.key);
+    const evs = eventsOn(iso, day.key);
+    const meal = store.meals[day.key];
+    const evHtml = evs.map(function(ev) {
+      const kid = kidById(ev.who);
+      const who = kid ? kid.name + " · " : "";
+      const tm = fmtRange(ev.start, ev.end);
+      const bits = [who + (ev.title || "Meno"), tm, ev.place, ev.driver].filter(Boolean);
+      return "<div class=\\"we\\">" + esc(bits.join(" · ")) + "</div>";
+    }).join("");
+    const mealHtml = (meal && meal.dish)
+      ? "<div class=\\"wm\\">" + esc((meal.emoji ? meal.emoji + " " : "") + meal.dish) + "</div>"
+      : "";
+    return "<div class=\\"wday" + (isToday ? " is-today" : "") + "\\"><div class=\\"wd\\">"
+      + esc(day.full) + "<span>" + fmtDot(d.year, d.month, d.day) + (isToday ? " · tänään" : "") + "</span></div>"
+      + (school ? "<div class=\\"ws\\">" + esc(school) + "</div>" : "")
+      + evHtml + mealHtml + "</div>";
+  }
+
+  function weekBlock(mon, title) {
+    const w = isoWeek(mon.year, mon.month, mon.day);
+    const todayIso = helsinkiNow().iso;
+    const last = addCalendarDays(mon.year, mon.month, mon.day, 6);
+    let days = "";
+    for (let i = 0; i < 7; i++) {
+      days += weekDayCard(addCalendarDays(mon.year, mon.month, mon.day, i), todayIso);
+    }
+    return "<div class=\\"wblock\\"><h2 class=\\"wtitle\\">" + esc(title) + "</h2>"
+      + "<div class=\\"wsub\\">Viikko " + w + " · " + fmtDot(mon.year, mon.month, mon.day)
+      + "–" + fmtDot(last.year, last.month, last.day) + "</div>"
+      + days + "</div>";
+  }
+
+  function renderWeek() {
+    const now = helsinkiNow();
+    const mon = mondayOf(now.year, now.month, now.day);
+    const next = addCalendarDays(mon.year, mon.month, mon.day, 7);
+    return backLink()
+      + "<h1 class=\\"vtitle\\">Viikko</h1>"
+      + "<p class=\\"lede\\">Tämä ja seuraava. Tänään on korostettu.</p>"
+      + weekBlock(mon, "Tämä viikko")
+      + weekBlock(next, "Ensi viikko")
       + footer();
   }
 
@@ -1857,6 +1966,7 @@ label.f {
         html = renderKidDay(r.kid, day);
       } else html = renderSchool();
     }
+    else if (r.name === "viikko") html = renderWeek();
     else if (r.name === "treenit") html = renderTreenit();
     else if (r.name === "ruoka") html = renderRuoka();
     else if (r.name === "kauppa") html = renderKauppa();

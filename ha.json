@@ -1,30 +1,32 @@
 {
   "v": 1,
-  "updated": 1787991594122,
-  "powerW": 659,
+  "updated": 1787992722073,
+  "powerW": 671,
   "gridW": 0,
-  "solarW": 3853,
+  "solarW": 2635,
   "selfPct": 100,
   "spotSnt": 0.4,
   "priceSnt": 7.4,
   "priceRank": 77,
   "priceLevel": "halpa",
-  "costNow": 0.01,
+  "costNow": 0.0,
   "costToday": 0.59,
   "kwhToday": 56.3,
-  "soldToday": 1.75,
-  "outC": 16.0,
-  "inC": 20.5,
+  "soldToday": 2.31,
+  "outC": 16.5,
+  "inC": 20.4,
   "targetC": 21.0,
   "dhwC": 43.5,
-  "heatStorePct": 8,
-  "heatStoreH": 127,
+  "heatStorePct": 7,
+  "heatStoreH": 129,
   "compressor": "seis",
   "weather": "Pilvistä",
   "weatherIcon": "☁️",
   "online": true,
   "home": true,
-  "alerts": [],
+  "alerts": [
+    "Aurinkoylijäämää — käytä se itse"
+  ],
   "lightsOn": [
     "Olohuone",
     "Talli"
@@ -41,8 +43,8 @@
     {
       "plate": "NON-983",
       "name": "Toinen auto",
-      "where": "Ei kytketty Home Assistantiin",
-      "known": false
+      "where": "Kotona",
+      "known": true
     }
   ],
   "spotHours": [
@@ -81,12 +83,12 @@
       "where": "Kuopio"
     }
   ],
-  "source": "HA Koti Pro, Energia Pro, Kehittajan tyokalut / Tilat",
-  "capturedAt": "2026-08-29T11:19:54+03:00",
+  "source": "HA Koti Pro, Energia Pro, Yleiskatsaus Pro",
+  "capturedAt": "2026-08-29T11:38:42+03:00",
   "heatOffset": -10,
-  "notes": "Luettu 29.8.2026 klo ~8:00 Koti Pro + Energia Pro + Yleiskatsaus Pro. Yleiskatsaus sanoi valot pois, Koti Pro: Olohuone + Talli päällä (käytetty Koti Pro). Sauna päällä, teho vaihteli 0–1,05 kW (viimeisin 0 W). Teho/aurinko/omavaraisuus vaihtelevat; costNow (€/h) ei näkynyt. Read-only.",
+  "notes": "Luettu 29.8.2026 klo 11:38 Koti Pro + Energia Pro + Yleiskatsaus Pro. Valot: Olohuone + Talli. Sauna päällä, teho 0 W. NON-983 näytöllä Kotona. Jussi person-korttia ei näkynyt, pidetty edellinen paikka. Read-only.",
   "soldTodayEur": 0.01,
-  "dhwChargePct": 80,
+  "dhwChargePct": 79,
   "weatherC": 15.3,
   "solarTodayKwh": 25.6
 }

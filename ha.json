@@ -1,9 +1,9 @@
 {
   "v": 1,
-  "updated": 1787983820956,
-  "powerW": 732,
+  "updated": 1787984663807,
+  "powerW": 714,
   "gridW": 0,
-  "solarW": 1124,
+  "solarW": 1149,
   "selfPct": 100,
   "spotSnt": 0.4,
   "priceSnt": 7.4,
@@ -23,8 +23,10 @@
   "weather": "Pilvistä",
   "weatherIcon": "☁️",
   "online": true,
-  "home": true,
-  "alerts": [],
+  "home": false,
+  "alerts": [
+    "Aurinkoylijäämää — käytä se itse"
+  ],
   "lightsOn": [
     "Olohuone",
     "Talli"
@@ -77,12 +79,12 @@
   "people": [
     {
       "name": "Jussi",
-      "home": true,
-      "where": "Kotona"
+      "home": false,
+      "where": "Kuopio"
     }
   ],
-  "source": "Home Assistant: Koti Pro + Energia Pro + Yleiskatsaus Pro",
-  "capturedAt": "2026-08-29T09:10:00+03:00",
+  "source": "Home Assistant: Koti Pro + Yleiskatsaus Pro + developer-tools/state",
+  "capturedAt": "2026-08-29T09:25:00+03:00",
   "heatOffset": -10,
   "notes": "Luettu 29.8.2026 klo ~8:00 Koti Pro + Energia Pro + Yleiskatsaus Pro. Yleiskatsaus sanoi valot pois, Koti Pro: Olohuone + Talli päällä (käytetty Koti Pro). Sauna päällä, teho vaihteli 0–1,05 kW (viimeisin 0 W). Teho/aurinko/omavaraisuus vaihtelevat; costNow (€/h) ei näkynyt. Read-only.",
   "soldTodayEur": 0.0,

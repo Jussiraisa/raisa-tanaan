@@ -1,16 +1,16 @@
 {
   "v": 1,
-  "updated": 1788017113749,
-  "powerW": 1713,
-  "gridW": 990,
-  "solarW": 719,
-  "selfPct": 42,
+  "updated": 1788017984783,
+  "powerW": 1370,
+  "gridW": 620,
+  "solarW": 749,
+  "selfPct": 55,
   "spotSnt": 0.3,
   "priceSnt": 7.3,
   "priceRank": 45,
   "priceLevel": "halpaa",
-  "costNow": 0.2458,
-  "costToday": 0.82,
+  "costNow": 0.0,
+  "costToday": 0.83,
   "kwhToday": 56.3,
   "soldToday": 9.47,
   "outC": 17.0,
@@ -26,9 +26,9 @@
   "home": true,
   "alerts": [
     "Korjaukset: 1 ongelma",
+    "Huolto: 3 laitetta ei käytettävissä",
     "Päivitykset: 11 päivitystä saatavilla",
-    "Löydetyt laitteet: 3 lisättävää laitetta",
-    "Huolto: 3 laitetta ei käytettävissä"
+    "Löydetyt laitteet: 2 lisättävää"
   ],
   "lightsOn": [
     "Olohuone",
@@ -82,8 +82,8 @@
   "people": [
     {
       "name": "Jussi",
-      "home": true,
-      "where": "Kotona"
+      "home": false,
+      "where": "Kuopio"
     }
   ],
   "source": [
@@ -92,12 +92,12 @@
     "Yleiskatsaus Pro",
     "Yleiskatsaus"
   ],
-  "capturedAt": "2026-08-29T18:25:00+03:00",
+  "capturedAt": "2026-08-29T18:39:00+03:00",
   "heatOffset": -10,
-  "notes": "Sähkö halpaa (7,3 snt/kWh), aurinko ~0,7 kW, sauna päällä; Jussi kotona, autot kotona.",
+  "notes": "Sähkö halpaa (7,3 snt/kWh), aurinko ~0,7 kW, sauna päällä; Jussi poissa, autot kotona.",
   "soldTodayEur": 0.03,
   "dhwChargePct": 76,
   "weatherC": 19,
   "solarTodayKwh": 25.6,
-  "solarSavedTodayEur": 1.62
+  "solarSavedTodayEur": 1.63
 }

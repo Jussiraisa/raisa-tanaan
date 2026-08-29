@@ -1,9 +1,9 @@
 {
   "v": 1,
-  "updated": 1787995613566,
-  "powerW": 1030,
+  "updated": 1787996391635,
+  "powerW": 1168,
   "gridW": 0,
-  "solarW": 4536,
+  "solarW": 2528,
   "selfPct": 100,
   "spotSnt": 0.3,
   "priceSnt": 7.3,
@@ -12,29 +12,29 @@
   "costNow": 0.01,
   "costToday": 0.59,
   "kwhToday": 56.3,
-  "soldToday": 3.88,
-  "outC": 16.5,
+  "soldToday": 4.67,
+  "outC": 17.0,
   "inC": 20.5,
   "targetC": 21.0,
   "dhwC": 43.0,
   "heatStorePct": 8,
-  "heatStoreH": 145,
+  "heatStoreH": 156,
   "compressor": "seis",
   "weather": "Pilvistä",
   "weatherIcon": "☁️",
   "online": true,
   "home": true,
   "alerts": [
-    "Aurinkoylijäämää — käytä se itse",
     "Korjaukset: 1 ongelma",
-    "Huolto: 3 laitetta ei käytettävissä"
+    "Huolto: 3 laitetta ei käytettävissä",
+    "Aurinkoylijäämää — käytä se itse"
   ],
   "lightsOn": [
     "Olohuone",
     "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 1060,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -85,12 +85,12 @@
       "where": "Kotona"
     }
   ],
-  "source": "Home Assistant (Nabu Casa): Energia Pro, Koti Pro, Yleiskatsaus Pro, Yleiskatsaus",
-  "capturedAt": "2026-08-29T12:24:00+03:00",
+  "source": "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro (+ /yleiskatsaus-pro, /energia-pro, /home)",
+  "capturedAt": "2026-08-29T12:40:00+03:00",
   "heatOffset": -10,
-  "notes": "Teho vaihtelee 150-1700 W (aurinko pilvien takana 2-5 kW). Verkosta 0,00 kW, myyntia ulos ~0,4 kW. Kello nayttaa 02.05 (HA-palvelimen aika), sisallot 29.8. Henkiloista naikyi vain Jussi/kotona-tila; muita perheenjasenia ei nakynyt korteissa.",
+  "notes": "Read-only UI scrape. Koti Pro live power fluctuates (1153-1201 W across reads); solarW likewise (2528-3864 W). Dashboard header clock showed 02.38 la 29.8 (stale/UTC-ish), actual capture 29.8.2026 ~12.40 EEST. 'Sähköä nyt' 2214 W seen on Yleiskatsaus Pro (different sensor). Pörssi tile shows 0,3 snt while badge/graph show 7,3 snt/kWh -> priceSnt from badge. costNow not shown as €/h except 'nyt 0,00 €/h' on Energia Pro sale tile. Only Jussi visible as person (Poissa/kotona tile, state kotona); no per-child presence cards. Home overview: valot 2 päällä, tämän päivän energia -3,87 kWh, sää 16,6 °C pilvistä. Eino IT / mqtt_frigate excluded. Phases: L1 -439 W, L2 -686 W, L3 -270 W, total -1395 W.",
   "soldTodayEur": 0.02,
   "dhwChargePct": 78,
-  "weatherC": 16.2,
+  "weatherC": 16.6,
   "solarTodayKwh": 25.6
 }

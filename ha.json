@@ -1,16 +1,16 @@
 {
   "v": 1,
-  "updated": 1788020320846,
-  "powerW": 2308,
-  "gridW": 1960,
-  "solarW": 351,
-  "selfPct": 16,
+  "updated": 1788021100046,
+  "powerW": 2591,
+  "gridW": 2300,
+  "solarW": 292,
+  "selfPct": 11,
   "spotSnt": 0.2,
   "priceSnt": 7.2,
-  "priceRank": 5,
+  "priceRank": "5/24",
   "priceLevel": "halpaa",
   "costNow": 0.0,
-  "costToday": 0.91,
+  "costToday": 0.93,
   "kwhToday": 56.3,
   "soldToday": 9.47,
   "outC": 17.0,
@@ -24,11 +24,7 @@
   "weatherIcon": "cloudy",
   "online": true,
   "home": false,
-  "alerts": [
-    "Huolto: 3 laitetta ei käytettävissä",
-    "Päivitykset: 11 päivitystä saatavilla",
-    "Löydetyt laitteet: 2 lisättävää"
-  ],
+  "alerts": [],
   "lightsOn": [
     "Olohuone",
     "Talli"
@@ -50,17 +46,17 @@
     }
   ],
   "spotHours": [
-    0.3,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
     0.2,
     0.2,
     0.3,
-    0.2,
-    0.2,
-    0.3,
-    0.2,
     0.4,
-    0.4,
-    0.4,
+    0.5,
     0.4,
     0.3,
     0.3,
@@ -89,12 +85,12 @@
     "Home Assistant",
     "Koti Pro + Energia Pro + Kehittäjän työkalut (Tilat)"
   ],
-  "capturedAt": "2026-08-29T19:20:00+03:00",
+  "capturedAt": "2026-08-29T19:30:33+03:00",
   "heatOffset": -10,
-  "notes": "Sähkö halpaa 7,2 snt/kWh, aurinko 351 W, lämpövarasto riittää yli viikon. Sauna päällä (teho 0 kW juuri nyt). Vain Jussin sijainti saatavilla (Kuopio, ei kotona); NON-983 ei näy HA:ssa. Käyttöveden latausprosenttia ei löytynyt.",
+  "notes": "Koti Pro naytti kellon 09.25 la 29.8 (HA:n oma aika poikkeaa boxin ajasta). powerW/solarW Koti Pro -kortista (Energia Pro naytti hetkea myohemmin 2579 W / 281 W). spotSnt = Porssi 0,2 snt, priceSnt = 7,2 snt/kWh (sija 5/24 halvimmissa). Vaiheet L1/L2/L3 ~356/557/384 W. Lampoa: kayttovesi 42,0 C, lammitysoffset -10, kompressori seis, lampovarasto 13 % (241 h). dhwChargePct-entiteettia ei loytynyt. Valot: HA:ssa vain kaksi IKEA TRADFRI -lamppua (molemmat 'on'), huonenimet otettu Koti Pro -kortin teksteista (Olohuone, Tallin valot). Sauna: switch.sauna = on, sensor.sauna_power = 0.0 W. Sijainti vain karkeana: sensor.jussi_iphone_geocoded_location -> Kuopio. NON-983:lle ei loytynyt entiteetteja. person.eino_it ja person.mqtt_frigate ohitettu.",
   "soldTodayEur": 0.03,
   "dhwChargePct": 76,
   "weatherC": 17.0,
   "solarTodayKwh": 25.6,
-  "solarSavedTodayEur": 1.65
+  "solarSavedTodayEur": 1.66
 }

@@ -1,10 +1,10 @@
 {
   "v": 1,
-  "updated": 1787982311898,
-  "powerW": 1739,
-  "gridW": 590,
-  "solarW": 1148,
-  "selfPct": 68,
+  "updated": 1787983820956,
+  "powerW": 732,
+  "gridW": 0,
+  "solarW": 1124,
+  "selfPct": 100,
   "spotSnt": 0.4,
   "priceSnt": 7.4,
   "priceRank": "77/24",
@@ -12,27 +12,25 @@
   "costNow": 0.0,
   "costToday": 0.58,
   "kwhToday": 56.3,
-  "soldToday": 0.11,
-  "outC": 15.0,
-  "inC": 20.5,
+  "soldToday": 0.26,
+  "outC": 15.5,
+  "inC": 20.4,
   "targetC": 21.0,
-  "dhwC": 45.0,
-  "heatStorePct": 8,
-  "heatStoreH": 99,
+  "dhwC": 44.5,
+  "heatStorePct": 7,
+  "heatStoreH": 100,
   "compressor": "seis",
   "weather": "Pilvistä",
   "weatherIcon": "☁️",
   "online": true,
   "home": true,
-  "alerts": [
-    "Aurinkoylijäämää — käytä se itse"
-  ],
+  "alerts": [],
   "lightsOn": [
     "Olohuone",
     "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 1000,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -83,12 +81,12 @@
       "where": "Kotona"
     }
   ],
-  "source": "Koti Pro (/koti-pro/koti-pro), Energia Pro (/energia-pro/energia-pro), Yleiskatsaus Pro (/yleiskatsaus-pro/yleiskatsaus-luxe)",
-  "capturedAt": "2026-08-29T08:47:00+03:00",
+  "source": "Home Assistant: Koti Pro + Energia Pro + Yleiskatsaus Pro",
+  "capturedAt": "2026-08-29T09:10:00+03:00",
   "heatOffset": -10,
   "notes": "Luettu 29.8.2026 klo ~8:00 Koti Pro + Energia Pro + Yleiskatsaus Pro. Yleiskatsaus sanoi valot pois, Koti Pro: Olohuone + Talli päällä (käytetty Koti Pro). Sauna päällä, teho vaihteli 0–1,05 kW (viimeisin 0 W). Teho/aurinko/omavaraisuus vaihtelevat; costNow (€/h) ei näkynyt. Read-only.",
   "soldTodayEur": 0.0,
-  "dhwChargePct": 82,
-  "weatherC": 15.0,
+  "dhwChargePct": 81,
+  "weatherC": 15.5,
   "solarTodayKwh": 25.6
 }

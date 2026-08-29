@@ -1,18 +1,18 @@
 {
   "v": 1,
-  "updated": 1788007539807,
-  "powerW": 1031,
-  "gridW": 0,
-  "solarW": 2822,
+  "updated": 1788008428655,
+  "powerW": 3071,
+  "gridW": -400,
+  "solarW": 3165,
   "selfPct": 100,
   "spotSnt": 0.3,
   "priceSnt": 7.3,
   "priceRank": "45/24",
   "priceLevel": "erittain_halpa",
   "costNow": 0.0,
-  "costToday": 0.6484,
+  "costToday": 0.6489,
   "kwhToday": 56.3,
-  "soldToday": 8.14,
+  "soldToday": 8.349,
   "outC": 17.0,
   "inC": 20.5,
   "targetC": 21.0,
@@ -26,17 +26,14 @@
   "home": "Kotona",
   "alerts": [
     "Aurinkoylijäämää — käytä se itse",
-    "Kilpi tunnistettu etuovella",
-    "Korjaukset: 1 ongelma",
-    "Päivitykset: 11 päivitystä saatavilla",
-    "Huolto: 3 laitetta ei käytettävissä"
+    "Kilpi tunnistettu etuovella"
   ],
   "lightsOn": [
     "Olohuone",
     "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 1038,
+  "saunaW": 1025,
   "cars": [
     {
       "plate": "KYP-452",
@@ -52,17 +49,17 @@
     }
   ],
   "spotHours": [
-    0.2,
-    0.2,
-    0.2,
-    0.2,
-    0.2,
-    0.2,
+    0.3,
     0.2,
     0.2,
     0.3,
+    0.2,
+    0.2,
+    0.3,
+    0.2,
     0.4,
-    0.5,
+    0.4,
+    0.4,
     0.4,
     0.3,
     0.3,
@@ -94,11 +91,11 @@
     "Energia Pro",
     "Yleiskatsaus"
   ],
-  "capturedAt": "2026-08-29T15:45:11+03:00",
+  "capturedAt": "2026-08-29T16:00:28+03:00",
   "heatOffset": -10,
-  "notes": "Sähkö halpaa 7,3 snt/kWh (sija 45/24 h). Aurinko tuottaa 2.1 kW, omavaraisuus 100 %, verkosta 0.0 kW – ylijäämää myyntiin (8.02 kWh / 0.03 € tänään). Ulkona 17,0 °C, sisällä 20,5 °C (tavoite 21). Käyttövesi 42,5 °C (lataus 77 %), lämpövarasto 9 % / 178 h, kompressori seis, lämmitysoffset -10. Sauna päällä (~1.0 kW), olohuoneen ja tallin valot päällä. KYP-452 kotona etuovella. Jussi kotona.",
-  "soldTodayEur": 0.03,
+  "notes": "Sähkö halpaa 7,3 snt/kWh (sija 45/24 h). Aurinko tuottaa 3.2 kW, omavaraisuus 100 %, verkosta -0.4 kW – ylijäämää myyntiin (8.35 kWh / 0.03 € tänään). Ulkona 17,0 °C, sisällä 20,5 °C (tavoite 21). Käyttövesi 42,5 °C (lataus 77 %), lämpövarasto 8 % / 163 h, kompressori seis, lämmitysoffset -10. Sauna päällä (~1.0 kW), olohuoneen ja tallin valot päällä. KYP-452 kotona etuovella. Jussi poissa.",
+  "soldTodayEur": 0.0287,
   "dhwChargePct": 77,
-  "weatherC": 18.3,
+  "weatherC": 18.9,
   "solarTodayKwh": 25.6
 }

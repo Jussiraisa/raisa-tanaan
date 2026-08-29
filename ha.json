@@ -1,16 +1,16 @@
 {
   "v": 1,
-  "updated": 1788019564988,
-  "powerW": 1563,
-  "gridW": 1160,
-  "solarW": 399,
-  "selfPct": 26,
+  "updated": 1788020320846,
+  "powerW": 2308,
+  "gridW": 1960,
+  "solarW": 351,
+  "selfPct": 16,
   "spotSnt": 0.2,
-  "priceSnt": 7.3,
-  "priceRank": 45,
+  "priceSnt": 7.2,
+  "priceRank": 5,
   "priceLevel": "halpaa",
   "costNow": 0.0,
-  "costToday": 0.88,
+  "costToday": 0.91,
   "kwhToday": 56.3,
   "soldToday": 9.47,
   "outC": 17.0,
@@ -23,7 +23,7 @@
   "weather": "Pilvistä",
   "weatherIcon": "cloudy",
   "online": true,
-  "home": true,
+  "home": false,
   "alerts": [
     "Huolto: 3 laitetta ei käytettävissä",
     "Päivitykset: 11 päivitystä saatavilla",
@@ -45,8 +45,8 @@
     {
       "plate": "NON-983",
       "name": "Toinen auto",
-      "where": "Kotona",
-      "known": true
+      "where": "Ei kytketty Home Assistantiin",
+      "known": false
     }
   ],
   "spotHours": [
@@ -86,18 +86,15 @@
     }
   ],
   "source": [
-    "Koti Pro",
-    "Energia Pro",
-    "Yleiskatsaus Pro",
-    "Yleiskatsaus",
-    "Kehittajan tyokalut / Tilat"
+    "Home Assistant",
+    "Koti Pro + Energia Pro + Kehittäjän työkalut (Tilat)"
   ],
-  "capturedAt": "2026-08-29T19:06:00+03:00",
+  "capturedAt": "2026-08-29T19:20:00+03:00",
   "heatOffset": -10,
-  "notes": "Sähkö halpaa (7,3 snt/kWh), aurinko ~0,4 kW, sauna päällä; Jussi poissa, autot kotona.",
+  "notes": "Sähkö halpaa 7,2 snt/kWh, aurinko 351 W, lämpövarasto riittää yli viikon. Sauna päällä (teho 0 kW juuri nyt). Vain Jussin sijainti saatavilla (Kuopio, ei kotona); NON-983 ei näy HA:ssa. Käyttöveden latausprosenttia ei löytynyt.",
   "soldTodayEur": 0.03,
   "dhwChargePct": 76,
-  "weatherC": 18.8,
+  "weatherC": 17.0,
   "solarTodayKwh": 25.6,
   "solarSavedTodayEur": 1.65
 }

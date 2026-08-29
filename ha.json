@@ -1,42 +1,39 @@
 {
   "v": 1,
-  "updated": 1788003700950,
-  "powerW": 1831,
+  "updated": 1788005202976,
+  "powerW": 762,
   "gridW": 0,
-  "solarW": 4406,
+  "solarW": 2149,
   "selfPct": 100,
   "spotSnt": 0.3,
   "priceSnt": 7.3,
   "priceRank": 45,
   "priceLevel": "halpaa",
-  "costNow": -0.13,
+  "costNow": -0.093,
   "costToday": 0.65,
   "kwhToday": 56.3,
-  "soldToday": 6.05,
+  "soldToday": 7.499,
   "outC": 17.0,
   "inC": 20.5,
   "targetC": 21.0,
   "dhwC": 42.5,
   "heatStorePct": 8,
-  "heatStoreH": 163,
+  "heatStoreH": 156,
   "compressor": "seis",
-  "weather": "Pilvistä",
+  "weather": "Pilvinen",
   "weatherIcon": "☁️",
   "online": true,
-  "home": false,
+  "home": true,
   "alerts": [
-    "Korjaukset: 1 ongelma",
-    "Päivitykset: 11 päivitystä saatavilla",
-    "Löydetyt laitteet: 1 lisättävä laite",
-    "Huolto: 3 laitetta ei käytettävissä",
-    "Aurinkoylijäämää — käytä se itse"
+    "Aurinkoylijäämää — käytä se itse",
+    "Kilpi tunnistettu etuovella"
   ],
   "lightsOn": [
     "Olohuone",
-    "Tallin valot"
+    "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 1038,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -88,15 +85,17 @@
     }
   ],
   "source": [
-    "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-    "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/yleiskatsaus-pro",
-    "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/developer-tools/state"
+    "Yleiskatsaus Pro",
+    "Koti Pro",
+    "Energia Pro",
+    "Koti",
+    "Ohjauskeskus"
   ],
-  "capturedAt": "2026-08-29T14:40:00+03:00",
+  "capturedAt": "2026-08-29T15:10:00+03:00",
   "heatOffset": -10,
-  "notes": "Sähkö erittäin halpaa 7,3 snt/kWh (sija 45/24 h). Aurinko tuottaa 4,4 kW, omavaraisuus 100 %, verkosta 0 kW – ylijäämää myyntiin (6,05 kWh / 0,02 € tänään). Ulkona 17 °C, sisällä 20,5 °C (tavoite 21). Käyttövesi 42,5 °C (lataus 77 %), lämpövarasto 8 % / 163 h, kompressori seis, lämmitysoffset -10. Sauna päällä (~1,0 kW), olohuoneen ja tallin valot päällä. Molemmat autot kotona (KYP-452 etuovella). Jussi poissa kotoa (Kuopio).",
-  "soldTodayEur": 0.02,
+  "notes": "Sähkö halpaa 7,3 snt/kWh (sija 45/24 h). Aurinko tuottaa 2,1 kW, omavaraisuus 100 %, verkosta 0 kW – ylijäämää myyntiin (7,50 kWh / 0,03 € tänään). Ulkona 17 °C, sisällä 20,5 °C (tavoite 21). Käyttövesi 42,5 °C (lataus 77 %), lämpövarasto 8 % / 156 h, kompressori seis, lämmitysoffset -10. Sauna päällä, olohuoneen ja tallin valot päällä. KYP-452 kotona etuovella. Jussi Kuopio.",
+  "soldTodayEur": 0.03,
   "dhwChargePct": 77,
-  "weatherC": 17.9,
+  "weatherC": 18.3,
   "solarTodayKwh": 25.6
 }

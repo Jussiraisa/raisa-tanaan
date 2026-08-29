@@ -1,16 +1,16 @@
 {
   "v": 1,
-  "updated": 1787977009089,
-  "powerW": 741,
-  "gridW": 480,
-  "solarW": 260,
-  "selfPct": 35,
+  "updated": 1787977981480,
+  "powerW": 582,
+  "gridW": 210,
+  "solarW": 370,
+  "selfPct": 64,
   "spotSnt": 0.2,
   "priceSnt": 7.2,
   "priceRank": "5",
   "priceLevel": "Sähkö halpaa",
   "costNow": 0.0,
-  "costToday": 0.53,
+  "costToday": 0.54,
   "kwhToday": 56.3,
   "soldToday": 0.0,
   "outC": 15.0,
@@ -20,17 +20,20 @@
   "heatStorePct": 8,
   "heatStoreH": 104,
   "compressor": "seis",
-  "weather": "Puolipilvinen",
-  "weatherIcon": "⛅",
+  "weather": "Pilvinen",
+  "weatherIcon": "☁️",
   "online": true,
   "home": true,
-  "alerts": [],
-  "lightsOn": [
-    "Olohuone valot",
-    "Tallin valot"
+  "alerts": [
+    "Korjaukset: 1 ongelma",
+    "Päivitykset: 10 päivitystä saatavilla",
+    "Löydetyt laitteet: 2 lisättävää laitetta",
+    "Huolto: 3 laitetta ei käytettävissä",
+    "Ilmoitukset: 1"
   ],
-  "saunaOn": true,
-  "saunaW": 1060,
+  "lightsOn": [],
+  "saunaOn": false,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -82,10 +85,10 @@
     }
   ],
   "source": "Home Assistant Koti Pro + Yleiskatsaus Pro",
-  "capturedAt": "2026-08-29T07:15:00+03:00",
+  "capturedAt": "2026-08-29T07:33+03:00",
   "heatOffset": -10,
-  "notes": "",
+  "notes": "Luettu 29.8.2026 klo ~7.30 (HA-näkymän kello näytti 21.29 pe 28.8). Aurinko 25,6 kWh tänään, säästö 0,01 €. Sisäilma yläkerta: kosteus 55 %, paine 1020 hPa. Sää: tuuli 14 km/h, kosteus 92 %, paine 1022 hPa. Ennuste: huomenna +17, su +19, ma +19, ti +18. Yleiskatsaus: Valot kaikki pois päältä; koti-pro-napit Olohuone/Tallin valot näyttivät tekstin 'päällä' (ristiriita, ei koskettu). Pääovi -, WC liike tyhjä 20.58, iPhone akku 100 %. Ei person/device_tracker-kortteja näkyvissä.",
   "soldTodayEur": 0.0,
   "dhwChargePct": 83,
-  "weatherC": 15.0
+  "weatherC": 13.2
 }

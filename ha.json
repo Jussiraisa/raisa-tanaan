@@ -1,18 +1,18 @@
 {
   "v": 1,
-  "updated": 1788010752595,
-  "powerW": 2171,
-  "gridW": -778,
-  "solarW": 2950,
+  "updated": 1788011563245,
+  "powerW": 1685,
+  "gridW": -321,
+  "solarW": 2006,
   "selfPct": 100,
   "spotSnt": 0.4,
-  "priceSnt": 7.4,
-  "priceRank": 77,
-  "priceLevel": "erittain_halpa",
+  "priceSnt": 7.5,
+  "priceRank": 89,
+  "priceLevel": "halpa",
   "costNow": 0.0,
-  "costToday": 0.6513,
+  "costToday": 0.66,
   "kwhToday": 56.3,
-  "soldToday": 9.007,
+  "soldToday": 9.11,
   "outC": 17.0,
   "inC": 20.6,
   "targetC": 21.0,
@@ -24,10 +24,7 @@
   "weatherIcon": "cloudy",
   "online": true,
   "home": "Kotona",
-  "alerts": [
-    "Aurinkoylijäämää — käytä se itse",
-    "Kilpi tunnistettu etuovella"
-  ],
+  "alerts": [],
   "lightsOn": [
     "Olohuone",
     "Talli"
@@ -38,7 +35,7 @@
     {
       "plate": "KYP-452",
       "name": "Tesla Model 3",
-      "where": "Kotona / Etuovi",
+      "where": "Kotona · etuovi",
       "known": true
     },
     {
@@ -80,22 +77,21 @@
   "people": [
     {
       "name": "Jussi",
-      "home": false,
-      "where": "Poissa"
+      "home": true,
+      "where": "Kotona"
     }
   ],
   "source": [
-    "Ohjauskeskus",
+    "Energia Pro",
     "Koti Pro",
-    "Yleiskatsaus",
-    "Energia Pro"
+    "Yleiskatsaus Pro"
   ],
-  "capturedAt": "2026-08-29T16:37:00+03:00",
-  "heatOffset": -1.0,
-  "notes": "Sähkö halpaa 7,4 snt/kWh (sija 77/24 h). Aurinko tuottaa 3.0 kW, omavaraisuus 100 %, verkosta -0.8 kW – ylijäämää myyntiin (9.01 kWh / 0.03 € tänään). Ulkona 17,0 °C, sisällä 20,6 °C (tavoite 21). Käyttövesi 42,5 °C (lataus 77 %), lämpövarasto 10 % / 194 h, kompressori seis, lämmitysoffset -1. Sauna päällä (~1.0 kW), olohuoneen ja tallin valot päällä. KYP-452 kotona etuovella. Jussi poissa.",
-  "soldTodayEur": 0.0308,
+  "capturedAt": "2026-08-29T16:52:00+03:00",
+  "heatOffset": -10,
+  "notes": "Sähkö halpaa 7,5 snt/kWh (sija 89/24 h). Aurinko tuottaa 2.0 kW, omavaraisuus 100 %, verkosta -0.3 kW – ylijäämää myyntiin (9.11 kWh / 0.03 € tänään). Ulkona 17.0 °C, sisällä 20.6 °C (tavoite 21). Käyttövesi 42.5 °C (lataus 77 %), lämpövarasto 10 % / 194 h, kompressori seis, lämmitysoffset -10. Sauna päällä, olohuoneen ja tallin valot päällä. KYP-452 kotona etuovella. Jussi kotona.",
+  "soldTodayEur": 0.03,
   "dhwChargePct": 77,
   "weatherC": 19,
   "solarTodayKwh": 25.6,
-  "solarSavedTodayEur": 1.42
+  "solarSavedTodayEur": 1.45
 }

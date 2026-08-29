@@ -1,39 +1,40 @@
 {
   "v": 1,
-  "updated": 1788014443427,
-  "powerW": 5428,
-  "gridW": 4240,
-  "solarW": 1193,
-  "selfPct": 22,
+  "updated": 1788015527535,
+  "powerW": 2975,
+  "gridW": 2120,
+  "solarW": 853,
+  "selfPct": 29,
   "spotSnt": 0.5,
-  "priceSnt": 7.5,
-  "priceRank": 89,
-  "priceLevel": "erittäin halpa",
+  "priceSnt": 7.6,
+  "priceRank": 96,
+  "priceLevel": "halpaa",
   "costNow": 0.2458,
-  "costToday": 0.71,
+  "costToday": 0.77,
   "kwhToday": 56.3,
-  "soldToday": 0.0,
+  "soldToday": 9.47,
   "outC": 17.0,
-  "inC": 20.7,
+  "inC": 20.8,
   "targetC": 21.0,
-  "dhwC": 42.5,
-  "heatStorePct": 12,
-  "heatStoreH": 230,
+  "dhwC": 42.0,
+  "heatStorePct": 13,
+  "heatStoreH": 239,
   "compressor": "seis",
   "weather": "Pilvistä",
   "weatherIcon": "cloudy",
   "online": true,
-  "home": "Poissa",
+  "home": true,
   "alerts": [
-    "Korjaukset: 1 ongelma",
-    "Huolto: 3 laitetta ei käytettävissä"
+    "Korjaukset: 4 ongelmaa",
+    "Huolto: 3 laitetta ei käytettävissä",
+    "Päivitykset: 11 päivitystä saatavilla"
   ],
   "lightsOn": [
     "Olohuone",
     "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 1020.5,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -80,23 +81,22 @@
   "people": [
     {
       "name": "Jussi",
-      "home": false,
-      "where": "Poissa"
+      "home": true,
+      "where": "Kotona"
     }
   ],
   "source": [
     "Koti Pro",
     "Energia Pro",
     "Yleiskatsaus Pro",
-    "Yleiskatsaus",
-    "Kehittäjän työkalut (tilat + malli)"
+    "Yleiskatsaus"
   ],
-  "capturedAt": "2026-08-29T17:36:00+03:00",
+  "capturedAt": "2026-08-29T17:56:00+03:00",
   "heatOffset": -10,
-  "notes": "Sähkö halpaa (7,5 snt/kWh), aurinko tuottaa ~1,2 kW ja sauna päällä; Jussi poissa, autot kotona.",
+  "notes": "Sähkö halpaa (7,6 snt/kWh), aurinko ~0,9 kW, sauna päällä; Jussi kotona, autot kotona.",
   "soldTodayEur": 0.03,
-  "dhwChargePct": 77,
+  "dhwChargePct": 76,
   "weatherC": 19,
   "solarTodayKwh": 25.6,
-  "solarSavedTodayEur": 1.57
+  "solarSavedTodayEur": 1.6
 }

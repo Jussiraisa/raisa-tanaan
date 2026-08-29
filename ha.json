@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1787979784777,
+  "updated": 1787980057077,
   "powerW": 1685,
   "gridW": 1020,
   "solarW": 660,
@@ -91,7 +91,7 @@
   "source": "Home Assistant Koti Pro + Energia Pro + Yleiskatsaus Pro",
   "capturedAt": "2026-08-29T08:00+03:00",
   "heatOffset": -10,
-  "notes": "Luettu 29.8.2026 klo ~8:00 Koti Pro + Energia Pro + Yleiskatsaus Pro. Yleiskatsaus sanoi valot pois, Koti Pro näytti Olohuone+Talli päällä — lightsOn Koti Pron mukaan. Sauna päällä, teho vaihteli 0–1,05 kW (viimeisin 0). costNow (€/h) ei näkynyt. Read-only.",
+  "notes": "Luettu 29.8.2026 klo ~8:00 Koti Pro + Energia Pro + Yleiskatsaus Pro. Yleiskatsaus sanoi valot pois, Koti Pro: Olohuone + Talli päällä (käytetty Koti Pro). Sauna päällä, teho vaihteli 0–1,05 kW (viimeisin 0 W). Teho/aurinko/omavaraisuus vaihtelevat; costNow (€/h) ei näkynyt. Read-only.",
   "soldTodayEur": 0.0,
   "dhwChargePct": 83,
   "weatherC": 13.2,

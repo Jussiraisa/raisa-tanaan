@@ -1,18 +1,18 @@
 {
   "v": 1,
-  "updated": 1787994448676,
-  "powerW": 595,
+  "updated": 1787995613566,
+  "powerW": 1030,
   "gridW": 0,
-  "solarW": 3623,
+  "solarW": 4536,
   "selfPct": 100,
   "spotSnt": 0.3,
-  "priceSnt": 7.4,
-  "priceRank": 77,
+  "priceSnt": 7.3,
+  "priceRank": 45,
   "priceLevel": "halpa",
-  "costNow": 0.0,
+  "costNow": 0.01,
   "costToday": 0.59,
   "kwhToday": 56.3,
-  "soldToday": 2.95,
+  "soldToday": 3.88,
   "outC": 16.5,
   "inC": 20.5,
   "targetC": 21.0,
@@ -25,9 +25,9 @@
   "online": true,
   "home": true,
   "alerts": [
+    "Aurinkoylijäämää — käytä se itse",
     "Korjaukset: 1 ongelma",
-    "Huolto: 3 laitetta ei käytettävissä",
-    "Aurinkoylijäämää — käytä se itse"
+    "Huolto: 3 laitetta ei käytettävissä"
   ],
   "lightsOn": [
     "Olohuone",
@@ -86,10 +86,10 @@
     }
   ],
   "source": "Home Assistant (Nabu Casa): Energia Pro, Koti Pro, Yleiskatsaus Pro, Yleiskatsaus",
-  "capturedAt": "2026-08-29T12:07:28+03:00",
+  "capturedAt": "2026-08-29T12:24:00+03:00",
   "heatOffset": -10,
   "notes": "Teho vaihtelee 150-1700 W (aurinko pilvien takana 2-5 kW). Verkosta 0,00 kW, myyntia ulos ~0,4 kW. Kello nayttaa 02.05 (HA-palvelimen aika), sisallot 29.8. Henkiloista naikyi vain Jussi/kotona-tila; muita perheenjasenia ei nakynyt korteissa.",
-  "soldTodayEur": 0.01,
+  "soldTodayEur": 0.02,
   "dhwChargePct": 78,
   "weatherC": 16.2,
   "solarTodayKwh": 25.6

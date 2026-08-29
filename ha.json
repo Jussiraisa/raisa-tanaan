@@ -1,9 +1,9 @@
 {
   "v": 1,
-  "updated": 1788001243282,
-  "powerW": 888,
+  "updated": 1788002001529,
+  "powerW": 819,
   "gridW": 0,
-  "solarW": 2182,
+  "solarW": 2565,
   "selfPct": 100,
   "spotSnt": 0.3,
   "priceSnt": 7.3,
@@ -36,7 +36,7 @@
     "Tallin valot"
   ],
   "saunaOn": true,
-  "saunaW": 1040,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -89,13 +89,12 @@
   ],
   "source": [
     "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/koti-pro/koti-pro",
-    "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/developer-tools/state",
     "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/yleiskatsaus-pro",
-    "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/home"
+    "https://yjcpaywbhq1bxsiclqte0fnxo24hhslb.ui.nabu.casa/developer-tools/state"
   ],
-  "capturedAt": "2026-08-29T14:00:04+03:00",
+  "capturedAt": "2026-08-29T14:12:00+03:00",
   "heatOffset": -10,
-  "notes": "Koti Pro: Sähköä nyt (vaihtelee ~820-1940 W, otettu 888 W), Verkosta 0,00 kW, Pörssi 0,3 snt, hinta 7,3 snt (sija 45), Myyntiä tänään 0,02 €, Ulkona 17,0, Sisällä 20,5 (tavoite 21,0), Aurinko ~2182 W / omavaraisuus 100 %, Lämpövarasto 166 h / 8 %; Lämmitys Nibe: käyttövesi 42,5, offset -10, kompressori seis; Ohjaus-laatat: Sauna 1,04 kW päällä, Olohuone valot päällä, Tallin valot päällä, Poissa. Kehittäjän työkalut: person.jussi not_home (eino_it ja mqtt_frigate ohitettu), geocoded location karkeasti Kuopio, device_tracker.jussi_iphone not_home. Yleiskatsaus Pro: NON-983 (Toinen auto) kotona + aurinkoylijäämä-chip. Sää/hälytykset yleiskatsauksesta.",
+  "notes": "Aurinko tuottaa ~2,5 kW, omavaraisuus 100 %, verkosta 0 kW ja myyntiä tänään 0,02 €. Sähkö halpaa 7,3 snt/kWh (pörssi 0,3 snt, sija 45 halvimmista). Ulkona 17,0 °C, sisällä 20,5 °C (tavoite 21,0). Nibe: käyttövesi 42,5° (lataus 77 %), lämpövarasto 8 % / 166 h, offset -10, kompressori seis. Sauna päällä (teho vaihtelee 0–1 kW), valot päällä olohuoneessa ja tallissa. Molemmat autot kotona (Tesla etuovella). Jussin puhelin näyttää not_home, alue Kuopio. Säätietoa ei näkynyt näillä sivuilla.",
   "soldTodayEur": 0.02,
   "dhwChargePct": 77,
   "weatherC": 17.9,

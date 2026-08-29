@@ -1,22 +1,22 @@
 {
   "v": 1,
-  "updated": 1787993632143,
-  "powerW": 1901,
-  "gridW": 150,
-  "solarW": 1751,
-  "selfPct": 92,
-  "spotSnt": 0.4,
-  "priceSnt": 7.3,
-  "priceRank": 45,
+  "updated": 1787994448676,
+  "powerW": 595,
+  "gridW": 0,
+  "solarW": 3623,
+  "selfPct": 100,
+  "spotSnt": 0.3,
+  "priceSnt": 7.4,
+  "priceRank": 77,
   "priceLevel": "halpa",
   "costNow": 0.0,
   "costToday": 0.59,
   "kwhToday": 56.3,
-  "soldToday": 2.72,
+  "soldToday": 2.95,
   "outC": 16.5,
   "inC": 20.5,
   "targetC": 21.0,
-  "dhwC": 43.5,
+  "dhwC": 43.0,
   "heatStorePct": 8,
   "heatStoreH": 145,
   "compressor": "seis",
@@ -25,6 +25,8 @@
   "online": true,
   "home": true,
   "alerts": [
+    "Korjaukset: 1 ongelma",
+    "Huolto: 3 laitetta ei käytettävissä",
     "Aurinkoylijäämää — käytä se itse"
   ],
   "lightsOn": [
@@ -32,7 +34,7 @@
     "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 0,
+  "saunaW": 1060,
   "cars": [
     {
       "plate": "KYP-452",
@@ -83,12 +85,12 @@
       "where": "Kotona"
     }
   ],
-  "source": "Home Assistant dashboards: Yleiskatsaus Pro, Koti Pro, Energia Pro",
-  "capturedAt": "2026-08-29T11:53:18+03:00",
+  "source": "Home Assistant (Nabu Casa): Energia Pro, Koti Pro, Yleiskatsaus Pro, Yleiskatsaus",
+  "capturedAt": "2026-08-29T12:07:28+03:00",
   "heatOffset": -10,
-  "notes": "Luettu 29.8.2026 klo 11:53 Koti Pro + Energia Pro + Yleiskatsaus Pro. Valot: Olohuone + Talli. Sauna päällä 0 W. Autot kotona. Jussi Kotona. Read-only.",
+  "notes": "Teho vaihtelee 150-1700 W (aurinko pilvien takana 2-5 kW). Verkosta 0,00 kW, myyntia ulos ~0,4 kW. Kello nayttaa 02.05 (HA-palvelimen aika), sisallot 29.8. Henkiloista naikyi vain Jussi/kotona-tila; muita perheenjasenia ei nakynyt korteissa.",
   "soldTodayEur": 0.01,
-  "dhwChargePct": 79,
-  "weatherC": 16.5,
+  "dhwChargePct": 78,
+  "weatherC": 16.2,
   "solarTodayKwh": 25.6
 }

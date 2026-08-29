@@ -1,11 +1,11 @@
 {
   "v": 1,
-  "updated": 1787979116850,
-  "powerW": 778,
-  "gridW": 210,
-  "solarW": 564,
-  "selfPct": 72,
-  "spotSnt": 0.2,
+  "updated": 1787979784777,
+  "powerW": 1685,
+  "gridW": 1020,
+  "solarW": 660,
+  "selfPct": 39,
+  "spotSnt": 0.4,
   "priceSnt": 7.3,
   "priceRank": "45",
   "priceLevel": "Sähkö halpaa",
@@ -18,7 +18,7 @@
   "targetC": 21.0,
   "dhwC": 45.5,
   "heatStorePct": 7,
-  "heatStoreH": 92,
+  "heatStoreH": 94,
   "compressor": "seis",
   "weather": "Pilvistä",
   "weatherIcon": "☁️",
@@ -29,12 +29,15 @@
     "Päivitykset: 10 päivitystä saatavilla",
     "Löydetyt laitteet: 2 lisättävää laitetta",
     "Huolto: 3 laitetta ei käytettävissä",
-    "Asetukset-badge 11",
-    "Ilmoitukset 1"
+    "Asetukset-merkki: 11",
+    "Ilmoitukset: 1"
   ],
-  "lightsOn": [],
+  "lightsOn": [
+    "Olohuone",
+    "Talli"
+  ],
   "saunaOn": true,
-  "saunaW": 1040,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -85,10 +88,10 @@
       "where": "Kotona"
     }
   ],
-  "source": "Home Assistant Koti Pro + Yleiskatsaus Pro",
-  "capturedAt": "2026-08-29T07:51+03:00",
+  "source": "Home Assistant Koti Pro + Energia Pro + Yleiskatsaus Pro",
+  "capturedAt": "2026-08-29T08:00+03:00",
   "heatOffset": -10,
-  "notes": "Luettu 29.8.2026 klo ~7:50 (HA-kellonaika näytti 21.50 · pe 28.8., ilmeisesti eri aikavyöhyke/demodata). Yleiskatsaus-yhteenveto sanoo 'Valot: kaikki pois päältä', mutta Koti Pro -näkymän painikkeissa luki 'Olohuone valot päällä' ja 'Tallin valot päällä' - ristiriita, lightsOn jätetty tyhjäksi yhteenvedon mukaan. Sauna-painike: 'päällä', teho vaihteli 0,00-1,05 kW (viimeisin 1,04 kW). Teho/aurinko/omavaraisuus vaihtelevat sekunneittain; luvut ovat viimeisimmästä lukemasta Energia Pro -näkymässä. costNow (€/h) ei näkynyt missään näkymässä. Ei säätöjä tehty (read-only).",
+  "notes": "Luettu 29.8.2026 klo ~8:00 Koti Pro + Energia Pro + Yleiskatsaus Pro. Yleiskatsaus sanoi valot pois, Koti Pro näytti Olohuone+Talli päällä — lightsOn Koti Pron mukaan. Sauna päällä, teho vaihteli 0–1,05 kW (viimeisin 0). costNow (€/h) ei näkynyt. Read-only.",
   "soldTodayEur": 0.0,
   "dhwChargePct": 83,
   "weatherC": 13.2,

@@ -1,38 +1,39 @@
 {
   "v": 1,
-  "updated": 1788012630382,
-  "powerW": 2544,
-  "gridW": -996,
-  "solarW": 3520,
-  "selfPct": 100,
+  "updated": 1788014443427,
+  "powerW": 5428,
+  "gridW": 4240,
+  "solarW": 1193,
+  "selfPct": 22,
   "spotSnt": 0.5,
   "priceSnt": 7.5,
   "priceRank": 89,
-  "priceLevel": "halpa",
-  "costNow": 0.01,
-  "costToday": 0.66,
+  "priceLevel": "erittäin halpa",
+  "costNow": 0.2458,
+  "costToday": 0.71,
   "kwhToday": 56.3,
-  "soldToday": 9.31,
+  "soldToday": 0.0,
   "outC": 17.0,
   "inC": 20.7,
   "targetC": 21.0,
   "dhwC": 42.5,
-  "heatStorePct": 11,
-  "heatStoreH": 213,
+  "heatStorePct": 12,
+  "heatStoreH": 230,
   "compressor": "seis",
-  "weather": "Pilvistä 19 °C",
+  "weather": "Pilvistä",
   "weatherIcon": "cloudy",
   "online": true,
-  "home": "Kotona",
+  "home": "Poissa",
   "alerts": [
-    "Aurinkoylijäämää — käytä se itse"
+    "Korjaukset: 1 ongelma",
+    "Huolto: 3 laitetta ei käytettävissä"
   ],
   "lightsOn": [
     "Olohuone",
     "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 0,
+  "saunaW": 1020.5,
   "cars": [
     {
       "plate": "KYP-452",
@@ -79,21 +80,23 @@
   "people": [
     {
       "name": "Jussi",
-      "home": true,
-      "where": "Kotona"
+      "home": false,
+      "where": "Poissa"
     }
   ],
   "source": [
-    "Energia Pro",
     "Koti Pro",
-    "Yleiskatsaus Pro"
+    "Energia Pro",
+    "Yleiskatsaus Pro",
+    "Yleiskatsaus",
+    "Kehittäjän työkalut (tilat + malli)"
   ],
-  "capturedAt": "2026-08-29T17:09:00+03:00",
+  "capturedAt": "2026-08-29T17:36:00+03:00",
   "heatOffset": -10,
-  "notes": "Aurinko tuottaa 3,5 kW, talo käyttää noin 2,5 kW ja ylijäämää myydään verkkoon; sähkö on halpaa 7,5 snt/kWh, sisällä 20,7 °C ja lämpöpumpun kompressori on seis.",
+  "notes": "Sähkö halpaa (7,5 snt/kWh), aurinko tuottaa ~1,2 kW ja sauna päällä; Jussi poissa, autot kotona.",
   "soldTodayEur": 0.03,
   "dhwChargePct": 77,
   "weatherC": 19,
   "solarTodayKwh": 25.6,
-  "solarSavedTodayEur": 1.5
+  "solarSavedTodayEur": 1.57
 }

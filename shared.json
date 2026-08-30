@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1787913406710,
+  "updated": 1788062652136,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Jussi",
@@ -132,16 +132,7 @@
     "su": "Sushi"
   },
   "note": "Viikonlopuksi on Fazerin sinistä",
-  "extras": [
-    {
-      "id": "cal-_8oq3gcpg650jeb9i88rk6b9k6h1kcb9o6gp4ab9j711kac9m6gp42d1j8o",
-      "title": "Hyvä aamupala",
-      "date": "2026-08-29",
-      "start": "08:00",
-      "end": "09:00",
-      "kind": "cal"
-    }
-  ],
+  "extras": [],
   "schoolLunch": {
     "date": "2026-08-28",
     "dish": "Tonnikalalasagnetta",

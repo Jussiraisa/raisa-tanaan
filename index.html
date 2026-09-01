@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 17;
+  const PAGE_VER = 18;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -943,23 +943,6 @@ label.f {
         cancelledByDate: {}
       },
       {
-        id: "mea-laakari",
-        who: "mea",
-        title: "lääkäri",
-        weekday: "",
-        date: "2026-09-02",
-        start: "09:45",
-        end: "",
-        depart: "",
-        place: "",
-        driver: "",
-        ride: "",
-        status: "us",
-        kind: "info",
-        notesByDate: {},
-        cancelledByDate: {}
-      },
-      {
         id: "riikka-oulu",
         who: "",
         title: "Riikka Oulussa",
@@ -974,6 +957,7 @@ label.f {
         ride: "",
         status: "us",
         kind: "info",
+        note: "ke 21:00 → pe 4.9",
         notesByDate: {},
         cancelledByDate: {}
       },
@@ -1325,19 +1309,23 @@ label.f {
   function mergeEvents
 (seedEvs, savedEvs) {
     if (!Array.isArray(savedEvs)) return seedEvs;
+    const retired = { "mea-laakari": 1 };
     const byId = {};
     seedEvs.forEach(function(e) { byId[e.id] = clone(e); });
     savedEvs.forEach(function(e) {
-      if (!e || !e.id) return;
+      if (!e || !e.id || retired[e.id]) return;
       const seed = byId[e.id];
       if (!seed) { byId[e.id] = e; return; }
       const merged = Object.assign({}, seed, e);
-      ["start", "end", "depart", "place", "driver", "ride"].forEach(function(k) {
-        if (!merged[k] && seed[k]) merged[k] = seed[k];
+      // Seed owns schedule/meta; saved owns kuski edits (driver/ride/status).
+      ["start", "end", "depart", "place", "date", "dateEnd", "title", "weekday", "who", "kind", "note"].forEach(function(k) {
+        if (Object.prototype.hasOwnProperty.call(seed, k)) merged[k] = seed[k];
       });
       if ((!merged.status || merged.status === "open") && seed.status && seed.status !== "open") {
         merged.status = seed.status;
       }
+      if (!merged.driver && seed.driver) merged.driver = seed.driver;
+      if (!merged.ride && seed.ride) merged.ride = seed.ride;
       byId[e.id] = merged;
     });
     const ids = {};

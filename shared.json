@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788280625893,
+  "updated": 1788288328593,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Jussi",
@@ -153,8 +153,8 @@
       "id": "cal-_6spj0gpn60rjeb9h85330b9k6d1j2ba18h2j0ba484q4ah9j6oq42cpk68",
       "title": "Mea lääkäri kys",
       "date": "2026-09-02",
-      "start": "09:45",
-      "end": "10:45",
+      "start": "12:00",
+      "end": "13:00",
       "kind": "cal"
     },
     {

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788278058445,
+  "updated": 1788280625893,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Jussi",
@@ -139,6 +139,30 @@
       "date": "2026-09-01",
       "start": "17:00",
       "end": "17:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc1p60p40qjledpmi",
+      "title": "Riikan koulupäivät",
+      "date": "2026-09-02",
+      "start": "00:00",
+      "end": "00:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6spj0gpn60rjeb9h85330b9k6d1j2ba18h2j0ba484q4ah9j6oq42cpk68",
+      "title": "Mea lääkäri kys",
+      "date": "2026-09-02",
+      "start": "09:45",
+      "end": "10:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6gs3eh216oqkab9i68rk6b9k60ojiba2751j4ba574o42e228kr32c266c",
+      "title": "Riikka Oulu",
+      "date": "2026-09-02",
+      "start": "21:00",
+      "end": "22:00",
       "kind": "cal"
     }
   ],

@@ -1,9 +1,9 @@
 {
   "v": 1,
-  "updated": 1788288979887,
+  "updated": 1788289226624,
   "drivers": {
     "ellen-ambrosia": {
-      "driver": "Jussi",
+      "driver": "Sofien perhe",
       "status": "us",
       "ride": "vie+hakee"
     },
@@ -82,11 +82,6 @@
       "status": "us",
       "ride": ""
     },
-    "mea-laakari": {
-      "driver": "",
-      "status": "us",
-      "ride": ""
-    },
     "riikka-oulu": {
       "driver": "",
       "status": "us",
@@ -107,24 +102,29 @@
       "status": "us",
       "ride": ""
     },
+    "mea-laakari": {
+      "driver": "",
+      "status": "us",
+      "ride": ""
+    },
     "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260901T140000Z": {
       "driver": "",
-      "status": "",
+      "status": "open",
       "ride": ""
     },
     "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc1p60p40qjledpmi": {
       "driver": "",
-      "status": "",
+      "status": "open",
       "ride": ""
     },
     "cal-_6spj0gpn60rjeb9h85330b9k6d1j2ba18h2j0ba484q4ah9j6oq42cpk68": {
       "driver": "",
-      "status": "",
+      "status": "open",
       "ride": ""
     },
     "cal-_6gs3eh216oqkab9i68rk6b9k60ojiba2751j4ba574o42e228kr32c266c": {
       "driver": "",
-      "status": "",
+      "status": "open",
       "ride": ""
     }
   },
@@ -141,7 +141,7 @@
     "ma": "Lihapullat + muusi",
     "ti": "Kana + basmati",
     "ke": "Pizzailta (Wewalka pizzakit)",
-    "to": "Lohikeitto + kana &amp;amp; riisi",
+    "to": "Lohikeitto + kana & riisi",
     "pe": "Burgerit",
     "la": "Bolognese",
     "su": "Sushi"

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788289226624,
+  "updated": 1788289257147,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -8,12 +8,12 @@
       "ride": "vie+hakee"
     },
     "milla-vivida": {
-      "driver": "",
-      "status": "open",
+      "driver": "Mopo",
+      "status": "us",
       "ride": ""
     },
     "mea-lianna": {
-      "driver": "",
+      "driver": "Jussi",
       "status": "other",
       "ride": ""
     },
@@ -109,22 +109,22 @@
     },
     "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260901T140000Z": {
       "driver": "",
-      "status": "open",
+      "status": "",
       "ride": ""
     },
     "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc1p60p40qjledpmi": {
       "driver": "",
-      "status": "open",
+      "status": "",
       "ride": ""
     },
     "cal-_6spj0gpn60rjeb9h85330b9k6d1j2ba18h2j0ba484q4ah9j6oq42cpk68": {
       "driver": "",
-      "status": "open",
+      "status": "",
       "ride": ""
     },
     "cal-_6gs3eh216oqkab9i68rk6b9k60ojiba2751j4ba574o42e228kr32c266c": {
       "driver": "",
-      "status": "open",
+      "status": "",
       "ride": ""
     }
   },

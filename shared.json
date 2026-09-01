@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788289257147,
+  "updated": 1788289268474,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -83,7 +83,7 @@
       "ride": ""
     },
     "riikka-oulu": {
-      "driver": "",
+      "driver": "Oma auto + juna",
       "status": "us",
       "ride": ""
     },

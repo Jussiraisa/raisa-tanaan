@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788369137499,
+  "updated": 1788373727311,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -179,7 +179,8 @@
       "start": "21:00",
       "end": "22:00",
       "kind": "cal",
-      "dateEnd": "2026-09-04"
+      "dateEnd": "2026-09-04",
+      "who": "riikka"
     },
     {
       "id": "cal-_690j0e1j84qj6b9n74r30b9k64sj8b9p652j2ba188pjcd1h6l144d9g64",

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788325840826,
+  "updated": 1788325906359,
   "powerW": 3830,
   "gridW": 3507,
   "solarW": 323,
@@ -94,6 +94,6 @@
   "soldMonthEur": 0.8,
   "soldMonthKwh": 6.3,
   "sellAvgSnt": 12.0,
-  "buyAvgSnt": null,
-  "buyMonthKwh": null
+  "buyMonthKwh": 0.1,
+  "buyAvgSnt": null
 }

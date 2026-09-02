@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 18;
+  const PAGE_VER = 19;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1888,46 +1888,66 @@ label.f {
 
   function renderToday() {
     const now = helsinkiNow();
-    lastIso = now.iso;
-    const tom = addCalendarDays(now.year, now.month, now.day, 1);
-    const tomWd = weekdayOf(tom.year, tom.month, tom.day);
-    const tomDay = dayByI(tomWd);
-    const week = isoWeek(now.year, now.month, now.day);
-    const todayEvents = eventsOn(now.iso, now.key);
-    lastHeroSig = heroSig(pickHero(now, todayEvents));
-    const tomIso = pad(tom.year, 4) + "-" + pad(tom.month, 2) + "-" + pad(tom.day, 2);
-    const tomEvents = eventsOn(tomIso, tomDay.key);
-    const todayMeal = store.meals[now.key];
-    const tomMeal = store.meals[tomDay.key];
+    const showTom = now.hour >= 16;
+    const focus = showTom
+      ? addCalendarDays(now.year, now.month, now.day, 1)
+      : { year: now.year, month: now.month, day: now.day };
+    const focusWd = weekdayOf(focus.year, focus.month, focus.day);
+    const focusDay = dayByI(focusWd);
+    const focusIso = pad(focus.year, 4) + "-" + pad(focus.month, 2) + "-" + pad(focus.day, 2);
+    const focusNow = showTom
+      ? { year: focus.year, month: focus.month, day: focus.day, wd: focusWd, key: focusDay.key, iso: focusIso, hour: now.hour, minute: now.minute, minutes: now.minutes }
+      : now;
+    lastIso = focusIso;
+    const week = isoWeek(focus.year, focus.month, focus.day);
+    const focusEvents = eventsOn(focusIso, focusDay.key);
+    lastHeroSig = heroSig(pickHero(focusNow, focusEvents));
+    const focusMeal = store.meals[focusDay.key];
 
-    const wToday = renderWeather("today");
-    const wTom = renderWeather("tomorrow");
+    const wFocus = renderWeather(showTom ? "tomorrow" : "today");
 
-    let kyydit = todayEvents.map(ev => eventItem(ev, now.iso)).join("");
-    let ruoka = mealItem(todayMeal, now.key);
-    let tomMenot = tomEvents.map(ev => eventItem(ev, tomIso)).join("") + mealItem(tomMeal, tomDay.key);
+    let kyydit = focusEvents.map(ev => eventItem(ev, focusIso)).join("");
+    let ruoka = mealItem(focusMeal, focusDay.key);
+
+    const headTitle = showTom
+      ? ("Huomenna<br>" + DAYS[focusWd].full + "<br>" + fmtDot(focus.year, focus.month, focus.day))
+      : (DAYS[now.wd].full + "<br>" + fmtDot(now.year, now.month, now.day));
+    const sectionH = showTom ? "Huomenna" : "Tänään";
+
+    let tomSection = "";
+    if (!showTom) {
+      const tom = addCalendarDays(now.year, now.month, now.day, 1);
+      const tomWd = weekdayOf(tom.year, tom.month, tom.day);
+      const tomDay = dayByI(tomWd);
+      const tomIso = pad(tom.year, 4) + "-" + pad(tom.month, 2) + "-" + pad(tom.day, 2);
+      const tomEvents = eventsOn(tomIso, tomDay.key);
+      const tomMeal = store.meals[tomDay.key];
+      const wTom = renderWeather("tomorrow");
+      let tomMenot = tomEvents.map(ev => eventItem(ev, tomIso)).join("") + mealItem(tomMeal, tomDay.key);
+      tomSection = "<section class=\"tom rv\" style=\"animation-delay:.24s\">"
+        + "<div class=\"th\">Huomenna · " + tomDay.abbr + " " + fmtDot(tom.year, tom.month, tom.day) + "</div>"
+        + "<div class=\"tw\" id=\"wx2\">" + wTom + "</div>"
+        + "<div class=\"lbl2\">Koulu · tunnit</div>"
+        + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div>"
+        + (tomMenot ? "<div class=\"lbl2\">Menot &amp; ruoka</div>" + tomMenot : "")
+        + "</section>";
+    }
 
     return "<header class=\"rv\" style=\"animation-delay:.02s\">"
       + "<div class=\"eyebrow\">Räisän perhe · Viikko " + week + "</div>"
-      + "<h1 class=\"date\">" + DAYS[now.wd].full + "<br>" + fmtDot(now.year, now.month, now.day) + "</h1>"
-      + "<div class=\"weather\" id=\"wx\">" + wToday + "</div>"
+      + "<h1 class=\"date\">" + headTitle + "</h1>"
+      + "<div class=\"weather\" id=\"wx\">" + wFocus + "</div>"
       + "<div class=\"rule g\"></div></header>"
-      + renderHero(now, todayEvents)
+      + renderHero(focusNow, focusEvents)
       + familyNote()
-      + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>Tänään</h2><a class=\"weeklink\" href=\"#/viikko\">Koko viikko</a></div>"
+      + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>" + sectionH + "</h2><a class=\"weeklink\" href=\"#/viikko\">Koko viikko</a></div>"
       + "<div class=\"rv\" style=\"animation-delay:.18s\">"
       + "<div class=\"lbl2\">Koulu · tunnit</div>"
-      + "<div class=\"school\">" + schoolRows(now.key) + "</div>"
+      + "<div class=\"school\">" + schoolRows(focusDay.key) + "</div>"
       + (kyydit ? "<div class=\"lbl2\">Kyydit</div>" + kyydit : "")
       + (ruoka ? "<div class=\"lbl2\">Ruoka</div>" + ruoka : "")
       + "</div>"
-      + "<section class=\"tom rv\" style=\"animation-delay:.24s\">"
-      + "<div class=\"th\">Huomenna · " + tomDay.abbr + " " + fmtDot(tom.year, tom.month, tom.day) + "</div>"
-      + "<div class=\"tw\" id=\"wx2\">" + wTom + "</div>"
-      + "<div class=\"lbl2\">Koulu · tunnit</div>"
-      + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div>"
-      + (tomMenot ? "<div class=\"lbl2\">Menot &amp; ruoka</div>" + tomMenot : "")
-      + "</section>"
+      + tomSection
       + footer();
   }
 

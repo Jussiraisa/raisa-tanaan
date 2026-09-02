@@ -4,4 +4,4 @@ Perheen päivänäkymä. Avaa GitHub Pagesista, lisää puhelimen kotinäytölle
 
 ## Talo (TV)
 
-Uusin Talo-näkymä: [talo5.html](https://jussiraisa.github.io/raisa-tanaan/talo5.html) — sisältää kuukauden osto/myynti.
+Uusin Talo-näkymä: [talo6.html](https://jussiraisa.github.io/raisa-tanaan/talo6.html) — sisältää kuukauden osto/myynti.

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Räisä · Talo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; overflow: hidden; background: #08090c; color: #f3efe6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    * { box-sizing: border-box }
+    .tv { height: 100vh; width: 100vw; padding: 1.5vh 2.2vw 1.4vh; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+    .head { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: start; align-items: flex-start; margin-bottom: 1.2vh; }
+    .kicker { font-size: 1.7vmin; font-weight: 800; letter-spacing: .34em; text-transform: uppercase; color: #c6a15a; }
+    .date { font-size: 3.4vmin; margin-top: .3vh; font-weight: 650; }
+    .chip { margin-top: .45vh; font-size: 2.1vmin; font-weight: 800; color: #3ec4b2; }
+    .right { text-align: right; }
+    .clock { font-size: 8.6vmin; font-weight: 700; letter-spacing: -.08em; line-height: .8; font-variant-numeric: tabular-nums; color: #fff; }
+    .wx { margin-top: .6vh; font-size: 2.5vmin; font-weight: 700; color: #d9d3c6; }
+    .wx b { font-size: 3.2vmin; }
+    .hero {
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      background: radial-gradient(120% 140% at 0% 0%, #16352f 0%, #101318 55%);
+      border: 1px solid #1e2a28; border-radius: 1.6vmin;
+      padding: 1.7vh 2.3vw 1.6vh; position: relative; overflow: hidden;
+    }
+    .hero.sun { background: radial-gradient(120% 140% at 0% 0%, #3a2e12 0%, #101318 58%); border-color: #4a3a18; }
+    .hero.bad { background: radial-gradient(120% 140% at 0% 0%, #3a1518 0%, #101318 58%); border-color: #5a2228; }
+    .hero .lbl { font-size: 1.8vmin; font-weight: 800; letter-spacing: .3em; text-transform: uppercase; color: #3ec4b2; }
+    .hero.sun .lbl { color: #e3c36a; }
+    .hero.bad .lbl { color: #ff8a80; }
+    .hero .w { font-family: "Instrument Serif", Georgia, serif; font-size: 12.2vmin; font-weight: 400; letter-spacing: -.05em; line-height: .88; margin-top: .15vh; }
+    .hero .say { font-size: 2.8vmin; font-weight: 700; color: #c9c3b5; margin-top: .5vh; }
+    .badge { position: absolute; top: 1.8vh; right: 2.2vw; padding: .65vh 1.3vw; border-radius: 999px; font-size: 2.2vmin; font-weight: 800; }
+    .badge.ok { background: #123028; color: #7ee0d0; }
+    .badge.sun { background: #3a2e12; color: #e3c36a; }
+    .badge.bad { background: #3a1515; color: #ff8a80; }
+    .grid { display: -ms-flexbox; display: flex; gap: 1.1vw; margin-top: 1.2vh; }
+    .stat {
+      -ms-flex: 1; flex: 1; min-width: 0;
+      background: #12141a; border: 1px solid #22252e; border-radius: 1.3vmin;
+      padding: 1.4vh 1.4vw 1.3vh;
+    }
+    .stat .lbl { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; }
+    .stat .v { font-family: "Instrument Serif", Georgia, serif; font-size: 5.6vmin; line-height: .95; margin-top: .3vh; }
+    .stat .s { font-size: 2vmin; color: #9a9486; font-weight: 650; margin-top: .25vh; }
+    .spot {
+      margin-top: 1.2vh; background: #12141a; border: 1px solid #22252e; border-radius: 1.3vmin;
+      padding: 1.2vh 1.6vw 1.1vh;
+    }
+    .spot .top { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: baseline; align-items: baseline; }
+    .spot .lbl { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; }
+    .spot .nums { font-size: 2.3vmin; font-weight: 800; color: #d9d3c6; }
+    .spot .nums b { color: #f3efe6; }
+    .spot .cheap { color: #7ee0d0; }
+    .spot .exp { color: #ff8a80; }
+    .bars { display: -ms-flexbox; display: flex; -ms-flex-align: end; align-items: flex-end; height: 7.2vh; gap: .28vw; margin-top: .8vh; }
+    .col { -ms-flex: 1; flex: 1; min-width: 0; height: 100%; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: end; justify-content: flex-end; -ms-flex-align: center; align-items: center; }
+    .h { width: 100%; border-radius: .35vmin .35vmin 0 0; min-height: 3px; background: #c6a15a; }
+    .h.lo { background: #2ea894; }
+    .h.hi { background: #d45a5a; }
+    .h.now { box-shadow: 0 0 0 2px #f3efe6 inset; }
+    .hrs { display: -ms-flexbox; display: flex; margin-top: .35vh; font-size: 1.4vmin; font-weight: 700; color: #6d685c; }
+    .hrs span { -ms-flex: 1; flex: 1; text-align: center; }
+    .hrs span.on { color: #f3efe6; }
+    .bar {
+      margin-top: 1.2vh; background: #12141a; border: 1px solid #22252e; border-radius: 1.3vmin;
+      padding: 1.2vh 1.6vw; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; gap: 1.4vw;
+    }
+    .bar .lbl { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; margin-right: .4vw; }
+    .pills { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: .6vh .7vw; -ms-flex: 1; flex: 1; }
+    .pill { font-size: 2.4vmin; font-weight: 800; color: #7ee0d0; background: #123028; border-radius: 999px; padding: .5vh 1.1vw; }
+    .empty { color: #6d685c; font-size: 2.3vmin; font-weight: 650; }
+    .foot { margin-top: auto; padding-top: 1.1vh; font-size: 2.2vmin; font-weight: 700; color: #9a9486; }
+    .alert { margin-top: 1.1vh; padding: 1.2vh 1.6vw; background: #16120c; border: 2px solid #c6a15a; border-radius: 1.2vmin; font-size: 2.5vmin; font-weight: 800; }
+    .month {
+      margin-top: 1.2vh; background: #12141a; border: 1px solid #22252e; border-radius: 1.3vmin;
+      padding: 1.3vh 1.6vw 1.2vh;
+    }
+    .month .lbl { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #c6a15a; }
+    .month .rows { display: -ms-flexbox; display: flex; gap: 1.4vw; margin-top: .55vh; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+    .month .row { -ms-flex: 1; flex: 1; min-width: 28vw; }
+    .month .name { font-size: 2.2vmin; font-weight: 800; color: #d9d3c6; }
+    .month .val { font-family: "Instrument Serif", Georgia, serif; font-size: 3.8vmin; line-height: 1; margin-top: .15vh; }
+    .month .sub { font-size: 2vmin; color: #9a9486; font-weight: 650; margin-top: .2vh; }
+  </style>
+</head>
+<body>
+  <div class="tv" id="app">Räisä · Talo</div>
+  <script>
+(function () {
+  var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var DATA = null;
+  var SPOT = null;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function helsinkiNow() {
+    var d = new Date(new Date().getTime() + 3 * 3600 * 1000);
+    return { wd: d.getUTCDay(), day: d.getUTCDate(), month: d.getUTCMonth() + 1, hour: d.getUTCHours(), minute: d.getUTCMinutes() };
+  }
+  function num(n, d) {
+    if (n == null || isNaN(Number(n))) return "—";
+    return Number(n).toFixed(d == null ? 0 : d).replace(".", ",");
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c];
+    });
+  }
+  function getJSON(url, cb) {
+    var x = new XMLHttpRequest();
+    x.open("GET", url, true);
+    x.onreadystatechange = function () {
+      if (x.readyState !== 4) return;
+      if (x.status >= 200 && x.status < 300) {
+        try { cb(JSON.parse(x.responseText)); } catch (e) {}
+      }
+    };
+    x.send();
+  }
+  function carsHome(d) {
+    var out = [];
+    var cars = d.cars || [];
+    var i;
+    for (i = 0; i < cars.length; i++) {
+      var c = cars[i];
+      if (!c || !c.known) continue;
+      if (String(c.where || "").toLowerCase().indexOf("koto") >= 0) out.push(c.plate);
+    }
+    return out;
+  }
+  function hoursFromRows(rows) {
+    var acc = [];
+    var i, h;
+    for (h = 0; h < 24; h++) acc[h] = { sum: 0, n: 0 };
+    for (i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      var dt = String(r.DateTime || "");
+      h = parseInt(dt.substr(11, 2), 10);
+      if (isNaN(h) || h < 0 || h > 23) continue;
+      acc[h].sum += Number(r.PriceWithTax) * 100;
+      acc[h].n += 1;
+    }
+    var vals = [];
+    for (h = 0; h < 24; h++) vals[h] = acc[h].n ? acc[h].sum / acc[h].n : null;
+    return vals;
+  }
+  function spotHours() {
+    if (SPOT && SPOT.length === 24) return SPOT;
+    if (DATA && DATA.spotHours && DATA.spotHours.length === 24) return DATA.spotHours;
+    return null;
+  }
+  function spotBlock(nowHour, d) {
+    var hrs = spotHours();
+    var i, mn = null, mx = null, nowV = null;
+    if (hrs) {
+      for (i = 0; i < 24; i++) {
+        var v = hrs[i];
+        if (v == null || isNaN(Number(v))) continue;
+        v = Number(v);
+        if (mn == null || v < mn) mn = v;
+        if (mx == null || v > mx) mx = v;
+        if (i === nowHour) nowV = v;
+      }
+    }
+    if (nowV == null && d && d.spotSnt != null) nowV = Number(d.spotSnt);
+    var span = (mx != null && mn != null) ? (mx - mn) : 1;
+    if (span < 0.2) span = 0.2;
+    var bars = "";
+    var labels = "";
+    for (i = 0; i < 24; i++) {
+      var val = hrs && hrs[i] != null ? Number(hrs[i]) : null;
+      var pct = 8;
+      var cls = "h";
+      if (val != null && mx != null && mn != null) {
+        pct = 8 + Math.round(92 * ((val - mn) / span));
+        if (val <= mn + span * 0.33) cls += " lo";
+        else if (val >= mx - span * 0.33) cls += " hi";
+      }
+      if (i === nowHour) cls += " now";
+      bars += "<div class=\"col\"><div class=\"" + cls + "\" style=\"height:" + pct + "%\"></div></div>";
+      var lab = "";
+      if (i === 0 || i === 6 || i === 12 || i === 18) lab = pad(i);
+      labels += "<span class=\"" + (i === nowHour ? "on" : "") + "\">" + lab + "</span>";
+    }
+    return "<div class=\"spot\"><div class=\"top\"><div class=\"lbl\">Pörssi tänään</div>"
+      + "<div class=\"nums\">nyt <b>" + num(nowV, 1) + "</b> · halvin <b class=\"cheap\">" + num(mn, 1) + "</b> · kallein <b class=\"exp\">" + num(mx, 1) + "</b> snt</div></div>"
+      + "<div class=\"bars\">" + bars + "</div><div class=\"hrs\">" + labels + "</div></div>";
+  }
+
+
+    function monthBlock(d) {
+    var buyAvg = (d.buyAvgSnt != null) ? (num(d.buyAvgSnt, 1) + " snt/kWh") : "kertyy…";
+    var sellAvg = (d.sellAvgSnt != null) ? (num(d.sellAvgSnt, 1) + " snt/kWh") : "—";
+    var sellExtra = (d.soldMonthKwh != null) ? (" · " + num(d.soldMonthKwh, 1) + " kWh") : "";
+    return "<div class=\"month\"><div class=\"lbl\">Tämä kuukausi</div><div class=\"rows\">"
+      + "<div class=\"row\"><div class=\"name\">Osto / lasku</div><div class=\"val\">" + num(d.costMonthEur, 2) + " €</div>"
+      + "<div class=\"sub\">" + buyAvg + "</div></div>"
+      + "<div class=\"row\"><div class=\"name\">Myynti</div><div class=\"val\">" + num(d.soldMonthEur, 2) + " €</div>"
+      + "<div class=\"sub\">" + sellAvg + sellExtra + "</div></div>"
+      + "</div></div>";
+  }
+
+  function paint() {
+    var now = helsinkiNow();
+    var d = DATA || {};
+    var solar = Number(d.solarW) || 0;
+    var power = Number(d.powerW) || 0;
+    var surplus = solar > power + 50;
+    var heroClass = surplus ? "sun" : (d.priceLevel === "kallis" ? "bad" : "");
+    var heroLbl = surplus ? "Aurinko myy" : (d.priceLevel === "kallis" ? "Sähkö kallista" : "Sähköä nyt");
+    var heroVal = surplus ? (Math.round(solar) + " W") : (Math.round(power) + " W");
+    var heroSay = surplus
+      ? "Talo " + Math.round(power) + " W · myyntiä tänään " + num(d.soldToday, 2) + " €"
+      : "Tänään " + num(d.costToday, 2) + " €" + (d.kwhToday ? " · " + num(d.kwhToday, 1) + " kWh" : "");
+    var badgeClass = surplus ? "sun" : (d.priceLevel === "kallis" ? "bad" : "ok");
+    var badgeTxt = surplus
+      ? "Omavaraisuus " + Math.round(d.selfPct || 0) + " %"
+      : (d.priceLevel === "kallis" ? "Sähkö kallista · " : "Sähkö ok · ") + num(d.priceSnt, 1) + " snt/kWh";
+
+    var lights = (d.lightsOn || []).slice();
+    if (d.saunaOn) lights.unshift("Sauna");
+    var pills = "";
+    var i;
+    if (!lights.length) pills = "<div class=\"empty\">Ei kuormia päällä</div>";
+    for (i = 0; i < lights.length; i++) {
+      pills += "<span class=\"pill\">" + esc(lights[i]) + "</span>";
+    }
+
+    var homeCars = carsHome(d);
+    var carLine = "";
+    if (homeCars.length) carLine = "Autot kotona: " + homeCars.join(", ");
+
+    var alertOne = "";
+    if (surplus) alertOne = "Aurinkoylijäämää. Käytä se itse.";
+    else if (d.priceLevel === "kallis") alertOne = "Sähkö kallista. Vältä isoja kuormia.";
+
+    document.getElementById("app").innerHTML =
+      "<div class=\"head\"><div><div class=\"kicker\">Räisä · Talo</div>"
+      + "<div class=\"date\">" + DAYS[now.wd] + " " + now.day + "." + now.month + ".</div>"
+      + "<div class=\"chip\">" + (d.home ? "Perhe kotona" : "Poissa") + (d.online ? " · koti verkossa" : "") + "</div></div>"
+      + "<div class=\"right\"><div class=\"clock\" id=\"clock\">" + pad(now.hour) + "." + pad(now.minute) + "</div>"
+      + "<div class=\"wx\">" + esc(d.weatherIcon || "") + " <b>" + num(d.outC, 1) + "°</b> ulkona · " + esc(d.weather || "") + "</div></div></div>"
+      + "<div class=\"hero " + heroClass + "\"><div class=\"lbl\">" + heroLbl + "</div>"
+      + "<div class=\"w\">" + heroVal + "</div>"
+      + "<div class=\"badge " + badgeClass + "\">" + badgeTxt + "</div>"
+      + "<div class=\"say\">" + heroSay + "</div></div>"
+      + "<div class=\"grid\">"
+      + "<div class=\"stat\"><div class=\"lbl\">Sisällä</div><div class=\"v\">" + num(d.inC, 1) + "°</div><div class=\"s\">tavoite " + num(d.targetC, 1) + "°</div></div>"
+      + "<div class=\"stat\"><div class=\"lbl\">Aurinko</div><div class=\"v\">" + Math.round(solar) + " W</div><div class=\"s\">pörssi " + num(d.spotSnt, 1) + " snt</div></div>"
+      + "<div class=\"stat\"><div class=\"lbl\">Lämpövarasto</div><div class=\"v\">" + Math.round(d.heatStoreH || 0) + " h</div><div class=\"s\">" + Math.round(d.heatStorePct || 0) + " % · vesi " + num(d.dhwC, 0) + "°</div></div>"
+      + "<div class=\"stat\"><div class=\"lbl\">Tänään</div><div class=\"v\">" + num(d.costToday, 2) + " €</div><div class=\"s\">myynti " + num(d.soldToday, 2) + " €</div></div>"
+      + "</div>"
+      + monthBlock(d)
+      + spotBlock(now.hour, d)
+      + "<div class=\"bar\"><div class=\"lbl\">Päällä</div><div class=\"pills\">" + pills + "</div></div>"
+      + (alertOne ? "<div class=\"alert\">" + esc(alertOne) + "</div>" : "")
+      + (carLine ? "<div class=\"foot\">" + esc(carLine) + "</div>" : "");
+  }
+
+  function tickClock() {
+    var el = document.getElementById("clock");
+    if (!el) return;
+    var now = helsinkiNow();
+    el.innerHTML = pad(now.hour) + "." + pad(now.minute);
+  }
+  function pull() {
+    getJSON("https://raw.githubusercontent.com/Jussiraisa/raisa-tanaan/main/ha.json?t=" + new Date().getTime(), function (data) {
+      DATA = data;
+      paint();
+    });
+  }
+  function pullSpot() {
+    getJSON("https://api.spot-hinta.fi/Today", function (rows) {
+      if (!rows || !rows.length) return;
+      SPOT = hoursFromRows(rows);
+      paint();
+    });
+  }
+  paint();
+  pull();
+  pullSpot();
+  setInterval(tickClock, 1000);
+  setInterval(pull, 5000);
+  setInterval(pullSpot, 15 * 60 * 1000);
+})();
+  </script>
+</body>
+</html>

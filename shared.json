@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788289268474,
+  "updated": 1788322765398,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -149,14 +149,6 @@
   "note": "Kohta Espanja!!!😀✈️",
   "extras": [
     {
-      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260901T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-01",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc1p60p40qjledpmi",
       "title": "Riikan koulupäivät",
       "date": "2026-09-02",
@@ -164,7 +156,7 @@
       "end": "",
       "kind": "cal",
       "dateEnd": "2026-09-04",
-      "note": "Lähtö 2.9 klo 15.30"
+      "note": "Lähtö 2.9. klo 15.30"
     },
     {
       "id": "cal-_6spj0gpn60rjeb9h85330b9k6d1j2ba18h2j0ba484q4ah9j6oq42cpk68",
@@ -181,7 +173,25 @@
       "date": "2026-09-02",
       "start": "21:00",
       "end": "22:00",
+      "kind": "cal",
+      "dateEnd": "2026-09-04"
+    },
+    {
+      "id": "cal-_690j0e1j84qj6b9n74r30b9k64sj8b9p652j2ba188pjcd1h6l144d9g64",
+      "title": "BF vierailu kuopio",
+      "date": "2026-09-03",
+      "start": "10:30",
+      "end": "11:30",
       "kind": "cal"
+    },
+    {
+      "id": "cal-_88o46dho68oj0ba170p30b9k8d2k6b9o8cr3ib9m6kojge1m88sjadi570",
+      "title": "Mea kota käynti",
+      "date": "2026-09-03",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal",
+      "who": "mea"
     }
   ],
   "schoolLunch": {

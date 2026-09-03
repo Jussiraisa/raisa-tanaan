@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788409174666,
+  "updated": 1788409867247,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -33,8 +33,8 @@
       "ride": ""
     },
     "mea-lianna-pe": {
-      "driver": "Amanda, haku Enni",
-      "status": "us",
+      "driver": "Reetta 6.50 (Enni, Mea, Amanda)",
+      "status": "other",
       "ride": ""
     },
     "mea-lianna-su": {
@@ -58,9 +58,9 @@
       "ride": "vie+hakee"
     },
     "samuel-sahly": {
-      "driver": "Manen äiti / Topias",
-      "status": "other",
-      "ride": ""
+      "driver": "Jussi",
+      "status": "us",
+      "ride": "vie+hakee"
     },
     "milla-etainfo": {
       "driver": "",
@@ -128,9 +128,9 @@
       "ride": ""
     },
     "cal-_88o46dho68oj0ba170p30b9k8d2k6b9o8cr3ib9m6kojge1m88sjadi570": {
-      "driver": "",
-      "status": "",
-      "ride": ""
+      "driver": "Reetta",
+      "status": "other",
+      "ride": "vie+hakee"
     }
   },
   "cooks": {

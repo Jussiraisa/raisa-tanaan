@@ -1,13 +1,13 @@
 {
   "v": 1,
-  "updated": 1788424152018,
-  "powerW": 1725,
-  "gridW": 356,
-  "solarW": 1369,
-  "selfPct": 79,
+  "updated": 1788424751559,
+  "powerW": 666,
+  "gridW": 278,
+  "solarW": 389,
+  "selfPct": 58,
   "spotSnt": 6.1,
-  "priceSnt": 13.1,
-  "priceRank": "70",
+  "priceSnt": 13.3,
+  "priceRank": "77",
   "priceLevel": "kallis",
   "costNow": 0.0,
   "costToday": 2.1,
@@ -30,7 +30,7 @@
     "Talli"
   ],
   "saunaOn": true,
-  "saunaW": 1066,
+  "saunaW": 0,
   "cars": [
     {
       "plate": "KYP-452",
@@ -82,18 +82,18 @@
     }
   ],
   "source": "Home Assistant Koti Pro + Yleiskatsaus Pro",
-  "capturedAt": "2026-09-03T11:29+03:00",
+  "capturedAt": "2026-09-03T11:38+03:00",
   "heatOffset": -10,
   "notes": "Lahteet: HA Kehittajan tyokalut > Malli (template). Teho sensor.talon_kulutus_w, verkko sensor.verkko_nyt_w, aurinko sensor.aurinko_nyt_w, omavaraisuus sensor.omavaraisuus_pct. Hinnat sensor.spot_hinta_snt / kokonaishinta_snt / hinta_taso. Kulut kustannus_eur_h ja kustannus_tanaan_eur. kwhToday/solarTodayKwh ovat mittarin kumulatiivisia lukemia, eivat puhtaita paivaarvoja joten vanhat paivaluvut sailyvat. Lampotilat ulko/sisa/tavoite/offset. Kayttovesi sensor.jussi_raisa_hot_water_temp. Lampovarasto sensor.lampovarasto_pct / _kesto_h. Kompressori sensor.jussi_raisa_status_compressor. Saa weather.forecast_koti. Valot: switch.olohuone_valot, switch.tallin_valot. Sauna switch.sauna, sensor.sauna_power. Jussi: person.jussi=home, sijainti karkeasti Kotona. Tesla: ei ajoneuvointegraatiota; etuovi/takapiha car_occupancy off/off. NON-983 ei ole HA:ssa.",
   "soldTodayEur": 0.0,
   "dhwChargePct": 76,
   "weatherC": 13.8,
   "solarTodayKwh": 25.6,
-  "solarSavedTodayEur": 0.4,
+  "solarSavedTodayEur": 0.5,
   "costMonthEur": 10.6,
   "soldMonthEur": 1.9,
   "soldMonthKwh": 25.0,
   "sellAvgSnt": 7.5,
-  "buyMonthKwh": 38.0,
-  "buyAvgSnt": 28.0
+  "buyMonthKwh": 38.1,
+  "buyAvgSnt": 27.9
 }

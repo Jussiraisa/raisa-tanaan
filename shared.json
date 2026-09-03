@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788409867247,
+  "updated": 1788409940432,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -162,15 +162,6 @@
       "kind": "cal",
       "dateEnd": "2026-09-04",
       "note": "Lähtö 2.9. klo 15.30"
-    },
-    {
-      "id": "cal-_6spj0gpn60rjeb9h85330b9k6d1j2ba18h2j0ba484q4ah9j6oq42cpk68",
-      "title": "Mea lääkäri kys",
-      "date": "2026-09-02",
-      "start": "12:00",
-      "end": "13:00",
-      "kind": "cal",
-      "who": "mea"
     },
     {
       "id": "cal-_6gs3eh216oqkab9i68rk6b9k60ojiba2751j4ba574o42e228kr32c266c",

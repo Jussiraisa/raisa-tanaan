@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788494598612,
+  "updated": 1788495063172,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -177,27 +177,6 @@
       "kind": "cal",
       "dateEnd": "2026-09-04",
       "who": "riikka"
-    },
-    {
-      "id": "mea-kisakallio",
-      "title": "Mea Lianna Kisakallio leiri",
-      "date": "2026-09-04",
-      "start": "",
-      "end": "",
-      "kind": "cal",
-      "dateEnd": "2026-09-05",
-      "who": "mea",
-      "note": "Kalenteri: pe–la"
-    },
-    {
-      "id": "milla-vivida-pe",
-      "title": "Milla Vivida",
-      "date": "2026-09-04",
-      "start": "18:00",
-      "end": "20:30",
-      "kind": "cal",
-      "who": "milla",
-      "note": "BellaCenter"
     }
   ],
   "schoolLunch": {

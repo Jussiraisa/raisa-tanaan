@@ -1,11 +1,11 @@
 {
   "v": 1,
-  "updated": 1788515444727,
+  "updated": 1788516665314,
   "powerW": 651,
   "gridW": -743,
   "solarW": 1394,
   "selfPct": 100,
-  "spotSnt": 9.2,
+  "spotSnt": 7.4,
   "priceSnt": 14.7,
   "priceRank": "63",
   "priceLevel": "normaali",
@@ -82,7 +82,7 @@
     }
   ],
   "source": "Home Assistant Koti Pro + Yleiskatsaus Pro",
-  "capturedAt": "2026-09-04T12:50+03:00",
+  "capturedAt": "2026-09-04T13:11+03:00",
   "heatOffset": -10,
   "notes": "Lahteet: HA Kehittajan tyokalut > Malli (template). Teho sensor.talon_kulutus_w, verkko sensor.verkko_nyt_w, aurinko sensor.aurinko_nyt_w, omavaraisuus sensor.omavaraisuus_pct. Hinnat sensor.spot_hinta_snt / kokonaishinta_snt / hinta_taso. Kulut kustannus_eur_h ja kustannus_tanaan_eur. kwhToday/solarTodayKwh ovat mittarin kumulatiivisia lukemia, eivat puhtaita paivaarvoja joten vanhat paivaluvut sailyvat. Lampotilat ulko/sisa/tavoite/offset. Kayttovesi sensor.jussi_raisa_hot_water_temp. Lampovarasto sensor.lampovarasto_pct / _kesto_h. Kompressori sensor.jussi_raisa_status_compressor. Saa weather.forecast_koti. Valot: switch.olohuone_valot, switch.tallin_valot. Sauna switch.sauna, sensor.sauna_power. Jussi: person.jussi=home, sijainti karkeasti Kotona. Tesla: ei ajoneuvointegraatiota; etuovi/takapiha car_occupancy off/off. NON-983 ei ole HA:ssa.",
   "soldTodayEur": 0.5,

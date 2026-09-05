@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788581388244,
+  "updated": 1788583930294,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -156,11 +156,45 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Kohta Espanja!!!😀✈️",
-  "extras": [],
+  "note": "Tänään: Jussi, Mea, Ellen + Nocco → Helsinki. Ma 7.9.: koko perhe Torrevieja, Espanja 🇪🇸✈️",
+  "extras": [
+    {
+      "id": "trip-helsinki-20260905",
+      "title": "Jussi, Mea, Ellen + Nocco → Helsinki",
+      "date": "2026-09-05",
+      "start": "",
+      "end": "",
+      "kind": "cal",
+      "who": "family"
+    },
+    {
+      "id": "trip-torrevieja-20260907",
+      "title": "Koko perhe → Torrevieja, Espanja",
+      "date": "2026-09-07",
+      "start": "",
+      "end": "",
+      "kind": "cal",
+      "who": "family",
+      "dateEnd": "2026-09-13"
+    }
+  ],
   "schoolLunch": {
     "date": "2026-09-07",
     "dish": "Tomaattista pastakastiketta",
     "veg": "Tomaattista pastakastiketta"
+  },
+  "vacation": {
+    "from": "2026-09-05",
+    "to": "2026-09-13",
+    "hideSchool": true,
+    "hideHobbies": true,
+    "label": "Torrevieja / Espanja"
+  },
+  "trip": {
+    "today": "Jussi, Mea, Ellen ja Nocco → Helsinki",
+    "monday": "Koko perhe → Torrevieja, Espanja (ma 7.9.)",
+    "weatherPlace": "Torrevieja",
+    "weatherLat": 37.978,
+    "weatherLon": -0.682
   }
 }

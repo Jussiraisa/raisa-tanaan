@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 20;
+  const PAGE_VER = 21;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1133,7 +1133,14 @@ label.f {
     Object.keys(store.meals || {}).forEach(function (day) {
       dishes[day] = (store.meals[day] && store.meals[day].dish) || "";
     });
-    return { v: 1, updated: store.sharedUpdated || Date.now(), drivers: drivers, cooks: cooks, dishes: dishes, note: store.note || "" };
+    const extras = (store.events || []).filter(function (e) {
+      var id = String(e.id || "");
+      return id.indexOf("cal-") === 0 || id.indexOf("trip-") === 0;
+    });
+    const out = { v: 1, updated: store.sharedUpdated || Date.now(), drivers: drivers, cooks: cooks, dishes: dishes, note: store.note || "", extras: extras };
+    if (store.vacation) out.vacation = store.vacation;
+    if (store.trip) out.trip = store.trip;
+    return out;
   }
 
   function applyShared(remote) {
@@ -1175,6 +1182,34 @@ label.f {
     store.sharedUpdated = remoteT || Date.now();
     saveStore();
     return true;
+  }
+
+
+  async function pullEspWx() {
+    const el = document.getElementById("espwx");
+    if (!el) return;
+    try {
+      const lat = (store.trip && store.trip.weatherLat) || 37.978;
+      const lon = (store.trip && store.trip.weatherLon) || -0.682;
+      const res = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FMadrid&forecast_days=7", { cache: "no-store" });
+      const data = await res.json();
+      const names = ["su","ma","ti","ke","to","pe","la"];
+      let html = "<div class=\"lbl2\">Torrevieja · viikko</div><div style=\"display:flex;gap:.4rem;overflow-x:auto;padding-top:.35rem\">";
+      for (let i = 0; i < data.daily.time.length; i++) {
+        const iso = data.daily.time[i];
+        const parts = iso.split("-");
+        const dt = new Date(Date.UTC(+parts[0], +parts[1]-1, +parts[2]));
+        const max = Math.round(data.daily.temperature_2m_max[i]);
+        const min = Math.round(data.daily.temperature_2m_min[i]);
+        html += "<div style=\"min-width:3.4rem;text-align:center\"><div style=\"font-size:.75rem;color:#9a9486;font-weight:800\">" + names[dt.getUTCDay()] + " " + (+parts[2]) + "." + "</div>"
+          + "<div style=\"font-size:1.25rem;font-weight:800\">" + max + "°</div>"
+          + "<div style=\"font-size:.7rem;color:#9a9486\">" + min + "°</div></div>";
+      }
+      html += "</div>";
+      el.innerHTML = html;
+    } catch (e) {
+      el.innerHTML = "<div class=\"lbl2\">Torrevieja</div><div>Säätä ei saatu</div>";
+    }
   }
 
   async function pullShared() {
@@ -1886,6 +1921,13 @@ label.f {
     return "<a class=\"back\" href=\"#/\">← Tänään</a>";
   }
 
+
+  function vacationActive(iso) {
+    var v = store.vacation;
+    if (!v || !v.from || !v.to) return false;
+    return iso >= v.from && iso <= v.to;
+  }
+
   function renderToday() {
     const now = helsinkiNow();
     lastIso = now.iso;
@@ -1912,7 +1954,26 @@ label.f {
     let kyydit = todayEvents.map(ev => eventItem(ev, now.iso)).join("");
     let ruoka = mealItem(todayMeal, now.key);
     let tomMenot = tomEvents.map(ev => eventItem(ev, tomIso)).join("") + mealItem(tomMeal, tomDay.key);
+    const away = vacationActive(now.iso);
     const schoolLbl = schoolFlip ? "Koulu huomenna · tunnit" : "Koulu · tunnit";
+    let tripBanner = "";
+    if (store.trip) {
+      const bits = [];
+      if (store.trip.today && now.iso <= "2026-09-05") bits.push(esc(store.trip.today));
+      if (store.trip.monday) bits.push(esc(store.trip.monday));
+      if (bits.length) tripBanner = "<div class=\"card rv\" style=\"animation-delay:.12s;border-color:#6aa7d8\"><div class=\"lbl2\">Matka</div><div style=\"font-size:1.05rem;font-weight:700;line-height:1.35\">" + bits.join("<br>") + "</div></div>";
+    }
+    let espBanner = "<div class=\"card rv\" id=\"espwx\" style=\"animation-delay:.13s;border-color:#c6a15a\"><div class=\"lbl2\">Torrevieja · viikko</div><div style=\"color:#9a9486\">Ladataan…</div></div>";
+    if (away && store.vacation && store.vacation.hideHobbies) {
+      kyydit = "";
+      tomMenot = mealItem(tomMeal, tomDay.key);
+    }
+    const schoolBlock = (away && store.vacation && store.vacation.hideSchool)
+      ? "<div class=\"lbl2\">Koulu</div><div class=\"card\">Koulu pois · Espanja-viikko</div>"
+      : ("<div class=\"lbl2\">" + schoolLbl + "</div><div class=\"school\">" + schoolRows(schoolDay.key) + "</div>");
+    const tomSchool = (away && store.vacation && store.vacation.hideSchool)
+      ? ""
+      : ("<div class=\"lbl2\">Koulu · tunnit</div><div class=\"school\">" + schoolRows(tomDay.key) + "</div>");
 
     return "<header class=\"rv\" style=\"animation-delay:.02s\">"
       + "<div class=\"eyebrow\">Räisän perhe · Viikko " + week + "</div>"
@@ -1921,18 +1982,18 @@ label.f {
       + "<div class=\"rule g\"></div></header>"
       + renderHero(now, todayEvents)
       + familyNote()
+      + tripBanner
+      + espBanner
       + "<div class=\"dayhead rv\" style=\"animation-delay:.15s\"><h2>Tänään</h2><a class=\"weeklink\" href=\"#/viikko\">Koko viikko</a></div>"
       + "<div class=\"rv\" style=\"animation-delay:.18s\">"
-      + "<div class=\"lbl2\">" + schoolLbl + "</div>"
-      + "<div class=\"school\">" + schoolRows(schoolDay.key) + "</div>"
-      + (kyydit ? "<div class=\"lbl2\">Kyydit</div>" + kyydit : "")
+      + schoolBlock
+      + (kyydit ? "<div class=\"lbl2\">Kyydit</div>" + kyydit : (away ? "<div class=\"lbl2\">Harrastukset</div><div class=\"card\">Harrastukset pois · Espanja-viikko</div>" : ""))
       + (ruoka ? "<div class=\"lbl2\">Ruoka</div>" + ruoka : "")
       + "</div>"
       + "<section class=\"tom rv\" style=\"animation-delay:.24s\">"
       + "<div class=\"th\">Huomenna · " + tomDay.abbr + " " + fmtDot(tom.year, tom.month, tom.day) + "</div>"
       + "<div class=\"tw\" id=\"wx2\">" + wTom + "</div>"
-      + "<div class=\"lbl2\">Koulu · tunnit</div>"
-      + "<div class=\"school\">" + schoolRows(tomDay.key) + "</div>"
+      + tomSchool
       + (tomMenot ? "<div class=\"lbl2\">Menot &amp; ruoka</div>" + tomMenot : "")
       + "</section>"
       + footer();

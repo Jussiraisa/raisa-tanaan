@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788495063172,
+  "updated": 1788580943092,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -157,28 +157,7 @@
     "su": "Sushi"
   },
   "note": "Kohta Espanja!!!😀✈️",
-  "extras": [
-    {
-      "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc1p60p40qjledpmi",
-      "title": "Riikan koulupäivät",
-      "date": "2026-09-02",
-      "start": "",
-      "end": "",
-      "kind": "cal",
-      "dateEnd": "2026-09-04",
-      "note": "Lähtö 2.9. klo 15.30"
-    },
-    {
-      "id": "cal-_6gs3eh216oqkab9i68rk6b9k60ojiba2751j4ba574o42e228kr32c266c",
-      "title": "Riikka Oulu",
-      "date": "2026-09-02",
-      "start": "21:00",
-      "end": "22:00",
-      "kind": "cal",
-      "dateEnd": "2026-09-04",
-      "who": "riikka"
-    }
-  ],
+  "extras": [],
   "schoolLunch": {
     "date": "2026-09-04",
     "dish": "Jauhelihakastiketta",

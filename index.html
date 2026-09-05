@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 22;
+  const PAGE_VER = 23;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1147,14 +1147,18 @@ label.f {
     if (!remote || typeof remote !== "object") return false;
     const remoteT = +remote.updated || 0;
     const localT = +store.sharedUpdated || 0;
+    if (remote.vacation) store.vacation = remote.vacation;
+    if (remote.trip) store.trip = remote.trip;
+    if (typeof remote.note === "string" && remote.note) store.note = remote.note;
     if (remote.extras) {
       store.events = (store.events || []).filter(function (e) {
-        return String(e.id || "").indexOf("cal-") !== 0;
+        var id = String(e.id || "");
+        return id.indexOf("cal-") !== 0 && id.indexOf("trip-") !== 0;
       });
       remote.extras.forEach(function (ev) { store.events.push(ev); });
     }
-    if (!remoteT) return !!remote.extras;
-    if (localT && remoteT < localT) { saveStore(); return !!remote.extras; }
+    if (!remoteT) { saveStore(); return true; }
+    if (localT && remoteT < localT) { saveStore(); return true; }
     if (remote.drivers) {
       Object.keys(remote.drivers).forEach(function (id) {
         const ev = store.events.find(function (x) { return x.id === id; });
@@ -1172,8 +1176,7 @@ label.f {
         store.meals[day].cook = remote.cooks[day] || "";
       });
     }
-    if (typeof remote.note === "string" && remote.note) store.note = remote.note;
-    if (remote.dishes) {
+        if (remote.dishes) {
       Object.keys(remote.dishes).forEach(function (day) {
         if (!store.meals[day]) store.meals[day] = { emoji: "", dish: "", note: "", cook: "" };
         if (remote.dishes[day]) store.meals[day].dish = remote.dishes[day];

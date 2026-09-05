@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 24;
+  const PAGE_VER = 25;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1191,6 +1191,10 @@ label.f {
   async function pullEspWx() {
     const el = document.getElementById("espwx");
     if (!el) return;
+    if (store.espWxAt && Date.now() - store.espWxAt < 10 * 60 * 1000 && store.espWxHtml) {
+      el.innerHTML = store.espWxHtml;
+      return;
+    }
     try {
       const lat = (store.trip && store.trip.weatherLat) || 37.978;
       const lon = (store.trip && store.trip.weatherLon) || -0.682;
@@ -1209,9 +1213,13 @@ label.f {
           + "<div style=\"font-size:.7rem;color:#9a9486\">" + min + "°</div></div>";
       }
       html += "</div>";
+      store.espWxHtml = html;
+      store.espWxAt = Date.now();
       el.innerHTML = html;
     } catch (e) {
-      el.innerHTML = "<div class=\"lbl2\">Torrevieja</div><div>Säätä ei saatu</div>";
+      const err = "<div class=\"lbl2\">Torrevieja</div><div>Säätä ei saatu</div>";
+      store.espWxHtml = err;
+      el.innerHTML = err;
     }
   }
 
@@ -1966,7 +1974,8 @@ label.f {
       if (store.trip.monday) bits.push(esc(store.trip.monday));
       if (bits.length) tripBanner = "<div class=\"card rv\" style=\"animation-delay:.12s;border-color:#6aa7d8\"><div class=\"lbl2\">Matka</div><div style=\"font-size:1.05rem;font-weight:700;line-height:1.35\">" + bits.join("<br>") + "</div></div>";
     }
-    let espBanner = "<div class=\"card rv\" id=\"espwx\" style=\"animation-delay:.13s;border-color:#c6a15a\"><div class=\"lbl2\">Torrevieja · viikko</div><div style=\"color:#9a9486\">Ladataan…</div></div>";
+    let espInner = store.espWxHtml || "<div class=\"lbl2\">Torrevieja · viikko</div><div style=\"color:#9a9486\">Ladataan…</div>";
+    let espBanner = "<div class=\"card rv\" id=\"espwx\" style=\"animation-delay:.13s;border-color:#c6a15a\">" + espInner + "</div>";
     if (away && store.vacation && store.vacation.hideHobbies) {
       kyydit = "";
       tomMenot = mealItem(tomMeal, tomDay.key);

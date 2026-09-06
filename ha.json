@@ -1,9 +1,9 @@
 {
   "v": 1,
-  "updated": 1788690364215,
-  "powerW": 687,
-  "gridW": -345,
-  "solarW": 1032,
+  "updated": 1788692442829,
+  "powerW": 818,
+  "gridW": -430,
+  "solarW": 1249,
   "selfPct": 100,
   "spotSnt": 0.3,
   "priceSnt": 7.3,
@@ -12,13 +12,13 @@
   "costNow": -0.0,
   "costToday": 0.6,
   "kwhToday": 24.9,
-  "soldToday": 2.0,
+  "soldToday": 2.4,
   "outC": 12.0,
-  "inC": 20.9,
+  "inC": 20.8,
   "targetC": 15.0,
   "dhwC": 46.0,
-  "heatStorePct": 15,
-  "heatStoreH": 113.9,
+  "heatStorePct": 13,
+  "heatStoreH": 106.7,
   "compressor": "seis",
   "weather": "Pilvistä",
   "weatherIcon": "cloudy",
@@ -35,8 +35,8 @@
     {
       "plate": "KYP-452",
       "name": "Tesla Model 3",
-      "where": "Ei sijaintitietoa",
-      "known": false
+      "where": "Kotona · Etuovi",
+      "known": true
     },
     {
       "plate": "NON-983",
@@ -82,9 +82,9 @@
     }
   ],
   "source": "Home Assistant Koti Pro + Yleiskatsaus Pro",
-  "capturedAt": "2026-09-06T13:25+03:00",
+  "capturedAt": "2026-09-06T14:00+03:00",
   "heatOffset": -10,
-  "notes": "Lahteet: HA Kehittajan tyokalut > Malli (template). Teho sensor.talon_kulutus_w, verkko sensor.verkko_nyt_w, aurinko sensor.aurinko_nyt_w, omavaraisuus sensor.omavaraisuus_pct. Hinnat sensor.spot_hinta_snt / kokonaishinta_snt / hinta_taso. Kulut kustannus_eur_h ja kustannus_tanaan_eur. kwhToday/solarTodayKwh ovat mittarin kumulatiivisia lukemia, eivat puhtaita paivaarvoja joten vanhat paivaluvut sailyvat. Lampotilat ulko/sisa/tavoite/offset. Kayttovesi sensor.jussi_raisa_hot_water_temp. Lampovarasto sensor.lampovarasto_pct / _kesto_h. Kompressori sensor.jussi_raisa_status_compressor. Saa weather.forecast_koti. Valot: switch.olohuone_valot, switch.tallin_valot. Sauna switch.sauna, sensor.sauna_power. Jussi: person.jussi=not_home, sijainti karkeasti Lahnalahti. Tesla: ei ajoneuvointegraatiota; etuovi/takapiha car_occupancy off/off. NON-983 ei ole HA:ssa.",
+  "notes": "Lahteet: HA Kehittajan tyokalut > Malli (template). Teho sensor.talon_kulutus_w, verkko sensor.verkko_nyt_w, aurinko sensor.aurinko_nyt_w, omavaraisuus sensor.omavaraisuus_pct. Hinnat sensor.spot_hinta_snt / kokonaishinta_snt / hinta_taso. Kulut kustannus_eur_h ja kustannus_tanaan_eur. kwhToday/solarTodayKwh ovat mittarin kumulatiivisia lukemia, eivat puhtaita paivaarvoja joten vanhat paivaluvut sailyvat. Lampotilat ulko/sisa/tavoite/offset. Kayttovesi sensor.jussi_raisa_hot_water_temp. Lampovarasto sensor.lampovarasto_pct / _kesto_h. Kompressori sensor.jussi_raisa_status_compressor. Saa weather.forecast_koti. Valot: switch.olohuone_valot, switch.tallin_valot. Sauna switch.sauna, sensor.sauna_power. Jussi: person.jussi=not_home, sijainti karkeasti Lahnalahti. Tesla: ei ajoneuvointegraatiota; etuovi/takapiha car_occupancy on/off. NON-983 ei ole HA:ssa.",
   "soldTodayEur": 0.0,
   "dhwChargePct": 76,
   "weatherC": 8.3,
@@ -92,8 +92,8 @@
   "solarSavedTodayEur": 0.5,
   "costMonthEur": 23.3,
   "soldMonthEur": 3.5,
-  "soldMonthKwh": 59.8,
-  "sellAvgSnt": 5.8,
+  "soldMonthKwh": 60.2,
+  "sellAvgSnt": 5.7,
   "buyMonthKwh": 156.1,
   "buyAvgSnt": 14.9
 }

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788668130668,
+  "updated": 1788754942954,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -156,7 +156,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Su 6.9.: Millan Vivida 11.30 BellaCenter (kyyti auki?). Ma 7.9.: koko perhe Torrevieja, Espanja 🇪🇸✈️",
+  "note": "Ma 7.9.: koko perhe Torrevieja, Espanja 🇪🇸✈️ (loma 5.–13.9.)",
   "extras": [
     {
       "id": "cal-fj2vggd8trq670pq6n2t0stoo0",
@@ -197,8 +197,8 @@
   ],
   "schoolLunch": {
     "date": "2026-09-07",
-    "dish": "Tomaattista pastakastiketta",
-    "veg": "Tomaattista pastakastiketta"
+    "dish": "Tomaattista pastakastiketta, Cappeli-pastaa",
+    "veg": "Tomaattista pastakastiketta, Cappeli-pastaa (VG)"
   },
   "vacation": {
     "from": "2026-09-05",

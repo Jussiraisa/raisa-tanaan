@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789034275183,
+  "updated": 1789034585158,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -165,6 +165,15 @@
       "start": "",
       "end": "",
       "kind": "cal"
+    },
+    {
+      "id": "cal-fj2vggd8trq670pq6n2t0stoo0",
+      "title": "Stay at Paradise Views by Fidalsa",
+      "date": "2026-09-07",
+      "start": "",
+      "end": "",
+      "kind": "cal",
+      "place": "C. del Tornado, 2, 03185 Punta Prima, Alicante, Spain"
     },
     {
       "id": "trip-helsinki-20260905",

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789014736292,
+  "updated": 1789023000980,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -158,15 +158,6 @@
   },
   "note": "Ma 7.9.: koko perhe Torrevieja, Espanja 🇪🇸✈️ (loma 5.–13.9.)",
   "extras": [
-    {
-      "id": "cal-fj2vggd8trq670pq6n2t0stoo0",
-      "title": "Stay at Paradise Views by Fidalsa",
-      "date": "2026-09-07",
-      "start": "",
-      "end": "",
-      "kind": "cal",
-      "place": "C. del Tornado, 2, 03185 Punta Prima, Alicante, Spain"
-    },
     {
       "id": "cal-_e1in4q355lm62rbgd5mm2obe5kp30chm60sj0da0d9qn6sr9",
       "title": "Matka lämpimään",

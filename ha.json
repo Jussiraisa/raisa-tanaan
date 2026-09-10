@@ -1,11 +1,11 @@
 {
   "v": 1,
-  "updated": 1789015723231,
+  "updated": 1789016513061,
   "powerW": 2739,
   "gridW": 2736,
   "solarW": 3,
   "selfPct": 0,
-  "spotSnt": 9.2,
+  "spotSnt": 10.0,
   "priceSnt": 30.7,
   "priceRank": "82",
   "priceLevel": "erittain_kallis",

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1788980716361,
+  "updated": 1789014345063,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -196,9 +196,9 @@
     }
   ],
   "schoolLunch": {
-    "date": "2026-09-09",
-    "dish": "Tonnikalakiusausta, Parsakaalia",
-    "veg": "Juures-papukiusausta, Parsakaalia"
+    "date": "2026-09-10",
+    "dish": "Pyörykkäkimara, Tsatsiki-jogurttikastiketta, Perunaa",
+    "veg": "Pyörykkäkimara, Tsatsiki-jogurttikastiketta, Perunaa"
   },
   "vacation": {
     "from": "2026-09-05",

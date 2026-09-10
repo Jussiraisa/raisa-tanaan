@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789016513061,
+  "updated": 1789022488827,
   "powerW": 2739,
   "gridW": 2736,
   "solarW": 3,
@@ -22,7 +22,7 @@
   "compressor": "seis",
   "weather": "Pilvistä",
   "weatherIcon": "cloudy",
-  "online": true,
+  "online": false,
   "home": false,
   "alerts": [],
   "lightsOn": [

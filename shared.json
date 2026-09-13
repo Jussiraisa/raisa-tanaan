@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789288041419,
+  "updated": 1789299862863,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -165,15 +165,6 @@
       "start": "",
       "end": "",
       "kind": "cal"
-    },
-    {
-      "id": "cal-fj2vggd8trq670pq6n2t0stoo0",
-      "title": "Stay at Paradise Views by Fidalsa",
-      "date": "2026-09-07",
-      "start": "",
-      "end": "",
-      "kind": "cal",
-      "place": "Punta Prima, Alicante"
     },
     {
       "id": "trip-helsinki-20260905",

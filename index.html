@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 25;
+  const PAGE_VER = 26;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1196,12 +1196,12 @@ label.f {
       return;
     }
     try {
-      const lat = (store.trip && store.trip.weatherLat) || 37.978;
-      const lon = (store.trip && store.trip.weatherLon) || -0.682;
-      const res = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FMadrid&forecast_days=7", { cache: "no-store" });
+      const lat = (store.trip && store.trip.weatherLat) || 62.8924;
+      const lon = (store.trip && store.trip.weatherLon) || 27.6770;
+      const res = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FHelsinki&forecast_days=7", { cache: "no-store" });
       const data = await res.json();
       const names = ["su","ma","ti","ke","to","pe","la"];
-      let html = "<div class=\"lbl2\">Torrevieja · viikko</div><div style=\"display:flex;gap:.4rem;overflow-x:auto;padding-top:.35rem\">";
+      let html = "<div class=\"lbl2\">Kuopio · viikko</div><div style=\"display:flex;gap:.4rem;overflow-x:auto;padding-top:.35rem\">";
       for (let i = 0; i < data.daily.time.length; i++) {
         const iso = data.daily.time[i];
         const parts = iso.split("-");
@@ -1217,7 +1217,7 @@ label.f {
       store.espWxAt = Date.now();
       el.innerHTML = html;
     } catch (e) {
-      const err = "<div class=\"lbl2\">Torrevieja</div><div>Säätä ei saatu</div>";
+      const err = "<div class=\"lbl2\">Kuopio</div><div>Säätä ei saatu</div>";
       store.espWxHtml = err;
       el.innerHTML = err;
     }
@@ -1974,7 +1974,7 @@ label.f {
       if (store.trip.monday) bits.push(esc(store.trip.monday));
       if (bits.length) tripBanner = "<div class=\"card rv\" style=\"animation-delay:.12s;border-color:#6aa7d8\"><div class=\"lbl2\">Matka</div><div style=\"font-size:1.05rem;font-weight:700;line-height:1.35\">" + bits.join("<br>") + "</div></div>";
     }
-    let espInner = store.espWxHtml || "<div class=\"lbl2\">Torrevieja · viikko</div><div style=\"color:#9a9486\">Ladataan…</div>";
+    let espInner = store.espWxHtml || "<div class=\"lbl2\">Kuopio · viikko</div><div style=\"color:#9a9486\">Ladataan…</div>";
     let espBanner = "<div class=\"card rv\" id=\"espwx\" style=\"animation-delay:.13s;border-color:#c6a15a\">" + espInner + "</div>";
     if (away && store.vacation && store.vacation.hideHobbies) {
       kyydit = "";

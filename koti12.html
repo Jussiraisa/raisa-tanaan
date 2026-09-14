@@ -141,11 +141,11 @@
   var EXTRA = [];
   var SCHOOL_LUNCH = { date: "2026-08-28", dish: "Tonnikalalasagnetta", veg: "Pinaattinen linssi-pastavuoka" };
   var TRIP = {
-    today: "Jussi, Mea, Ellen ja Nocco → Helsinki",
-    monday: "Koko perhe → Torrevieja, Espanja (ma 7.9.)",
-    weatherPlace: "Torrevieja",
-    weatherLat: 37.978,
-    weatherLon: -0.682
+    today: "",
+    monday: "",
+    weatherPlace: "Kuopio",
+    weatherLat: 62.8924,
+    weatherLon: 27.6770
   };
   var VACATION_DEFAULT = { from: "2026-09-05", to: "2026-09-13", hideSchool: true, hideHobbies: true, label: "Torrevieja / Espanja" };
   var VACATION = VACATION_DEFAULT;
@@ -377,7 +377,8 @@
         + "<div class=\"dtemp\">" + esc(d.max) + "°</div>"
         + "<div class=\"dmeta\">" + esc(d.min) + "° · " + esc(d.phrase) + "</div></div>";
     }
-    return "<div class=\"esp\"><div class=\"lbl\">Torrevieja · viikko</div><div class=\"days\">" + bits + "</div></div>";
+    var place = (TRIP && TRIP.weatherPlace) || "Kuopio";
+    return "<div class=\"esp\"><div class=\"lbl\">" + esc(place) + " · viikko</div><div class=\"days\">" + bits + "</div></div>";
   }
 
   function tripHtml(now) {
@@ -553,9 +554,9 @@
 
   var ESP_DAY = ["su", "ma", "ti", "ke", "to", "pe", "la"];
   function pullEspWx() {
-    var lat = (TRIP && TRIP.weatherLat) || 37.978;
-    var lon = (TRIP && TRIP.weatherLon) || -0.682;
-    getJSON("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FMadrid&forecast_days=7", function (data) {
+    var lat = (TRIP && TRIP.weatherLat) || 62.8924;
+    var lon = (TRIP && TRIP.weatherLon) || 27.6770;
+    getJSON("https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FHelsinki&forecast_days=7", function (data) {
       try {
         if (!data || !data.daily || !data.daily.time) return;
         var days = [];

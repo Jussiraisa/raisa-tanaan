@@ -217,8 +217,8 @@
   "trip": {
     "today": "",
     "monday": "",
-    "weatherPlace": "",
-    "weatherLat": null,
-    "weatherLon": null
+    "weatherPlace": "Kuopio",
+    "weatherLat": 62.8924,
+    "weatherLon": 27.677
   }
 }

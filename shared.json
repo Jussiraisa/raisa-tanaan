@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789322566285,
+  "updated": 1789358638113,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -174,6 +174,22 @@
       "end": "",
       "kind": "cal",
       "place": "C. del Tornado, 2, 03185 Punta Prima, Alicante, Spain"
+    },
+    {
+      "id": "cal-_69142h9k70pjeba364r32b9k8d132ba28oqkcba36kq46d9k8cpk4h2268",
+      "title": "Pyykit",
+      "date": "2026-09-14",
+      "start": "03:35",
+      "end": "04:35",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260915T140000Z",
+      "title": "Mea valmennus",
+      "date": "2026-09-15",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
     },
     {
       "id": "trip-helsinki-20260905",

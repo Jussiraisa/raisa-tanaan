@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789388515999,
+  "updated": 1789388524225,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -151,7 +151,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tervetuloa kitoon",
+  "note": "Tervetuloa kotiin",
   "extras": [
     {
       "id": "cal-_69142h9k70pjeba364r32b9k8d132ba28oqkcba36kq46d9k8cpk4h2268",
@@ -212,8 +212,8 @@
   "trip": {
     "today": "",
     "monday": "",
-    "weatherPlace": "Kuopio",
-    "weatherLat": 62.8924,
-    "weatherLon": 27.677
+    "weatherPlace": "",
+    "weatherLat": null,
+    "weatherLon": null
   }
 }

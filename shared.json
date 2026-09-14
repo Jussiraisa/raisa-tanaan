@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789388524225,
+  "updated": 1789394483791,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -162,12 +162,13 @@
       "kind": "cal"
     },
     {
-      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260915T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-15",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
+      "id": "cal-fj2vggd8trq670pq6n2t0stoo0",
+      "title": "Stay at Paradise Views by Fidalsa",
+      "date": "2026-09-07",
+      "start": "",
+      "end": "",
+      "kind": "cal",
+      "place": "C. del Tornado, 2, 03185 Punta Prima, Alicante, Spain"
     },
     {
       "id": "cal-_e1in4q355lm62rbgd5mm2obe5kp30chm60sj0da0d9qn6sr9",
@@ -175,6 +176,14 @@
       "date": "2026-09-07",
       "start": "",
       "end": "",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260915T140000Z",
+      "title": "Mea valmennus",
+      "date": "2026-09-15",
+      "start": "17:00",
+      "end": "17:45",
       "kind": "cal"
     },
     {

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789358638113,
+  "updated": 1789359554057,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -156,7 +156,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Ma 7.9.: koko perhe Torrevieja, Espanja 🇪🇸✈️ (loma 5.–13.9.)",
+  "note": "",
   "extras": [
     {
       "id": "cal-_e1in4q355lm62rbgd5mm2obe5kp30chm60sj0da0d9qn6sr9",
@@ -224,10 +224,10 @@
     "label": "Torrevieja / Espanja"
   },
   "trip": {
-    "today": "Jussi, Mea, Ellen ja Nocco → Helsinki",
-    "monday": "Koko perhe → Torrevieja, Espanja (ma 7.9.)",
-    "weatherPlace": "Torrevieja",
-    "weatherLat": 37.978,
-    "weatherLon": -0.682
+    "today": "",
+    "monday": "",
+    "weatherPlace": "",
+    "weatherLat": null,
+    "weatherLon": null
   }
 }

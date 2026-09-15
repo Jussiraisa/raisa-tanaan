@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789444908846,
+  "updated": 1789445555858,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -162,36 +162,26 @@
       "kind": "cal"
     },
     {
-      "id": "trip-helsinki-20260905",
-      "title": "Jussi, Mea, Ellen + Nocco → Helsinki",
-      "date": "2026-09-05",
-      "start": "",
-      "end": "",
+      "id": "cal-ambrosia-20260915",
+      "title": "Ellen Ambrosia (meidän kyydit)",
+      "date": "2026-09-15",
+      "start": "17:00",
+      "end": "18:30",
       "kind": "cal",
-      "who": "family"
-    },
-    {
-      "id": "trip-torrevieja-20260907",
-      "title": "Koko perhe → Torrevieja, Espanja",
-      "date": "2026-09-07",
-      "start": "",
-      "end": "",
-      "kind": "cal",
-      "who": "family",
-      "dateEnd": "2026-09-13"
+      "who": "ellen"
     }
   ],
   "schoolLunch": {
-    "date": "2026-09-14",
-    "dish": "Broileri Tikka Masalaa, Täysjyväriisiä",
-    "veg": "Kasvis Tikka Masalaa, Täysjyväriisiä"
+    "date": "2026-09-15",
+    "dish": "Puurobaari: kaurasuurimopuuroa, raejuustoa, mustaherukkahilloa",
+    "veg": "Puurobaari: kaurasuurimopuuroa, raejuustoa, mustaherukkahilloa"
   },
   "vacation": {
-    "from": "2026-09-05",
-    "to": "2026-09-13",
-    "hideSchool": true,
-    "hideHobbies": true,
-    "label": "Torrevieja / Espanja"
+    "from": "",
+    "to": "",
+    "hideSchool": false,
+    "hideHobbies": false,
+    "label": ""
   },
   "trip": {
     "today": "",

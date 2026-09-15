@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789445825838,
+  "updated": 1789464725083,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -53,9 +53,9 @@
       "ride": ""
     },
     "samuel-sahly-ti": {
-      "driver": "Räisä",
+      "driver": "Jussi vie · Riikka hakee 18:00",
       "status": "us",
-      "ride": "vie+hakee"
+      "ride": ""
     },
     "samuel-sahly": {
       "driver": "Jussi",
@@ -113,9 +113,9 @@
       "ride": ""
     },
     "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260915T140000Z": {
-      "driver": "",
-      "status": "",
-      "ride": ""
+      "driver": "Jussi",
+      "status": "us",
+      "ride": "vie+hakee (+Ellen, Sofie)"
     },
     "cal-_e1in4q355lm62rbgd5mm2obe5kp30chm60sj0da0d9qn6sr9": {
       "driver": "",
@@ -151,7 +151,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tervetuloa kotiin",
+  "note": "Tänään: Jussi vie+hakee Mea, Ellen, Sofie · Riikka Samuelin haku 18:00",
   "extras": [
     {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260915T140000Z",
@@ -160,6 +160,24 @@
       "start": "17:00",
       "end": "17:45",
       "kind": "cal"
+    },
+    {
+      "id": "trip-kyyti-jussi-mea-ellen-sofie-20260915",
+      "title": "Jussi vie+hakee: Mea, Ellen, Sofie",
+      "date": "2026-09-15",
+      "start": "",
+      "end": "",
+      "kind": "cal",
+      "who": "family"
+    },
+    {
+      "id": "trip-kyyti-riikka-samuel-20260915",
+      "title": "Riikka: Samuelin haku klo 18:00 (Lippumäki)",
+      "date": "2026-09-15",
+      "start": "18:00",
+      "end": "",
+      "kind": "cal",
+      "who": "samuel"
     }
   ],
   "schoolLunch": {

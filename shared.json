@@ -1,9 +1,9 @@
 {
   "v": 1,
-  "updated": 1789531726938,
+  "updated": 1789532132475,
   "drivers": {
     "ellen-ambrosia": {
-      "driver": "Sofien perhe",
+      "driver": "Jussi",
       "status": "us",
       "ride": "vie+hakee"
     },
@@ -13,7 +13,7 @@
       "ride": ""
     },
     "mea-lianna": {
-      "driver": "Jussi",
+      "driver": "Enni vie · Julia hakee",
       "status": "other",
       "ride": ""
     },
@@ -38,9 +38,9 @@
       "ride": ""
     },
     "mea-lianna-su": {
-      "driver": "Räisä",
+      "driver": "Mea vie · Enni hakee",
       "status": "us",
-      "ride": "hakee"
+      "ride": "vie"
     },
     "mea-lianna-ma": {
       "driver": "Räisä",
@@ -131,6 +131,11 @@
       "driver": "",
       "status": "",
       "ride": ""
+    },
+    "mea-lianna-la": {
+      "driver": "Amanda vie · Mea hakee",
+      "status": "other",
+      "ride": ""
     }
   },
   "cooks": {
@@ -151,7 +156,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään ke: Ellen Ambrosia 18–20.30 Kuopiohalli (Sofien perhe / Jussi ~17.40) · Milla Vivida & Mea Lianna 18–20.30 BellaCenter",
+  "note": "Tänään ke: Jussi Ellen Ambrosia ~17.40 · Mea Enni/Julia · Milla Mopo",
   "extras": [
     {
       "id": "cal-_750j6e268l2kcb9g6sr4cb9k8l24ab9o70qj4b9n74sjachn8h2k2dpp8c",

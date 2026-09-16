@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789464725083,
+  "updated": 1789531243102,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -154,11 +154,11 @@
   "note": "Tänään: Jussi vie+hakee Mea, Ellen, Sofie · Riikka Samuelin haku 18:00",
   "extras": [
     {
-      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260915T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-15",
-      "start": "17:00",
-      "end": "17:45",
+      "id": "cal-_750j6e268l2kcb9g6sr4cb9k8l24ab9o70qj4b9n74sjachn8h2k2dpp8c",
+      "title": "Mea Arja",
+      "date": "2026-09-17",
+      "start": "14:30",
+      "end": "15:30",
       "kind": "cal"
     },
     {

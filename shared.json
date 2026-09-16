@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789531243102,
+  "updated": 1789531726938,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Sofien perhe",
@@ -151,7 +151,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään: Jussi vie+hakee Mea, Ellen, Sofie · Riikka Samuelin haku 18:00",
+  "note": "Tänään ke: Ellen Ambrosia 18–20.30 Kuopiohalli (Sofien perhe / Jussi ~17.40) · Milla Vivida & Mea Lianna 18–20.30 BellaCenter",
   "extras": [
     {
       "id": "cal-_750j6e268l2kcb9g6sr4cb9k8l24ab9o70qj4b9n74sjachn8h2k2dpp8c",
@@ -160,30 +160,12 @@
       "start": "14:30",
       "end": "15:30",
       "kind": "cal"
-    },
-    {
-      "id": "trip-kyyti-jussi-mea-ellen-sofie-20260915",
-      "title": "Jussi vie+hakee: Mea, Ellen, Sofie",
-      "date": "2026-09-15",
-      "start": "",
-      "end": "",
-      "kind": "cal",
-      "who": "family"
-    },
-    {
-      "id": "trip-kyyti-riikka-samuel-20260915",
-      "title": "Riikka: Samuelin haku klo 18:00 (Lippumäki)",
-      "date": "2026-09-15",
-      "start": "18:00",
-      "end": "",
-      "kind": "cal",
-      "who": "samuel"
     }
   ],
   "schoolLunch": {
-    "date": "2026-09-15",
-    "dish": "Puurobaari: kaurasuurimopuuroa, raejuustoa, mustaherukkahilloa",
-    "veg": "Puurobaari: kaurasuurimopuuroa, raejuustoa, mustaherukkahilloa"
+    "date": "2026-09-16",
+    "dish": "Kirjolohipyöryköitä + kermaviilikastiketta + perunaa",
+    "veg": "Porkkanapyöryköitä + kermaviilikastiketta + perunaa"
   },
   "vacation": {
     "from": "",

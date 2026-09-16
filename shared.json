@@ -1,11 +1,11 @@
 {
   "v": 1,
-  "updated": 1789532132475,
+  "updated": 1789544201307,
   "drivers": {
     "ellen-ambrosia": {
-      "driver": "Jussi",
-      "status": "us",
-      "ride": "vie+hakee"
+      "driver": "ei meidän",
+      "status": "other",
+      "ride": ""
     },
     "milla-vivida": {
       "driver": "Mopo",
@@ -107,34 +107,9 @@
       "status": "us",
       "ride": ""
     },
-    "cal-_69142h9k70pjeba364r32b9k8d132ba28oqkcba36kq46d9k8cpk4h2268": {
+    "cal-_750j6e268l2kcb9g6sr4cb9k8l24ab9o70qj4b9n74sjachn8h2k2dpp8c": {
       "driver": "",
       "status": "",
-      "ride": ""
-    },
-    "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260915T140000Z": {
-      "driver": "Jussi",
-      "status": "us",
-      "ride": "vie+hakee (+Ellen, Sofie)"
-    },
-    "cal-_e1in4q355lm62rbgd5mm2obe5kp30chm60sj0da0d9qn6sr9": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "trip-helsinki-20260905": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "trip-torrevieja-20260907": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "mea-lianna-la": {
-      "driver": "Amanda vie · Mea hakee",
-      "status": "other",
       "ride": ""
     }
   },
@@ -156,7 +131,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään ke: Jussi Ellen Ambrosia ~17.40 · Mea Enni/Julia · Milla Mopo",
+  "note": "Tänään ke: Ellen Ambrosia (ei meidän kyyti) · Mea Enni/Julia · Milla Mopo",
   "extras": [
     {
       "id": "cal-_750j6e268l2kcb9g6sr4cb9k8l24ab9o70qj4b9n74sjachn8h2k2dpp8c",

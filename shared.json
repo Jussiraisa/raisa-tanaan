@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789704739123,
+  "updated": 1789705322155,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -111,6 +111,16 @@
       "driver": "",
       "status": "",
       "ride": ""
+    },
+    "mea-lianna-la": {
+      "driver": "Amanda vie · Mea hakee",
+      "status": "other",
+      "ride": ""
+    },
+    "milla-vivida-pe": {
+      "driver": "",
+      "status": "open",
+      "ride": ""
     }
   },
   "cooks": {
@@ -131,7 +141,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään pe: Ellen Ambrosia Riikka vie Luola 16–18.30 · Mea Reetta · Milla Vivida 18–20.30 (Mopo?)",
+  "note": "Tänään pe: Ellen Ambrosia Riikka vie Luola 16–18.30 · Mea 6.50 ringi · Milla Vivida pe kyyti auki",
   "extras": [],
   "schoolLunch": {
     "date": "2026-09-18",

@@ -115,16 +115,10 @@
   };
   var EVENTS = [
     { id: "ellen-ambrosia", who: "ellen", title: "Ambrosia", weekday: "ke", start: "18:00", end: "20:30", depart: "17:40", place: "Kuopiohalli", driver: "Jussi", ride: "vie+hakee", status: "us", kind: "treeni" },
-    { id: "milla-vivida", who: "milla", title: "Vivida", weekday: "ke", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
-    { id: "mea-lianna", who: "mea", title: "Lianna", weekday: "ke", start: "18:00", end: "20:30", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
     { id: "ellen-ambrosia-pe", who: "ellen", title: "Ambrosia", weekday: "pe", start: "16:00", end: "18:30", place: "Luola", driver: "Riikka", ride: "vie", status: "us", kind: "treeni" },
-    { id: "mea-lianna-pe", who: "mea", title: "Lianna", weekday: "pe", start: "18:00", end: "20:30", place: "BellaCenter", driver: "Amanda, haku Enni", status: "us", kind: "treeni" },
     { id: "samuel-sahly-ma", who: "samuel", title: "sähly", weekday: "ma", start: "17:00", end: "18:00", place: "Ylä-Pyörö", driver: "Sini/Topias", status: "other", kind: "treeni" },
     { id: "samuel-sahly-ti", who: "samuel", title: "sähly", weekday: "ti", start: "16:30", end: "18:00", depart: "16:15", place: "Lippumäki", driver: "Räisä", ride: "vie+hakee", status: "us", kind: "treeni" },
     { id: "samuel-sahly", who: "samuel", title: "sähly", weekday: "to", start: "17:00", end: "19:00", depart: "16:30", place: "Puijonsarvi", driver: "Manen äiti / Topias", status: "other", kind: "treeni" },
-    { id: "milla-vivida-la", who: "milla", title: "Vivida", weekday: "la", start: "12:30", end: "15:00", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
-    { id: "milla-vivida-su", who: "milla", title: "Vivida", weekday: "su", start: "11:30", end: "14:00", place: "BellaCenter", driver: "", status: "open", kind: "treeni" },
-    { id: "mea-lianna-su", who: "mea", title: "Lianna", weekday: "su", start: "15:30", end: "18:00", place: "BellaCenter", driver: "Räisä", ride: "hakee", status: "us", kind: "treeni" },
     { id: "jussi-kalakisat", who: "", title: "Jussi kalassa, kyydit Riikka", date: "2026-08-28", dateEnd: "2026-08-30", start: "15:00", kind: "info" },
     { id: "ellen-samuel-syyskirkko", who: "ellen", title: "syyskirkko", date: "2026-08-28", place: "Kallaveden kirkko", kind: "info" }
   ];
@@ -279,18 +273,6 @@
     var t = +remote.updated || 0;
     if (sharedT && t && t < sharedT) return;
     if (t) sharedT = t;
-    if (remote.drivers) {
-      for (var id in remote.drivers) {
-        if (!remote.drivers.hasOwnProperty(id)) continue;
-        for (var i = 0; i < EVENTS.length; i++) {
-          if (EVENTS[i].id !== id) continue;
-          var d = remote.drivers[id] || {};
-          if (d.driver != null) EVENTS[i].driver = d.driver;
-          if (d.ride != null) EVENTS[i].ride = d.ride;
-          if (d.status) EVENTS[i].status = d.status;
-        }
-      }
-    }
     if (remote.cooks) {
       for (var day in remote.cooks) {
         if (!remote.cooks.hasOwnProperty(day)) continue;
@@ -308,6 +290,19 @@
     if (typeof remote.note === "string") note = remote.note;
     if (remote.extras) EXTRA = remote.extras;
     if (remote.cancelled) CANCELLED = remote.cancelled;
+    if (remote.drivers) {
+      var drvTargets = EVENTS.concat(EXTRA);
+      for (var id in remote.drivers) {
+        if (!remote.drivers.hasOwnProperty(id)) continue;
+        for (var i = 0; i < drvTargets.length; i++) {
+          if (drvTargets[i].id !== id) continue;
+          var d = remote.drivers[id] || {};
+          if (d.driver != null) drvTargets[i].driver = d.driver;
+          if (d.ride != null) drvTargets[i].ride = d.ride;
+          if (d.status) drvTargets[i].status = d.status;
+        }
+      }
+    }
     if (remote.schoolLunch) SCHOOL_LUNCH = remote.schoolLunch;
     if (remote.vacation) VACATION = remote.vacation;
     if (remote.trip) TRIP = remote.trip;

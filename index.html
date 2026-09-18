@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 27;
+  const PAGE_VER = 28;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -692,41 +692,6 @@ label.f {
         cancelledByDate: {}
       },
       {
-        id: "milla-vivida",
-        who: "milla",
-        title: "Vivida",
-        weekday: "ke",
-        start: "18:00",
-        end: "20:30",
-        depart: "",
-        place: "BellaCenter",
-        driver: "",
-        ride: "",
-        status: "open",
-        kind: "treeni",
-        notesByDate: {},
-        cancelledByDate: {}
-      },
-      {
-        id: "mea-lianna",
-        who: "mea",
-        title: "Lianna",
-        weekday: "ke",
-        start: "18:00",
-        end: "20:30",
-        depart: "",
-        place: "BellaCenter",
-        driver: "",
-        ride: "",
-        status: "other",
-        kind: "treeni",
-        notesByDate: { "2026-08-26": "Julia ajaa, me ei ajeta" },
-        cancelledByDate: {},
-        overridesByDate: {
-          "2026-08-26": { driver: "Julia", depart: "17:30", status: "other" }
-        }
-      },
-      {
         id: "ellen-ambrosia-pe",
         who: "ellen",
         title: "Ambrosia",
@@ -739,88 +704,6 @@ label.f {
         ride: "vie",
         status: "us",
         kind: "treeni",
-        notesByDate: {},
-        cancelledByDate: {}
-      },
-      {
-        id: "milla-vivida-la",
-        who: "milla",
-        title: "Vivida",
-        weekday: "la",
-        start: "12:30",
-        end: "15:00",
-        depart: "",
-        place: "BellaCenter",
-        driver: "",
-        ride: "",
-        status: "open",
-        kind: "treeni",
-        notesByDate: {},
-        cancelledByDate: {}
-      },
-      {
-        id: "milla-vivida-su",
-        who: "milla",
-        title: "Vivida",
-        weekday: "su",
-        start: "11:30",
-        end: "14:00",
-        depart: "",
-        place: "BellaCenter",
-        driver: "",
-        ride: "",
-        status: "open",
-        kind: "treeni",
-        notesByDate: {},
-        cancelledByDate: {}
-      },
-      {
-        id: "mea-lianna-pe",
-        who: "mea",
-        title: "Lianna",
-        weekday: "pe",
-        start: "18:00",
-        end: "20:30",
-        depart: "",
-        place: "BellaCenter",
-        driver: "Amanda, haku Enni",
-        ride: "",
-        status: "us",
-        kind: "treeni",
-        notesByDate: {},
-        cancelledByDate: {}
-      },
-      {
-        id: "mea-lianna-su",
-        who: "mea",
-        title: "Lianna",
-        weekday: "su",
-        start: "15:30",
-        end: "18:00",
-        depart: "",
-        place: "BellaCenter",
-        driver: "Räisä",
-        ride: "hakee",
-        status: "us",
-        kind: "treeni",
-        note: "meidän haku (rinki)",
-        notesByDate: {},
-        cancelledByDate: {}
-      },
-      {
-        id: "mea-lianna-ma",
-        who: "mea",
-        title: "Lianna-rinki vienti",
-        weekday: "ma",
-        start: "",
-        end: "",
-        depart: "",
-        place: "",
-        driver: "Räisä",
-        ride: "vie",
-        status: "us",
-        kind: "treeni",
-        note: "meidän vienti rinkiin",
         notesByDate: {},
         cancelledByDate: {}
       },
@@ -1135,7 +1018,7 @@ label.f {
     });
     const extras = (store.events || []).filter(function (e) {
       var id = String(e.id || "");
-      return id.indexOf("cal-") === 0 || id.indexOf("trip-") === 0;
+      return id.indexOf("cal-") === 0 || id.indexOf("trip-") === 0 || id.indexOf("sheet-") === 0;
     });
     const out = { v: 1, updated: store.sharedUpdated || Date.now(), drivers: drivers, cooks: cooks, dishes: dishes, note: store.note || "", extras: extras };
     if (store.vacation) out.vacation = store.vacation;
@@ -1153,7 +1036,7 @@ label.f {
     if (remote.extras) {
       store.events = (store.events || []).filter(function (e) {
         var id = String(e.id || "");
-        return id.indexOf("cal-") !== 0 && id.indexOf("trip-") !== 0;
+        return id.indexOf("cal-") !== 0 && id.indexOf("trip-") !== 0 && id.indexOf("sheet-") !== 0;
       });
       remote.extras.forEach(function (ev) { store.events.push(ev); });
     }
@@ -1364,7 +1247,19 @@ label.f {
   function mergeEvents
 (seedEvs, savedEvs) {
     if (!Array.isArray(savedEvs)) return seedEvs;
-    const retired = { "mea-laakari": 1 };
+    const retired = {
+      "mea-laakari": 1,
+      "mea-lianna": 1,
+      "mea-lianna-pe": 1,
+      "mea-lianna-su": 1,
+      "mea-lianna-ma": 1,
+      "mea-lianna-la": 1,
+      "milla-vivida": 1,
+      "milla-vivida-la": 1,
+      "milla-vivida-su": 1,
+      "milla-vivida-pe": 1,
+      "milla-vivida-ke": 1
+    };
     const byId = {};
     seedEvs.forEach(function(e) { byId[e.id] = clone(e); });
     savedEvs.forEach(function(e) {
@@ -1390,7 +1285,7 @@ label.f {
       ids[e.id] = true;
     });
     savedEvs.forEach(function(e) {
-      if (e && e.id && !ids[e.id]) { out.push(e); ids[e.id] = true; }
+      if (e && e.id && !ids[e.id] && !retired[e.id]) { out.push(e); ids[e.id] = true; }
     });
     return out;
   }

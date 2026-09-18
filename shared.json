@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789734078592,
+  "updated": 1789734234874,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -142,7 +142,28 @@
     "su": "Sushi"
   },
   "note": "Tänään pe: Ellen Ambrosia Riikka vie Luola 16–18.30 · Mea ei treeniä (sheet) · Milla Vivida 18–20.30 BC · kyyti auki",
-  "extras": [],
+  "extras": [
+    {
+      "id": "sheet-milla-2026-09-18",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-18",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-mea-2026-09-19",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-19",
+      "start": "12:30",
+      "end": "15:00",
+      "place": "",
+      "kind": "treeni"
+    }
+  ],
   "schoolLunch": {
     "date": "2026-09-18",
     "dish": "Pinaattiohukaisia + perunasosetta",

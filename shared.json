@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789705322155,
+  "updated": 1789733198150,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -141,7 +141,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään pe: Ellen Ambrosia Riikka vie Luola 16–18.30 · Mea 6.50 ringi · Milla Vivida pe kyyti auki",
+  "note": "Tänään pe: Ellen Ambrosia Riikka vie Luola 16–18.30 · Mea ei treeniä (sheet) · Milla Vivida pe kyyti auki",
   "extras": [],
   "schoolLunch": {
     "date": "2026-09-18",
@@ -161,5 +161,10 @@
     "weatherPlace": "",
     "weatherLat": null,
     "weatherLon": null
+  },
+  "cancelled": {
+    "mea-lianna-pe": {
+      "2026-09-18": "ei treeniä (sheet)"
+    }
   }
 }

@@ -139,6 +139,7 @@
   };
   var note = "";
   var EXTRA = [];
+  var CANCELLED = {};
   var SCHOOL_LUNCH = { date: "2026-08-28", dish: "Tonnikalalasagnetta", veg: "Pinaattinen linssi-pastavuoka" };
   var TRIP = {
     today: "",
@@ -246,6 +247,8 @@
     var all = EVENTS.concat(EXTRA);
     for (var i = 0; i < all.length; i++) {
       var ev = all[i];
+      var cid = ev && ev.id ? CANCELLED[ev.id] : null;
+      if (cid && cid[iso]) continue;
       if (ev.date) {
         if (ev.dateEnd) { if (iso >= ev.date && iso <= ev.dateEnd) out.push(ev); }
         else if (ev.date === iso) out.push(ev);
@@ -304,6 +307,7 @@
     }
     if (typeof remote.note === "string") note = remote.note;
     if (remote.extras) EXTRA = remote.extras;
+    if (remote.cancelled) CANCELLED = remote.cancelled;
     if (remote.schoolLunch) SCHOOL_LUNCH = remote.schoolLunch;
     if (remote.vacation) VACATION = remote.vacation;
     if (remote.trip) TRIP = remote.trip;

@@ -556,7 +556,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 26;
+  const PAGE_VER = 27;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1159,6 +1159,15 @@ label.f {
     }
     if (!remoteT) { saveStore(); return true; }
     if (localT && remoteT < localT) { saveStore(); return true; }
+    if (remote.cancelled) {
+      Object.keys(remote.cancelled).forEach(function (id) {
+        const ev = store.events.find(function (x) { return x.id === id; });
+        if (!ev) return;
+        if (!ev.cancelledByDate) ev.cancelledByDate = {};
+        const map = remote.cancelled[id] || {};
+        Object.keys(map).forEach(function (day) { ev.cancelledByDate[day] = map[day]; });
+      });
+    }
     if (remote.drivers) {
       Object.keys(remote.drivers).forEach(function (id) {
         const ev = store.events.find(function (x) { return x.id === id; });

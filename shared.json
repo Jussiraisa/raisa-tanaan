@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789544201307,
+  "updated": 1789704140514,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -132,16 +132,7 @@
     "su": "Sushi"
   },
   "note": "Tänään ke: Ellen Ambrosia (ei meidän kyyti) · Mea Enni/Julia · Milla Mopo",
-  "extras": [
-    {
-      "id": "cal-_750j6e268l2kcb9g6sr4cb9k8l24ab9o70qj4b9n74sjachn8h2k2dpp8c",
-      "title": "Mea Arja",
-      "date": "2026-09-17",
-      "start": "14:30",
-      "end": "15:30",
-      "kind": "cal"
-    }
-  ],
+  "extras": [],
   "schoolLunch": {
     "date": "2026-09-16",
     "dish": "Kirjolohipyöryköitä + kermaviilikastiketta + perunaa",

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789704140514,
+  "updated": 1789704739123,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -131,12 +131,12 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään ke: Ellen Ambrosia (ei meidän kyyti) · Mea Enni/Julia · Milla Mopo",
+  "note": "Tänään pe: Ellen Ambrosia Riikka vie Luola 16–18.30 · Mea Reetta · Milla Vivida 18–20.30 (Mopo?)",
   "extras": [],
   "schoolLunch": {
-    "date": "2026-09-16",
-    "dish": "Kirjolohipyöryköitä + kermaviilikastiketta + perunaa",
-    "veg": "Porkkanapyöryköitä + kermaviilikastiketta + perunaa"
+    "date": "2026-09-18",
+    "dish": "Pinaattiohukaisia + perunasosetta",
+    "veg": "Pinaattiohukaisia + perunasosetta"
   },
   "vacation": {
     "from": "",

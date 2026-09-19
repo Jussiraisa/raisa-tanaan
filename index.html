@@ -404,6 +404,17 @@ a.school-link .lbl2 { color: var(--accent) }
 .foot a:hover { text-decoration: underline }
 .foot .nav { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px }
 
+.yearframe {
+  width: 100%;
+  min-height: min(78vh, 900px);
+  height: 78vh;
+  border: 0;
+  border-radius: 14px;
+  background: #0f1419;
+  margin: 4px 0 8px;
+}
+
+
 .back {
   display: inline-block;
   font-size: 12px;
@@ -1639,6 +1650,7 @@ label.f {
     if (p === "treenit") return { name: "treenit" };
     if (p === "ruoka") return { name: "ruoka" };
     if (p === "kauppa") return { name: "kauppa" };
+    if (p === "loppuvuosi") return { name: "loppuvuosi" };
     return { name: "tanaan" };
   }
 
@@ -1829,6 +1841,7 @@ label.f {
       + "<a href=\"#/treenit\">Treenit &amp; kyydit</a>"
       + "<a href=\"#/ruoka\">Ruoka</a>"
       + "<a href=\"#/kauppa\">Kauppalista</a>"
+      + "<a href=\"#/loppuvuosi\">Loppuvuosi</a>"
       + "</div></div>";
   }
 
@@ -2219,6 +2232,15 @@ label.f {
     };
   }
 
+
+  function renderLoppuvuosi() {
+    return backLink()
+      + "<h1 class=\"vtitle\">Loppuvuosi</h1>"
+      + "<p class=\"lede\">Karkea suunnitelma — päivittyy kerran päivässä.</p>"
+      + "<iframe class=\"yearframe\" src=\"loppuvuosi.html\" title=\"Loppuvuosi\" loading=\"lazy\"></iframe>"
+      + footer();
+  }
+
   function paint() {
     const root = document.getElementById("app");
     const r = route();
@@ -2233,6 +2255,7 @@ label.f {
     else if (r.name === "treenit") html = renderTreenit();
     else if (r.name === "ruoka") html = renderRuoka();
     else if (r.name === "kauppa") html = renderKauppa();
+    else if (r.name === "loppuvuosi") html = renderLoppuvuosi();
     else html = renderToday();
     root.innerHTML = html;
     if (document.getElementById("espwx")) pullEspWx();

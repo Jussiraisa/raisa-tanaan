@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789799760225,
+  "updated": 1789800597347,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -141,7 +141,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Welhot 100 € (erä 18.9.) + 60 € (erä 23.9.) · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9.",
+  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu",
   "extras": [
     {
       "id": "sheet-mea-2026-09-19",
@@ -202,13 +202,6 @@
       "kind": "info"
     },
     {
-      "id": "info-welhot-jasenmaksu-2026-09-23",
-      "who": "samuel",
-      "title": "Welhot jäsenmaksu 60 € erä (viite 1 98899)",
-      "date": "2026-09-23",
-      "kind": "info"
-    },
-    {
       "id": "info-kkp-2026-09-25",
       "who": "",
       "title": "Kodin ja koulun päivä (Ellen + Samuel)",
@@ -239,13 +232,6 @@
       "title": "Welhot P9 turnaus Joensuu",
       "date": "2026-10-03",
       "place": "Joensuu",
-      "kind": "info"
-    },
-    {
-      "id": "info-welhot-aloitus-myohassa-2026-09-19",
-      "who": "samuel",
-      "title": "Welhot aloitusmaksu 100 € — erä 18.9. (tarkista maksettu)",
-      "date": "2026-09-19",
       "kind": "info"
     },
     {

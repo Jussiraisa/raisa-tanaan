@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-19T19:14:24.294165+03:00",
+  "updated": "2026-09-19T19:17:01.703358+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -164,16 +164,13 @@
   "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · Riikka hakee Ambrosia su 20.9. Kuopiohallilta · NTV 25.–27.9. · Milla hiontaleiri la 26.9. 16–21 BC + Mea synttärit 13 · Samuel pelipassi 1.10. · Joensuu turnaus 3.10. · Ambrosia vanhempainilta 1.10. klo 17 BC · Lianna voimat ma 21.9. Luola 18.30",
   "extras": [
     {
-      "id": "info-ellen-kyyti-su-2026-09-20",
-      "who": "ellen",
-      "title": "Ambrosia haku · Riikka hakee tytöt",
+      "id": "cal-fih6q5lol7al6pcsoeo5v7gsr0",
+      "title": "Ellen · Ambrosia haku (Riikka)",
       "date": "2026-09-20",
-      "start": "",
-      "end": "",
-      "place": "Kuopiohalli",
-      "kind": "kyyti",
-      "driver": "Riikka",
-      "status": "us"
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal",
+      "place": "Kuopiohalli"
     },
     {
       "id": "sheet-mea-2026-09-20",
@@ -194,6 +191,18 @@
       "end": "20:00",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-ellen-kyyti-su-2026-09-20",
+      "who": "ellen",
+      "title": "Ambrosia haku · Riikka hakee tytöt",
+      "date": "2026-09-20",
+      "start": "",
+      "end": "",
+      "place": "Kuopiohalli",
+      "kind": "kyyti",
+      "driver": "Riikka",
+      "status": "us"
     },
     {
       "id": "info-samuel-retki-2026-09-21",
@@ -225,14 +234,6 @@
       "kind": "info"
     },
     {
-      "id": "info-ilmoitus-kkp-deadline-2026-09-23",
-      "who": "",
-      "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
-      "date": "2026-09-23",
-      "place": "Wilma/opettaja",
-      "kind": "info"
-    },
-    {
       "id": "info-ellen-leos-2026-09-23",
       "who": "ellen",
       "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
@@ -240,6 +241,14 @@
       "start": "18:00",
       "end": "20:00",
       "place": "Leo’s Leikkimaa",
+      "kind": "info"
+    },
+    {
+      "id": "info-ilmoitus-kkp-deadline-2026-09-23",
+      "who": "",
+      "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
+      "date": "2026-09-23",
+      "place": "Wilma/opettaja",
       "kind": "info"
     },
     {
@@ -298,13 +307,6 @@
       "kind": "info"
     },
     {
-      "id": "info-samuel-pelipassi-2026-10-01",
-      "who": "samuel",
-      "title": "Welhot P9 pelipassi hankittava",
-      "date": "2026-10-01",
-      "kind": "info"
-    },
-    {
       "id": "info-ellen-vanhempainilta-2026-10-01",
       "who": "ellen",
       "title": "Ambrosia vanhempainilta",
@@ -315,11 +317,10 @@
       "kind": "info"
     },
     {
-      "id": "info-samuel-turnaus-2026-10-03",
+      "id": "info-samuel-pelipassi-2026-10-01",
       "who": "samuel",
-      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
-      "date": "2026-10-03",
-      "place": "Joensuu",
+      "title": "Welhot P9 pelipassi hankittava",
+      "date": "2026-10-01",
       "kind": "info"
     },
     {
@@ -333,6 +334,14 @@
       "kind": "treeni"
     },
     {
+      "id": "info-samuel-turnaus-2026-10-03",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
+      "date": "2026-10-03",
+      "place": "Joensuu",
+      "kind": "info"
+    },
+    {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
       "title": "Liannan voimat",
@@ -343,15 +352,6 @@
       "kind": "treeni"
     },
     {
-      "id": "info-riikka-oulu-2026-10-06",
-      "who": "",
-      "title": "Riikka Ouluun",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "kind": "info",
-      "place": "Oulu"
-    },
-    {
       "id": "info-lianna-harkkakisa-2026-10-06",
       "who": "mea",
       "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
@@ -360,6 +360,15 @@
       "end": "19:00",
       "place": "Ylä-Pyörön koulu",
       "kind": "info"
+    },
+    {
+      "id": "info-riikka-oulu-2026-10-06",
+      "who": "",
+      "title": "Riikka Ouluun",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "kind": "info",
+      "place": "Oulu"
     },
     {
       "id": "info-mea-terapia-2026-10-07",

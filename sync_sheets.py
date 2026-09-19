@@ -187,6 +187,51 @@ def helsinki_today() -> date:
     return datetime.now(TZ).date()
 
 
+def _parse_iso_date(value):
+    """Parse the date portion of an extra's date field, if present."""
+    raw = str(value or "").strip()
+    if not raw:
+        return None
+    try:
+        return date.fromisoformat(raw[:10])
+    except ValueError:
+        return None
+
+
+def _parse_end_time(value):
+    """Parse HH:MM (or HH.MM) end times used by shared.json extras."""
+    raw = str(value or "").strip().replace(".", ":")
+    if not raw:
+        return None
+    try:
+        return datetime.strptime(raw, "%H:%M").time()
+    except ValueError:
+        return None
+
+
+def is_expired_extra(extra, now: datetime) -> bool:
+    """Return whether an extra is over and should leave the board display."""
+    start = _parse_iso_date(extra.get("date"))
+    end_date = _parse_iso_date(extra.get("dateEnd")) or start
+    if not start or not end_date:
+        return False
+
+    today = now.date()
+    if end_date < today:
+        return True
+
+    # A multi-day extra remains visible until its final date.  For a
+    # same-day extra, remove it once its explicit end time has passed.
+    if start == today and end_date == today:
+        end_time = _parse_end_time(extra.get("end"))
+        return end_time is not None and now.time() >= end_time
+    return False
+
+
+def drop_expired_extras(extras, now: datetime):
+    return [extra for extra in extras if not is_expired_extra(extra, now)]
+
+
 def main():
     today = helsinki_today()
     tomorrow = today + timedelta(days=1)
@@ -217,7 +262,8 @@ def main():
     ]
     # Preserve order: kept (cal/trip/…) then sheet events by date/who
     sheet_events.sort(key=lambda e: (e["date"], e["who"], e.get("start") or ""))
-    shared["extras"] = kept + sheet_events
+    merged_extras = kept + sheet_events
+    shared["extras"] = drop_expired_extras(merged_extras, datetime.now(TZ))
     shared["updated"] = int(datetime.now(timezone.utc).timestamp() * 1000)
 
     with open(SHARED_PATH, "w", encoding="utf-8") as f:

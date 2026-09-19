@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789800597347,
+  "updated": 1789801457200,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -121,6 +121,11 @@
       "driver": "",
       "status": "open",
       "ride": ""
+    },
+    "info-riikka-oulu-2026-10-06": {
+      "driver": "Oma auto + juna",
+      "status": "us",
+      "ride": ""
     }
   },
   "cooks": {
@@ -240,6 +245,25 @@
       "title": "Intersport LASKU 6642 (Welhot P9) — tarkista",
       "date": "2026-09-19",
       "kind": "info"
+    },
+    {
+      "id": "info-riikka-oulu-2026-10-06",
+      "who": "",
+      "title": "Riikka Ouluun",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "kind": "info",
+      "place": "Oulu"
+    },
+    {
+      "id": "info-mea-terapia-2026-10-07",
+      "who": "mea",
+      "title": "Terapia",
+      "date": "2026-10-07",
+      "start": "17:00",
+      "end": "",
+      "kind": "info",
+      "place": ""
     }
   ],
   "schoolLunch": {

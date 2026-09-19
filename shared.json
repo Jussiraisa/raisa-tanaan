@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789742778967,
+  "updated": 1789790497118,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -141,18 +141,8 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään pe: Ellen Ambrosia Riikka vie Luola 16–18.30 · Mea ei treeniä (sheet) · Milla Vivida 18–20.30 BC · kyyti auki",
+  "note": "Tänään la: Mea Lianna 12.30–15 (Amanda vie · Mea hakee) · Milla ei treeniä · Ruoka Bolognese (äiti)",
   "extras": [
-    {
-      "id": "sheet-milla-2026-09-18",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-18",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
     {
       "id": "sheet-mea-2026-09-19",
       "who": "mea",
@@ -161,6 +151,26 @@
       "start": "12:30",
       "end": "15:00",
       "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-mea-2026-09-20",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-20",
+      "start": "16:00",
+      "end": "18:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-20",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-20",
+      "start": "17:30",
+      "end": "20:00",
+      "place": "BellaCenter",
       "kind": "treeni"
     }
   ],

@@ -1029,7 +1029,7 @@ label.f {
     });
     const extras = (store.events || []).filter(function (e) {
       var id = String(e.id || "");
-      return id.indexOf("cal-") === 0 || id.indexOf("trip-") === 0 || id.indexOf("sheet-") === 0;
+      return id.indexOf("cal-") === 0 || id.indexOf("trip-") === 0 || id.indexOf("sheet-") === 0 || id.indexOf("info-") === 0;
     });
     const out = { v: 1, updated: store.sharedUpdated || Date.now(), drivers: drivers, cooks: cooks, dishes: dishes, note: store.note || "", extras: extras };
     if (store.vacation) out.vacation = store.vacation;
@@ -1047,7 +1047,7 @@ label.f {
     if (remote.extras) {
       store.events = (store.events || []).filter(function (e) {
         var id = String(e.id || "");
-        return id.indexOf("cal-") !== 0 && id.indexOf("trip-") !== 0 && id.indexOf("sheet-") !== 0;
+        return id.indexOf("cal-") !== 0 && id.indexOf("trip-") !== 0 && id.indexOf("sheet-") !== 0 && id.indexOf("info-") !== 0;
       });
       remote.extras.forEach(function (ev) { store.events.push(ev); });
     }
@@ -1717,7 +1717,7 @@ label.f {
       if (note) sub.push(note);
     }
     let pills = "";
-    if (!reason && ev.kind !== "cal") {
+    if (!reason && ev.kind !== "cal" && ev.kind !== "info") {
       if (ui.editingDriver === ev.id) {
         pills = "<input class=\"name-inp\" data-save-driver=\"" + esc(ev.id) + "\" value=\"" + esc(ev.driver || "") + "\" placeholder=\"Kuka vie?\">";
       } else {

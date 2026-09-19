@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789803689495,
+  "updated": 1789805623678,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -146,15 +146,8 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu · Lianna harkkakisa 6.10 · Mea synttärit la 26.9. klo 13 · Pentutreffit ti 22.9. kotona (Ella)",
+  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu · Lianna harkkakisa 6.10 · Mea synttärit la 26.9. klo 13 · Pentutreffit ti 22.9. kotona (Ella) · Intersport 6642 (Welhot) — tarkista Topiaksen kanssa",
   "extras": [
-    {
-      "id": "info-intersport-lasku-2026-09-19",
-      "who": "samuel",
-      "title": "Intersport LASKU 6642 (Welhot P9) — tarkista",
-      "date": "2026-09-19",
-      "kind": "info"
-    },
     {
       "id": "sheet-mea-2026-09-19",
       "who": "mea",

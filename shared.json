@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789790497118,
+  "updated": 1789799760225,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -141,7 +141,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tänään la: Mea Lianna 12.30–15 (Amanda vie · Mea hakee) · Milla ei treeniä · Ruoka Bolognese (äiti)",
+  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Welhot 100 € (erä 18.9.) + 60 € (erä 23.9.) · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9.",
   "extras": [
     {
       "id": "sheet-mea-2026-09-19",
@@ -172,6 +172,88 @@
       "end": "20:00",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-samuel-retki-2026-09-21",
+      "who": "samuel",
+      "title": "Retki Pölläkänlahti (eväs · sadevarusteet)",
+      "date": "2026-09-21",
+      "start": "11:00",
+      "end": "13:00",
+      "place": "Pölläkänlahti",
+      "kind": "info"
+    },
+    {
+      "id": "info-ilmoitus-kkp-deadline-2026-09-23",
+      "who": "",
+      "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
+      "date": "2026-09-23",
+      "place": "Wilma/opettaja",
+      "kind": "info"
+    },
+    {
+      "id": "info-ellen-leos-2026-09-23",
+      "who": "ellen",
+      "title": "Ambrosia · Leo’s Leikkimaa (ei Kuopiohallia) + talkoot",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:00",
+      "place": "Leo’s Leikkimaa",
+      "kind": "info"
+    },
+    {
+      "id": "info-welhot-jasenmaksu-2026-09-23",
+      "who": "samuel",
+      "title": "Welhot jäsenmaksu 60 € erä (viite 1 98899)",
+      "date": "2026-09-23",
+      "kind": "info"
+    },
+    {
+      "id": "info-kkp-2026-09-25",
+      "who": "",
+      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
+      "date": "2026-09-25",
+      "place": "Aurinkorinteen koulu",
+      "kind": "info"
+    },
+    {
+      "id": "info-ntv-kisat-2026-09-25",
+      "who": "ellen",
+      "title": "Ambrosia NTV-kisat + talkoot",
+      "date": "2026-09-25",
+      "dateEnd": "2026-09-27",
+      "place": "Luola",
+      "kind": "info"
+    },
+    {
+      "id": "info-koulukuvaus-ellen-2026-09-30",
+      "who": "ellen",
+      "title": "Koulukuvaus (lomake opettajalle)",
+      "date": "2026-09-30",
+      "dateEnd": "2026-10-01",
+      "kind": "info"
+    },
+    {
+      "id": "info-samuel-turnaus-2026-10-03",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Joensuu",
+      "date": "2026-10-03",
+      "place": "Joensuu",
+      "kind": "info"
+    },
+    {
+      "id": "info-welhot-aloitus-myohassa-2026-09-19",
+      "who": "samuel",
+      "title": "Welhot aloitusmaksu 100 € — erä 18.9. (tarkista maksettu)",
+      "date": "2026-09-19",
+      "kind": "info"
+    },
+    {
+      "id": "info-intersport-lasku-2026-09-19",
+      "who": "samuel",
+      "title": "Intersport LASKU 6642 (Welhot P9) — tarkista",
+      "date": "2026-09-19",
+      "kind": "info"
     }
   ],
   "schoolLunch": {
@@ -196,6 +278,9 @@
   "cancelled": {
     "mea-lianna-pe": {
       "2026-09-18": "ei treeniä (sheet vko 38)"
+    },
+    "ellen-ambrosia": {
+      "2026-09-23": "Leo’s Leikkimaa (WA)"
     }
   }
 }

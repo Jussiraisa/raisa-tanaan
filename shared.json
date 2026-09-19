@@ -1,49 +1,14 @@
 {
   "v": 1,
-  "updated": 1789810983841,
+  "updated": 1789810945910,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
       "status": "other",
       "ride": ""
     },
-    "milla-vivida": {
-      "driver": "Mopo",
-      "status": "us",
-      "ride": ""
-    },
-    "mea-lianna": {
-      "driver": "Enni vie · Julia hakee",
-      "status": "other",
-      "ride": ""
-    },
     "ellen-ambrosia-pe": {
       "driver": "Riikka",
-      "status": "us",
-      "ride": "vie"
-    },
-    "milla-vivida-la": {
-      "driver": "",
-      "status": "open",
-      "ride": ""
-    },
-    "milla-vivida-su": {
-      "driver": "",
-      "status": "open",
-      "ride": ""
-    },
-    "mea-lianna-pe": {
-      "driver": "Reetta 6.50 (Enni, Mea, Amanda)",
-      "status": "other",
-      "ride": ""
-    },
-    "mea-lianna-su": {
-      "driver": "Mea vie · Enni hakee",
-      "status": "us",
-      "ride": "vie"
-    },
-    "mea-lianna-ma": {
-      "driver": "Räisä",
       "status": "us",
       "ride": "vie"
     },
@@ -102,29 +67,79 @@
       "status": "us",
       "ride": ""
     },
-    "mea-laakari": {
-      "driver": "Jussi",
-      "status": "us",
+    "sheet-mea-2026-09-19": {
+      "driver": "",
+      "status": "open",
       "ride": ""
     },
-    "cal-_750j6e268l2kcb9g6sr4cb9k8l24ab9o70qj4b9n74sjachn8h2k2dpp8c": {
+    "sheet-mea-2026-09-20": {
       "driver": "",
       "status": "",
       "ride": ""
     },
-    "mea-lianna-la": {
-      "driver": "Amanda vie · Mea hakee",
-      "status": "other",
+    "sheet-milla-2026-09-20": {
+      "driver": "",
+      "status": "",
       "ride": ""
     },
-    "milla-vivida-pe": {
+    "info-samuel-retki-2026-09-21": {
       "driver": "",
-      "status": "open",
+      "status": "",
+      "ride": ""
+    },
+    "info-pentutreffit-2026-09-22": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-ilmoitus-kkp-deadline-2026-09-23": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-ellen-leos-2026-09-23": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-kkp-2026-09-25": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-ntv-kisat-2026-09-25": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-mea-synttarit-2026-09-26": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-koulukuvaus-ellen-2026-09-30": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-samuel-turnaus-2026-10-03": {
+      "driver": "",
+      "status": "",
       "ride": ""
     },
     "info-riikka-oulu-2026-10-06": {
       "driver": "Oma auto + juna",
       "status": "us",
+      "ride": ""
+    },
+    "info-lianna-harkkakisa-2026-10-06": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-mea-terapia-2026-10-07": {
+      "driver": "",
+      "status": "",
       "ride": ""
     }
   },
@@ -138,13 +153,13 @@
     "su": ""
   },
   "dishes": {
-    "la": "Nacho-pelti",
-    "su": "Hampparit (liha + Beyond)",
-    "ma": "Lohikeitto",
-    "ti": "Kana + riisi + kermakastike",
-    "ke": "Koulun tonnikalapasta (ei purjoa)",
-    "to": "Tähteet",
-    "pe": "Katkarapukeitto + patongit"
+    "ma": "Lihapullat + muusi",
+    "ti": "Kana + basmati",
+    "ke": "Makaroonilaatikko + 1 annos pasta bolognese",
+    "to": "Jämät: makaroonilaatikko, lasagne, bolognese, pinaattiletut, pitsat",
+    "pe": "Burgerit",
+    "la": "Bolognese",
+    "su": "Sushi"
   },
   "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu · Lianna harkkakisa 6.10 · Mea synttärit la 26.9. klo 13 · Pentutreffit ti 22.9. kotona (Ella) · Intersport 6642 (Welhot) — tarkista Topiaksen kanssa",
   "extras": [
@@ -156,7 +171,9 @@
       "start": "12:30",
       "end": "15:00",
       "place": "",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "",
+      "status": "open"
     },
     {
       "id": "sheet-mea-2026-09-20",

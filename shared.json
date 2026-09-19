@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789805623678,
+  "updated": 1789810983841,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -138,13 +138,13 @@
     "su": ""
   },
   "dishes": {
-    "ma": "Lihapullat + muusi",
-    "ti": "Kana + basmati",
-    "ke": "Makaroonilaatikko + 1 annos pasta bolognese",
-    "to": "Jämät: makaroonilaatikko, lasagne, bolognese, pinaattiletut, pitsat",
-    "pe": "Burgerit",
-    "la": "Bolognese",
-    "su": "Sushi"
+    "la": "Nacho-pelti",
+    "su": "Hampparit (liha + Beyond)",
+    "ma": "Lohikeitto",
+    "ti": "Kana + riisi + kermakastike",
+    "ke": "Koulun tonnikalapasta (ei purjoa)",
+    "to": "Tähteet",
+    "pe": "Katkarapukeitto + patongit"
   },
   "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu · Lianna harkkakisa 6.10 · Mea synttärit la 26.9. klo 13 · Pentutreffit ti 22.9. kotona (Ella) · Intersport 6642 (Welhot) — tarkista Topiaksen kanssa",
   "extras": [

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-19T19:08:04+03:00",
+  "updated": "2026-09-19T19:14:24.294165+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -65,11 +65,6 @@
     "perhe-alicante": {
       "driver": "",
       "status": "us",
-      "ride": ""
-    },
-    "sheet-mea-2026-09-19": {
-      "driver": "",
-      "status": "open",
       "ride": ""
     },
     "sheet-mea-2026-09-20": {
@@ -141,6 +136,11 @@
       "driver": "",
       "status": "",
       "ride": ""
+    },
+    "info-ellen-kyyti-su-2026-09-20": {
+      "driver": "Riikka",
+      "status": "us",
+      "ride": "hakee"
     }
   },
   "cooks": {
@@ -161,8 +161,20 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu · Lianna harkkakisa 6.10 · Mea synttärit la 26.9. klo 13 · Pentutreffit ti 22.9. kotona (Ella) · Intersport 6642 (Welhot) — tarkista Topiaksen kanssa",
+  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · Riikka hakee Ambrosia su 20.9. Kuopiohallilta · NTV 25.–27.9. · Milla hiontaleiri la 26.9. 16–21 BC + Mea synttärit 13 · Samuel pelipassi 1.10. · Joensuu turnaus 3.10. · Ambrosia vanhempainilta 1.10. klo 17 BC · Lianna voimat ma 21.9. Luola 18.30",
   "extras": [
+    {
+      "id": "info-ellen-kyyti-su-2026-09-20",
+      "who": "ellen",
+      "title": "Ambrosia haku · Riikka hakee tytöt",
+      "date": "2026-09-20",
+      "start": "",
+      "end": "",
+      "place": "Kuopiohalli",
+      "kind": "kyyti",
+      "driver": "Riikka",
+      "status": "us"
+    },
     {
       "id": "sheet-mea-2026-09-20",
       "who": "mea",
@@ -194,6 +206,16 @@
       "kind": "info"
     },
     {
+      "id": "info-mea-voimat-2026-09-21",
+      "who": "mea",
+      "title": "Liannan voimat",
+      "date": "2026-09-21",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
       "id": "info-pentutreffit-2026-09-22",
       "title": "Pentutreffit · Ella kotona",
       "date": "2026-09-22",
@@ -213,7 +235,7 @@
     {
       "id": "info-ellen-leos-2026-09-23",
       "who": "ellen",
-      "title": "Ambrosia · Leo’s Leikkimaa (ei Kuopiohallia) + talkoot",
+      "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
       "date": "2026-09-23",
       "start": "18:00",
       "end": "20:00",
@@ -248,6 +270,26 @@
       "who": "mea"
     },
     {
+      "id": "info-milla-hionta-2026-09-26",
+      "who": "milla",
+      "title": "Vivida hiontaleiri",
+      "date": "2026-09-26",
+      "start": "16:00",
+      "end": "21:00",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "id": "info-mea-voimat-2026-09-28",
+      "who": "mea",
+      "title": "Liannan voimat",
+      "date": "2026-09-28",
+      "start": "18:00",
+      "end": "19:00",
+      "place": "Kuoppari",
+      "kind": "treeni"
+    },
+    {
       "id": "info-koulukuvaus-ellen-2026-09-30",
       "who": "ellen",
       "title": "Koulukuvaus (lomake opettajalle)",
@@ -256,12 +298,49 @@
       "kind": "info"
     },
     {
+      "id": "info-samuel-pelipassi-2026-10-01",
+      "who": "samuel",
+      "title": "Welhot P9 pelipassi hankittava",
+      "date": "2026-10-01",
+      "kind": "info"
+    },
+    {
+      "id": "info-ellen-vanhempainilta-2026-10-01",
+      "who": "ellen",
+      "title": "Ambrosia vanhempainilta",
+      "date": "2026-10-01",
+      "start": "17:00",
+      "end": "",
+      "place": "Bella Center parvi",
+      "kind": "info"
+    },
+    {
       "id": "info-samuel-turnaus-2026-10-03",
       "who": "samuel",
-      "title": "Welhot P9 turnaus Joensuu",
+      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
       "date": "2026-10-03",
       "place": "Joensuu",
       "kind": "info"
+    },
+    {
+      "id": "info-milla-hionta-2026-10-03",
+      "who": "milla",
+      "title": "Vivida hiontaleiri",
+      "date": "2026-10-03",
+      "start": "12:30",
+      "end": "17:30",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "id": "info-mea-voimat-2026-10-05",
+      "who": "mea",
+      "title": "Liannan voimat",
+      "date": "2026-10-05",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "Kuoppari",
+      "kind": "treeni"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",
@@ -291,6 +370,38 @@
       "end": "",
       "kind": "info",
       "place": ""
+    },
+    {
+      "id": "info-samuel-turnaus-2026-10-31",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
+      "date": "2026-10-31",
+      "place": "Kuopio Studentia",
+      "kind": "info"
+    },
+    {
+      "id": "info-samuel-turnaus-2026-11-15",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Suonenjoki",
+      "date": "2026-11-15",
+      "place": "Suonenjoki",
+      "kind": "info"
+    },
+    {
+      "id": "info-samuel-turnaus-2026-11-28",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Siilinjärvi",
+      "date": "2026-11-28",
+      "place": "Siilinjärvi",
+      "kind": "info"
+    },
+    {
+      "id": "info-samuel-turnaus-2026-12-19",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
+      "date": "2026-12-19",
+      "place": "Kuopio Luola",
+      "kind": "info"
     }
   ],
   "schoolLunch": {

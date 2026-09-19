@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-19T19:17:01.703358+03:00",
+  "updated": "2026-09-19T22:31:31.316905+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -148,18 +148,18 @@
     "ti": "",
     "ke": "",
     "to": "",
-    "pe": "Milla ja muut auttaa",
-    "la": "äiti",
+    "pe": "",
+    "la": "",
     "su": ""
   },
   "dishes": {
-    "ma": "Lihapullat + muusi",
-    "ti": "Kana + basmati",
-    "ke": "Makaroonilaatikko + 1 annos pasta bolognese",
-    "to": "Jämät: makaroonilaatikko, lasagne, bolognese, pinaattiletut, pitsat",
-    "pe": "Burgerit",
-    "la": "Bolognese",
-    "su": "Sushi"
+    "la": "Nacho-pelti",
+    "su": "Hampparit (liha + Beyond)",
+    "ma": "Lohikeitto",
+    "ti": "Kana + riisi + kermakastike",
+    "ke": "Koulun tonnikalapasta (ei purjoa)",
+    "to": "Tähteet",
+    "pe": "Katkarapukeitto + patongit"
   },
   "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · Riikka hakee Ambrosia su 20.9. Kuopiohallilta · NTV 25.–27.9. · Milla hiontaleiri la 26.9. 16–21 BC + Mea synttärit 13 · Samuel pelipassi 1.10. · Joensuu turnaus 3.10. · Ambrosia vanhempainilta 1.10. klo 17 BC · Lianna voimat ma 21.9. Luola 18.30",
   "extras": [

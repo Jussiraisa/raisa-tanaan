@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#111111">
+<title>Räisä · Tee nyt</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #1a1d24;
+    --text: #f4f4f2;
+    --muted: #9aa0a8;
+    --warn: #3d2e0a;
+    --warn-border: #f0c14b;
+    --danger: #3a1515;
+    --danger-border: #f07178;
+    --ok: #12301f;
+    --ok-border: #3dd68c;
+    --accent: #6ea8fe;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 0 0 5rem;
+  }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(15,17,21,.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #2a2f3a;
+    padding: .85rem 1rem .7rem;
+  }
+  h1 { margin: 0; font-size: 1.45rem; font-weight: 750; }
+  .sub { color: var(--muted); font-size: .92rem; margin-top: .2rem; }
+  nav {
+    display: flex; gap: .45rem; overflow-x: auto;
+    margin-top: .75rem; padding-bottom: .15rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  nav a {
+    flex: 0 0 auto;
+    text-decoration: none;
+    color: var(--text);
+    background: #262b36;
+    border: 1px solid #3a4150;
+    border-radius: 999px;
+    padding: .45rem .85rem;
+    font-size: .95rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  main { padding: 1rem; max-width: 640px; margin: 0 auto; }
+  section { margin: 0 0 1.35rem; }
+  h2 {
+    font-size: 1.15rem;
+    margin: 0 0 .65rem;
+    letter-spacing: .01em;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: .95rem 1rem;
+    margin: 0 0 .65rem;
+    border: 1px solid #2c3340;
+  }
+  .card.warn { background: var(--warn); border-color: var(--warn-border); }
+  .card.danger { background: var(--danger); border-color: var(--danger-border); }
+  .card.ok { background: var(--ok); border-color: var(--ok-border); }
+  .who { font-weight: 750; font-size: 1.05rem; }
+  .when { color: var(--accent); font-weight: 650; margin-top: .15rem; }
+  .what { margin-top: .35rem; }
+  .meta { color: var(--muted); font-size: .88rem; margin-top: .4rem; }
+  .amt { font-size: 1.15rem; font-weight: 750; margin-top: .35rem; }
+  details {
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid #2c3340;
+    margin: 0 0 .55rem;
+    padding: .2rem .85rem .55rem;
+  }
+  summary {
+    font-weight: 700;
+    font-size: 1.02rem;
+    padding: .7rem 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: " ▾"; color: var(--muted); }
+  details[open] summary::after { content: " ▴"; }
+  .row { padding: .45rem 0; border-top: 1px solid #2c3340; }
+  .row:first-of-type { border-top: 0; }
+  footer {
+    color: var(--muted);
+    font-size: .85rem;
+    text-align: center;
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Räisä · Tee nyt</h1>
+  <div class="sub">La 19.9.2026 · Wilma + Gmail + WhatsApp</div>
+  <nav>
+    <a href="#tee">Tee nyt</a>
+    <a href="#laskut">Laskut</a>
+    <a href="#viikko">Viikko</a>
+    <a href="#wa">WA</a>
+  </nav>
+</header>
+
+<main>
+<section id="tee">
+  <h2>Tee nyt</h2>
+  <div class="card warn">
+    <div class="who">Samuel · retki</div>
+    <div class="when">Ma 21.9. klo 11–13</div>
+    <div class="what">Pölläkänlahti. Eväs, lämmin vaatetus, sadevarusteet.</div>
+    <div class="meta">Wilma · Satu Pesonen-Kokko</div>
+  </div>
+  <div class="card warn">
+    <div class="who">Ellen + Samuel · kodin ja koulun päivä</div>
+    <div class="when">Pe 25.9. · ilmoita ke 23.9. mennessä</div>
+    <div class="what">Avoimet ovet. Huoltaja ilmoittaa opettajalle jos osallistuu.</div>
+  </div>
+  <div class="card danger">
+    <div class="who">Samuel · Welhot aloitusmaksu</div>
+    <div class="amt">100 € · erä 18.9. (myöhässä?)</div>
+    <div class="what">IBAN FI62 5600 0520 3725 77 · viite 1 98187</div>
+    <div class="meta">Gmail · lukematon</div>
+  </div>
+  <div class="card danger">
+    <div class="who">Samuel · Welhot jäsenmaksu</div>
+    <div class="amt">60 € · erä 23.9.</div>
+    <div class="what">IBAN FI77 5600 0520 0827 62 · viite 1 98899</div>
+    <div class="meta">Gmail · lukematon</div>
+  </div>
+  <div class="card warn">
+    <div class="who">Ellen · koulukuvaus</div>
+    <div class="when">30.9.–1.10.</div>
+    <div class="what">Kuvauslomake opettajalle ennen kuvauspäivää.</div>
+  </div>
+  <div class="card warn">
+    <div class="who">Poissaolorajat</div>
+    <div class="what">Ellen 27 h (raja 24) · Mea 60 h (raja 58) · Milla 4 h RUB11/MAY01/KE01</div>
+    <div class="meta">Ota yhteys opettajiin tarvittaessa</div>
+  </div>
+  <div class="card">
+    <div class="who">Mea · istumapaikka</div>
+    <div class="what">Kaverin lähellä häiritsee; paikka vaihtuu syysloman jälkeen.</div>
+  </div>
+</section>
+
+<section id="laskut">
+  <h2>Laskut (Gmail 30 pv)</h2>
+  <div class="card danger">
+    <div class="who">Intersport · Welhot P9</div>
+    <div class="what">LASKU 6642.pdf (Topias Kirjavainen tilaus)</div>
+    <div class="meta">16.9. · riikka.rissanen@intersport.fi · myös WA Topias</div>
+  </div>
+  <div class="card warn">
+    <div class="who">Taitotuote · mökki lasit</div>
+    <div class="what">Räisä_Lasku 2280.pdf · kuittaa kun maksettu</div>
+    <div class="meta">25.8. · perttu.heiskanen@taitotuote.fi</div>
+  </div>
+  <div class="card">
+    <div class="who">Vivida · toimihenkilömaksu</div>
+    <div class="amt">~6 € / perhe</div>
+    <div class="what">MobilePay-ohjeet WA:ssa · ei vahvistusta</div>
+  </div>
+  <div class="card ok">
+    <div class="who">Ei toimenpidettä</div>
+    <div class="what">S-kaupat kuitti maksettu · HA Cloud / Grok kuitit · Record Go vahinkolasku kiistelty</div>
+  </div>
+</section>
+
+<section id="viikko">
+  <h2>Ensi viikko 21.–27.9.</h2>
+  <details open>
+    <summary>Ma 21.9.</summary>
+    <div class="row"><span class="who">Samuel</span> retki 11–13 Pölläkänlahti · sähly Yläpyörö 17–18</div>
+    <div class="row"><span class="who">Milla</span> Vivida oheinen Luola 17.30–18.30</div>
+    <div class="row"><span class="who">Mea</span> Lianna voima Luola 18.30–19.30</div>
+  </details>
+  <details>
+    <summary>Ti 22.9.</summary>
+    <div class="row"><span class="who">Mea</span> Arja 14–15 · valmennus 17–17.45</div>
+    <div class="row"><span class="who">Samuel</span> sähly Lippumäki 16.30–18</div>
+    <div class="row"><span class="who">Ellen</span> Ambrosia Kuopiohalli 17–18.30 (meidän kyydit)</div>
+  </details>
+  <details>
+    <summary>Ke 23.9.</summary>
+    <div class="row"><span class="who">Ellen</span> Ambrosia / Leo’s Leikkimaa 18–20 (WA: treenien sijaan + talkoot)</div>
+    <div class="row"><span class="who">Mea</span> Lianna BC 18–20.30</div>
+    <div class="row"><span class="who">Milla</span> Vivida BC 18–20.30</div>
+  </details>
+  <details>
+    <summary>To 24.9.</summary>
+    <div class="row"><span class="who">Samuel</span> sähly Puijonsarvi 17–19</div>
+  </details>
+  <details>
+    <summary>Pe 25.9.</summary>
+    <div class="row"><span class="who">Ellen + Samuel</span> kodin ja koulun päivä</div>
+    <div class="row"><span class="who">Ellen</span> Ambrosia Luola 16–18.30 (meidän vienti)</div>
+    <div class="row"><span class="who">Mea</span> Lianna BC 18–20.30</div>
+    <div class="row"><span class="who">Ambrosia</span> NTV-kisat alkavat (25.–27.9. Luola)</div>
+  </details>
+  <details>
+    <summary>La–su 26.–27.9.</summary>
+    <div class="row"><span class="who">Milla</span> la Vivida 12.30–15 BC · su 11.30–14 BC</div>
+    <div class="row"><span class="who">Mea</span> su Lianna 16–18.30 BC</div>
+  </details>
+</section>
+
+<section id="wa">
+  <h2>WhatsApp</h2>
+  <div class="card warn">
+    <div class="who">Mea Lianna kyydit</div>
+    <div class="what">La: Amanda vie · Mea hakee · Su: Mea vie · Enni hakee</div>
+  </div>
+  <div class="card warn">
+    <div class="who">Ambrosia NTV 25.–27.9.</div>
+    <div class="what">Talkootaulukko jaettu — tarkista vuoro + kyydit</div>
+  </div>
+  <div class="card">
+    <div class="who">Samuel Welhot</div>
+    <div class="when">La 3.10. turnaus Joensuu</div>
+  </div>
+  <div class="card">
+    <div class="who">Vivida</div>
+    <div class="what">Kakkutukku nouto ennen harkkoja · tarkista oma tilaus</div>
+  </div>
+</section>
+
+<section>
+  <h2>Merkinnät &amp; kokeet</h2>
+  <div class="card danger">
+    <div class="who">Mea · huono / huomio</div>
+    <div class="what">Istumapaikka häiritsee oppimista (18.9.)</div>
+  </div>
+  <div class="card ok">
+    <div class="who">Kokeiden arvosanat</div>
+    <div class="what">Ei löytynyt Wilmasta tällä kierroksella.</div>
+  </div>
+</section>
+</main>
+
+<footer>Päivitetty 19.9.2026 · lähteet Wilma, Gmail, WhatsApp, kalenteri</footer>
+</body>
+</html>

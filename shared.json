@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789802418647,
+  "updated": 1789802922831,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -146,7 +146,7 @@
     "la": "Bolognese",
     "su": "Sushi"
   },
-  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu · harkkakisa 6.10 Lianna / 9.10 Vivida",
+  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Welhot 100 € + 60 € maksettu · Lianna harkkakisa 6.10",
   "extras": [
     {
       "id": "sheet-mea-2026-09-19",
@@ -273,13 +273,6 @@
       "start": "17:00",
       "end": "19:00",
       "place": "Ylä-Pyörön koulu",
-      "kind": "info"
-    },
-    {
-      "id": "info-vivida-harkkakisa-2026-10-09",
-      "who": "milla",
-      "title": "Vivida harkkakisa + kahvio",
-      "date": "2026-10-09",
       "kind": "info"
     }
   ],

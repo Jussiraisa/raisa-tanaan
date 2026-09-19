@@ -567,7 +567,7 @@ label.f {
 
   const TZ = "Europe/Helsinki";
   const STORE_KEY = "raisa-tanaan-v7";
-  const PAGE_VER = 28;
+  const PAGE_VER = 30;
   const WEATHER_KEY = "raisa-tanaan-weather";
   const LAT = 62.8924;
   const LON = 27.6770;
@@ -1041,6 +1041,21 @@ label.f {
     if (!remote || typeof remote !== "object") return false;
     const remoteT = +remote.updated || 0;
     const localT = +store.sharedUpdated || 0;
+    function sharedSig() {
+      return JSON.stringify({
+        u: store.sharedUpdated || 0,
+        n: store.note || "",
+        e: (store.events || []).filter(function (x) {
+          var id = String(x.id || "");
+          return id.indexOf("cal-") === 0 || id.indexOf("trip-") === 0 || id.indexOf("sheet-") === 0 || id.indexOf("info-") === 0;
+        }),
+        d: (store.events || []).map(function (x) { return [x.id, x.driver, x.ride, x.status]; }),
+        c: Object.keys(store.meals || {}).map(function (k) { var m = store.meals[k] || {}; return [k, m.cook, m.dish]; }).sort(),
+        v: store.vacation || null,
+        t: store.trip || null
+      });
+    }
+    const beforeSig = sharedSig();
     if (remote.vacation) store.vacation = remote.vacation;
     if (remote.trip) store.trip = remote.trip;
     if (typeof remote.note === "string" && remote.note) store.note = remote.note;
@@ -1051,8 +1066,8 @@ label.f {
       });
       remote.extras.forEach(function (ev) { store.events.push(ev); });
     }
-    if (!remoteT) { saveStore(); return true; }
-    if (localT && remoteT < localT) { saveStore(); return true; }
+    if (!remoteT) { saveStore(); return beforeSig !== sharedSig(); }
+    if (localT && remoteT < localT) { saveStore(); return beforeSig !== sharedSig(); }
     if (remote.cancelled) {
       Object.keys(remote.cancelled).forEach(function (id) {
         const ev = store.events.find(function (x) { return x.id === id; });
@@ -1087,7 +1102,7 @@ label.f {
     }
     store.sharedUpdated = remoteT || Date.now();
     saveStore();
-    return true;
+    return beforeSig !== sharedSig();
   }
 
 
@@ -2488,7 +2503,13 @@ label.f {
       fetch("./version.json?t=" + Date.now(), { cache: "no-store" })
         .then(function (r) { return r.json(); })
         .then(function (j) {
-          if (j && j.v && j.v !== PAGE_VER) location.reload();
+          if (!j || !j.v || !(j.v > PAGE_VER)) return;
+          var key = "raisa-reload-" + j.v;
+          try {
+            if (sessionStorage.getItem(key)) return;
+            sessionStorage.setItem(key, "1");
+          } catch (e) {}
+          location.reload();
         })
         .catch(function () {});
     }
@@ -2580,8 +2601,8 @@ label.f {
       if (wx) wx.innerHTML = renderWeather("today");
       if (wx2) wx2.innerHTML = renderWeather("tomorrow");
     }
-    setInterval(tickToday, 30000);
-    setInterval(pullShared, 15000);
+    setInterval(tickToday, 300000);
+    setInterval(pullShared, 300000);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

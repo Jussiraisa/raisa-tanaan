@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v25" />
+<meta name="fiilis-build" content="20260920-v26" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -781,10 +781,11 @@
 </style>
 </head>
 <body data-mode="morning">
+  <div id="tvBootHint" style="position:fixed;z-index:0;color:#333;left:1rem;bottom:1rem;font-family:system-ui,sans-serif;font-size:1.25rem;pointer-events:none">Fiilis latautuu…</div>
   <noscript>
     <div style="padding:1.5rem;font-family:system-ui,sans-serif;color:#2c2418;background:#f6f0e4;min-height:40vh">
       <p><strong>Fiilis</strong> tarvitsee JavaScriptin. Avaa uudelleen tai käytä selainta, jossa JS on päällä.</p>
-      <p>Räisä · Fiilis · v25</p>
+      <p>Räisä · Fiilis · v26</p>
     </div>
   </noscript>
   <div class="shell"><div class="stage">
@@ -876,7 +877,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v25</footer>
+    <footer class="footer">Räisä · Fiilis · v26</footer>
   </div></div>
 
 <script>
@@ -886,8 +887,12 @@
   const TZ = "Europe/Helsinki";
 
   /* TV rotate: OPT-IN only (?rotate=cw|ccw). Never auto on phone/iPad. */
+  function getSearchParams() {
+    /* Google TV / some browsers paste literal &amp; into the address bar */
+    return new URLSearchParams(String(location.search || "").replace(/&amp;/gi, "&"));
+  }
   function parseRotateParam() {
-    const q = new URLSearchParams(location.search).get("rotate");
+    const q = getSearchParams().get("rotate");
     if (q === null || q === "") return null;
     const v = String(q).toLowerCase();
     if (v === "0" || v === "off" || v === "false" || v === "no") return { force: false };
@@ -897,7 +902,7 @@
     return { force: true, dir: "cw" };
   }
   function parseTvParam() {
-    const q = new URLSearchParams(location.search).get("tv");
+    const q = getSearchParams().get("tv");
     if (q === null || q === "") return null;
     const v = String(q).toLowerCase();
     if (v === "0" || v === "off" || v === "false" || v === "no") return false;
@@ -911,8 +916,19 @@
     const vh = (vv && vv.height) || window.innerHeight || document.documentElement.clientHeight || 0;
     return { vw, vh };
   }
+  function isTvHtmlEntrypoint() {
+    try {
+      return /(?:^|\/)tv\.html$/i.test(String(location.pathname || ""));
+    } catch (_) { return false; }
+  }
   function applyTvPortrait() {
     const html = document.documentElement;
+    /* tv.html: hard-require portrait+cw forever (ignore mobile-read / UA) */
+    if (isTvHtmlEntrypoint()) {
+      html.setAttribute("data-tv-portrait", "");
+      html.setAttribute("data-rotate", "cw");
+      return;
+    }
     const param = parseRotateParam();
     let enable = false, dir = "cw";
     if (param) {
@@ -945,6 +961,14 @@
   }
   function applyMobileReadingMode() {
     const html = document.documentElement;
+    /* tv.html: never mobile-read */
+    if (isTvHtmlEntrypoint()) {
+      html.removeAttribute("data-mobile-read");
+      html.setAttribute("data-tv-kiosk", "");
+      html.setAttribute("data-tv-portrait", "");
+      html.setAttribute("data-rotate", "cw");
+      return false;
+    }
     const tvParam = parseTvParam();
     const rotated = html.hasAttribute("data-tv-portrait");
     // Kiosk (kitchen TV): ?tv=1 / ?rotate=cw|ccw / TV UA / large screen.
@@ -960,6 +984,7 @@
     return false;
   }
 
+  let _fitZeroRetries = 0;
   function fitStageToScreen() {
     const shell = document.querySelector(".shell");
     if (!shell) return;
@@ -973,7 +998,15 @@
       return;
     }
     const { vw, vh } = viewportSize();
-    if (!vw || !vh) return;
+    /* Google TV often reports 0 early — retry every 250ms up to 20 times */
+    if (!vw || !vh) {
+      if (_fitZeroRetries < 20) {
+        _fitZeroRetries++;
+        setTimeout(fitStageToScreen, 250);
+      }
+      return;
+    }
+    _fitZeroRetries = 0;
     let s;
     if (rotated) {
       // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
@@ -1000,9 +1033,10 @@
     scheduleFit();
   }
   applyTvPortraitAndFit();
+  document.addEventListener("DOMContentLoaded", applyTvPortraitAndFit);
   window.addEventListener("resize", applyTvPortraitAndFit);
   window.addEventListener("orientationchange", () => setTimeout(applyTvPortraitAndFit, 120));
-  window.addEventListener("load", scheduleFit);
+  window.addEventListener("load", function () { _fitZeroRetries = 0; scheduleFit(); });
   // visualViewport.resize only for kiosk/TV (not mobile-read). NEVER listen to scroll —
   // scroll → scheduleFit → --fit-scale/layout → scroll again → Safari kills the page.
   if (window.visualViewport) {
@@ -1578,7 +1612,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v25", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v26", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1589,6 +1623,8 @@
   }
 
   function tick() {
+    const bootHint = document.getElementById("tvBootHint");
+    if (bootHint && bootHint.parentNode) bootHint.parentNode.removeChild(bootHint);
     const n = nowInTZ();
     document.getElementById("clock").textContent = pad(n.h) + ":" + pad(n.min);
     const wd = WEEKDAYS[new Date(n.y, n.m - 1, n.d).getDay()];
@@ -1837,7 +1873,7 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v25 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: flow-layout+no-scale+12mem");
+  console.info("[fiilis] v26 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: flow-layout+no-scale+12mem");
   } catch (err) {
     try { console.error("[fiilis] boot failed", err); } catch (_) {}
     try {
@@ -1851,9 +1887,9 @@
         '<main style="padding:2.5rem;font-family:system-ui,-apple-system,sans-serif;color:#1a1410;background:#f6f0e4;min-height:100vh;font-size:clamp(1.25rem,3.5vw,2rem);line-height:1.45">' +
         '<p style="font-weight:700;margin:0 0 1rem;font-size:1.35em">Fiilis ei käynnistynyt.</p>' +
         '<p style="margin:0 0 1.5rem">TV: avaa uudelleen. Puhelin: yksinkertainen näkymä.</p>' +
-        '<p style="margin:0 0 1rem"><a href="?tv=1&amp;v=20260920v25" style="color:#1a1410;font-weight:700">Avaa TV-tila uudelleen · v25</a></p>' +
-        '<p style="margin:0 0 1rem"><a href="m.html?v=20260920v25" style="color:#1a1410;font-weight:700">Yksinkertainen näkymä (m.html)</a></p>' +
-        '<p style="margin:0"><a href="?v=20260920v25" style="color:#1a1410">Avaa uudelleen</a></p></main>';
+        '<p style="margin:0 0 1rem"><a href="tv.html" style="color:#1a1410;font-weight:700">Avaa TV-tila (tv.html) · v26</a></p>' +
+        '<p style="margin:0 0 1rem"><a href="m.html?v=20260920v26" style="color:#1a1410;font-weight:700">Yksinkertainen näkymä (m.html)</a></p>' +
+        '<p style="margin:0"><a href="?v=20260920v26" style="color:#1a1410">Avaa uudelleen</a></p></main>';
     } catch (_) {}
   }
 })();

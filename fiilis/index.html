@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v10" />
+<meta name="fiilis-build" content="20260920-v11" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="dark light" />
@@ -209,10 +209,10 @@
   }
   .today-col {
     min-width: 0; max-width: 100%;
-    padding: 0.6rem 0.7rem 0.65rem;
+    padding: 0.6rem 0.75rem 0.65rem;
     border-radius: 0.85rem;
     background: var(--pill); border: 1px solid var(--pill-border);
-    overflow: hidden;
+    overflow: visible;
   }
   .col-head {
     font-family: var(--serif); font-size: clamp(0.7rem, 1.85vw, 0.82rem);
@@ -221,15 +221,27 @@
   }
   .today-list { display: flex; flex-direction: column; gap: 0.45rem; }
   .today-item {
-    display: grid; grid-template-columns: 9.5ch 1fr;
-    column-gap: 0.55rem; align-items: start;
+    display: grid; grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 0.7rem; align-items: start;
+  }
+  .today-item[data-kind="koulu"] {
+    /* time on its own row so 08:00–13:00 never paints over the name */
+    grid-template-columns: 1fr;
+    row-gap: 0.08rem;
+  }
+  .today-item[data-kind="koulu"] .today-time {
+    padding-top: 0;
   }
   .today-time {
     font-family: var(--serif); font-weight: 400;
-    font-size: clamp(0.9rem, 2.4vw, 1.12rem);
+    font-size: clamp(0.82rem, 2.15vw, 1.02rem);
     letter-spacing: 0.01em; font-variant-numeric: tabular-nums;
-    color: var(--accent); line-height: 1.25; min-width: 9.5ch;
-    padding-top: 0.02rem; white-space: nowrap;
+    color: var(--accent); line-height: 1.25;
+    padding-top: 0.08rem; white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .today-item[data-kind="koulu"] .today-time {
+    font-size: clamp(0.78rem, 2.0vw, 0.95rem);
   }
   .today-body { min-width: 0; }
   .today-main {
@@ -264,11 +276,13 @@
     margin-top: 0.35rem; font-size: clamp(0.68rem, 1.7vw, 0.78rem);
     color: var(--ink-faint); font-weight: 300;
   }
-  [data-mode="evening"] .today-time,
-  [data-mode="night"] .today-time,
   [data-mode="evening"] .today-main,
   [data-mode="night"] .today-main {
     font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  }
+  [data-mode="evening"] .today-time,
+  [data-mode="night"] .today-time {
+    font-size: clamp(0.78rem, 2.0vw, 0.95rem);
   }
   html[data-tv-portrait] .today { max-height: none; }
 
@@ -701,7 +715,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v10</footer>
+    <footer class="footer">Räisä · Fiilis · v11</footer>
   </div></div>
 
 <script>
@@ -1447,7 +1461,7 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v9 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw");
+  console.info("[fiilis] v11 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw");
 })();
 </script>
 </body>

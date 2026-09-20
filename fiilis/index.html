@@ -88,6 +88,7 @@
   }
 
   .stage {
+    --fit-scale: 1;
     width: min(100vw, 1080px);
     height: 100dvh; max-height: 100dvh;
     margin: 0 auto; position: relative;
@@ -97,6 +98,8 @@
     padding-bottom: max(calc(var(--pad) * 0.75), env(safe-area-inset-bottom));
     overflow: hidden;
     background: var(--bg); color: var(--ink);
+    transform: scale(var(--fit-scale));
+    transform-origin: top center;
     transition: background var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease);
   }
 
@@ -105,14 +108,15 @@
     width: 100vw; height: 100vh; overflow: hidden; overscroll-behavior: none;
   }
   html[data-tv-portrait] .stage {
+    --pad: clamp(0.85rem, 2.2vw, 1.35rem);
     position: fixed; width: 100dvh; height: 100dvw;
     max-width: none; max-height: none; margin: 0;
     top: 50%; left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg) scale(var(--fit-scale));
     transform-origin: center center;
   }
   html[data-tv-portrait][data-rotate="ccw"] .stage {
-    transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%) rotate(-90deg) scale(var(--fit-scale));
   }
 
   .stage::before {
@@ -123,7 +127,8 @@
     opacity: 0.9;
     transition: opacity var(--theme-dur) var(--ease), background var(--theme-dur) var(--ease);
   }
-  .stage > * { position: relative; z-index: 1; }
+  .stage > * { position: relative; z-index: 1; min-width: 0; }
+  .stage > .hero { min-height: 0; }
 
   .meta {
     display: flex; align-items: baseline; justify-content: space-between;
@@ -170,8 +175,8 @@
 
   /* Calm Tänään — compact strip, but kitchen-readable from a few meters */
   .today {
-    margin-top: clamp(0.4rem, 1.1vh, 0.65rem); flex-shrink: 0;
-    max-height: 18vh; overflow: hidden;
+    margin-top: clamp(0.35rem, 1vh, 0.55rem); flex-shrink: 0;
+    max-height: none; overflow: visible;
     opacity: 0; animation: rise 1.2s var(--ease) 0.42s forwards;
   }
   .today-label {
@@ -215,23 +220,16 @@
     font-size: clamp(1rem, 2.7vw, 1.2rem);
   }
   /* Portrait TV: enough room for 3 readable lines without clipping */
-  html[data-tv-portrait] .today { max-height: 16%; }
+  html[data-tv-portrait] .today { max-height: none; }
 
   .hero {
-    margin-top: clamp(0.45rem, 1.2vh, 0.8rem);
-    flex: 1 1 auto; min-height: 220px; max-height: 58vh;
+    margin-top: clamp(0.35rem, 1vh, 0.65rem);
+    flex: 1 1 0; min-height: 0;
     border-radius: 1.35rem; overflow: hidden; position: relative;
     box-shadow: 0 24px 70px rgba(0,0,0,0.38), 0 0 0 1px rgba(255,255,255,0.04);
     opacity: 0; animation: rise 1.4s var(--ease) 0.55s forwards;
-    transition: max-height var(--theme-dur) var(--ease);
   }
-  [data-mode="morning"] .hero { max-height: 52vh; }
-  [data-mode="afternoon"] .hero { max-height: 56vh; }
-  [data-mode="evening"] .hero, [data-mode="night"] .hero { max-height: 62vh; }
-  html[data-tv-portrait] .hero { max-height: 48%; }
-  html[data-tv-portrait] body[data-mode="morning"] .hero { max-height: 44%; }
-  html[data-tv-portrait] body[data-mode="evening"] .hero,
-  html[data-tv-portrait] body[data-mode="night"] .hero { max-height: 52%; }
+  html[data-tv-portrait] .hero { flex: 1 1 0; min-height: 0; }
 
   .hero-slide {
     position: absolute; inset: 0; opacity: 0;
@@ -478,9 +476,39 @@
       html.removeAttribute("data-rotate");
     }
   }
-  applyTvPortrait();
-  window.addEventListener("resize", applyTvPortrait);
-  window.addEventListener("orientationchange", () => setTimeout(applyTvPortrait, 100));
+
+  function fitStageToScreen() {
+    const stage = document.querySelector(".stage");
+    if (!stage) return;
+    stage.style.setProperty("--fit-scale", "1");
+    // Force layout, then measure overflow vs available box
+    void stage.offsetHeight;
+    const availH = stage.clientHeight;
+    const availW = stage.clientWidth;
+    const needH = stage.scrollHeight;
+    const needW = stage.scrollWidth;
+    if (!availH || !availW || !needH || !needW) return;
+    let s = Math.min(availH / needH, availW / needW, 1);
+    // Small safety margin so edges aren't clipped on TV browsers
+    if (s < 0.995) s = Math.max(0.72, s * 0.98);
+    else s = 1;
+    stage.style.setProperty("--fit-scale", String(s));
+  }
+  let _fitTimer = null;
+  function scheduleFit() {
+    clearTimeout(_fitTimer);
+    _fitTimer = setTimeout(fitStageToScreen, 50);
+  }
+
+  function applyTvPortraitAndFit() {
+    applyTvPortrait();
+    scheduleFit();
+  }
+  applyTvPortraitAndFit();
+  window.addEventListener("resize", applyTvPortraitAndFit);
+  window.addEventListener("orientationchange", () => setTimeout(applyTvPortraitAndFit, 120));
+  window.addEventListener("load", scheduleFit);
+
 
   const CONFIG = {
     family: [
@@ -544,10 +572,7 @@
   }
   function softTitle(t) {
     if (!t) return "";
-    return String(t)
-      .replace(/\bVivida\b/g, "Vivida")
-      .replace(/\bLianna\b/g, "Lianna")
-      .replace(/\bAmbrosia\b/g, "Ambrosia");
+    return String(t);
   }
 
   function nowInTZ() {
@@ -686,6 +711,7 @@
       return '<div class="today-item"><div class="today-time">' + it.time +
         '</div><div class="today-text">' + it.line + soft + "</div></div>";
     }).join("");
+    scheduleFit();
 
     if (items.some(i => i.kind === "koulu")) {
       note.textContent = "Kouluajat suuntaa-antavia — vahvista Perheestä.";

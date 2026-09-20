@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v23" />
+<meta name="fiilis-build" content="20260920-v24" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,6 +171,36 @@
     aspect-ratio: 4 / 3;
     max-height: 50vh;
   }
+
+  /* TV kiosk: never leave primary UI at opacity:0 if animations stall (Cepter Google TV) */
+  html[data-tv-kiosk] .meta,
+  html[data-tv-kiosk] .greeting,
+  html[data-tv-kiosk] .today,
+  html[data-tv-kiosk] .hero,
+  html[data-tv-kiosk] .week-wx,
+  html[data-tv-kiosk] .home-meals,
+  html[data-tv-kiosk] .under-hero .awaits,
+  html[data-tv-kiosk] .month-cal,
+  html[data-tv-kiosk] .week-soft,
+  html[data-tv-kiosk] .family,
+  html[data-tv-kiosk] .season,
+  html[data-tv-kiosk] .goods,
+  html[data-tv-kiosk] .footer {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  /* Board stays 1080×1920; shell size still follows --fit-scale (letterbox OK) */
+  html[data-tv-kiosk] .stage {
+    width: calc(var(--board-w, 1080) * 1px);
+    height: calc(var(--board-h, 1920) * 1px);
+    background: var(--bg, #f6f0e4);
+    color: var(--ink, #2c2418);
+  }
+  html[data-tv-kiosk] body {
+    display: flex; align-items: center; justify-content: center;
+    background: #f6f0e4;
+  }
+
   /* Text visible immediately — no rise opacity:0 on phones */
   html[data-mobile-read] .meta,
   html[data-mobile-read] .greeting,
@@ -255,7 +285,7 @@
   .meta {
     display: flex; align-items: baseline; justify-content: space-between;
     gap: 1rem; flex-shrink: 0;
-    opacity: 0; animation: rise 1.2s var(--ease) 0.15s forwards;
+    opacity: 1; /* visible immediately — TV/phone must not depend on rise animation */
   }
   .meta-left { display: flex; flex-direction: column; gap: 0.15rem; }
   .clock {
@@ -280,7 +310,7 @@
 
   .greeting {
     margin-top: clamp(0.7rem, 2vh, 1.2rem); flex-shrink: 0;
-    opacity: 0; animation: rise 1.2s var(--ease) 0.3s forwards;
+    opacity: 1; /* visible immediately */
   }
   .greeting h1 {
     font-family: var(--serif); font-weight: 400;
@@ -299,7 +329,7 @@
   .today {
     margin-top: clamp(0.55rem, 1.4vh, 0.85rem); flex-shrink: 0;
     max-width: 100%; max-height: none; overflow: hidden;
-    opacity: 0; animation: rise 1.2s var(--ease) 0.42s forwards;
+    opacity: 1; /* visible immediately */
   }
   .today-label {
     font-family: var(--serif); font-size: clamp(0.68rem, 1.8vw, 0.8rem);
@@ -570,7 +600,7 @@
     flex: 1 1 0; min-height: 0;
     border-radius: 1.35rem; overflow: hidden; position: relative;
     box-shadow: 0 24px 70px rgba(0,0,0,0.38), 0 0 0 1px rgba(255,255,255,0.04);
-    opacity: 0; animation: rise 1.4s var(--ease) 0.55s forwards;
+    opacity: 1; /* visible immediately — kitchen TV must show hero without animation */
   }
   html[data-tv-portrait] .hero { flex: 1 1 0; min-height: 0; }
 
@@ -754,7 +784,7 @@
   <noscript>
     <div style="padding:1.5rem;font-family:system-ui,sans-serif;color:#2c2418;background:#f6f0e4;min-height:40vh">
       <p><strong>Fiilis</strong> tarvitsee JavaScriptin. Avaa uudelleen tai käytä selainta, jossa JS on päällä.</p>
-      <p>Räisä · Fiilis · v23</p>
+      <p>Räisä · Fiilis · v24</p>
     </div>
   </noscript>
   <div class="shell"><div class="stage">
@@ -846,7 +876,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v23</footer>
+    <footer class="footer">Räisä · Fiilis · v24</footer>
   </div></div>
 
 <script>
@@ -1537,7 +1567,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v23", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v24", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1638,8 +1668,9 @@
 
   function buildSlides() {
     const hero = document.getElementById("hero");
-    const existing = hero.querySelector(".hero-slide");
-    if (existing) existing.remove();
+    if (!hero) return;
+    const existing = hero.querySelectorAll(".hero-slide");
+    existing.forEach(node => { if (node && node.parentNode) node.parentNode.removeChild(node); });
     const vignette = hero.querySelector(".hero-vignette");
     const mobileMem = document.documentElement.hasAttribute("data-mobile-read");
     captions.forEach((cap, i) => {
@@ -1795,19 +1826,23 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v23 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: flow-layout+no-scale+12mem");
+  console.info("[fiilis] v24 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: flow-layout+no-scale+12mem");
   } catch (err) {
     try { console.error("[fiilis] boot failed", err); } catch (_) {}
     try {
       document.documentElement.style.background = "#f6f0e4";
-      document.documentElement.style.color = "#2c2418";
+      document.documentElement.style.color = "#1a1410";
       document.body.style.background = "#f6f0e4";
-      document.body.style.color = "#2c2418";
+      document.body.style.color = "#1a1410";
       document.body.style.display = "block";
+      document.body.style.padding = "0";
       document.body.innerHTML =
-        '<main style="padding:2rem;font-family:system-ui,sans-serif;color:#2c2418;background:#f6f0e4;min-height:100vh">' +
-        "<p><strong>Fiilis</strong> ei käynnistynyt.</p>" +
-        '<p><a href="?v=20260920v23" style="color:#2c2418">Avaa uudelleen · v23</a></p></main>';
+        '<main style="padding:2.5rem;font-family:system-ui,-apple-system,sans-serif;color:#1a1410;background:#f6f0e4;min-height:100vh;font-size:clamp(1.25rem,3.5vw,2rem);line-height:1.45">' +
+        '<p style="font-weight:700;margin:0 0 1rem;font-size:1.35em">Fiilis ei käynnistynyt.</p>' +
+        '<p style="margin:0 0 1.5rem">TV: avaa uudelleen. Puhelin: yksinkertainen näkymä.</p>' +
+        '<p style="margin:0 0 1rem"><a href="?tv=1&amp;v=20260920v24" style="color:#1a1410;font-weight:700">Avaa TV-tila uudelleen · v24</a></p>' +
+        '<p style="margin:0 0 1rem"><a href="m.html?v=20260920v24" style="color:#1a1410;font-weight:700">Yksinkertainen näkymä (m.html)</a></p>' +
+        '<p style="margin:0"><a href="?v=20260920v24" style="color:#1a1410">Avaa uudelleen</a></p></main>';
     } catch (_) {}
   }
 })();

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789888875405,
+  "updated": "2026-09-20T12:39:01.757236+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -201,6 +201,18 @@
       "driver": "",
       "status": "",
       "ride": ""
+    },
+    "kyyti-mea-lianna-2026-09-23": {
+      "driver": "vienti Julia / haku Enni",
+      "note": "WA Lianna kyytirinki: Ma ja ke vienti Julia, haku Enni. Mea mukana ke."
+    },
+    "kyyti-mea-lianna-2026-09-25": {
+      "driver": "Amanda / Elina",
+      "note": "WA: Pe Amanda (Elina ottaa molemmat). Mea mukana pe."
+    },
+    "kyyti-mea-lianna-2026-09-27": {
+      "driver": "Riikka",
+      "note": "WA: Su Mea (Riikka molemmat)."
     }
   },
   "cooks": {
@@ -223,6 +235,18 @@
   },
   "note": "",
   "extras": [
+    {
+      "id": "info-ellen-kyyti-su-2026-09-20",
+      "who": "ellen",
+      "title": "Ambrosia haku · Riikka hakee tytöt",
+      "date": "2026-09-20",
+      "start": "",
+      "end": "",
+      "place": "Kuopiohalli",
+      "kind": "kyyti",
+      "driver": "Riikka",
+      "status": "us"
+    },
     {
       "id": "cal-fih6q5lol7al6pcsoeo5v7gsr0",
       "title": "Ellen · Ambrosia haku (Riikka)",
@@ -255,18 +279,6 @@
       "kind": "treeni",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-ellen-kyyti-su-2026-09-20",
-      "who": "ellen",
-      "title": "Ambrosia haku · Riikka hakee tytöt",
-      "date": "2026-09-20",
-      "start": "",
-      "end": "",
-      "place": "Kuopiohalli",
-      "kind": "kyyti",
-      "driver": "Riikka",
-      "status": "us"
     },
     {
       "id": "info-samuel-retki-2026-09-21",
@@ -304,6 +316,28 @@
       "status": ""
     },
     {
+      "id": "info-ilmoitus-kkp-deadline-2026-09-23",
+      "who": "",
+      "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
+      "date": "2026-09-23",
+      "place": "Wilma/opettaja",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "kyyti-mea-lianna-2026-09-23",
+      "who": "mea",
+      "title": "Lianna · vie Julia, haku Enni",
+      "date": "2026-09-23",
+      "start": "",
+      "end": "",
+      "place": "",
+      "kind": "kyyti",
+      "driver": "vienti Julia / haku Enni",
+      "status": "open"
+    },
+    {
       "id": "info-ellen-leos-2026-09-23",
       "who": "ellen",
       "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
@@ -316,11 +350,12 @@
       "status": ""
     },
     {
-      "id": "info-ilmoitus-kkp-deadline-2026-09-23",
-      "who": "",
-      "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
-      "date": "2026-09-23",
-      "place": "Wilma/opettaja",
+      "id": "info-ntv-kisat-2026-09-25",
+      "who": "ellen",
+      "title": "Ambrosia NTV-kisat + talkoot",
+      "date": "2026-09-25",
+      "dateEnd": "2026-09-27",
+      "place": "Luola",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -336,15 +371,16 @@
       "status": ""
     },
     {
-      "id": "info-ntv-kisat-2026-09-25",
-      "who": "ellen",
-      "title": "Ambrosia NTV-kisat + talkoot",
+      "id": "kyyti-mea-lianna-2026-09-25",
+      "who": "mea",
+      "title": "Lianna · Amanda (Elina) vie+hakee",
       "date": "2026-09-25",
-      "dateEnd": "2026-09-27",
-      "place": "Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
+      "start": "",
+      "end": "",
+      "place": "",
+      "kind": "kyyti",
+      "driver": "Amanda / Elina",
+      "status": "open"
     },
     {
       "id": "info-mea-synttarit-2026-09-26",
@@ -371,6 +407,18 @@
       "status": ""
     },
     {
+      "id": "kyyti-mea-lianna-2026-09-27",
+      "who": "mea",
+      "title": "Lianna · Riikka vie+hakee",
+      "date": "2026-09-27",
+      "start": "",
+      "end": "",
+      "place": "",
+      "kind": "kyyti",
+      "driver": "Riikka",
+      "status": "open"
+    },
+    {
       "id": "info-mea-voimat-2026-09-28",
       "who": "mea",
       "title": "Liannan voimat",
@@ -393,6 +441,15 @@
       "status": ""
     },
     {
+      "id": "info-samuel-pelipassi-2026-10-01",
+      "who": "samuel",
+      "title": "Welhot P9 pelipassi hankittava",
+      "date": "2026-10-01",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-ellen-vanhempainilta-2026-10-01",
       "who": "ellen",
       "title": "Ambrosia vanhempainilta",
@@ -405,10 +462,11 @@
       "status": ""
     },
     {
-      "id": "info-samuel-pelipassi-2026-10-01",
+      "id": "info-samuel-turnaus-2026-10-03",
       "who": "samuel",
-      "title": "Welhot P9 pelipassi hankittava",
-      "date": "2026-10-01",
+      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
+      "date": "2026-10-03",
+      "place": "Joensuu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -426,16 +484,6 @@
       "status": ""
     },
     {
-      "id": "info-samuel-turnaus-2026-10-03",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
-      "date": "2026-10-03",
-      "place": "Joensuu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
       "title": "Liannan voimat",
@@ -448,6 +496,17 @@
       "status": ""
     },
     {
+      "id": "info-riikka-oulu-2026-10-06",
+      "who": "",
+      "title": "Riikka Ouluun",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "kind": "info",
+      "place": "Oulu",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-lianna-harkkakisa-2026-10-06",
       "who": "mea",
       "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
@@ -456,17 +515,6 @@
       "end": "19:00",
       "place": "Ylä-Pyörön koulu",
       "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-riikka-oulu-2026-10-06",
-      "who": "",
-      "title": "Riikka Ouluun",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "kind": "info",
-      "place": "Oulu",
       "driver": "",
       "status": ""
     },

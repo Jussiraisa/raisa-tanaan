@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260920-v33-tv1">
+  <meta name="fiilis-build" content="20260920-v34-tv1">
   <meta name="theme-color" content="#f6f0e4">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -44,6 +44,7 @@
     body.night .mday.is-lontoo { background: rgba(212,160,106,0.16); }
     body.night .mday.is-school { background: rgba(255,248,238,0.05); }
     body.night .mdow { color: rgba(240,228,212,0.7); }
+    body.night .mlabel { color: #f0e4d4; opacity: 1; }
     body.night .week-line { border-bottom-color: rgba(240,228,212,0.14); }
     body.night .week-line .wt { color: #d4a06a; }
     body.night .week-line .wtitle { color: #f0e4d4; }
@@ -226,7 +227,7 @@
       opacity: .75; padding-bottom: .1vh;
     }
     .mday {
-      min-height: 2.2vh;
+      min-height: 3.6vh;
       border-radius: .55vmin;
       border: 1px solid rgba(44,36,24,0.1);
       background: rgba(44,36,24,0.035);
@@ -264,9 +265,11 @@
       display: inline-block;
     }
     .mlabel {
-      font-size: 1.15vmin; font-weight: 650; line-height: 1.15;
-      overflow: hidden; max-height: 2.5em;
-      opacity: .9;
+      font-size: 1.55vmin; font-weight: 700; line-height: 1.1;
+      overflow: hidden; max-height: none;
+      color: #2c2418;
+      opacity: 1;
+      -ms-flex: 1; flex: 1; min-height: 0;
     }
     .meal-line {
       font-size: 1.9vmin; font-weight: 650; padding: .35vh 0; line-height: 1.25;
@@ -282,8 +285,8 @@
       -ms-flex-direction: column; flex-direction: column;
       gap: .7vh;
       min-height: 0;
-      height: 32vh;
-      max-height: 34vh;
+      height: 34vh;
+      max-height: 36vh;
     }
     .bottom-wx {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
@@ -404,7 +407,7 @@
     </div>
     <div class="foot">
       <div class="chips" id="chips"></div>
-      <span class="brand">Räisä · Fiilis · v33</span>
+      <span class="brand">Räisä · Fiilis · v34</span>
     </div>
   </div>
   <script>
@@ -1042,13 +1045,17 @@
           dots += "<span class=\"mdot\" style=\"background:" + colorForWho(who) + "\"></span>";
         }
         if (realEvs.length) {
-          var t0 = realEvs[0].title || "";
+          var t0 = realEvs[0].title || realEvs[0].who || "";
+          if (!t0 && iso >= LONTOO_START && iso <= LONTOO_END) t0 = "Lontoo";
           if (t0.length > 14) t0 = t0.slice(0, 13) + "…";
           label = "<div class=\"mlabel\">" + esc(t0) + "</div>";
+        } else if (iso >= LONTOO_START && iso <= LONTOO_END) {
+          label = "<div class=\"mlabel\">Lontoo</div>";
         }
         cells.push("<div class=\"" + cls + "\"><div class=\"dn\">" + num + "</div>"
+          + label
           + (dots ? "<div class=\"mdots\">" + dots + "</div>" : "")
-          + label + "</div>");
+          + "</div>");
       }
       while (cells.length % 7 !== 0) {
         cells.push("<div class=\"mday pad\"></div>");
@@ -1150,14 +1157,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260920v33", function (data) {
+    getJSON("schedule.json?v=20260920v34", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260920v33", function (data) {
+    getJSON("photos-from-matkat.json?v=20260920v34", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

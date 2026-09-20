@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789878393088,
+  "updated": 1789878538446,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -204,22 +204,22 @@
     }
   },
   "cooks": {
+    "la": "",
+    "su": "",
     "ma": "",
     "ti": "",
     "ke": "",
     "to": "",
-    "pe": "Milla ja muut auttaa",
-    "la": "äiti",
-    "su": ""
+    "pe": ""
   },
   "dishes": {
-    "ma": "Lihapullat + muusi",
-    "ti": "Kana + basmati",
-    "ke": "Makaroonilaatikko + 1 annos pasta bolognese",
-    "to": "Jämät: makaroonilaatikko, lasagne, bolognese, pinaattiletut, pitsat",
-    "pe": "Burgerit",
-    "la": "Bolognese",
-    "su": "Sushi"
+    "la": "Nacho-pelti",
+    "su": "Hampparit (liha + Beyond)",
+    "ma": "Lohikeitto",
+    "ti": "Kana + riisi + kermakastike",
+    "ke": "Koulun tonnikalapasta (ei purjoa)",
+    "to": "Tähteet",
+    "pe": "Katkarapukeitto + patongit"
   },
   "note": "",
   "extras": [

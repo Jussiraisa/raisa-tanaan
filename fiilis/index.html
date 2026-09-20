@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-koulu-end-v9" />
+<meta name="fiilis-build" content="20260920-v9" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="dark light" />
@@ -105,7 +105,7 @@
     width: calc(var(--board-w) * 1px);
     height: calc(var(--board-h) * 1px);
     margin: 0; position: absolute; top: 0; left: 0;
-    display: flex; flex-direction: column;
+    display: flex; flex-direction: column; gap: 0.25rem;
     padding: var(--pad);
     padding-top: max(var(--pad), env(safe-area-inset-top));
     padding-bottom: max(calc(var(--pad) * 0.75), env(safe-area-inset-bottom));
@@ -194,8 +194,8 @@
 
   /* Top: Koulu | Treenit two columns */
   .today {
-    margin-top: clamp(0.35rem, 1vh, 0.55rem); flex-shrink: 0;
-    max-width: 100%; max-height: none; overflow: visible;
+    margin-top: clamp(0.55rem, 1.4vh, 0.85rem); flex-shrink: 0;
+    max-width: 100%; max-height: none; overflow: hidden;
     opacity: 0; animation: rise 1.2s var(--ease) 0.42s forwards;
   }
   .today-label {
@@ -204,14 +204,15 @@
     color: var(--ink-muted); font-weight: 400; margin-bottom: 0.4rem;
   }
   .today-cols {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem 1.1rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem 1.4rem;
     align-items: start;
   }
   .today-col {
-    min-width: 0;
-    padding: 0.55rem 0.65rem 0.6rem;
+    min-width: 0; max-width: 100%;
+    padding: 0.6rem 0.7rem 0.65rem;
     border-radius: 0.85rem;
     background: var(--pill); border: 1px solid var(--pill-border);
+    overflow: hidden;
   }
   .col-head {
     font-family: var(--serif); font-size: clamp(0.7rem, 1.85vw, 0.82rem);
@@ -225,10 +226,10 @@
   }
   .today-time {
     font-family: var(--serif); font-weight: 400;
-    font-size: clamp(1.05rem, 2.9vw, 1.3rem);
+    font-size: clamp(0.9rem, 2.4vw, 1.12rem);
     letter-spacing: 0.01em; font-variant-numeric: tabular-nums;
-    color: var(--accent); line-height: 1.3; min-width: 9.5ch;
-    padding-top: 0.02rem;
+    color: var(--accent); line-height: 1.25; min-width: 9.5ch;
+    padding-top: 0.02rem; white-space: nowrap;
   }
   .today-body { min-width: 0; }
   .today-main {
@@ -273,7 +274,7 @@
 
   /* Weekly weather strip — calm glance */
   .week-wx {
-    margin-top: clamp(0.45rem, 1.2vh, 0.7rem); flex-shrink: 0;
+    margin-top: clamp(0.65rem, 1.5vh, 0.95rem); flex-shrink: 0;
     opacity: 0; animation: rise 1.2s var(--ease) 0.62s forwards;
   }
   .week-wx-label {
@@ -312,12 +313,50 @@
   }
 
   /* Under photo: calendar LEFT | Odotettavaa RIGHT */
+
+  /* Home meals — Kotona · viikon ruoka (not schoolLunch) */
+  .home-meals {
+    margin-top: clamp(0.55rem, 1.3vh, 0.85rem); flex-shrink: 0;
+    opacity: 0; animation: rise 1.2s var(--ease) 0.68s forwards;
+  }
+  .home-meals-label {
+    font-family: var(--serif); font-size: clamp(0.6rem, 1.55vw, 0.72rem);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 400; margin-bottom: 0.3rem;
+  }
+  .home-meals-row {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 0.3rem 0.35rem;
+  }
+  .hm-day {
+    text-align: left; padding: 0.35rem 0.3rem 0.4rem;
+    border-radius: 0.65rem; background: var(--pill);
+    border: 1px solid var(--pill-border); min-width: 0;
+    overflow: hidden;
+  }
+  .hm-day.is-today {
+    background: var(--accent-soft); border-color: transparent;
+  }
+  .hm-dow {
+    font-family: var(--serif); font-size: clamp(0.55rem, 1.45vw, 0.68rem);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 0.12rem;
+  }
+  .hm-dish {
+    font-size: clamp(0.58rem, 1.55vw, 0.72rem);
+    color: var(--ink); line-height: 1.25;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden; word-break: break-word;
+  }
+  .hm-day.is-today .hm-dish { font-weight: 500; }
+  .hm-day.is-empty .hm-dish { color: var(--ink-faint); font-style: italic; }
+
   .under-hero {
     display: grid; grid-template-columns: 1.15fr 0.85fr;
-    gap: 0.75rem 1rem; align-items: start;
-    margin-top: clamp(0.5rem, 1.3vh, 0.8rem); flex-shrink: 0;
+    gap: 1.05rem 1.4rem; align-items: start;
+    margin-top: clamp(0.7rem, 1.6vh, 1.05rem); flex-shrink: 0;
   }
-  .under-left, .under-right { min-width: 0; }
+  .under-left, .under-right { min-width: 0; overflow: hidden; }
 
   /* Month calendar — colored event pills, full text, wrap */
   .month-cal {
@@ -331,7 +370,7 @@
   }
   .month-cal-grid {
     display: grid; grid-template-columns: repeat(7, 1fr);
-    gap: 0.22rem 0.18rem; text-align: left;
+    gap: 0.34rem 0.28rem; text-align: left;
     align-items: stretch;
   }
   .month-cal-dow {
@@ -342,32 +381,42 @@
   .month-cal-day {
     position: relative;
     font-family: var(--serif); font-weight: 300;
-    font-size: clamp(0.68rem, 1.75vw, 0.82rem);
+    font-size: clamp(0.62rem, 1.6vw, 0.76rem);
     color: var(--ink-muted); line-height: 1.25;
-    border-radius: 0.4rem; padding: 0.18rem 0.18rem 0.22rem;
-    min-height: 3.4rem;
-    display: flex; flex-direction: column; gap: 0.12rem;
+    border-radius: 0.4rem; padding: 0.2rem 0.2rem 0.24rem;
+    min-height: 4.2rem;
+    max-height: 5.8rem;
+    display: flex; flex-direction: column; gap: 0.1rem;
     background: rgba(0,0,0,0.06);
+    overflow: hidden;
   }
-  .month-cal-day.empty { visibility: hidden; min-height: 0; }
+  .month-cal-day.empty { visibility: hidden; min-height: 0; max-height: none; }
   .month-cal-day.today {
     background: var(--accent-soft); color: var(--ink); font-weight: 500;
   }
   .month-cal-num {
     font-variant-numeric: tabular-nums;
-    font-size: 0.95em; line-height: 1; margin-bottom: 0.05rem;
+    font-size: 0.95em; line-height: 1; margin-bottom: 0.04rem;
+    flex-shrink: 0;
   }
-  .cal-pills { display: flex; flex-direction: column; gap: 0.1rem; flex: 1; }
+  .month-cal-num .md {
+    font-size: 0.78em; color: var(--ink-faint); font-weight: 300; margin-left: 0.15rem;
+  }
+  .cal-pills {
+    display: flex; flex-direction: column; gap: 0.1rem;
+    flex: 1 1 auto; min-height: 0; overflow: hidden;
+  }
   .cal-pill {
     display: block; width: 100%;
     font-family: var(--body); font-weight: 500;
-    font-size: clamp(0.48rem, 1.25vw, 0.58rem);
+    font-size: clamp(0.46rem, 1.2vw, 0.56rem);
     line-height: 1.2; letter-spacing: -0.01em;
-    padding: 0.12rem 0.2rem;
+    padding: 0.1rem 0.18rem;
     border-radius: 0.28rem;
     color: #1a1612;
-    white-space: normal; overflow: visible; text-overflow: unset;
+    white-space: normal; overflow: hidden;
     word-break: break-word; hyphens: auto;
+    flex-shrink: 0;
   }
   .cal-pill.who-ellen { background: #e8a0b0; }
   .cal-pill.who-samuel { background: #8eb8d8; }
@@ -555,7 +604,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .hero-slide img { animation: none; transform: scale(1.04); }
-    .meta, .greeting, .today, .hero, .week-wx, .under-hero .awaits, .month-cal, .week-soft, .family, .season, .goods, .footer {
+    .meta, .greeting, .today, .hero, .week-wx, .home-meals, .under-hero .awaits, .month-cal, .week-soft, .family, .season, .goods, .footer {
       animation: none; opacity: 1;
     }
     body, .shell, .stage, .hero { transition: none; }
@@ -613,9 +662,14 @@
       <div class="week-wx-row" id="weekWxRow"></div>
     </section>
 
+    <section class="home-meals" id="homeMeals" aria-label="Kotona viikon ruoka">
+      <div class="home-meals-label">Kotona · viikon ruoka</div>
+      <div class="home-meals-row" id="homeMealsRow"></div>
+    </section>
+
     <section class="under-hero" aria-label="Kalenteri ja odotettavaa">
       <div class="under-left">
-        <section class="month-cal" id="monthCal" aria-label="Kuukausi">
+        <section class="month-cal" id="monthCal" aria-label="Seuraava kuukausi">
           <div class="month-cal-label" id="monthCalLabel">Syyskuu</div>
           <div class="month-cal-grid" id="monthCalGrid"></div>
         </section>
@@ -735,7 +789,7 @@
       { id: "xmas",    label: "Joulu",                    detail: "24.12.",     what: "juhla",     at: "2026-12-24T18:00:00", big: false }
     ],
     memories: [{"src": "photos-web/matka-2018-lontoo-cover-001.jpg", "place": "Lontoo", "year": "2018"}, {"src": "photos-web/matka-2018-lontoo-00-002.jpg", "place": "Lontoo", "year": "2018"}, {"src": "photos-web/matka-2018-lontoo-01-003.jpg", "place": "Lontoo", "year": "2018"}, {"src": "photos-web/matka-2018-lontoo-02-004.jpg", "place": "Lontoo", "year": "2018"}, {"src": "photos-web/matka-2018-lontoo-03-005.jpg", "place": "Lontoo", "year": "2018"}, {"src": "photos-web/matka-2018-lontoo-04-006.jpg", "place": "Lontoo", "year": "2018"}, {"src": "photos-web/matka-2018-lontoo-05-007.jpg", "place": "Lontoo", "year": "2018"}, {"src": "photos-web/matka-2018-tanska-cover-008.jpg", "place": "Tanska", "year": "2018"}, {"src": "photos-web/matka-2018-tanska-00-009.jpg", "place": "Tanska", "year": "2018"}, {"src": "photos-web/matka-2018-tanska-01-010.jpg", "place": "Tanska", "year": "2018"}, {"src": "photos-web/matka-2018-tanska-02-011.jpg", "place": "Tanska", "year": "2018"}, {"src": "photos-web/matka-2018-tanska-03-012.jpg", "place": "Tanska", "year": "2018"}, {"src": "photos-web/matka-2018-tanska-04-013.jpg", "place": "Tanska", "year": "2018"}, {"src": "photos-web/matka-2018-tanska-05-014.jpg", "place": "Tanska", "year": "2018"}, {"src": "photos-web/matka-2019-italia-cover-015.jpg", "place": "Italia", "year": "2019"}, {"src": "photos-web/matka-2019-italia-00-016.jpg", "place": "Italia", "year": "2019"}, {"src": "photos-web/matka-2019-italia-01-017.jpg", "place": "Italia", "year": "2019"}, {"src": "photos-web/matka-2019-italia-02-018.jpg", "place": "Italia", "year": "2019"}, {"src": "photos-web/matka-2019-italia-03-019.jpg", "place": "Italia", "year": "2019"}, {"src": "photos-web/matka-2019-italia-04-020.jpg", "place": "Italia", "year": "2019"}, {"src": "photos-web/matka-2019-italia-05-021.jpg", "place": "Italia", "year": "2019"}, {"src": "photos-web/matka-2020-norja-cover-022.jpg", "place": "Norja", "year": "2020"}, {"src": "photos-web/matka-2020-norja-00-023.jpg", "place": "Norja", "year": "2020"}, {"src": "photos-web/matka-2020-norja-01-024.jpg", "place": "Norja", "year": "2020"}, {"src": "photos-web/matka-2020-norja-02-025.jpg", "place": "Norja", "year": "2020"}, {"src": "photos-web/matka-2020-norja-03-026.jpg", "place": "Norja", "year": "2020"}, {"src": "photos-web/matka-2020-norja-04-027.jpg", "place": "Norja", "year": "2020"}, {"src": "photos-web/matka-2020-norja-05-028.jpg", "place": "Norja", "year": "2020"}, {"src": "photos-web/matka-2022-eurooppa-cover-029.jpg", "place": "Eurooppa", "year": "2022"}, {"src": "photos-web/matka-2022-eurooppa-00-030.jpg", "place": "Eurooppa", "year": "2022"}, {"src": "photos-web/matka-2022-eurooppa-01-031.jpg", "place": "Eurooppa", "year": "2022"}, {"src": "photos-web/matka-2022-eurooppa-02-032.jpg", "place": "Eurooppa", "year": "2022"}, {"src": "photos-web/matka-2022-eurooppa-03-033.jpg", "place": "Eurooppa", "year": "2022"}, {"src": "photos-web/matka-2022-eurooppa-04-034.jpg", "place": "Eurooppa", "year": "2022"}, {"src": "photos-web/matka-2022-eurooppa-05-035.jpg", "place": "Eurooppa", "year": "2022"}, {"src": "photos-web/matka-2023-road-trip-cover-036.jpg", "place": "Road Trip", "year": "2023"}, {"src": "photos-web/matka-2023-road-trip-00-037.jpg", "place": "Road Trip", "year": "2023"}, {"src": "photos-web/matka-2023-road-trip-01-038.jpg", "place": "Road Trip", "year": "2023"}, {"src": "photos-web/matka-2023-road-trip-02-039.jpg", "place": "Road Trip", "year": "2023"}, {"src": "photos-web/matka-2023-road-trip-03-040.jpg", "place": "Road Trip", "year": "2023"}, {"src": "photos-web/matka-2023-road-trip-04-041.jpg", "place": "Road Trip", "year": "2023"}, {"src": "photos-web/matka-2023-road-trip-05-042.jpg", "place": "Road Trip", "year": "2023"}, {"src": "photos-web/matka-2024-riviera-cover-043.jpg", "place": "Riviera", "year": "2024"}, {"src": "photos-web/matka-2024-riviera-00-044.jpg", "place": "Riviera", "year": "2024"}, {"src": "photos-web/matka-2024-riviera-01-045.jpg", "place": "Riviera", "year": "2024"}, {"src": "photos-web/matka-2024-riviera-02-046.jpg", "place": "Riviera", "year": "2024"}, {"src": "photos-web/matka-2024-riviera-03-047.jpg", "place": "Riviera", "year": "2024"}, {"src": "photos-web/matka-2024-riviera-04-048.jpg", "place": "Riviera", "year": "2024"}, {"src": "photos-web/matka-2024-riviera-05-049.jpg", "place": "Riviera", "year": "2024"}, {"src": "photos-web/matka-2025-costa-brava-cover-050.jpg", "place": "Costa Brava", "year": "2025"}, {"src": "photos-web/matka-2025-costa-brava-00-051.jpg", "place": "Costa Brava", "year": "2025"}, {"src": "photos-web/matka-2025-costa-brava-01-052.jpg", "place": "Costa Brava", "year": "2025"}, {"src": "photos-web/matka-2025-costa-brava-02-053.jpg", "place": "Costa Brava", "year": "2025"}, {"src": "photos-web/matka-2025-costa-brava-03-054.jpg", "place": "Costa Brava", "year": "2025"}, {"src": "photos-web/matka-2025-costa-brava-04-055.jpg", "place": "Costa Brava", "year": "2025"}, {"src": "photos-web/matka-2025-costa-brava-05-056.jpg", "place": "Costa Brava", "year": "2025"}, {"src": "photos-web/matka-2025-lontoo-cover-057.jpg", "place": "Lontoo", "year": "2025"}, {"src": "photos-web/matka-2025-lontoo-00-058.jpg", "place": "Lontoo", "year": "2025"}, {"src": "photos-web/matka-2025-lontoo-01-059.jpg", "place": "Lontoo", "year": "2025"}, {"src": "photos-web/matka-2025-lontoo-02-060.jpg", "place": "Lontoo", "year": "2025"}, {"src": "photos-web/matka-2025-lontoo-03-061.jpg", "place": "Lontoo", "year": "2025"}, {"src": "photos-web/matka-2025-lontoo-04-062.jpg", "place": "Lontoo", "year": "2025"}, {"src": "photos-web/matka-2025-lontoo-05-063.jpg", "place": "Lontoo", "year": "2025"}, {"src": "photos-web/matka-2026-brasilia-cover-064.jpg", "place": "Brasilia", "year": "2026"}, {"src": "photos-web/matka-2026-brasilia-00-065.jpg", "place": "Brasilia", "year": "2026"}, {"src": "photos-web/matka-2026-brasilia-01-066.jpg", "place": "Brasilia", "year": "2026"}, {"src": "photos-web/matka-2026-brasilia-02-067.jpg", "place": "Brasilia", "year": "2026"}, {"src": "photos-web/matka-2026-brasilia-03-068.jpg", "place": "Brasilia", "year": "2026"}, {"src": "photos-web/matka-2026-brasilia-04-069.jpg", "place": "Brasilia", "year": "2026"}, {"src": "photos-web/matka-2026-brasilia-05-070.jpg", "place": "Brasilia", "year": "2026"}, {"src": "photos-web/matka-2026-alicante-cover-071.jpg", "place": "Alicante", "year": "2026"}, {"src": "photos-web/matka-2026-alicante-00-072.jpg", "place": "Alicante", "year": "2026"}, {"src": "photos-web/matka-2026-alicante-01-073.jpg", "place": "Alicante", "year": "2026"}, {"src": "photos-web/matka-2026-alicante-02-074.jpg", "place": "Alicante", "year": "2026"}, {"src": "photos-web/matka-2026-alicante-03-075.jpg", "place": "Alicante", "year": "2026"}, {"src": "photos-web/matka-2026-alicante-04-076.jpg", "place": "Alicante", "year": "2026"}, {"src": "photos-web/matka-2026-alicante-05-077.jpg", "place": "Alicante", "year": "2026"}, {"src": "photos-web/matka-2018-2026-kalastus-cover-078.jpg", "place": "Kalastus", "year": "2018–2026"}, {"src": "photos-web/matka-2018-2026-kalastus-00-079.jpg", "place": "Kalastus", "year": "2018–2026"}, {"src": "photos-web/matka-2018-2026-kalastus-01-080.jpg", "place": "Kalastus", "year": "2018–2026"}, {"src": "photos-web/matka-2018-2026-kalastus-02-081.jpg", "place": "Kalastus", "year": "2018–2026"}, {"src": "photos-web/matka-2018-2026-kalastus-03-082.jpg", "place": "Kalastus", "year": "2018–2026"}, {"src": "photos-web/matka-2018-2026-kalastus-04-083.jpg", "place": "Kalastus", "year": "2018–2026"}, {"src": "photos-web/matka-2018-2026-kalastus-05-084.jpg", "place": "Kalastus", "year": "2018–2026"}],
-    schedule: {"timezone":"Europe/Helsinki","updated":"2026-09-20T10:57:00+03:00","schoolStarts":[{"who":"Ellen","label":"Koulu","time":"10:00","end":"13:00","weekdays":[1]},{"who":"Ellen","label":"Koulu","time":"08:00","end":"13:00","weekdays":[2]},{"who":"Ellen","label":"Koulu","time":"08:45","end":"15:00","weekdays":[3]},{"who":"Ellen","label":"Koulu","time":"10:00","end":"15:00","weekdays":[4]},{"who":"Ellen","label":"Koulu","time":"08:00","end":"13:00","weekdays":[5]},{"who":"Samuel","label":"Koulu","time":"08:45","end":"13:00","weekdays":[1]},{"who":"Samuel","label":"Koulu","time":"08:45","end":"13:00","weekdays":[2]},{"who":"Samuel","label":"Koulu","time":"08:45","end":"13:00","weekdays":[3]},{"who":"Samuel","label":"Koulu","time":"08:00","end":"12:00","weekdays":[4]},{"who":"Samuel","label":"Koulu","time":"08:00","end":"13:00","weekdays":[5]},{"who":"Milla","label":"Koulu","time":"09:40","end":"15:50","weekdays":[1]},{"who":"Milla","label":"Koulu","time":"09:40","end":"14:20","weekdays":[2]},{"who":"Milla","label":"Koulu","time":"09:40","end":"14:20","weekdays":[3]},{"who":"Milla","label":"Koulu","time":"08:10","end":"15:50","weekdays":[4]},{"who":"Milla","label":"Koulu","time":"09:40","end":"14:20","weekdays":[5]},{"who":"Mea","label":"Koulu","time":"08:00","end":"13:00","weekdays":[1]},{"who":"Mea","label":"Koulu","time":"08:00","end":"13:00","weekdays":[2]},{"who":"Mea","label":"Koulu","time":"10:00","end":"14:50","weekdays":[3]},{"who":"Mea","label":"Koulu","time":"08:00","end":"14:45","weekdays":[4]},{"who":"Mea","label":"Koulu","time":"08:00","end":"14:45","weekdays":[5]}],"note":"Kouluajat (alku–loppu) lukujärjestyksestä Perheeltä. Kuskit WA/kalenterista.","events":[{"date":"2026-09-20","time":"11:30","end":"14:00","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-20","time":"14:00","end":"15:00","who":"Ellen","title":"Ambrosia haku","place":"Kuopiohalli","kind":"muu","pickup":"Riikka"},{"date":"2026-09-20","time":"16:00","end":"18:30","who":"Mea","title":"Lianna hiontatreeni","place":"Bella Center","kind":"treeni","driver":"Elina","pickup":"Elina"},{"date":"2026-09-21","time":"17:00","end":"18:00","who":"Samuel","title":"Treeni","place":"Ylä-Pyörö","kind":"treeni","driver":"Sini/Topias"},{"date":"2026-09-21","time":"17:30","end":"18:30","who":"Milla","title":"Vivida oheinen","place":"Luola","kind":"treeni"},{"date":"2026-09-21","time":"18:30","end":"19:30","who":"Mea","title":"Lianna voima","place":"Luola","kind":"treeni"},{"date":"2026-09-22","time":"14:00","end":"15:00","who":"Mea","title":"Arja","place":"","kind":"muu"},{"date":"2026-09-22","time":"16:30","end":"18:00","who":"Samuel","title":"Treenit","place":"Lippumäki","kind":"treeni","driver":"Jussi","pickup":"Riikka"},{"date":"2026-09-22","time":"17:00","end":"17:45","who":"Mea","title":"Valmennus","place":"","kind":"treeni"},{"date":"2026-09-22","time":"17:00","end":"18:30","who":"Ellen","title":"Ambrosia treeni","place":"Kuopiohalli","kind":"treeni","driver":"Jussi","pickup":"Jussi"},{"date":"2026-09-23","time":"18:00","end":"20:00","who":"Ellen","title":"Ambrosia joukkueilta","place":"Leo's","kind":"muu"},{"date":"2026-09-23","time":"18:00","end":"20:30","who":"Mea","title":"Lianna treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-23","time":"18:00","end":"20:30","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-24","time":"17:00","end":"19:00","who":"Samuel","title":"Treeni","place":"Puijonsarven koulu","kind":"treeni","driver":"Jussi","pickup":"Jussi"},{"date":"2026-09-25","time":"08:00","end":"20:00","who":"Ellen","title":"Ambrosia NTV-kisat","place":"Luola","kind":"kisa"},{"date":"2026-09-25","time":"16:00","end":"18:30","who":"Ellen","title":"Ambrosia treeni","place":"Luola","kind":"treeni","driver":"Riikka"},{"date":"2026-09-25","time":"18:00","end":"20:30","who":"Mea","title":"Lianna treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-26","time":"12:30","end":"15:00","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-26","time":"16:00","end":"21:00","who":"Milla","title":"Vivida hiontaleiri","place":"Bella Center","kind":"treeni"},{"date":"2026-09-27","time":"11:30","end":"14:00","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-27","time":"16:00","end":"18:30","who":"Mea","title":"Lianna treeni","place":"Bella Center","kind":"treeni"}],"schoolLunch":{"2026-09-21":"Kalapuikot ja perunamuusi","2026-09-22":"Broilerikastike ja riisi","2026-09-23":"Kasviskeitto ja sämpylä","2026-09-24":"Makaronilaatikko","2026-09-25":"Kalakeitto","2026-09-28":"Nakkikeitto","2026-09-29":"Pasta bolognese","2026-09-30":"Uunilohi ja peruna","2026-10-01":"Kanawokki","2026-10-02":"Hernekeitto","2026-10-05":"Pinaattiletut","2026-10-06":"Jauhelihakastike ja peruna","2026-10-07":"Kalaleike ja peruna","2026-10-08":"Kasvispasta","2026-10-09":"Broilerikeitto"}},
+    schedule: {"timezone":"Europe/Helsinki","updated":"2026-09-20T11:10:00+03:00","schoolStarts":[{"who":"Ellen","label":"Koulu","time":"10:00","end":"13:00","weekdays":[1]},{"who":"Ellen","label":"Koulu","time":"08:00","end":"13:00","weekdays":[2]},{"who":"Ellen","label":"Koulu","time":"08:45","end":"15:00","weekdays":[3]},{"who":"Ellen","label":"Koulu","time":"10:00","end":"15:00","weekdays":[4]},{"who":"Ellen","label":"Koulu","time":"08:00","end":"13:00","weekdays":[5]},{"who":"Samuel","label":"Koulu","time":"08:45","end":"13:00","weekdays":[1]},{"who":"Samuel","label":"Koulu","time":"08:45","end":"13:00","weekdays":[2]},{"who":"Samuel","label":"Koulu","time":"08:45","end":"13:00","weekdays":[3]},{"who":"Samuel","label":"Koulu","time":"08:00","end":"12:00","weekdays":[4]},{"who":"Samuel","label":"Koulu","time":"08:00","end":"13:00","weekdays":[5]},{"who":"Milla","label":"Koulu","time":"09:40","end":"15:50","weekdays":[1]},{"who":"Milla","label":"Koulu","time":"09:40","end":"14:20","weekdays":[2]},{"who":"Milla","label":"Koulu","time":"09:40","end":"14:20","weekdays":[3]},{"who":"Milla","label":"Koulu","time":"08:10","end":"15:50","weekdays":[4]},{"who":"Milla","label":"Koulu","time":"09:40","end":"14:20","weekdays":[5]},{"who":"Mea","label":"Koulu","time":"08:00","end":"13:00","weekdays":[1]},{"who":"Mea","label":"Koulu","time":"08:00","end":"13:00","weekdays":[2]},{"who":"Mea","label":"Koulu","time":"10:00","end":"14:50","weekdays":[3]},{"who":"Mea","label":"Koulu","time":"08:00","end":"14:45","weekdays":[4]},{"who":"Mea","label":"Koulu","time":"08:00","end":"14:45","weekdays":[5]}],"note":"Kouluajat (alku–loppu) lukujärjestyksestä Perheeltä. Kuskit WA/kalenterista. Kotiruoka homeMeals Perheeltä 19.–25.9.","events":[{"date":"2026-09-20","time":"11:30","end":"14:00","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-20","time":"14:00","end":"15:00","who":"Ellen","title":"Ambrosia haku","place":"Kuopiohalli","kind":"muu","pickup":"Riikka"},{"date":"2026-09-20","time":"16:00","end":"18:30","who":"Mea","title":"Lianna hiontatreeni","place":"Bella Center","kind":"treeni","driver":"Elina","pickup":"Elina"},{"date":"2026-09-21","time":"17:00","end":"18:00","who":"Samuel","title":"Treeni","place":"Ylä-Pyörö","kind":"treeni","driver":"Sini/Topias"},{"date":"2026-09-21","time":"17:30","end":"18:30","who":"Milla","title":"Vivida oheinen","place":"Luola","kind":"treeni"},{"date":"2026-09-21","time":"18:30","end":"19:30","who":"Mea","title":"Lianna voima","place":"Luola","kind":"treeni"},{"date":"2026-09-22","time":"14:00","end":"15:00","who":"Mea","title":"Arja","place":"","kind":"muu"},{"date":"2026-09-22","time":"16:30","end":"18:00","who":"Samuel","title":"Treenit","place":"Lippumäki","kind":"treeni","driver":"Jussi","pickup":"Riikka"},{"date":"2026-09-22","time":"17:00","end":"17:45","who":"Mea","title":"Valmennus","place":"","kind":"treeni"},{"date":"2026-09-22","time":"17:00","end":"18:30","who":"Ellen","title":"Ambrosia treeni","place":"Kuopiohalli","kind":"treeni","driver":"Jussi","pickup":"Jussi"},{"date":"2026-09-23","time":"18:00","end":"20:00","who":"Ellen","title":"Ambrosia joukkueilta","place":"Leo's","kind":"muu"},{"date":"2026-09-23","time":"18:00","end":"20:30","who":"Mea","title":"Lianna treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-23","time":"18:00","end":"20:30","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-24","time":"17:00","end":"19:00","who":"Samuel","title":"Treeni","place":"Puijonsarven koulu","kind":"treeni","driver":"Jussi","pickup":"Jussi"},{"date":"2026-09-25","time":"08:00","end":"20:00","who":"Ellen","title":"Ambrosia NTV-kisat","place":"Luola","kind":"kisa"},{"date":"2026-09-25","time":"16:00","end":"18:30","who":"Ellen","title":"Ambrosia treeni","place":"Luola","kind":"treeni","driver":"Riikka"},{"date":"2026-09-25","time":"18:00","end":"20:30","who":"Mea","title":"Lianna treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-26","time":"12:30","end":"15:00","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-26","time":"16:00","end":"21:00","who":"Milla","title":"Vivida hiontaleiri","place":"Bella Center","kind":"treeni"},{"date":"2026-09-27","time":"11:30","end":"14:00","who":"Milla","title":"Vivida treeni","place":"Bella Center","kind":"treeni"},{"date":"2026-09-27","time":"16:00","end":"18:30","who":"Mea","title":"Lianna treeni","place":"Bella Center","kind":"treeni"}],"schoolLunch":{"2026-09-21":"Kalapuikot ja perunamuusi","2026-09-22":"Broilerikastike ja riisi","2026-09-23":"Kasviskeitto ja sämpylä","2026-09-24":"Makaronilaatikko","2026-09-25":"Kalakeitto","2026-09-28":"Nakkikeitto","2026-09-29":"Pasta bolognese","2026-09-30":"Uunilohi ja peruna","2026-10-01":"Kanawokki","2026-10-02":"Hernekeitto","2026-10-05":"Pinaattiletut","2026-10-06":"Jauhelihakastike ja peruna","2026-10-07":"Kalaleike ja peruna","2026-10-08":"Kasvispasta","2026-10-09":"Broilerikeitto"},"homeMeals":{"2026-09-19":"Nacho-pelti","2026-09-20":"Hampparit (liha + Beyond)","2026-09-21":"Lohikeitto","2026-09-22":"Kana + riisi + kermakastike","2026-09-23":"Koulun tonnikalapasta (ei purjoa)","2026-09-24":"Tähteet","2026-09-25":"Katkarapukeitto + patongit"}},
     goods: [
       "Yhdessä olemisen ilo.",
       "Pieniä hetkiä, isoja muistoja.",
@@ -989,6 +1043,30 @@
       "</div>" + sub + "</div></div>";
   }
 
+
+  const DOW_HM = ["ma", "ti", "ke", "to", "pe", "la", "su"];
+
+  function renderHomeMeals(schedule) {
+    const row = document.getElementById("homeMealsRow");
+    if (!row) return;
+    const map = (schedule && schedule.homeMeals) || {};
+    const n = nowInTZ();
+    const today = isoDate(n);
+    const mon = mondayOfWeek(n);
+    let out = "";
+    for (let i = 0; i < 7; i++) {
+      const iso = addDaysIso(mon, i);
+      const dish = map[iso] || map[DOW_HM[i]] || "";
+      const isToday = iso === today;
+      const empty = !dish;
+      out += '<div class="hm-day' + (isToday ? " is-today" : "") +
+        (empty ? " is-empty" : "") + '">' +
+        '<div class="hm-dow">' + DOW_HM[i] + "</div>" +
+        '<div class="hm-dish">' + escapeHtml(dish || "—") + "</div></div>";
+    }
+    row.innerHTML = out;
+  }
+
   function renderToday(schedule) {
     const n = nowInTZ();
     const wd = new Date(n.y, n.m - 1, n.d).getDay();
@@ -1027,6 +1105,7 @@
     } else {
       note.hidden = true;
     }
+    renderHomeMeals(sch);
     renderMonthCal(sch);
     renderWeekSoft(sch);
     scheduleFit();
@@ -1044,31 +1123,38 @@
     const label = document.getElementById("monthCalLabel");
     const grid = document.getElementById("monthCalGrid");
     if (!label || !grid) return;
-    label.textContent = MONTH_NAMES[n.m - 1];
+
+    /* Rolling ~31 days from today (week-aligned) */
+    const todayIso = isoDate(n);
+    const endIso = addDaysIso(n, 30);
+    const endP = endIso.split("-");
+    label.textContent = n.d + "." + n.m + ".–" + (+endP[2]) + "." + (+endP[1]) + ".";
 
     const events = (schedule && schedule.events) || [];
-    const byDay = {};
+    const byIso = {};
     events.forEach(e => {
-      if (!e.date || !e.date.startsWith(n.y + "-" + pad(n.m))) return;
-      const day = +e.date.slice(8, 10);
-      if (!byDay[day]) byDay[day] = [];
-      byDay[day].push(e);
+      if (!e.date || e.date < todayIso || e.date > endIso) return;
+      if (!byIso[e.date]) byIso[e.date] = [];
+      byIso[e.date].push(e);
     });
-    Object.keys(byDay).forEach(d => {
-      byDay[d].sort((a, b) => String(a.time).localeCompare(String(b.time)));
+    Object.keys(byIso).forEach(k => {
+      byIso[k].sort((a, b) => String(a.time).localeCompare(String(b.time)));
     });
 
-    const first = new Date(n.y, n.m - 1, 1);
-    let startDow = first.getDay();
+    const start = new Date(n.y, n.m - 1, n.d);
+    let startDow = start.getDay();
     startDow = startDow === 0 ? 6 : startDow - 1;
-    const daysInMonth = new Date(n.y, n.m, 0).getDate();
 
     let htmlOut = DOW_SHORT.map(d => '<div class="month-cal-dow">' + d + "</div>").join("");
     for (let i = 0; i < startDow; i++) htmlOut += '<div class="month-cal-day empty"></div>';
-    for (let d = 1; d <= daysInMonth; d++) {
+    for (let i = 0; i <= 30; i++) {
+      const iso = addDaysIso(n, i);
+      const parts = iso.split("-");
+      const dayNum = +parts[2];
+      const monNum = +parts[1];
       const cls = ["month-cal-day"];
-      if (d === n.d) cls.push("today");
-      const evs = byDay[d] || [];
+      if (iso === todayIso) cls.push("today");
+      const evs = byIso[iso] || [];
       let pills = "";
       if (evs.length) {
         pills = '<div class="cal-pills">' + evs.map(e => {
@@ -1077,8 +1163,10 @@
             escapeHtml(pillText(e)) + "</span>";
         }).join("") + "</div>";
       }
-      htmlOut += '<div class="' + cls.join(" ") + '"><div class="month-cal-num">' + d +
-        "</div>" + pills + "</div>";
+      const monHint = (i === 0 || dayNum === 1)
+        ? '<span class="md">' + monNum + ".</span>" : "";
+      htmlOut += '<div class="' + cls.join(" ") + '"><div class="month-cal-num">' + dayNum +
+        "." + monHint + "</div>" + pills + "</div>";
     }
     grid.innerHTML = htmlOut;
   }
@@ -1126,7 +1214,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=9", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1359,7 +1447,7 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v7 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw");
+  console.info("[fiilis] v9 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw");
 })();
 </script>
 </body>

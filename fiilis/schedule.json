@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-20T10:57:00+03:00",
+  "updated": "2026-09-20T11:10:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Kouluajat (alku–loppu) lukujärjestyksestä Perheeltä. Kuskit WA/kalenterista.",
+  "note": "Kouluajat (alku–loppu) lukujärjestyksestä Perheeltä. Kuskit WA/kalenterista. Kotiruoka homeMeals Perheeltä 19.–25.9.",
   "events": [
     {
       "date": "2026-09-20",

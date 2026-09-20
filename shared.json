@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-20T12:39:01.757236+03:00",
+  "updated": "2026-09-20T14:09:32.770931+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -293,6 +293,15 @@
       "status": ""
     },
     {
+      "id": "cal-d52kgjc4igacs9uutt1r03k0o0",
+      "title": "Mea · Liannan voimat",
+      "date": "2026-09-21",
+      "start": "18:30",
+      "end": "19:30",
+      "kind": "cal",
+      "place": "Luola"
+    },
+    {
       "id": "info-mea-voimat-2026-09-21",
       "who": "mea",
       "title": "Liannan voimat",
@@ -350,22 +359,22 @@
       "status": ""
     },
     {
+      "id": "info-kkp-2026-09-25",
+      "who": "",
+      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
+      "date": "2026-09-25",
+      "place": "Aurinkorinteen koulu",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-ntv-kisat-2026-09-25",
       "who": "ellen",
       "title": "Ambrosia NTV-kisat + talkoot",
       "date": "2026-09-25",
       "dateEnd": "2026-09-27",
       "place": "Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-kkp-2026-09-25",
-      "who": "",
-      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
-      "date": "2026-09-25",
-      "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
       "status": ""

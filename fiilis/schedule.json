@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-20T11:20:00+03:00",
+  "updated": "2026-09-20T12:15:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Perhe authoritative 20.9.2026 v14: 20.9–20.10 + Lontoo C38QGW 13.–17.10, Riikka Oulu 6.–9.10, Ainon juhlat 3.10.",
+  "note": "Perhe authoritative 20.9.2026 v15: 20.9–20.10 + Lontoo C38QGW 13.–17.10, Riikka Oulu 6.–9.10, Ainon juhlat 3.10. + synttärit/hääpäivä + Riikka synttärijuhlat kavereille 24.10.",
   "events": [
     {
       "date": "2026-09-20",
@@ -591,7 +591,7 @@
     {
       "date": "2026-10-24",
       "who": "Riikka",
-      "title": "Syntymäpäivä",
+      "title": "Synttärijuhlat kavereille",
       "kind": "juhla"
     }
   ],
@@ -628,6 +628,51 @@
       "to": "2026-10-09",
       "where": "Oulu",
       "note": "Älä ehdota Riikkaa kusiksi näinä päivinä"
+    }
+  ],
+  "anniversaries": [
+    {
+      "who": "Jussi",
+      "date": "1985-02-19",
+      "kind": "birthday"
+    },
+    {
+      "who": "Riikka",
+      "date": "1986-10-12",
+      "kind": "birthday"
+    },
+    {
+      "who": "Milla",
+      "date": "2010-06-01",
+      "kind": "birthday"
+    },
+    {
+      "who": "Mea",
+      "date": "2012-09-12",
+      "kind": "birthday"
+    },
+    {
+      "who": "Ellen",
+      "date": "2016-05-16",
+      "kind": "birthday"
+    },
+    {
+      "who": "Samuel",
+      "date": "2018-04-20",
+      "kind": "birthday"
+    },
+    {
+      "who": "perhe",
+      "date": "2010-10-02",
+      "kind": "wedding",
+      "label": "Hääpäivä"
+    },
+    {
+      "who": "Riikka",
+      "date": "2000-10-24",
+      "kind": "party",
+      "label": "synttärijuhlat kavereille",
+      "mmdd": "10-24"
     }
   ]
 }

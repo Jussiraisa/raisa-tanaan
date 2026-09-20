@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="fi" data-tv-kiosk data-tv-portrait data-rotate="cw">
+<html lang="fi" data-tv-kiosk>
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v28" />
+<meta name="fiilis-build" content="20260920-v29" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -271,8 +271,8 @@
     transform: translate(-50%, -50%) rotate(-90deg) scale(var(--fit-scale));
   }
 
-  /* v28: kiosk without rotate uses classic letterbox (.shell sized * s, .stage scale(s)).
-     Rotated kiosk uses data-tv-portrait rules above (shell = visual H*s × W*s). */
+  /* v29: kiosk without rotate = classic letterbox (.shell = W*s × H*s, .stage scale(s) top-left).
+     NO stretch (never 100vw/100vh on .shell/.stage). Rotate only with data-tv-portrait. */
 
   .stage::before {
     content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
@@ -788,7 +788,7 @@
   <noscript>
     <div style="padding:1.5rem;font-family:system-ui,sans-serif;color:#2c2418;background:#f6f0e4;min-height:40vh">
       <p><strong>Fiilis</strong> tarvitsee JavaScriptin. Avaa uudelleen tai käytä selainta, jossa JS on päällä.</p>
-      <p>Räisä · Fiilis · v28</p>
+      <p>Räisä · Fiilis · v29</p>
     </div>
   </noscript>
   <div class="shell"><div class="stage">
@@ -880,7 +880,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v28</footer>
+    <footer class="footer">Räisä · Fiilis · v29</footer>
   </div></div>
 
 <script>
@@ -889,7 +889,7 @@
   try {
   const TZ = "Europe/Helsinki";
 
-  /* TV rotate: tv.html defaults CW; index/?tv needs ?rotate=; phone/iPad never auto. */
+  /* TV rotate: OPT-IN only (?rotate=cw|ccw). tv.html default = letterbox, no rotate. */
   function getSearchParams() {
     /* Google TV / some browsers paste literal &amp; into the address bar */
     return new URLSearchParams(String(location.search || "").replace(/&amp;/gi, "&"));
@@ -926,19 +926,16 @@
   }
   function applyTvPortrait() {
     const html = document.documentElement;
-    /* tv.html: default CW rotate (kitchen landscape browser / portrait panel).
-       ?rotate=0|off → letterbox portrait without rotate. */
+    /* tv.html: NO default rotate. Apply ONLY if ?rotate=cw|ccw.
+       Default = letterbox portrait board in landscape (cream bars). */
     if (isTvHtmlEntrypoint()) {
       const param = parseRotateParam();
-      if (param && param.force === false) {
-        html.removeAttribute("data-tv-portrait");
-        html.removeAttribute("data-rotate");
-      } else if (param && param.force) {
+      if (param && param.force) {
         html.setAttribute("data-tv-portrait", "");
         html.setAttribute("data-rotate", param.dir || "cw");
       } else {
-        html.setAttribute("data-tv-portrait", "");
-        html.setAttribute("data-rotate", "cw");
+        html.removeAttribute("data-tv-portrait");
+        html.removeAttribute("data-rotate");
       }
       return;
     }
@@ -1009,7 +1006,7 @@
       shell.style.setProperty("--fit-scale", "1");
       return;
     }
-    // v28: kiosk letterbox (rotated or not) — compute --fit-scale for stage transform
+    // v29: kiosk letterbox (rotated or not) — always compute --fit-scale (never skip)
     const { vw, vh } = viewportSize();
     /* Google TV often reports 0 early — retry every 250ms up to 20 times */
     if (!vw || !vh) {
@@ -1628,7 +1625,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v28", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v29", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1889,7 +1886,7 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v28 memories:", captions.length, "tv-rotate: tv.html default CW; ?rotate=0 letterbox; mobile: flow-layout+no-scale+12mem");
+  console.info("[fiilis] v29 memories:", captions.length, "tv-rotate: tv.html default letterbox NO rotate; ?rotate=cw|ccw opt-in; mobile: flow-layout+no-scale+12mem");
   } catch (err) {
     try { console.error("[fiilis] boot failed", err); } catch (_) {}
     try {
@@ -1903,9 +1900,9 @@
         '<main style="padding:2.5rem;font-family:system-ui,-apple-system,sans-serif;color:#1a1410;background:#f6f0e4;min-height:100vh;font-size:clamp(1.25rem,3.5vw,2rem);line-height:1.45">' +
         '<p style="font-weight:700;margin:0 0 1rem;font-size:1.35em">Fiilis ei käynnistynyt.</p>' +
         '<p style="margin:0 0 1.5rem">TV: avaa uudelleen. Puhelin: yksinkertainen näkymä.</p>' +
-        '<p style="margin:0 0 1rem"><a href="tv.html" style="color:#1a1410;font-weight:700">Avaa TV-tila (tv.html) · v28</a></p>' +
-        '<p style="margin:0 0 1rem"><a href="m.html?v=20260920v28" style="color:#1a1410;font-weight:700">Yksinkertainen näkymä (m.html)</a></p>' +
-        '<p style="margin:0"><a href="?v=20260920v28" style="color:#1a1410">Avaa uudelleen</a></p></main>';
+        '<p style="margin:0 0 1rem"><a href="tv.html" style="color:#1a1410;font-weight:700">Avaa TV-tila (tv.html) · v29</a></p>' +
+        '<p style="margin:0 0 1rem"><a href="m.html?v=20260920v29" style="color:#1a1410;font-weight:700">Yksinkertainen näkymä (m.html)</a></p>' +
+        '<p style="margin:0"><a href="?v=20260920v29" style="color:#1a1410">Avaa uudelleen</a></p></main>';
     } catch (_) {}
   }
 })();

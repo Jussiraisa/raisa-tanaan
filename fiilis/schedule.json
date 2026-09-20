@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-20T11:10:00+03:00",
+  "updated": "2026-09-20T11:00:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,17 +183,8 @@
       ]
     }
   ],
-  "note": "Kouluajat (alku–loppu) lukujärjestyksestä Perheeltä. Kuskit WA/kalenterista. Kotiruoka homeMeals Perheeltä 19.–25.9.",
+  "note": "Perhe shared.json sync 20.9.2026: treenit, kotiruoka, koululounas ma 21.9, poissaolot (Riikka Oulu 6.–9.10).",
   "events": [
-    {
-      "date": "2026-09-20",
-      "time": "11:30",
-      "end": "14:00",
-      "who": "Milla",
-      "title": "Vivida treeni",
-      "place": "Bella Center",
-      "kind": "treeni"
-    },
     {
       "date": "2026-09-20",
       "time": "14:00",
@@ -216,23 +207,32 @@
       "pickup": "Elina"
     },
     {
+      "date": "2026-09-20",
+      "time": "17:30",
+      "end": "20:00",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-21",
+      "time": "11:00",
+      "end": "13:00",
+      "who": "Samuel",
+      "title": "Retki",
+      "place": "Pölläkänlahti",
+      "kind": "muu"
+    },
+    {
       "date": "2026-09-21",
       "time": "17:00",
       "end": "18:00",
       "who": "Samuel",
-      "title": "Treeni",
+      "title": "Welhot",
       "place": "Ylä-Pyörö",
       "kind": "treeni",
       "driver": "Sini/Topias"
-    },
-    {
-      "date": "2026-09-21",
-      "time": "17:30",
-      "end": "18:30",
-      "who": "Milla",
-      "title": "Vivida oheinen",
-      "place": "Luola",
-      "kind": "treeni"
     },
     {
       "date": "2026-09-21",
@@ -266,15 +266,6 @@
     {
       "date": "2026-09-22",
       "time": "17:00",
-      "end": "17:45",
-      "who": "Mea",
-      "title": "Valmennus",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "date": "2026-09-22",
-      "time": "17:00",
       "end": "18:30",
       "who": "Ellen",
       "title": "Ambrosia treeni",
@@ -284,11 +275,20 @@
       "pickup": "Jussi"
     },
     {
+      "date": "2026-09-22",
+      "time": "17:00",
+      "end": "17:45",
+      "who": "Mea",
+      "title": "Valmennus",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
       "date": "2026-09-23",
       "time": "18:00",
       "end": "20:00",
       "who": "Ellen",
-      "title": "Ambrosia joukkueilta",
+      "title": "Leo's / Ambrosia joukkueilta",
       "place": "Leo's",
       "kind": "muu"
     },
@@ -337,8 +337,7 @@
       "who": "Ellen",
       "title": "Ambrosia treeni",
       "place": "Luola",
-      "kind": "treeni",
-      "driver": "Riikka"
+      "kind": "treeni"
     },
     {
       "date": "2026-09-25",
@@ -351,12 +350,10 @@
     },
     {
       "date": "2026-09-26",
-      "time": "12:30",
-      "end": "15:00",
-      "who": "Milla",
-      "title": "Vivida treeni",
-      "place": "Bella Center",
-      "kind": "treeni"
+      "time": "13:00",
+      "who": "Mea",
+      "title": "Synttärit",
+      "kind": "juhla"
     },
     {
       "date": "2026-09-26",
@@ -387,7 +384,7 @@
     }
   ],
   "schoolLunch": {
-    "2026-09-21": "Kalapuikot ja perunamuusi",
+    "2026-09-21": "Appelsiini-broilerikastike + riisi-kaura (kasvis: tofukasviskastike)",
     "2026-09-22": "Broilerikastike ja riisi",
     "2026-09-23": "Kasviskeitto ja sämpylä",
     "2026-09-24": "Makaronilaatikko",
@@ -405,11 +402,20 @@
   },
   "homeMeals": {
     "2026-09-19": "Nacho-pelti",
-    "2026-09-20": "Hampparit (liha + Beyond)",
+    "2026-09-20": "Hampparit",
     "2026-09-21": "Lohikeitto",
     "2026-09-22": "Kana + riisi + kermakastike",
     "2026-09-23": "Koulun tonnikalapasta (ei purjoa)",
     "2026-09-24": "Tähteet",
     "2026-09-25": "Katkarapukeitto + patongit"
-  }
+  },
+  "absences": [
+    {
+      "who": "Riikka",
+      "from": "2026-10-06",
+      "to": "2026-10-09",
+      "where": "Oulu",
+      "note": "Älä ehdota Riikkaa kusiksi näinä päivinä"
+    }
+  ]
 }

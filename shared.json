@@ -1,11 +1,11 @@
 {
   "v": 1,
-  "updated": "2026-09-20T07:25:03.688972+03:00",
+  "updated": 1789878393088,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
       "status": "other",
-      "ride": ""
+      "ride": "vie+hakee"
     },
     "ellen-ambrosia-pe": {
       "driver": "Riikka",
@@ -20,7 +20,7 @@
     "samuel-sahly-ti": {
       "driver": "Jussi vie · Riikka hakee 18:00",
       "status": "us",
-      "ride": ""
+      "ride": "vie+hakee"
     },
     "samuel-sahly": {
       "driver": "Jussi",
@@ -67,17 +67,32 @@
       "status": "us",
       "ride": ""
     },
+    "cal-fih6q5lol7al6pcsoeo5v7gsr0": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
     "sheet-mea-2026-09-20": {
-      "driver": "Elina hakee ~12.05 (Enni+Julia out)",
+      "driver": "Elina ~12.05",
       "status": "other",
-      "ride": "vie"
+      "ride": ""
     },
     "sheet-milla-2026-09-20": {
       "driver": "",
       "status": "",
       "ride": ""
     },
+    "info-ellen-kyyti-su-2026-09-20": {
+      "driver": "Riikka",
+      "status": "us",
+      "ride": ""
+    },
     "info-samuel-retki-2026-09-21": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-mea-voimat-2026-09-21": {
       "driver": "",
       "status": "",
       "ride": ""
@@ -87,12 +102,12 @@
       "status": "",
       "ride": ""
     },
-    "info-ilmoitus-kkp-deadline-2026-09-23": {
+    "info-ellen-leos-2026-09-23": {
       "driver": "",
       "status": "",
       "ride": ""
     },
-    "info-ellen-leos-2026-09-23": {
+    "info-ilmoitus-kkp-deadline-2026-09-23": {
       "driver": "",
       "status": "",
       "ride": ""
@@ -112,7 +127,32 @@
       "status": "",
       "ride": ""
     },
+    "info-milla-hionta-2026-09-26": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-mea-voimat-2026-09-28": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
     "info-koulukuvaus-ellen-2026-09-30": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-ellen-vanhempainilta-2026-10-01": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-samuel-pelipassi-2026-10-01": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-milla-hionta-2026-10-03": {
       "driver": "",
       "status": "",
       "ride": ""
@@ -122,12 +162,17 @@
       "status": "",
       "ride": ""
     },
-    "info-riikka-oulu-2026-10-06": {
-      "driver": "Oma auto + juna",
-      "status": "us",
+    "info-mea-voimat-2026-10-05": {
+      "driver": "",
+      "status": "",
       "ride": ""
     },
     "info-lianna-harkkakisa-2026-10-06": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-riikka-oulu-2026-10-06": {
       "driver": "",
       "status": "",
       "ride": ""
@@ -137,10 +182,25 @@
       "status": "",
       "ride": ""
     },
-    "info-ellen-kyyti-su-2026-09-20": {
-      "driver": "Riikka",
-      "status": "us",
-      "ride": "hakee"
+    "info-samuel-turnaus-2026-10-31": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-samuel-turnaus-2026-11-15": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-samuel-turnaus-2026-11-28": {
+      "driver": "",
+      "status": "",
+      "ride": ""
+    },
+    "info-samuel-turnaus-2026-12-19": {
+      "driver": "",
+      "status": "",
+      "ride": ""
     }
   },
   "cooks": {
@@ -148,20 +208,20 @@
     "ti": "",
     "ke": "",
     "to": "",
-    "pe": "",
-    "la": "",
+    "pe": "Milla ja muut auttaa",
+    "la": "äiti",
     "su": ""
   },
   "dishes": {
-    "la": "Nacho-pelti",
-    "su": "Hampparit (liha + Beyond)",
-    "ma": "Lohikeitto",
-    "ti": "Kana + riisi + kermakastike",
-    "ke": "Koulun tonnikalapasta (ei purjoa)",
-    "to": "Tähteet",
-    "pe": "Katkarapukeitto + patongit"
+    "ma": "Lihapullat + muusi",
+    "ti": "Kana + basmati",
+    "ke": "Makaroonilaatikko + 1 annos pasta bolognese",
+    "to": "Jämät: makaroonilaatikko, lasagne, bolognese, pinaattiletut, pitsat",
+    "pe": "Burgerit",
+    "la": "Bolognese",
+    "su": "Sushi"
   },
-  "note": "Tee: Elina hakee Mean ~12.05 · Riikka Ellen Ambrosia haku Kuopiohalli · Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Milla hiontaleiri la 26.9. · Mea synttärit 26.9. 13 · Samuel pelipassi 1.10. · Ambrosia vanhempainilta 1.10. klo 17 BC · Joensuu turnaus 3.10.",
+  "note": "",
   "extras": [
     {
       "id": "cal-fih6q5lol7al6pcsoeo5v7gsr0",
@@ -170,7 +230,9 @@
       "start": "14:00",
       "end": "15:00",
       "kind": "cal",
-      "place": "Kuopiohalli"
+      "place": "Kuopiohalli",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "sheet-mea-2026-09-20",
@@ -192,7 +254,9 @@
       "start": "17:30",
       "end": "20:00",
       "place": "BellaCenter",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ellen-kyyti-su-2026-09-20",
@@ -214,7 +278,9 @@
       "start": "11:00",
       "end": "13:00",
       "place": "Pölläkänlahti",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-mea-voimat-2026-09-21",
@@ -224,7 +290,9 @@
       "start": "18:30",
       "end": "19:30",
       "place": "Luola",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-pentutreffit-2026-09-22",
@@ -233,7 +301,9 @@
       "start": "",
       "end": "",
       "place": "Koti",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ellen-leos-2026-09-23",
@@ -243,7 +313,9 @@
       "start": "18:00",
       "end": "20:00",
       "place": "Leo’s Leikkimaa",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",
@@ -251,7 +323,9 @@
       "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
       "date": "2026-09-23",
       "place": "Wilma/opettaja",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-kkp-2026-09-25",
@@ -259,7 +333,9 @@
       "title": "Kodin ja koulun päivä (Ellen + Samuel)",
       "date": "2026-09-25",
       "place": "Aurinkorinteen koulu",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ntv-kisat-2026-09-25",
@@ -268,7 +344,9 @@
       "date": "2026-09-25",
       "dateEnd": "2026-09-27",
       "place": "Luola",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-mea-synttarit-2026-09-26",
@@ -278,7 +356,9 @@
       "end": "",
       "place": "",
       "kind": "info",
-      "who": "mea"
+      "who": "mea",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-milla-hionta-2026-09-26",
@@ -288,7 +368,9 @@
       "start": "16:00",
       "end": "21:00",
       "place": "Bella Center",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-mea-voimat-2026-09-28",
@@ -298,7 +380,9 @@
       "start": "18:00",
       "end": "19:00",
       "place": "Kuoppari",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-koulukuvaus-ellen-2026-09-30",
@@ -306,7 +390,9 @@
       "title": "Koulukuvaus (lomake opettajalle)",
       "date": "2026-09-30",
       "dateEnd": "2026-10-01",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ellen-vanhempainilta-2026-10-01",
@@ -316,14 +402,18 @@
       "start": "17:00",
       "end": "",
       "place": "Bella Center parvi",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-samuel-pelipassi-2026-10-01",
       "who": "samuel",
       "title": "Welhot P9 pelipassi hankittava",
       "date": "2026-10-01",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-milla-hionta-2026-10-03",
@@ -333,7 +423,9 @@
       "start": "12:30",
       "end": "17:30",
       "place": "Bella Center",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-samuel-turnaus-2026-10-03",
@@ -341,7 +433,9 @@
       "title": "Welhot P9 turnaus Joensuu (kauden alku)",
       "date": "2026-10-03",
       "place": "Joensuu",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-mea-voimat-2026-10-05",
@@ -351,7 +445,9 @@
       "start": "18:30",
       "end": "19:30",
       "place": "Kuoppari",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-lianna-harkkakisa-2026-10-06",
@@ -361,7 +457,9 @@
       "start": "17:00",
       "end": "19:00",
       "place": "Ylä-Pyörön koulu",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-riikka-oulu-2026-10-06",
@@ -370,7 +468,9 @@
       "date": "2026-10-06",
       "dateEnd": "2026-10-09",
       "kind": "info",
-      "place": "Oulu"
+      "place": "Oulu",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-mea-terapia-2026-10-07",
@@ -380,7 +480,9 @@
       "start": "17:00",
       "end": "",
       "kind": "info",
-      "place": ""
+      "place": "",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-samuel-turnaus-2026-10-31",
@@ -388,7 +490,9 @@
       "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
       "date": "2026-10-31",
       "place": "Kuopio Studentia",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",
@@ -396,7 +500,9 @@
       "title": "Welhot P9 turnaus Suonenjoki",
       "date": "2026-11-15",
       "place": "Suonenjoki",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-samuel-turnaus-2026-11-28",
@@ -404,7 +510,9 @@
       "title": "Welhot P9 turnaus Siilinjärvi",
       "date": "2026-11-28",
       "place": "Siilinjärvi",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-samuel-turnaus-2026-12-19",
@@ -412,7 +520,9 @@
       "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
       "date": "2026-12-19",
       "place": "Kuopio Luola",
-      "kind": "info"
+      "kind": "info",
+      "driver": "",
+      "status": ""
     }
   ],
   "schoolLunch": {

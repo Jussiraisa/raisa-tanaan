@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="fiilis-build" content="20260920-v24-m" />
+<meta name="fiilis-build" content="20260920-v25-m" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <title>Fiilis · yksinkertainen</title>
 <style>
@@ -85,11 +85,21 @@
     <div class="when" id="londonWhen">13.–17. lokakuuta</div>
   </div>
 
-  <p class="foot">Räisä · Fiilis · yksinkertainen v24 · <a href="./?tv=1&amp;v=20260920v24">TV</a> · <a href="./?v=20260920v24">täysi</a></p>
+  <p class="foot">Räisä · Fiilis · yksinkertainen v25 · <a href="./?tv=1&amp;v=20260920v25">TV</a> · <a href="./?v=20260920v25">täysi</a></p>
 
 <script>
 (function () {
   "use strict";
+  // Kitchen TV / Chromecast: never stay on phone-read m.html — jump to kiosk.
+  var _ua = navigator.userAgent || "";
+  var _tvUa = /TV|CrKey|GoogleTV|BRAVIA|SmartTV|Android TV|AFT|AppleTV|Vizi|Chromecast/i.test(_ua);
+  var _sw = Math.min(screen.width || 0, screen.height || 0);
+  var _sh = Math.max(screen.width || 0, screen.height || 0);
+  var _large = _sw >= 700 && _sh >= 1100;
+  if (_tvUa || _large) {
+    location.replace("./?tv=1&v=20260920v25");
+    return;
+  }
   var TZ = "Europe/Helsinki";
   var WEEKDAYS = ["sunnuntai","maanantai","tiistai","keskiviikko","torstai","perjantai","lauantai"];
   var MONTHS = ["tammikuuta","helmikuuta","maaliskuuta","huhtikuuta","toukokuuta","kesäkuuta",
@@ -253,7 +263,7 @@
 
   function load() {
     tick();
-    fetch("schedule.json?v=20260920v24", { cache: "no-store" })
+    fetch("schedule.json?v=20260920v25", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("schedule"); return r.json(); })
       .then(function (data) { renderSchedule(data); })
       .catch(function () {

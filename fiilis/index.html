@@ -71,12 +71,13 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
     height: 100%; width: 100%;
-    background: var(--bg); color: var(--ink);
+    background: #0a0806; color: var(--ink);
     font-family: var(--body);
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
   }
   body {
+    display: flex; align-items: center; justify-content: center;
     transition:
       background var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease),
       --bg var(--theme-dur) var(--ease), --bg-soft var(--theme-dur) var(--ease),
@@ -87,11 +88,15 @@
       --vignette var(--theme-dur) var(--ease);
   }
 
+  /* Fixed portrait board 1080×1920, always scaled to fit the window */
   .stage {
     --fit-scale: 1;
-    width: min(100vw, 1080px);
-    height: 100dvh; max-height: 100dvh;
-    margin: 0 auto; position: relative;
+    --board-w: 1080px;
+    --board-h: 1920px;
+    width: var(--board-w);
+    height: var(--board-h);
+    flex-shrink: 0;
+    margin: 0; position: relative;
     display: flex; flex-direction: column;
     padding: var(--pad);
     padding-top: max(var(--pad), env(safe-area-inset-top));
@@ -99,7 +104,7 @@
     overflow: hidden;
     background: var(--bg); color: var(--ink);
     transform: scale(var(--fit-scale));
-    transform-origin: top center;
+    transform-origin: center center;
     transition: background var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease);
   }
 
@@ -107,11 +112,14 @@
   html[data-tv-portrait], html[data-tv-portrait] body {
     width: 100vw; height: 100vh; overflow: hidden; overscroll-behavior: none;
   }
+  html[data-tv-portrait] body {
+    display: block;
+  }
   html[data-tv-portrait] .stage {
     --pad: clamp(0.85rem, 2.2vw, 1.35rem);
-    position: fixed; width: 100dvh; height: 100dvw;
-    max-width: none; max-height: none; margin: 0;
+    position: fixed;
     top: 50%; left: 50%;
+    margin: 0;
     transform: translate(-50%, -50%) rotate(90deg) scale(var(--fit-scale));
     transform-origin: center center;
   }
@@ -480,18 +488,15 @@
   function fitStageToScreen() {
     const stage = document.querySelector(".stage");
     if (!stage) return;
-    stage.style.setProperty("--fit-scale", "1");
-    // Force layout, then measure overflow vs available box
-    void stage.offsetHeight;
-    const availH = stage.clientHeight;
-    const availW = stage.clientWidth;
-    const needH = stage.scrollHeight;
-    const needW = stage.scrollWidth;
-    if (!availH || !availW || !needH || !needW) return;
-    let s = Math.min(availH / needH, availW / needW, 1);
-    // Small safety margin so edges aren't clipped on TV browsers
-    if (s < 0.995) s = Math.max(0.72, s * 0.98);
-    else s = 1;
+    const W = 1080, H = 1920;
+    const vw = window.innerWidth || document.documentElement.clientWidth;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (!vw || !vh) return;
+    const rotated = document.documentElement.hasAttribute("data-tv-portrait");
+    // Portrait board: fit 1080×1920 into the window.
+    // After 90° rotate, visual width = H and visual height = W.
+    let s = rotated ? Math.min(vw / H, vh / W) : Math.min(vw / W, vh / H);
+    s = Math.max(0.15, Math.min(s, 1.25));
     stage.style.setProperty("--fit-scale", String(s));
   }
   let _fitTimer = null;

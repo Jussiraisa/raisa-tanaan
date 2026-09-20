@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-20T11:00:00+03:00",
+  "updated": "2026-09-20T11:15:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Perhe shared.json sync 20.9.2026: treenit, kotiruoka, koululounas ma 21.9, poissaolot (Riikka Oulu 6.–9.10).",
+  "note": "Perhe+GCal sync 20.9.2026 v13: treenit Syys–Loka, Riikka Oulu 6.–9.10, Lontoo 13.–17.10, Ainon juhlat, Riikka 40V/synttärit.",
   "events": [
     {
       "date": "2026-09-20",
@@ -381,6 +381,452 @@
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni"
+    },
+    {
+      "date": "2026-09-28",
+      "time": "16:00",
+      "end": "17:30",
+      "who": "Mea",
+      "title": "Lianna laji",
+      "place": "Hatsala",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-28",
+      "time": "17:00",
+      "end": "18:00",
+      "who": "Samuel",
+      "title": "Treeni",
+      "place": "Ylä-Pyörö",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-28",
+      "time": "17:30",
+      "end": "18:30",
+      "who": "Milla",
+      "title": "Vivida oheinen",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-28",
+      "time": "18:00",
+      "end": "19:00",
+      "who": "Mea",
+      "title": "Lianna voima",
+      "place": "Kuoppari",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "16:30",
+      "end": "18:00",
+      "who": "Samuel",
+      "title": "Treenit",
+      "place": "Lippumäki",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "17:00",
+      "end": "18:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Kuopiohalli",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "17:00",
+      "end": "17:45",
+      "who": "Mea",
+      "title": "Valmennus",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Kuopiohalli",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Mea",
+      "title": "Lianna hiontatreeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-09-30",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-01",
+      "who": "Samuel",
+      "title": "Welhot P9 pelipassi",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-01",
+      "time": "17:00",
+      "end": "18:00",
+      "who": "Ellen",
+      "title": "Ambrosia vanhempainilta",
+      "place": "Bella Center",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-01",
+      "time": "17:00",
+      "end": "19:00",
+      "who": "Samuel",
+      "title": "Treeni",
+      "place": "Puijonsarven koulu",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "16:00",
+      "end": "18:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-03",
+      "who": "Aino",
+      "title": "Ainon juhlat",
+      "kind": "juhla"
+    },
+    {
+      "date": "2026-10-03",
+      "time": "09:00",
+      "end": "18:00",
+      "who": "Samuel",
+      "title": "Welhot P9 turnaus Joensuu",
+      "place": "Joensuu",
+      "kind": "kisa"
+    },
+    {
+      "date": "2026-10-03",
+      "time": "12:30",
+      "end": "17:30",
+      "who": "Milla",
+      "title": "Vivida hiontaleiri",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-04",
+      "time": "11:30",
+      "end": "14:00",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-04",
+      "time": "16:00",
+      "end": "18:30",
+      "who": "Mea",
+      "title": "Lianna treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-05",
+      "time": "17:00",
+      "end": "18:00",
+      "who": "Samuel",
+      "title": "Treeni",
+      "place": "Ylä-Pyörö",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-05",
+      "time": "17:30",
+      "end": "18:30",
+      "who": "Milla",
+      "title": "Vivida oheinen",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-05",
+      "time": "18:30",
+      "end": "19:30",
+      "who": "Mea",
+      "title": "Lianna voima",
+      "place": "Kuoppari",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-06",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-06",
+      "time": "16:30",
+      "end": "18:00",
+      "who": "Samuel",
+      "title": "Treenit",
+      "place": "Lippumäki",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-06",
+      "time": "17:00",
+      "end": "18:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Kuopiohalli",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-06",
+      "time": "17:00",
+      "end": "17:45",
+      "who": "Mea",
+      "title": "Valmennus",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-07",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-07",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Kuopiohalli",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-07",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Mea",
+      "title": "Lianna treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-07",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-08",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-08",
+      "time": "17:00",
+      "end": "19:00",
+      "who": "Samuel",
+      "title": "Treeni",
+      "place": "Puijonsarven koulu",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-09",
+      "time": "16:00",
+      "end": "18:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-09",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Mea",
+      "title": "Lianna treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-10",
+      "time": "12:30",
+      "end": "15:00",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-11",
+      "time": "11:30",
+      "end": "14:00",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-11",
+      "time": "16:00",
+      "end": "18:30",
+      "who": "Mea",
+      "title": "Lianna treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-12",
+      "time": "10:00",
+      "end": "11:00",
+      "who": "Riikka",
+      "title": "40V",
+      "kind": "juhla"
+    },
+    {
+      "date": "2026-10-12",
+      "time": "16:00",
+      "end": "17:30",
+      "who": "Mea",
+      "title": "Lianna laji",
+      "place": "Hatsala",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-12",
+      "time": "18:00",
+      "end": "19:00",
+      "who": "Mea",
+      "title": "Lianna voima",
+      "place": "Kuoppari",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-13",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka"
+    },
+    {
+      "date": "2026-10-14",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka"
+    },
+    {
+      "date": "2026-10-15",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka"
+    },
+    {
+      "date": "2026-10-16",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka"
+    },
+    {
+      "date": "2026-10-17",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka"
+    },
+    {
+      "date": "2026-10-18",
+      "time": "16:00",
+      "end": "18:30",
+      "who": "Mea",
+      "title": "Lianna treeni",
+      "place": "Bella Center",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-19",
+      "time": "17:00",
+      "end": "18:00",
+      "who": "Samuel",
+      "title": "Treeni",
+      "place": "Ylä-Pyörö",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-19",
+      "time": "17:30",
+      "end": "18:30",
+      "who": "Milla",
+      "title": "Vivida oheinen",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-19",
+      "time": "18:30",
+      "end": "19:30",
+      "who": "Mea",
+      "title": "Lianna voima",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-20",
+      "time": "16:30",
+      "end": "18:00",
+      "who": "Samuel",
+      "title": "Treenit",
+      "place": "Lippumäki",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-20",
+      "time": "17:00",
+      "end": "17:45",
+      "who": "Mea",
+      "title": "Valmennus",
+      "kind": "treeni"
+    },
+    {
+      "date": "2026-10-24",
+      "who": "Riikka",
+      "title": "Syntymäpäivä",
+      "kind": "juhla"
     }
   ],
   "schoolLunch": {

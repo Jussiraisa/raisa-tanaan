@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v21" />
+<meta name="fiilis-build" content="20260920-v22" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -100,7 +100,8 @@
       --vignette var(--theme-dur) var(--ease);
   }
 
-  /* Phone / iPad reading: full-width board + vertical scroll (no overflow lock) */
+  /* Phone / iPad reading: natural document flow — NO 1080×1920 transform scale
+     (large composited layer crashes Mobile Safari). TV kiosk keeps fixed board. */
   html[data-mobile-read], html[data-mobile-read] body {
     height: auto;
     min-height: 100%;
@@ -118,6 +119,31 @@
   }
   html[data-mobile-read] .shell {
     margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    position: relative;
+    overflow: visible;
+    --fit-scale: 1;
+  }
+  html[data-mobile-read] .stage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    position: relative; /* not absolute — flow with document */
+    top: auto; left: auto;
+    transform: none; /* critical: no scale() layer on phones */
+    overflow: visible;
+  }
+  html[data-mobile-read] .hero {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    max-height: 70vh;
   }
 
   /* Shell = layout box at scaled size; stage = fixed 1080×1920 board inside it */
@@ -771,7 +797,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v21</footer>
+    <footer class="footer">Räisä · Fiilis · v22</footer>
   </div></div>
 
 <script>
@@ -851,25 +877,21 @@
     const html = document.documentElement;
     const rotated = html.hasAttribute("data-tv-portrait");
     const mobileRead = html.hasAttribute("data-mobile-read");
-    let s;
+    // Phone/iPad: never compute vw/1080 or apply transform scale — CSS flow layout only.
     if (mobileRead) {
-      // Phone/iPad: layout width only — do NOT read visualViewport (Safari address-bar thrash).
-      const vw = document.documentElement.clientWidth || window.innerWidth || 0;
-      if (!vw) return;
-      s = vw / W;
-    } else {
-      const { vw, vh } = viewportSize();
-      if (!vw || !vh) return;
-      if (rotated) {
-        // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
-        s = Math.min(vw / H, vh / W);
-      } else {
-        s = Math.min(vw / W, vh / H);
-      }
+      shell.style.setProperty("--fit-scale", "1");
+      return;
     }
-    // Keep a readable floor on phones; still allow pinch-zoom via viewport meta.
-    const minS = mobileRead ? 0.28 : 0.15;
-    s = Math.max(minS, Math.min(s, 1.25));
+    const { vw, vh } = viewportSize();
+    if (!vw || !vh) return;
+    let s;
+    if (rotated) {
+      // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
+      s = Math.min(vw / H, vh / W);
+    } else {
+      s = Math.min(vw / W, vh / H);
+    }
+    s = Math.max(0.15, Math.min(s, 1.25));
     const prevRaw = shell.style.getPropertyValue("--fit-scale") ||
       getComputedStyle(shell).getPropertyValue("--fit-scale");
     const prev = parseFloat(prevRaw);
@@ -1208,7 +1230,9 @@
     const last = keys[keys.length - 1];
     let out = "";
     let cur = today;
+    let _hmGuard = 0;
     while (cur <= last) {
+      if (++_hmGuard > 400) break;
       const dish = map[cur] || "";
       const parts = cur.split("-");
       const dt = new Date(+parts[0], +parts[1] - 1, +parts[2]);
@@ -1316,7 +1340,9 @@
       let dt = new Date(a[0], a[1] - 1, a[2]);
       const b = toIso.split("-").map(Number);
       const end = new Date(b[0], b[1] - 1, b[2]);
+      let _dayGuard = 0;
       while (dt <= end) {
+        if (++_dayGuard > 400) break;
         fn(dt.getFullYear() + "-" + pad(dt.getMonth() + 1) + "-" + pad(dt.getDate()));
         dt.setDate(dt.getDate() + 1);
       }
@@ -1462,7 +1488,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v21", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v22", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1549,8 +1575,13 @@
     }).join("");
   }
 
-  /* Hero: wire ALL memories, gentle album order, slow fade */
-  const captions = CONFIG.memories.map(m => ({
+  /* Hero: wire memories, gentle album order, slow fade.
+     Mobile-read: only first 12 — avoid preloading all ~84 images (Safari memory). */
+  const _memAll = CONFIG.memories || [];
+  const _memList = document.documentElement.hasAttribute("data-mobile-read")
+    ? _memAll.slice(0, 12)
+    : _memAll;
+  const captions = _memList.map(m => ({
     src: m.src,
     title: m.place || "Muisto",
     place: m.year ? (m.place + " · " + m.year) : (m.place || "")
@@ -1561,14 +1592,25 @@
     const existing = hero.querySelector(".hero-slide");
     if (existing) existing.remove();
     const vignette = hero.querySelector(".hero-vignette");
+    const mobileMem = document.documentElement.hasAttribute("data-mobile-read");
     captions.forEach((cap, i) => {
       const div = document.createElement("div");
       div.className = "hero-slide" + (i === 0 ? " active" : "");
       const img = document.createElement("img");
-      img.src = cap.src;
       img.alt = cap.title;
-      img.loading = i < 4 ? "eager" : "lazy";
       img.decoding = "async";
+      if (mobileMem) {
+        /* Cap memory pressure: only first image gets src up front */
+        img.loading = "lazy";
+        if (i === 0) {
+          img.src = cap.src;
+        } else {
+          img.dataset.src = cap.src;
+        }
+      } else {
+        img.src = cap.src;
+        img.loading = i < 4 ? "eager" : "lazy";
+      }
       div.appendChild(img);
       hero.insertBefore(div, vignette);
     });
@@ -1577,7 +1619,16 @@
   let slideIdx = 0;
   let slides = [];
   function showSlide(i) {
-    slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+    slides.forEach((s, idx) => {
+      s.classList.toggle("active", idx === i);
+      if (idx === i) {
+        const img = s.querySelector("img");
+        if (img && img.dataset.src && !img.getAttribute("src")) {
+          img.src = img.dataset.src;
+          delete img.dataset.src;
+        }
+      }
+    });
     const cap = captions[i];
     if (cap) {
       document.getElementById("heroTitle").textContent = cap.title;
@@ -1695,7 +1746,7 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v21 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: width-fit+scroll");
+  console.info("[fiilis] v22 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: flow-layout+no-scale+12mem");
   } catch (err) {
     try { console.error("[fiilis] boot failed", err); } catch (_) {}
     try {
@@ -1703,7 +1754,7 @@
       document.body.innerHTML =
         '<main style="padding:2rem;font-family:system-ui,sans-serif;color:#333;background:#f5f0e6;min-height:100vh">' +
         "<p><strong>Fiilis</strong> ei käynnistynyt.</p>" +
-        '<p><a href="?v=20260920v21">Avaa uudelleen</a></p></main>';
+        '<p><a href="?v=20260920v22">Avaa uudelleen</a></p></main>';
     } catch (_) {}
   }
 })();

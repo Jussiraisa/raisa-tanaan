@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v20" />
+<meta name="fiilis-build" content="20260920-v21" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -771,12 +771,13 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v20</footer>
+    <footer class="footer">Räisä · Fiilis · v21</footer>
   </div></div>
 
 <script>
 (function () {
   "use strict";
+  try {
   const TZ = "Europe/Helsinki";
 
   /* TV rotate: OPT-IN only (?rotate=cw|ccw). Never auto on phone/iPad. */
@@ -799,6 +800,7 @@
     return true;
   }
   function viewportSize() {
+    /* Kiosk/TV only — mobile-read must NOT call this (Safari vv thrash). */
     const vv = window.visualViewport;
     const vw = (vv && vv.width) || window.innerWidth || document.documentElement.clientWidth || 0;
     const vh = (vv && vv.height) || window.innerHeight || document.documentElement.clientHeight || 0;
@@ -846,24 +848,32 @@
     const shell = document.querySelector(".shell");
     if (!shell) return;
     const W = 1080, H = 1920;
-    const { vw, vh } = viewportSize();
-    if (!vw || !vh) return;
     const html = document.documentElement;
     const rotated = html.hasAttribute("data-tv-portrait");
     const mobileRead = html.hasAttribute("data-mobile-read");
     let s;
-    if (rotated) {
-      // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
-      s = Math.min(vw / H, vh / W);
-    } else if (mobileRead) {
-      // Phone/iPad: scale to full width; allow vertical page scroll if taller than viewport.
+    if (mobileRead) {
+      // Phone/iPad: layout width only — do NOT read visualViewport (Safari address-bar thrash).
+      const vw = document.documentElement.clientWidth || window.innerWidth || 0;
+      if (!vw) return;
       s = vw / W;
     } else {
-      s = Math.min(vw / W, vh / H);
+      const { vw, vh } = viewportSize();
+      if (!vw || !vh) return;
+      if (rotated) {
+        // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
+        s = Math.min(vw / H, vh / W);
+      } else {
+        s = Math.min(vw / W, vh / H);
+      }
     }
     // Keep a readable floor on phones; still allow pinch-zoom via viewport meta.
     const minS = mobileRead ? 0.28 : 0.15;
     s = Math.max(minS, Math.min(s, 1.25));
+    const prevRaw = shell.style.getPropertyValue("--fit-scale") ||
+      getComputedStyle(shell).getPropertyValue("--fit-scale");
+    const prev = parseFloat(prevRaw);
+    if (Number.isFinite(prev) && Math.abs(s - prev) < 0.002) return;
     shell.style.setProperty("--fit-scale", String(s));
   }
   let _fitTimer = null;
@@ -881,9 +891,13 @@
   window.addEventListener("resize", applyTvPortraitAndFit);
   window.addEventListener("orientationchange", () => setTimeout(applyTvPortraitAndFit, 120));
   window.addEventListener("load", scheduleFit);
+  // visualViewport.resize only for kiosk/TV (not mobile-read). NEVER listen to scroll —
+  // scroll → scheduleFit → --fit-scale/layout → scroll again → Safari kills the page.
   if (window.visualViewport) {
-    window.visualViewport.addEventListener("resize", scheduleFit);
-    window.visualViewport.addEventListener("scroll", scheduleFit);
+    window.visualViewport.addEventListener("resize", function () {
+      if (document.documentElement.hasAttribute("data-mobile-read")) return;
+      scheduleFit();
+    });
   }
 
 
@@ -1448,7 +1462,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v20", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v21", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1681,7 +1695,17 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v20 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: width-fit+scroll");
+  console.info("[fiilis] v21 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: width-fit+scroll");
+  } catch (err) {
+    try { console.error("[fiilis] boot failed", err); } catch (_) {}
+    try {
+      document.documentElement.style.background = "#f5f0e6";
+      document.body.innerHTML =
+        '<main style="padding:2rem;font-family:system-ui,sans-serif;color:#333;background:#f5f0e6;min-height:100vh">' +
+        "<p><strong>Fiilis</strong> ei käynnistynyt.</p>" +
+        '<p><a href="?v=20260920v21">Avaa uudelleen</a></p></main>';
+    } catch (_) {}
+  }
 })();
 </script>
 </body>

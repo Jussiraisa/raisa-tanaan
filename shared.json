@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789881822208,
+  "updated": 1789888875405,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -231,15 +231,6 @@
       "end": "15:00",
       "kind": "cal",
       "place": "Kuopiohalli"
-    },
-    {
-      "id": "cal-d52kgjc4igacs9uutt1r03k0o0",
-      "title": "Mea · Liannan voimat",
-      "date": "2026-09-21",
-      "start": "18:30",
-      "end": "19:30",
-      "kind": "cal",
-      "place": "Luola"
     },
     {
       "id": "sheet-mea-2026-09-20",

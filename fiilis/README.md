@@ -5,6 +5,8 @@ Mood layer for the Räisä family **kitchen** portrait TV wall (Kuopio).
 
 Complements the daily board: [Räisä · Tänään](https://jussiraisa.github.io/raisa-tanaan/) (rides, meals). This screen is fiilis + a calm glance at **today’s times**.
 
+**Live:** [https://jussiraisa.github.io/raisa-tanaan/fiilis/](https://jussiraisa.github.io/raisa-tanaan/fiilis/)
+
 ## Kitchen placement
 
 - **Hardware:** Cepter 50″ Google TV (CR50EU7002A), **physically rotated to portrait (9:16)** on the kitchen wall.
@@ -52,11 +54,18 @@ Palette tokens morph over **~3.2s** (`--theme-dur`) — no snap.
 
 1. Clock + date + weather hint  
 2. Greeting  
-3. **Tänään** — big times, soft labels (school + treenit from `schedule.json`)  
+3. **Tänään** — large two-line items (who — activity / place · vie/haku) from `schedule.json`  
 4. Memory hero (ken-burns, slow carousel, 84 travel photos)  
-5. Countdowns · family chips · season · hyvät jutut · footer  
+5. Countdowns · compact month calendar (treeni/kisa dots) · family chips · season · hyvät jutut · footer  
 
-Empty days: *“Rauhallinen päivä kotona”*. Sundays show weekend practices + Monday school preview. School times are placeholders until Perhe confirms.
+Empty days: *“Rauhallinen päivä kotona”*. Sundays keep today clear (school preview only if room). School times are placeholders until Perhe confirms.
+
+Today line format (kitchen-readable):
+
+```
+14:00  Ellen — Ambrosia haku
+       Kuopiohalli · haku Riikka
+```
 
 ## Photos
 
@@ -68,7 +77,9 @@ Empty days: *“Rauhallinen päivä kotona”*. Sundays show weekend practices +
 ## Schedule
 
 - `schedule.json` — preferred live source (fetched every 5 min; embedded fallback in `index.html`)
-- Fields: `schoolStarts[]`, `events[]` (date, time, who, title, place, kind)
+- Fields: `schoolStarts[]`, `events[]` (date, time, who, title, place, kind, optional `driver` / `pickup`)
+- **Rides:** `driver` = who drives (vie), `pickup` = who fetches (haku). Only written when known from Perhe (WhatsApp) or Google Calendar titles — never invented.
+- **Sync:** a routine refresh keeps `schedule.json` updated from Perhe WhatsApp + Google Calendar (trainings + rides) so the kitchen TV stays current without manual edits.
 
 ## Files
 

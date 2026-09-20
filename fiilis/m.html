@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="fiilis-build" content="20260920-v27-m" />
+<meta name="fiilis-build" content="20260920-v28" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <title>Fiilis · yksinkertainen</title>
 <style>
@@ -85,7 +85,7 @@
     <div class="when" id="londonWhen">13.–17. lokakuuta</div>
   </div>
 
-  <p class="foot">Räisä · Fiilis · yksinkertainen v27 · <a href="./?tv=1&amp;v=20260920v27">TV</a> · <a href="./?v=20260920v27">täysi</a></p>
+  <p class="foot">Räisä · Fiilis · yksinkertainen v28 · <a href="./?tv=1&amp;v=20260920v28">TV</a> · <a href="./?v=20260920v28">täysi</a></p>
 
 <script>
 (function () {
@@ -97,7 +97,7 @@
   var _sh = Math.max(screen.width || 0, screen.height || 0);
   var _large = _sw >= 700 && _sh >= 1100;
   if (_tvUa || _large) {
-    location.replace("./?tv=1&v=20260920v27");
+    location.replace("./?tv=1&v=20260920v28");
     return;
   }
   var TZ = "Europe/Helsinki";
@@ -263,7 +263,7 @@
 
   function load() {
     tick();
-    fetch("schedule.json?v=20260920v27", { cache: "no-store" })
+    fetch("schedule.json?v=20260920v28", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("schedule"); return r.json(); })
       .then(function (data) { renderSchedule(data); })
       .catch(function () {

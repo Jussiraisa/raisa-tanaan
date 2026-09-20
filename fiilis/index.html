@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-odottaa-v3" />
+<meta name="fiilis-build" content="20260920-koulu-v4" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="dark light" />
@@ -220,6 +220,9 @@
     font-family: var(--body); font-weight: 400;
     font-size: clamp(1.2rem, 3.4vw, 1.55rem);
     letter-spacing: -0.01em; color: var(--ink); line-height: 1.28;
+  }
+  .today-item[data-kind="koulu"] .today-main {
+    font-weight: 500;
   }
   .today-sub {
     margin-top: 0.12rem;
@@ -513,7 +516,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v3</footer>
+    <footer class="footer">Räisä · Fiilis · v4</footer>
   </div></div>
 
 <script>
@@ -784,14 +787,21 @@
     const events = (schedule && schedule.events) || [];
 
     function pushSchool(dayIdx, prefix) {
-      schools.forEach(s => {
-        if (!(s.weekdays || []).includes(dayIdx)) return;
+      const matched = schools.filter(s => (s.weekdays || []).includes(dayIdx));
+      if (!matched.length) return;
+      // Group by start time so 4 kids at 08:15 → one readable kitchen line
+      const byTime = {};
+      matched.forEach(s => {
+        const key = s.time || "?";
+        (byTime[key] = byTime[key] || []).push(s.who);
+      });
+      Object.keys(byTime).sort().forEach(time => {
+        const names = byTime[time];
+        const who = names.join(", ");
         items.push({
-          time: s.time,
-          main: prefix
-            ? (s.who + " — koulu alkaa huomenna")
-            : (s.who + " — koulu alkaa"),
-          sub: "",
+          time: time,
+          main: prefix ? ("Koulu alkaa huomenna") : ("Koulu alkaa"),
+          sub: who,
           kind: "koulu"
         });
       });
@@ -823,17 +833,19 @@
         .forEach(e => pushEvent(e, "Huomenna"));
     } else if (wd === 6) {
       events.filter(e => e.date === today).forEach(e => pushEvent(e, null));
+      pushSchool(1, "huomenna");
     } else {
       pushSchool(wd, null);
       events.filter(e => e.date === today).forEach(e => pushEvent(e, null));
     }
 
     items.sort((a, b) => String(a.time).localeCompare(String(b.time)));
-    /* Prefer today's real events over long previews when crowded */
-    const todayItems = items.filter(it => !String(it.main).startsWith("Huomenna") && !String(it.main).includes("huomenna"));
-    const preview = items.filter(it => String(it.main).startsWith("Huomenna") || String(it.main).includes("huomenna"));
-    if (todayItems.length >= 3) items = todayItems.slice(0, 4);
-    else items = todayItems.concat(preview).slice(0, 4);
+    /* Always keep school visible; then treeni/muu; then tomorrow previews */
+    const school = items.filter(it => it.kind === "koulu");
+    const rest = items.filter(it => it.kind !== "koulu");
+    const todayRest = rest.filter(it => !/huomenna/i.test(it.main));
+    const preview = rest.filter(it => /huomenna/i.test(it.main));
+    items = school.concat(todayRest).concat(preview).slice(0, 6);
 
     const seen = new Set();
     return items.filter(it => {
@@ -864,7 +876,7 @@
         const sub = it.sub
           ? '<div class="today-sub">' + escapeHtml(it.sub) + "</div>"
           : "";
-        return '<div class="today-item"><div class="today-time">' + escapeHtml(it.time) +
+        return '<div class="today-item" data-kind="' + escapeHtml(it.kind || "") + '"><div class="today-time">' + escapeHtml(it.time) +
           '</div><div class="today-body"><div class="today-main">' + escapeHtml(it.main) +
           "</div>" + sub + "</div></div>";
       }).join("");

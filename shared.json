@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-20T15:02:57.975642+03:00",
+  "updated": "2026-09-20T15:59:20.059509+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -235,6 +235,15 @@
   },
   "note": "",
   "extras": [
+    {
+      "id": "cal-d52kgjc4igacs9uutt1r03k0o0",
+      "title": "Mea · Liannan voimat",
+      "date": "2026-09-21",
+      "start": "18:30",
+      "end": "19:30",
+      "kind": "cal",
+      "place": "Luola"
+    },
     {
       "id": "sheet-mea-2026-09-20",
       "who": "mea",

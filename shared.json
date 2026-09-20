@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-20T14:50:59.153089+03:00",
+  "updated": "2026-09-20T15:02:57.975642+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -235,15 +235,6 @@
   },
   "note": "",
   "extras": [
-    {
-      "id": "cal-fih6q5lol7al6pcsoeo5v7gsr0",
-      "title": "Ellen · Ambrosia haku (Riikka)",
-      "date": "2026-09-20",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal",
-      "place": "Kuopiohalli"
-    },
     {
       "id": "sheet-mea-2026-09-20",
       "who": "mea",

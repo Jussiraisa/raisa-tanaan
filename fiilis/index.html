@@ -1371,7 +1371,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v18", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v19", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);

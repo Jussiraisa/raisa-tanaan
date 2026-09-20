@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-20T07:16:26.028848+03:00",
+  "updated": "2026-09-20T07:25:03.688972+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -68,9 +68,9 @@
       "ride": ""
     },
     "sheet-mea-2026-09-20": {
-      "driver": "",
-      "status": "",
-      "ride": ""
+      "driver": "Elina hakee ~12.05 (Enni+Julia out)",
+      "status": "other",
+      "ride": "vie"
     },
     "sheet-milla-2026-09-20": {
       "driver": "",
@@ -161,7 +161,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. mennessä · Ellen Leo’s ke 23.9. 18–20 · Riikka hakee Ambrosia su 20.9. Kuopiohallilta · NTV 25.–27.9. · Milla hiontaleiri la 26.9. 16–21 BC + Mea synttärit 13 · Samuel pelipassi 1.10. · Joensuu turnaus 3.10. · Ambrosia vanhempainilta 1.10. klo 17 BC · Lianna voimat ma 21.9. Luola 18.30",
+  "note": "Tee: Elina hakee Mean ~12.05 · Riikka Ellen Ambrosia haku Kuopiohalli · Samuel retki ma 21.9. (eväät+sade) · ilmoita kkp ke 23.9. · Ellen Leo’s ke 23.9. 18–20 · NTV 25.–27.9. · Milla hiontaleiri la 26.9. · Mea synttärit 26.9. 13 · Samuel pelipassi 1.10. · Ambrosia vanhempainilta 1.10. klo 17 BC · Joensuu turnaus 3.10.",
   "extras": [
     {
       "id": "cal-fih6q5lol7al6pcsoeo5v7gsr0",
@@ -180,7 +180,9 @@
       "start": "16:00",
       "end": "18:30",
       "place": "",
-      "kind": "treeni"
+      "kind": "treeni",
+      "driver": "Elina ~12.05",
+      "status": "other"
     },
     {
       "id": "sheet-milla-2026-09-20",

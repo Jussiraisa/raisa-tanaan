@@ -2,9 +2,13 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v18" />
+<meta name="fiilis-build" content="20260920-v20" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Fiilis" />
+<meta name="theme-color" content="#f6f0e4" />
 <meta name="color-scheme" content="light dark" />
 <title>Räisä · Fiilis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,10 +81,12 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
     height: 100%; width: 100%;
+    min-height: 100%;
+    min-height: 100dvh;
     background: #f6f0e4; color: var(--ink);
     font-family: var(--body);
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
+    overflow: hidden; /* TV / desktop kiosk default */
   }
   body {
     display: flex; align-items: center; justify-content: center;
@@ -92,6 +98,26 @@
       --accent-soft var(--theme-dur) var(--ease), --glow var(--theme-dur) var(--ease),
       --pill var(--theme-dur) var(--ease), --pill-border var(--theme-dur) var(--ease),
       --vignette var(--theme-dur) var(--ease);
+  }
+
+  /* Phone / iPad reading: full-width board + vertical scroll (no overflow lock) */
+  html[data-mobile-read], html[data-mobile-read] body {
+    height: auto;
+    min-height: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+  html[data-mobile-read] body {
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  html[data-mobile-read] .shell {
+    margin: 0 auto;
   }
 
   /* Shell = layout box at scaled size; stage = fixed 1080×1920 board inside it */
@@ -112,7 +138,9 @@
     display: flex; flex-direction: column; gap: 0.25rem;
     padding: var(--pad);
     padding-top: max(var(--pad), env(safe-area-inset-top));
+    padding-right: max(var(--pad), env(safe-area-inset-right));
     padding-bottom: max(calc(var(--pad) * 0.75), env(safe-area-inset-bottom));
+    padding-left: max(var(--pad), env(safe-area-inset-left));
     overflow: hidden;
     background: var(--bg); color: var(--ink);
     transform: scale(var(--fit-scale));
@@ -120,9 +148,11 @@
     transition: background var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease);
   }
 
-  /* Opt-in TV rotate only: ?rotate=cw|ccw — never auto on landscape */
-  html[data-tv-portrait], html[data-tv-portrait] body {
-    width: 100vw; height: 100vh; overflow: hidden; overscroll-behavior: none;
+  /* Opt-in TV rotate only: ?rotate=cw|ccw — never auto on phone/iPad */
+  html[data-tv-portrait], html[data-tv-portrait] body,
+  html[data-tv-kiosk], html[data-tv-kiosk] body {
+    width: 100vw; width: 100dvw; height: 100vh; height: 100dvh;
+    overflow: hidden; overscroll-behavior: none;
   }
   html[data-tv-portrait] body {
     display: flex; align-items: center; justify-content: center;
@@ -741,7 +771,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v18</footer>
+    <footer class="footer">Räisä · Fiilis · v20</footer>
   </div></div>
 
 <script>
@@ -749,7 +779,7 @@
   "use strict";
   const TZ = "Europe/Helsinki";
 
-  /* TV rotate: OPT-IN only (?rotate=cw|ccw). Never auto on landscape. */
+  /* TV rotate: OPT-IN only (?rotate=cw|ccw). Never auto on phone/iPad. */
   function parseRotateParam() {
     const q = new URLSearchParams(location.search).get("rotate");
     if (q === null || q === "") return null;
@@ -759,6 +789,20 @@
       return { force: true, dir: "cw" };
     if (v === "ccw" || v === "-1" || v === "-90") return { force: true, dir: "ccw" };
     return { force: true, dir: "cw" };
+  }
+  function parseTvParam() {
+    const q = new URLSearchParams(location.search).get("tv");
+    if (q === null || q === "") return null;
+    const v = String(q).toLowerCase();
+    if (v === "0" || v === "off" || v === "false" || v === "no") return false;
+    if (v === "1" || v === "on" || v === "true" || v === "yes") return true;
+    return true;
+  }
+  function viewportSize() {
+    const vv = window.visualViewport;
+    const vw = (vv && vv.width) || window.innerWidth || document.documentElement.clientWidth || 0;
+    const vh = (vv && vv.height) || window.innerHeight || document.documentElement.clientHeight || 0;
+    return { vw, vh };
   }
   function applyTvPortrait() {
     const html = document.documentElement;
@@ -772,6 +816,7 @@
     } else if (html.hasAttribute("data-tv-portrait")) {
       enable = true;
     }
+    // Never auto-rotate: phone/iPad stay unrotated unless ?rotate= is set.
     if (enable) {
       html.setAttribute("data-tv-portrait", "");
       html.setAttribute("data-rotate", dir);
@@ -780,18 +825,45 @@
       html.removeAttribute("data-rotate");
     }
   }
+  function applyMobileReadingMode() {
+    const html = document.documentElement;
+    const tvParam = parseTvParam();
+    const rotated = html.hasAttribute("data-tv-portrait");
+    // Kiosk (kitchen TV): ?tv=1 or ?rotate=cw|ccw → contain + overflow:hidden.
+    // Else (phone/iPad/shared link): width-fit + vertical scroll. Never auto-rotate.
+    const kiosk = tvParam === true || rotated;
+    if (!kiosk) {
+      html.setAttribute("data-mobile-read", "");
+      html.removeAttribute("data-tv-kiosk");
+      return true;
+    }
+    html.removeAttribute("data-mobile-read");
+    html.setAttribute("data-tv-kiosk", "");
+    return false;
+  }
 
   function fitStageToScreen() {
     const shell = document.querySelector(".shell");
     if (!shell) return;
     const W = 1080, H = 1920;
-    const vw = window.innerWidth || document.documentElement.clientWidth;
-    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const { vw, vh } = viewportSize();
     if (!vw || !vh) return;
-    const rotated = document.documentElement.hasAttribute("data-tv-portrait");
-    // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
-    let s = rotated ? Math.min(vw / H, vh / W) : Math.min(vw / W, vh / H);
-    s = Math.max(0.15, Math.min(s, 1.25));
+    const html = document.documentElement;
+    const rotated = html.hasAttribute("data-tv-portrait");
+    const mobileRead = html.hasAttribute("data-mobile-read");
+    let s;
+    if (rotated) {
+      // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
+      s = Math.min(vw / H, vh / W);
+    } else if (mobileRead) {
+      // Phone/iPad: scale to full width; allow vertical page scroll if taller than viewport.
+      s = vw / W;
+    } else {
+      s = Math.min(vw / W, vh / H);
+    }
+    // Keep a readable floor on phones; still allow pinch-zoom via viewport meta.
+    const minS = mobileRead ? 0.28 : 0.15;
+    s = Math.max(minS, Math.min(s, 1.25));
     shell.style.setProperty("--fit-scale", String(s));
   }
   let _fitTimer = null;
@@ -802,12 +874,17 @@
 
   function applyTvPortraitAndFit() {
     applyTvPortrait();
+    applyMobileReadingMode();
     scheduleFit();
   }
   applyTvPortraitAndFit();
   window.addEventListener("resize", applyTvPortraitAndFit);
   window.addEventListener("orientationchange", () => setTimeout(applyTvPortraitAndFit, 120));
   window.addEventListener("load", scheduleFit);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", scheduleFit);
+    window.visualViewport.addEventListener("scroll", scheduleFit);
+  }
 
 
   const CONFIG = {
@@ -1371,7 +1448,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v19", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v20", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1604,7 +1681,7 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v18 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw");
+  console.info("[fiilis] v20 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: width-fit+scroll");
 })();
 </script>
 </body>

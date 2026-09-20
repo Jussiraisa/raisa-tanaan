@@ -1,57 +1,169 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-20T10:45:00+03:00",
+  "updated": "2026-09-20T10:50:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
       "label": "Koulu",
-      "time": "08:15",
+      "time": "10:00",
       "weekdays": [
-        1,
-        2,
-        3,
-        4,
+        1
+      ]
+    },
+    {
+      "who": "Ellen",
+      "label": "Koulu",
+      "time": "08:00",
+      "weekdays": [
+        2
+      ]
+    },
+    {
+      "who": "Ellen",
+      "label": "Koulu",
+      "time": "08:45",
+      "weekdays": [
+        3
+      ]
+    },
+    {
+      "who": "Ellen",
+      "label": "Koulu",
+      "time": "10:00",
+      "weekdays": [
+        4
+      ]
+    },
+    {
+      "who": "Ellen",
+      "label": "Koulu",
+      "time": "08:00",
+      "weekdays": [
         5
       ]
     },
     {
       "who": "Samuel",
       "label": "Koulu",
-      "time": "08:15",
+      "time": "08:45",
       "weekdays": [
-        1,
-        2,
-        3,
-        4,
+        1
+      ]
+    },
+    {
+      "who": "Samuel",
+      "label": "Koulu",
+      "time": "08:45",
+      "weekdays": [
+        2
+      ]
+    },
+    {
+      "who": "Samuel",
+      "label": "Koulu",
+      "time": "08:45",
+      "weekdays": [
+        3
+      ]
+    },
+    {
+      "who": "Samuel",
+      "label": "Koulu",
+      "time": "08:00",
+      "weekdays": [
+        4
+      ]
+    },
+    {
+      "who": "Samuel",
+      "label": "Koulu",
+      "time": "08:00",
+      "weekdays": [
         5
       ]
     },
     {
       "who": "Milla",
       "label": "Koulu",
-      "time": "08:15",
+      "time": "09:40",
       "weekdays": [
-        1,
-        2,
-        3,
-        4,
+        1
+      ]
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:40",
+      "weekdays": [
+        2
+      ]
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:40",
+      "weekdays": [
+        3
+      ]
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "08:10",
+      "weekdays": [
+        4
+      ]
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:40",
+      "weekdays": [
         5
       ]
     },
     {
       "who": "Mea",
       "label": "Koulu",
-      "time": "08:15",
+      "time": "08:00",
       "weekdays": [
-        1,
-        2,
-        3,
-        4,
+        1
+      ]
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "08:00",
+      "weekdays": [
+        2
+      ]
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "10:00",
+      "weekdays": [
+        3
+      ]
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "08:00",
+      "weekdays": [
+        4
+      ]
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "08:00",
+      "weekdays": [
         5
       ]
     }
   ],
-  "note": "School times placeholders until Perhe confirms. Drivers/pickups only from Perhe (WhatsApp) + Google Calendar — refreshed by routine sync.",
+  "note": "Kouluajat lukujärjestyksestä (Perhe). Kuskit vain WA/kalenterista.",
   "events": [
     {
       "date": "2026-09-20",

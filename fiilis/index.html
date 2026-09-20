@@ -88,15 +88,21 @@
       --vignette var(--theme-dur) var(--ease);
   }
 
-  /* Fixed portrait board 1080×1920, always scaled to fit the window */
-  .stage {
+  /* Shell = layout box at scaled size; stage = fixed 1080×1920 board inside it */
+  .shell {
     --fit-scale: 1;
-    --board-w: 1080px;
-    --board-h: 1920px;
-    width: var(--board-w);
-    height: var(--board-h);
+    --board-w: 1080;
+    --board-h: 1920;
+    width: calc(var(--board-w) * 1px * var(--fit-scale));
+    height: calc(var(--board-h) * 1px * var(--fit-scale));
     flex-shrink: 0;
-    margin: 0; position: relative;
+    position: relative;
+    overflow: hidden;
+  }
+  .stage {
+    width: calc(var(--board-w) * 1px);
+    height: calc(var(--board-h) * 1px);
+    margin: 0; position: absolute; top: 0; left: 0;
     display: flex; flex-direction: column;
     padding: var(--pad);
     padding-top: max(var(--pad), env(safe-area-inset-top));
@@ -104,7 +110,7 @@
     overflow: hidden;
     background: var(--bg); color: var(--ink);
     transform: scale(var(--fit-scale));
-    transform-origin: center center;
+    transform-origin: top left;
     transition: background var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease);
   }
 
@@ -113,13 +119,16 @@
     width: 100vw; height: 100vh; overflow: hidden; overscroll-behavior: none;
   }
   html[data-tv-portrait] body {
-    display: block;
+    display: flex; align-items: center; justify-content: center;
+  }
+  html[data-tv-portrait] .shell {
+    /* After 90° rotate, visual size swaps: width≈board-h, height≈board-w */
+    width: calc(var(--board-h) * 1px * var(--fit-scale));
+    height: calc(var(--board-w) * 1px * var(--fit-scale));
   }
   html[data-tv-portrait] .stage {
     --pad: clamp(0.85rem, 2.2vw, 1.35rem);
-    position: fixed;
-    top: 50%; left: 50%;
-    margin: 0;
+    position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%) rotate(90deg) scale(var(--fit-scale));
     transform-origin: center center;
   }
@@ -382,12 +391,12 @@
     .meta, .greeting, .today, .hero, .awaits, .family, .season, .goods, .footer {
       animation: none; opacity: 1;
     }
-    body, .stage, .hero { transition: none; }
+    body, .shell, .stage, .hero { transition: none; }
   }
 </style>
 </head>
 <body data-mode="morning">
-  <div class="stage">
+  <div class="shell"><div class="stage">
     <header class="meta">
       <div class="meta-left">
         <div class="clock" id="clock">––:––</div>
@@ -446,7 +455,7 @@
     </section>
 
     <footer class="footer">Räisä · Fiilis</footer>
-  </div>
+  </div></div>
 
 <script>
 (function () {
@@ -486,18 +495,17 @@
   }
 
   function fitStageToScreen() {
-    const stage = document.querySelector(".stage");
-    if (!stage) return;
+    const shell = document.querySelector(".shell");
+    if (!shell) return;
     const W = 1080, H = 1920;
     const vw = window.innerWidth || document.documentElement.clientWidth;
     const vh = window.innerHeight || document.documentElement.clientHeight;
     if (!vw || !vh) return;
     const rotated = document.documentElement.hasAttribute("data-tv-portrait");
-    // Portrait board: fit 1080×1920 into the window.
-    // After 90° rotate, visual width = H and visual height = W.
+    // Portrait board fits the window. After 90° rotate, visual width = H, height = W.
     let s = rotated ? Math.min(vw / H, vh / W) : Math.min(vw / W, vh / H);
     s = Math.max(0.15, Math.min(s, 1.25));
-    stage.style.setProperty("--fit-scale", String(s));
+    shell.style.setProperty("--fit-scale", String(s));
   }
   let _fitTimer = null;
   function scheduleFit() {

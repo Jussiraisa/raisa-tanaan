@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v22" />
+<meta name="fiilis-build" content="20260920-v23" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,7 +101,9 @@
   }
 
   /* Phone / iPad reading: natural document flow — NO 1080×1920 transform scale
-     (large composited layer crashes Mobile Safari). TV kiosk keeps fixed board. */
+     (large composited layer crashes Mobile Safari). TV kiosk keeps fixed board.
+     Critical: with height:auto on .stage, flex-grow children collapse to 0 —
+     force flex:none so hero/greeting/etc. keep intrinsic size (v23). */
   html[data-mobile-read], html[data-mobile-read] body {
     height: auto;
     min-height: 100%;
@@ -112,8 +114,9 @@
     overscroll-behavior-y: contain;
   }
   html[data-mobile-read] body {
-    align-items: flex-start;
-    justify-content: center;
+    display: block; /* document scroll — not flex-centered kiosk */
+    align-items: unset;
+    justify-content: unset;
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
@@ -128,22 +131,62 @@
     --fit-scale: 1;
   }
   html[data-mobile-read] .stage {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 100%;
     height: auto;
-    min-height: 0;
+    min-height: 100dvh;
+    gap: 0.55rem;
     position: relative; /* not absolute — flow with document */
     top: auto; left: auto;
     transform: none; /* critical: no scale() layer on phones */
     overflow: visible;
   }
-  html[data-mobile-read] .hero {
-    flex: none;
-    width: 100%;
-    min-height: 0;
+  /* Kill TV flex-grow collapse in auto-height column */
+  html[data-mobile-read] .stage > *,
+  html[data-mobile-read] .hero,
+  html[data-mobile-read] .today,
+  html[data-mobile-read] .family,
+  html[data-mobile-read] .month-cal,
+  html[data-mobile-read] .under-hero,
+  html[data-mobile-read] .week-wx,
+  html[data-mobile-read] .home-meals,
+  html[data-mobile-read] .greeting,
+  html[data-mobile-read] .meta,
+  html[data-mobile-read] .week-soft,
+  html[data-mobile-read] .season,
+  html[data-mobile-read] .goods,
+  html[data-mobile-read] .footer,
+  html[data-mobile-read] .awaits {
+    flex: none !important;
+    min-height: auto !important;
     height: auto;
+  }
+  html[data-mobile-read] .family {
+    margin-top: 0.75rem; /* was margin-top:auto on TV */
+  }
+  html[data-mobile-read] .hero {
+    width: 100%;
     aspect-ratio: 4 / 3;
-    max-height: 70vh;
+    max-height: 50vh;
+  }
+  /* Text visible immediately — no rise opacity:0 on phones */
+  html[data-mobile-read] .meta,
+  html[data-mobile-read] .greeting,
+  html[data-mobile-read] .today,
+  html[data-mobile-read] .hero,
+  html[data-mobile-read] .week-wx,
+  html[data-mobile-read] .home-meals,
+  html[data-mobile-read] .under-hero .awaits,
+  html[data-mobile-read] .month-cal,
+  html[data-mobile-read] .week-soft,
+  html[data-mobile-read] .family,
+  html[data-mobile-read] .season,
+  html[data-mobile-read] .goods,
+  html[data-mobile-read] .footer {
+    animation: none;
+    opacity: 1;
   }
 
   /* Shell = layout box at scaled size; stage = fixed 1080×1920 board inside it */
@@ -708,6 +751,12 @@
 </style>
 </head>
 <body data-mode="morning">
+  <noscript>
+    <div style="padding:1.5rem;font-family:system-ui,sans-serif;color:#2c2418;background:#f6f0e4;min-height:40vh">
+      <p><strong>Fiilis</strong> tarvitsee JavaScriptin. Avaa uudelleen tai käytä selainta, jossa JS on päällä.</p>
+      <p>Räisä · Fiilis · v23</p>
+    </div>
+  </noscript>
   <div class="shell"><div class="stage">
     <header class="meta">
       <div class="meta-left">
@@ -797,7 +846,7 @@
       <p class="goods-line" id="goodsLine">Yhdessä olemisen ilo.</p>
     </section>
 
-    <footer class="footer">Räisä · Fiilis · v22</footer>
+    <footer class="footer">Räisä · Fiilis · v23</footer>
   </div></div>
 
 <script>
@@ -1488,7 +1537,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v22", { cache: "no-store" });
+      const res = await fetch("schedule.json?v=20260920v23", { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);
@@ -1746,15 +1795,19 @@
   setInterval(loadSchedule, 5 * 60 * 1000);
   setInterval(loadWeekWeather, 30 * 60 * 1000);
 
-  console.info("[fiilis] v22 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: flow-layout+no-scale+12mem");
+  console.info("[fiilis] v23 memories:", captions.length, "tv-rotate: opt-in ?rotate=cw|ccw; mobile: flow-layout+no-scale+12mem");
   } catch (err) {
     try { console.error("[fiilis] boot failed", err); } catch (_) {}
     try {
-      document.documentElement.style.background = "#f5f0e6";
+      document.documentElement.style.background = "#f6f0e4";
+      document.documentElement.style.color = "#2c2418";
+      document.body.style.background = "#f6f0e4";
+      document.body.style.color = "#2c2418";
+      document.body.style.display = "block";
       document.body.innerHTML =
-        '<main style="padding:2rem;font-family:system-ui,sans-serif;color:#333;background:#f5f0e6;min-height:100vh">' +
+        '<main style="padding:2rem;font-family:system-ui,sans-serif;color:#2c2418;background:#f6f0e4;min-height:100vh">' +
         "<p><strong>Fiilis</strong> ei käynnistynyt.</p>" +
-        '<p><a href="?v=20260920v22">Avaa uudelleen</a></p></main>';
+        '<p><a href="?v=20260920v23" style="color:#2c2418">Avaa uudelleen · v23</a></p></main>';
     } catch (_) {}
   }
 })();

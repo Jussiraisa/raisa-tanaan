@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="fiilis-build" content="20260920-v24-m" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<title>Fiilis · yksinkertainen</title>
+<style>
+  :root {
+    --bg: #f6f0e4;
+    --ink: #1a1410;
+    --muted: #5c5348;
+    --line: rgba(26,20,16,0.12);
+    --pill: rgba(26,20,16,0.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    min-height: 100%;
+    min-height: 100dvh;
+  }
+  body {
+    padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right))
+             max(1.25rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+    line-height: 1.4;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+  .clock {
+    font-size: clamp(2.4rem, 12vw, 3.4rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .date { color: var(--muted); margin-top: 0.15rem; font-size: 1rem; }
+  h1 { font-size: 1.55rem; font-weight: 600; margin-top: 1.25rem; }
+  .sub { color: var(--muted); font-style: italic; margin-top: 0.2rem; }
+  h2 {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 1.4rem 0 0.55rem; font-weight: 600;
+  }
+  ul { list-style: none; }
+  li {
+    padding: 0.55rem 0.7rem;
+    background: var(--pill);
+    border: 1px solid var(--line);
+    border-radius: 0.65rem;
+    margin-bottom: 0.4rem;
+  }
+  li .who { font-weight: 600; }
+  li .meta { color: var(--muted); font-size: 0.9rem; margin-top: 0.15rem; }
+  .london {
+    margin-top: 1.4rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.85rem;
+    border: 1px solid var(--line);
+    background: #fff8ee;
+  }
+  .london .label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .london .big { font-size: 1.35rem; font-weight: 650; margin-top: 0.25rem; }
+  .london .when { color: var(--muted); margin-top: 0.15rem; }
+  .foot { margin-top: 1.75rem; color: var(--muted); font-size: 0.8rem; }
+  .foot a { color: var(--ink); }
+  .empty { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="clock" id="clock">––:––</div>
+  <div class="date" id="dateLine">––</div>
+  <h1 id="greetingTitle">Hyvää päivää</h1>
+  <p class="sub" id="greetingSub">Rauhassa tähän päivään.</p>
+
+  <h2>Tänään</h2>
+  <ul id="todayList"><li class="empty">Ladataan…</li></ul>
+
+  <h2>Seuraavat 7 päivää</h2>
+  <ul id="weekList"><li class="empty">Ladataan…</li></ul>
+
+  <div class="london" id="londonBox">
+    <div class="label">Odotettavaa</div>
+    <div class="big" id="londonBig">Lontoo-matka</div>
+    <div class="when" id="londonWhen">13.–17. lokakuuta</div>
+  </div>
+
+  <p class="foot">Räisä · Fiilis · yksinkertainen v24 · <a href="./?tv=1&amp;v=20260920v24">TV</a> · <a href="./?v=20260920v24">täysi</a></p>
+
+<script>
+(function () {
+  "use strict";
+  var TZ = "Europe/Helsinki";
+  var WEEKDAYS = ["sunnuntai","maanantai","tiistai","keskiviikko","torstai","perjantai","lauantai"];
+  var MONTHS = ["tammikuuta","helmikuuta","maaliskuuta","huhtikuuta","toukokuuta","kesäkuuta",
+                "heinäkuuta","elokuuta","syyskuuta","lokakuuta","marraskuuta","joulukuuta"];
+  var GREET = {
+    morning:   { title: "Hyvää huomenta", sub: "Rauhassa tähän päivään." },
+    afternoon: { title: "Hyvää päivää",   sub: "Kaikki ehtii — yksi asia kerrallaan." },
+    evening:   { title: "Hyvää iltaa",    sub: "Hitaampi rytmi. Pehmeämpi valo." },
+    night:     { title: "Hyvää yötä",     sub: "Lepo on myös tärkeää." }
+  };
+  var LONDON_AT = "2026-10-13T09:00:00";
+  var LONDON_DETAIL = "13.–17. lokakuuta";
+
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function nowInTZ() {
+    var parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+    }).formatToParts(new Date());
+    var get = function (t) {
+      for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value;
+      return "0";
+    };
+    return { y: +get("year"), m: +get("month"), d: +get("day"), h: +get("hour"), min: +get("minute") };
+  }
+  function isoToday(n) {
+    return n.y + "-" + pad(n.m) + "-" + pad(n.d);
+  }
+  function modeForHour(h) {
+    if (h >= 5 && h < 11) return "morning";
+    if (h < 17) return "afternoon";
+    if (h < 22) return "evening";
+    return "night";
+  }
+  function daysUntil(iso) {
+    var n = nowInTZ();
+    var a = new Date(n.y, n.m - 1, n.d);
+    var b = new Date(iso);
+    var bd = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+    return Math.round((bd - a) / 86400000);
+  }
+  function addDaysIso(iso, add) {
+    var p = iso.split("-");
+    var d = new Date(+p[0], +p[1] - 1, +p[2] + add);
+    return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+  }
+  function fmtDayLabel(iso) {
+    var p = iso.split("-");
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    var wd = WEEKDAYS[d.getDay()];
+    return wd.charAt(0).toUpperCase() + wd.slice(1) + " " + (+p[2]) + "." + (+p[1]) + ".";
+  }
+
+  function tick() {
+    var n = nowInTZ();
+    document.getElementById("clock").textContent = pad(n.h) + ":" + pad(n.min);
+    var wd = WEEKDAYS[new Date(n.y, n.m - 1, n.d).getDay()];
+    document.getElementById("dateLine").textContent =
+      wd.charAt(0).toUpperCase() + wd.slice(1) + " · " + n.d + ". " + MONTHS[n.m - 1];
+    var g = GREET[modeForHour(n.h)];
+    document.getElementById("greetingTitle").textContent = g.title;
+    document.getElementById("greetingSub").textContent = g.sub;
+    var days = daysUntil(LONDON_AT);
+    var el = document.getElementById("londonWhen");
+    if (days > 0) el.textContent = LONDON_DETAIL + " · " + days + " päivää";
+    else if (days === 0) el.textContent = LONDON_DETAIL + " · tänään!";
+    else el.textContent = LONDON_DETAIL;
+  }
+
+  function schoolLines(schedule, n) {
+    var wd = new Date(n.y, n.m - 1, n.d).getDay(); /* 0=Sun */
+    var out = [];
+    var starts = (schedule && schedule.schoolStarts) || [];
+    for (var i = 0; i < starts.length; i++) {
+      var s = starts[i];
+      var days = s.weekdays || [];
+      var ok = false;
+      for (var j = 0; j < days.length; j++) if (days[j] === wd) ok = true;
+      if (!ok) continue;
+      var t = (s.time || "") + (s.end ? "–" + s.end : "");
+      out.push({
+        who: s.who || "",
+        title: s.label || "Koulu",
+        meta: t,
+        sort: s.time || "99:99"
+      });
+    }
+    return out;
+  }
+
+  function eventLines(schedule, dateIso) {
+    var events = (schedule && schedule.events) || [];
+    var out = [];
+    for (var i = 0; i < events.length; i++) {
+      var e = events[i];
+      if (e.date !== dateIso) continue;
+      var meta = [];
+      if (e.time) meta.push(e.time + (e.end ? "–" + e.end : ""));
+      if (e.place) meta.push(e.place);
+      if (e.driver) meta.push("vie " + e.driver);
+      if (e.pickup && e.pickup !== e.driver) meta.push("haku " + e.pickup);
+      out.push({
+        who: e.who || "",
+        title: e.title || "",
+        meta: meta.join(" · "),
+        sort: e.time || "99:99"
+      });
+    }
+    return out;
+  }
+
+  function renderList(el, items) {
+    if (!items.length) {
+      el.innerHTML = '<li class="empty">Ei merkintöjä</li>';
+      return;
+    }
+    items.sort(function (a, b) { return (a.sort || "").localeCompare(b.sort || ""); });
+    var html = "";
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      html += "<li><div class=\"who\">" + esc(it.who) + (it.who && it.title ? " · " : "") + esc(it.title) + "</div>";
+      if (it.meta) html += '<div class="meta">' + esc(it.meta) + "</div>";
+      html += "</li>";
+    }
+    el.innerHTML = html;
+  }
+
+  function renderSchedule(schedule) {
+    var n = nowInTZ();
+    var today = isoToday(n);
+    var todayItems = schoolLines(schedule, n).concat(eventLines(schedule, today));
+    renderList(document.getElementById("todayList"), todayItems);
+
+    var weekHtml = "";
+    var any = false;
+    for (var d = 0; d < 7; d++) {
+      var iso = addDaysIso(today, d);
+      var items = eventLines(schedule, iso);
+      if (d === 0) {
+        /* also show school on day 0 already in today; for week show events only after today label */
+      }
+      if (!items.length && d > 0) continue;
+      if (d === 0 && !items.length) continue;
+      any = true;
+      weekHtml += "<li><div class=\"who\">" + esc(fmtDayLabel(iso)) + "</div>";
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        weekHtml += '<div class="meta">' + esc((it.who ? it.who + " · " : "") + it.title + (it.meta ? " · " + it.meta : "")) + "</div>";
+      }
+      if (!items.length) weekHtml += '<div class="meta">—</div>';
+      weekHtml += "</li>";
+    }
+    var weekEl = document.getElementById("weekList");
+    if (!any) weekEl.innerHTML = '<li class="empty">Ei tapahtumia lähipäivinä</li>';
+    else weekEl.innerHTML = weekHtml;
+  }
+
+  function load() {
+    tick();
+    fetch("schedule.json?v=20260920v24", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("schedule"); return r.json(); })
+      .then(function (data) { renderSchedule(data); })
+      .catch(function () {
+        document.getElementById("todayList").innerHTML = '<li class="empty">Aikataulu ei latautunut</li>';
+        document.getElementById("weekList").innerHTML = '<li class="empty">—</li>';
+      });
+  }
+
+  load();
+  setInterval(tick, 1000);
+  setInterval(load, 5 * 60 * 1000);
+})();
+</script>
+</body>
+</html>

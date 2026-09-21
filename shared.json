@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-21T07:03:23.497392+03:00",
+  "updated": "2026-09-21T07:23:23.852619+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -93,9 +93,9 @@
       "ride": ""
     },
     "info-mea-voimat-2026-09-21": {
-      "driver": "",
-      "status": "",
-      "ride": ""
+      "driver": "Julia vie · Enni hakee",
+      "status": "other",
+      "ride": "vie+hakee"
     },
     "info-pentutreffit-2026-09-22": {
       "driver": "",
@@ -213,6 +213,10 @@
     "kyyti-mea-lianna-2026-09-27": {
       "driver": "Riikka",
       "note": "WA: Su Mea (Riikka molemmat)."
+    },
+    "kyyti-mea-lianna-2026-09-21": {
+      "driver": "vienti Julia / haku Enni",
+      "note": "WA Lianna kyytirinki: Ma Julia vie, Enni hakee. Mea mukana (voimat)."
     }
   },
   "cooks": {
@@ -256,8 +260,20 @@
       "end": "19:30",
       "place": "Luola",
       "kind": "treeni",
-      "driver": "",
-      "status": ""
+      "driver": "Julia vie · Enni hakee",
+      "status": "other"
+    },
+    {
+      "id": "kyyti-mea-lianna-2026-09-21",
+      "who": "mea",
+      "title": "Lianna voimat · vie Julia, haku Enni",
+      "date": "2026-09-21",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "Luola",
+      "kind": "kyyti",
+      "driver": "vienti Julia / haku Enni",
+      "status": "other"
     },
     {
       "id": "info-pentutreffit-2026-09-22",

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v44-tvr-ilta-kalenteri">
+  <meta name="fiilis-build" content="20260921-v45-tvr-cal-smallfont">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -53,7 +53,7 @@
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
     body.night .mlabel {
-      font-size: 0.95vmin; font-weight: 550; line-height: 1.12;
+      font-size: 0.72vmin; font-weight: 500; line-height: 1.05;
       overflow: hidden; max-height: none;
       color: #2c2418;
       opacity: .78;
@@ -395,7 +395,7 @@
     .mday.is-lontoo { background: rgba(184,136,62,0.1); }
     .mday.is-school { background: rgba(255,255,255,0.18); }
     .mday .dn {
-      font-size: 1.25vmin; font-weight: 650;
+      font-size: 1.15vmin; font-weight: 650;
       font-variant-numeric: tabular-nums; line-height: 1;
     }
     .mday .dn .mo {
@@ -1256,10 +1256,10 @@
           });
           var parts = [];
           var used = {};
-          for (var ri = 0; ri < realEvs.length && parts.length < 3; ri++) {
+          for (var ri = 0; ri < realEvs.length && parts.length < 2; ri++) {
             var rt = realEvs[ri].title || realEvs[ri].who || "";
             if (!rt) continue;
-            var short = rt.length > 16 ? rt.slice(0, 15) + "…" : rt;
+            var short = rt.length > 12 ? rt.slice(0, 11) + "…" : rt;
             if (used[short]) continue;
             used[short] = 1;
             parts.push(short);

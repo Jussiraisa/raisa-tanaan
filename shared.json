@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790002745634,
+  "updated": 1790006961265,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -530,6 +530,16 @@
       "status": ""
     },
     {
+      "id": "sheet-mea-2026-09-21",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-21",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
       "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
       "title": "Mea Arja",
       "date": "2026-09-22",
@@ -544,26 +554,6 @@
       "start": "17:00",
       "end": "17:45",
       "kind": "cal"
-    },
-    {
-      "id": "sheet-mea-2026-09-21",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-21",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-21",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-21",
-      "start": "17:30",
-      "end": "18:30",
-      "place": "Luola",
-      "kind": "treeni"
     }
   ],
   "schoolLunch": {

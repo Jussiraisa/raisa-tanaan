@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v38-tv1">
+  <meta name="fiilis-build" content="20260921-v39-tv1">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -110,8 +110,8 @@
       gap: .55vh;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       min-height: 0;
-      height: 22vh;
-      max-height: 24vh;
+      height: 24.5vh;
+      max-height: 26.5vh;
     }
     .kids-row {
       display: -ms-flexbox; display: flex;
@@ -170,6 +170,44 @@
       color: #2c2418;
     }
     body.night .duo-lunch { background: rgba(184,136,62,0.16); color: #f0e4d4; }
+
+    .parents-row {
+      display: -ms-flexbox; display: flex;
+      gap: .85vw;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .parent-card {
+      -ms-flex: 1; flex: 1; min-width: 0;
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(44,36,24,0.06);
+      border-radius: .9vmin;
+      padding: .35vh .7vw .3vh;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: baseline; align-items: baseline;
+      gap: .55vw;
+      overflow: hidden;
+    }
+    body.night .parent-card {
+      background: rgba(255,248,238,0.06);
+      border-color: rgba(240,228,212,0.1);
+    }
+    .parent-name {
+      font-size: 1.25vmin; font-weight: 700;
+      white-space: nowrap;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .parent-dot {
+      width: .85vmin; height: .85vmin; border-radius: 50%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .parent-body {
+      font-size: 1.15vmin; font-weight: 500;
+      line-height: 1.2; opacity: .78;
+      -ms-flex: 1; flex: 1; min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
     .duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
 
     .mid-duo {
@@ -456,6 +494,18 @@
         <div class="kid-card" data-kid="Samuel"><div class="kid-head"><span class="kid-dot" style="background:#a8c4dc"></span><span class="kid-name">Samuel</span></div><div class="kid-body muted">…</div></div>
         <div class="kid-card" data-kid="Milla"><div class="kid-head"><span class="kid-dot" style="background:#e0c48a"></span><span class="kid-name">Milla</span></div><div class="kid-body muted">…</div></div>
         <div class="kid-card" data-kid="Mea"><div class="kid-head"><span class="kid-dot" style="background:#c4b0dc"></span><span class="kid-name">Mea</span></div><div class="kid-body muted">…</div></div>
+      </div>
+      <div class="parents-row" id="parentsRow">
+        <div class="parent-card" data-parent="Jussi">
+          <span class="parent-dot" style="background:#c5bfb6"></span>
+          <span class="parent-name">Jussi</span>
+          <span class="parent-body muted" id="parentJussi">…</span>
+        </div>
+        <div class="parent-card" data-parent="Riikka">
+          <span class="parent-dot" style="background:#d4c0a0"></span>
+          <span class="parent-name">Riikka</span>
+          <span class="parent-body muted" id="parentRiikka">…</span>
+        </div>
       </div>
       <div class="duo-lunch" id="schoolLunch" style="display:none"></div>
     </div>
@@ -849,6 +899,53 @@
       if (w === kid) out.push(e);
     }
     return out;
+  }
+
+
+  function parentBits(now, name) {
+    var bits = [];
+    var evs = remainingEvents(now);
+    for (var i = 0; i < evs.length; i++) {
+      var e = evs[i];
+      var w = e.who || "";
+      if (w === name || w === "perhe" || w === "vanhemmat") {
+        var line = (fmtRange(e.time, e.end) ? fmtRange(e.time, e.end) + " " : "") + (e.title || "");
+        if (e.place) line += " · " + e.place;
+        bits.push(line);
+      }
+      // driving duties for kids
+      var drv = driverOf(e, now.iso);
+      if (drv && drv.indexOf(name) >= 0 && w !== name) {
+        bits.push("kyyti " + (e.who || "") + (e.title ? " · " + e.title : "") + (fmtRange(e.time, e.end) ? " " + fmtRange(e.time, e.end) : ""));
+      }
+    }
+    // absences / travel from schedule
+    if (schedule && schedule.absences) {
+      for (var a = 0; a < schedule.absences.length; a++) {
+        var ab = schedule.absences[a];
+        if (ab.who === name && ab.from <= now.iso && ab.to >= now.iso) {
+          bits.push((ab.where || "poissa") + (ab.note ? " · " + ab.note : ""));
+        }
+      }
+    }
+    return bits;
+  }
+
+  function paintParents(now) {
+    var names = ["Jussi", "Riikka"];
+    for (var i = 0; i < names.length; i++) {
+      var n = names[i];
+      var el = document.getElementById(n === "Jussi" ? "parentJussi" : "parentRiikka");
+      if (!el) continue;
+      var bits = parentBits(now, n);
+      if (!bits.length) {
+        el.textContent = "kotona / arki";
+        el.className = "parent-body muted";
+      } else {
+        el.textContent = bits.slice(0, 2).join(" · ");
+        el.className = "parent-body";
+      }
+    }
   }
 
   function paintKidsDay(now) {

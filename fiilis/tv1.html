@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v36-tv1">
+  <meta name="fiilis-build" content="20260921-v37-tv1">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -257,7 +257,7 @@
       opacity: .5; padding-bottom: .08vh;
     }
     .mday {
-      min-height: 3.2vh;
+      min-height: 3.8vh;
       border-radius: .7vmin;
       border: 1px solid rgba(44,36,24,0.07);
       background: rgba(255,255,255,0.28);
@@ -296,11 +296,14 @@
       opacity: .85;
     }
     .mlabel {
-      font-size: 1.05vmin; font-weight: 550; line-height: 1.05;
-      overflow: hidden; max-height: 2.1em;
+      font-size: 0.95vmin; font-weight: 550; line-height: 1.12;
+      overflow: hidden; max-height: none;
       color: #2c2418;
-      opacity: .72;
-      -ms-flex: 0 0 auto; flex: 0 0 auto; min-height: 0;
+      opacity: .78;
+      -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
     }
     .meal-line {
       font-size: 1.7vmin; font-weight: 550; padding: .28vh 0; line-height: 1.25;
@@ -1027,7 +1030,6 @@
         if (realEvs.length) {
           var t0 = realEvs[0].title || realEvs[0].who || "";
           if (!t0 && iso >= LONTOO_START && iso <= LONTOO_END) t0 = "Lontoo";
-          if (t0.length > 8) t0 = t0.slice(0, 7) + "…";
           label = "<div class=\"mlabel\">" + esc(t0) + "</div>";
         } else if (iso >= LONTOO_START && iso <= LONTOO_END) {
           label = "<div class=\"mlabel\">Lontoo</div>";

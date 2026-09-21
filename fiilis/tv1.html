@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v56b-cal-2lines">
+  <meta name="fiilis-build" content="20260921-v57-awards">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -38,7 +38,7 @@
     body.night .photo-wrap { border-color: rgba(240,228,212,0.12); box-shadow: 0 1vh 2.4vh rgba(0,0,0,0.28); }
     body.night .foot, body.night .chip { color: rgba(240,228,212,0.72); border-color: rgba(240,228,212,0.14); }
     body.night .cal-line, body.night .week-line { color: #f0e4d4; }
-    body.night .mday { background: rgba(255,248,238,0.07); border-color: rgba(240,228,212,0.12); color: #f0e4d4; }
+    body.night .mday { background: rgba(255,248,238,0.07); border-color: rgba(240,228,212,0.12); color: #f2e8dc; }
     body.night .mday.is-today { background: rgba(212,160,106,0.26); border-color: #d4a06a; }
     body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
@@ -136,11 +136,11 @@
     .duo {
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: .55vh;
+      gap: .45vh;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       min-height: 0;
-      height: 17.2vh;
-      max-height: 18vh;
+      height: 15.2vh;
+      max-height: 16vh;
     }
     .kids-row {
       display: -ms-flexbox; display: flex;
@@ -307,9 +307,10 @@
     }
 
     .photo-wrap {
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 32vh;
-      max-height: 34vh;
+      -ms-flex: 1 1 auto; flex: 1 1 auto;
+      min-height: 30vh;
+      height: 34vh;
+      max-height: 37vh;
       border-radius: 1.5vmin; overflow: hidden;
       border: 1px solid rgba(44,36,24,0.07);
       box-shadow: 0 .6vh 1.8vh rgba(80,50,20,0.08);
@@ -341,21 +342,22 @@
       text-align: left;
     }
     .countdown .cd-label {
-      font-size: 1.7vmin; font-weight: 550;
+      font-size: 1.85vmin; font-weight: 600;
       color: rgba(44,36,24,0.65);
       letter-spacing: .02em;
     }
     body.night .countdown .cd-label { color: rgba(240,228,212,0.65); }
     .countdown .cd-big {
       font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 5.2vmin; font-weight: 400;
+      font-size: 6.0vmin; font-weight: 400;
       letter-spacing: -.02em; line-height: 1.05;
       color: #b8883e;
       margin-top: .25vh;
     }
     body.night .countdown .cd-big { color: #d4a06a; }
     .odote {
-      font-size: 1.7vmin; font-weight: 550; padding: .4vh 0; line-height: 1.25;
+      font-size: 1.45vmin; font-weight: 500; padding: .28vh 0; line-height: 1.2;
+      opacity: .78;
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
       gap: .6vw;
@@ -395,11 +397,12 @@
       border-radius: .55vmin;
       border: 1px solid rgba(44,36,24,0.07);
       background: rgba(255,255,255,0.28);
-      padding: .12vh .18vw .1vh;
+      padding: .22vh .28vw .18vh;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: 0;
+      gap: 0.12vh;
       overflow: hidden;
+      color: #2c2418;
     }
     .mday.pad {
       visibility: hidden;
@@ -430,7 +433,7 @@
       opacity: .85;
     }
     .mlabel {
-      font-size: 1.05vmin; font-weight: 650; line-height: 1.15;
+      font-size: 1.2vmin; font-weight: 650; line-height: 1.2;
       overflow: hidden;
       color: #2c2418;
       opacity: .94;
@@ -442,11 +445,11 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-      margin: 0 0 0.12vh 0;
+      margin: 0 0 0.08vh 0;
       padding: 0;
     }
     body.night .mlabel {
-      font-size: 1.05vmin; font-weight: 650; line-height: 1.15;
+      font-size: 1.2vmin; font-weight: 650; line-height: 1.2;
       overflow: hidden;
       max-height: 2.4em;
       color: #f2e8dc;
@@ -708,7 +711,7 @@
     <div class="foot">
       <div class="chips" id="chips"></div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v53</span>
+      <span class="brand">v57</span>
     </div>
   </div>
   <script>
@@ -737,23 +740,89 @@
   };
   var PHOTOS = [
     { src: "photos-web/matka-2018-lontoo-cover-001.jpg", place: "Lontoo", year: "2018" },
-    { src: "photos-web/matka-2018-tanska-cover-008.jpg", place: "Tanska", year: "2018" },
-    { src: "photos-web/matka-2019-italia-cover-015.jpg", place: "Italia", year: "2019" },
-    { src: "photos-web/matka-2020-norja-cover-022.jpg", place: "Norja", year: "2020" },
-    { src: "photos-web/matka-2022-eurooppa-cover-029.jpg", place: "Eurooppa", year: "2022" },
-    { src: "photos-web/matka-2023-road-trip-cover-036.jpg", place: "Road Trip", year: "2023" },
-    { src: "photos-web/matka-2024-riviera-cover-043.jpg", place: "Riviera", year: "2024" },
-    { src: "photos-web/matka-2025-costa-brava-cover-050.jpg", place: "Costa Brava", year: "2025" },
-    { src: "photos-web/matka-2025-lontoo-cover-057.jpg", place: "Lontoo", year: "2025" },
-    { src: "photos-web/matka-2026-brasilia-cover-064.jpg", place: "Brasilia", year: "2026" },
-    { src: "photos-web/matka-2026-alicante-cover-071.jpg", place: "Alicante", year: "2026" },
-    { src: "photos-web/matka-2018-2026-kalastus-cover-078.jpg", place: "Kalastus", year: "2018–2026" },
     { src: "photos-web/matka-2018-lontoo-00-002.jpg", place: "Lontoo", year: "2018" },
+    { src: "photos-web/matka-2018-lontoo-01-003.jpg", place: "Lontoo", year: "2018" },
+    { src: "photos-web/matka-2018-lontoo-02-004.jpg", place: "Lontoo", year: "2018" },
+    { src: "photos-web/matka-2018-lontoo-03-005.jpg", place: "Lontoo", year: "2018" },
+    { src: "photos-web/matka-2018-lontoo-04-006.jpg", place: "Lontoo", year: "2018" },
+    { src: "photos-web/matka-2018-lontoo-05-007.jpg", place: "Lontoo", year: "2018" },
+    { src: "photos-web/matka-2018-tanska-cover-008.jpg", place: "Tanska", year: "2018" },
     { src: "photos-web/matka-2018-tanska-00-009.jpg", place: "Tanska", year: "2018" },
+    { src: "photos-web/matka-2018-tanska-01-010.jpg", place: "Tanska", year: "2018" },
+    { src: "photos-web/matka-2018-tanska-02-011.jpg", place: "Tanska", year: "2018" },
+    { src: "photos-web/matka-2018-tanska-03-012.jpg", place: "Tanska", year: "2018" },
+    { src: "photos-web/matka-2018-tanska-04-013.jpg", place: "Tanska", year: "2018" },
+    { src: "photos-web/matka-2018-tanska-05-014.jpg", place: "Tanska", year: "2018" },
+    { src: "photos-web/matka-2019-italia-cover-015.jpg", place: "Italia", year: "2019" },
     { src: "photos-web/matka-2019-italia-00-016.jpg", place: "Italia", year: "2019" },
+    { src: "photos-web/matka-2019-italia-01-017.jpg", place: "Italia", year: "2019" },
+    { src: "photos-web/matka-2019-italia-02-018.jpg", place: "Italia", year: "2019" },
+    { src: "photos-web/matka-2019-italia-03-019.jpg", place: "Italia", year: "2019" },
+    { src: "photos-web/matka-2019-italia-04-020.jpg", place: "Italia", year: "2019" },
+    { src: "photos-web/matka-2019-italia-05-021.jpg", place: "Italia", year: "2019" },
+    { src: "photos-web/matka-2020-norja-cover-022.jpg", place: "Norja", year: "2020" },
     { src: "photos-web/matka-2020-norja-00-023.jpg", place: "Norja", year: "2020" },
+    { src: "photos-web/matka-2020-norja-01-024.jpg", place: "Norja", year: "2020" },
+    { src: "photos-web/matka-2020-norja-02-025.jpg", place: "Norja", year: "2020" },
+    { src: "photos-web/matka-2020-norja-03-026.jpg", place: "Norja", year: "2020" },
+    { src: "photos-web/matka-2020-norja-04-027.jpg", place: "Norja", year: "2020" },
+    { src: "photos-web/matka-2020-norja-05-028.jpg", place: "Norja", year: "2020" },
+    { src: "photos-web/matka-2022-eurooppa-cover-029.jpg", place: "Eurooppa", year: "2022" },
+    { src: "photos-web/matka-2022-eurooppa-00-030.jpg", place: "Eurooppa", year: "2022" },
+    { src: "photos-web/matka-2022-eurooppa-01-031.jpg", place: "Eurooppa", year: "2022" },
+    { src: "photos-web/matka-2022-eurooppa-02-032.jpg", place: "Eurooppa", year: "2022" },
+    { src: "photos-web/matka-2022-eurooppa-03-033.jpg", place: "Eurooppa", year: "2022" },
+    { src: "photos-web/matka-2022-eurooppa-04-034.jpg", place: "Eurooppa", year: "2022" },
+    { src: "photos-web/matka-2022-eurooppa-05-035.jpg", place: "Eurooppa", year: "2022" },
+    { src: "photos-web/matka-2023-road-trip-cover-036.jpg", place: "Road Trip", year: "2023" },
+    { src: "photos-web/matka-2023-road-trip-00-037.jpg", place: "Road Trip", year: "2023" },
+    { src: "photos-web/matka-2023-road-trip-01-038.jpg", place: "Road Trip", year: "2023" },
+    { src: "photos-web/matka-2023-road-trip-02-039.jpg", place: "Road Trip", year: "2023" },
+    { src: "photos-web/matka-2023-road-trip-03-040.jpg", place: "Road Trip", year: "2023" },
+    { src: "photos-web/matka-2023-road-trip-04-041.jpg", place: "Road Trip", year: "2023" },
+    { src: "photos-web/matka-2023-road-trip-05-042.jpg", place: "Road Trip", year: "2023" },
+    { src: "photos-web/matka-2024-riviera-cover-043.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2024-riviera-00-044.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2024-riviera-01-045.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2024-riviera-02-046.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2024-riviera-03-047.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2024-riviera-04-048.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2024-riviera-05-049.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2025-costa-brava-cover-050.jpg", place: "Costa Brava", year: "2025" },
+    { src: "photos-web/matka-2025-costa-brava-00-051.jpg", place: "Costa Brava", year: "2025" },
+    { src: "photos-web/matka-2025-costa-brava-01-052.jpg", place: "Costa Brava", year: "2025" },
+    { src: "photos-web/matka-2025-costa-brava-02-053.jpg", place: "Costa Brava", year: "2025" },
+    { src: "photos-web/matka-2025-costa-brava-03-054.jpg", place: "Costa Brava", year: "2025" },
+    { src: "photos-web/matka-2025-costa-brava-04-055.jpg", place: "Costa Brava", year: "2025" },
+    { src: "photos-web/matka-2025-costa-brava-05-056.jpg", place: "Costa Brava", year: "2025" },
+    { src: "photos-web/matka-2025-lontoo-cover-057.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2025-lontoo-00-058.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2025-lontoo-01-059.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2025-lontoo-02-060.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2025-lontoo-03-061.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2025-lontoo-04-062.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2025-lontoo-05-063.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2026-brasilia-cover-064.jpg", place: "Brasilia", year: "2026" },
+    { src: "photos-web/matka-2026-brasilia-00-065.jpg", place: "Brasilia", year: "2026" },
+    { src: "photos-web/matka-2026-brasilia-01-066.jpg", place: "Brasilia", year: "2026" },
+    { src: "photos-web/matka-2026-brasilia-02-067.jpg", place: "Brasilia", year: "2026" },
+    { src: "photos-web/matka-2026-brasilia-03-068.jpg", place: "Brasilia", year: "2026" },
+    { src: "photos-web/matka-2026-brasilia-04-069.jpg", place: "Brasilia", year: "2026" },
+    { src: "photos-web/matka-2026-brasilia-05-070.jpg", place: "Brasilia", year: "2026" },
+    { src: "photos-web/matka-2026-alicante-cover-071.jpg", place: "Alicante", year: "2026" },
     { src: "photos-web/matka-2026-alicante-00-072.jpg", place: "Alicante", year: "2026" },
-    { src: "photos-web/matka-2018-2026-kalastus-00-079.jpg", place: "Kalastus", year: "2018–2026" }
+    { src: "photos-web/matka-2026-alicante-01-073.jpg", place: "Alicante", year: "2026" },
+    { src: "photos-web/matka-2026-alicante-02-074.jpg", place: "Alicante", year: "2026" },
+    { src: "photos-web/matka-2026-alicante-03-075.jpg", place: "Alicante", year: "2026" },
+    { src: "photos-web/matka-2026-alicante-04-076.jpg", place: "Alicante", year: "2026" },
+    { src: "photos-web/matka-2026-alicante-05-077.jpg", place: "Alicante", year: "2026" },
+    { src: "photos-web/matka-2018-2026-kalastus-cover-078.jpg", place: "Kalastus", year: "2018–2026" },
+    { src: "photos-web/matka-2018-2026-kalastus-00-079.jpg", place: "Kalastus", year: "2018–2026" },
+    { src: "photos-web/matka-2018-2026-kalastus-01-080.jpg", place: "Kalastus", year: "2018–2026" },
+    { src: "photos-web/matka-2018-2026-kalastus-02-081.jpg", place: "Kalastus", year: "2018–2026" },
+    { src: "photos-web/matka-2018-2026-kalastus-03-082.jpg", place: "Kalastus", year: "2018–2026" },
+    { src: "photos-web/matka-2018-2026-kalastus-04-083.jpg", place: "Kalastus", year: "2018–2026" },
+    { src: "photos-web/matka-2018-2026-kalastus-05-084.jpg", place: "Kalastus", year: "2018–2026" },
   ];
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
@@ -1267,6 +1336,20 @@
   }
 
 
+
+  function normEventTitle(t) {
+    var s = String(t || "").toLowerCase();
+    s = s.replace(/[·•.]/g, " ");
+    s = s.replace(/\s+/g, " ").replace(/^\s+|\s+$/g, "");
+    return s;
+  }
+  function eventDedupeKey(e, dayIso) {
+    var who = String(e && e.who ? e.who : "").toLowerCase();
+    var title = normEventTitle(e && e.title ? e.title : "");
+    var day = dayIso || (e && e.date ? e.date : "");
+    return day + "|" + who + "|" + title;
+  }
+
   function paintTomorrow(now) {
     /* Vanhempien pikaosio: mitä huomenna pitää hoitaa / tietää. */
     var el = document.getElementById("tomorrowBox");
@@ -1275,14 +1358,11 @@
     var list = eventsOn(iso);
     var out = [];
     var seen = {};
-    function keyOf(e) {
-      return String(e.who || "") + "|" + String(e.title || "") + "|" + String(e.time || "");
-    }
     for (var i = 0; i < list.length; i++) {
       var e = list[i];
       if (!e) continue;
       if (e.kind === "koulu") continue;
-      var k = keyOf(e);
+      var k = eventDedupeKey(e, iso);
       if (seen[k]) continue;
       seen[k] = 1;
       out.push(e);
@@ -1369,7 +1449,7 @@
     var seen = {};
     function push(ev) {
       if (!ev) return;
-      var key = String(ev.who || "") + "|" + String(ev.title || "");
+      var key = eventDedupeKey(ev, iso);
       if (seen[key]) return;
       seen[key] = 1;
       out.push(ev);
@@ -1475,7 +1555,7 @@
           });
           var parts = [];
           var used = {};
-          for (var ri = 0; ri < realEvs.length && parts.length < 6; ri++) {
+          for (var ri = 0; ri < realEvs.length && parts.length < 3; ri++) {
             var evx = realEvs[ri];
             var who = evx.who || "perhe";
             var rt = evx.title || "";
@@ -1599,6 +1679,7 @@
     var dateEl = document.getElementById("dateLine");
     if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ".";
     paintKidsDay(now);
+    paintParents(now);
     paintOdotukset(now);
     paintTomorrow(now);
     paintMeals(now);
@@ -1617,14 +1698,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v53", function (data) {
+    getJSON("schedule.json?v=20260921v57", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v35", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v57", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

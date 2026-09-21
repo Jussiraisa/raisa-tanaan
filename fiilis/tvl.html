@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v42-tvl-treenit">
+  <meta name="fiilis-build" content="20260921-v43-tvl-bigphoto">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -25,9 +25,9 @@
     }
     * { box-sizing: border-box; }
     .tv {
-      height: 100%; width: 100%; padding: 1.6% 2% 1.1%;
+      height: 100%; width: 100%; padding: 1.2% 1.6% 0.9%;
       display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column; gap: 1.05%;
+      -ms-flex-direction: column; flex-direction: column; gap: 0.85%;
     }
 
     body.morning { background: #f5f1e8; color: #2c2418; }
@@ -118,8 +118,8 @@
       gap: .55%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       min-height: 0;
-      height: 24.5%;
-      max-height: 26.5%;
+      height: 17.2%;
+      max-height: 18%;
     }
     .kids-row {
       display: -ms-flexbox; display: flex;
@@ -222,8 +222,8 @@
       display: -ms-flexbox; display: flex;
       gap: 1.2%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 10.5%;
-      max-height: 12%;
+      height: 8.2%;
+      max-height: 9%;
       min-height: 0;
     }
     .mid-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
@@ -287,8 +287,8 @@
 
     .photo-wrap {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 18%;
-      max-height: 20%;
+      height: 36%;
+      max-height: 38%;
       border-radius: 1.5vmin; overflow: hidden;
       border: 1px solid rgba(44,36,24,0.07);
       box-shadow: 0 .6% 1.8% rgba(80,50,20,0.08);
@@ -1020,6 +1020,9 @@
             html += "<div class=\"kid-line m\">" + esc(ev.place || "")
               + (drv ? (ev.place ? " · " : "") + esc(drv) : "") + "</div>";
           }
+          if (ev.note) {
+            html += "<div class=\"kid-line m\">" + esc(ev.note) + "</div>";
+          }
         }
       }
       body.innerHTML = html;
@@ -1193,7 +1196,7 @@
     if (!grid) return;
     try {
       var startIso = now.iso;
-      var endIso = addDaysIso(now.iso, 30);
+      var endIso = addDaysIso(now.iso, 100);
       var sp = isoParts(startIso);
       var ep = isoParts(endIso);
       if (lbl) {
@@ -1207,7 +1210,7 @@
       for (var padI = 0; padI < monIdx; padI++) {
         cells.push("<div class=\"mday pad\"></div>");
       }
-      for (var n = 0; n <= 30; n++) {
+      for (var n = 0; n <= 100; n++) {
         var iso = addDaysIso(startIso, n);
         var ip = isoParts(iso);
         var evs = dayBucketEvents(iso, now);
@@ -1236,7 +1239,13 @@
           dots += "<span class=\"mdot\" style=\"background:" + colorForWho(who) + "\"></span>";
         }
         if (realEvs.length) {
-          var t0 = realEvs[0].title || realEvs[0].who || "";
+          var t0 = "";
+          for (var ri = 0; ri < realEvs.length; ri++) {
+            var rk = realEvs[ri].kind || "";
+            var rt = realEvs[ri].title || "";
+            if (rk === "kisa" || /turnaus/i.test(rt)) { t0 = rt || realEvs[ri].who || ""; break; }
+          }
+          if (!t0) t0 = realEvs[0].title || realEvs[0].who || "";
           if (!t0 && iso >= LONTOO_START && iso <= LONTOO_END) t0 = "Lontoo";
           label = "<div class=\"mlabel\">" + esc(t0) + "</div>";
         } else if (iso >= LONTOO_START && iso <= LONTOO_END) {

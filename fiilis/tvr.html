@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v58-awards-tvr">
+  <meta name="fiilis-build" content="20260921-v59-restore-tvr">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
-
     #rot {
-      position: absolute; top: 50%; left: 50%;
+      position: fixed; left: 50%; top: 50%;
       width: 100vh; height: 100vw;
       -webkit-transform: translate(-50%, -50%) rotate(90deg);
       transform: translate(-50%, -50%) rotate(90deg);
@@ -145,11 +144,11 @@
     .duo {
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: .25%;
+      gap: .45%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       min-height: 0;
-      height: 10.5%;
-      max-height: 11%;
+      height: 15.2%;
+      max-height: 16%;
     }
     .kids-row {
       display: -ms-flexbox; display: flex;
@@ -161,56 +160,49 @@
       -ms-flex: 1; flex: 1;
       min-width: 0; min-height: 0;
       background: #ebe4d6;
-      border: 1px solid rgba(44,36,24,0.06);
-      border-radius: 1.0vmin;
-      padding: .35% .55% .3%;
+      border: 1px solid rgba(44,36,24,0.07);
+      border-radius: 1.2vmin;
+      padding: .7% .7% .55%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       overflow: hidden;
     }
-    body.evening .kid-card { background: #e4d8c4; }
-    body.night .kid-card {
-      background: rgba(40,34,28,0.55);
-      border-color: rgba(240,228,212,0.06);
-      box-shadow: none;
-    }
+    body.evening .kid-card { background: #e8dfd0; }
+    body.night .kid-card { background: #342c22; border-color: rgba(240,228,212,0.1); }
     .kid-head {
       display: -ms-flexbox; display: flex;
       -ms-flex-align: center; align-items: center;
-      gap: .35%;
-      margin-bottom: .15%;
+      gap: .45%;
+      margin-bottom: .35%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .kid-name {
-      font-size: 1.45vmin; font-weight: 700;
+      font-size: 1.85vmin; font-weight: 700;
       letter-spacing: -.01em;
-      opacity: .9;
     }
     .kid-dot {
-      width: 0.9vmin; height: 0.9vmin; border-radius: 50%;
+      width: 1.1vmin; height: 1.1vmin; border-radius: 50%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .kid-sec {
-      font-size: 0.95vmin; font-weight: 650; letter-spacing: .08em;
+      font-size: 1.15vmin; font-weight: 650; letter-spacing: .08em;
       text-transform: uppercase; color: #b8883e;
-      margin: .12% 0 .05%;
+      margin: .25% 0 .15%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      opacity: .75;
     }
     .kid-line {
-      font-size: 1.2vmin; font-weight: 600; line-height: 1.15;
-      padding: .05% 0;
+      font-size: 1.45vmin; font-weight: 600; line-height: 1.2;
+      padding: .12% 0;
     }
     .kid-line .t { font-variant-numeric: tabular-nums; font-weight: 700; }
-    .kid-line .m { font-size: 1.0vmin; font-weight: 500; opacity: .65; }
-    .kid-empty { font-size: 1.1vmin; font-weight: 500; opacity: .5; padding: .05% 0; }
+    .kid-line .m { font-size: 1.2vmin; font-weight: 500; opacity: .72; }
+    .kid-empty { font-size: 1.35vmin; font-weight: 500; opacity: .55; padding: .1% 0; }
     .kid-body { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
     .duo-lunch {
-      display: none !important;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      font-size: 1.1vmin; font-weight: 500;
-      padding: .2% .6%;
-      border-radius: .7vmin;
+      font-size: 1.4vmin; font-weight: 500;
+      padding: .35% .8%;
+      border-radius: .9vmin;
       background: rgba(184,136,62,0.1);
       color: #2c2418;
     }
@@ -218,11 +210,8 @@
 
     .parents-row {
       display: -ms-flexbox; display: flex;
-      gap: .55%;
+      gap: .85%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      max-height: 2.2%;
-      overflow: hidden;
-      opacity: .72;
     }
     .parent-card {
       -ms-flex: 1; flex: 1; min-width: 0;
@@ -260,49 +249,25 @@
 
     .mid-duo {
       display: -ms-flexbox; display: flex;
-      gap: 0.9%;
+      gap: 1%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 7%;
-      max-height: 7.4%;
-      min-height: 6.4%;
+      height: 9.2%;
+      max-height: 10%;
+      min-height: 8.2%;
     }
-    .mid-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; padding: 0.55% 0.85% 0.45%; }
-    .mid-duo .wxcard { -ms-flex: 0.85; flex: 0.85; opacity: .88; }
-    .mid-duo .tomorrowcard { -ms-flex: 1.45; flex: 1.45; }
+    .mid-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
+    .mid-duo .wxcard { -ms-flex: 1.35; flex: 1.35; }
+    .mid-duo .tomorrowcard { -ms-flex: 1.15; flex: 1.15; }
 
-    .hero-row {
+    .bottom-duo {
       display: -ms-flexbox; display: flex;
       gap: 1.2%;
-      -ms-flex: 1 1 auto; flex: 1 1 auto;
-      min-height: 40%;
-      height: 43%;
-      max-height: 46%;
+      -ms-flex: 1; flex: 1;
+      min-height: 0;
     }
-    .hero-row .photo-wrap {
-      -ms-flex: 1.45; flex: 1.45;
-      min-width: 0; min-height: 0;
-      height: auto !important;
-      max-height: none !important;
-    }
-    .hero-row .odotcard {
-      -ms-flex: 1.0; flex: 1.0;
-      min-width: 0; min-height: 0;
-      padding: 1.1% 1.2% 0.9%;
-    }
-    .monthcard-full {
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 15.5%;
-      max-height: 17%;
-      min-height: 13.5%;
-      opacity: 0.86;
-      padding: 0.55% 0.9% 0.45%;
-      border-color: rgba(44,36,24,0.05);
-    }
-    body.night .monthcard-full {
-      opacity: 0.78;
-      border-color: rgba(240,228,212,0.08);
-    }
-    .bottom-duo { display: none; }
+    .bottom-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
+    .bottom-duo .monthcard { -ms-flex: 2.2; flex: 2.2; }
+    .bottom-duo .odotcard { -ms-flex: 0.75; flex: 0.75; }
 
     .card {
       background: #ebe4d6;
@@ -351,12 +316,12 @@
 
     .photo-wrap {
       -ms-flex: 1 1 auto; flex: 1 1 auto;
-      min-height: 36%;
-      height: 42%;
-      max-height: 46%;
-      border-radius: 1.6vmin; overflow: hidden;
+      min-height: 30%;
+      height: 34%;
+      max-height: 37%;
+      border-radius: 1.5vmin; overflow: hidden;
       border: 1px solid rgba(44,36,24,0.07);
-      box-shadow: 0 .8% 2.2% rgba(80,50,20,0.12);
+      box-shadow: 0 .6% 1.8% rgba(80,50,20,0.08);
       background: rgba(44,36,24,0.04);
       position: relative;
     }
@@ -366,19 +331,17 @@
     }
     .photo-cap {
       position: absolute; left: 0; right: 0; bottom: 0;
-      padding: 1.6% 1.5% 1.4%;
-      font-size: 2.35vmin; font-weight: 500;
-      background: linear-gradient(transparent, rgba(40,32,24,0.62));
+      padding: 1.2% 1.3%;
+      font-size: 1.7vmin; font-weight: 500;
+      background: linear-gradient(transparent, rgba(40,32,24,0.5));
       color: #f5f1e8;
       font-family: Georgia, "Times New Roman", Times, serif;
-      letter-spacing: -.01em;
     }
     .photo-cap .wh {
-      font-size: 1.55vmin; opacity: .85; font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
+      font-size: 1.3vmin; opacity: .8; font-weight: 500;
+      letter-spacing: .04em;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin-bottom: .25%;
+      margin-bottom: .15%;
     }
 
     .countdown {
@@ -387,22 +350,22 @@
       text-align: left;
     }
     .countdown .cd-label {
-      font-size: 2.1vmin; font-weight: 650;
+      font-size: 1.85vmin; font-weight: 600;
       color: rgba(44,36,24,0.65);
       letter-spacing: .02em;
     }
     body.night .countdown .cd-label { color: rgba(240,228,212,0.65); }
     .countdown .cd-big {
       font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 8.0vmin; font-weight: 400;
-      letter-spacing: -.025em; line-height: 1.02;
+      font-size: 6.0vmin; font-weight: 400;
+      letter-spacing: -.02em; line-height: 1.05;
       color: #b8883e;
-      margin-top: .35%;
+      margin-top: .25%;
     }
     body.night .countdown .cd-big { color: #d4a06a; }
     .odote {
-      font-size: 1.25vmin; font-weight: 500; padding: .22% 0; line-height: 1.15;
-      opacity: .65;
+      font-size: 1.45vmin; font-weight: 500; padding: .28% 0; line-height: 1.2;
+      opacity: .78;
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
       gap: .6%;
@@ -439,16 +402,15 @@
     }
     .mday {
       min-height: 0;
-      border-radius: .45vmin;
-      border: 1px solid rgba(44,36,24,0.045);
-      background: rgba(255,255,255,0.18);
-      padding: .12% .18% .1%;
+      border-radius: .55vmin;
+      border: 1px solid rgba(44,36,24,0.07);
+      background: rgba(255,255,255,0.28);
+      padding: .22% .28% .18%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: 0.05%;
+      gap: 0.12%;
       overflow: hidden;
       color: #2c2418;
-      opacity: .9;
     }
     .mday.pad {
       visibility: hidden;
@@ -462,11 +424,10 @@
     .mday.is-lontoo { background: rgba(184,136,62,0.1); }
     .mday.is-school { background: rgba(255,255,255,0.18); }
     .mday .dn {
-      font-size: 0.95vmin; font-weight: 700;
+      font-size: 1.05vmin; font-weight: 700;
       font-variant-numeric: tabular-nums; line-height: 1;
-      margin-bottom: 0.02%;
+      margin-bottom: 0.05%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      opacity: .85;
     }
     .mday .dn .mo {
       font-size: 0.9vmin; font-weight: 500; opacity: .55; margin-left: .1%;
@@ -480,30 +441,32 @@
       opacity: .85;
     }
     .mlabel {
-      font-size: 1.05vmin; font-weight: 600; line-height: 1.15;
+      font-size: 1.2vmin; font-weight: 650; line-height: 1.2;
       overflow: hidden;
       color: #2c2418;
-      opacity: .78;
+      opacity: .94;
       min-height: 0;
-      max-height: 1.25em;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      max-height: 2.4em;
+      white-space: normal;
       word-break: break-word;
       overflow-wrap: break-word;
-      display: block;
-      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin: 0 0 0.08% 0;
       padding: 0;
     }
     body.night .mlabel {
-      font-size: 1.05vmin; font-weight: 600; line-height: 1.15;
+      font-size: 1.2vmin; font-weight: 650; line-height: 1.2;
       overflow: hidden;
-      max-height: 1.25em;
+      max-height: 2.4em;
       color: #f2e8dc;
-      opacity: .78;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      opacity: .96;
+      white-space: normal;
       word-break: break-word;
-      display: block;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
     body.night .mday.is-today .mlabel {
       color: #1a140e;
@@ -607,9 +570,7 @@
       opacity: .7;
     }
   
-    .mid-duo .tomorrowcard { -ms-flex: 1.45; flex: 1.45; min-width: 0; }
-    .mid-duo .lbl { font-size: 1.35vmin; margin-bottom: .3%; }
-    .wxcard .lbl { opacity: .75; }
+    .mid-duo .tomorrowcard { -ms-flex: 1.15; flex: 1.15; min-width: 0; }
     .tomorrowcard .scroll { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
     .tmw-line {
       display: -ms-flexbox; display: flex;
@@ -641,17 +602,9 @@
       min-height: 0;
     }
     .odotcard > .scroll#odoteList, .odotcard #odoteList {
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      min-height: 0;
-      max-height: 22%;
-      margin-top: 0.4%;
-    }
-    .hero-row .countdown {
       -ms-flex: 1 1 auto; flex: 1 1 auto;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column;
-      -ms-flex-pack: center; justify-content: center;
-      padding: 1.2% 0 0.8%;
+      min-height: 0;
+      max-height: 28%;
     }
     .meal-under {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
@@ -729,10 +682,26 @@
       <div class="duo-lunch" id="schoolLunch" style="display:none"></div>
     </div>
 
-    <div class="hero-row">
-      <div class="photo-wrap">
-        <img id="photo" src="photos-web/matka-2018-lontoo-cover-001.jpg" alt="">
-        <div class="photo-cap" id="photoCap"><div class="wh">Muisto</div>Lontoo · 2018</div>
+    <div class="photo-wrap">
+      <img id="photo" src="photos-web/matka-2018-lontoo-cover-001.jpg" alt="">
+      <div class="photo-cap" id="photoCap"><div class="wh">Muistatko…</div>Lontoo · 2018</div>
+    </div>
+
+    <div class="mid-duo">
+      <div class="card wxcard">
+        <div class="lbl">Viikkosää · Kuopio</div>
+        <div class="wxstrip" id="weekWx"><div class="empty muted">Sää latautuu…</div></div>
+      </div>
+      <div class="card tomorrowcard">
+        <div class="lbl">Huomenna</div>
+        <div class="scroll" id="tomorrowBox"><div class="empty muted">—</div></div>
+      </div>
+    </div>
+
+    <div class="bottom-duo">
+      <div class="card monthcard">
+        <div class="lbl" id="monthCalLbl">Kalenteri</div>
+        <div class="month-grid" id="monthCalGrid"><div class="empty muted">…</div></div>
       </div>
       <div class="card odotcard">
         <div class="lbl">Odotukset</div>
@@ -748,26 +717,10 @@
       </div>
     </div>
 
-    <div class="mid-duo">
-      <div class="card wxcard">
-        <div class="lbl">Viikkosää</div>
-        <div class="wxstrip" id="weekWx"><div class="empty muted">Sää latautuu…</div></div>
-      </div>
-      <div class="card tomorrowcard">
-        <div class="lbl">Huomenna</div>
-        <div class="scroll" id="tomorrowBox"><div class="empty muted">—</div></div>
-      </div>
-    </div>
-
-    <div class="card monthcard monthcard-full">
-      <div class="lbl" id="monthCalLbl">Kalenteri</div>
-      <div class="month-grid" id="monthCalGrid"><div class="empty muted">…</div></div>
-    </div>
-
     <div class="foot">
       <div class="chips" id="chips"></div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v58</span>
+      <span class="brand">v59</span>
     </div>
   </div>
 </div>
@@ -797,12 +750,10 @@
   };
   var PHOTOS = [
     { src: "photos-web/matka-2018-lontoo-cover-001.jpg", place: "Lontoo", year: "2018" },
-    { src: "photos-web/matka-2018-lontoo-00-002.jpg", place: "Lontoo", year: "2018" },
     { src: "photos-web/matka-2018-lontoo-01-003.jpg", place: "Lontoo", year: "2018" },
     { src: "photos-web/matka-2018-lontoo-02-004.jpg", place: "Lontoo", year: "2018" },
     { src: "photos-web/matka-2018-lontoo-03-005.jpg", place: "Lontoo", year: "2018" },
     { src: "photos-web/matka-2018-lontoo-04-006.jpg", place: "Lontoo", year: "2018" },
-    { src: "photos-web/matka-2018-lontoo-05-007.jpg", place: "Lontoo", year: "2018" },
     { src: "photos-web/matka-2018-tanska-cover-008.jpg", place: "Tanska", year: "2018" },
     { src: "photos-web/matka-2018-tanska-00-009.jpg", place: "Tanska", year: "2018" },
     { src: "photos-web/matka-2018-tanska-01-010.jpg", place: "Tanska", year: "2018" },
@@ -826,7 +777,6 @@
     { src: "photos-web/matka-2020-norja-05-028.jpg", place: "Norja", year: "2020" },
     { src: "photos-web/matka-2022-eurooppa-cover-029.jpg", place: "Eurooppa", year: "2022" },
     { src: "photos-web/matka-2022-eurooppa-00-030.jpg", place: "Eurooppa", year: "2022" },
-    { src: "photos-web/matka-2022-eurooppa-01-031.jpg", place: "Eurooppa", year: "2022" },
     { src: "photos-web/matka-2022-eurooppa-02-032.jpg", place: "Eurooppa", year: "2022" },
     { src: "photos-web/matka-2022-eurooppa-03-033.jpg", place: "Eurooppa", year: "2022" },
     { src: "photos-web/matka-2022-eurooppa-04-034.jpg", place: "Eurooppa", year: "2022" },
@@ -848,7 +798,6 @@
     { src: "photos-web/matka-2025-costa-brava-cover-050.jpg", place: "Costa Brava", year: "2025" },
     { src: "photos-web/matka-2025-costa-brava-00-051.jpg", place: "Costa Brava", year: "2025" },
     { src: "photos-web/matka-2025-costa-brava-01-052.jpg", place: "Costa Brava", year: "2025" },
-    { src: "photos-web/matka-2025-costa-brava-02-053.jpg", place: "Costa Brava", year: "2025" },
     { src: "photos-web/matka-2025-costa-brava-03-054.jpg", place: "Costa Brava", year: "2025" },
     { src: "photos-web/matka-2025-costa-brava-04-055.jpg", place: "Costa Brava", year: "2025" },
     { src: "photos-web/matka-2025-costa-brava-05-056.jpg", place: "Costa Brava", year: "2025" },
@@ -857,13 +806,10 @@
     { src: "photos-web/matka-2025-lontoo-01-059.jpg", place: "Lontoo", year: "2025" },
     { src: "photos-web/matka-2025-lontoo-02-060.jpg", place: "Lontoo", year: "2025" },
     { src: "photos-web/matka-2025-lontoo-03-061.jpg", place: "Lontoo", year: "2025" },
-    { src: "photos-web/matka-2025-lontoo-04-062.jpg", place: "Lontoo", year: "2025" },
     { src: "photos-web/matka-2025-lontoo-05-063.jpg", place: "Lontoo", year: "2025" },
     { src: "photos-web/matka-2026-brasilia-cover-064.jpg", place: "Brasilia", year: "2026" },
-    { src: "photos-web/matka-2026-brasilia-00-065.jpg", place: "Brasilia", year: "2026" },
     { src: "photos-web/matka-2026-brasilia-01-066.jpg", place: "Brasilia", year: "2026" },
     { src: "photos-web/matka-2026-brasilia-02-067.jpg", place: "Brasilia", year: "2026" },
-    { src: "photos-web/matka-2026-brasilia-03-068.jpg", place: "Brasilia", year: "2026" },
     { src: "photos-web/matka-2026-brasilia-04-069.jpg", place: "Brasilia", year: "2026" },
     { src: "photos-web/matka-2026-brasilia-05-070.jpg", place: "Brasilia", year: "2026" },
     { src: "photos-web/matka-2026-alicante-cover-071.jpg", place: "Alicante", year: "2026" },
@@ -952,6 +898,31 @@
   var weekWx = [];
   var photoIdx = 0;
   var photos = PHOTOS.slice(0);
+
+  /* Hard denylist: food/drink/object close-ups without people/scenery */
+  var PHOTO_DENY = {
+    "matka-2018-lontoo-00-002.jpg": 1,
+    "matka-2018-lontoo-05-007.jpg": 1,
+    "matka-2022-eurooppa-01-031.jpg": 1,
+    "matka-2025-costa-brava-02-053.jpg": 1,
+    "matka-2025-lontoo-04-062.jpg": 1,
+    "matka-2026-brasilia-00-065.jpg": 1,
+    "matka-2026-brasilia-03-068.jpg": 1
+  };
+  function photoDenied(src) {
+    if (!src) return true;
+    var base = String(src).split("/").pop();
+    return !!PHOTO_DENY[base];
+  }
+  function filterPhotos(list) {
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i];
+      if (p && p.src && !photoDenied(p.src)) out.push(p);
+    }
+    return out;
+  }
+  photos = filterPhotos(photos);
 
   function pad(n) { n = parseInt(n, 10); return n < 10 ? "0" + n : "" + n; }
   function esc(s) {
@@ -1287,15 +1258,25 @@
       } else {
         html += "<div class=\"kid-empty\">Ei koulua</div>";
       }
-      html += "<div class=\"kid-sec\">Treeni" + (tgt && tgt.tomorrow ? " · huom" : "") + "</div>";
+      html += "<div class=\"kid-sec\">Treenit" + (tgt && tgt.tomorrow ? " · tänään+huom" : "") + "</div>";
       var evs = eventsForKid(now, kid, tgt.focusIso);
       if (!evs.length) {
         html += "<div class=\"kid-empty\">—</div>";
       } else {
-        var ev = evs[0];
-        var dayHint = (ev.date && ev.date !== now.iso) ? (ev.date === tgt.focusIso ? "huom " : "") : "";
-        html += "<div class=\"kid-line\"><span class=\"t\">" + esc(dayHint + (fmtRange(ev.time, ev.end) || "")) + "</span> "
-          + esc(ev.title || "") + "</div>";
+        for (var e = 0; e < evs.length; e++) {
+          var ev = evs[e];
+          var drv = driverOf(ev, tgt.focusIso || now.iso);
+          var dayHint = (ev.date && ev.date !== now.iso) ? (ev.date === tgt.focusIso ? "huom " : "") : "";
+          html += "<div class=\"kid-line\"><span class=\"t\">" + esc(dayHint + (fmtRange(ev.time, ev.end) || "")) + "</span> "
+            + esc(ev.title || "") + "</div>";
+          if (ev.place || drv) {
+            html += "<div class=\"kid-line m\">" + esc(ev.place || "")
+              + (drv ? (ev.place ? " · " : "") + esc(drv) : "") + "</div>";
+          }
+          if (ev.note) {
+            html += "<div class=\"kid-line m\">" + esc(ev.note) + "</div>";
+          }
+        }
       }
       body.innerHTML = html;
     }
@@ -1426,7 +1407,7 @@
       return;
     }
     var html = "";
-    var max = Math.min(out.length, 4);
+    var max = Math.min(out.length, 10);
     for (var i = 0; i < max; i++) {
       var e = out[i];
       var who = e.who || "";
@@ -1602,7 +1583,7 @@
           });
           var parts = [];
           var used = {};
-          for (var ri = 0; ri < realEvs.length && parts.length < 2; ri++) {
+          for (var ri = 0; ri < realEvs.length && parts.length < 3; ri++) {
             var evx = realEvs[ri];
             var who = evx.who || "perhe";
             var rt = evx.title || "";
@@ -1702,7 +1683,7 @@
     var place = p.place || "Muisto";
     var year = p.year || "";
     var line = year ? (place + " · " + year) : place;
-    if (cap) cap.innerHTML = "<div class=\"wh\">Muisto</div>" + esc(line);
+    if (cap) cap.innerHTML = "<div class=\"wh\">Muistatko…</div>" + esc(line);
   }
 
   function paintChips() {
@@ -1745,14 +1726,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v58", function (data) {
+    getJSON("schedule.json?v=20260921v59", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v58", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v59", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {
@@ -1761,6 +1742,7 @@
             out.push({ src: m.src, place: m.place || "Muisto", year: m.year || "" });
           }
         }
+        out = filterPhotos(out);
         if (out.length >= 8) photos = out;
       }
       paintPhoto();

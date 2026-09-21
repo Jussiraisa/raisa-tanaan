@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789968427302,
+  "updated": 1789982677489,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -252,16 +252,6 @@
       "status": ""
     },
     {
-      "id": "sheet-milla-2026-09-21",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-21",
-      "start": "17:30",
-      "end": "18:30",
-      "place": "Luola",
-      "kind": "treeni"
-    },
-    {
       "id": "info-mea-voimat-2026-09-21",
       "who": "mea",
       "title": "Liannan voimat",
@@ -284,16 +274,6 @@
       "kind": "kyyti",
       "driver": "vienti Julia / haku Enni",
       "status": "other"
-    },
-    {
-      "id": "sheet-mea-2026-09-21",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-21",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "",
-      "kind": "treeni"
     },
     {
       "id": "info-pentutreffit-2026-09-22",
@@ -576,6 +556,26 @@
       "start": "17:00",
       "end": "17:45",
       "kind": "cal"
+    },
+    {
+      "id": "sheet-mea-2026-09-21",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-21",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-21",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-21",
+      "start": "17:30",
+      "end": "18:30",
+      "place": "Luola",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790006961265,
+  "updated": 1790009460102,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -239,30 +239,6 @@
   },
   "note": "",
   "extras": [
-    {
-      "id": "info-mea-voimat-2026-09-21",
-      "who": "mea",
-      "title": "Liannan voimat",
-      "date": "2026-09-21",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "Luola",
-      "kind": "treeni",
-      "driver": "Julia vie · Enni hakee",
-      "status": "other"
-    },
-    {
-      "id": "kyyti-mea-lianna-2026-09-21",
-      "who": "mea",
-      "title": "Lianna voimat · vie Julia, haku Enni",
-      "date": "2026-09-21",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "Luola",
-      "kind": "kyyti",
-      "driver": "vienti Julia / haku Enni",
-      "status": "other"
-    },
     {
       "id": "info-pentutreffit-2026-09-22",
       "title": "Pentutreffit · Ella kotona",
@@ -528,16 +504,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "sheet-mea-2026-09-21",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-21",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "",
-      "kind": "treeni"
     },
     {
       "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",

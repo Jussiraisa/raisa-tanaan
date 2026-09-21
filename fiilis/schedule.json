@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-21T19:48:08+03:00",
+  "updated": "2026-09-21T19:52:26+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Synkka Perhe 21.9.2026 ilta: WA-kyydit (Mea Lianna Julia/Enni/Amanda/Elina/Riikka) + viikkorutiinit. Riikka EI kusiksi 6.–9.10. Kuski auki: Mea 28.9. & 5.10., Ambrosia NTV, Milla hiontaleiri. | Nimenhuuto Welhot 2018 → Samuel treenit/turnaukset",
+  "note": "Synkka Perhe 21.9.2026 ilta: WA-kyydit (Mea Lianna Julia/Enni/Amanda/Elina/Riikka) + viikkorutiinit. Riikka EI kusiksi 6.–9.10. Kuski auki: Mea 28.9. & 5.10., Ambrosia NTV, Milla hiontaleiri. | Nimenhuuto Welhot 2018 → Samuel treenit/turnaukset | Welhot turnaukset NH → kk-kalenteri",
   "events": [
     {
       "date": "2026-09-20",
@@ -791,6 +791,46 @@
       "who": "Riikka",
       "title": "Synttärijuhlat kavereille",
       "kind": "juhla"
+    },
+    {
+      "date": "2026-10-31",
+      "time": "09:00",
+      "end": "16:00",
+      "who": "Samuel",
+      "title": "Welhot turnaus",
+      "place": "Studentia, Kuopio",
+      "kind": "kisa",
+      "source": "nimenhuuto:welhot2018"
+    },
+    {
+      "date": "2026-11-15",
+      "time": "08:00",
+      "end": "16:00",
+      "who": "Samuel",
+      "title": "Welhot turnaus",
+      "place": "Suonenjoki, Lintharju",
+      "kind": "kisa",
+      "source": "nimenhuuto:welhot2018"
+    },
+    {
+      "date": "2026-11-28",
+      "time": "09:00",
+      "end": "16:00",
+      "who": "Samuel",
+      "title": "Welhot turnaus",
+      "place": "Siilinjärvi, Ahmo",
+      "kind": "kisa",
+      "source": "nimenhuuto:welhot2018"
+    },
+    {
+      "date": "2026-12-19",
+      "time": "09:00",
+      "end": "16:00",
+      "who": "Samuel",
+      "title": "Welhot turnaus",
+      "place": "Luola, Savilahti",
+      "kind": "kisa",
+      "source": "nimenhuuto:welhot2018"
     }
   ],
   "schoolLunch": {

@@ -4,510 +4,199 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v60-fiilis-ds">
+  <meta name="fiilis-build" content="20260921-v61-fiilis-ds">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-/* =========================================================================
-   Fiilis TV — designjärjestelmä v1
-   Kangas 1080 × 1920 (TV pystyssä). 1 vmin = 10,8 px = 1 % kankaan leveydestä.
-   Kaikki arvot tulevat tokeneista. Älä kirjoita irrallisia heksoja tähän.
-   ========================================================================= */
-
-:root {
-  /* --- pinnat --- */
-  --tausta:        #f7f1e3;
-  --pinta:         #fbf6eb;
-  --pinta-korkea:  #fffcf5;
-  --pinta-syva:    #f3ebdd;
-  --solu:          #fffdf8;
-  --verho:         rgba(40, 30, 20, .85);
-
-  /* --- muste --- */
-  --muste:            #2c2418;
-  --muste-vahva:      #1a140e;
-  --muste-vaimea:     #6c5c44;
-  --muste-hiljainen:  #73634a;
-  --muste-kaanteinen: #f7f1e3;
-
-  /* --- kulta --- */
-  --kulta:         #b8883e;   /* vain täytöt ja koristereunat — ei teksti */
-  --kulta-viiva:   #a3712a;   /* merkitsevä reuna + suuri kultainen luku */
-  --kulta-teksti:  #8f6524;   /* otsakkeet ja pieni kultainen teksti */
-  --kulta-pehmea:  #d4a06a;   /* hehku ja koriste */
-  --kulta-huntu:   rgba(184, 136, 62, .12);
-  --terrakotta:    #9a4e22;
-
-  /* --- viivat --- */
-  --viiva:        rgba(44, 36, 24, .08);
-  --viiva-vahva:  rgba(44, 36, 24, .16);
-  --kohdistus:    #8f6524;
-
-  /* --- korostukset --- */
-  --tanaan-tausta: rgba(184, 136, 62, .16);
-  --matka-tausta:  rgba(184, 136, 62, .09);
-  --koulu-tausta:  rgba(255, 255, 255, .32);
-
-  /* --- perhe --- */
-  --ellen:  #e8b4bc;  --samuel: #a8c4dc;  --milla:  #e0c48a;
-  --mea:    #c4b0dc;  --jussi:  #c5bfb6;  --riikka: #d4c0a0;
-
-  /* --- varjot --- */
-  --varjo-kello:  0 .46vmin 1.39vmin rgba(40, 28, 14, .12);
-  --varjo-kortti: 0 .28vmin .93vmin rgba(80, 50, 20, .06);
-  --varjo-kuva:   0 .56vmin 1.76vmin rgba(80, 50, 20, .09);
-  --varjo-ei:     none;
-
-  /* --- tila (px ÷ 10,8) --- */
-  --tila-1: .37vmin;   --tila-2: .556vmin;  --tila-3: .833vmin;
-  --tila-4: 1.111vmin; --tila-5: 1.481vmin; --tila-6: 2.037vmin;
-  --tila-7: 2.778vmin;
-  --reuna-x: 2.5vmin;  --reuna-y: 1.019vmin;
-
-  /* --- pyöristys --- */
-  --pyoristys-xs: .556vmin; --pyoristys-sm: .833vmin;
-  --pyoristys-md: 1.204vmin; --pyoristys-lg: 1.481vmin;
-  --pyoristys-pyore: 999px;
-
-  /* --- läpinäkyvyys --- */
-  --hiipuma: .55;  --lepo: .88;
-
-  /* --- kirjasimet --- */
-  --font-display: Newsreader, Georgia, "Times New Roman", Times, serif;
-  --font-ui: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-}
-
-/* Ilta-teema. JS antaa bodylle luokan morning | afternoon | evening. */
-body.evening, body.night {
-  --tausta:        #f1e6d2;
-  --pinta:         #f8f0df;
-  --pinta-korkea:  #fff7e6;
-  --pinta-syva:    #eee2cc;
-  --solu:          #fbf3e2;
-  --verho:         rgba(29, 20, 9, .88);
-
-  --muste:            #241b0f;
-  --muste-vahva:      #120c06;
-  --muste-vaimea:     #63533c;
-  --muste-hiljainen:  #6e5e45;
-
-  --kulta:         #a3712a;
-  --kulta-viiva:   #96661f;
-  --kulta-teksti:  #7d5619;
-  --kulta-pehmea:  #c98f52;
-  --kulta-huntu:   rgba(163, 113, 42, .18);
-  --terrakotta:    #8a4219;
-
-  --viiva:        rgba(36, 27, 15, .12);
-  --viiva-vahva:  rgba(36, 27, 15, .2);
-  --kohdistus:    #7d5619;
-
-  --tanaan-tausta: rgba(163, 113, 42, .24);
-  --matka-tausta:  rgba(163, 113, 42, .15);
-  --koulu-tausta:  rgba(255, 247, 230, .24);
-
-  --varjo-kello:  0 .46vmin 1.57vmin rgba(40, 28, 14, .16);
-  --varjo-kortti: 0 .28vmin 1.02vmin rgba(80, 50, 20, .09);
-  --varjo-kuva:   0 .56vmin 1.94vmin rgba(80, 50, 20, .13);
-}
-
-/* =========================================================================
-   Kierto: paneeli on käännetty fyysisesti, selain luulee ruutua vaakaksi.
-   ========================================================================= */
-#rot {
-  position: fixed; left: 50%; top: 50%;
-  width: 100vh; height: 100vw;
-  -webkit-transform: translate(-50%, -50%) rotate(90deg);
-  transform: translate(-50%, -50%) rotate(90deg);
-  -webkit-transform-origin: center center; transform-origin: center center;
-  overflow: hidden;
-  background: var(--tausta);
-}
-
-html, body {
-  height: 100%; margin: 0; overflow: hidden;
-  background: var(--tausta);
-  color: var(--muste);
-  font-family: var(--font-ui);
-  -webkit-font-smoothing: antialiased;
-}
+/* Fiilis TV v61 — designjärjestelmä, käännetty staattiseksi CSS:ksi.
+   Ei var()-muuttujia eikä flexin gap-ominaisuutta: TV:n selain ei tue niitä.
+   Älä muokkaa tätä lohkoa käsin — se syntyy build2.py:stä tokeneista. */
+html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; color: #2c2418; font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
-
-/* =========================================================================
-   Typografia — nimetyt tyylit. Älä kirjoita irrallisia font-size-arvoja.
-   ========================================================================= */
-.t-kello       { font-family: var(--font-display); font-size: 9.26vmin; line-height: .92; font-weight: 400; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
-.t-odotus      { font-family: var(--font-display); font-size: 6.02vmin; line-height: 1.05; font-weight: 400; letter-spacing: -.02em; }
-.t-tervehdys   { font-family: var(--font-display); font-size: 3.52vmin; line-height: 1.1;  font-weight: 400; letter-spacing: -.01em; }
-.t-muisto      { font-family: var(--font-display); font-size: 1.76vmin; line-height: 1.25; font-weight: 400; }
-.t-tunnelma    { font-family: var(--font-display); font-size: 1.57vmin; line-height: 1.3;  font-weight: 400; font-style: italic; }
-
-.t-nimi        { font-size: 1.85vmin; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; }
-.t-rivi        { font-size: 1.67vmin; line-height: 1.3;  font-weight: 550; }
-.t-rivi-pieni  { font-size: 1.48vmin; line-height: 1.35; font-weight: 500; }
-.t-otsake      { font-size: 1.57vmin; line-height: 1;    font-weight: 600; letter-spacing: .06em; }
-.t-meta        { font-size: 1.48vmin; line-height: 1.3;  font-weight: 500; letter-spacing: .04em; }
-.t-merkki      { font-size: 1.3vmin;  line-height: 1;    font-weight: 600; }
-.t-mikro       { font-size: 1.2vmin;  line-height: 1;    font-weight: 700; letter-spacing: .05em; }
-
-.t-luku-suuri  { font-size: 2.69vmin; line-height: 1;    font-weight: 650; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
-.t-luku        { font-size: 1.2vmin;  line-height: 1.05; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
-.t-luku-pieni  { font-size: 1.02vmin; line-height: 1;    font-weight: 700; font-variant-numeric: tabular-nums; }
-
-/* apuvärit, joita JS käyttää */
-.muted  { color: var(--muste-vaimea); }
-.accent { color: var(--kulta-teksti); }
-.serif  { font-family: var(--font-display); }
-.empty  { color: var(--muste-hiljainen); font-size: 1.48vmin; font-weight: 500; }
-
-/* =========================================================================
-   Taulu — seitsemän vyötä
-   ========================================================================= */
-.tv {
-  height: 100%; width: 100%;
-  padding: var(--reuna-y) var(--reuna-x);
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
-  gap: var(--tila-3);
-  background: transparent;
-}
-
-/* --- yhteinen kortti --- */
-.card {
-  background: var(--pinta);
-  border: 1px solid var(--viiva);
-  border-radius: var(--pyoristys-lg);
-  box-shadow: var(--varjo-kortti);
-  padding: var(--tila-4);
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
-  min-height: 0; min-width: 0; overflow: hidden;
-}
-.lbl {
-  font-size: 1.57vmin; line-height: 1; font-weight: 600; letter-spacing: .06em;
-  color: var(--kulta-teksti);
-  margin-bottom: var(--tila-4);
-  -ms-flex: 0 0 auto; flex: 0 0 auto;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
+#rot { position: fixed; left: 50%; top: 50%; width: 100vh; height: 100vw; -webkit-transform: translate(-50%, -50%) rotate(90deg); transform: translate(-50%, -50%) rotate(90deg); -webkit-transform-origin: center center; transform-origin: center center; overflow: hidden; background: #f7f1e3; }
+.t-kello { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 9.26vmin; line-height: .92; font-weight: 400; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
+.t-tervehdys { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 3.52vmin; line-height: 1.1; font-weight: 400; letter-spacing: -.01em; }
+.t-meta { font-size: 1.48vmin; line-height: 1.3; font-weight: 500; letter-spacing: .04em; }
+.t-rivi { font-size: 1.67vmin; line-height: 1.3; font-weight: 550; }
+.t-luku-suuri { font-size: 2.69vmin; line-height: 1; font-weight: 650; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.muted { color: #6c5c44; }
+.accent { color: #8f6524; }
+.serif { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; }
+.empty { color: #73634a; font-size: 1.48vmin; font-weight: 500; }
+.tv { height: 100%; width: 100%; padding: 1.019vmin 2.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; background: transparent; }
+.tv > * + * { margin-top: .833vmin; }
+.card { background: #fbf6eb; border: 1px solid rgba(44,36,24,.08); border-radius: 1.481vmin; box-shadow: 0 .28vmin .93vmin rgba(80,50,20,.06); padding: 1.111vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
+.lbl { font-size: 1.57vmin; line-height: 1; font-weight: 600; letter-spacing: .06em; color: #8f6524; margin-bottom: 1.111vmin; -ms-flex: 0 0 auto; flex: 0 0 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .scroll { min-height: 0; overflow: hidden; }
-
-/* --- 1 · otsikko --- */
-.head {
-  -ms-flex: 0 0 14.07vmin; flex: 0 0 14.07vmin;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-align: center; align-items: center;
-  gap: var(--tila-5);
-}
-.clock {
-  -ms-flex: 0 0 auto; flex: 0 0 auto;
-  color: var(--muste-vahva);
-  background: var(--pinta-korkea);
-  box-shadow: var(--varjo-kello);
-  border-radius: var(--pyoristys-md);
-  padding: var(--tila-2) var(--tila-4) var(--tila-1);
-  min-width: 20vmin; text-align: center;
-}
-body.evening .clock { text-shadow: 0 0 1.2vmin var(--kulta-pehmea); }
+.head { -ms-flex: 0 0 14.07vmin; flex: 0 0 14.07vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
+.head > * + * { margin-left: 1.481vmin; }
+.clock { -ms-flex: 0 0 auto; flex: 0 0 auto; color: #1a140e; background: #fffcf5; box-shadow: 0 .46vmin 1.39vmin rgba(40,28,14,.12); border-radius: 1.204vmin; padding: .556vmin 1.111vmin .37vmin; min-width: 20vmin; text-align: center; }
 .greet-block { -ms-flex: 1; flex: 1; min-width: 0; }
-.greet { color: var(--kulta-teksti); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-body.evening .greet { color: var(--terrakotta); }
-.sub  { color: var(--muste-vaimea); margin-top: var(--tila-2); }
-.date { color: var(--muste-vaimea); margin-top: .2vmin; }
-
-.wx {
-  -ms-flex: 0 0 auto; flex: 0 0 auto;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-align: center; align-items: center;
-  gap: var(--tila-3);
-  max-width: 34vmin;
-}
+.greet { color: #8f6524; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sub { color: #6c5c44; margin-top: .556vmin; }
+.date { color: #6c5c44; margin-top: .2vmin; }
+.wx { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; max-width: 34vmin; }
+.wx > * + * { margin-left: .833vmin; }
 .wxicon { font-size: 3.6vmin; line-height: 1; }
 .wxbody { text-align: right; min-width: 0; }
-.wxtemp { color: var(--muste); }
-.wxbody > .wxtemp.muted:only-child { font-size: 1.48vmin; font-weight: 500; letter-spacing: .04em; }
-.wxmeta {
-  font-size: 1.3vmin; line-height: 1.3; font-weight: 500; letter-spacing: .02em;
-  color: var(--muste-vaimea); margin-top: .2vmin;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-
-/* --- 2 · perhe --- */
-.duo {
-  -ms-flex: 0 0 22vmin; flex: 0 0 22vmin;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
-  gap: var(--tila-2); min-height: 0;
-}
-.kids-row { -ms-flex: 1; flex: 1; display: -ms-flexbox; display: flex; gap: var(--tila-5); min-height: 0; }
-.kid-card {
-  -ms-flex: 1; flex: 1; min-width: 0; min-height: 0;
-  background: var(--pinta-syva);
-  border: 1px solid var(--viiva);
-  border-radius: var(--pyoristys-md);
-  box-shadow: var(--varjo-ei);
-  padding: var(--tila-4);
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
-  overflow: hidden;
-}
-.kid-head { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; gap: var(--tila-1); -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.kid-dot { width: 1.11vmin; height: 1.11vmin; border-radius: var(--pyoristys-pyore); -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.kid-name { font-size: 1.85vmin; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; color: var(--muste); }
-.kid-body { margin-top: var(--tila-2); min-height: 0; overflow: hidden; }
-.kid-sec {
-  font-size: 1.1vmin; line-height: 1; font-weight: 700; letter-spacing: .06em;
-  color: var(--kulta-teksti); margin: var(--tila-2) 0 var(--tila-1);
-}
+.wxtemp { color: #2c2418; }
+.wxmeta { font-size: 1.3vmin; line-height: 1.3; font-weight: 500; letter-spacing: .02em; color: #6c5c44; margin-top: .2vmin; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.duo { -ms-flex: 0 0 22vmin; flex: 0 0 22vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
+.duo > * + * { margin-top: .556vmin; }
+.kids-row { -ms-flex: 1; flex: 1; display: -ms-flexbox; display: flex; min-height: 0; }
+.kids-row > * + * { margin-left: 1.481vmin; }
+.kid-card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: 1.204vmin; box-shadow: none; padding: 1.111vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; overflow: hidden; }
+.kid-head { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.kid-head > * + * { margin-left: .37vmin; }
+.kid-dot { width: 1.11vmin; height: 1.11vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.kid-name { font-size: 1.85vmin; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; color: #2c2418; }
+.kid-body { margin-top: .556vmin; min-height: 0; overflow: hidden; }
+.kid-sec { font-size: 1.1vmin; line-height: 1; font-weight: 700; letter-spacing: .06em; color: #8f6524; margin: .556vmin 0 .37vmin; }
 .kid-sec:first-child { margin-top: 0; }
-.kid-line {
-  font-size: 1.48vmin; line-height: 1.3; font-weight: 500;
-  color: var(--muste);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
+.kid-line { font-size: 1.48vmin; line-height: 1.3; font-weight: 500; color: #2c2418; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .kid-line .t { font-weight: 650; }
-.kid-line.m { color: var(--muste-vaimea); font-weight: 500; }
-.kid-empty { font-size: 1.48vmin; line-height: 1.3; color: var(--muste-hiljainen); }
-/* Taulussa ei vieriteta: ylimenevat rivit jaavat pois, ei puolikasta rivia. */
+.kid-line.m { color: #6c5c44; font-weight: 500; }
+.kid-empty { font-size: 1.48vmin; line-height: 1.3; color: #73634a; }
 .kid-body > *:nth-child(n+8) { display: none; }
-
-.parents-row { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; gap: var(--tila-5); }
-.parent-card {
-  -ms-flex: 1; flex: 1; min-width: 0;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-align: center; align-items: center;
-  gap: var(--tila-1);
-  background: var(--pinta-syva);
-  border: 1px solid var(--viiva);
-  border-radius: var(--pyoristys-sm);
-  padding: var(--tila-1) var(--tila-4);
-  overflow: hidden;
-}
-.parent-dot { width: 1.11vmin; height: 1.11vmin; border-radius: var(--pyoristys-pyore); -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.parent-name { font-size: 1.67vmin; font-weight: 700; letter-spacing: -.01em; color: var(--muste); -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.parent-body {
-  font-size: 1.48vmin; font-weight: 500; color: var(--muste-vaimea);
-  margin-left: var(--tila-1); min-width: 0;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.duo-lunch {
-  -ms-flex: 0 0 auto; flex: 0 0 auto;
-  font-size: 1.48vmin; line-height: 1.3; font-weight: 500;
-  color: var(--muste-vaimea);
-  padding: var(--tila-1) var(--tila-4) 0;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-
-/* --- 3 · muisto --- */
-.photo-wrap {
-  -ms-flex: 1 1 auto; flex: 1 1 auto;
-  min-height: 30vmin; position: relative;
-  border-radius: var(--pyoristys-lg);
-  border: 1px solid var(--viiva);
-  box-shadow: var(--varjo-kuva);
-  overflow: hidden;
-  background: var(--pinta-syva);
-}
-.photo-wrap img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: opacity .6s ease;
-}
-.photo-cap {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  padding: var(--tila-7) var(--tila-5) var(--tila-4);
-  background: -webkit-linear-gradient(transparent, var(--verho));
-  background: linear-gradient(transparent, var(--verho));
-  color: var(--muste-kaanteinen);
-  font-family: var(--font-display);
-  font-size: 1.76vmin; line-height: 1.25; font-weight: 400;
-}
-.photo-cap .wh {
-  font-family: var(--font-ui);
-  font-size: 1.48vmin; line-height: 1.3; font-weight: 500; letter-spacing: .04em;
-  opacity: .85; margin-bottom: .2vmin;
-}
-
-/* --- 4 · viikkosää --- */
+.parents-row { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; }
+.parents-row > * + * { margin-left: 1.481vmin; }
+.parent-card { -ms-flex: 1; flex: 1; min-width: 0; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: .833vmin; padding: .37vmin 1.111vmin; overflow: hidden; }
+.parent-card > * + * { margin-left: .556vmin; }
+.parent-dot { width: 1.11vmin; height: 1.11vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.parent-name { font-size: 1.67vmin; font-weight: 700; letter-spacing: -.01em; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.parent-body { font-size: 1.48vmin; font-weight: 500; color: #6c5c44; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.duo-lunch { -ms-flex: 0 0 auto; flex: 0 0 auto; font-size: 1.48vmin; line-height: 1.3; font-weight: 500; color: #6c5c44; padding: 0 1.111vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.photo-wrap { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 30vmin; position: relative; border-radius: 1.481vmin; border: 1px solid rgba(44,36,24,.08); box-shadow: 0 .56vmin 1.76vmin rgba(80,50,20,.09); overflow: hidden; background: #f3ebdd; }
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.778vmin 1.481vmin 1.111vmin; color: #f7f1e3; font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 1.76vmin; line-height: 1.25; font-weight: 400; }
+.photo-cap .wh { font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 1.48vmin; line-height: 1.3; font-weight: 500; letter-spacing: .04em; opacity: .85; margin-bottom: .2vmin; }
 .mid-duo { -ms-flex: 0 0 14.63vmin; flex: 0 0 14.63vmin; display: -ms-flexbox; display: flex; min-height: 0; }
 .mid-duo .card { -ms-flex: 1; flex: 1; }
-.wxstrip { -ms-flex: 1; flex: 1; display: -ms-flexbox; display: flex; gap: var(--tila-2); min-height: 0; }
-.wxday {
-  -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; text-align: center;
-  background: var(--solu);
-  border: 1px solid var(--viiva);
-  border-radius: var(--pyoristys-sm);
-  box-shadow: var(--varjo-ei);
-  padding: var(--tila-2) var(--tila-1);
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
-  -ms-flex-pack: justify; justify-content: space-between;
-  -ms-flex-align: center; align-items: center;
-  overflow: hidden;
-}
-.wxday.is-today { background: var(--tanaan-tausta); border: 1.5px solid var(--kulta-viiva); }
-.wxday .dn {
-  font-size: 1.2vmin; line-height: 1; font-weight: 700; letter-spacing: .05em;
-  color: var(--muste-hiljainen); -ms-flex: 0 0 auto; flex: 0 0 auto;
-  text-transform: uppercase;
-}
-.wxday.is-today .dn { color: var(--kulta-teksti); }
-.wxday .ic {
-  font-size: 2.2vmin; line-height: 1; -ms-flex: 1 1 auto; flex: 1 1 auto;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-align: center; align-items: center;
-  -ms-flex-pack: center; justify-content: center;
-  min-height: 0; overflow: hidden;
-}
-.wxday .tm {
-  font-size: 1.2vmin; line-height: 1.05; font-weight: 700; letter-spacing: -.02em;
-  font-variant-numeric: tabular-nums; white-space: nowrap;
-  color: var(--muste); -ms-flex: 0 0 auto; flex: 0 0 auto;
-}
-.wxday .extra {
-  font-size: 1.02vmin; line-height: 1.05; font-weight: 550;
-  font-variant-numeric: tabular-nums; white-space: nowrap;
-  color: var(--muste-vaimea); -ms-flex: 0 0 auto; flex: 0 0 auto;
-}
-
-/* --- 5 · kalenteri + odotukset --- */
-.bottom-duo { -ms-flex: 0 0 29.44vmin; flex: 0 0 29.44vmin; display: -ms-flexbox; display: flex; gap: var(--tila-3); min-height: 0; }
+.wxstrip { -ms-flex: 1; flex: 1; display: -ms-flexbox; display: flex; min-height: 0; }
+.wxstrip > * + * { margin-left: .556vmin; }
+.wxday { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; text-align: center; background: #fffdf8; border: 1px solid rgba(44,36,24,.08); border-radius: .833vmin; box-shadow: none; padding: .556vmin .37vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: center; align-items: center; overflow: hidden; }
+.wxday.is-today { background: rgba(184,136,62,.16); border: 1.5px solid #a3712a; }
+.wxday .dn { font-size: 1.2vmin; line-height: 1; font-weight: 700; letter-spacing: .05em; color: #73634a; text-transform: uppercase; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.wxday.is-today .dn { color: #8f6524; }
+.wxday .ic { font-size: 2.2vmin; line-height: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; min-height: 0; overflow: hidden; }
+.wxday .tm { font-size: 1.2vmin; line-height: 1.05; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.wxday .extra { font-size: 1.02vmin; line-height: 1.05; font-weight: 550; font-variant-numeric: tabular-nums; white-space: nowrap; color: #6c5c44; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.bottom-duo { -ms-flex: 0 0 35vmin; flex: 0 0 35vmin; display: -ms-flexbox; display: flex; min-height: 0; }
+.bottom-duo > * + * { margin-left: .833vmin; }
 .monthcard { -ms-flex: 1.35; flex: 1.35; }
-.odotcard  { -ms-flex: 1; flex: 1; }
-
-.month-grid {
-  -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
-  gap: var(--tila-1);
-}
-.month-row { display: -ms-flexbox; display: flex; gap: var(--tila-1); -ms-flex: 1; flex: 1; min-height: 0; }
-.month-row.month-head { -ms-flex: 0 0 auto; flex: 0 0 auto; padding-bottom: var(--tila-1); }
+.odotcard { -ms-flex: 1; flex: 1; }
+.month-grid { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+.month-row { display: -ms-flexbox; display: flex; -ms-flex: 1; flex: 1; min-height: 0; }
+.month-row + .month-row { margin-top: .37vmin; }
+.month-row > * + * { margin-left: .37vmin; }
+.month-row.month-head { -ms-flex: 0 0 auto; flex: 0 0 auto; padding-bottom: .37vmin; }
 .month-row > .mdow, .month-row > .mday { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
-.mdow {
-  text-align: center;
-  font-size: 1.2vmin; line-height: 1; font-weight: 700; letter-spacing: .05em;
-  color: var(--muste-hiljainen); text-transform: uppercase;
-}
-.mday {
-  background: var(--solu);
-  border: 1px solid var(--viiva);
-  border-radius: var(--pyoristys-xs);
-  box-shadow: var(--varjo-ei);
-  padding: .28vmin var(--tila-1);
-  overflow: hidden;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
-}
+.mdow { text-align: center; font-size: 1.2vmin; line-height: 1; font-weight: 700; letter-spacing: .05em; color: #73634a; text-transform: uppercase; }
+.mday { background: #fffdf8; border: 1px solid rgba(44,36,24,.08); border-radius: .556vmin; box-shadow: none; padding: .19vmin .37vmin; overflow: hidden; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .mday.pad { visibility: hidden; border: 0; background: transparent; }
-.mday.is-school { background: var(--koulu-tausta); }
-.mday.is-lontoo { background: var(--matka-tausta); }
-.mday.is-today  { background: var(--tanaan-tausta); border: 1.5px solid var(--kulta-viiva); }
-.mday .dn {
-  font-size: 1.02vmin; line-height: 1; font-weight: 700;
-  font-variant-numeric: tabular-nums; color: var(--muste);
-  -ms-flex: 0 0 auto; flex: 0 0 auto;
-}
-.mday.is-today .dn { color: var(--muste-vahva); }
-.mday .dn .mo { font-size: .93vmin; font-weight: 500; color: var(--muste-hiljainen); margin-left: .19vmin; }
-.mlabel {
-  font-size: .93vmin; line-height: 1.2; font-weight: 600;
-  color: var(--muste-vaimea); margin-top: .19vmin;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-/* Enintaan kaksi merkintaa paivasolussa. */
-.mday .mlabel:nth-of-type(n+3) { display: none; }
-.mdot {
-  display: inline-block; width: .56vmin; height: .56vmin;
-  border-radius: var(--pyoristys-pyore); margin-right: .28vmin;
-  vertical-align: middle;
-}
-
+.mday.is-school { background: rgba(255,255,255,.32); }
+.mday.is-lontoo { background: rgba(184,136,62,.09); }
+.mday.is-today { background: rgba(184,136,62,.16); border: 1.5px solid #a3712a; }
+.mday .dn { font-size: .93vmin; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.mday.is-today .dn { color: #1a140e; }
+.mday .dn .mo { font-size: .93vmin; font-weight: 500; color: #73634a; margin-left: .19vmin; }
+.mlabel { font-size: .62vmin; line-height: 1.1; font-weight: 600; color: #6c5c44; margin-top: .07vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mdot { display: inline-block; width: .4vmin; height: .4vmin; border-radius: 999px; margin-right: .22vmin; vertical-align: middle; }
 .countdown { -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.cd-label {
-  font-size: 1.67vmin; line-height: 1.3; font-weight: 550;
-  color: var(--muste-vaimea);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.cd-big {
-  font-family: var(--font-display);
-  font-size: 6.02vmin; line-height: 1.05; font-weight: 400; letter-spacing: -.02em;
-  color: var(--kulta-viiva); margin-top: var(--tila-1);
-  text-transform: lowercase;
-}
+.cd-label { font-size: 1.67vmin; line-height: 1.3; font-weight: 550; color: #6c5c44; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cd-big { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 6.02vmin; line-height: 1.05; font-weight: 400; letter-spacing: -.02em; color: #a3712a; margin-top: .37vmin; text-transform: lowercase; }
 .cd-big::first-letter { text-transform: uppercase; }
-
-#odoteList { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; margin-top: var(--tila-4); border-top: 1px solid var(--viiva); padding-top: var(--tila-2); }
-.odote {
-  display: -ms-flexbox; display: flex;
-  -ms-flex-pack: justify; justify-content: space-between;
-  -ms-flex-align: baseline; align-items: baseline;
-  gap: var(--tila-3);
-  font-size: 1.48vmin; line-height: 1.35; font-weight: 500;
-  color: var(--muste); padding: var(--tila-1) 0;
-  white-space: nowrap; overflow: hidden;
-}
+#odoteList { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; margin-top: 1.111vmin; border-top: 1px solid rgba(44,36,24,.08); padding-top: .556vmin; }
+.odote { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: baseline; align-items: baseline; font-size: 1.48vmin; line-height: 1.35; font-weight: 500; color: #2c2418; padding: .37vmin 0; white-space: nowrap; overflow: hidden; }
+.odote > * + * { margin-left: .833vmin; }
 .odote > span:first-child { overflow: hidden; text-overflow: ellipsis; }
 .odote .d { -ms-flex: 0 0 auto; flex: 0 0 auto; font-weight: 650; }
-
-/* --- 6 · huomenna + kotona ruoka --- */
-.list-duo { -ms-flex: 0 0 20.93vmin; flex: 0 0 20.93vmin; display: -ms-flexbox; display: flex; gap: var(--tila-3); min-height: 0; }
+.list-duo { -ms-flex: 0 0 20.93vmin; flex: 0 0 20.93vmin; display: -ms-flexbox; display: flex; min-height: 0; }
+.list-duo > * + * { margin-left: .833vmin; }
 .list-duo .card { -ms-flex: 1; flex: 1; }
-
-.tmw-line {
-  display: -ms-flexbox; display: flex;
-  -ms-flex-align: baseline; align-items: baseline;
-  gap: var(--tila-2);
-  font-size: 1.67vmin; line-height: 1.3; font-weight: 550;
-  color: var(--muste);
-  padding: var(--tila-2) 0;
-  border-bottom: 1px solid var(--viiva);
-  white-space: nowrap; overflow: hidden;
-}
+.tmw-line { display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline; font-size: 1.67vmin; line-height: 1.3; font-weight: 550; color: #2c2418; padding: .556vmin 0; border-bottom: 1px solid rgba(44,36,24,.08); white-space: nowrap; overflow: hidden; }
+.tmw-line > * + * { margin-left: .556vmin; }
 .tmw-line:last-child { border-bottom: 0; }
-.tmw-line .who { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 4.2vmin; font-weight: 700; color: var(--muste); }
-.tmw-line .t   { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 7vmin; font-variant-numeric: tabular-nums; color: var(--muste-vaimea); font-weight: 650; }
+.tmw-line .who { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 4.2vmin; font-weight: 700; color: #2c2418; }
+.tmw-line .t { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 7vmin; font-variant-numeric: tabular-nums; color: #6c5c44; font-weight: 650; }
 .tmw-line .title { -ms-flex: 1; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-.tmw-line .place { -ms-flex: 0 0 auto; flex: 0 0 auto; font-size: 1.48vmin; font-weight: 500; color: var(--muste-vaimea); }
-.tmw-empty { font-size: 1.48vmin; color: var(--muste-hiljainen); padding: var(--tila-2) 0; }
-
-.meal-line {
-  display: -ms-flexbox; display: flex;
-  gap: var(--tila-2);
-  font-size: 1.67vmin; line-height: 1.3; font-weight: 550;
-  color: var(--muste);
-  padding: var(--tila-2) 0;
-  border-bottom: 1px solid var(--viiva);
-  white-space: nowrap; overflow: hidden;
-}
+.tmw-line .place { -ms-flex: 0 0 auto; flex: 0 0 auto; font-size: 1.48vmin; font-weight: 500; color: #6c5c44; }
+.tmw-empty { font-size: 1.48vmin; color: #73634a; padding: .556vmin 0; }
+.meal-line { display: -ms-flexbox; display: flex; font-size: 1.67vmin; line-height: 1.3; font-weight: 550; color: #2c2418; padding: .556vmin 0; border-bottom: 1px solid rgba(44,36,24,.08); white-space: nowrap; overflow: hidden; }
+.meal-line > * + * { margin-left: .556vmin; }
 .meal-line:last-child { border-bottom: 0; }
 .meal-line .d { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 5.5vmin; font-weight: 700; }
 .meal-line .t { -ms-flex: 1; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.foot { -ms-flex: 0 0 2.96vmin; flex: 0 0 2.96vmin; display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: center; align-items: center; }
+.foot > * + * { margin-left: 1.111vmin; }
+.chips { display: -ms-flexbox; display: flex; min-width: 0; overflow: hidden; }
+.chips > * + * { margin-left: .556vmin; }
+.chip { font-size: 1.3vmin; line-height: 1; font-weight: 600; padding: .46vmin .833vmin; border-radius: 999px; color: #2c2418; opacity: .88; white-space: nowrap; }
+.foot .tagline { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 1.57vmin; font-style: italic; font-weight: 400; color: #73634a; white-space: nowrap; }
+.foot .brand { font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em; color: #73634a; white-space: nowrap; text-transform: uppercase; }
 
-/* --- 7 · alatunniste --- */
-.foot {
-  -ms-flex: 0 0 2.96vmin; flex: 0 0 2.96vmin;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-pack: justify; justify-content: space-between;
-  -ms-flex-align: center; align-items: center;
-  gap: var(--tila-4);
-}
-.chips { display: -ms-flexbox; display: flex; gap: var(--tila-2); min-width: 0; overflow: hidden; }
-.chip {
-  font-size: 1.3vmin; line-height: 1; font-weight: 600;
-  padding: .46vmin var(--tila-3);
-  border-radius: var(--pyoristys-pyore);
-  color: var(--muste);
-  opacity: var(--lepo);
-  white-space: nowrap;
-}
-.foot .tagline { font-family: var(--font-display); font-size: 1.57vmin; font-style: italic; font-weight: 400; color: var(--muste-hiljainen); white-space: nowrap; }
-.foot .brand { font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em; color: var(--muste-hiljainen); white-space: nowrap; text-transform: uppercase; }
+/* ---- Ilta ---- */
+body.evening html, body.night html, body.evening body, body.night body { background: #f1e6d2; color: #241b0f; }
+body.evening #rot, body.night #rot { background: #f1e6d2; }
+body.evening .muted, body.night .muted { color: #63533c; }
+body.evening .accent, body.night .accent { color: #7d5619; }
+body.evening .empty, body.night .empty { color: #6e5e45; }
+body.evening .card, body.night .card { background: #f8f0df; border: 1px solid rgba(36,27,15,.12); box-shadow: 0 .28vmin 1.02vmin rgba(80,50,20,.09); }
+body.evening .lbl, body.night .lbl { color: #7d5619; }
+body.evening .clock, body.night .clock { color: #120c06; background: #fff7e6; box-shadow: 0 .46vmin 1.57vmin rgba(40,28,14,.16); }
+body.evening .greet, body.night .greet { color: #7d5619; }
+body.evening .sub, body.night .sub { color: #63533c; }
+body.evening .date, body.night .date { color: #63533c; }
+body.evening .wxtemp, body.night .wxtemp { color: #241b0f; }
+body.evening .wxmeta, body.night .wxmeta { color: #63533c; }
+body.evening .kid-card, body.night .kid-card { background: #eee2cc; border: 1px solid rgba(36,27,15,.12); }
+body.evening .kid-name, body.night .kid-name { color: #241b0f; }
+body.evening .kid-sec, body.night .kid-sec { color: #7d5619; }
+body.evening .kid-line, body.night .kid-line { color: #241b0f; }
+body.evening .kid-line.m, body.night .kid-line.m { color: #63533c; }
+body.evening .kid-empty, body.night .kid-empty { color: #6e5e45; }
+body.evening .parent-card, body.night .parent-card { background: #eee2cc; border: 1px solid rgba(36,27,15,.12); }
+body.evening .parent-name, body.night .parent-name { color: #241b0f; }
+body.evening .parent-body, body.night .parent-body { color: #63533c; }
+body.evening .duo-lunch, body.night .duo-lunch { color: #63533c; }
+body.evening .photo-wrap, body.night .photo-wrap { border: 1px solid rgba(36,27,15,.12); box-shadow: 0 .56vmin 1.94vmin rgba(80,50,20,.13); background: #eee2cc; }
+body.evening .wxday, body.night .wxday { background: #fbf3e2; border: 1px solid rgba(36,27,15,.12); }
+body.evening .wxday.is-today, body.night .wxday.is-today { background: rgba(163,113,42,.24); border: 1.5px solid #96661f; }
+body.evening .wxday .dn, body.night .wxday .dn { color: #6e5e45; }
+body.evening .wxday.is-today .dn, body.night .wxday.is-today .dn { color: #7d5619; }
+body.evening .wxday .tm, body.night .wxday .tm { color: #241b0f; }
+body.evening .wxday .extra, body.night .wxday .extra { color: #63533c; }
+body.evening .mdow, body.night .mdow { color: #6e5e45; }
+body.evening .mday, body.night .mday { background: #fbf3e2; border: 1px solid rgba(36,27,15,.12); }
+body.evening .mday.is-school, body.night .mday.is-school { background: rgba(255,247,230,.24); }
+body.evening .mday.is-lontoo, body.night .mday.is-lontoo { background: rgba(163,113,42,.15); }
+body.evening .mday.is-today, body.night .mday.is-today { background: rgba(163,113,42,.24); border: 1.5px solid #96661f; }
+body.evening .mday .dn, body.night .mday .dn { color: #241b0f; }
+body.evening .mday.is-today .dn, body.night .mday.is-today .dn { color: #120c06; }
+body.evening .mday .dn .mo, body.night .mday .dn .mo { color: #6e5e45; }
+body.evening .mlabel, body.night .mlabel { color: #63533c; }
+body.evening .cd-label, body.night .cd-label { color: #63533c; }
+body.evening .cd-big, body.night .cd-big { color: #96661f; }
+body.evening #odoteList, body.night #odoteList { border-top: 1px solid rgba(36,27,15,.12); }
+body.evening .odote, body.night .odote { color: #241b0f; }
+body.evening .tmw-line, body.night .tmw-line { color: #241b0f; border-bottom: 1px solid rgba(36,27,15,.12); }
+body.evening .tmw-line .who, body.night .tmw-line .who { color: #241b0f; }
+body.evening .tmw-line .t, body.night .tmw-line .t { color: #63533c; }
+body.evening .tmw-line .place, body.night .tmw-line .place { color: #63533c; }
+body.evening .tmw-empty, body.night .tmw-empty { color: #6e5e45; }
+body.evening .meal-line, body.night .meal-line { color: #241b0f; border-bottom: 1px solid rgba(36,27,15,.12); }
+body.evening .chip, body.night .chip { color: #241b0f; }
+body.evening .foot .tagline, body.night .foot .tagline { color: #6e5e45; }
+body.evening .foot .brand, body.night .foot .brand { color: #6e5e45; }
+.photo-cap { background: -webkit-linear-gradient(top, rgba(40,30,20,0), rgba(40,30,20,.85));
+  background: linear-gradient(to bottom, rgba(40,30,20,0), rgba(40,30,20,.85)); }
+body.evening .photo-cap, body.night .photo-cap {
+  background: -webkit-linear-gradient(top, rgba(29,20,9,0), rgba(29,20,9,.88));
+  background: linear-gradient(to bottom, rgba(29,20,9,0), rgba(29,20,9,.88)); }
 
-/* Kohdistus vain kaukosäädintä varten */
-:focus-visible { outline: 2px solid var(--kohdistus); outline-offset: 2px; }
   </style>
 </head>
 <body class="morning">
@@ -528,19 +217,19 @@ body.evening .greet { color: var(--terrakotta); }
     <!-- 2 · perhe -->
     <div class="duo">
       <div class="kids-row" id="kidsRow">
-        <div class="kid-card" data-kid="Ellen"><div class="kid-head"><span class="kid-dot" style="background:var(--ellen)"></span><span class="kid-name">Ellen</span></div><div class="kid-body muted">…</div></div>
-        <div class="kid-card" data-kid="Samuel"><div class="kid-head"><span class="kid-dot" style="background:var(--samuel)"></span><span class="kid-name">Samuel</span></div><div class="kid-body muted">…</div></div>
-        <div class="kid-card" data-kid="Milla"><div class="kid-head"><span class="kid-dot" style="background:var(--milla)"></span><span class="kid-name">Milla</span></div><div class="kid-body muted">…</div></div>
-        <div class="kid-card" data-kid="Mea"><div class="kid-head"><span class="kid-dot" style="background:var(--mea)"></span><span class="kid-name">Mea</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Ellen"><div class="kid-head"><span class="kid-dot" style="background:#e8b4bc"></span><span class="kid-name">Ellen</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Samuel"><div class="kid-head"><span class="kid-dot" style="background:#a8c4dc"></span><span class="kid-name">Samuel</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Milla"><div class="kid-head"><span class="kid-dot" style="background:#e0c48a"></span><span class="kid-name">Milla</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Mea"><div class="kid-head"><span class="kid-dot" style="background:#c4b0dc"></span><span class="kid-name">Mea</span></div><div class="kid-body muted">…</div></div>
       </div>
       <div class="parents-row" id="parentsRow">
         <div class="parent-card" data-parent="Jussi">
-          <span class="parent-dot" style="background:var(--jussi)"></span>
+          <span class="parent-dot" style="background:#c5bfb6"></span>
           <span class="parent-name">Jussi</span>
           <span class="parent-body muted" id="parentJussi">…</span>
         </div>
         <div class="parent-card" data-parent="Riikka">
-          <span class="parent-dot" style="background:var(--riikka)"></span>
+          <span class="parent-dot" style="background:#d4c0a0"></span>
           <span class="parent-name">Riikka</span>
           <span class="parent-body muted" id="parentRiikka">…</span>
         </div>
@@ -594,7 +283,7 @@ body.evening .greet { color: var(--terrakotta); }
     <div class="foot">
       <div class="chips" id="chips"></div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v60</span>
+      <span class="brand">v61</span>
     </div>
 
   </div>
@@ -1457,7 +1146,7 @@ body.evening .greet { color: var(--terrakotta); }
           });
           var parts = [];
           var used = {};
-          for (var ri = 0; ri < realEvs.length && parts.length < 3; ri++) {
+          for (var ri = 0; ri < realEvs.length && parts.length < 5; ri++) {
             var evx = realEvs[ri];
             var who = evx.who || "perhe";
             var rt = evx.title || "";

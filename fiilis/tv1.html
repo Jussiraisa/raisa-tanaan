@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v52-who-labels">
+  <meta name="fiilis-build" content="20260921-v53-huomenna">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -255,7 +255,7 @@
     }
     .mid-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
     .mid-duo .wxcard { -ms-flex: 1.35; flex: 1.35; }
-    .mid-duo .mealcard { -ms-flex: 1; flex: 1; }
+    .mid-duo .tomorrowcard { -ms-flex: 1.15; flex: 1.15; }
 
     .bottom-duo {
       display: -ms-flexbox; display: flex;
@@ -542,6 +542,61 @@
       font-size: 1.3vmin; white-space: nowrap;
       opacity: .7;
     }
+  
+    .mid-duo .tomorrowcard { -ms-flex: 1.15; flex: 1.15; min-width: 0; }
+    .tomorrowcard .scroll { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
+    .tmw-line {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: baseline; align-items: baseline;
+      gap: 0.55vw;
+      padding: 0.35vh 0;
+      border-bottom: 1px solid rgba(44,36,24,0.06);
+      font-size: 1.55vmin; line-height: 1.2;
+    }
+    .tmw-line:last-child { border-bottom: 0; }
+    .tmw-line .who {
+      font-weight: 700; min-width: 4.2vmin;
+      color: #b8883e;
+    }
+    .tmw-line .t {
+      font-weight: 700; font-variant-numeric: tabular-nums;
+      white-space: nowrap; min-width: 7vmin;
+    }
+    .tmw-line .title { -ms-flex: 1; flex: 1; min-width: 0; font-weight: 550; }
+    .tmw-line .place { opacity: .65; font-size: 1.25vmin; }
+    .tmw-empty { font-size: 1.45vmin; opacity: .55; padding: .4vh 0; }
+    body.night .tmw-line { border-bottom-color: rgba(240,228,212,0.1); }
+    body.night .tmw-line .who { color: #e0b878; }
+    body.night .tmw-line .title { color: #f2e8dc; }
+
+    .odotcard {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-direction: column; flex-direction: column;
+      min-height: 0;
+    }
+    .odotcard > .scroll#odoteList, .odotcard #odoteList {
+      -ms-flex: 1 1 auto; flex: 1 1 auto;
+      min-height: 0;
+      max-height: 28%;
+    }
+    .meal-under {
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      margin-top: 0.6vh;
+      padding-top: 0.55vh;
+      border-top: 1px solid rgba(44,36,24,0.1);
+    }
+    body.night .meal-under { border-top-color: rgba(240,228,212,0.14); }
+    .meal-lbl {
+      font-size: 1.25vmin !important;
+      margin-bottom: 0.25vh;
+      opacity: .85;
+    }
+    .meal-scroll {
+      max-height: 9vh;
+      overflow: hidden;
+      font-size: 1.35vmin;
+    }
+
   </style>
 </head>
 <body class="morning">
@@ -588,9 +643,9 @@
         <div class="lbl">Viikkosää · Kuopio</div>
         <div class="wxstrip" id="weekWx"><div class="empty muted">Sää latautuu…</div></div>
       </div>
-      <div class="card mealcard">
-        <div class="lbl">Kotona ruoka</div>
-        <div class="scroll" id="mealBox"><div class="empty muted">—</div></div>
+      <div class="card tomorrowcard">
+        <div class="lbl">Huomenna</div>
+        <div class="scroll" id="tomorrowBox"><div class="empty muted">—</div></div>
       </div>
     </div>
 
@@ -606,13 +661,17 @@
           <div class="cd-big">– päivää</div>
         </div>
         <div class="scroll" id="odoteList"></div>
+        <div class="meal-under">
+          <div class="lbl meal-lbl">Kotona ruoka</div>
+          <div class="scroll meal-scroll" id="mealBox"><div class="empty muted">—</div></div>
+        </div>
       </div>
     </div>
 
     <div class="foot">
       <div class="chips" id="chips"></div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v35</span>
+      <span class="brand">v53</span>
     </div>
   </div>
   <script>
@@ -1168,6 +1227,75 @@
         + "<span class=\"d accent\">" + esc(rem) + "</span></div>";
     }
     listEl.innerHTML = html || "<div class=\"empty muted\">Hiljaista odotuksissa</div>";
+  }
+
+
+  function paintTomorrow(now) {
+    var el = document.getElementById("tomorrowBox");
+    if (!el) return;
+    var iso = addDaysIso(now.iso, 1);
+    var evs = [];
+    if (typeof dayBucketEvents === "function") {
+      evs = dayBucketEvents(iso, now);
+    } else if (typeof eventsOn === "function") {
+      evs = eventsOn(iso);
+    }
+    var out = [];
+    for (var i = 0; i < evs.length; i++) {
+      var e = evs[i];
+      if (e.kind === "koulu") continue;
+      out.push(e);
+    }
+    // school rows from schoolStarts for tomorrow weekday
+    var p = isoParts(iso);
+    var dt = new Date(Date.UTC(p.y, p.m - 1, p.d));
+    var wd = dt.getUTCDay();
+    if (schedule && schedule.schoolStarts && wd >= 1 && wd <= 5) {
+      var ss = schedule.schoolStarts;
+      for (var s = 0; s < ss.length; s++) {
+        var row = ss[s];
+        var wds = row.weekdays || [];
+        var ok = false;
+        for (var j = 0; j < wds.length; j++) if (wds[j] === wd) ok = true;
+        if (ok) {
+          out.push({
+            who: row.who,
+            title: "Koulu",
+            time: row.time,
+            end: row.end,
+            kind: "koulu"
+          });
+        }
+      }
+    }
+    out.sort(function (a, b) {
+      var ta = parseMin(a.time); if (ta == null) ta = 9999;
+      var tb = parseMin(b.time); if (tb == null) tb = 9999;
+      if (ta !== tb) return ta - tb;
+      var wa = String(a.who || ""), wb = String(b.who || "");
+      if (wa < wb) return -1; if (wa > wb) return 1;
+      return 0;
+    });
+    if (!out.length) {
+      el.innerHTML = "<div class=\"tmw-empty\">Ei merkintöjä</div>";
+      return;
+    }
+    var html = "";
+    var max = Math.min(out.length, 8);
+    for (var i = 0; i < max; i++) {
+      var e = out[i];
+      var who = e.who || "";
+      var sw = (typeof shortWho === "function") ? shortWho(who) : who;
+      if (!sw) sw = who;
+      var time = fmtRange(e.time, e.end) || "";
+      html += "<div class=\"tmw-line\">"
+        + "<span class=\"who\">" + esc(sw || "·") + "</span>"
+        + (time ? "<span class=\"t\">" + esc(time) + "</span>" : "")
+        + "<span class=\"title\">" + esc(e.title || "") + "</span>"
+        + (e.place ? "<span class=\"place\">" + esc(e.place) + "</span>" : "")
+        + "</div>";
+    }
+    el.innerHTML = html;
   }
 
   function paintMeals(now) {

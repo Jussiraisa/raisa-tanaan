@@ -4,24 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v41-tvr-evening-next">
+  <meta name="fiilis-build" content="20260921-v42-tvr-treenit">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
 
-    /* Portrait board for landscape framebuffer (Cepter kitchen mount) */
     #rot {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100vh;
-      height: 100vw;
+      position: absolute; top: 50%; left: 50%;
+      width: 100vh; height: 100vw;
       -webkit-transform: translate(-50%, -50%) rotate(90deg);
       transform: translate(-50%, -50%) rotate(90deg);
-      -webkit-transform-origin: center center;
-      transform-origin: center center;
-      overflow: hidden;
-      background: #f5f1e8;
+      -webkit-transform-origin: center center; transform-origin: center center;
+      overflow: hidden; background: #f5f1e8;
     }
 
     html, body {
@@ -31,11 +25,9 @@
     }
     * { box-sizing: border-box; }
     .tv {
-      height: 100%; width: 100%;
-      padding: 1.6% 2% 1.1%;
+      height: 100%; width: 100%; padding: 1.6% 2% 1.1%;
       display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column;
-      gap: 1.05%;
+      -ms-flex-direction: column; flex-direction: column; gap: 1.05%;
     }
 
     body.morning { background: #f5f1e8; color: #2c2418; }
@@ -916,15 +908,32 @@
   }
 
   function eventsForKid(now, kid, focusIso) {
-    var iso = focusIso || now.iso;
-    var all = (iso === now.iso) ? remainingEvents(now) : eventsOn(iso);
+    /* Näytä treenit sekä tältä päivältä (jäljellä) että focus-päivältä (illalla huomenna). */
+    var isoFocus = focusIso || now.iso;
+    var seen = {};
     var out = [];
-    for (var i = 0; i < all.length; i++) {
-      var e = all[i];
-      if (e.kind === "matka") continue;
-      var w = e.who || "";
-      if (w === kid) out.push(e);
+    function addList(list, iso) {
+      for (var i = 0; i < list.length; i++) {
+        var e = list[i];
+        if (e.kind === "matka") continue;
+        if ((e.who || "") !== kid) continue;
+        var key = (e.date || iso) + "|" + (e.time || "") + "|" + (e.title || "");
+        if (seen[key]) continue;
+        seen[key] = 1;
+        out.push(e);
+      }
     }
+    if (isoFocus === now.iso) {
+      addList(remainingEvents(now), now.iso);
+    } else {
+      addList(remainingEvents(now), now.iso);
+      addList(eventsOn(isoFocus), isoFocus);
+    }
+    out.sort(function (a, b) {
+      var da = a.date || ""; var db = b.date || "";
+      if (da !== db) return da < db ? -1 : 1;
+      return (parseMin(a.time) || 0) - (parseMin(b.time) || 0);
+    });
     return out;
   }
 
@@ -996,7 +1005,7 @@
       } else {
         html += "<div class=\"kid-empty\">Ei koulua</div>";
       }
-      html += "<div class=\"kid-sec\">Treenit</div>";
+      html += "<div class=\"kid-sec\">Treenit" + (tgt && tgt.tomorrow ? " · tänään+huom" : "") + "</div>";
       var evs = eventsForKid(now, kid, tgt.focusIso);
       if (!evs.length) {
         html += "<div class=\"kid-empty\">—</div>";
@@ -1004,7 +1013,8 @@
         for (var e = 0; e < evs.length; e++) {
           var ev = evs[e];
           var drv = driverOf(ev, tgt.focusIso || now.iso);
-          html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(ev.time, ev.end) || "") + "</span> "
+          var dayHint = (ev.date && ev.date !== now.iso) ? (ev.date === tgt.focusIso ? "huom " : "") : "";
+          html += "<div class=\"kid-line\"><span class=\"t\">" + esc(dayHint + (fmtRange(ev.time, ev.end) || "")) + "</span> "
             + esc(ev.title || "") + "</div>";
           if (ev.place || drv) {
             html += "<div class=\"kid-line m\">" + esc(ev.place || "")

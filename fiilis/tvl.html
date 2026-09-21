@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v43-tvl-bigphoto">
+  <meta name="fiilis-build" content="20260921-v44-tvl-ilta-kalenteri">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -25,17 +25,20 @@
     }
     * { box-sizing: border-box; }
     .tv {
-      height: 100%; width: 100%; padding: 1.2% 1.6% 0.9%;
+      height: 100%; width: 100%; padding: 1.1% 1.5% 0.85%;
       display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column; gap: 0.85%;
+      -ms-flex-direction: column; flex-direction: column; gap: 0.8%;
     }
 
     body.morning { background: #f5f1e8; color: #2c2418; }
     body.afternoon { background: #f3eee4; color: #2a2218; }
-    body.evening { background: #efe6d8; color: #2a2018; }
-    body.evening .card { background: #e8dfd0; }
-    body.evening .accent { color: #a86a3a; }
-    body.evening .muted { color: rgba(42,32,24,0.68); }
+    body.evening { background: #e4d2b8; color: #2a1c12; }
+    body.evening .card { background: #dcc7a8; border-color: rgba(80,40,10,0.12); }
+    body.evening .accent { color: #9a4e22; }
+    body.evening .muted { color: rgba(42,28,16,0.7); }
+    body.evening .kid-card { background: #d8c2a0; }
+    body.evening .clock { color: #3a2414; }
+    body.evening .greet { color: #9a4e22; }
     body.night { background: #2a241c; color: #f0e6d6; }
     body.night .card { background: #342c22; border-color: rgba(240,228,212,0.1); }
     body.night .accent { color: #d4a06a; }
@@ -237,8 +240,8 @@
       min-height: 0;
     }
     .bottom-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
-    .bottom-duo .monthcard { -ms-flex: 1.65; flex: 1.65; }
-    .bottom-duo .odotcard { -ms-flex: 0.9; flex: 0.9; }
+    .bottom-duo .monthcard { -ms-flex: 2.2; flex: 2.2; }
+    .bottom-duo .odotcard { -ms-flex: 0.75; flex: 0.75; }
 
     .card {
       background: #ebe4d6;
@@ -409,14 +412,15 @@
       opacity: .85;
     }
     .mlabel {
-      font-size: 0.95vmin; font-weight: 550; line-height: 1.12;
-      overflow: hidden; max-height: none;
+      font-size: 1.15vmin; font-weight: 600; line-height: 1.15;
+      overflow: hidden;
       color: #2c2418;
-      opacity: .78;
-      -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0;
+      opacity: .88;
+      min-height: 0;
       word-break: break-word;
       overflow-wrap: break-word;
       white-space: normal;
+      margin-top: 0.1%;
     }
     .meal-line {
       font-size: 1.7vmin; font-weight: 550; padding: .28% 0; line-height: 1.25;
@@ -720,14 +724,15 @@
   function greeting(hour) {
     if (hour >= 5 && hour < 11) return "Hyvää huomenta";
     if (hour >= 11 && hour < 17) return "Hyvää päivää";
-    if (hour >= 17 && hour < 22) return "Hyvää iltaa";
+    if (hour >= 17 && hour < 20) return "Hyvää iltaa";
     return "Hyvää yötä";
   }
 
   function themeClass(hour) {
     if (hour >= 5 && hour < 11) return "morning";
     if (hour >= 11 && hour < 17) return "afternoon";
-    if (hour >= 17 && hour < 22) return "evening";
+    /* Ilta alkaa 17, syvä ilta/yö jo 20 — keittiö-TV ehtii vaihtua ajoissa */
+    if (hour >= 17 && hour < 20) return "evening";
     return "night";
   }
 
@@ -1196,7 +1201,7 @@
     if (!grid) return;
     try {
       var startIso = now.iso;
-      var endIso = addDaysIso(now.iso, 100);
+      var endIso = addDaysIso(now.iso, 70);
       var sp = isoParts(startIso);
       var ep = isoParts(endIso);
       if (lbl) {
@@ -1210,7 +1215,7 @@
       for (var padI = 0; padI < monIdx; padI++) {
         cells.push("<div class=\"mday pad\"></div>");
       }
-      for (var n = 0; n <= 100; n++) {
+      for (var n = 0; n <= 70; n++) {
         var iso = addDaysIso(startIso, n);
         var ip = isoParts(iso);
         var evs = dayBucketEvents(iso, now);
@@ -1239,15 +1244,30 @@
           dots += "<span class=\"mdot\" style=\"background:" + colorForWho(who) + "\"></span>";
         }
         if (realEvs.length) {
-          var t0 = "";
-          for (var ri = 0; ri < realEvs.length; ri++) {
-            var rk = realEvs[ri].kind || "";
-            var rt = realEvs[ri].title || "";
-            if (rk === "kisa" || /turnaus/i.test(rt)) { t0 = rt || realEvs[ri].who || ""; break; }
+          realEvs.sort(function (a, b) {
+            function score(ev) {
+              var k = ev.kind || "", t = (ev.title || "").toLowerCase();
+              if (k === "kisa" || t.indexOf("turnaus") >= 0) return 0;
+              if (k === "juhla" || k === "matka") return 1;
+              if (k === "treeni") return 2;
+              return 3;
+            }
+            return score(a) - score(b);
+          });
+          var parts = [];
+          var used = {};
+          for (var ri = 0; ri < realEvs.length && parts.length < 3; ri++) {
+            var rt = realEvs[ri].title || realEvs[ri].who || "";
+            if (!rt) continue;
+            var short = rt.length > 16 ? rt.slice(0, 15) + "…" : rt;
+            if (used[short]) continue;
+            used[short] = 1;
+            parts.push(short);
           }
-          if (!t0) t0 = realEvs[0].title || realEvs[0].who || "";
-          if (!t0 && iso >= LONTOO_START && iso <= LONTOO_END) t0 = "Lontoo";
-          label = "<div class=\"mlabel\">" + esc(t0) + "</div>";
+          if (!parts.length && iso >= LONTOO_START && iso <= LONTOO_END) parts.push("Lontoo");
+          for (var pi = 0; pi < parts.length; pi++) {
+            label += "<div class=\"mlabel\">" + esc(parts[pi]) + "</div>";
+          }
         } else if (iso >= LONTOO_START && iso <= LONTOO_END) {
           label = "<div class=\"mlabel\">Lontoo</div>";
         }
@@ -1354,7 +1374,7 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v35", function (data) {
+    getJSON("schedule.json?v=20260921v43", function (data) {
       if (data) schedule = data;
       paint();
     });

@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v71-atelier-tvr">
+  <meta name="fiilis-build" content="20260921-v72-fitlock-tvr">
   <meta name="theme-color" content="#F5F3E7">
   <title>Räisä · Yhteinen aika</title>
   <style>
 
     #rot {
       position: fixed; left: 50%; top: 50%;
-      width: 100vh; height: 100vw;
+      width: 100vh; height: 100vw; /* fallback before JS pixel-lock */
       -webkit-transform: translate(-50%, -50%) rotate(90deg);
       transform: translate(-50%, -50%) rotate(90deg);
       -webkit-transform-origin: center center; transform-origin: center center;
-      overflow: hidden; background: transparent;
+      overflow: hidden; background: #F5F3E7;
     }
+    body.night #rot { background: #161C19; }
 
     html, body {
       height: 100%; margin: 0; overflow: hidden;
@@ -25,7 +26,10 @@
     }
     * { box-sizing: border-box; }
     .tv {
-      height: 100%; width: 100%;
+      width: 100%; height: 100%;
+      box-sizing: border-box;
+      max-width: none;
+      margin: 0;
       padding: 1% 1.4% 0.7%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
@@ -33,16 +37,16 @@
     }
 
     body.morning { background: #F5F3E7; color: #2a241c; }
-    body.afternoon { background: #F3F0E4; color: #2a2218; }
+    body.afternoon { background: #F1EDE4; color: #2a2218; }
     body.evening { background: #EFE8D8; color: #2a1c12; }
     body.evening .card { background: rgba(255,248,236,0.45); border-color: rgba(80,40,10,0.10); }
     body.evening .accent { color: #8a7350; }
     body.evening .muted { color: rgba(42,28,16,0.68); }
-    body.evening .greet { color: #1a140e; }
+    body.evening .greet { color: #2A241C; }
     body.evening .honey { color: #8a7350; }
-    body.night { background: #1c1814; color: #f2ebe2; }
+    body.night { background: #161C19; color: #f2ebe2; }
     body.night .card {
-      background: #2a231c; border-color: rgba(240,228,212,0.14);
+      background: #24302A; border-color: rgba(240,228,212,0.14);
       box-shadow: 0 0.4% 1.2% rgba(0,0,0,0.28);
     }
     body.night .accent { color: #d4a06a; }
@@ -70,7 +74,7 @@
     body.night .mday.is-today .mlabel { color: #f2ebe2; opacity: 1; }
     body.night .wxday { background: rgba(255,248,238,0.06); border-color: rgba(240,228,212,0.1); }
     body.night .wxday.is-today { background: rgba(212,160,106,0.12); }
-    body.night .photo-cap { background: #1a1814; color: #f5f1e8; border-color: rgba(240,228,212,0.12); }
+    body.night .photo-cap { background: #1A221E; color: #f5f1e8; border-color: rgba(240,228,212,0.12); }
     body.night .sub { color: rgba(240,228,212,0.62); }
     body.night .brand-name { color: #f2ebe2; }
     body.night .brand-tag { color: rgba(240,228,212,0.55); }
@@ -78,11 +82,11 @@
     body.night .date-line { color: rgba(240,228,212,0.75); }
     body.night .wx-one { color: rgba(240,228,212,0.7); }
     body.night .school-row { border-bottom-color: rgba(240,228,212,0.1); }
-    body.night .school-card { background: #2a2722; }
+    body.night .school-card { background: #2A332E; }
     body.night .meal-today { color: #f2ebe2; }
     body.night .meal-tmw { color: rgba(240,228,212,0.7); }
     body.night .next-card {
-      background: #2F3B2E; color: #f2ebe2;
+      background: #36453A; color: #f2ebe2;
       border-color: rgba(240,228,212,0.08);
     }
     body.night .odotcard .cd-num { color: #d4a06a; }
@@ -119,9 +123,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 10.2vmin; font-weight: 500; letter-spacing: -.04em;
       line-height: .9; font-variant-numeric: tabular-nums;
-      color: #1a140e;
+      color: #2A241C;
     }
-    body.evening .clock { color: #1a140e; }
+    body.evening .clock { color: #2A241C; }
     .date-line {
       font-size: 1.6vmin; font-weight: 500;
       margin-top: 0.5%;
@@ -132,7 +136,7 @@
     .brand-name {
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: 3.5vmin; font-weight: 400; letter-spacing: -.01em;
-      line-height: 1.05; color: #1a140e;
+      line-height: 1.05; color: #2A241C;
     }
     .brand-tag {
       font-size: 1.25vmin; font-weight: 650;
@@ -159,7 +163,7 @@
     .greet {
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: 4.0vmin; font-weight: 400; letter-spacing: -.015em;
-      line-height: 1.1; color: #1a140e;
+      line-height: 1.1; color: #2A241C;
     }
     .sub {
       font-family: Georgia, "Times New Roman", Times, serif;
@@ -194,7 +198,7 @@
       object-fit: cover; display: block;
     }
     .photo-cap {
-      background: #1e1c18;
+      background: #1A221E;
       color: #f5f1e8;
       padding: 0.85% 1.2% 0.8%;
       display: -ms-flexbox; display: flex;
@@ -269,7 +273,7 @@
       min-height: 0; overflow: hidden;
     }
     .school-card {
-      background: #E9E7DC;
+      background: #EBE5D9;
       border-color: rgba(42,36,28,0.06);
     }
     .lbl {
@@ -316,7 +320,7 @@
     .school-empty { font-size: 1.5vmin; opacity: .5; padding: 0.4% 0; }
 
     .next-card {
-      background: #2F3B2E;
+      background: #36453A;
       color: #f3efe6;
       border-color: rgba(20,30,24,0.15);
       box-shadow: none;
@@ -347,7 +351,7 @@
       font-size: 1.7vmin; opacity: .6; padding: 0.6% 0;
       font-family: Georgia, "Times New Roman", Times, serif;
     }
-    body.evening .next-card { background: #2F3B2E; }
+    body.evening .next-card { background: #36453A; }
 
     .wxstrip {
       display: -ms-flexbox; display: flex;
@@ -393,7 +397,7 @@
     .meal-today {
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: 2.6vmin; font-weight: 400; line-height: 1.15;
-      color: #1a140e;
+      color: #2A241C;
       -ms-flex: 1; flex: 1;
       display: -ms-flexbox; display: flex;
       -ms-flex-align: center; align-items: center;
@@ -424,7 +428,7 @@
     .countdown .cd-label {
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: 1.85vmin; font-weight: 400;
-      color: #1a140e;
+      color: #2A241C;
       letter-spacing: .01em;
     }
     body.night .countdown .cd-label { color: #f2ebe2; }
@@ -439,10 +443,10 @@
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: 4.6vmin; font-weight: 400;
       letter-spacing: -.02em; line-height: .95;
-      color: #1a140e;
+      color: #2A241C;
     }
     body.night .countdown .cd-num { color: #d4a06a; }
-    body.evening .countdown .cd-num { color: #1a140e; }
+    body.evening .countdown .cd-num { color: #2A241C; }
     .countdown .cd-unit {
       font-size: 1.05vmin; font-weight: 700;
       letter-spacing: .16em; text-transform: uppercase;
@@ -451,7 +455,7 @@
     .countdown .cd-big-plain {
       font-family: Georgia, "Times New Roman", Times, serif;
       font-size: 2.2vmin; font-weight: 400;
-      color: #1a140e;
+      color: #2A241C;
     }
     .odote {
       font-size: 1.4vmin; font-weight: 500; padding: 0.4% 0; line-height: 1.2;
@@ -706,7 +710,7 @@
       <span class="preview" id="footPreview">Esikatselu · tallenne</span>
       <div class="foot-right">
         <span class="settings">Asetukset</span>
-        <span class="brand">v71</span>
+        <span class="brand">v72</span>
       </div>
     </div>
   </div>
@@ -1723,14 +1727,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v71", function (data) {
+    getJSON("schedule.json?v=20260921v72", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v71", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v72", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {
@@ -1806,6 +1810,56 @@
       }
     );
   }
+
+
+  /* v72 fit-lock: freeze #rot size in px (vh/vw jitter on Android TV) */
+  (function lockRotFit() {
+    var rot = document.getElementById("rot");
+    if (!rot) return;
+    var lastVw = -9999;
+    var lastVh = -9999;
+    var timer = null;
+    var ROT_DEG = 90;
+
+    function apply() {
+      var docEl = document.documentElement;
+      var vw = window.innerWidth || (docEl && docEl.clientWidth) || 0;
+      var vh = window.innerHeight || (docEl && docEl.clientHeight) || 0;
+      if (!vw || !vh) return;
+      if (Math.abs(vw - lastVw) <= 3 && Math.abs(vh - lastVh) <= 3) return;
+      lastVw = vw;
+      lastVh = vh;
+      rot.style.width = vh + "px";
+      rot.style.height = vw + "px";
+      rot.style.position = "fixed";
+      rot.style.left = "50%";
+      rot.style.top = "50%";
+      rot.style.overflow = "hidden";
+      rot.style.webkitTransformOrigin = "center center";
+      rot.style.transformOrigin = "center center";
+      var t = "translate(-50%, -50%) rotate(" + ROT_DEG + "deg)";
+      rot.style.webkitTransform = t;
+      rot.style.transform = t;
+    }
+
+    function schedule() {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(function () {
+        timer = null;
+        apply();
+      }, 100);
+    }
+
+    apply();
+    if (window.addEventListener) {
+      window.addEventListener("resize", schedule, false);
+      if (window.visualViewport && window.visualViewport.addEventListener) {
+        window.visualViewport.addEventListener("resize", schedule, false);
+      }
+    } else if (window.attachEvent) {
+      window.attachEvent("onresize", schedule);
+    }
+  })();
 
   paintChips();
   paint();

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789966641400,
+  "updated": 1789968427302,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -307,14 +307,6 @@
       "status": ""
     },
     {
-      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
-      "title": "Mea Arja",
-      "date": "2026-09-22",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",
       "who": "",
       "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
@@ -568,6 +560,22 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
+      "title": "Mea Arja",
+      "date": "2026-09-22",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
+      "title": "Mea valmennus",
+      "date": "2026-09-22",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
     }
   ],
   "schoolLunch": {

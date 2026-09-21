@@ -41,7 +41,16 @@
     body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
-    body.night .mlabel { color: #f0e4d4; opacity: .7; }
+    body.night .mlabel {
+      font-size: 0.95vmin; font-weight: 550; line-height: 1.12;
+      overflow: hidden; max-height: none;
+      color: #2c2418;
+      opacity: .78;
+      -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
     body.night .wxday { background: rgba(255,248,238,0.06); border-color: rgba(240,228,212,0.1); }
     body.night .wxday.is-today { background: rgba(212,160,106,0.18); }
     body.night .namechip { color: #2a241c; }

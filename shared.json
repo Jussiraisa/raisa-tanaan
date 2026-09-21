@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789964878324,
+  "updated": 1789966641400,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -252,6 +252,16 @@
       "status": ""
     },
     {
+      "id": "sheet-milla-2026-09-21",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-21",
+      "start": "17:30",
+      "end": "18:30",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
       "id": "info-mea-voimat-2026-09-21",
       "who": "mea",
       "title": "Liannan voimat",
@@ -276,6 +286,16 @@
       "status": "other"
     },
     {
+      "id": "sheet-mea-2026-09-21",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-21",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
       "id": "info-pentutreffit-2026-09-22",
       "title": "Pentutreffit · Ella kotona",
       "date": "2026-09-22",
@@ -287,16 +307,12 @@
       "status": ""
     },
     {
-      "id": "info-ellen-leos-2026-09-23",
-      "who": "ellen",
-      "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:00",
-      "place": "Leo’s Leikkimaa",
-      "kind": "info",
-      "driver": "",
-      "status": ""
+      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
+      "title": "Mea Arja",
+      "date": "2026-09-22",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal"
     },
     {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",
@@ -319,6 +335,18 @@
       "kind": "kyyti",
       "driver": "vienti Julia / haku Enni",
       "status": "open"
+    },
+    {
+      "id": "info-ellen-leos-2026-09-23",
+      "who": "ellen",
+      "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:00",
+      "place": "Leo’s Leikkimaa",
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-kkp-2026-09-25",
@@ -412,6 +440,15 @@
       "status": ""
     },
     {
+      "id": "info-samuel-pelipassi-2026-10-01",
+      "who": "samuel",
+      "title": "Welhot P9 pelipassi hankittava",
+      "date": "2026-10-01",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-ellen-vanhempainilta-2026-10-01",
       "who": "ellen",
       "title": "Ambrosia vanhempainilta",
@@ -424,10 +461,11 @@
       "status": ""
     },
     {
-      "id": "info-samuel-pelipassi-2026-10-01",
+      "id": "info-samuel-turnaus-2026-10-03",
       "who": "samuel",
-      "title": "Welhot P9 pelipassi hankittava",
-      "date": "2026-10-01",
+      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
+      "date": "2026-10-03",
+      "place": "Joensuu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -445,16 +483,6 @@
       "status": ""
     },
     {
-      "id": "info-samuel-turnaus-2026-10-03",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
-      "date": "2026-10-03",
-      "place": "Joensuu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
       "title": "Liannan voimat",
@@ -467,6 +495,17 @@
       "status": ""
     },
     {
+      "id": "info-riikka-oulu-2026-10-06",
+      "who": "",
+      "title": "Riikka Ouluun",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "kind": "info",
+      "place": "Oulu",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-lianna-harkkakisa-2026-10-06",
       "who": "mea",
       "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
@@ -475,17 +514,6 @@
       "end": "19:00",
       "place": "Ylä-Pyörön koulu",
       "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-riikka-oulu-2026-10-06",
-      "who": "",
-      "title": "Riikka Ouluun",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "kind": "info",
-      "place": "Oulu",
       "driver": "",
       "status": ""
     },
@@ -540,42 +568,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
-      "title": "Mea Arja",
-      "date": "2026-09-22",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-22",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
-    },
-    {
-      "id": "sheet-mea-2026-09-21",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-21",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-21",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-21",
-      "start": "17:30",
-      "end": "18:30",
-      "place": "Luola",
-      "kind": "treeni"
     }
   ],
   "schoolLunch": {

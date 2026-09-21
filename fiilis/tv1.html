@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v39-tv1">
+  <meta name="fiilis-build" content="20260921-v41-evening-next">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -821,25 +821,33 @@
   }
 
   function schoolTarget(now) {
+    /* Illalla (klo 17+) näytä seuraava koulupäivä: koulu + treenit + kouluruoka. */
     var wd = now.wd;
+    var hour = now.hour;
+    var evening = hour >= 17;
     var tomorrow = false;
     var dayIdx = wd;
     var lunchIso = now.iso;
+    var focusIso = now.iso;
     var label = "Koulu";
-    if (wd === 0 || wd === 6) {
-      dayIdx = 1;
-      tomorrow = true;
-      lunchIso = addDaysIso(now.iso, wd === 0 ? 1 : 2);
+    if (wd === 0) {
+      dayIdx = 1; tomorrow = true;
+      lunchIso = focusIso = addDaysIso(now.iso, 1);
       label = "Koulu · maanantai";
-    } else if ((wd === 5 || wd === 6 || wd === 0) && now.hour >= 17) {
-      if (wd === 5 && now.hour >= 17) {
-        dayIdx = 1;
-        tomorrow = true;
-        lunchIso = addDaysIso(now.iso, 3);
-        label = "Koulu · maanantai";
-      }
+    } else if (wd === 6) {
+      dayIdx = 1; tomorrow = true;
+      lunchIso = focusIso = addDaysIso(now.iso, 2);
+      label = "Koulu · maanantai";
+    } else if (evening && wd === 5) {
+      dayIdx = 1; tomorrow = true;
+      lunchIso = focusIso = addDaysIso(now.iso, 3);
+      label = "Koulu · maanantai";
+    } else if (evening && wd >= 1 && wd <= 4) {
+      dayIdx = wd + 1; tomorrow = true;
+      lunchIso = focusIso = addDaysIso(now.iso, 1);
+      label = "Koulu · huomenna";
     }
-    return { wd: dayIdx, tomorrow: tomorrow, lunchIso: lunchIso, label: label };
+    return { wd: dayIdx, tomorrow: tomorrow, lunchIso: lunchIso, focusIso: focusIso, label: label };
   }
 
   function schoolForTarget(tgt) {
@@ -890,11 +898,13 @@
     return out;
   }
 
-  function eventsForKid(now, kid) {
-    var all = remainingEvents(now);
+  function eventsForKid(now, kid, focusIso) {
+    var iso = focusIso || now.iso;
+    var all = (iso === now.iso) ? remainingEvents(now) : eventsOn(iso);
     var out = [];
     for (var i = 0; i < all.length; i++) {
       var e = all[i];
+      if (e.kind === "matka") continue;
       var w = e.who || "";
       if (w === kid) out.push(e);
     }
@@ -970,13 +980,13 @@
         html += "<div class=\"kid-empty\">Ei koulua</div>";
       }
       html += "<div class=\"kid-sec\">Treenit</div>";
-      var evs = eventsForKid(now, kid);
+      var evs = eventsForKid(now, kid, tgt.focusIso);
       if (!evs.length) {
         html += "<div class=\"kid-empty\">—</div>";
       } else {
         for (var e = 0; e < evs.length; e++) {
           var ev = evs[e];
-          var drv = driverOf(ev, now.iso);
+          var drv = driverOf(ev, tgt.focusIso || now.iso);
           html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(ev.time, ev.end) || "") + "</span> "
             + esc(ev.title || "") + "</div>";
           if (ev.place || drv) {

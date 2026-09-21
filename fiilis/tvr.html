@@ -4,52 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v74-hardfit-tvr">
-  <meta name="theme-color" content="#F7F1E3">
+  <meta name="fiilis-build" content="20260921-v73-cream-fit-tvr">
+  <meta name="theme-color" content="#F5F3E7">
   <title>Räisä · Yhteinen aika</title>
   <style>
     #rot {
-      position: fixed; inset: 0;
-      overflow: hidden; background: #F7F1E3;
+      position: fixed; left: 50%; top: 50%;
+      width: 100vh; height: 100vw; /* CSS fallback; JS px overrides */
+      -webkit-transform: translate(-50%, -50%) rotate(90deg);
+      transform: translate(-50%, -50%) rotate(90deg);
+      -webkit-transform-origin: center center; transform-origin: center center;
+      overflow: hidden; background: #F5F3E7;
     }
-    body.night #rot { background: #F7F1E3 !important; }
+    body.night #rot { background: #F5F3E7 !important; }
 
 
     html, body {
       height: 100%; margin: 0; overflow: hidden;
-      background: #F7F1E3; color: #2a241c;
+      background: #F5F3E7; color: #2a241c;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-    /* v74: warmer cream paper — page chrome always cream */
-    html, body { background: #F7F1E3; }
+    /* v73: night neutralized — page chrome always cream paper */
+    html, body { background: #F5F3E7; }
     body.night {
-      background: #F7F1E3 !important;
+      background: #F5F3E7 !important;
       color: #2a241c !important;
     }
 
     * { box-sizing: border-box; }
     .tv {
-      position: absolute; left: 50%; top: 50%;
-      width: 1080px; height: 1920px;
-      margin: 0;
-      -webkit-transform-origin: center center; transform-origin: center center;
-      -webkit-transform: translate(-50%, -50%) rotate(90deg) scale(1);
-      transform: translate(-50%, -50%) rotate(90deg) scale(1);
+      width: 100%; height: 100%;
       box-sizing: border-box;
       max-width: none;
+      margin: 0;
       padding: 1% 1.4% 0.7%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       gap: 0.7%;
-      background: #F7F1E3;
-      overflow: hidden;
     }
 
-
-    body.morning { background: #F7F1E3; color: #2a241c; }
-    body.afternoon { background: #F3E9D4; color: #2a2218; }
-    body.evening { background: #F3E9D4; color: #2a241c; }
-    body.evening .card { background: rgba(255,246,228,0.55); border-color: rgba(80,40,10,0.10); }
+    body.morning { background: #F5F3E7; color: #2a241c; }
+    body.afternoon { background: #F1EDE4; color: #2a2218; }
+    body.evening { background: #F1EDE4; color: #2a241c; }
+    body.evening .card { background: rgba(255,248,236,0.45); border-color: rgba(80,40,10,0.10); }
     body.evening .accent { color: #8a7350; }
     body.evening .muted { color: rgba(42,28,16,0.68); }
     body.evening .greet { color: #2A241C; }
@@ -190,7 +187,7 @@
       display: -ms-flexbox; display: flex;
       gap: 1.1%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 22%; max-height: 24%; min-height: 18%;
+      height: 15%; max-height: 16%; min-height: 13%;
     }
     .mid-split > .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
 
@@ -214,7 +211,7 @@
     .col-right .odotcard { -ms-flex: 1; flex: 1; }
 
     .card {
-      background: rgba(255,248,236,0.55);
+      background: rgba(255,252,245,0.4);
       border: 1px solid rgba(42,36,28,0.08);
       border-radius: 0.75vmin;
       padding: 0.85% 1.05% 0.75%;
@@ -223,7 +220,7 @@
       min-height: 0; overflow: hidden;
     }
     .school-card {
-      background: #EFE6D4;
+      background: #EBE5D9;
       border-color: rgba(42,36,28,0.06);
     }
     .lbl {
@@ -268,29 +265,6 @@
       opacity: .85;
     }
     .school-empty { font-size: 1.5vmin; opacity: .5; padding: 0.4% 0; }
-
-    .school-card .school-scroll { -ms-flex: 0 0 auto; flex: 0 0 auto; max-height: 42%; }
-    .school-card .treeni-lbl { margin-top: 0.55%; padding-top: 0.35%; border-top: 1px solid rgba(42,36,28,0.10); }
-    .school-card .treeni-scroll { -ms-flex: 1; flex: 1; min-height: 0; }
-    .treeni-row {
-      display: -ms-flexbox; display: flex;
-      -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: center; align-items: center;
-      padding: 0.28% 0;
-      border-bottom: 1px solid rgba(42,36,28,0.07);
-      gap: 0.5%;
-    }
-    .treeni-row:last-child { border-bottom: 0; }
-    .treeni-meta {
-      font-size: 1.35vmin; font-weight: 550;
-      text-align: right; min-width: 0;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      max-width: 68%;
-    }
-    .treeni-time { font-variant-numeric: tabular-nums; font-weight: 700; }
-    .treeni-title { font-weight: 600; }
-    .treeni-place { opacity: .65; font-weight: 500; }
-
 
     .next-card {
       background: #36453A;
@@ -485,9 +459,9 @@
     .mday.is-today {
       border-color: rgba(42,36,28,0.55);
       background: rgba(42,36,28,0.88);
-      color: #F7F1E3;
+      color: #F5F3E7;
     }
-    .mday.is-today .dn, .mday.is-today .mlabel { color: #F7F1E3; opacity: 1; }
+    .mday.is-today .dn, .mday.is-today .mlabel { color: #F5F3E7; opacity: 1; }
     .mday.is-lontoo { background: rgba(47,59,46,0.1); }
     .mday.is-school { background: rgba(255,255,255,0.18); }
     .mday .dn {
@@ -616,9 +590,7 @@
     <div class="mid-split">
       <div class="card school-card">
         <div class="lbl" id="schoolLbl">Koulu · huomenna <span class="lbl-right" id="schoolDate"></span></div>
-        <div class="scroll school-scroll" id="schoolBox"><div class="school-empty muted">…</div></div>
-        <div class="lbl treeni-lbl" id="treeniLbl">Treenit · huomenna</div>
-        <div class="scroll treeni-scroll" id="treeniBox"><div class="school-empty muted">…</div></div>
+        <div class="scroll" id="schoolBox"><div class="school-empty muted">…</div></div>
       </div>
       <div class="card next-card">
         <div class="lbl" id="nextLbl">Seuraavaksi <span class="lbl-right" id="nextWho"></span></div>
@@ -671,7 +643,7 @@
       <span class="preview" id="footPreview">Esikatselu · tallenne</span>
       <div class="foot-right">
         <span class="settings">Asetukset</span>
-        <span class="brand">v74</span>
+        <span class="brand">v73</span>
       </div>
     </div>
   </div>
@@ -1174,33 +1146,9 @@
     return { title: title, right: right, tgt: tgt };
   }
 
-  function focusTreenit(tgt) {
-    var out = [];
-    var seen = {};
-    var list = eventsOn(tgt.focusIso);
-    for (var i = 0; i < list.length; i++) {
-      var e = list[i];
-      if (!e) continue;
-      if (e.kind === "matka") continue;
-      var kind = e.kind || "";
-      var keep = false;
-      if (kind === "treeni" || kind === "kisa") keep = true;
-      else if (kind === "muu") keep = true;
-      else if (e.driver || e.pickup) keep = true;
-      if (!keep) continue;
-      var key = (e.date || "") + "|" + (e.time || "") + "|" + (e.who || "") + "|" + (e.title || "");
-      if (seen[key]) continue;
-      seen[key] = 1;
-      out.push(e);
-    }
-    return out;
-  }
-
   function paintSchool(now) {
     var box = document.getElementById("schoolBox");
     var lbl = document.getElementById("schoolLbl");
-    var tBox = document.getElementById("treeniBox");
-    var tLbl = document.getElementById("treeniLbl");
     if (!box) return;
     var parts = schoolLabelParts(now);
     var tgt = parts.tgt;
@@ -1226,41 +1174,6 @@
       html = "<div class=\"school-empty muted\">Viikonloppu — ei koulua</div>";
     }
     box.innerHTML = html;
-
-    var treeni = focusTreenit(tgt);
-    var tTitle = "Treenit · tänään";
-    if (tgt.tomorrow) {
-      tTitle = "Treenit · huomenna";
-      if (tgt.label && tgt.label.indexOf("maanantai") >= 0) tTitle = "Treenit · maanantai";
-    }
-    if (tLbl) {
-      tLbl.innerHTML = esc(tTitle)
-        + (parts.right ? " <span class=\"lbl-right\">" + esc(parts.right) + "</span>" : "");
-    }
-    if (tBox) {
-      if (!treeni.length) {
-        tBox.innerHTML = "<div class=\"school-empty muted\">Ei treenejä</div>";
-      } else {
-        var th = "";
-        for (var ti = 0; ti < treeni.length; ti++) {
-          var te = treeni[ti];
-          var twho = te.who || "";
-          var tcol = WHO_COLOR[twho] || "#c4a574";
-          var ttime = te.time ? fmtColon(te.time) : "";
-          var ttitle = te.title || "";
-          var tplace = te.place || "";
-          var line = "";
-          if (ttime) line += "<span class=\"treeni-time\">" + esc(ttime) + "</span> ";
-          line += "<span class=\"treeni-title\">" + esc(ttitle) + "</span>";
-          if (tplace) line += " <span class=\"treeni-place\">· " + esc(tplace) + "</span>";
-          th += "<div class=\"treeni-row\"><div class=\"school-left\">"
-            + "<span class=\"kid-dot\" style=\"background:" + tcol + "\"></span>"
-            + "<span class=\"school-name\">" + esc(twho || "perhe") + "</span></div>"
-            + "<div class=\"treeni-meta\">" + line + "</div></div>";
-        }
-        tBox.innerHTML = th;
-      }
-    }
   }
 
   function nextEvent(now) {
@@ -1746,14 +1659,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v74", function (data) {
+    getJSON("schedule.json?v=20260921v73", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v74", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v73", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {
@@ -1831,54 +1744,65 @@
   }
 
 
-  /* v74 hardfit: fixed 1080×1920 board; scale once; no resize flip */
-  (function lockBoardFit() {
-    var tv = document.getElementById("app");
-    if (!tv) return;
+  /* v73 hard fit-lock: measure once; no VV listener; only big geometry */
+  (function lockRotFit() {
+    var rot = document.getElementById("rot");
+    if (!rot) return;
+    var lockedVw = 0;
+    var lockedVh = 0;
+    var locked = false;
+    var timer = null;
     var ROT_DEG = 90;
-    var lockedScale = null;
 
-    function measureScale() {
+    function measure() {
       var docEl = document.documentElement;
       var vw = window.innerWidth || (docEl && docEl.clientWidth) || 0;
       var vh = window.innerHeight || (docEl && docEl.clientHeight) || 0;
-      if (!vw || !vh) return null;
-      var s = Math.min(vw / 1920, vh / 1080);
-      if (!(s > 0)) return null;
-      return s;
+      return { vw: vw, vh: vh };
     }
 
-    function apply() {
-      var s = lockedScale;
-      if (s == null) {
-        s = measureScale();
-        if (s == null) return;
-        lockedScale = s;
+    function apply(force) {
+      var m = measure();
+      if (!m.vw || !m.vh) return;
+      if (!force && locked) {
+        if (Math.abs(m.vw - lockedVw) <= 80 && Math.abs(m.vh - lockedVh) <= 80) return;
       }
-      var t = "translate(-50%, -50%) rotate(" + ROT_DEG + "deg) scale(" + s + ")";
-      tv.style.position = "absolute";
-      tv.style.left = "50%";
-      tv.style.top = "50%";
-      tv.style.width = "1080px";
-      tv.style.height = "1920px";
-      tv.style.margin = "0";
-      tv.style.webkitTransformOrigin = "center center";
-      tv.style.transformOrigin = "center center";
-      tv.style.webkitTransform = t;
-      tv.style.transform = t;
-      tv.setAttribute("data-fit-locked", "1");
-      tv.setAttribute("data-fit-scale", String(s));
+      lockedVw = m.vw;
+      lockedVh = m.vh;
+      rot.style.width = m.vh + "px";
+      rot.style.height = m.vw + "px";
+      rot.style.position = "fixed";
+      rot.style.left = "50%";
+      rot.style.top = "50%";
+      rot.style.overflow = "hidden";
+      rot.style.background = "#F5F3E7";
+      rot.style.webkitTransformOrigin = "center center";
+      rot.style.transformOrigin = "center center";
+      var t = "translate(-50%, -50%) rotate(" + ROT_DEG + "deg)";
+      rot.style.webkitTransform = t;
+      rot.style.transform = t;
+      rot.setAttribute("data-fit-locked", "1");
+      locked = true;
     }
 
-    apply();
+    function schedule() {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(function () {
+        timer = null;
+        apply(false);
+      }, 250);
+    }
+
+    apply(true);
     if (window.addEventListener) {
-      window.addEventListener("load", function () {
-        if (lockedScale == null) apply();
-      }, false);
+      window.addEventListener("load", function () { apply(true); }, false);
+      window.addEventListener("resize", schedule, false);
+      window.addEventListener("orientationchange", schedule, false);
+    } else if (window.attachEvent) {
+      window.attachEvent("onload", function () { apply(true); });
+      window.attachEvent("onresize", schedule);
     }
-    /* intentionally no resize / visualViewport listeners */
   })();
-
 
   paintChips();
   paint();

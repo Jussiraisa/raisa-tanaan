@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v51-tvr-cal-dense">
+  <meta name="fiilis-build" content="20260921-v52-tvr-who-labels">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -53,10 +53,9 @@
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
     body.night .mlabel {
-      font-size: 0.78vmin; font-weight: 600; line-height: 1.02;
-      overflow: hidden; max-height: 1.05em;
-      color: #f2e8dc;
-      opacity: .95;
+      font-size: 0.72vmin; font-weight: 650; line-height: 1.05;
+      overflow: hidden; max-height: 1.15em;
+      color: #f2e8dc; opacity: .96;
       white-space: nowrap; text-overflow: ellipsis;
     }
     .mlabel .mdot {
@@ -1204,6 +1203,17 @@
     return ["tammi","helmi","maalis","huhti","touko","kesä","heinä","elo","syys","loka","marras","joulu"][m - 1] || "";
   }
 
+  function shortWho(who) {
+    var w = String(who || "");
+    if (w === "Ellen") return "Ell";
+    if (w === "Samuel") return "Sam";
+    if (w === "Milla") return "Mil";
+    if (w === "Mea") return "Mea";
+    if (w === "Jussi") return "Jus";
+    if (w === "Riikka") return "Rik";
+    if (w === "perhe" || w === "Perhe") return "";
+    return w.length > 3 ? w.slice(0, 3) : w;
+  }
   function colorForWho(who) {
     if (!who) return "#c4a574";
     if (WHO_COLOR[who]) return WHO_COLOR[who];
@@ -1324,14 +1334,17 @@
           var used = {};
           for (var ri = 0; ri < realEvs.length && parts.length < 6; ri++) {
             var evx = realEvs[ri];
-            var rt = evx.title || evx.who || "";
-            if (!rt) continue;
-            /* Keep readable: trim only if very long */
-            var short = rt.length > 22 ? rt.slice(0, 21) + "…" : rt;
-            var uk = short + "|" + (evx.who || "");
+            var who = evx.who || "perhe";
+            var rt = evx.title || "";
+            if (!rt) rt = who;
+            var sw = shortWho(who);
+            var line = sw ? (sw + " · " + rt) : rt;
+            /* Almost never truncate short titles like Pentutreffit */
+            if (line.length > 28) line = line.slice(0, 27) + "…";
+            var uk = line;
             if (used[uk]) continue;
             used[uk] = 1;
-            parts.push({ t: short, who: evx.who || "perhe" });
+            parts.push({ t: line, who: who });
           }
           if (!parts.length && iso >= LONTOO_START && iso <= LONTOO_END) {
             parts.push({ t: "Lontoo", who: "perhe" });

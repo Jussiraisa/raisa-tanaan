@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-21T19:36:10+03:00",
+  "updated": "2026-09-21T19:48:08+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Synkka Perhe 21.9.2026 ilta: WA-kyydit (Mea Lianna Julia/Enni/Amanda/Elina/Riikka) + viikkorutiinit. Riikka EI kusiksi 6.–9.10. Kuski auki: Mea 28.9. & 5.10., Ambrosia NTV, Milla hiontaleiri.",
+  "note": "Synkka Perhe 21.9.2026 ilta: WA-kyydit (Mea Lianna Julia/Enni/Amanda/Elina/Riikka) + viikkorutiinit. Riikka EI kusiksi 6.–9.10. Kuski auki: Mea 28.9. & 5.10., Ambrosia NTV, Milla hiontaleiri. | Nimenhuuto Welhot 2018 → Samuel treenit/turnaukset",
   "events": [
     {
       "date": "2026-09-20",
@@ -228,11 +228,12 @@
     {
       "date": "2026-09-21",
       "time": "17:00",
-      "end": "18:30",
+      "end": "18:00",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Ylä-Pyörö",
       "kind": "treeni",
+      "source": "nimenhuuto:welhot2018",
       "driver": "Sini/Topias"
     },
     {
@@ -265,13 +266,15 @@
     },
     {
       "date": "2026-09-22",
-      "time": "16:15",
+      "time": "16:30",
       "end": "18:00",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Lippumäki",
       "kind": "treeni",
-      "driver": "Jussi"
+      "source": "nimenhuuto:welhot2018",
+      "driver": "Jussi",
+      "note": "lähtö ~16.15"
     },
     {
       "date": "2026-09-22",
@@ -349,11 +352,12 @@
     {
       "date": "2026-09-24",
       "time": "17:00",
-      "end": "19:00",
+      "end": "18:30",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Puijonsarvi",
       "kind": "treeni",
+      "source": "nimenhuuto:welhot2018",
       "driver": "Topias"
     },
     {
@@ -466,11 +470,12 @@
     {
       "date": "2026-09-28",
       "time": "17:00",
-      "end": "18:30",
+      "end": "18:00",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Ylä-Pyörö",
       "kind": "treeni",
+      "source": "nimenhuuto:welhot2018",
       "driver": "Sini/Topias"
     },
     {
@@ -501,13 +506,15 @@
     },
     {
       "date": "2026-09-29",
-      "time": "16:15",
+      "time": "16:30",
       "end": "18:00",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Lippumäki",
       "kind": "treeni",
-      "driver": "Jussi"
+      "source": "nimenhuuto:welhot2018",
+      "driver": "Jussi",
+      "note": "lähtö ~16.15"
     },
     {
       "date": "2026-09-30",
@@ -546,12 +553,13 @@
     },
     {
       "date": "2026-10-01",
+      "time": "17:00",
+      "end": "18:30",
       "who": "Samuel",
       "title": "Welhot",
-      "kind": "treeni",
-      "time": "17:00",
-      "end": "19:00",
       "place": "Puijonsarvi",
+      "kind": "treeni",
+      "source": "nimenhuuto:welhot2018",
       "driver": "Topias"
     },
     {
@@ -581,15 +589,6 @@
     },
     {
       "date": "2026-10-03",
-      "time": "09:00",
-      "end": "18:00",
-      "who": "Samuel",
-      "title": "Welhot turnaus Joensuu",
-      "place": "Joensuu",
-      "kind": "treeni"
-    },
-    {
-      "date": "2026-10-03",
       "time": "12:30",
       "end": "17:30",
       "who": "Milla",
@@ -599,9 +598,29 @@
     },
     {
       "date": "2026-10-03",
+      "time": "17:00",
+      "end": "20:00",
+      "who": "Samuel",
+      "title": "Welhot turnaus",
+      "place": "Joensuu, Nepenmäki",
+      "kind": "kisa",
+      "source": "nimenhuuto:welhot2018"
+    },
+    {
+      "date": "2026-10-03",
       "who": "Aino",
       "title": "Ainon juhlat",
       "kind": "juhla"
+    },
+    {
+      "date": "2026-10-04",
+      "time": "09:00",
+      "end": "16:00",
+      "who": "Samuel",
+      "title": "Welhot turnaus Junnuliiga",
+      "place": "Lippumäki",
+      "kind": "kisa",
+      "source": "nimenhuuto:welhot2018"
     },
     {
       "date": "2026-10-05",
@@ -885,5 +904,8 @@
       "titleContains": "Ambrosia",
       "driver": "Riikka"
     }
-  ]
+  ],
+  "sources": {
+    "samuel_welhot": "https://welhot2018.nimenhuuto.com/"
+  }
 }

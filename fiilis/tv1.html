@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v37-tv1">
+  <meta name="fiilis-build" content="20260921-v38-tv1">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -106,12 +106,70 @@
 
     .duo {
       display: -ms-flexbox; display: flex;
-      gap: 1.2vw;
+      -ms-flex-direction: column; flex-direction: column;
+      gap: .55vh;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       min-height: 0;
-      height: 17.5vh;
-      max-height: 19vh;
+      height: 22vh;
+      max-height: 24vh;
     }
+    .kids-row {
+      display: -ms-flexbox; display: flex;
+      gap: .85vw;
+      -ms-flex: 1; flex: 1;
+      min-height: 0;
+    }
+    .kid-card {
+      -ms-flex: 1; flex: 1;
+      min-width: 0; min-height: 0;
+      background: #ebe4d6;
+      border: 1px solid rgba(44,36,24,0.07);
+      border-radius: 1.2vmin;
+      padding: .7vh .7vw .55vh;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-direction: column; flex-direction: column;
+      overflow: hidden;
+    }
+    body.evening .kid-card { background: #e8dfd0; }
+    body.night .kid-card { background: #342c22; border-color: rgba(240,228,212,0.1); }
+    .kid-head {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: center; align-items: center;
+      gap: .45vw;
+      margin-bottom: .35vh;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .kid-name {
+      font-size: 1.85vmin; font-weight: 700;
+      letter-spacing: -.01em;
+    }
+    .kid-dot {
+      width: 1.1vmin; height: 1.1vmin; border-radius: 50%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .kid-sec {
+      font-size: 1.15vmin; font-weight: 650; letter-spacing: .08em;
+      text-transform: uppercase; color: #b8883e;
+      margin: .25vh 0 .15vh;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .kid-line {
+      font-size: 1.45vmin; font-weight: 600; line-height: 1.2;
+      padding: .12vh 0;
+    }
+    .kid-line .t { font-variant-numeric: tabular-nums; font-weight: 700; }
+    .kid-line .m { font-size: 1.2vmin; font-weight: 500; opacity: .72; }
+    .kid-empty { font-size: 1.35vmin; font-weight: 500; opacity: .55; padding: .1vh 0; }
+    .kid-body { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
+    .duo-lunch {
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      font-size: 1.4vmin; font-weight: 500;
+      padding: .35vh .8vw;
+      border-radius: .9vmin;
+      background: rgba(184,136,62,0.1);
+      color: #2c2418;
+    }
+    body.night .duo-lunch { background: rgba(184,136,62,0.16); color: #f0e4d4; }
     .duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
 
     .mid-duo {
@@ -393,15 +451,13 @@
     </div>
 
     <div class="duo">
-      <div class="card">
-        <div class="lbl" id="kouluLbl">Koulu</div>
-        <div class="scroll" id="todaySchool"><div class="empty muted">Koulu latautuu…</div></div>
-        <div class="lunch muted" id="schoolLunch" style="display:none"></div>
+      <div class="kids-row" id="kidsRow">
+        <div class="kid-card" data-kid="Ellen"><div class="kid-head"><span class="kid-dot" style="background:#e8b4bc"></span><span class="kid-name">Ellen</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Samuel"><div class="kid-head"><span class="kid-dot" style="background:#a8c4dc"></span><span class="kid-name">Samuel</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Milla"><div class="kid-head"><span class="kid-dot" style="background:#e0c48a"></span><span class="kid-name">Milla</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Mea"><div class="kid-head"><span class="kid-dot" style="background:#c4b0dc"></span><span class="kid-name">Mea</span></div><div class="kid-body muted">…</div></div>
       </div>
-      <div class="card">
-        <div class="lbl">Treenit</div>
-        <div class="scroll" id="todayEvents"><div class="empty muted">Treenit latautuvat…</div></div>
-      </div>
+      <div class="duo-lunch" id="schoolLunch" style="display:none"></div>
     </div>
 
     <div class="photo-wrap">
@@ -784,32 +840,64 @@
     return out;
   }
 
-  function paintSchool(now) {
-    var el = document.getElementById("todaySchool");
-    var lbl = document.getElementById("kouluLbl");
-    var lunchEl = document.getElementById("schoolLunch");
-    if (!el) return;
-    var tgt = schoolTarget(now);
-    if (lbl) lbl.textContent = tgt.label;
-    var list = schoolForTarget(tgt);
-    if (!list.length) {
-      el.innerHTML = "<div class=\"empty muted\">Ei koulua</div>";
-    } else {
-      var html = "";
-      for (var i = 0; i < list.length; i++) {
-        var s = list[i];
-        html += "<div class=\"row\">"
-          + "<div>" + chipHtml(s.who) + "</div>"
-          + "<div class=\"hrs\">" + esc(fmtRange(s.time, s.end)) + "</div></div>";
-      }
-      el.innerHTML = html;
+  function eventsForKid(now, kid) {
+    var all = remainingEvents(now);
+    var out = [];
+    for (var i = 0; i < all.length; i++) {
+      var e = all[i];
+      var w = e.who || "";
+      if (w === kid) out.push(e);
     }
+    return out;
+  }
+
+  function paintKidsDay(now) {
+    var tgt = schoolTarget(now);
+    var schools = schoolForTarget(tgt);
+    var byWho = {};
+    for (var i = 0; i < schools.length; i++) {
+      byWho[schools[i].who] = schools[i];
+    }
+    var cards = document.querySelectorAll("#kidsRow .kid-card");
+    for (var c = 0; c < cards.length; c++) {
+      var card = cards[c];
+      var kid = card.getAttribute("data-kid");
+      var body = card.querySelector(".kid-body");
+      if (!body) continue;
+      var html = "";
+      html += "<div class=\"kid-sec\">Koulu" + (tgt && tgt.tomorrow ? " · huom" : "") + "</div>";
+      var sch = byWho[kid];
+      if (sch) {
+        html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(sch.time, sch.end)) + "</span></div>";
+      } else {
+        html += "<div class=\"kid-empty\">Ei koulua</div>";
+      }
+      html += "<div class=\"kid-sec\">Treenit</div>";
+      var evs = eventsForKid(now, kid);
+      if (!evs.length) {
+        html += "<div class=\"kid-empty\">—</div>";
+      } else {
+        for (var e = 0; e < evs.length; e++) {
+          var ev = evs[e];
+          var drv = driverOf(ev, now.iso);
+          html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(ev.time, ev.end) || "") + "</span> "
+            + esc(ev.title || "") + "</div>";
+          if (ev.place || drv) {
+            html += "<div class=\"kid-line m\">" + esc(ev.place || "")
+              + (drv ? (ev.place ? " · " : "") + esc(drv) : "") + "</div>";
+          }
+        }
+      }
+      body.innerHTML = html;
+    }
+    var lunchEl = document.getElementById("schoolLunch");
     if (lunchEl) {
       var lunch = "";
       if (schedule && schedule.schoolLunch) lunch = schedule.schoolLunch[tgt.lunchIso] || "";
       if (lunch) {
         lunchEl.style.display = "block";
-        lunchEl.innerHTML = "<span class=\"accent\">Kouluruoka</span> · " + esc(lunch);
+        lunchEl.innerHTML = "<span class=\"accent\">Kouluruoka</span> · " + esc(lunch)
+          + (tgt && tgt.label ? " <span class=\"muted\">(" + esc(tgt.label) + ")</span>" : "");
       } else {
         lunchEl.style.display = "none";
         lunchEl.innerHTML = "";
@@ -817,29 +905,6 @@
     }
   }
 
-  function paintEvents(now) {
-    var el = document.getElementById("todayEvents");
-    if (!el) return;
-    var list = remainingEvents(now);
-    if (!list.length) {
-      el.innerHTML = "<div class=\"empty muted\">Rauhallinen ilta</div>";
-      return;
-    }
-    var html = "";
-    var max = Math.min(list.length, 4);
-    for (var i = 0; i < max; i++) {
-      var e = list[i];
-      var drv = driverOf(e, now.iso);
-      var whoBit = (e.who && e.who !== "perhe") ? chipHtml(e.who) + " " : "";
-      html += "<div class=\"row\" style=\"display:block\">"
-        + "<div class=\"hrs accent\" style=\"margin:0\">" + esc(fmtRange(e.time, e.end) || "") + "</div>"
-        + "<div class=\"who\">" + whoBit + esc(e.title || "") + "</div>"
-        + (e.place ? "<div class=\"meta muted\">" + esc(e.place) + "</div>" : "")
-        + (drv ? "<div class=\"drv muted\">" + esc(drv) + "</div>" : "")
-        + "</div>";
-    }
-    el.innerHTML = html;
-  }
 
   function nextAnniversaryIso(ann, now) {
     var mmdd = ann.mmdd;
@@ -1128,8 +1193,7 @@
     if (greetEl) greetEl.textContent = greeting(now.hour);
     var dateEl = document.getElementById("dateLine");
     if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ".";
-    paintSchool(now);
-    paintEvents(now);
+    paintKidsDay(now);
     paintOdotukset(now);
     paintMeals(now);
     paintMonthCal(now);

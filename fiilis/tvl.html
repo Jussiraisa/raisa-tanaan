@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v56-tvl-2lines">
+  <meta name="fiilis-build" content="20260921-v56b-tvl-2lines">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -52,15 +52,6 @@
     body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
-    body.night .mlabel {
-      font-size: 1.05vmin; font-weight: 650; line-height: 1.15;
-      overflow: hidden; max-height: 2.4em;
-      color: #f2e8dc; opacity: .96;
-      white-space: normal; word-break: break-word;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
     .mlabel .mdot {
       width: 0.7vmin; height: 0.7vmin; border-radius: 50%;
       display: inline-block;
@@ -448,16 +439,38 @@
       opacity: .85;
     }
     .mlabel {
-      font-size: 1.15vmin; font-weight: 600; line-height: 1.15;
+      font-size: 1.05vmin; font-weight: 650; line-height: 1.15;
       overflow: hidden;
       color: #2c2418;
-      opacity: .88;
+      opacity: .94;
       min-height: 0;
+      max-height: 2.4em;
+      white-space: normal;
       word-break: break-word;
       overflow-wrap: break-word;
-      white-space: normal;
-      margin-top: 0.1%;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin: 0 0 0.12% 0;
+      padding: 0;
     }
+    body.night .mlabel {
+      font-size: 1.05vmin; font-weight: 650; line-height: 1.15;
+      overflow: hidden;
+      max-height: 2.4em;
+      color: #f2e8dc;
+      opacity: .96;
+      white-space: normal;
+      word-break: break-word;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    body.night .mday.is-today .mlabel {
+      color: #1a140e;
+      opacity: 1;
+    }
+
     .meal-line {
       font-size: 1.7vmin; font-weight: 550; padding: .28% 0; line-height: 1.25;
       display: -ms-flexbox; display: flex; gap: .55%;

@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v59-restore">
-  <meta name="theme-color" content="#f5f1e8">
+  <meta name="fiilis-build" content="20260921-v60-colors">
+  <meta name="theme-color" content="#f7f5ec">
   <title>Räisä · Fiilis TV</title>
   <style>
     html, body {
       height: 100%; margin: 0; overflow: hidden;
-      background: #f5f1e8; color: #2c2418;
+      background: #f7f5ec; color: #2c2418;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
@@ -22,15 +22,15 @@
       gap: 1.05vh;
     }
 
-    body.morning { background: #f5f1e8; color: #2c2418; }
+    body.morning { background: #f7f5ec; color: #2c2418; }
     body.afternoon { background: #f3eee4; color: #2a2218; }
-    body.evening { background: #e4d2b8; color: #2a1c12; }
-    body.evening .card { background: #dcc7a8; border-color: rgba(80,40,10,0.12); }
-    body.evening .accent { color: #9a4e22; }
-    body.evening .muted { color: rgba(42,28,16,0.7); }
-    body.evening .kid-card { background: #d8c2a0; }
-    body.evening .greet { color: #9a4e22; }
-    body.night { background: #1c1814; color: #f3ebe0; }
+    body.evening { background: #ead9c4; color: #2a1c12; }
+    body.evening .card { background: #e6d8c2; border-color: rgba(80,40,10,0.10); }
+    body.evening .accent { color: #a67c42; }
+    body.evening .muted { color: rgba(42,28,16,0.68); }
+    body.evening .kid-card { background: #ebe2d2; }
+    body.evening .greet { color: #a67c42; }
+    body.night { background: #1c1814; color: #f2ebe2; }
     body.night .card { background: #2a231c; border-color: rgba(240,228,212,0.14); box-shadow: 0 0.4vh 1.2vh rgba(0,0,0,0.28); }
     body.night .accent { color: #d4a06a; }
     body.night .muted { color: rgba(240,228,212,0.72); }
@@ -39,7 +39,7 @@
     body.night .foot, body.night .chip { color: rgba(240,228,212,0.72); border-color: rgba(240,228,212,0.14); }
     body.night .cal-line, body.night .week-line { color: #f0e4d4; }
     body.night .mday { background: rgba(255,248,238,0.07); border-color: rgba(240,228,212,0.12); color: #f2e8dc; }
-    body.night .mday.is-today { background: rgba(212,160,106,0.26); border-color: #d4a06a; }
+    body.night .mday.is-today { background: rgba(212,160,106,0.12); border-color: rgba(212,160,106,0.38); }
     body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
@@ -53,16 +53,16 @@
     body.night .mday .dn { color: #f5efe6; }
     body.night .mday .dn .mo { color: rgba(240,228,212,0.72); opacity: 1; }
     body.night .mday.is-today {
-      background: rgba(232,190,120,0.38);
-      border-color: #e0b878;
+      background: rgba(212,160,106,0.12);
+      border-color: rgba(212,160,106,0.38);
     }
     body.night .mday.is-today .dn,
     body.night .mday.is-today .mlabel {
-      color: #1a140e;
+      color: #f2ebe2;
       opacity: 1;
     }
     body.night .wxday { background: rgba(255,248,238,0.06); border-color: rgba(240,228,212,0.1); }
-    body.night .wxday.is-today { background: rgba(212,160,106,0.18); }
+    body.night .wxday.is-today { background: rgba(212,160,106,0.12); }
     body.night .namechip { color: #2a241c; }
     body.night .photo-cap { color: #f5f1e8; }
     body.night .sub { color: rgba(240,228,212,0.62); }
@@ -92,9 +92,9 @@
       text-shadow: none;
     }
     body.evening .clock {
-      color: #1a1008;
-      background: rgba(255,244,220,0.95);
-      box-shadow: 0 0.5vh 1.6vh rgba(80,40,10,0.16);
+      color: #1a140e;
+      background: rgba(255,248,236,0.94);
+      box-shadow: 0 0.5vh 1.4vh rgba(80,40,10,0.10);
     }
     body.night .clock {
       color: #fff8ee;
@@ -108,7 +108,7 @@
       font-size: 3.5vmin; font-weight: 400; letter-spacing: -.01em;
       color: #b8883e;
     }
-    body.night .greet { color: #e0b878; }
+    body.night .greet { color: #d4a06a; }
     .sub {
       font-size: 1.55vmin; font-weight: 500;
       color: rgba(44,36,24,0.55); margin-top: .35vh;
@@ -151,16 +151,16 @@
     .kid-card {
       -ms-flex: 1; flex: 1;
       min-width: 0; min-height: 0;
-      background: #ebe4d6;
-      border: 1px solid rgba(44,36,24,0.07);
+      background: #eee9de;
+      border: 1px solid rgba(44,36,24,0.06);
       border-radius: 1.2vmin;
       padding: .7vh .7vw .55vh;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       overflow: hidden;
     }
-    body.evening .kid-card { background: #e8dfd0; }
-    body.night .kid-card { background: #342c22; border-color: rgba(240,228,212,0.1); }
+    body.evening .kid-card { background: #ebe2d2; }
+    body.night .kid-card { background: #2f2820; border-color: rgba(240,228,212,0.09); }
     .kid-head {
       display: -ms-flexbox; display: flex;
       -ms-flex-align: center; align-items: center;
@@ -262,8 +262,8 @@
     .bottom-duo .odotcard { -ms-flex: 0.75; flex: 0.75; }
 
     .card {
-      background: #ebe4d6;
-      border: 1px solid rgba(44,36,24,0.07);
+      background: #eee9de;
+      border: 1px solid rgba(44,36,24,0.06);
       border-radius: 1.4vmin;
       padding: 1vh 1.15vw .9vh;
       display: -ms-flexbox; display: flex;
@@ -410,8 +410,8 @@
       background: transparent;
     }
     .mday.is-today {
-      border-color: #b8883e; border-width: 1.5px;
-      background: rgba(184,136,62,0.16);
+      border-color: rgba(184,136,62,0.38); border-width: 1px;
+      background: rgba(184,136,62,0.08);
     }
     .mday.is-lontoo { background: rgba(184,136,62,0.1); }
     .mday.is-school { background: rgba(255,255,255,0.18); }
@@ -461,7 +461,7 @@
       -webkit-box-orient: vertical;
     }
     body.night .mday.is-today .mlabel {
-      color: #1a140e;
+      color: #f2ebe2;
       opacity: 1;
     }
 
@@ -491,7 +491,7 @@
       -ms-flex-align: center; align-items: center;
       overflow: hidden;
     }
-    .wxday.is-today { background: rgba(184,136,62,0.18); border-color: rgba(184,136,62,0.35); }
+    .wxday.is-today { background: rgba(184,136,62,0.10); border-color: rgba(184,136,62,0.28); }
     .wxday .dn {
       font-size: 1.15vmin; font-weight: 700; letter-spacing: .05em;
       opacity: .65; line-height: 1;
@@ -585,7 +585,7 @@
     .tmw-line .place { opacity: .65; font-size: 1.25vmin; }
     .tmw-empty { font-size: 1.45vmin; opacity: .55; padding: .4vh 0; }
     body.night .tmw-line { border-bottom-color: rgba(240,228,212,0.1); }
-    body.night .tmw-line .who { color: #e0b878; }
+    body.night .tmw-line .who { color: #d4a06a; }
     body.night .tmw-line .title { color: #f2e8dc; }
 
     .odotcard {
@@ -711,7 +711,7 @@
     <div class="foot">
       <div class="chips" id="chips"></div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v59</span>
+      <span class="brand">v60</span>
     </div>
   </div>
   <script>
@@ -1716,14 +1716,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v59", function (data) {
+    getJSON("schedule.json?v=20260921v60", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v59", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v60", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

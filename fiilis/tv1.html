@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v50-wind-calfont">
+  <meta name="fiilis-build" content="20260921-v51-cal-dense">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -44,14 +44,18 @@
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
     body.night .mlabel {
-      font-size: 0.9vmin; font-weight: 600; line-height: 1.08;
-      overflow: hidden; max-height: none;
+      font-size: 0.78vmin; font-weight: 600; line-height: 1.02;
+      overflow: hidden; max-height: 1.05em;
       color: #f2e8dc;
       opacity: .95;
-      -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0;
-      word-break: break-word;
-      overflow-wrap: break-word;
-      white-space: normal;
+      white-space: nowrap; text-overflow: ellipsis;
+    }
+    .mlabel .mdot {
+      width: 0.7vmin; height: 0.7vmin; border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.2vw;
+      opacity: .95;
     }
     body.night .mday .dn { color: #f5efe6; }
     body.night .mday .dn .mo { color: rgba(240,228,212,0.72); opacity: 1; }
@@ -372,14 +376,14 @@
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       -ms-flex: 1; flex: 1; min-height: 0;
-      gap: .28vh;
+      gap: .15vh;
       overflow: hidden;
     }
     .month-row {
       display: -ms-flexbox; display: flex;
       -ms-flex: 1; flex: 1;
       min-height: 0;
-      gap: .28vw;
+      gap: .15vw;
     }
     .month-row.month-head { -ms-flex: 0 0 auto; flex: 0 0 auto; }
     .month-row > .mdow,
@@ -394,14 +398,14 @@
       opacity: .5; padding-bottom: .08vh;
     }
     .mday {
-      min-height: 3.8vh;
-      border-radius: .7vmin;
+      min-height: 0;
+      border-radius: .55vmin;
       border: 1px solid rgba(44,36,24,0.07);
       background: rgba(255,255,255,0.28);
-      padding: .22vh .22vw .18vh;
+      padding: .12vh .18vw .1vh;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: .1vh;
+      gap: 0;
       overflow: hidden;
     }
     .mday.pad {
@@ -416,16 +420,16 @@
     .mday.is-lontoo { background: rgba(184,136,62,0.1); }
     .mday.is-school { background: rgba(255,255,255,0.18); }
     .mday .dn {
-      font-size: 1.05vmin; font-weight: 650;
+      font-size: 0.9vmin; font-weight: 700;
       font-variant-numeric: tabular-nums; line-height: 1;
+      margin-bottom: 0.05vh;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .mday .dn .mo {
       font-size: 0.9vmin; font-weight: 500; opacity: .55; margin-left: .1vw;
     }
     .mdots {
-      display: -ms-flexbox; display: flex;
-      -ms-flex-wrap: wrap; flex-wrap: wrap;
-      gap: .15vh .15vw; -ms-flex: 0 0 auto; flex: 0 0 auto;
+      display: none;
     }
     .mdot {
       width: .95vmin; height: .95vmin; border-radius: 50%;
@@ -1308,24 +1312,29 @@
           });
           var parts = [];
           var used = {};
-          for (var ri = 0; ri < realEvs.length && parts.length < 4; ri++) {
-            var rt = realEvs[ri].title || realEvs[ri].who || "";
+          for (var ri = 0; ri < realEvs.length && parts.length < 6; ri++) {
+            var evx = realEvs[ri];
+            var rt = evx.title || evx.who || "";
             if (!rt) continue;
-            var short = rt.length > 14 ? rt.slice(0, 13) + "…" : rt;
-            if (used[short]) continue;
-            used[short] = 1;
-            parts.push(short);
+            /* Keep readable: trim only if very long */
+            var short = rt.length > 22 ? rt.slice(0, 21) + "…" : rt;
+            var uk = short + "|" + (evx.who || "");
+            if (used[uk]) continue;
+            used[uk] = 1;
+            parts.push({ t: short, who: evx.who || "perhe" });
           }
-          if (!parts.length && iso >= LONTOO_START && iso <= LONTOO_END) parts.push("Lontoo");
+          if (!parts.length && iso >= LONTOO_START && iso <= LONTOO_END) {
+            parts.push({ t: "Lontoo", who: "perhe" });
+          }
           for (var pi = 0; pi < parts.length; pi++) {
-            label += "<div class=\"mlabel\">" + esc(parts[pi]) + "</div>";
+            label += "<div class=\"mlabel\"><span class=\"mdot\" style=\"background:"
+              + colorForWho(parts[pi].who) + "\"></span>" + esc(parts[pi].t) + "</div>";
           }
         } else if (iso >= LONTOO_START && iso <= LONTOO_END) {
           label = "<div class=\"mlabel\">Lontoo</div>";
         }
         cells.push("<div class=\"" + cls + "\"><div class=\"dn\">" + num + "</div>"
           + label
-          + (dots ? "<div class=\"mdots\">" + dots + "</div>" : "")
           + "</div>");
       }
       while (cells.length % 7 !== 0) {

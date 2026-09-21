@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-20T20:08:48.513233+03:00",
+  "updated": "2026-09-21T07:03:23.497392+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -235,18 +235,6 @@
   },
   "note": "",
   "extras": [
-    {
-      "id": "info-ellen-kyyti-su-2026-09-20",
-      "who": "ellen",
-      "title": "Ambrosia haku · Riikka hakee tytöt",
-      "date": "2026-09-20",
-      "start": "",
-      "end": "",
-      "place": "Kuopiohalli",
-      "kind": "kyyti",
-      "driver": "Riikka",
-      "status": "us"
-    },
     {
       "id": "info-samuel-retki-2026-09-21",
       "who": "samuel",
@@ -536,6 +524,14 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
+      "title": "Mea Arja",
+      "date": "2026-09-22",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal"
     }
   ],
   "schoolLunch": {

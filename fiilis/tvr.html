@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v48-tvr-wx-fix">
+  <meta name="fiilis-build" content="20260921-v49-tvr-cal30-wind">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -53,7 +53,7 @@
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
     body.night .mlabel {
-      font-size: 0.8vmin; font-weight: 600; line-height: 1.08;
+      font-size: 1.25vmin; font-weight: 600; line-height: 1.08;
       overflow: hidden; max-height: none;
       color: #f2e8dc;
       opacity: .95;
@@ -253,11 +253,11 @@
 
     .mid-duo {
       display: -ms-flexbox; display: flex;
-      gap: 1.2%;
+      gap: 1%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 12.5%;
-      max-height: 13.5%;
-      min-height: 11%;
+      height: 9.2%;
+      max-height: 10%;
+      min-height: 8.2%;
     }
     .mid-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
     .mid-duo .wxcard { -ms-flex: 1.35; flex: 1.35; }
@@ -485,7 +485,7 @@
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .wxday .ic {
-      font-size: 2.4vmin; line-height: 1;
+      font-size: 1.85vmin; line-height: 1;
       margin: 0;
       -ms-flex: 1 1 auto; flex: 1 1 auto;
       display: -ms-flexbox; display: flex;
@@ -495,12 +495,18 @@
       overflow: hidden;
     }
     .wxday .tm {
-      font-size: 1.35vmin; font-weight: 700;
+      font-size: 1.2vmin; font-weight: 700;
       font-variant-numeric: tabular-nums;
       line-height: 1.05;
       white-space: nowrap;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       letter-spacing: -.02em;
+    }
+    .wxday .extra {
+      font-size: 1.0vmin; font-weight: 550;
+      line-height: 1.05; opacity: .75;
+      white-space: nowrap;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     body.night .wxday .dn { color: rgba(240,228,212,0.75); opacity: 1; }
     body.night .wxday .tm { color: #f5efe6; }
@@ -1257,7 +1263,7 @@
     if (!grid) return;
     try {
       var startIso = now.iso;
-      var endIso = addDaysIso(now.iso, 70);
+      var endIso = addDaysIso(now.iso, 30);
       var sp = isoParts(startIso);
       var ep = isoParts(endIso);
       if (lbl) {
@@ -1271,7 +1277,7 @@
       for (var padI = 0; padI < monIdx; padI++) {
         cells.push("<div class=\"mday pad\"></div>");
       }
-      for (var n = 0; n <= 70; n++) {
+      for (var n = 0; n <= 30; n++) {
         var iso = addDaysIso(startIso, n);
         var ip = isoParts(iso);
         var evs = dayBucketEvents(iso, now);
@@ -1312,10 +1318,10 @@
           });
           var parts = [];
           var used = {};
-          for (var ri = 0; ri < realEvs.length && parts.length < 2; ri++) {
+          for (var ri = 0; ri < realEvs.length && parts.length < 3; ri++) {
             var rt = realEvs[ri].title || realEvs[ri].who || "";
             if (!rt) continue;
-            var short = rt.length > 12 ? rt.slice(0, 11) + "…" : rt;
+            var short = rt.length > 18 ? rt.slice(0, 17) + "…" : rt;
             if (used[short]) continue;
             used[short] = 1;
             parts.push(short);
@@ -1358,8 +1364,11 @@
       el.innerHTML = "<div class=\"wxbody\"><div class=\"wxtemp muted\">Kuopio</div></div>";
       return;
     }
+    var meta = weather.phrase || "";
+    if (weather.feels != null && weather.feels !== "") meta += (meta ? " · " : "") + "tuntuu " + weather.feels + "°";
+    if (weather.wind != null && weather.wind !== "") meta += (meta ? " · " : "") + "tuuli " + weather.wind + " m/s";
     el.innerHTML = "<div class=\"wxicon\">" + weather.icon + "</div><div class=\"wxbody\"><div class=\"wxtemp\">"
-      + esc(weather.temp) + "</div><div class=\"wxmeta muted\">" + esc(weather.phrase) + "</div></div>";
+      + esc(weather.temp) + "</div><div class=\"wxmeta muted\">" + esc(meta) + "</div></div>";
   }
 
   function paintWeekWx(now) {
@@ -1373,9 +1382,17 @@
     for (var i = 0; i < weekWx.length && i < 7; i++) {
       var d = weekWx[i];
       var cls = d.iso === now.iso ? "wxday is-today" : "wxday";
+      var extra = "";
+      if (d.iso === now.iso && weather) {
+        var bits = [];
+        if (weather.feels != null && weather.feels !== "") bits.push("≈" + weather.feels + "°");
+        if (weather.wind != null && weather.wind !== "") bits.push(weather.wind + "m/s");
+        if (bits.length) extra = "<div class=\"extra\">" + esc(bits.join(" · ")) + "</div>";
+      }
       html += "<div class=\"" + cls + "\"><div class=\"dn\">" + esc(d.dn) + "</div>"
         + "<div class=\"ic\">" + d.icon + "</div>"
-        + "<div class=\"tm\">" + esc(d.tmin + "–" + d.tmax + "°") + "</div></div>";
+        + "<div class=\"tm\">" + esc(d.tmin + "–" + d.tmax + "°") + "</div>"
+        + extra + "</div>";
     }
     el.innerHTML = html;
   }
@@ -1454,14 +1471,36 @@
 
   function loadWeather() {
     getJSON(
-      "https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Europe%2FHelsinki&forecast_days=7",
+      "https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&current=temperature_2m,apparent_temperature,wind_speed_10m,weather_code&daily=weathercode,temperature_2m_max,temperature_2m_min,wind_speed_10m_max,apparent_temperature_max,apparent_temperature_min&wind_speed_unit=ms&timezone=Europe%2FHelsinki&forecast_days=7",
       function (data) {
         if (!data || !data.daily) return;
         try {
           var tmin = Math.round(data.daily.temperature_2m_min[0]);
           var tmax = Math.round(data.daily.temperature_2m_max[0]);
-          var w = wmo(data.daily.weathercode[0]);
-          weather = { icon: w.icon, temp: tmin + "–" + tmax + "°", phrase: w.phrase };
+          var code0 = (data.daily.weathercode || data.daily.weather_code)[0];
+          var w = wmo(code0);
+          var feels = null;
+          var wind = null;
+          if (data.current) {
+            if (data.current.apparent_temperature != null) feels = Math.round(data.current.apparent_temperature);
+            if (data.current.wind_speed_10m != null) wind = Math.round(data.current.wind_speed_10m);
+            if (data.current.weather_code != null) w = wmo(data.current.weather_code);
+            if (data.current.temperature_2m != null) {
+              weather = {
+                icon: w.icon,
+                temp: Math.round(data.current.temperature_2m) + "°",
+                phrase: w.phrase,
+                feels: feels,
+                wind: wind
+              };
+            } else {
+              weather = { icon: w.icon, temp: tmin + "–" + tmax + "°", phrase: w.phrase, feels: feels, wind: wind };
+            }
+          } else {
+            if (data.daily.apparent_temperature_max) feels = Math.round(data.daily.apparent_temperature_max[0]);
+            if (data.daily.wind_speed_10m_max) wind = Math.round(data.daily.wind_speed_10m_max[0]);
+            weather = { icon: w.icon, temp: tmin + "–" + tmax + "°", phrase: w.phrase, feels: feels, wind: wind };
+          }
           var arr = [];
           var times = data.daily.time || [];
           for (var i = 0; i < times.length && i < 7; i++) {
@@ -1469,7 +1508,7 @@
             var p = isoParts(iso);
             var dt = new Date(Date.UTC(p.y, p.m - 1, p.d));
             var wd = dt.getUTCDay();
-            var ww = wmo(data.daily.weathercode[i]);
+            var ww = wmo((data.daily.weathercode || data.daily.weather_code)[i]);
             arr.push({
               iso: iso,
               dn: DAYS[wd].short,

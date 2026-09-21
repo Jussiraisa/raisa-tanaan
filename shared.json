@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789984853193,
+  "updated": 1790002745634,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -530,6 +530,22 @@
       "status": ""
     },
     {
+      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
+      "title": "Mea Arja",
+      "date": "2026-09-22",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
+      "title": "Mea valmennus",
+      "date": "2026-09-22",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
+    },
+    {
       "id": "sheet-mea-2026-09-21",
       "who": "mea",
       "title": "Lianna",
@@ -548,22 +564,6 @@
       "end": "18:30",
       "place": "Luola",
       "kind": "treeni"
-    },
-    {
-      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
-      "title": "Mea Arja",
-      "date": "2026-09-22",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-22",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
     }
   ],
   "schoolLunch": {

@@ -4,26 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v72-fitlock-tvr">
+  <meta name="fiilis-build" content="20260921-v73-cream-fit-tvr">
   <meta name="theme-color" content="#F5F3E7">
   <title>Räisä · Yhteinen aika</title>
   <style>
-
     #rot {
       position: fixed; left: 50%; top: 50%;
-      width: 100vh; height: 100vw; /* fallback before JS pixel-lock */
+      width: 100vh; height: 100vw; /* CSS fallback; JS px overrides */
       -webkit-transform: translate(-50%, -50%) rotate(90deg);
       transform: translate(-50%, -50%) rotate(90deg);
       -webkit-transform-origin: center center; transform-origin: center center;
       overflow: hidden; background: #F5F3E7;
     }
-    body.night #rot { background: #161C19; }
+    body.night #rot { background: #F5F3E7 !important; }
+
 
     html, body {
       height: 100%; margin: 0; overflow: hidden;
       background: #F5F3E7; color: #2a241c;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+    /* v73: night neutralized — page chrome always cream paper */
+    html, body { background: #F5F3E7; }
+    body.night {
+      background: #F5F3E7 !important;
+      color: #2a241c !important;
+    }
+
     * { box-sizing: border-box; }
     .tv {
       width: 100%; height: 100%;
@@ -38,72 +45,12 @@
 
     body.morning { background: #F5F3E7; color: #2a241c; }
     body.afternoon { background: #F1EDE4; color: #2a2218; }
-    body.evening { background: #EFE8D8; color: #2a1c12; }
+    body.evening { background: #F1EDE4; color: #2a241c; }
     body.evening .card { background: rgba(255,248,236,0.45); border-color: rgba(80,40,10,0.10); }
     body.evening .accent { color: #8a7350; }
     body.evening .muted { color: rgba(42,28,16,0.68); }
     body.evening .greet { color: #2A241C; }
     body.evening .honey { color: #8a7350; }
-    body.night { background: #161C19; color: #f2ebe2; }
-    body.night .card {
-      background: #24302A; border-color: rgba(240,228,212,0.14);
-      box-shadow: 0 0.4% 1.2% rgba(0,0,0,0.28);
-    }
-    body.night .accent { color: #d4a06a; }
-    body.night .muted { color: rgba(240,228,212,0.72); }
-    body.night .line, body.night .row, body.night .rule {
-      border-color: rgba(240,228,212,0.12);
-    }
-    body.night .photo-wrap {
-      border-color: rgba(240,228,212,0.12);
-      box-shadow: 0 1% 2.4% rgba(0,0,0,0.28);
-    }
-    body.night .foot, body.night .chip, body.night .nav-pill {
-      color: rgba(240,228,212,0.72); border-color: rgba(240,228,212,0.14);
-    }
-    body.night .mday {
-      background: rgba(255,248,238,0.07); border-color: rgba(240,228,212,0.12); color: #f2e8dc;
-    }
-    body.night .mday.is-today { background: rgba(212,160,106,0.12); border-color: rgba(212,160,106,0.38); }
-    body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
-    body.night .mday.is-school { background: rgba(255,248,238,0.04); }
-    body.night .mdow { color: rgba(240,228,212,0.65); }
-    body.night .mday .dn { color: #f5efe6; }
-    body.night .mday .dn .mo { color: rgba(240,228,212,0.72); opacity: 1; }
-    body.night .mday.is-today .dn,
-    body.night .mday.is-today .mlabel { color: #f2ebe2; opacity: 1; }
-    body.night .wxday { background: rgba(255,248,238,0.06); border-color: rgba(240,228,212,0.1); }
-    body.night .wxday.is-today { background: rgba(212,160,106,0.12); }
-    body.night .photo-cap { background: #1A221E; color: #f5f1e8; border-color: rgba(240,228,212,0.12); }
-    body.night .sub { color: rgba(240,228,212,0.62); }
-    body.night .brand-name { color: #f2ebe2; }
-    body.night .brand-tag { color: rgba(240,228,212,0.55); }
-    body.night .clock { color: #fff8ee; }
-    body.night .date-line { color: rgba(240,228,212,0.75); }
-    body.night .wx-one { color: rgba(240,228,212,0.7); }
-    body.night .school-row { border-bottom-color: rgba(240,228,212,0.1); }
-    body.night .school-card { background: #2A332E; }
-    body.night .meal-today { color: #f2ebe2; }
-    body.night .meal-tmw { color: rgba(240,228,212,0.7); }
-    body.night .next-card {
-      background: #36453A; color: #f2ebe2;
-      border-color: rgba(240,228,212,0.08);
-    }
-    body.night .odotcard .cd-num { color: #d4a06a; }
-    body.night .odote { border-bottom-color: rgba(240,228,212,0.08); }
-    body.night .foot .preview { color: rgba(240,228,212,0.45); }
-    body.night .nav-pill.is-active {
-      color: #f2ebe2;
-    }
-    body.night .mlabel { color: #f2e8dc; opacity: .96; }
-    body.night .wxday .dn { color: rgba(240,228,212,0.75); opacity: 1; }
-    body.night .wxday .tm { color: #f5efe6; }
-    body.night .rule { background: rgba(240,228,212,0.14); }
-    body.night .greet-row { border-bottom-color: rgba(240,228,212,0.12); }
-    body.night .lbl { color: rgba(240,228,212,0.55); }
-    body.night .odot-foot { color: rgba(240,228,212,0.42); }
-    body.night .meal-tmw { border-top-color: rgba(240,228,212,0.12); }
-    body.night .foot { border-top-color: rgba(240,228,212,0.1); }
 
     .serif { font-family: Georgia, "Times New Roman", Times, serif; }
     .accent { color: #6e5a3e; }
@@ -372,7 +319,6 @@
       background: transparent;
     }
     .wxday:last-child { border-right: 0; }
-    body.night .wxday { border-right-color: rgba(240,228,212,0.1); }
     .wxday.is-today { background: rgba(47,59,46,0.08); border-radius: 0.35vmin; }
     .wxday .dn {
       font-size: 1.1vmin; font-weight: 700; letter-spacing: .06em;
@@ -423,7 +369,6 @@
       border-bottom: 1px solid rgba(42,36,28,0.08);
       margin-bottom: 0.2%;
     }
-    body.night .countdown { border-bottom-color: rgba(240,228,212,0.1); }
     .countdown .cd-main { min-width: 0; -ms-flex: 1; flex: 1; }
     .countdown .cd-label {
       font-family: Georgia, "Times New Roman", Times, serif;
@@ -431,7 +376,6 @@
       color: #2A241C;
       letter-spacing: .01em;
     }
-    body.night .countdown .cd-label { color: #f2ebe2; }
     .countdown .cd-when {
       font-size: 1.25vmin; font-weight: 500; opacity: .55; margin-top: 0.2%;
     }
@@ -445,7 +389,6 @@
       letter-spacing: -.02em; line-height: .95;
       color: #2A241C;
     }
-    body.night .countdown .cd-num { color: #d4a06a; }
     body.evening .countdown .cd-num { color: #2A241C; }
     .countdown .cd-unit {
       font-size: 1.05vmin; font-weight: 700;
@@ -545,16 +488,6 @@
       -webkit-box-orient: vertical;
       margin: 0; padding: 0;
     }
-    body.night .mlabel {
-      font-size: 1.0vmin; font-weight: 600; line-height: 1.15;
-      max-height: 3.6em; color: #f2e8dc; opacity: .96;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
-    }
-    body.night .mday.is-today {
-      background: rgba(212,160,106,0.22);
-      border-color: rgba(212,160,106,0.5);
-      color: #f2ebe2;
-    }
 
     .foot {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
@@ -616,8 +549,8 @@
 </head>
 
 <body class="morning">
-<div id="rot">
-  <div class="tv" id="app">
+  <div id="rot">
+<div class="tv" id="app">
     <div class="head">
       <div class="clock-block">
         <div class="clock" id="clock">––:––</div>
@@ -710,7 +643,7 @@
       <span class="preview" id="footPreview">Esikatselu · tallenne</span>
       <div class="foot-right">
         <span class="settings">Asetukset</span>
-        <span class="brand">v72</span>
+        <span class="brand">v73</span>
       </div>
     </div>
   </div>
@@ -972,9 +905,8 @@
   function themeClass(hour) {
     if (hour >= 5 && hour < 11) return "morning";
     if (hour >= 11 && hour < 17) return "afternoon";
-    /* Ilta alkaa 17, syvä ilta/yö jo 20 — keittiö-TV ehtii vaihtua ajoissa */
-    if (hour >= 17 && hour < 20) return "evening";
-    return "night";
+    /* Always cream paper — never night/black (kitchen mockup) */
+    return "evening";
   }
 
   function applyTheme(hour) {
@@ -1727,14 +1659,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v72", function (data) {
+    getJSON("schedule.json?v=20260921v73", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v72", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v73", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {
@@ -1812,51 +1744,62 @@
   }
 
 
-  /* v72 fit-lock: freeze #rot size in px (vh/vw jitter on Android TV) */
+  /* v73 hard fit-lock: measure once; no VV listener; only big geometry */
   (function lockRotFit() {
     var rot = document.getElementById("rot");
     if (!rot) return;
-    var lastVw = -9999;
-    var lastVh = -9999;
+    var lockedVw = 0;
+    var lockedVh = 0;
+    var locked = false;
     var timer = null;
     var ROT_DEG = 90;
 
-    function apply() {
+    function measure() {
       var docEl = document.documentElement;
       var vw = window.innerWidth || (docEl && docEl.clientWidth) || 0;
       var vh = window.innerHeight || (docEl && docEl.clientHeight) || 0;
-      if (!vw || !vh) return;
-      if (Math.abs(vw - lastVw) <= 3 && Math.abs(vh - lastVh) <= 3) return;
-      lastVw = vw;
-      lastVh = vh;
-      rot.style.width = vh + "px";
-      rot.style.height = vw + "px";
+      return { vw: vw, vh: vh };
+    }
+
+    function apply(force) {
+      var m = measure();
+      if (!m.vw || !m.vh) return;
+      if (!force && locked) {
+        if (Math.abs(m.vw - lockedVw) <= 80 && Math.abs(m.vh - lockedVh) <= 80) return;
+      }
+      lockedVw = m.vw;
+      lockedVh = m.vh;
+      rot.style.width = m.vh + "px";
+      rot.style.height = m.vw + "px";
       rot.style.position = "fixed";
       rot.style.left = "50%";
       rot.style.top = "50%";
       rot.style.overflow = "hidden";
+      rot.style.background = "#F5F3E7";
       rot.style.webkitTransformOrigin = "center center";
       rot.style.transformOrigin = "center center";
       var t = "translate(-50%, -50%) rotate(" + ROT_DEG + "deg)";
       rot.style.webkitTransform = t;
       rot.style.transform = t;
+      rot.setAttribute("data-fit-locked", "1");
+      locked = true;
     }
 
     function schedule() {
       if (timer) clearTimeout(timer);
       timer = setTimeout(function () {
         timer = null;
-        apply();
-      }, 100);
+        apply(false);
+      }, 250);
     }
 
-    apply();
+    apply(true);
     if (window.addEventListener) {
+      window.addEventListener("load", function () { apply(true); }, false);
       window.addEventListener("resize", schedule, false);
-      if (window.visualViewport && window.visualViewport.addEventListener) {
-        window.visualViewport.addEventListener("resize", schedule, false);
-      }
+      window.addEventListener("orientationchange", schedule, false);
     } else if (window.attachEvent) {
+      window.attachEvent("onload", function () { apply(true); });
       window.attachEvent("onresize", schedule);
     }
   })();

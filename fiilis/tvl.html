@@ -4,140 +4,325 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v73-cream-fit-tvl">
-  <meta name="theme-color" content="#F5F3E7">
-  <title>Räisä · Yhteinen aika</title>
+  <meta name="fiilis-build" content="20260921-v59-restore-tvl">
+  <meta name="theme-color" content="#f5f1e8">
+  <title>Räisä · Fiilis TV</title>
   <style>
     #rot {
       position: fixed; left: 50%; top: 50%;
-      width: 100vh; height: 100vw; /* CSS fallback; JS px overrides */
+      width: 100vh; height: 100vw;
       -webkit-transform: translate(-50%, -50%) rotate(-90deg);
       transform: translate(-50%, -50%) rotate(-90deg);
       -webkit-transform-origin: center center; transform-origin: center center;
-      overflow: hidden; background: #F5F3E7;
+      overflow: hidden; background: transparent;
     }
-    body.night #rot { background: #F5F3E7 !important; }
-
 
     html, body {
       height: 100%; margin: 0; overflow: hidden;
-      background: #F5F3E7; color: #2a241c;
+      background: #f5f1e8; color: #2c2418;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-    /* v73: night neutralized — page chrome always cream paper */
-    html, body { background: #F5F3E7; }
-    body.night {
-      background: #F5F3E7 !important;
-      color: #2a241c !important;
-    }
-
     * { box-sizing: border-box; }
     .tv {
-      width: 100%; height: 100%;
-      box-sizing: border-box;
-      max-width: none;
-      margin: 0;
-      padding: 1% 1.4% 0.7%;
+      height: 100%; width: 100%; padding: 1% 1.4% 0.7%;
       display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column;
-      gap: 0.7%;
+      -ms-flex-direction: column; flex-direction: column; gap: 0.65%;
+      background: transparent;
     }
 
-    body.morning { background: #F5F3E7; color: #2a241c; }
-    body.afternoon { background: #F1EDE4; color: #2a2218; }
-    body.evening { background: #F1EDE4; color: #2a241c; }
-    body.evening .card { background: rgba(255,248,236,0.45); border-color: rgba(80,40,10,0.10); }
-    body.evening .accent { color: #8a7350; }
-    body.evening .muted { color: rgba(42,28,16,0.68); }
-    body.evening .greet { color: #2A241C; }
-    body.evening .honey { color: #8a7350; }
+    body.morning { background: #f5f1e8; color: #2c2418; }
+    body.afternoon { background: #f3eee4; color: #2a2218; }
+    body.evening { background: #e4d2b8; color: #2a1c12; }
+    body.evening .card { background: #dcc7a8; border-color: rgba(80,40,10,0.12); }
+    body.evening .accent { color: #9a4e22; }
+    body.evening .muted { color: rgba(42,28,16,0.7); }
+    body.evening .kid-card { background: #d8c2a0; }
+    body.evening .greet { color: #9a4e22; }
+    body.night { background: #1c1814; color: #f3ebe0; }
+    body.night .card { background: #2a231c; border-color: rgba(240,228,212,0.14); box-shadow: 0 0.4% 1.2% rgba(0,0,0,0.28); }
+    body.night .accent { color: #d4a06a; }
+    body.night .muted { color: rgba(240,228,212,0.72); }
+    body.night .line, body.night .row { border-color: rgba(240,228,212,0.1); }
+    body.night .photo-wrap { border-color: rgba(240,228,212,0.12); box-shadow: 0 1% 2.4% rgba(0,0,0,0.28); }
+    body.night .foot, body.night .chip { color: rgba(240,228,212,0.72); border-color: rgba(240,228,212,0.14); }
+    body.night .cal-line, body.night .week-line { color: #f0e4d4; }
+    body.night .mday { background: rgba(255,248,238,0.07); border-color: rgba(240,228,212,0.12); color: #f2e8dc; }
+    body.night .mday.is-today { background: rgba(212,160,106,0.26); border-color: #d4a06a; }
+    body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
+    body.night .mday.is-school { background: rgba(255,248,238,0.04); }
+    body.night .mdow { color: rgba(240,228,212,0.65); }
+    .mlabel .mdot {
+      width: 0.7vmin; height: 0.7vmin; border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.2%;
+      opacity: .95;
+    }
+    body.night .mday .dn { color: #f5efe6; }
+    body.night .mday .dn .mo { color: rgba(240,228,212,0.72); opacity: 1; }
+    body.night .mday.is-today {
+      background: rgba(232,190,120,0.38);
+      border-color: #e0b878;
+    }
+    body.night .mday.is-today .dn,
+    body.night .mday.is-today .mlabel {
+      color: #1a140e;
+      opacity: 1;
+    }
+    body.night .wxday { background: rgba(255,248,238,0.06); border-color: rgba(240,228,212,0.1); }
+    body.night .wxday.is-today { background: rgba(212,160,106,0.18); }
+    body.night .namechip { color: #2a241c; }
+    body.night .photo-cap { color: #f5f1e8; }
+    body.night .sub { color: rgba(240,228,212,0.62); }
 
-    .serif { font-family: Georgia, "Times New Roman", Times, serif; }
-    .accent { color: #6e5a3e; }
-    .muted { color: rgba(42,36,28,0.58); }
-    .honey { color: #6e5a3e; }
+    .serif {
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
 
     .head {
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: start; align-items: flex-start;
+      -ms-flex-align: center; align-items: center;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      gap: 2%;
-      padding: 0.1% 0 0.15%;
+      gap: 1.8%;
+      padding: .2% 0 .4%;
     }
-    .clock-block { min-width: 0; }
     .clock {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 10.2vmin; font-weight: 500; letter-spacing: -.04em;
-      line-height: .9; font-variant-numeric: tabular-nums;
-      color: #2A241C;
-    }
-    body.evening .clock { color: #2A241C; }
-    .date-line {
-      font-size: 1.6vmin; font-weight: 500;
-      margin-top: 0.5%;
-      color: rgba(42,36,28,0.58);
-      letter-spacing: .01em;
-    }
-    .brand-block { text-align: right; min-width: 0; }
-    .brand-name {
       font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 3.5vmin; font-weight: 400; letter-spacing: -.01em;
-      line-height: 1.05; color: #2A241C;
+      font-size: 9.2vmin; font-weight: 400; letter-spacing: -.045em;
+      line-height: .92; font-variant-numeric: tabular-nums;
+      min-width: 20vmin;
+      color: #1a140e;
+      padding: 0.6% 1.1% 0.55%;
+      border-radius: 1.2vmin;
+      background: rgba(255,252,245,0.92);
+      box-shadow: 0 0.5% 1.4% rgba(40,28,14,0.12);
+      text-shadow: none;
     }
-    .brand-tag {
-      font-size: 1.25vmin; font-weight: 650;
-      letter-spacing: .2em; text-transform: uppercase;
-      color: rgba(42,36,28,0.45); margin-top: 0.3%;
+    body.evening .clock {
+      color: #1a1008;
+      background: rgba(255,244,220,0.95);
+      box-shadow: 0 0.5% 1.6% rgba(80,40,10,0.16);
     }
-    .wx-one {
-      font-size: 1.4vmin; font-weight: 500;
-      margin-top: 0.55%; color: rgba(42,36,28,0.52);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      max-width: 42%;
+    body.night .clock {
+      color: #fff8ee;
+      background: rgba(20,16,12,0.92);
+      box-shadow: 0 0 0 1px rgba(255,220,170,0.28), 0 0.6% 2% rgba(0,0,0,0.45);
+      text-shadow: 0 0 1.2vmin rgba(255,210,150,0.35);
     }
-
-    .greet-row {
-      display: -ms-flexbox; display: flex;
-      -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: end; align-items: flex-end;
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      gap: 1.5%;
-      padding: 0.15% 0 0.45%;
-      border-bottom: 1px solid rgba(42,36,28,0.1);
-    }
-    .greet-block { min-width: 0; -ms-flex: 1; flex: 1; }
+    .greet-block { -ms-flex: 1; flex: 1; min-width: 0; text-align: center; }
     .greet {
       font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 4.0vmin; font-weight: 400; letter-spacing: -.015em;
-      line-height: 1.1; color: #2A241C;
+      font-size: 3.5vmin; font-weight: 400; letter-spacing: -.01em;
+      color: #b8883e;
     }
+    body.night .greet { color: #e0b878; }
     .sub {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-style: italic;
-      font-size: 1.6vmin; font-weight: 400;
-      color: rgba(42,36,28,0.5); margin-top: 0.35%;
-      letter-spacing: .01em;
+      font-size: 1.55vmin; font-weight: 500;
+      color: rgba(44,36,24,0.55); margin-top: .35%;
+      letter-spacing: .04em;
     }
-    .page-ind {
-      font-size: 1.35vmin; font-weight: 550;
-      color: rgba(42,36,28,0.35); letter-spacing: .1em;
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      padding-bottom: 0.35%;
-      font-variant-numeric: tabular-nums;
+    body.night .sub { color: rgba(240,228,212,0.7); }
+    .date {
+      font-size: 1.9vmin; margin-top: .35%; font-weight: 550;
+      color: rgba(44,36,24,0.72);
     }
+    body.night .date { color: rgba(240,228,212,0.86); }
+    .accent { color: #b8883e; }
+    .muted { color: rgba(44,36,24,0.62); }
+    .wx {
+      text-align: right; min-width: 16vmin;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: center; align-items: center;
+      -ms-flex-pack: end; justify-content: flex-end;
+      gap: .7%;
+    }
+    .wxicon { font-size: 4vmin; line-height: 1; }
+    .wxtemp { font-size: 2.7vmin; font-weight: 650; letter-spacing: -.02em; line-height: 1; }
+    .wxmeta { font-size: 1.5vmin; font-weight: 500; margin-top: .2%; }
 
-    .photo-block {
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    .duo {
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
+      gap: .45%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      min-height: 0;
+      height: 15.2%;
+      max-height: 16%;
     }
+    .kids-row {
+      display: -ms-flexbox; display: flex;
+      gap: .85%;
+      -ms-flex: 1; flex: 1;
+      min-height: 0;
+    }
+    .kid-card {
+      -ms-flex: 1; flex: 1;
+      min-width: 0; min-height: 0;
+      background: #ebe4d6;
+      border: 1px solid rgba(44,36,24,0.07);
+      border-radius: 1.2vmin;
+      padding: .7% .7% .55%;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-direction: column; flex-direction: column;
+      overflow: hidden;
+    }
+    body.evening .kid-card { background: #e8dfd0; }
+    body.night .kid-card { background: #342c22; border-color: rgba(240,228,212,0.1); }
+    .kid-head {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: center; align-items: center;
+      gap: .45%;
+      margin-bottom: .35%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .kid-name {
+      font-size: 1.85vmin; font-weight: 700;
+      letter-spacing: -.01em;
+    }
+    .kid-dot {
+      width: 1.1vmin; height: 1.1vmin; border-radius: 50%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .kid-sec {
+      font-size: 1.15vmin; font-weight: 650; letter-spacing: .08em;
+      text-transform: uppercase; color: #b8883e;
+      margin: .25% 0 .15%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .kid-line {
+      font-size: 1.45vmin; font-weight: 600; line-height: 1.2;
+      padding: .12% 0;
+    }
+    .kid-line .t { font-variant-numeric: tabular-nums; font-weight: 700; }
+    .kid-line .m { font-size: 1.2vmin; font-weight: 500; opacity: .72; }
+    .kid-empty { font-size: 1.35vmin; font-weight: 500; opacity: .55; padding: .1% 0; }
+    .kid-body { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
+    .duo-lunch {
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      font-size: 1.4vmin; font-weight: 500;
+      padding: .35% .8%;
+      border-radius: .9vmin;
+      background: rgba(184,136,62,0.1);
+      color: #2c2418;
+    }
+    body.night .duo-lunch { background: rgba(184,136,62,0.16); color: #f0e4d4; }
+
+    .parents-row {
+      display: -ms-flexbox; display: flex;
+      gap: .85%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .parent-card {
+      -ms-flex: 1; flex: 1; min-width: 0;
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(44,36,24,0.06);
+      border-radius: .9vmin;
+      padding: .35% .7% .3%;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: baseline; align-items: baseline;
+      gap: .55%;
+      overflow: hidden;
+    }
+    body.night .parent-card {
+      background: rgba(255,248,238,0.06);
+      border-color: rgba(240,228,212,0.1);
+    }
+    .parent-name {
+      font-size: 1.25vmin; font-weight: 700;
+      white-space: nowrap;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .parent-dot {
+      width: .85vmin; height: .85vmin; border-radius: 50%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .parent-body {
+      font-size: 1.15vmin; font-weight: 500;
+      line-height: 1.2; opacity: .78;
+      -ms-flex: 1; flex: 1; min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
+
+    .mid-duo {
+      display: -ms-flexbox; display: flex;
+      gap: 1%;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      height: 9.2%;
+      max-height: 10%;
+      min-height: 8.2%;
+    }
+    .mid-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
+    .mid-duo .wxcard { -ms-flex: 1.35; flex: 1.35; }
+    .mid-duo .tomorrowcard { -ms-flex: 1.15; flex: 1.15; }
+
+    .bottom-duo {
+      display: -ms-flexbox; display: flex;
+      gap: 1.2%;
+      -ms-flex: 1; flex: 1;
+      min-height: 0;
+    }
+    .bottom-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
+    .bottom-duo .monthcard { -ms-flex: 2.2; flex: 2.2; }
+    .bottom-duo .odotcard { -ms-flex: 0.75; flex: 0.75; }
+
+    .card {
+      background: #ebe4d6;
+      border: 1px solid rgba(44,36,24,0.07);
+      border-radius: 1.4vmin;
+      padding: 1% 1.15% .9%;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-direction: column; flex-direction: column;
+      min-height: 0; overflow: hidden;
+    }
+    .lbl {
+      font-size: 1.55vmin; font-weight: 600; letter-spacing: .06em;
+      margin-bottom: .55%; -ms-flex: 0 0 auto; flex: 0 0 auto;
+      color: #b8883e;
+    }
+    .scroll { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
+
+    .row {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-pack: justify; justify-content: space-between;
+      -ms-flex-align: baseline; align-items: baseline;
+      padding: .55% 0;
+      border-bottom: 1px solid rgba(44,36,24,0.06);
+    }
+    .row:last-child { border-bottom: 0; }
+    body.night .row { border-bottom-color: rgba(240,228,212,0.08); }
+    .who { font-size: 2vmin; font-weight: 650; }
+    .hrs { font-size: 1.95vmin; font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: .8%; }
+    .meta { font-size: 1.5vmin; font-weight: 500; margin-top: .1%; }
+    .drv { font-size: 1.55vmin; font-weight: 600; margin-top: .15%; }
+    .empty { font-size: 1.85vmin; font-weight: 500; padding: .35% 0; }
+    .lunch {
+      margin-top: .35%; padding-top: .4%;
+      border-top: 1px solid rgba(44,36,24,0.07);
+      font-size: 1.45vmin; font-weight: 500; line-height: 1.25;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    body.night .lunch { border-top-color: rgba(240,228,212,0.1); }
+
+    .namechip {
+      display: inline-block; font-size: 1.4vmin; font-weight: 650;
+      padding: .12% .5%; border-radius: 999px; margin-right: .3%;
+      color: #2c2418; vertical-align: middle;
+      opacity: .92;
+    }
+
     .photo-wrap {
-      height: 22.5%; max-height: 24%; min-height: 18%;
-      border-radius: 0.55vmin 0.55vmin 0 0; overflow: hidden;
-      border: 1px solid rgba(42,36,28,0.08);
-      border-bottom: 0;
-      background: rgba(42,36,28,0.04);
+      -ms-flex: 1 1 auto; flex: 1 1 auto;
+      min-height: 30%;
+      height: 34%;
+      max-height: 37%;
+      border-radius: 1.5vmin; overflow: hidden;
+      border: 1px solid rgba(44,36,24,0.07);
+      box-shadow: 0 .6% 1.8% rgba(80,50,20,0.08);
+      background: rgba(44,36,24,0.04);
       position: relative;
     }
     .photo-wrap img {
@@ -145,510 +330,401 @@
       object-fit: cover; display: block;
     }
     .photo-cap {
-      background: #1A221E;
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.2% 1.3%;
+      font-size: 1.7vmin; font-weight: 500;
+      background: linear-gradient(transparent, rgba(40,32,24,0.5));
       color: #f5f1e8;
-      padding: 0.85% 1.2% 0.8%;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: end; align-items: flex-end;
-      gap: 1%;
-      border: 1px solid rgba(42,36,28,0.12);
-      border-top: 0;
-      border-radius: 0 0 0.55vmin 0.55vmin;
+      font-family: Georgia, "Times New Roman", Times, serif;
     }
-    .photo-cap .cap-left { min-width: 0; }
     .photo-cap .wh {
-      font-size: 1.1vmin; font-weight: 650;
-      letter-spacing: .16em; text-transform: uppercase;
-      opacity: .72;
+      font-size: 1.3vmin; opacity: .8; font-weight: 500;
+      letter-spacing: .04em;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin-bottom: 0.2%;
-    }
-    .photo-cap .place {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 2.45vmin; font-weight: 400; line-height: 1.1;
-    }
-    .photo-cap .cap-right {
-      text-align: right; -ms-flex: 0 0 auto; flex: 0 0 auto;
-    }
-    .photo-cap .year {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-style: italic;
-      font-size: 2.2vmin; font-weight: 400; line-height: 1.1;
-    }
-    .photo-cap .idx {
-      font-size: 1.2vmin; font-weight: 550;
-      opacity: .7; margin-top: 0.15%;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: .06em;
-    }
-
-    .mid-split {
-      display: -ms-flexbox; display: flex;
-      gap: 1.1%;
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 15%; max-height: 16%; min-height: 13%;
-    }
-    .mid-split > .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
-
-    .columns {
-      display: -ms-flexbox; display: flex;
-      gap: 1.1%;
-      -ms-flex: 1; flex: 1;
-      min-height: 0;
-    }
-    .col {
-      -ms-flex: 1; flex: 1;
-      min-width: 0; min-height: 0;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column;
-      gap: 0.75%;
-    }
-    .col > .card { min-height: 0; }
-    .col-left .wxcard { -ms-flex: 0 0 auto; flex: 0 0 auto; height: 8.2%; max-height: 9%; }
-    .col-left .monthcard { -ms-flex: 1; flex: 1; }
-    .col-right .mealcard { -ms-flex: 0 0 auto; flex: 0 0 auto; min-height: 8.5%; }
-    .col-right .odotcard { -ms-flex: 1; flex: 1; }
-
-    .card {
-      background: rgba(255,252,245,0.4);
-      border: 1px solid rgba(42,36,28,0.08);
-      border-radius: 0.75vmin;
-      padding: 0.85% 1.05% 0.75%;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column;
-      min-height: 0; overflow: hidden;
-    }
-    .school-card {
-      background: #EBE5D9;
-      border-color: rgba(42,36,28,0.06);
-    }
-    .lbl {
-      font-size: 1.2vmin; font-weight: 700; letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: 0.45%; -ms-flex: 0 0 auto; flex: 0 0 auto;
-      color: rgba(42,36,28,0.52);
-      display: -ms-flexbox; display: flex;
-      -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: baseline; align-items: baseline;
-      gap: 0.6%;
-    }
-    .lbl .lbl-right {
-      font-weight: 600; letter-spacing: .04em; text-transform: none;
-      font-size: 1.25vmin; opacity: .85;
-    }
-    .scroll { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
-
-    .school-row {
-      display: -ms-flexbox; display: flex;
-      -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: center; align-items: center;
-      padding: 0.38% 0;
-      border-bottom: 1px solid rgba(42,36,28,0.08);
-    }
-    .school-row:last-child { border-bottom: 0; }
-    .school-left {
-      display: -ms-flexbox; display: flex;
-      -ms-flex-align: center; align-items: center;
-      gap: 0.55%; min-width: 0;
-    }
-    .kid-dot {
-      width: 1.15vmin; height: 1.15vmin; border-radius: 50%;
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-    }
-    .school-name {
-      font-size: 1.8vmin; font-weight: 650; letter-spacing: -.01em;
-    }
-    .school-hrs {
-      font-size: 1.7vmin; font-weight: 600;
-      font-variant-numeric: tabular-nums; white-space: nowrap;
-      opacity: .85;
-    }
-    .school-empty { font-size: 1.5vmin; opacity: .5; padding: 0.4% 0; }
-
-    .next-card {
-      background: #36453A;
-      color: #f3efe6;
-      border-color: rgba(20,30,24,0.15);
-      box-shadow: none;
-    }
-    .next-card .lbl { color: rgba(243,239,230,0.62); }
-    .next-card .lbl .lbl-right { color: rgba(243,239,230,0.85); letter-spacing: .08em; }
-    .next-time {
-      font-size: 4.2vmin; font-weight: 600;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -.03em; line-height: 1.0;
-      margin: 0.1% 0 0.3%;
-    }
-    .next-title {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 2.2vmin; font-weight: 400; line-height: 1.15;
-    }
-    .next-place {
-      font-size: 1.45vmin; font-weight: 500;
-      opacity: .72; margin-top: 0.2%;
-    }
-    .next-drive {
-      margin-top: auto; padding-top: 0.5%;
-      font-size: 1.3vmin; font-weight: 550;
-      opacity: .78; letter-spacing: .01em;
-      border-top: 1px solid rgba(243,239,230,0.14);
-    }
-    .next-empty {
-      font-size: 1.7vmin; opacity: .6; padding: 0.6% 0;
-      font-family: Georgia, "Times New Roman", Times, serif;
-    }
-    body.evening .next-card { background: #36453A; }
-
-    .wxstrip {
-      display: -ms-flexbox; display: flex;
-      gap: 0; -ms-flex: 1; flex: 1; min-height: 0;
-      -ms-flex-align: stretch; align-items: stretch;
-      overflow: hidden;
-    }
-    .wxday {
-      -ms-flex: 1; flex: 1; min-width: 0; min-height: 0;
-      text-align: center;
-      padding: 0.2% 0.15%;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column;
-      -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: center; align-items: center;
-      overflow: hidden;
-      border-right: 1px solid rgba(42,36,28,0.08);
-      background: transparent;
-    }
-    .wxday:last-child { border-right: 0; }
-    .wxday.is-today { background: rgba(47,59,46,0.08); border-radius: 0.35vmin; }
-    .wxday .dn {
-      font-size: 1.1vmin; font-weight: 700; letter-spacing: .06em;
-      opacity: .55; line-height: 1; text-transform: lowercase;
-    }
-    .wxday .ic {
-      font-size: 1.75vmin; line-height: 1;
-      -ms-flex: 1; flex: 1;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-align: center; align-items: center;
-      -ms-flex-pack: center; justify-content: center;
-      min-height: 0;
-    }
-    .wxday .tm {
-      font-size: 1.15vmin; font-weight: 650;
-      font-variant-numeric: tabular-nums;
-      line-height: 1.05; white-space: nowrap;
-      letter-spacing: -.02em;
-    }
-    .wxday .extra { display: none; }
-
-    .meal-today {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 2.6vmin; font-weight: 400; line-height: 1.15;
-      color: #2A241C;
-      -ms-flex: 1; flex: 1;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-align: center; align-items: center;
-      min-height: 0;
-      padding: 0.3% 0;
-    }
-    .meal-tmw {
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      font-size: 1.35vmin; font-weight: 500;
-      color: rgba(42,36,28,0.55);
-      padding-top: 0.35%;
-      border-top: 1px solid rgba(42,36,28,0.08);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      margin-bottom: .15%;
     }
 
     .countdown {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      padding: 0.15% 0 0.5%;
-      display: -ms-flexbox; display: flex;
-      -ms-flex-pack: justify; justify-content: space-between;
-      -ms-flex-align: end; align-items: flex-end;
-      gap: 0.8%;
-      border-bottom: 1px solid rgba(42,36,28,0.08);
-      margin-bottom: 0.2%;
+      padding: .4% 0 .6%;
+      text-align: left;
     }
-    .countdown .cd-main { min-width: 0; -ms-flex: 1; flex: 1; }
     .countdown .cd-label {
+      font-size: 1.85vmin; font-weight: 600;
+      color: rgba(44,36,24,0.65);
+      letter-spacing: .02em;
+    }
+    body.night .countdown .cd-label { color: rgba(240,228,212,0.65); }
+    .countdown .cd-big {
       font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 1.85vmin; font-weight: 400;
-      color: #2A241C;
-      letter-spacing: .01em;
+      font-size: 6.0vmin; font-weight: 400;
+      letter-spacing: -.02em; line-height: 1.05;
+      color: #b8883e;
+      margin-top: .25%;
     }
-    .countdown .cd-when {
-      font-size: 1.25vmin; font-weight: 500; opacity: .55; margin-top: 0.2%;
-    }
-    .countdown .cd-right {
-      text-align: right; -ms-flex: 0 0 auto; flex: 0 0 auto;
-      line-height: 1;
-    }
-    .countdown .cd-num {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 4.6vmin; font-weight: 400;
-      letter-spacing: -.02em; line-height: .95;
-      color: #2A241C;
-    }
-    body.evening .countdown .cd-num { color: #2A241C; }
-    .countdown .cd-unit {
-      font-size: 1.05vmin; font-weight: 700;
-      letter-spacing: .16em; text-transform: uppercase;
-      opacity: .5; margin-top: 0.15%;
-    }
-    .countdown .cd-big-plain {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 2.2vmin; font-weight: 400;
-      color: #2A241C;
-    }
+    body.night .countdown .cd-big { color: #d4a06a; }
     .odote {
-      font-size: 1.4vmin; font-weight: 500; padding: 0.4% 0; line-height: 1.2;
-      opacity: .85;
+      font-size: 1.45vmin; font-weight: 500; padding: .28% 0; line-height: 1.2;
+      opacity: .78;
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
-      gap: 0.6%;
-      border-bottom: 1px solid rgba(42,36,28,0.07);
+      gap: .6%;
+      border-bottom: 1px solid rgba(44,36,24,0.05);
     }
     .odote:last-child { border-bottom: 0; }
+    body.night .odote { border-bottom-color: rgba(240,228,212,0.08); }
     .odote .d { white-space: nowrap; font-weight: 650; }
-    .odot-foot {
-      -ms-flex: 0 0 auto; flex: 0 0 auto;
-      margin-top: auto;
-      padding-top: 0.55%;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-style: italic;
-      font-size: 1.35vmin;
-      color: rgba(42,36,28,0.42);
-    }
 
     .month-grid {
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       -ms-flex: 1; flex: 1; min-height: 0;
-      gap: 0.12%;
+      gap: .15%;
       overflow: hidden;
     }
     .month-row {
       display: -ms-flexbox; display: flex;
       -ms-flex: 1; flex: 1;
       min-height: 0;
-      gap: 0.12%;
+      gap: .15%;
     }
     .month-row.month-head { -ms-flex: 0 0 auto; flex: 0 0 auto; }
     .month-row > .mdow,
     .month-row > .mday {
       -ms-flex: 1; flex: 1;
-      min-width: 0; min-height: 0;
+      min-width: 0;
+      min-height: 0;
     }
     .mdow {
-      font-size: 0.95vmin; font-weight: 600; letter-spacing: .04em;
-      text-align: center; opacity: .45; padding-bottom: .06%;
+      font-size: 1.0vmin; font-weight: 600; letter-spacing: .04em;
+      text-align: center;
+      opacity: .5; padding-bottom: .08%;
     }
     .mday {
       min-height: 0;
-      border-radius: 0.35vmin;
-      border: 1px solid rgba(42,36,28,0.07);
+      border-radius: .55vmin;
+      border: 1px solid rgba(44,36,24,0.07);
       background: rgba(255,255,255,0.28);
-      padding: 0.15% 0.2% 0.1%;
+      padding: .22% .28% .18%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: 0.08%;
+      gap: 0.12%;
       overflow: hidden;
-      color: #2a241c;
+      color: #2c2418;
     }
-    .mday.pad { visibility: hidden; border: none; background: transparent; }
+    .mday.pad {
+      visibility: hidden;
+      border: none;
+      background: transparent;
+    }
     .mday.is-today {
-      border-color: rgba(42,36,28,0.55);
-      background: rgba(42,36,28,0.88);
-      color: #F5F3E7;
+      border-color: #b8883e; border-width: 1.5px;
+      background: rgba(184,136,62,0.16);
     }
-    .mday.is-today .dn, .mday.is-today .mlabel { color: #F5F3E7; opacity: 1; }
-    .mday.is-lontoo { background: rgba(47,59,46,0.1); }
+    .mday.is-lontoo { background: rgba(184,136,62,0.1); }
     .mday.is-school { background: rgba(255,255,255,0.18); }
     .mday .dn {
-      font-size: 1.0vmin; font-weight: 700;
+      font-size: 1.05vmin; font-weight: 700;
       font-variant-numeric: tabular-nums; line-height: 1;
+      margin-bottom: 0.05%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .mday .dn .mo {
-      font-size: 0.85vmin; font-weight: 500; opacity: .55; margin-left: .1%;
+      font-size: 0.9vmin; font-weight: 500; opacity: .55; margin-left: .1%;
     }
-    .mdots { display: none; }
+    .mdots {
+      display: none;
+    }
     .mdot {
-      width: 0.7vmin; height: 0.7vmin; border-radius: 50%;
-      display: inline-block; vertical-align: middle;
-      margin-right: 0.2%; opacity: .95;
+      width: .95vmin; height: .95vmin; border-radius: 50%;
+      display: inline-block;
+      opacity: .85;
     }
     .mlabel {
-      font-size: 1.0vmin; font-weight: 600; line-height: 1.15;
-      overflow: hidden; color: #2a241c; opacity: .92;
-      min-height: 0; max-height: 3.6em;
-      white-space: normal; word-break: break-word; overflow-wrap: break-word;
+      font-size: 1.2vmin; font-weight: 650; line-height: 1.2;
+      overflow: hidden;
+      color: #2c2418;
+      opacity: .94;
+      min-height: 0;
+      max-height: 2.4em;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-      margin: 0; padding: 0;
+      margin: 0 0 0.08% 0;
+      padding: 0;
     }
+    body.night .mlabel {
+      font-size: 1.2vmin; font-weight: 650; line-height: 1.2;
+      overflow: hidden;
+      max-height: 2.4em;
+      color: #f2e8dc;
+      opacity: .96;
+      white-space: normal;
+      word-break: break-word;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    body.night .mday.is-today .mlabel {
+      color: #1a140e;
+      opacity: 1;
+    }
+
+    .meal-line {
+      font-size: 1.7vmin; font-weight: 550; padding: .28% 0; line-height: 1.25;
+      display: -ms-flexbox; display: flex; gap: .55%;
+    }
+    .meal-line .d { min-width: 4.2vmin; font-weight: 650; }
+    .meal-line .t { -ms-flex: 1; flex: 1; min-width: 0; }
+
+    .wxstrip {
+      display: -ms-flexbox; display: flex;
+      gap: .35%; -ms-flex: 1; flex: 1; min-height: 0;
+      -ms-flex-align: stretch; align-items: stretch;
+      overflow: hidden;
+    }
+    .wxday {
+      -ms-flex: 1; flex: 1; min-width: 0; min-height: 0;
+      text-align: center;
+      padding: .4% .12% .35%;
+      border-radius: .85vmin;
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(44,36,24,0.05);
+      display: -ms-flexbox; display: flex;
+      -ms-flex-direction: column; flex-direction: column;
+      -ms-flex-pack: justify; justify-content: space-between;
+      -ms-flex-align: center; align-items: center;
+      overflow: hidden;
+    }
+    .wxday.is-today { background: rgba(184,136,62,0.18); border-color: rgba(184,136,62,0.35); }
+    .wxday .dn {
+      font-size: 1.15vmin; font-weight: 700; letter-spacing: .05em;
+      opacity: .65; line-height: 1;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    .wxday .ic {
+      font-size: 1.85vmin; line-height: 1;
+      margin: 0;
+      -ms-flex: 1 1 auto; flex: 1 1 auto;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: center; align-items: center;
+      -ms-flex-pack: center; justify-content: center;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .wxday .tm {
+      font-size: 1.2vmin; font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.05;
+      white-space: nowrap;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      letter-spacing: -.02em;
+    }
+    .wxday .extra {
+      font-size: 1.0vmin; font-weight: 550;
+      line-height: 1.05; opacity: .75;
+      white-space: nowrap;
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+    }
+    body.night .wxday .dn { color: rgba(240,228,212,0.75); opacity: 1; }
+    body.night .wxday .tm { color: #f5efe6; }
+    body.night .wxday.is-today .tm { color: #fff8ee; }
 
     .foot {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      margin-top: 0.05%;
+      margin-top: .15%;
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
       -ms-flex-align: center; align-items: center;
-      font-size: 1.25vmin; font-weight: 500;
-      color: rgba(42,36,28,0.42);
+      font-size: 1.5vmin; font-weight: 500;
+      color: rgba(44,36,24,0.42);
       gap: 1%;
-      padding: 0.55% 0.2% 0.15%;
-      border-top: 1px solid rgba(42,36,28,0.1);
-      background: transparent;
     }
-    .nav {
+    .chips {
       display: -ms-flexbox; display: flex;
-      gap: 0.85%; -ms-flex: 1; flex: 1; min-width: 0;
-      -ms-flex-align: center; align-items: center;
+      -ms-flex-wrap: wrap; flex-wrap: wrap;
+      gap: .35%; -ms-flex: 1; flex: 1; min-width: 0;
     }
-    .nav-pill {
-      font-size: 1.25vmin; font-weight: 550;
-      padding: 0; border: 0; border-radius: 0;
-      background: transparent;
-      color: rgba(42,36,28,0.45);
+    .chip {
+      font-size: 1.35vmin; font-weight: 600;
+      padding: .28% .6%; border-radius: 999px;
+      border: 1px solid rgba(44,36,24,0.08);
+      color: #2c2418;
+      opacity: .88;
+    }
+    .foot .tagline {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-style: italic;
+      font-size: 1.55vmin;
+      font-weight: 400;
+      color: rgba(44,36,24,0.45);
       white-space: nowrap;
     }
-    .nav-pill.is-active {
-      background: transparent;
-      color: rgba(42,36,28,0.78);
-      font-weight: 650;
-    }
-    .foot .preview {
-      font-size: 1.2vmin; font-weight: 500;
-      color: rgba(42,36,28,0.4);
-      white-space: nowrap;
-      text-align: center;
-      -ms-flex: 1.2; flex: 1.2;
-    }
-    .foot-right {
-      display: -ms-flexbox; display: flex;
-      -ms-flex-align: center; align-items: center;
-      gap: 0.8%;
-      -ms-flex: 1; flex: 1;
-      -ms-flex-pack: end; justify-content: flex-end;
-      min-width: 0;
-    }
-    .foot .settings {
-      font-size: 1.25vmin; font-weight: 550;
-      color: rgba(42,36,28,0.45);
-      white-space: nowrap;
-    }
+    body.night .foot .tagline { color: rgba(240,228,212,0.45); }
     .foot .brand {
-      letter-spacing: .08em; font-weight: 600;
-      font-size: 1.05vmin; white-space: nowrap; opacity: .4;
+      letter-spacing: .1em; font-weight: 650;
+      font-size: 1.3vmin; white-space: nowrap;
+      opacity: .7;
     }
-    .empty { font-size: 1.5vmin; font-weight: 500; padding: 0.35% 0; }
+  
+    .mid-duo .tomorrowcard { -ms-flex: 1.15; flex: 1.15; min-width: 0; }
+    .tomorrowcard .scroll { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
+    .tmw-line {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: baseline; align-items: baseline;
+      gap: 0.55%;
+      padding: 0.35% 0;
+      border-bottom: 1px solid rgba(44,36,24,0.06);
+      font-size: 1.55vmin; line-height: 1.2;
+    }
+    .tmw-line:last-child { border-bottom: 0; }
+    .tmw-line .who {
+      font-weight: 700; min-width: 4.2vmin;
+      color: #b8883e;
+    }
+    .tmw-line .t {
+      font-weight: 700; font-variant-numeric: tabular-nums;
+      white-space: nowrap; min-width: 7vmin;
+    }
+    .tmw-line .title { -ms-flex: 1; flex: 1; min-width: 0; font-weight: 550; }
+    .tmw-line .place { opacity: .65; font-size: 1.25vmin; }
+    .tmw-empty { font-size: 1.45vmin; opacity: .55; padding: .4% 0; }
+    body.night .tmw-line { border-bottom-color: rgba(240,228,212,0.1); }
+    body.night .tmw-line .who { color: #e0b878; }
+    body.night .tmw-line .title { color: #f2e8dc; }
 
-</style>
+    .odotcard {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-direction: column; flex-direction: column;
+      min-height: 0;
+    }
+    .odotcard > .scroll#odoteList, .odotcard #odoteList {
+      -ms-flex: 1 1 auto; flex: 1 1 auto;
+      min-height: 0;
+      max-height: 28%;
+    }
+    .meal-under {
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      margin-top: 0.6%;
+      padding-top: 0.55%;
+      border-top: 1px solid rgba(44,36,24,0.1);
+    }
+    body.night .meal-under { border-top-color: rgba(240,228,212,0.14); }
+    .meal-lbl {
+      font-size: 1.25vmin !important;
+      margin-bottom: 0.25%;
+      opacity: .85;
+    }
+    .meal-scroll {
+      max-height: 9%;
+      overflow: hidden;
+      font-size: 1.35vmin;
+    }
+
+  
+    .tomorrowcard .lbl {
+      font-size: 1.7vmin; letter-spacing: .08em;
+    }
+    .tmw-line {
+      font-size: 1.7vmin !important;
+      padding: 0.45% 0 !important;
+      gap: 0.7% !important;
+    }
+    .tmw-line .who {
+      min-width: 5vmin !important;
+      font-size: 1.7vmin;
+    }
+    .tmw-line .t {
+      min-width: 8.5vmin !important;
+      font-size: 1.7vmin;
+    }
+    .tmw-line .title { font-size: 1.65vmin; font-weight: 600; }
+    .tmw-line .meta { font-size: 1.35vmin; font-weight: 500; opacity: .72; }
+    .tmw-empty { font-size: 1.5vmin; opacity: .55; padding: .5% 0; }
+
+  </style>
 </head>
-
 <body class="morning">
-  <div id="rot">
-<div class="tv" id="app">
+<div id="rot">
+  <div class="tv" id="app">
     <div class="head">
-      <div class="clock-block">
-        <div class="clock" id="clock">––:––</div>
-        <div class="date-line" id="dateLine">Maanantai</div>
-      </div>
-      <div class="brand-block">
-        <div class="brand-name serif">Räisä</div>
-        <div class="brand-tag">Yhteinen aika</div>
-        <div class="wx-one" id="wx">Kuopio · sää latautuu…</div>
-      </div>
-    </div>
-
-    <div class="greet-row">
+      <div class="clock" id="clock">––.––</div>
       <div class="greet-block">
-        <div class="greet" id="greet">Hyvää huomenta.</div>
-        <div class="sub" id="subLine">Meidän päivä. Yksi hetki kerrallaan.</div>
+        <div class="greet" id="greet">Hyvää huomenta</div>
+        <div class="sub" id="subLine">Räisän perhe · Kuopio</div>
+        <div class="date" id="dateLine">Maanantai</div>
       </div>
-      <div class="page-ind" id="pageInd">01 / 03</div>
+      <div class="wx" id="wx"><div class="wxbody"><div class="wxtemp muted">Kuopio</div></div></div>
     </div>
 
-    <div class="photo-block">
-      <div class="photo-wrap">
-        <img id="photo" src="photos-web/matka-2020-norja-cover-022.jpg" alt="">
+    <div class="duo">
+      <div class="kids-row" id="kidsRow">
+        <div class="kid-card" data-kid="Ellen"><div class="kid-head"><span class="kid-dot" style="background:#e8b4bc"></span><span class="kid-name">Ellen</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Samuel"><div class="kid-head"><span class="kid-dot" style="background:#a8c4dc"></span><span class="kid-name">Samuel</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Milla"><div class="kid-head"><span class="kid-dot" style="background:#e0c48a"></span><span class="kid-name">Milla</span></div><div class="kid-body muted">…</div></div>
+        <div class="kid-card" data-kid="Mea"><div class="kid-head"><span class="kid-dot" style="background:#c4b0dc"></span><span class="kid-name">Mea</span></div><div class="kid-body muted">…</div></div>
       </div>
-      <div class="photo-cap" id="photoCap">
-        <div class="cap-left">
-          <div class="wh">Muistatko tämän?</div>
-          <div class="place">Norja</div>
+      <div class="parents-row" id="parentsRow">
+        <div class="parent-card" data-parent="Jussi">
+          <span class="parent-dot" style="background:#c5bfb6"></span>
+          <span class="parent-name">Jussi</span>
+          <span class="parent-body muted" id="parentJussi">…</span>
         </div>
-        <div class="cap-right">
-          <div class="year">2020</div>
-          <div class="idx">01 / 84</div>
+        <div class="parent-card" data-parent="Riikka">
+          <span class="parent-dot" style="background:#d4c0a0"></span>
+          <span class="parent-name">Riikka</span>
+          <span class="parent-body muted" id="parentRiikka">…</span>
         </div>
+      </div>
+      <div class="duo-lunch" id="schoolLunch" style="display:none"></div>
+    </div>
+
+    <div class="photo-wrap">
+      <img id="photo" src="photos-web/matka-2018-lontoo-cover-001.jpg" alt="">
+      <div class="photo-cap" id="photoCap"><div class="wh">Muistatko…</div>Lontoo · 2018</div>
+    </div>
+
+    <div class="mid-duo">
+      <div class="card wxcard">
+        <div class="lbl">Viikkosää · Kuopio</div>
+        <div class="wxstrip" id="weekWx"><div class="empty muted">Sää latautuu…</div></div>
+      </div>
+      <div class="card tomorrowcard">
+        <div class="lbl">Huomenna</div>
+        <div class="scroll" id="tomorrowBox"><div class="empty muted">—</div></div>
       </div>
     </div>
 
-    <div class="mid-split">
-      <div class="card school-card">
-        <div class="lbl" id="schoolLbl">Koulu · huomenna <span class="lbl-right" id="schoolDate"></span></div>
-        <div class="scroll" id="schoolBox"><div class="school-empty muted">…</div></div>
+    <div class="bottom-duo">
+      <div class="card monthcard">
+        <div class="lbl" id="monthCalLbl">Kalenteri</div>
+        <div class="month-grid" id="monthCalGrid"><div class="empty muted">…</div></div>
       </div>
-      <div class="card next-card">
-        <div class="lbl" id="nextLbl">Seuraavaksi <span class="lbl-right" id="nextWho"></span></div>
-        <div class="scroll" id="nextBox"><div class="next-empty">Hiljaista hetkeä</div></div>
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="col col-left">
-        <div class="card wxcard">
-          <div class="lbl">Kuopio · seitsemän päivää</div>
-          <div class="wxstrip" id="weekWx"><div class="empty muted">Sää latautuu…</div></div>
+      <div class="card odotcard">
+        <div class="lbl">Odotukset</div>
+        <div class="countdown" id="countdown">
+          <div class="cd-label">Lontoo · 13.–17.10.</div>
+          <div class="cd-big">– päivää</div>
         </div>
-        <div class="card monthcard">
-          <div class="lbl" id="monthCalLbl">21.9.–25.10.</div>
-          <div class="month-grid" id="monthCalGrid"><div class="empty muted">…</div></div>
-        </div>
-      </div>
-      <div class="col col-right">
-        <div class="card mealcard">
-          <div class="lbl">Kotona tänään</div>
-          <div class="meal-today serif" id="mealToday">—</div>
-          <div class="meal-tmw" id="mealTmw"></div>
-        </div>
-        <div class="card odotcard">
-          <div class="lbl">Hyvää odotettavaa</div>
-          <div class="countdown" id="countdown">
-            <div class="cd-main">
-              <div class="cd-label">Lontoo-matka</div>
-              <div class="cd-when">13.10.</div>
-            </div>
-            <div class="cd-right">
-              <div class="cd-num">–</div>
-              <div class="cd-unit">Päivää</div>
-            </div>
-          </div>
-          <div class="scroll" id="odoteList"></div>
-          <div class="odot-foot">Meidän yhteisiä hetkiä.</div>
+        <div class="scroll" id="odoteList"></div>
+        <div class="meal-under">
+          <div class="lbl meal-lbl">Kotona ruoka</div>
+          <div class="scroll meal-scroll" id="mealBox"><div class="empty muted">—</div></div>
         </div>
       </div>
     </div>
 
     <div class="foot">
-      <div class="nav" id="nav">
-        <span class="nav-pill is-active">· Koti</span>
-        <span class="nav-pill">Lähipäivät</span>
-        <span class="nav-pill">Muistot</span>
-        <span class="nav-pill">Pysäytä</span>
-      </div>
-      <span class="preview" id="footPreview">Esikatselu · tallenne</span>
-      <div class="foot-right">
-        <span class="settings">Asetukset</span>
-        <span class="brand">v73</span>
-      </div>
+      <div class="chips" id="chips"></div>
+      <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
+      <span class="brand">v59</span>
     </div>
   </div>
 </div>
-<script>
+  <script>
 (function () {
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -666,11 +742,11 @@
     { name: "Ellen", color: "#e8b4bc" },
     { name: "Samuel", color: "#a8c4d8" },
     { name: "Milla", color: "#e4c090" },
-    { name: "Mea", color: "#c4788a" }
+    { name: "Mea", color: "#c4a8d8" }
   ];
   var WHO_COLOR = {
     Jussi: "#c5bfb6", Riikka: "#d4c0a0", Ellen: "#e8b4bc",
-    Samuel: "#a8c4d8", Milla: "#e4c090", Mea: "#c4788a"
+    Samuel: "#a8c4d8", Milla: "#e4c090", Mea: "#c4a8d8"
   };
   var PHOTOS = [
     { src: "photos-web/matka-2018-lontoo-cover-001.jpg", place: "Lontoo", year: "2018" },
@@ -817,8 +893,6 @@
     ]
   };
 
-
-  var SOFT_LINE = "Meidän päivä. Yksi hetki kerrallaan.";
   var schedule = FALLBACK;
   var weather = { icon: "", temp: "", phrase: "" };
   var weekWx = [];
@@ -896,17 +970,18 @@
   }
 
   function greeting(hour) {
-    if (hour >= 5 && hour < 11) return "Hyvää huomenta.";
-    if (hour >= 11 && hour < 17) return "Hyvää päivää.";
-    if (hour >= 17 && hour < 20) return "Hyvää iltaa.";
-    return "Hyvää yötä.";
+    if (hour >= 5 && hour < 11) return "Hyvää huomenta";
+    if (hour >= 11 && hour < 17) return "Hyvää päivää";
+    if (hour >= 17 && hour < 20) return "Hyvää iltaa";
+    return "Hyvää yötä";
   }
 
   function themeClass(hour) {
     if (hour >= 5 && hour < 11) return "morning";
     if (hour >= 11 && hour < 17) return "afternoon";
-    /* Always cream paper — never night/black (kitchen mockup) */
-    return "evening";
+    /* Ilta alkaa 17, syvä ilta/yö jo 20 — keittiö-TV ehtii vaihtua ajoissa */
+    if (hour >= 17 && hour < 20) return "evening";
+    return "night";
   }
 
   function applyTheme(hour) {
@@ -1116,119 +1191,110 @@
   }
 
 
-
-  function fmtColon(hm) {
-    if (!hm) return "";
-    var p = String(hm).split(":");
-    return pad(p[0]) + ":" + pad(p[1] || "00");
-  }
-  function fmtColonRange(a, b) {
-    if (!a && !b) return "";
-    if (a && b) return fmtColon(a) + "–" + fmtColon(b);
-    return a ? fmtColon(a) : "";
-  }
-
-  function schoolLabelParts(now) {
-    var tgt = schoolTarget(now);
-    var title = "Koulu";
-    var right = "";
-    if (tgt.tomorrow) {
-      title = "Koulu · huomenna";
-      var ip = isoParts(tgt.focusIso);
-      right = ip.d + "." + ip.m + ".";
-      if (tgt.label && tgt.label.indexOf("maanantai") >= 0) {
-        title = "Koulu · maanantai";
+  function parentBits(now, name) {
+    var bits = [];
+    var evs = remainingEvents(now);
+    for (var i = 0; i < evs.length; i++) {
+      var e = evs[i];
+      var w = e.who || "";
+      if (w === name || w === "perhe" || w === "vanhemmat") {
+        var line = (fmtRange(e.time, e.end) ? fmtRange(e.time, e.end) + " " : "") + (e.title || "");
+        if (e.place) line += " · " + e.place;
+        bits.push(line);
       }
-    } else {
-      title = "Koulu · tänään";
-      right = now.day + "." + now.month + ".";
+      // driving duties for kids
+      var drv = driverOf(e, now.iso);
+      if (drv && drv.indexOf(name) >= 0 && w !== name) {
+        bits.push("kyyti " + (e.who || "") + (e.title ? " · " + e.title : "") + (fmtRange(e.time, e.end) ? " " + fmtRange(e.time, e.end) : ""));
+      }
     }
-    return { title: title, right: right, tgt: tgt };
+    // absences / travel from schedule
+    if (schedule && schedule.absences) {
+      for (var a = 0; a < schedule.absences.length; a++) {
+        var ab = schedule.absences[a];
+        if (ab.who === name && ab.from <= now.iso && ab.to >= now.iso) {
+          bits.push((ab.where || "poissa") + (ab.note ? " · " + ab.note : ""));
+        }
+      }
+    }
+    return bits;
   }
 
-  function paintSchool(now) {
-    var box = document.getElementById("schoolBox");
-    var lbl = document.getElementById("schoolLbl");
-    if (!box) return;
-    var parts = schoolLabelParts(now);
-    var tgt = parts.tgt;
-    if (lbl) {
-      lbl.innerHTML = esc(parts.title)
-        + (parts.right ? " <span class=\"lbl-right\" id=\"schoolDate\">" + esc(parts.right) + "</span>" : "");
+  function paintParents(now) {
+    var names = ["Jussi", "Riikka"];
+    for (var i = 0; i < names.length; i++) {
+      var n = names[i];
+      var el = document.getElementById(n === "Jussi" ? "parentJussi" : "parentRiikka");
+      if (!el) continue;
+      var bits = parentBits(now, n);
+      if (!bits.length) {
+        el.textContent = "kotona / arki";
+        el.className = "parent-body muted";
+      } else {
+        el.textContent = bits.slice(0, 2).join(" · ");
+        el.className = "parent-body";
+      }
     }
+  }
+
+  function paintKidsDay(now) {
+    var tgt = schoolTarget(now);
     var schools = schoolForTarget(tgt);
     var byWho = {};
-    for (var i = 0; i < schools.length; i++) byWho[schools[i].who] = schools[i];
-    var html = "";
-    for (var k = 0; k < KID_ORDER.length; k++) {
-      var kid = KID_ORDER[k];
-      var col = WHO_COLOR[kid] || "#c4a574";
+    for (var i = 0; i < schools.length; i++) {
+      byWho[schools[i].who] = schools[i];
+    }
+    var cards = document.querySelectorAll("#kidsRow .kid-card");
+    for (var c = 0; c < cards.length; c++) {
+      var card = cards[c];
+      var kid = card.getAttribute("data-kid");
+      var body = card.querySelector(".kid-body");
+      if (!body) continue;
+      var html = "";
+      html += "<div class=\"kid-sec\">Koulu" + (tgt && tgt.tomorrow ? " · huom" : "") + "</div>";
       var sch = byWho[kid];
-      var hrs = sch ? fmtColonRange(sch.time, sch.end) : "—";
-      html += "<div class=\"school-row\"><div class=\"school-left\">"
-        + "<span class=\"kid-dot\" style=\"background:" + col + "\"></span>"
-        + "<span class=\"school-name\">" + esc(kid) + "</span></div>"
-        + "<span class=\"school-hrs\">" + esc(hrs) + "</span></div>";
+      if (sch) {
+        html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(sch.time, sch.end)) + "</span></div>";
+      } else {
+        html += "<div class=\"kid-empty\">Ei koulua</div>";
+      }
+      html += "<div class=\"kid-sec\">Treenit" + (tgt && tgt.tomorrow ? " · tänään+huom" : "") + "</div>";
+      var evs = eventsForKid(now, kid, tgt.focusIso);
+      if (!evs.length) {
+        html += "<div class=\"kid-empty\">—</div>";
+      } else {
+        for (var e = 0; e < evs.length; e++) {
+          var ev = evs[e];
+          var drv = driverOf(ev, tgt.focusIso || now.iso);
+          var dayHint = (ev.date && ev.date !== now.iso) ? (ev.date === tgt.focusIso ? "huom " : "") : "";
+          html += "<div class=\"kid-line\"><span class=\"t\">" + esc(dayHint + (fmtRange(ev.time, ev.end) || "")) + "</span> "
+            + esc(ev.title || "") + "</div>";
+          if (ev.place || drv) {
+            html += "<div class=\"kid-line m\">" + esc(ev.place || "")
+              + (drv ? (ev.place ? " · " : "") + esc(drv) : "") + "</div>";
+          }
+          if (ev.note) {
+            html += "<div class=\"kid-line m\">" + esc(ev.note) + "</div>";
+          }
+        }
+      }
+      body.innerHTML = html;
     }
-    if (!schools.length && (tgt.wd === 0 || tgt.wd === 6)) {
-      html = "<div class=\"school-empty muted\">Viikonloppu — ei koulua</div>";
-    }
-    box.innerHTML = html;
-  }
-
-  function nextEvent(now) {
-    var list = remainingEvents(now);
-    if (list.length) return list[0];
-    /* look ahead up to 3 days for next training/ride */
-    for (var n = 1; n <= 3; n++) {
-      var iso = addDaysIso(now.iso, n);
-      var day = eventsOn(iso);
-      for (var i = 0; i < day.length; i++) {
-        if (day[i].kind === "matka") continue;
-        return day[i];
+    var lunchEl = document.getElementById("schoolLunch");
+    if (lunchEl) {
+      var lunch = "";
+      if (schedule && schedule.schoolLunch) lunch = schedule.schoolLunch[tgt.lunchIso] || "";
+      if (lunch) {
+        lunchEl.style.display = "block";
+        lunchEl.innerHTML = "<span class=\"accent\">Kouluruoka</span> · " + esc(lunch)
+          + (tgt && tgt.label ? " <span class=\"muted\">(" + esc(tgt.label) + ")</span>" : "");
+      } else {
+        lunchEl.style.display = "none";
+        lunchEl.innerHTML = "";
       }
     }
-    return null;
   }
 
-  function paintNext(now) {
-    var box = document.getElementById("nextBox");
-    var lbl = document.getElementById("nextLbl");
-    if (!box) return;
-    var e = nextEvent(now);
-    if (!e) {
-      if (lbl) lbl.textContent = "Seuraavaksi";
-      box.innerHTML = "<div class=\"next-empty\">Hiljaista hetkeä</div>";
-      return;
-    }
-    var who = e.who || "";
-    if (lbl) {
-      if (who && who !== "perhe") lbl.textContent = "Seuraavaksi · " + who;
-      else lbl.textContent = "Seuraavaksi";
-    }
-    var time = e.time ? fmtColon(e.time) : "";
-    var title = e.title || "";
-    var place = e.place || "";
-    var bits = [];
-    if (e.driver) bits.push("Vienti " + e.driver);
-    if (e.pickup && e.pickup !== e.driver) bits.push("Haku " + e.pickup);
-    var drive = bits.join(" · ");
-    var dayHint = "";
-    if (e.date && e.date !== now.iso) {
-      var ip = isoParts(e.date);
-      dayHint = "<div class=\"next-place\">" + esc(ip.d + "." + ip.m + ".") + "</div>";
-    }
-    var html = "";
-    if (time) html += "<div class=\"next-time\">" + esc(time) + "</div>";
-    html += "<div class=\"next-title\">" + esc(title) + "</div>";
-    if (place) html += "<div class=\"next-place\">" + esc(place) + "</div>";
-    html += dayHint;
-    if (drive) html += "<div class=\"next-drive\">" + esc(drive) + "</div>";
-    box.innerHTML = html;
-  }
-
-  function paintParents(now) { /* omitted in v70 mood board */ }
-  function paintKidsDay(now) { paintSchool(now); }
 
   function nextAnniversaryIso(ann, now) {
     var mmdd = ann.mmdd;
@@ -1247,27 +1313,21 @@
     var listEl = document.getElementById("odoteList");
     if (el) {
       var d = daysUntil(LONTOO_START, now);
-      var nice = "Lontoo-matka";
-      var when = "13.10.";
-      var numHtml = "";
+      var label = "Lontoo · 13.–17.10.";
+      var big = "";
       if (d > 1) {
-        numHtml = "<div class=\"cd-num\">" + esc(String(d)) + "</div>"
-          + "<div class=\"cd-unit\">Päivää</div>";
+        big = d + " PÄIVÄÄ";
       } else if (d === 1) {
-        when = "huomenna";
-        numHtml = "<div class=\"cd-big-plain\">HUOMENNA</div>";
+        big = "HUOMENNA";
       } else if (d === 0 || (now.iso >= LONTOO_START && now.iso <= LONTOO_END)) {
-        nice = "Lontoo";
-        when = "nyt";
-        numHtml = "<div class=\"cd-big-plain\">nyt menossa</div>";
+        label = "Lontoo";
+        big = "nyt menossa";
       } else {
-        nice = "Lontoo";
-        when = "";
-        numHtml = "<div class=\"cd-big-plain\">kiitos matkasta</div>";
+        label = "Lontoo";
+        big = "kiitos matkasta";
       }
-      el.innerHTML = "<div class=\"cd-main\"><div class=\"cd-label\">" + esc(nice) + "</div>"
-        + (when ? "<div class=\"cd-when\">" + esc(when) + "</div>" : "")
-        + "</div><div class=\"cd-right\">" + numHtml + "</div>";
+      el.innerHTML = "<div class=\"cd-label\">" + esc(label) + "</div>"
+        + "<div class=\"cd-big\">" + esc(big) + "</div>";
     }
     if (!listEl) return;
     var items = [];
@@ -1372,17 +1432,22 @@
   }
 
   function paintMeals(now) {
-    var todayEl = document.getElementById("mealToday");
-    var tmwEl = document.getElementById("mealTmw");
+    var el = document.getElementById("mealBox");
+    if (!el) return;
     var map = (schedule && schedule.homeMeals) || {};
-    var today = map[now.iso] || "";
-    var tmwIso = addDaysIso(now.iso, 1);
-    var tmw = map[tmwIso] || "";
-    if (todayEl) todayEl.textContent = today || "Ei merkintää";
-    if (tmwEl) {
-      if (tmw) tmwEl.textContent = "Huomenna · " + tmw;
-      else tmwEl.textContent = "";
+    var html = "";
+    var shown = 0;
+    for (var n = 0; n < 5 && shown < 3; n++) {
+      var iso = addDaysIso(now.iso, n);
+      var dish = map[iso];
+      if (!dish && n > 0) continue;
+      var wd = (now.wd + n) % 7;
+      var dayLbl = n === 0 ? "Tänään" : DAYS[wd].short;
+      html += "<div class=\"meal-line\"><span class=\"d accent\">" + esc(dayLbl) + "</span>"
+        + "<span class=\"t\">" + esc(dish || "Ei merkintää") + "</span></div>";
+      shown++;
     }
+    el.innerHTML = html || "<div class=\"empty muted\">Ei merkintää</div>";
   }
 
   function monthShortFi(m) {
@@ -1467,7 +1532,7 @@
       var sp = isoParts(startIso);
       var ep = isoParts(endIso);
       if (lbl) {
-        lbl.textContent = sp.d + "." + sp.m + ".–" + ep.d + "." + ep.m + ".";
+        lbl.textContent = "Kalenteri · " + sp.d + "." + sp.m + ".–" + ep.d + "." + ep.m + ".";
       }
       var cells = [];
       var dows = ["ma","ti","ke","to","pe","la","su"];
@@ -1569,13 +1634,14 @@
     var el = document.getElementById("wx");
     if (!el) return;
     if (!weather.temp) {
-      el.textContent = "Kuopio · sää ei saatavilla";
+      el.innerHTML = "<div class=\"wxbody\"><div class=\"wxtemp muted\">Kuopio</div></div>";
       return;
     }
-    var bits = ["Kuopio"];
-    bits.push(weather.temp);
-    if (weather.phrase) bits.push(weather.phrase);
-    el.textContent = bits.join(" · ");
+    var meta = weather.phrase || "";
+    if (weather.feels != null && weather.feels !== "") meta += (meta ? " · " : "") + "tuntuu " + weather.feels + "°";
+    if (weather.wind != null && weather.wind !== "") meta += (meta ? " · " : "") + "tuuli " + weather.wind + " m/s";
+    el.innerHTML = "<div class=\"wxicon\">" + weather.icon + "</div><div class=\"wxbody\"><div class=\"wxtemp\">"
+      + esc(weather.temp) + "</div><div class=\"wxmeta muted\">" + esc(meta) + "</div></div>";
   }
 
   function paintWeekWx(now) {
@@ -1589,9 +1655,21 @@
     for (var i = 0; i < weekWx.length && i < 7; i++) {
       var d = weekWx[i];
       var cls = d.iso === now.iso ? "wxday is-today" : "wxday";
+      var extraBits = [];
+      if (d.iso === now.iso && weather && weather.feels != null && weather.feels !== "") {
+        extraBits.push("≈" + weather.feels + "°");
+      }
+      if (d.wind != null && d.wind !== "") extraBits.push(d.wind + "m/s");
+      else if (d.iso === now.iso && weather && weather.wind != null && weather.wind !== "") {
+        extraBits.push(weather.wind + "m/s");
+      }
+      var extra = extraBits.length
+        ? "<div class=\"extra\">" + esc(extraBits.join(" · ")) + "</div>"
+        : "";
       html += "<div class=\"" + cls + "\"><div class=\"dn\">" + esc(d.dn) + "</div>"
         + "<div class=\"ic\">" + d.icon + "</div>"
-        + "<div class=\"tm\">" + esc(d.tmin + "–" + d.tmax + "°") + "</div></div>";
+        + "<div class=\"tm\">" + esc(d.tmin + "–" + d.tmax + "°") + "</div>"
+        + extra + "</div>";
     }
     el.innerHTML = html;
   }
@@ -1600,49 +1678,38 @@
     var img = document.getElementById("photo");
     var cap = document.getElementById("photoCap");
     if (!img || !photos.length) return;
-    var idx = photoIdx % photos.length;
-    var p = photos[idx];
+    var p = photos[photoIdx % photos.length];
     img.src = p.src;
     var place = p.place || "Muisto";
     var year = p.year || "";
-    var n = photos.length;
-    var cur = pad(idx + 1);
-    var total = pad(n);
-    if (cap) {
-      cap.innerHTML = "<div class=\"cap-left\"><div class=\"wh\">Muistatko tämän?</div>"
-        + "<div class=\"place\">" + esc(place) + "</div></div>"
-        + "<div class=\"cap-right\">"
-        + (year ? "<div class=\"year\">" + esc(year) + "</div>" : "")
-        + "<div class=\"idx\">" + esc(cur + " / " + total) + "</div></div>";
-    }
+    var line = year ? (place + " · " + year) : place;
+    if (cap) cap.innerHTML = "<div class=\"wh\">Muistatko…</div>" + esc(line);
   }
 
-  function paintChips() { /* nav pills are static in v70 */ }
+  function paintChips() {
+    var el = document.getElementById("chips");
+    if (!el) return;
+    var html = "";
+    for (var i = 0; i < FAMILY.length; i++) {
+      var f = FAMILY[i];
+      html += "<span class=\"chip\" style=\"background:" + f.color + "\">" + esc(f.name) + "</span>";
+    }
+    el.innerHTML = html;
+  }
 
   function paint() {
     var now = helsinkiNow();
     applyTheme(now.hour);
     var clockEl = document.getElementById("clock");
-    if (clockEl) clockEl.textContent = pad(now.hour) + ":" + pad(now.minute);
+    if (clockEl) clockEl.textContent = pad(now.hour) + "." + pad(now.minute);
     var greetEl = document.getElementById("greet");
     if (greetEl) greetEl.textContent = greeting(now.hour);
-    var subEl = document.getElementById("subLine");
-    if (subEl) subEl.textContent = SOFT_LINE;
     var dateEl = document.getElementById("dateLine");
-    if (dateEl) {
-      var months = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
-        "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
-      dateEl.textContent = DAYS[now.wd].full + " · " + now.day + ". " + months[now.month - 1];
-    }
-
-    var prev = document.getElementById("footPreview");
-    if (prev) {
-      prev.textContent = "Esikatselu · tallenne " + now.day + "." + now.month + ". "
-        + pad(now.hour) + ":" + pad(now.minute);
-    }
-    paintSchool(now);
-    paintNext(now);
+    if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ".";
+    paintKidsDay(now);
+    paintParents(now);
     paintOdotukset(now);
+    paintTomorrow(now);
     paintMeals(now);
     paintMonthCal(now);
     paintWx();
@@ -1653,20 +1720,20 @@
     var now = helsinkiNow();
     applyTheme(now.hour);
     var clockEl = document.getElementById("clock");
-    if (clockEl) clockEl.textContent = pad(now.hour) + ":" + pad(now.minute);
+    if (clockEl) clockEl.textContent = pad(now.hour) + "." + pad(now.minute);
     var greetEl = document.getElementById("greet");
     if (greetEl) greetEl.textContent = greeting(now.hour);
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v73", function (data) {
+    getJSON("schedule.json?v=20260921v59", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v73", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v59", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {
@@ -1742,67 +1809,6 @@
       }
     );
   }
-
-
-  /* v73 hard fit-lock: measure once; no VV listener; only big geometry */
-  (function lockRotFit() {
-    var rot = document.getElementById("rot");
-    if (!rot) return;
-    var lockedVw = 0;
-    var lockedVh = 0;
-    var locked = false;
-    var timer = null;
-    var ROT_DEG = -90;
-
-    function measure() {
-      var docEl = document.documentElement;
-      var vw = window.innerWidth || (docEl && docEl.clientWidth) || 0;
-      var vh = window.innerHeight || (docEl && docEl.clientHeight) || 0;
-      return { vw: vw, vh: vh };
-    }
-
-    function apply(force) {
-      var m = measure();
-      if (!m.vw || !m.vh) return;
-      if (!force && locked) {
-        if (Math.abs(m.vw - lockedVw) <= 80 && Math.abs(m.vh - lockedVh) <= 80) return;
-      }
-      lockedVw = m.vw;
-      lockedVh = m.vh;
-      rot.style.width = m.vh + "px";
-      rot.style.height = m.vw + "px";
-      rot.style.position = "fixed";
-      rot.style.left = "50%";
-      rot.style.top = "50%";
-      rot.style.overflow = "hidden";
-      rot.style.background = "#F5F3E7";
-      rot.style.webkitTransformOrigin = "center center";
-      rot.style.transformOrigin = "center center";
-      var t = "translate(-50%, -50%) rotate(" + ROT_DEG + "deg)";
-      rot.style.webkitTransform = t;
-      rot.style.transform = t;
-      rot.setAttribute("data-fit-locked", "1");
-      locked = true;
-    }
-
-    function schedule() {
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(function () {
-        timer = null;
-        apply(false);
-      }, 250);
-    }
-
-    apply(true);
-    if (window.addEventListener) {
-      window.addEventListener("load", function () { apply(true); }, false);
-      window.addEventListener("resize", schedule, false);
-      window.addEventListener("orientationchange", schedule, false);
-    } else if (window.attachEvent) {
-      window.attachEvent("onload", function () { apply(true); });
-      window.attachEvent("onresize", schedule);
-    }
-  })();
 
   paintChips();
   paint();

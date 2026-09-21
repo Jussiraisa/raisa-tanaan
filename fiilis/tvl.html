@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v59-restore-tvl">
+  <meta name="fiilis-build" content="20260921-v59c-cream-tvl">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -14,12 +14,12 @@
       -webkit-transform: translate(-50%, -50%) rotate(-90deg);
       transform: translate(-50%, -50%) rotate(-90deg);
       -webkit-transform-origin: center center; transform-origin: center center;
-      overflow: hidden; background: transparent;
+      overflow: hidden; background: #F7F1E3;
     }
 
     html, body {
       height: 100%; margin: 0; overflow: hidden;
-      background: #f5f1e8; color: #2c2418;
+      background: #F7F1E3; color: #2c2418;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
@@ -30,23 +30,23 @@
       background: transparent;
     }
 
-    body.morning { background: #f5f1e8; color: #2c2418; }
-    body.afternoon { background: #f3eee4; color: #2a2218; }
-    body.evening { background: #e4d2b8; color: #2a1c12; }
-    body.evening .card { background: #dcc7a8; border-color: rgba(80,40,10,0.12); }
+    body.morning { background: #F7F1E3; color: #2A241C; }
+    body.afternoon { background: #F5EFE0; color: #2A241C; }
+    body.evening { background: #F3EBDD; color: #2A241C; }
+    body.evening .card { background: #F6EEDF; border-color: rgba(80,40,10,0.12); }
     body.evening .accent { color: #9a4e22; }
     body.evening .muted { color: rgba(42,28,16,0.7); }
-    body.evening .kid-card { background: #d8c2a0; }
+    body.evening .kid-card { background: #F3EBDD; }
     body.evening .greet { color: #9a4e22; }
-    body.night { background: #1c1814; color: #f3ebe0; }
-    body.night .card { background: #2a231c; border-color: rgba(240,228,212,0.14); box-shadow: 0 0.4% 1.2% rgba(0,0,0,0.28); }
+    body.night { background: #F7F1E3 !important; color: #2A241C !important; }
+    body.night .card { background: #FBF6EB; border-color: rgba(240,228,212,0.14); box-shadow: 0 0.4% 1.2% rgba(0,0,0,0.28); }
     body.night .accent { color: #d4a06a; }
-    body.night .muted { color: rgba(240,228,212,0.72); }
+    body.night .muted { color: rgba(42,36,28,0.62); }
     body.night .line, body.night .row { border-color: rgba(240,228,212,0.1); }
     body.night .photo-wrap { border-color: rgba(240,228,212,0.12); box-shadow: 0 1% 2.4% rgba(0,0,0,0.28); }
-    body.night .foot, body.night .chip { color: rgba(240,228,212,0.72); border-color: rgba(240,228,212,0.14); }
-    body.night .cal-line, body.night .week-line { color: #f0e4d4; }
-    body.night .mday { background: rgba(255,248,238,0.07); border-color: rgba(240,228,212,0.12); color: #f2e8dc; }
+    body.night .foot, body.night .chip { color: rgba(240,228,212,0.72); border-color: rgba(42,36,28,0.62); }
+    body.night .cal-line, body.night .week-line { color: #2A241C; }
+    body.night .mday { background: rgba(255,255,255,0.35); border-color: rgba(240,228,212,0.12); color: #2A241C; }
     body.night .mday.is-today { background: rgba(212,160,106,0.26); border-color: #d4a06a; }
     body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
@@ -58,7 +58,7 @@
       margin-right: 0.2%;
       opacity: .95;
     }
-    body.night .mday .dn { color: #f5efe6; }
+    body.night .mday .dn { color: #2A241C; }
     body.night .mday .dn .mo { color: rgba(240,228,212,0.72); opacity: 1; }
     body.night .mday.is-today {
       background: rgba(232,190,120,0.38);
@@ -73,7 +73,7 @@
     body.night .wxday.is-today { background: rgba(212,160,106,0.18); }
     body.night .namechip { color: #2a241c; }
     body.night .photo-cap { color: #f5f1e8; }
-    body.night .sub { color: rgba(240,228,212,0.62); }
+    body.night .sub { color: rgba(42,36,28,0.62); }
 
     .serif {
       font-family: Georgia, "Times New Roman", Times, serif;
@@ -105,8 +105,8 @@
       box-shadow: 0 0.5% 1.6% rgba(80,40,10,0.16);
     }
     body.night .clock {
-      color: #fff8ee;
-      background: rgba(20,16,12,0.92);
+      color: #2A241C;
+      background: rgba(255,252,245,0.95);
       box-shadow: 0 0 0 1px rgba(255,220,170,0.28), 0 0.6% 2% rgba(0,0,0,0.45);
       text-shadow: 0 0 1.2vmin rgba(255,210,150,0.35);
     }
@@ -116,18 +116,18 @@
       font-size: 3.5vmin; font-weight: 400; letter-spacing: -.01em;
       color: #b8883e;
     }
-    body.night .greet { color: #e0b878; }
+    body.night .greet { color: #8a7350; }
     .sub {
       font-size: 1.55vmin; font-weight: 500;
       color: rgba(44,36,24,0.55); margin-top: .35%;
       letter-spacing: .04em;
     }
-    body.night .sub { color: rgba(240,228,212,0.7); }
+    body.night .sub { color: rgba(42,36,28,0.62); }
     .date {
       font-size: 1.9vmin; margin-top: .35%; font-weight: 550;
       color: rgba(44,36,24,0.72);
     }
-    body.night .date { color: rgba(240,228,212,0.86); }
+    body.night .date { color: rgba(42,36,28,0.72); }
     .accent { color: #b8883e; }
     .muted { color: rgba(44,36,24,0.62); }
     .wx {
@@ -159,7 +159,7 @@
     .kid-card {
       -ms-flex: 1; flex: 1;
       min-width: 0; min-height: 0;
-      background: #ebe4d6;
+      background: #F3EBDD;
       border: 1px solid rgba(44,36,24,0.07);
       border-radius: 1.2vmin;
       padding: .7% .7% .55%;
@@ -167,8 +167,8 @@
       -ms-flex-direction: column; flex-direction: column;
       overflow: hidden;
     }
-    body.evening .kid-card { background: #e8dfd0; }
-    body.night .kid-card { background: #342c22; border-color: rgba(240,228,212,0.1); }
+    body.evening .kid-card { background: #F3EBDD; }
+    body.night .kid-card { background: #F3EBDD; border-color: rgba(240,228,212,0.1); }
     .kid-head {
       display: -ms-flexbox; display: flex;
       -ms-flex-align: center; align-items: center;
@@ -270,7 +270,7 @@
     .bottom-duo .odotcard { -ms-flex: 0.75; flex: 0.75; }
 
     .card {
-      background: #ebe4d6;
+      background: #FBF6EB;
       border: 1px solid rgba(44,36,24,0.07);
       border-radius: 1.4vmin;
       padding: 1% 1.15% .9%;
@@ -720,7 +720,7 @@
     <div class="foot">
       <div class="chips" id="chips"></div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v59</span>
+      <span class="brand">v59c</span>
     </div>
   </div>
 </div>
@@ -979,9 +979,8 @@
   function themeClass(hour) {
     if (hour >= 5 && hour < 11) return "morning";
     if (hour >= 11 && hour < 17) return "afternoon";
-    /* Ilta alkaa 17, syvä ilta/yö jo 20 — keittiö-TV ehtii vaihtua ajoissa */
-    if (hour >= 17 && hour < 20) return "evening";
-    return "night";
+    /* Always cream paper — no black night on kitchen TV */
+    return "evening";
   }
 
   function applyTheme(hour) {
@@ -1726,14 +1725,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v59", function (data) {
+    getJSON("schedule.json?v=20260921v59c", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v59", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v59c", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

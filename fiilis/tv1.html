@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v45-cal-smallfont">
+  <meta name="fiilis-build" content="20260921-v46-clock-hero">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -29,10 +29,9 @@
     body.evening .accent { color: #9a4e22; }
     body.evening .muted { color: rgba(42,28,16,0.7); }
     body.evening .kid-card { background: #d8c2a0; }
-    body.evening .clock { color: #3a2414; }
     body.evening .greet { color: #9a4e22; }
-    body.night { background: #2a241c; color: #f0e6d6; }
-    body.night .card { background: #342c22; border-color: rgba(240,228,212,0.1); }
+    body.night { background: #1c1814; color: #f3ebe0; }
+    body.night .card { background: #2a231c; border-color: rgba(240,228,212,0.14); box-shadow: 0 0.4vh 1.2vh rgba(0,0,0,0.28); }
     body.night .accent { color: #d4a06a; }
     body.night .muted { color: rgba(240,228,212,0.72); }
     body.night .line, body.night .row { border-color: rgba(240,228,212,0.1); }
@@ -74,26 +73,45 @@
     }
     .clock {
       font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 7.6vmin; font-weight: 400; letter-spacing: -.04em;
-      line-height: .9; font-variant-numeric: tabular-nums; min-width: 17vmin;
-      color: #2c2418;
+      font-size: 9.2vmin; font-weight: 400; letter-spacing: -.045em;
+      line-height: .92; font-variant-numeric: tabular-nums;
+      min-width: 20vmin;
+      color: #1a140e;
+      padding: 0.6vh 1.1vw 0.55vh;
+      border-radius: 1.2vmin;
+      background: rgba(255,252,245,0.92);
+      box-shadow: 0 0.5vh 1.4vh rgba(40,28,14,0.12);
+      text-shadow: none;
     }
-    body.night .clock { color: #f0e6d6; }
+    body.evening .clock {
+      color: #1a1008;
+      background: rgba(255,244,220,0.95);
+      box-shadow: 0 0.5vh 1.6vh rgba(80,40,10,0.16);
+    }
+    body.night .clock {
+      color: #fff8ee;
+      background: rgba(20,16,12,0.92);
+      box-shadow: 0 0 0 1px rgba(255,220,170,0.28), 0 0.6vh 2vh rgba(0,0,0,0.45);
+      text-shadow: 0 0 1.2vmin rgba(255,210,150,0.35);
+    }
     .greet-block { -ms-flex: 1; flex: 1; min-width: 0; text-align: center; }
     .greet {
       font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 3.4vmin; font-weight: 400; letter-spacing: -.01em;
+      font-size: 3.5vmin; font-weight: 400; letter-spacing: -.01em;
       color: #b8883e;
     }
+    body.night .greet { color: #e0b878; }
     .sub {
       font-size: 1.55vmin; font-weight: 500;
       color: rgba(44,36,24,0.55); margin-top: .35vh;
       letter-spacing: .04em;
     }
+    body.night .sub { color: rgba(240,228,212,0.7); }
     .date {
       font-size: 1.9vmin; margin-top: .35vh; font-weight: 550;
       color: rgba(44,36,24,0.72);
     }
+    body.night .date { color: rgba(240,228,212,0.86); }
     .accent { color: #b8883e; }
     .muted { color: rgba(44,36,24,0.62); }
     .wx {

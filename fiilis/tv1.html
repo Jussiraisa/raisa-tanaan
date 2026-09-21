@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v35-tv1">
+  <meta name="fiilis-build" content="20260921-v36-tv1">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -41,7 +41,7 @@
     body.night .mday.is-lontoo { background: rgba(212,160,106,0.14); }
     body.night .mday.is-school { background: rgba(255,248,238,0.04); }
     body.night .mdow { color: rgba(240,228,212,0.65); }
-    body.night .mlabel { color: #f0e4d4; opacity: 1; }
+    body.night .mlabel { color: #f0e4d4; opacity: .7; }
     body.night .wxday { background: rgba(255,248,238,0.06); border-color: rgba(240,228,212,0.1); }
     body.night .wxday.is-today { background: rgba(212,160,106,0.18); }
     body.night .namechip { color: #2a241c; }
@@ -252,9 +252,9 @@
       min-height: 0;
     }
     .mdow {
-      font-size: 1.2vmin; font-weight: 650; letter-spacing: .04em;
+      font-size: 1.0vmin; font-weight: 600; letter-spacing: .04em;
       text-align: center;
-      opacity: .6; padding-bottom: .1vh;
+      opacity: .5; padding-bottom: .08vh;
     }
     .mday {
       min-height: 3.2vh;
@@ -279,11 +279,11 @@
     .mday.is-lontoo { background: rgba(184,136,62,0.1); }
     .mday.is-school { background: rgba(255,255,255,0.18); }
     .mday .dn {
-      font-size: 1.65vmin; font-weight: 700;
+      font-size: 1.25vmin; font-weight: 650;
       font-variant-numeric: tabular-nums; line-height: 1;
     }
     .mday .dn .mo {
-      font-size: 1.05vmin; font-weight: 550; opacity: .65; margin-left: .12vw;
+      font-size: 0.9vmin; font-weight: 500; opacity: .55; margin-left: .1vw;
     }
     .mdots {
       display: -ms-flexbox; display: flex;
@@ -296,11 +296,11 @@
       opacity: .85;
     }
     .mlabel {
-      font-size: 1.5vmin; font-weight: 600; line-height: 1.1;
-      overflow: hidden; max-height: none;
+      font-size: 1.05vmin; font-weight: 550; line-height: 1.05;
+      overflow: hidden; max-height: 2.1em;
       color: #2c2418;
-      opacity: 1;
-      -ms-flex: 1; flex: 1; min-height: 0;
+      opacity: .72;
+      -ms-flex: 0 0 auto; flex: 0 0 auto; min-height: 0;
     }
     .meal-line {
       font-size: 1.7vmin; font-weight: 550; padding: .28vh 0; line-height: 1.25;
@@ -1027,7 +1027,7 @@
         if (realEvs.length) {
           var t0 = realEvs[0].title || realEvs[0].who || "";
           if (!t0 && iso >= LONTOO_START && iso <= LONTOO_END) t0 = "Lontoo";
-          if (t0.length > 12) t0 = t0.slice(0, 11) + "…";
+          if (t0.length > 8) t0 = t0.slice(0, 7) + "…";
           label = "<div class=\"mlabel\">" + esc(t0) + "</div>";
         } else if (iso >= LONTOO_START && iso <= LONTOO_END) {
           label = "<div class=\"mlabel\">Lontoo</div>";

@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790009460102,
+  "updated": "2026-09-21T22:57:29.646373+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -217,6 +217,10 @@
     "kyyti-mea-lianna-2026-09-21": {
       "driver": "vienti Julia / haku Enni",
       "note": "WA Lianna kyytirinki: Ma Julia vie, Enni hakee. Mea mukana (voimat)."
+    },
+    "kyyti-samuel-welhot-2026-09-22": {
+      "driver": "Topias",
+      "note": "Jussi ei vie — Topias. Lähtö ~16.15"
     }
   },
   "cooks": {
@@ -249,6 +253,35 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
+      "title": "Mea Arja",
+      "date": "2026-09-22",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal"
+    },
+    {
+      "id": "kyyti-samuel-welhot-2026-09-22",
+      "who": "samuel",
+      "title": "Welhot · Lippumäki · kuski Topias",
+      "date": "2026-09-22",
+      "start": "16:30",
+      "end": "18:00",
+      "place": "Lippumäki",
+      "kind": "kyyti",
+      "driver": "Topias",
+      "status": "us",
+      "depart": "16:15"
+    },
+    {
+      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
+      "title": "Mea valmennus",
+      "date": "2026-09-22",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
     },
     {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",
@@ -285,22 +318,22 @@
       "status": ""
     },
     {
-      "id": "info-kkp-2026-09-25",
-      "who": "",
-      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
-      "date": "2026-09-25",
-      "place": "Aurinkorinteen koulu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-ntv-kisat-2026-09-25",
       "who": "ellen",
       "title": "Ambrosia NTV-kisat + talkoot",
       "date": "2026-09-25",
       "dateEnd": "2026-09-27",
       "place": "Luola",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "info-kkp-2026-09-25",
+      "who": "",
+      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
+      "date": "2026-09-25",
+      "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -504,22 +537,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
-      "title": "Mea Arja",
-      "date": "2026-09-22",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-22",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
     }
   ],
   "schoolLunch": {

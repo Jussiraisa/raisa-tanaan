@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-21T19:35:15+03:00",
+  "updated": "2026-09-21T19:36:10+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Synkka 21.9.2026 ilta: Google Perhe + Voimistelu + jussi.raisa. WA-kyydit: Mea ma Julia→Enni (Perhe). Riikka Oulu 6.–9.10.",
+  "note": "Synkka Perhe 21.9.2026 ilta: WA-kyydit (Mea Lianna Julia/Enni/Amanda/Elina/Riikka) + viikkorutiinit. Riikka EI kusiksi 6.–9.10. Kuski auki: Mea 28.9. & 5.10., Ambrosia NTV, Milla hiontaleiri.",
   "events": [
     {
       "date": "2026-09-20",
@@ -228,7 +228,7 @@
     {
       "date": "2026-09-21",
       "time": "17:00",
-      "end": "18:00",
+      "end": "18:30",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Ylä-Pyörö",
@@ -249,7 +249,7 @@
       "time": "18:30",
       "end": "19:30",
       "who": "Mea",
-      "title": "Lianna voimistelu",
+      "title": "Liannan voimat",
       "place": "Luola",
       "kind": "treeni",
       "driver": "Julia",
@@ -265,7 +265,7 @@
     },
     {
       "date": "2026-09-22",
-      "time": "16:30",
+      "time": "16:15",
       "end": "18:00",
       "who": "Samuel",
       "title": "Welhot",
@@ -283,6 +283,13 @@
     },
     {
       "date": "2026-09-22",
+      "time": "",
+      "who": "Perhe",
+      "title": "Pentutreffit Ella kotona",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-22",
       "who": "perhe",
       "title": "Pentutreffit · Ella kotona",
       "place": "Koti",
@@ -293,9 +300,9 @@
       "time": "18:00",
       "end": "20:00",
       "who": "Ellen",
-      "title": "Ambrosia joukkueilta",
-      "place": "Leo's",
-      "kind": "muu",
+      "title": "Leo’s / Ambrosia",
+      "place": "Leo’s",
+      "kind": "treeni",
       "driver": "Jussi",
       "note": "Leo's · pehmeä oletus"
     },
@@ -307,8 +314,8 @@
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
-      "driver": "Julia (Reetta)",
-      "pickup": "Enni (Tiina)"
+      "driver": "Julia",
+      "pickup": "Enni"
     },
     {
       "date": "2026-09-23",
@@ -318,6 +325,20 @@
       "title": "Vivida treeni",
       "place": "Bella Center",
       "kind": "treeni"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "",
+      "who": "Ellen",
+      "title": "Ilmoita kodin ja koulun päivään (deadline)",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "",
+      "who": "Samuel",
+      "title": "Ilmoita kodin ja koulun päivään (deadline)",
+      "kind": "muu"
     },
     {
       "date": "2026-09-23",
@@ -331,18 +352,19 @@
       "end": "19:00",
       "who": "Samuel",
       "title": "Welhot",
-      "place": "Puijonsarven koulu",
+      "place": "Puijonsarvi",
       "kind": "treeni",
       "driver": "Topias"
     },
     {
       "date": "2026-09-25",
-      "time": "08:00",
-      "end": "20:00",
+      "time": "09:00",
+      "end": "18:00",
       "who": "Ellen",
-      "title": "Ambrosia NTV-kisat",
+      "title": "Ambrosia NTV + talkoot",
       "place": "Luola",
-      "kind": "kisa"
+      "kind": "treeni",
+      "driver": "Riikka"
     },
     {
       "date": "2026-09-25",
@@ -366,6 +388,22 @@
     },
     {
       "date": "2026-09-25",
+      "time": "",
+      "who": "Ellen",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinne",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "",
+      "who": "Samuel",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinne",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-25",
       "who": "perhe",
       "title": "Kodin ja koulun päivä",
       "place": "Aurinkorinteen koulu",
@@ -373,10 +411,19 @@
     },
     {
       "date": "2026-09-26",
+      "who": "Ellen",
+      "title": "Ambrosia NTV + talkoot",
+      "place": "Luola",
+      "kind": "treeni",
+      "time": "09:00",
+      "end": "18:00"
+    },
+    {
+      "date": "2026-09-26",
       "time": "13:00",
       "who": "Mea",
       "title": "Synttärit",
-      "kind": "juhla"
+      "kind": "muisto"
     },
     {
       "date": "2026-09-26",
@@ -388,11 +435,13 @@
       "kind": "treeni"
     },
     {
-      "date": "2026-09-26",
+      "date": "2026-09-27",
       "who": "Ellen",
-      "title": "Ambrosia NTV-kisat",
+      "title": "Ambrosia NTV + talkoot",
       "place": "Luola",
-      "kind": "kisa"
+      "kind": "treeni",
+      "time": "09:00",
+      "end": "18:00"
     },
     {
       "date": "2026-09-27",
@@ -409,22 +458,15 @@
       "end": "18:30",
       "who": "Mea",
       "title": "Lianna treeni",
-      "place": "Bella Center",
+      "place": "Luola",
       "kind": "treeni",
       "driver": "Riikka",
       "pickup": "Riikka"
     },
     {
-      "date": "2026-09-27",
-      "who": "Ellen",
-      "title": "Ambrosia NTV päättyy",
-      "place": "Luola",
-      "kind": "kisa"
-    },
-    {
       "date": "2026-09-28",
       "time": "17:00",
-      "end": "18:00",
+      "end": "18:30",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Ylä-Pyörö",
@@ -445,7 +487,7 @@
       "time": "18:00",
       "end": "19:00",
       "who": "Mea",
-      "title": "Lianna voima",
+      "title": "Liannan voimat",
       "place": "Kuoppari",
       "kind": "treeni"
     },
@@ -459,7 +501,7 @@
     },
     {
       "date": "2026-09-29",
-      "time": "16:30",
+      "time": "16:15",
       "end": "18:00",
       "who": "Samuel",
       "title": "Welhot",
@@ -480,8 +522,9 @@
     {
       "date": "2026-09-30",
       "who": "Ellen",
-      "title": "Koulukuvaus",
-      "kind": "muu"
+      "title": "Koulukuvaus (lomake)",
+      "kind": "muu",
+      "time": ""
     },
     {
       "date": "2026-10-01",
@@ -494,14 +537,35 @@
     },
     {
       "date": "2026-10-01",
-      "who": "Ellen",
-      "title": "Koulukuvaus päättyy",
+      "time": "17:00",
+      "end": "18:30",
+      "who": "Perhe",
+      "title": "Ambrosia vanhempainilta",
+      "place": "Bella Center parvi",
       "kind": "muu"
     },
     {
       "date": "2026-10-01",
       "who": "Samuel",
-      "title": "Welhot P9 pelipassi",
+      "title": "Welhot",
+      "kind": "treeni",
+      "time": "17:00",
+      "end": "19:00",
+      "place": "Puijonsarvi",
+      "driver": "Topias"
+    },
+    {
+      "date": "2026-10-01",
+      "who": "Ellen",
+      "title": "Koulukuvaus (lomake)",
+      "kind": "muu",
+      "time": ""
+    },
+    {
+      "date": "2026-10-01",
+      "time": "",
+      "who": "Samuel",
+      "title": "Pelipassi hankittava",
       "kind": "muu"
     },
     {
@@ -522,7 +586,7 @@
       "who": "Samuel",
       "title": "Welhot turnaus Joensuu",
       "place": "Joensuu",
-      "kind": "kisa"
+      "kind": "treeni"
     },
     {
       "date": "2026-10-03",
@@ -554,7 +618,7 @@
       "time": "18:30",
       "end": "19:30",
       "who": "Mea",
-      "title": "Lianna voima",
+      "title": "Liannan voimat",
       "place": "Kuoppari",
       "kind": "treeni"
     },

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260921-v53-tvl-huomenna">
+  <meta name="fiilis-build" content="20260921-v54-tvl-huomenna-glance">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -605,6 +605,27 @@
       overflow: hidden;
       font-size: 1.35vmin;
     }
+
+  
+    .tomorrowcard .lbl {
+      font-size: 1.7vmin; letter-spacing: .08em;
+    }
+    .tmw-line {
+      font-size: 1.7vmin !important;
+      padding: 0.45% 0 !important;
+      gap: 0.7% !important;
+    }
+    .tmw-line .who {
+      min-width: 5vmin !important;
+      font-size: 1.7vmin;
+    }
+    .tmw-line .t {
+      min-width: 8.5vmin !important;
+      font-size: 1.7vmin;
+    }
+    .tmw-line .title { font-size: 1.65vmin; font-weight: 600; }
+    .tmw-line .meta { font-size: 1.35vmin; font-weight: 500; opacity: .72; }
+    .tmw-empty { font-size: 1.5vmin; opacity: .55; padding: .5% 0; }
 
   </style>
 </head>
@@ -1241,69 +1262,57 @@
 
 
   function paintTomorrow(now) {
+    /* Vanhempien pikaosio: mitä huomenna pitää hoitaa / tietää. */
     var el = document.getElementById("tomorrowBox");
     if (!el) return;
     var iso = addDaysIso(now.iso, 1);
-    var evs = [];
-    if (typeof dayBucketEvents === "function") {
-      evs = dayBucketEvents(iso, now);
-    } else if (typeof eventsOn === "function") {
-      evs = eventsOn(iso);
-    }
+    var list = eventsOn(iso);
     var out = [];
-    for (var i = 0; i < evs.length; i++) {
-      var e = evs[i];
+    var seen = {};
+    function keyOf(e) {
+      return String(e.who || "") + "|" + String(e.title || "") + "|" + String(e.time || "");
+    }
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!e) continue;
       if (e.kind === "koulu") continue;
+      var k = keyOf(e);
+      if (seen[k]) continue;
+      seen[k] = 1;
       out.push(e);
     }
-    // school rows from schoolStarts for tomorrow weekday
-    var p = isoParts(iso);
-    var dt = new Date(Date.UTC(p.y, p.m - 1, p.d));
-    var wd = dt.getUTCDay();
-    if (schedule && schedule.schoolStarts && wd >= 1 && wd <= 5) {
-      var ss = schedule.schoolStarts;
-      for (var s = 0; s < ss.length; s++) {
-        var row = ss[s];
-        var wds = row.weekdays || [];
-        var ok = false;
-        for (var j = 0; j < wds.length; j++) if (wds[j] === wd) ok = true;
-        if (ok) {
-          out.push({
-            who: row.who,
-            title: "Koulu",
-            time: row.time,
-            end: row.end,
-            kind: "koulu"
-          });
-        }
-      }
-    }
     out.sort(function (a, b) {
-      var ta = parseMin(a.time); if (ta == null) ta = 9999;
-      var tb = parseMin(b.time); if (tb == null) tb = 9999;
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      /* Kyydit / treenit ensin aikajärjestyksessä; ilman aikaa loppuun */
       if (ta !== tb) return ta - tb;
-      var wa = String(a.who || ""), wb = String(b.who || "");
-      if (wa < wb) return -1; if (wa > wb) return 1;
-      return 0;
+      return String(a.title || "").localeCompare(String(b.title || ""));
     });
     if (!out.length) {
-      el.innerHTML = "<div class=\"tmw-empty\">Ei merkintöjä</div>";
+      el.innerHTML = "<div class=\"tmw-empty\">Ei merkintöjä huomenna</div>";
       return;
     }
     var html = "";
-    var max = Math.min(out.length, 8);
+    var max = Math.min(out.length, 10);
     for (var i = 0; i < max; i++) {
       var e = out[i];
       var who = e.who || "";
-      var sw = (typeof shortWho === "function") ? shortWho(who) : who;
-      if (!sw) sw = who;
+      var sw = shortWho(who);
+      if (!sw) sw = (who === "perhe" || who === "Perhe") ? "Perhe" : who;
       var time = fmtRange(e.time, e.end) || "";
+      var title = e.title || "";
+      var bits = [];
+      if (e.driver) bits.push("vie " + e.driver);
+      if (e.pickup && e.pickup !== e.driver) bits.push("haku " + e.pickup);
+      if (e.note) bits.push(e.note);
+      if (e.place) bits.push(e.place);
+      var meta = bits.join(" · ");
       html += "<div class=\"tmw-line\">"
         + "<span class=\"who\">" + esc(sw || "·") + "</span>"
-        + (time ? "<span class=\"t\">" + esc(time) + "</span>" : "")
-        + "<span class=\"title\">" + esc(e.title || "") + "</span>"
-        + (e.place ? "<span class=\"place\">" + esc(e.place) + "</span>" : "")
-        + "</div>";
+        + (time ? "<span class=\"t\">" + esc(time) + "</span>" : "<span class=\"t\"> </span>")
+        + "<span class=\"title\">" + esc(title)
+        + (meta ? "<span class=\"meta\"> · " + esc(meta) + "</span>" : "")
+        + "</span></div>";
     }
     el.innerHTML = html;
   }
@@ -1601,7 +1610,7 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v43", function (data) {
+    getJSON("schedule.json?v=20260921v53", function (data) {
       if (data) schedule = data;
       paint();
     });

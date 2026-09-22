@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="fiilis-build" content="20260922-puhelin-v8-fix">
+<meta name="theme-color" content="#F7F1E3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Fiilis · Muistot</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100%; height: 100dvh; overflow: hidden;
+  background: #F7F1E3; color: #2A241C;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+}
+.stage {
+  position: absolute; top: max(.7rem, env(safe-area-inset-top));
+  left: max(.7rem, env(safe-area-inset-left)); right: max(.7rem, env(safe-area-inset-right));
+  bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  border-radius: 1.25rem; overflow: hidden; background: #E8DFD0;
+  box-shadow: 0 10px 28px rgba(60,40,18,.1);
+}
+.stage img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .7s ease; }
+.veil {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 42%;
+  background: linear-gradient(180deg, transparent, rgba(18,12,8,.72)); pointer-events: none;
+}
+.chips {
+  position: absolute; top: .75rem; left: .75rem; right: .75rem; z-index: 5;
+  display: flex; flex-wrap: wrap; gap: .4rem;
+}
+.chip {
+  font-size: .72rem; font-weight: 700; padding: .4rem .7rem; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.3); background: rgba(20,16,10,.42); color: rgba(255,255,255,.92);
+  backdrop-filter: blur(8px); cursor: pointer;
+}
+.chip.on { background: rgba(201,148,58,.95); border-color: rgba(255,230,180,.7); color: #1A140C; }
+.cap {
+  position: absolute; left: 1rem; right: 1rem; bottom: 1rem;
+  color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.4);
+}
+.cap .kicker { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+.cap .place { font-family: Fraunces, Georgia, serif; font-size: 1.7rem; font-weight: 700; font-style: italic; margin-top: .15rem; }
+.cap .year { margin-top: .15rem; font-size: .9rem; font-weight: 600; opacity: .92; }
+
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  height: calc(4.05rem + env(safe-area-inset-bottom));
+  padding: .35rem .4rem env(safe-area-inset-bottom);
+  background: rgba(36,32,28,.97); color: #D8D0C4;
+  display: flex; align-items: center; justify-content: space-around;
+  z-index: 40; box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+}
+.nav a {
+  color: inherit; text-decoration: none; text-align: center;
+  font-size: .66rem; font-weight: 650; opacity: .7;
+  min-width: 3.5rem; padding: .25rem .35rem; border-radius: .7rem;
+}
+.nav a .ic { display: block; font-size: 1.2rem; line-height: 1.1; margin-bottom: .08rem; }
+.nav a.on { opacity: 1; color: #fff; background: rgba(255,255,255,.08); box-shadow: inset 0 -.16rem 0 #C45C4A; }
+.nav-tsla {
+  font-size: .76rem; font-weight: 750; color: #EFE8DC;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  text-align: center; min-width: 4.6rem; line-height: 1.15; pointer-events: none;
+}
+.nav-tsla .up { color: #6FCF8A; }
+.nav-tsla .dn { color: #E07A6A; }
+.nav-tsla .flat { color: #EFE8DC; opacity: .85; }
+
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="chips" id="chips"></div>
+  <img id="photo" alt="">
+  <div class="veil"></div>
+  <div class="cap">
+    <div class="kicker">Muistatko…</div>
+    <div class="place" id="place">Muistot</div>
+    <div class="year" id="year"></div>
+  </div>
+</div>
+<nav class="nav">
+  <a href="puhelin.html"><span class="ic">◎</span>Koti</a>
+  <a href="puhelin-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a class="on" href="puhelin-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
+  <span class="nav-tsla" id="navTsla" title="TSLA"></span>
+</nav>
+<script>
+(function () {
+  var BUILD = "20260922-puhelin-v8-fix";
+  var LS = "fiilisMemAlbum";
+  var albums = [], albumId = "kaikki", photos = [], idx = 0, timer = null;
+  function getJSON(url, cb) {
+    try {
+      var x = new XMLHttpRequest(); x.open("GET", url, true);
+      x.onreadystatechange = function () {
+        if (x.readyState === 4) {
+          if (x.status >= 200 && x.status < 300) { try { cb(JSON.parse(x.responseText)); } catch (e) { cb(null); } }
+          else cb(null);
+        }
+      }; x.send();
+    } catch (e) { cb(null); }
+  }
+  function buildPool() {
+    var out = [];
+    if (!albums.length) return;
+    if (albumId === "kaikki") {
+      for (var i = 0; i < albums.length; i++) {
+        var ph = albums[i].photos || [];
+        for (var j = 0; j < ph.length; j++) {
+          var m = ph[j];
+          if (m && m.src) out.push({ src: m.src, place: m.place || albums[i].title || "Muisto", year: m.year || "" });
+        }
+      }
+    } else {
+      for (var a = 0; a < albums.length; a++) {
+        if (albums[a].id === albumId) {
+          var list = albums[a].photos || [];
+          for (var k = 0; k < list.length; k++) {
+            var p = list[k];
+            if (p && p.src) out.push({ src: p.src, place: p.place || albums[a].title || "Muisto", year: p.year || "" });
+          }
+          break;
+        }
+      }
+    }
+    photos = out;
+    idx = 0;
+  }
+  function renderChips() {
+    var el = document.getElementById("chips"); if (!el) return;
+    var items = [{ id: "kaikki", title: "Kaikki" }];
+    for (var i = 0; i < albums.length; i++) items.push({ id: albums[i].id, title: albums[i].title });
+    el.innerHTML = "";
+    for (var c = 0; c < items.length; c++) {
+      (function (it) {
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "chip" + (it.id === albumId ? " on" : "");
+        b.textContent = it.title;
+        b.onclick = function () {
+          albumId = it.id;
+          try { localStorage.setItem(LS, albumId); } catch (e) {}
+          buildPool(); renderChips(); show(); restart();
+        };
+        el.appendChild(b);
+      })(items[c]);
+    }
+  }
+  function show() {
+    if (!photos.length) return;
+    var p = photos[idx % photos.length];
+    var img = document.getElementById("photo");
+    var place = document.getElementById("place");
+    var year = document.getElementById("year");
+    if (img) {
+      img.style.opacity = "0";
+      setTimeout(function () {
+        img.src = p.src;
+        img.onload = function () { img.style.opacity = "1"; };
+      }, 180);
+    }
+    if (place) place.textContent = p.place || "Muisto";
+    if (year) year.textContent = p.year || "";
+  }
+  function restart() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(function () { if (!photos.length) return; idx = (idx + 1) % photos.length; show(); }, 9000);
+  }
+  try { var v = localStorage.getItem(LS); if (v) albumId = v; } catch (e) {}
+  getJSON("photos-albums.json?v=" + BUILD, function (data) {
+    if (data && data.albums && data.albums.length) {
+      albums = data.albums;
+      buildPool(); renderChips(); show(); restart();
+      return;
+    }
+    getJSON("photos-from-matkat.json?v=" + BUILD, function (flat) {
+      if (flat && flat.length) {
+        photos = flat;
+        albums = [];
+        show(); restart();
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  function paintTsla(d) {
+    var el = document.getElementById("navTsla");
+    if (!el || !d || d.price == null) return;
+    var p = Number(d.price), pct = Number(d.changePct);
+    if (isNaN(p)) return;
+    var cls = "flat", pctStr = "0.0%";
+    if (!isNaN(pct)) {
+      if (pct > 0.005) cls = "up";
+      else if (pct < -0.005) cls = "dn";
+      pctStr = (pct > 0 ? "+" : "") + pct.toFixed(1) + "%";
+    }
+    el.innerHTML = p.toFixed(2) + "<br><span class=\"" + cls + "\">" + pctStr + "</span>";
+  }
+  function xhrGet(url, cb) {
+    var x = new XMLHttpRequest();
+    x.open("GET", url, true); x.timeout = 8000;
+    x.onload = function () { (x.status >= 200 && x.status < 300) ? cb(null, x.responseText) : cb("s"); };
+    x.onerror = function () { cb("n"); }; x.ontimeout = function () { cb("t"); }; x.send();
+  }
+  function load() {
+    var v = Math.floor(Date.now() / 60000);
+    xhrGet("tsla.json?v=" + v, function (e, t) {
+      if (!e && t) { try { var d = JSON.parse(t); paintTsla(d); } catch (err) {} }
+    });
+  }
+  load(); setInterval(load, 60000);
+})();
+</script>
+
+</body>
+</html>

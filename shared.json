@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-21T22:57:29.646373+03:00",
+  "updated": "2026-09-22T07:08:05.182357+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -244,17 +244,6 @@
   "note": "",
   "extras": [
     {
-      "id": "info-pentutreffit-2026-09-22",
-      "title": "Pentutreffit · Ella kotona",
-      "date": "2026-09-22",
-      "start": "",
-      "end": "",
-      "place": "Koti",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
       "title": "Mea Arja",
       "date": "2026-09-22",
@@ -284,6 +273,46 @@
       "kind": "cal"
     },
     {
+      "id": "cal-kajgpe3pn2mrddtobgpf3lkhoo",
+      "title": "Hallituksen kokous",
+      "date": "2026-09-22",
+      "start": "17:30",
+      "end": "18:15",
+      "kind": "cal"
+    },
+    {
+      "id": "info-pentutreffit-2026-09-22",
+      "title": "Pentutreffit · Ella kotona",
+      "date": "2026-09-22",
+      "start": "",
+      "end": "",
+      "place": "Koti",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "cal-ot896g1o8ccv4k44abuac3ju34",
+      "title": "Ellen · Ambrosia joukkueilta (Leo’s)",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "cal",
+      "place": "Leo's Leikkimaa"
+    },
+    {
+      "id": "info-ellen-leos-2026-09-23",
+      "who": "ellen",
+      "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:00",
+      "place": "Leo’s Leikkimaa",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",
       "who": "",
       "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
@@ -306,13 +335,11 @@
       "status": "open"
     },
     {
-      "id": "info-ellen-leos-2026-09-23",
-      "who": "ellen",
-      "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:00",
-      "place": "Leo’s Leikkimaa",
+      "id": "info-kkp-2026-09-25",
+      "who": "",
+      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
+      "date": "2026-09-25",
+      "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -324,16 +351,6 @@
       "date": "2026-09-25",
       "dateEnd": "2026-09-27",
       "place": "Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-kkp-2026-09-25",
-      "who": "",
-      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
-      "date": "2026-09-25",
-      "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -409,15 +426,6 @@
       "status": ""
     },
     {
-      "id": "info-samuel-pelipassi-2026-10-01",
-      "who": "samuel",
-      "title": "Welhot P9 pelipassi hankittava",
-      "date": "2026-10-01",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-ellen-vanhempainilta-2026-10-01",
       "who": "ellen",
       "title": "Ambrosia vanhempainilta",
@@ -430,11 +438,10 @@
       "status": ""
     },
     {
-      "id": "info-samuel-turnaus-2026-10-03",
+      "id": "info-samuel-pelipassi-2026-10-01",
       "who": "samuel",
-      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
-      "date": "2026-10-03",
-      "place": "Joensuu",
+      "title": "Welhot P9 pelipassi hankittava",
+      "date": "2026-10-01",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -452,6 +459,16 @@
       "status": ""
     },
     {
+      "id": "info-samuel-turnaus-2026-10-03",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
+      "date": "2026-10-03",
+      "place": "Joensuu",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
       "title": "Liannan voimat",
@@ -464,17 +481,6 @@
       "status": ""
     },
     {
-      "id": "info-riikka-oulu-2026-10-06",
-      "who": "",
-      "title": "Riikka Ouluun",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "kind": "info",
-      "place": "Oulu",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-lianna-harkkakisa-2026-10-06",
       "who": "mea",
       "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
@@ -483,6 +489,17 @@
       "end": "19:00",
       "place": "Ylä-Pyörön koulu",
       "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "info-riikka-oulu-2026-10-06",
+      "who": "",
+      "title": "Riikka Ouluun",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "kind": "info",
+      "place": "Oulu",
       "driver": "",
       "status": ""
     },

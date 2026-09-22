@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790092672912,
+  "updated": 1790093913018,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -202,8 +202,10 @@
       "ride": ""
     },
     "kyyti-mea-lianna-2026-09-23": {
-      "driver": "vienti Julia / haku Enni",
-      "note": "WA Lianna kyytirinki: Ma ja ke vienti Julia, haku Enni. Mea mukana ke."
+      "driver": "Julia / Enni",
+      "status": "other",
+      "ride": "vie+hakee",
+      "note": "WA: Ke 17.30 kyytiin Enni, Mea, Amanda. Enni kirjaston kautta Luolalle."
     },
     "kyyti-mea-lianna-2026-09-25": {
       "driver": "Amanda / Elina",
@@ -297,12 +299,13 @@
       "who": "mea",
       "title": "Lianna · vie Julia, haku Enni",
       "date": "2026-09-23",
-      "start": "",
+      "start": "18:00",
       "end": "",
       "place": "",
       "kind": "kyyti",
-      "driver": "vienti Julia / haku Enni",
-      "status": "open"
+      "driver": "Julia / Enni",
+      "status": "open",
+      "note": "WA: Ke 17.30 kyytiin Enni, Mea, Amanda. Enni kirjaston kautta Luolalle. Julia vie / Enni hakee (viikkosuunnitelma)."
     },
     {
       "id": "info-ntv-kisat-2026-09-25",

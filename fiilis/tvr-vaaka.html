@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v66-ellen-ti">
+  <meta name="fiilis-build" content="20260922-v67-ellen-ke-leos">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -429,7 +429,7 @@ body.evening .photo-cap, body.night .photo-cap {
   var LONTOO_END = "2026-10-17";
   var FALLBACK = {
     "timezone": "Europe/Helsinki",
-    "updated": "2026-09-22T07:37:19+03:00",
+    "updated": "2026-09-22T07:44:37+03:00",
     "schoolStarts": [
       {
         "who": "Ellen",
@@ -612,6 +612,7 @@ body.evening .photo-cap, body.night .photo-cap {
         ]
       }
     ],
+    "note": "Synkka Perhe 21.9.2026 ilta: WA-kyydit (Mea Lianna Julia/Enni/Amanda/Elina/Riikka) + viikkorutiinit. Riikka EI kusiksi 6.–9.10. Kuski auki: Mea 28.9. & 5.10., Ambrosia NTV, Milla hiontaleiri. | Nimenhuuto Welhot 2018 → Samuel treenit/turnaukset | Welhot turnaukset NH → kk-kalenteri",
     "events": [
       {
         "date": "2026-09-20",
@@ -763,12 +764,14 @@ body.evening .photo-cap, body.night .photo-cap {
       {
         "date": "2026-09-23",
         "time": "18:00",
-        "end": "20:30",
-        "place": "Kuopiohalli",
-        "title": "Ambrosia treeni",
+        "end": "20:00",
+        "place": "Leo’s",
+        "title": "Ambrosia joukkueilta",
         "who": "Ellen",
         "kind": "treeni",
-        "source": "gcal:voimistelu"
+        "source": "perhe:wa",
+        "driver": "Jussi",
+        "note": "Perhe/WA vahvistus · ei Kuopiohallia"
       },
       {
         "date": "2026-09-23",
@@ -1334,6 +1337,15 @@ body.evening .photo-cap, body.night .photo-cap {
       "2026-09-24": "Tähteet",
       "2026-09-25": "Katkarapukeitto + patongit"
     },
+    "absences": [
+      {
+        "who": "Riikka",
+        "from": "2026-10-06",
+        "to": "2026-10-09",
+        "where": "Oulu",
+        "note": "Älä ehdota Riikkaa kusiksi näinä päivinä"
+      }
+    ],
     "anniversaries": [
       {
         "who": "Jussi",
@@ -1378,7 +1390,42 @@ body.evening .photo-cap, body.night .photo-cap {
         "label": "synttärijuhlat kavereille",
         "mmdd": "10-24"
       }
-    ]
+    ],
+    "weeklyDriverDefaults": [
+      {
+        "weekday": 1,
+        "who": "Samuel",
+        "titleContains": "Welhot",
+        "driver": "Sini/Topias"
+      },
+      {
+        "weekday": 2,
+        "who": "Samuel",
+        "titleContains": "Welhot",
+        "driver": "Jussi"
+      },
+      {
+        "weekday": 3,
+        "who": "Ellen",
+        "titleContains": "Ambrosia",
+        "driver": "Jussi"
+      },
+      {
+        "weekday": 4,
+        "who": "Samuel",
+        "titleContains": "Welhot",
+        "driver": "Topias"
+      },
+      {
+        "weekday": 5,
+        "who": "Ellen",
+        "titleContains": "Ambrosia",
+        "driver": "Riikka"
+      }
+    ],
+    "sources": {
+      "samuel_welhot": "https://welhot2018.nimenhuuto.com/"
+    }
   };
 
   var schedule = FALLBACK;
@@ -2219,7 +2266,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v66-ellen-ti", function (data) {
+    getJSON("schedule.json?v=20260922-v67-ellen-ke-leos", function (data) {
       if (data) schedule = data;
       paint();
     });

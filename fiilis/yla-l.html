@@ -6,8 +6,17 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="fiilis-build" content="20260922-v103-yla">
   <meta name="theme-color" content="#f5f1e8">
-  <title>Räisä · Fiilis TV</title>
+  <title>Räisä · Fiilis · Yläkerta L</title>
   <style>
+    #rot {
+      position: fixed; left: 50%; top: 50%;
+      width: 100vh; height: 100vw;
+      -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+      transform: translate(-50%, -50%) rotate(-90deg);
+      -webkit-transform-origin: center center; transform-origin: center center;
+      overflow: hidden; background: #F7F1E3;
+    }
+
     html, body {
       height: 100%; margin: 0; overflow: hidden;
       background: #EFE6D8; color: #2c2418;
@@ -15,11 +24,10 @@
     }
     * { box-sizing: border-box; }
     .tv {
-      height: 100vh; width: 100vw;
-      padding: 1.6vh 2vw 1.1vh;
+      height: 100%; width: 100%; padding: 1% 1.4% 0.7%;
       display: -ms-flexbox; display: flex;
-      -ms-flex-direction: column; flex-direction: column;
-      gap: 1.05vh;
+      -ms-flex-direction: column; flex-direction: column; gap: 0.65%;
+      background: transparent;
     }
 
     body.morning { background: #F7F1E3; color: #2A241C; }
@@ -31,11 +39,11 @@
     body.evening .kid-card { background: #D9CDB8; }
     body.evening .greet { color: #9a4e22; }
     body.night { background: #F7F1E3 !important; color: #2A241C !important; }
-    body.night .card { background: #FBF6EB; border-color: rgba(240,228,212,0.14); box-shadow: 0 0.4vh 1.2vh rgba(0,0,0,0.28); }
+    body.night .card { background: #FBF6EB; border-color: rgba(240,228,212,0.14); box-shadow: 0 0.4% 1.2% rgba(0,0,0,0.28); }
     body.night .accent { color: #d4a06a; }
     body.night .muted { color: rgba(42,36,28,0.62); }
     body.night .line, body.night .row { border-color: rgba(240,228,212,0.1); }
-    body.night .photo-wrap { border-color: rgba(240,228,212,0.12); box-shadow: 0 1vh 2.4vh rgba(0,0,0,0.28); }
+    body.night .photo-wrap { border-color: rgba(240,228,212,0.12); box-shadow: 0 1% 2.4% rgba(0,0,0,0.28); }
     body.night .foot, body.night .chip { color: rgba(240,228,212,0.72); border-color: rgba(42,36,28,0.62); }
     body.night .cal-line, body.night .week-line { color: #2A241C; }
     body.night .mday { background: rgba(255,255,255,0.35); border-color: rgba(240,228,212,0.12); color: #2A241C; }
@@ -47,7 +55,7 @@
       width: 0.7vmin; height: 0.7vmin; border-radius: 50%;
       display: inline-block;
       vertical-align: middle;
-      margin-right: 0.2vw;
+      margin-right: 0.2%;
       opacity: .95;
     }
     body.night .mday .dn { color: #2A241C; }
@@ -76,8 +84,8 @@
       -ms-flex-pack: justify; justify-content: space-between;
       -ms-flex-align: center; align-items: center;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      gap: 1.8vw;
-      padding: .2vh 0 .4vh;
+      gap: 1.8%;
+      padding: .2% 0 .4%;
     }
     .clock {
       font-family: Georgia, "Times New Roman", Times, serif;
@@ -85,21 +93,21 @@
       line-height: .92; font-variant-numeric: tabular-nums;
       min-width: 20vmin;
       color: #1a140e;
-      padding: 0.6vh 1.1vw 0.55vh;
+      padding: 0.6% 1.1% 0.55%;
       border-radius: 1.2vmin;
       background: rgba(255,252,245,0.92);
-      box-shadow: 0 0.5vh 1.4vh rgba(40,28,14,0.12);
+      box-shadow: 0 0.5% 1.4% rgba(40,28,14,0.12);
       text-shadow: none;
     }
     body.evening .clock {
       color: #1a1008;
       background: rgba(255,244,220,0.95);
-      box-shadow: 0 0.5vh 1.6vh rgba(80,40,10,0.16);
+      box-shadow: 0 0.5% 1.6% rgba(80,40,10,0.16);
     }
     body.night .clock {
       color: #2A241C;
       background: rgba(255,252,245,0.95);
-      box-shadow: 0 0 0 1px rgba(255,220,170,0.28), 0 0.6vh 2vh rgba(0,0,0,0.45);
+      box-shadow: 0 0 0 1px rgba(255,220,170,0.28), 0 0.6% 2% rgba(0,0,0,0.45);
       text-shadow: 0 0 1.2vmin rgba(255,210,150,0.35);
     }
     .greet-block { -ms-flex: 1; flex: 1; min-width: 0; text-align: center; }
@@ -111,12 +119,12 @@
     body.night .greet { color: #8a7350; }
     .sub {
       font-size: 1.55vmin; font-weight: 500;
-      color: rgba(44,36,24,0.55); margin-top: .35vh;
+      color: rgba(44,36,24,0.55); margin-top: .35%;
       letter-spacing: .04em;
     }
     body.night .sub { color: rgba(42,36,28,0.62); }
     .date {
-      font-size: 1.9vmin; margin-top: .35vh; font-weight: 550;
+      font-size: 1.9vmin; margin-top: .35%; font-weight: 550;
       color: rgba(44,36,24,0.72);
     }
     body.night .date { color: rgba(42,36,28,0.72); }
@@ -127,24 +135,24 @@
       display: -ms-flexbox; display: flex;
       -ms-flex-align: center; align-items: center;
       -ms-flex-pack: end; justify-content: flex-end;
-      gap: .7vw;
+      gap: .7%;
     }
     .wxicon { font-size: 4vmin; line-height: 1; }
     .wxtemp { font-size: 2.7vmin; font-weight: 650; letter-spacing: -.02em; line-height: 1; }
-    .wxmeta { font-size: 1.5vmin; font-weight: 500; margin-top: .2vh; }
+    .wxmeta { font-size: 1.5vmin; font-weight: 500; margin-top: .2%; }
 
     .duo {
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: .45vh;
+      gap: .45%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       min-height: 0;
-      height: 15.2vh;
-      max-height: 16vh;
+      height: 15.2%;
+      max-height: 16%;
     }
     .kids-row {
       display: -ms-flexbox; display: flex;
-      gap: .85vw;
+      gap: .85%;
       -ms-flex: 1; flex: 1;
       min-height: 0;
     }
@@ -154,7 +162,7 @@
       background: #D9CDB8;
       border: 1px solid rgba(44,36,24,0.07);
       border-radius: 1.2vmin;
-      padding: .7vh .7vw .55vh;
+      padding: .7% .7% .55%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       overflow: hidden;
@@ -164,8 +172,8 @@
     .kid-head {
       display: -ms-flexbox; display: flex;
       -ms-flex-align: center; align-items: center;
-      gap: .45vw;
-      margin-bottom: .35vh;
+      gap: .45%;
+      margin-bottom: .35%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .kid-name {
@@ -179,21 +187,21 @@
     .kid-sec {
       font-size: 1.15vmin; font-weight: 650; letter-spacing: .08em;
       text-transform: uppercase; color: #b8883e;
-      margin: .25vh 0 .15vh;
+      margin: .25% 0 .15%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .kid-line {
       font-size: 1.45vmin; font-weight: 600; line-height: 1.2;
-      padding: .12vh 0;
+      padding: .12% 0;
     }
     .kid-line .t { font-variant-numeric: tabular-nums; font-weight: 700; }
     .kid-line .m { font-size: 1.2vmin; font-weight: 500; opacity: .72; }
-    .kid-empty { font-size: 1.35vmin; font-weight: 500; opacity: .55; padding: .1vh 0; }
+    .kid-empty { font-size: 1.35vmin; font-weight: 500; opacity: .55; padding: .1% 0; }
     .kid-body { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
     .duo-lunch {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       font-size: 1.4vmin; font-weight: 500;
-      padding: .35vh .8vw;
+      padding: .35% .8%;
       border-radius: .9vmin;
       background: rgba(184,136,62,0.1);
       color: #2c2418;
@@ -202,7 +210,7 @@
 
     .parents-row {
       display: -ms-flexbox; display: flex;
-      gap: .85vw;
+      gap: .85%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .parent-card {
@@ -210,10 +218,10 @@
       background: rgba(255,255,255,0.22);
       border: 1px solid rgba(44,36,24,0.06);
       border-radius: .9vmin;
-      padding: .35vh .7vw .3vh;
+      padding: .35% .7% .3%;
       display: -ms-flexbox; display: flex;
       -ms-flex-align: baseline; align-items: baseline;
-      gap: .55vw;
+      gap: .55%;
       overflow: hidden;
     }
     body.night .parent-card {
@@ -241,11 +249,11 @@
 
     .mid-duo {
       display: -ms-flexbox; display: flex;
-      gap: 1vw;
+      gap: 1%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      height: 9.2vh;
-      max-height: 10vh;
-      min-height: 8.2vh;
+      height: 9.2%;
+      max-height: 10%;
+      min-height: 8.2%;
     }
     .mid-duo .card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
     .mid-duo .wxcard { -ms-flex: 1.35; flex: 1.35; }
@@ -253,7 +261,7 @@
 
     .bottom-duo {
       display: -ms-flexbox; display: flex;
-      gap: 1.2vw;
+      gap: 1.2%;
       -ms-flex: 1; flex: 1;
       min-height: 0;
     }
@@ -265,14 +273,14 @@
       background: #FBF6EB;
       border: 1px solid rgba(44,36,24,0.07);
       border-radius: 1.4vmin;
-      padding: 1vh 1.15vw .9vh;
+      padding: 1% 1.15% .9%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       min-height: 0; overflow: hidden;
     }
     .lbl {
       font-size: 1.55vmin; font-weight: 600; letter-spacing: .06em;
-      margin-bottom: .55vh; -ms-flex: 0 0 auto; flex: 0 0 auto;
+      margin-bottom: .55%; -ms-flex: 0 0 auto; flex: 0 0 auto;
       color: #b8883e;
     }
     .scroll { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; }
@@ -281,18 +289,18 @@
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
       -ms-flex-align: baseline; align-items: baseline;
-      padding: .55vh 0;
+      padding: .55% 0;
       border-bottom: 1px solid rgba(44,36,24,0.06);
     }
     .row:last-child { border-bottom: 0; }
     body.night .row { border-bottom-color: rgba(240,228,212,0.08); }
     .who { font-size: 2vmin; font-weight: 650; }
-    .hrs { font-size: 1.95vmin; font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: .8vw; }
-    .meta { font-size: 1.5vmin; font-weight: 500; margin-top: .1vh; }
-    .drv { font-size: 1.55vmin; font-weight: 600; margin-top: .15vh; }
-    .empty { font-size: 1.85vmin; font-weight: 500; padding: .35vh 0; }
+    .hrs { font-size: 1.95vmin; font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: .8%; }
+    .meta { font-size: 1.5vmin; font-weight: 500; margin-top: .1%; }
+    .drv { font-size: 1.55vmin; font-weight: 600; margin-top: .15%; }
+    .empty { font-size: 1.85vmin; font-weight: 500; padding: .35% 0; }
     .lunch {
-      margin-top: .35vh; padding-top: .4vh;
+      margin-top: .35%; padding-top: .4%;
       border-top: 1px solid rgba(44,36,24,0.07);
       font-size: 1.45vmin; font-weight: 500; line-height: 1.25;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
@@ -301,19 +309,19 @@
 
     .namechip {
       display: inline-block; font-size: 1.4vmin; font-weight: 650;
-      padding: .12vh .5vw; border-radius: 999px; margin-right: .3vw;
+      padding: .12% .5%; border-radius: 999px; margin-right: .3%;
       color: #2c2418; vertical-align: middle;
       opacity: .92;
     }
 
     .photo-wrap {
       -ms-flex: 1 1 auto; flex: 1 1 auto;
-      min-height: 30vh;
-      height: 34vh;
-      max-height: 37vh;
+      min-height: 30%;
+      height: 34%;
+      max-height: 37%;
       border-radius: 1.5vmin; overflow: hidden;
       border: 1px solid rgba(44,36,24,0.07);
-      box-shadow: 0 .6vh 1.8vh rgba(80,50,20,0.08);
+      box-shadow: 0 .6% 1.8% rgba(80,50,20,0.08);
       background: rgba(44,36,24,0.04);
       position: relative;
     }
@@ -323,7 +331,7 @@
     }
     .photo-cap {
       position: absolute; left: 0; right: 0; bottom: 0;
-      padding: 1.2vh 1.3vw;
+      padding: 1.2% 1.3%;
       font-size: 1.7vmin; font-weight: 500;
       background: linear-gradient(transparent, rgba(40,32,24,0.5));
       color: #f5f1e8;
@@ -333,12 +341,12 @@
       font-size: 1.3vmin; opacity: .8; font-weight: 500;
       letter-spacing: .04em;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin-bottom: .15vh;
+      margin-bottom: .15%;
     }
 
     .countdown {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      padding: .4vh 0 .6vh;
+      padding: .4% 0 .6%;
       text-align: left;
     }
     .countdown .cd-label {
@@ -352,15 +360,15 @@
       font-size: 6.0vmin; font-weight: 400;
       letter-spacing: -.02em; line-height: 1.05;
       color: #b8883e;
-      margin-top: .25vh;
+      margin-top: .25%;
     }
     body.night .countdown .cd-big { color: #d4a06a; }
     .odote {
-      font-size: 1.45vmin; font-weight: 500; padding: .28vh 0; line-height: 1.2;
+      font-size: 1.45vmin; font-weight: 500; padding: .28% 0; line-height: 1.2;
       opacity: .78;
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
-      gap: .6vw;
+      gap: .6%;
       border-bottom: 1px solid rgba(44,36,24,0.05);
     }
     .odote:last-child { border-bottom: 0; }
@@ -371,14 +379,14 @@
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
       -ms-flex: 1; flex: 1; min-height: 0;
-      gap: .15vh;
+      gap: .15%;
       overflow: hidden;
     }
     .month-row {
       display: -ms-flexbox; display: flex;
       -ms-flex: 1; flex: 1;
       min-height: 0;
-      gap: .15vw;
+      gap: .15%;
     }
     .month-row.month-head { -ms-flex: 0 0 auto; flex: 0 0 auto; }
     .month-row > .mdow,
@@ -390,17 +398,17 @@
     .mdow {
       font-size: 1.0vmin; font-weight: 600; letter-spacing: .04em;
       text-align: center;
-      opacity: .5; padding-bottom: .08vh;
+      opacity: .5; padding-bottom: .08%;
     }
     .mday {
       min-height: 0;
       border-radius: .55vmin;
       border: 1px solid rgba(44,36,24,0.07);
       background: rgba(255,255,255,0.28);
-      padding: .22vh .28vw .18vh;
+      padding: .22% .28% .18%;
       display: -ms-flexbox; display: flex;
       -ms-flex-direction: column; flex-direction: column;
-      gap: 0.12vh;
+      gap: 0.12%;
       overflow: hidden;
       color: #2c2418;
     }
@@ -418,11 +426,11 @@
     .mday .dn {
       font-size: 1.05vmin; font-weight: 700;
       font-variant-numeric: tabular-nums; line-height: 1;
-      margin-bottom: 0.05vh;
+      margin-bottom: 0.05%;
       -ms-flex: 0 0 auto; flex: 0 0 auto;
     }
     .mday .dn .mo {
-      font-size: 0.9vmin; font-weight: 500; opacity: .55; margin-left: .1vw;
+      font-size: 0.9vmin; font-weight: 500; opacity: .55; margin-left: .1%;
     }
     .mdots {
       display: none;
@@ -445,7 +453,7 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-      margin: 0 0 0.08vh 0;
+      margin: 0 0 0.08% 0;
       padding: 0;
     }
     body.night .mlabel {
@@ -466,22 +474,22 @@
     }
 
     .meal-line {
-      font-size: 1.7vmin; font-weight: 550; padding: .28vh 0; line-height: 1.25;
-      display: -ms-flexbox; display: flex; gap: .55vw;
+      font-size: 1.7vmin; font-weight: 550; padding: .28% 0; line-height: 1.25;
+      display: -ms-flexbox; display: flex; gap: .55%;
     }
     .meal-line .d { min-width: 4.2vmin; font-weight: 650; }
     .meal-line .t { -ms-flex: 1; flex: 1; min-width: 0; }
 
     .wxstrip {
       display: -ms-flexbox; display: flex;
-      gap: .35vw; -ms-flex: 1; flex: 1; min-height: 0;
+      gap: .35%; -ms-flex: 1; flex: 1; min-height: 0;
       -ms-flex-align: stretch; align-items: stretch;
       overflow: hidden;
     }
     .wxday {
       -ms-flex: 1; flex: 1; min-width: 0; min-height: 0;
       text-align: center;
-      padding: .4vh .12vw .35vh;
+      padding: .4% .12% .35%;
       border-radius: .85vmin;
       background: rgba(255,255,255,0.35);
       border: 1px solid rgba(44,36,24,0.05);
@@ -527,22 +535,22 @@
 
     .foot {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      margin-top: .15vh;
+      margin-top: .15%;
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
       -ms-flex-align: center; align-items: center;
       font-size: 1.5vmin; font-weight: 500;
       color: rgba(44,36,24,0.42);
-      gap: 1vw;
+      gap: 1%;
     }
     .chips {
       display: -ms-flexbox; display: flex;
       -ms-flex-wrap: wrap; flex-wrap: wrap;
-      gap: .35vw; -ms-flex: 1; flex: 1; min-width: 0;
+      gap: .35%; -ms-flex: 1; flex: 1; min-width: 0;
     }
     .chip {
       font-size: 1.35vmin; font-weight: 600;
-      padding: .28vh .6vw; border-radius: 999px;
+      padding: .28% .6%; border-radius: 999px;
       border: 1px solid rgba(44,36,24,0.08);
       color: #2c2418;
       opacity: .88;
@@ -567,8 +575,8 @@
     .tmw-line {
       display: -ms-flexbox; display: flex;
       -ms-flex-align: baseline; align-items: baseline;
-      gap: 0.55vw;
-      padding: 0.35vh 0;
+      gap: 0.55%;
+      padding: 0.35% 0;
       border-bottom: 1px solid rgba(44,36,24,0.06);
       font-size: 1.55vmin; line-height: 1.2;
     }
@@ -583,7 +591,7 @@
     }
     .tmw-line .title { -ms-flex: 1; flex: 1; min-width: 0; font-weight: 550; }
     .tmw-line .place { opacity: .65; font-size: 1.25vmin; }
-    .tmw-empty { font-size: 1.45vmin; opacity: .55; padding: .4vh 0; }
+    .tmw-empty { font-size: 1.45vmin; opacity: .55; padding: .4% 0; }
     body.night .tmw-line { border-bottom-color: rgba(240,228,212,0.1); }
     body.night .tmw-line .who { color: #e0b878; }
     body.night .tmw-line .title { color: #f2e8dc; }
@@ -600,18 +608,18 @@
     }
     .meal-under {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
-      margin-top: 0.6vh;
-      padding-top: 0.55vh;
+      margin-top: 0.6%;
+      padding-top: 0.55%;
       border-top: 1px solid rgba(44,36,24,0.1);
     }
     body.night .meal-under { border-top-color: rgba(240,228,212,0.14); }
     .meal-lbl {
       font-size: 1.25vmin !important;
-      margin-bottom: 0.25vh;
+      margin-bottom: 0.25%;
       opacity: .85;
     }
     .meal-scroll {
-      max-height: 9vh;
+      max-height: 9%;
       overflow: hidden;
       font-size: 1.35vmin;
     }
@@ -622,8 +630,8 @@
     }
     .tmw-line {
       font-size: 1.7vmin !important;
-      padding: 0.45vh 0 !important;
-      gap: 0.7vw !important;
+      padding: 0.45% 0 !important;
+      gap: 0.7% !important;
     }
     .tmw-line .who {
       min-width: 5vmin !important;
@@ -635,11 +643,12 @@
     }
     .tmw-line .title { font-size: 1.65vmin; font-weight: 600; }
     .tmw-line .meta { font-size: 1.35vmin; font-weight: 500; opacity: .72; }
-    .tmw-empty { font-size: 1.5vmin; opacity: .55; padding: .5vh 0; }
+    .tmw-empty { font-size: 1.5vmin; opacity: .55; padding: .5% 0; }
 
   </style>
 </head>
 <body class="morning">
+<div id="rot">
   <div class="tv" id="app">
     <div class="head">
       <div class="clock" id="clock">––.––</div>
@@ -714,6 +723,7 @@
       <span class="brand">v59c</span>
     </div>
   </div>
+</div>
   <script>
 (function () {
   var DAYS = [

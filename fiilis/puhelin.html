@@ -353,7 +353,7 @@ body {
 
 <script>
 (function () {
-  var BUILD = "20260922-v102-koulu";
+  var BUILD = "20260922-v103-koulu-loppu";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -761,7 +761,7 @@ body {
     var j;
     for (j = 0; j < schools.length; j++) {
       var s = schools[j];
-      html += "<div class=\"tchip school\"><div class=\"t\">" + esc(fmtHm(s.time) || "") +
+      html += "<div class=\"tchip school\"><div class=\"t\">" + esc(fmtRange(s.time, s.end) || fmtHm(s.time) || "") +
         "</div><div class=\"b\">" + esc((s.who || "") + " · " + (s.label || "Koulu")) +
         "</div><div class=\"s\">Koulu</div></div>";
     }

@@ -465,7 +465,7 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
 
 <script>
 (function () {
-  var BUILD = "20260922-v102-koulu";
+  var BUILD = "20260922-v103-koulu-loppu";
   ;
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -1296,7 +1296,7 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
     for (i = 0; i < schools.length; i++) {
       var s = schools[i];
       var whoS = shortWho(s.who || "");
-      var timeS = fmtHm(s.time) || "";
+      var timeS = fmtRange(s.time, s.end) || fmtHm(s.time) || "";
       var labelS = s.label || "Koulu";
       html += "<div class=\"tmw-line school\">"
         + (whoS ? "<span class=\"who\">" + esc(whoS) + "</span>" : "")

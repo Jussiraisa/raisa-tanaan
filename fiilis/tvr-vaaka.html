@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v67-ellen-ke-leos">
+  <meta name="fiilis-build" content="20260922-v64-fiilis-vaaka">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,12 +142,15 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .col-tieto .kid-body > *:nth-child(n+9) { display: none; }
 .kal-rivi { -ms-flex: 1 1 auto; flex: 1 1 auto; display: -ms-flexbox; display: flex; min-height: 0; }
 .kal-rivi .card { -ms-flex: 1; flex: 1; }
-.kal-rivi .mday { padding: .37vmin .556vmin; }
-.kal-rivi .mday .dn { font-size: 1.11vmin; }
+.kal-rivi .card { padding: .833vmin; }
+.kal-rivi .lbl { margin-bottom: .556vmin; }
+.kal-rivi .month-row.month-head { padding-bottom: 0; }
+.kal-rivi .mday { padding: .28vmin .556vmin; }
+.kal-rivi .mday .dn { font-size: 1vmin; }
 .kal-rivi .mday .dn .mo { font-size: .95vmin; }
-.kal-rivi .mlabel { font-size: .85vmin; line-height: 1.2; margin-top: .14vmin; }
+.kal-rivi .mlabel { font-size: .8vmin; line-height: 1.05; margin-top: .05vmin; }
 .kal-rivi .mdot { width: .5vmin; height: .5vmin; margin-right: .28vmin; }
-.kal-rivi .mday .mlabel:nth-of-type(n+4) { display: none; }
+.kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel ~ .mlabel ~ .mlabel { display: none; }
 .list-duo { -ms-flex: 0 0 20.5vmin; flex: 0 0 20.5vmin; display: -ms-flexbox; display: flex; min-height: 0; }
 .list-duo > * + * { margin-left: .833vmin; }
 .list-duo .card { padding: 1.111vmin 1.481vmin; }
@@ -163,8 +166,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .list-duo .meal-line:nth-child(n+5) { display: none; }
 body.evening .col-tieto .kid-line, body.night .col-tieto .kid-line { font-size: 1.62vmin; }
 body.evening .col-tieto .kid-body > *:nth-child(n+6), body.night .col-tieto .kid-body > *:nth-child(n+6) { display: none; }
-body.evening .kal-rivi .mlabel, body.night .kal-rivi .mlabel { font-size: .98vmin; }
-body.evening .kal-rivi .mday .mlabel:nth-of-type(n+3), body.night .kal-rivi .mday .mlabel:nth-of-type(n+3) { display: none; }
+body.evening .kal-rivi .mlabel, body.night .kal-rivi .mlabel { font-size: .9vmin; }
+body.evening .kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel ~ .mlabel, body.night .kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel ~ .mlabel { display: none; }
 body.evening .kal-rivi .mday .dn, body.night .kal-rivi .mday .dn { font-size: 1.25vmin; }
 body.evening .list-duo .tmw-line, body.night .list-duo .tmw-line { font-size: 1.85vmin; }
 body.evening .list-duo .meal-line, body.night .list-duo .meal-line { font-size: 1.85vmin; }
@@ -428,908 +431,52 @@ body.evening .photo-cap, body.night .photo-cap {
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
   var FALLBACK = {
-    "timezone": "Europe/Helsinki",
-    "updated": "2026-09-22T07:44:37+03:00",
-    "schoolStarts": [
-      {
-        "who": "Ellen",
-        "label": "Koulu",
-        "time": "10:00",
-        "end": "13:00",
-        "weekdays": [
-          1
-        ]
-      },
-      {
-        "who": "Ellen",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "13:00",
-        "weekdays": [
-          2
-        ]
-      },
-      {
-        "who": "Ellen",
-        "label": "Koulu",
-        "time": "08:45",
-        "end": "15:00",
-        "weekdays": [
-          3
-        ]
-      },
-      {
-        "who": "Ellen",
-        "label": "Koulu",
-        "time": "10:00",
-        "end": "15:00",
-        "weekdays": [
-          4
-        ]
-      },
-      {
-        "who": "Ellen",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "13:00",
-        "weekdays": [
-          5
-        ]
-      },
-      {
-        "who": "Samuel",
-        "label": "Koulu",
-        "time": "08:45",
-        "end": "13:00",
-        "weekdays": [
-          1
-        ]
-      },
-      {
-        "who": "Samuel",
-        "label": "Koulu",
-        "time": "08:45",
-        "end": "13:00",
-        "weekdays": [
-          2
-        ]
-      },
-      {
-        "who": "Samuel",
-        "label": "Koulu",
-        "time": "08:45",
-        "end": "13:00",
-        "weekdays": [
-          3
-        ]
-      },
-      {
-        "who": "Samuel",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "12:00",
-        "weekdays": [
-          4
-        ]
-      },
-      {
-        "who": "Samuel",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "13:00",
-        "weekdays": [
-          5
-        ]
-      },
-      {
-        "who": "Milla",
-        "label": "Koulu",
-        "time": "09:40",
-        "end": "15:50",
-        "weekdays": [
-          1
-        ]
-      },
-      {
-        "who": "Milla",
-        "label": "Koulu",
-        "time": "09:40",
-        "end": "14:20",
-        "weekdays": [
-          2
-        ]
-      },
-      {
-        "who": "Milla",
-        "label": "Koulu",
-        "time": "09:40",
-        "end": "14:20",
-        "weekdays": [
-          3
-        ]
-      },
-      {
-        "who": "Milla",
-        "label": "Koulu",
-        "time": "08:10",
-        "end": "15:50",
-        "weekdays": [
-          4
-        ]
-      },
-      {
-        "who": "Milla",
-        "label": "Koulu",
-        "time": "09:40",
-        "end": "14:20",
-        "weekdays": [
-          5
-        ]
-      },
-      {
-        "who": "Mea",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "13:00",
-        "weekdays": [
-          1
-        ]
-      },
-      {
-        "who": "Mea",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "13:00",
-        "weekdays": [
-          2
-        ]
-      },
-      {
-        "who": "Mea",
-        "label": "Koulu",
-        "time": "10:00",
-        "end": "14:50",
-        "weekdays": [
-          3
-        ]
-      },
-      {
-        "who": "Mea",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "14:45",
-        "weekdays": [
-          4
-        ]
-      },
-      {
-        "who": "Mea",
-        "label": "Koulu",
-        "time": "08:00",
-        "end": "14:45",
-        "weekdays": [
-          5
-        ]
-      }
+    timezone: "Europe/Helsinki",
+    schoolStarts: [
+      { who: "Ellen", label: "Koulu", time: "10:00", end: "13:00", weekdays: [1] },
+      { who: "Ellen", label: "Koulu", time: "08:00", end: "13:00", weekdays: [2] },
+      { who: "Ellen", label: "Koulu", time: "08:45", end: "15:00", weekdays: [3] },
+      { who: "Ellen", label: "Koulu", time: "10:00", end: "15:00", weekdays: [4] },
+      { who: "Ellen", label: "Koulu", time: "08:00", end: "13:00", weekdays: [5] },
+      { who: "Samuel", label: "Koulu", time: "08:45", end: "13:00", weekdays: [1] },
+      { who: "Samuel", label: "Koulu", time: "08:45", end: "13:00", weekdays: [2] },
+      { who: "Samuel", label: "Koulu", time: "08:45", end: "13:00", weekdays: [3] },
+      { who: "Samuel", label: "Koulu", time: "08:00", end: "12:00", weekdays: [4] },
+      { who: "Samuel", label: "Koulu", time: "08:00", end: "13:00", weekdays: [5] },
+      { who: "Milla", label: "Koulu", time: "09:40", end: "15:50", weekdays: [1] },
+      { who: "Milla", label: "Koulu", time: "09:40", end: "14:20", weekdays: [2] },
+      { who: "Milla", label: "Koulu", time: "09:40", end: "14:20", weekdays: [3] },
+      { who: "Milla", label: "Koulu", time: "08:10", end: "15:50", weekdays: [4] },
+      { who: "Milla", label: "Koulu", time: "09:40", end: "14:20", weekdays: [5] },
+      { who: "Mea", label: "Koulu", time: "08:00", end: "13:00", weekdays: [1] },
+      { who: "Mea", label: "Koulu", time: "08:00", end: "13:00", weekdays: [2] },
+      { who: "Mea", label: "Koulu", time: "10:00", end: "14:50", weekdays: [3] },
+      { who: "Mea", label: "Koulu", time: "08:00", end: "14:45", weekdays: [4] },
+      { who: "Mea", label: "Koulu", time: "08:00", end: "14:45", weekdays: [5] }
     ],
-    "note": "Synkka Perhe 21.9.2026 ilta: WA-kyydit (Mea Lianna Julia/Enni/Amanda/Elina/Riikka) + viikkorutiinit. Riikka EI kusiksi 6.–9.10. Kuski auki: Mea 28.9. & 5.10., Ambrosia NTV, Milla hiontaleiri. | Nimenhuuto Welhot 2018 → Samuel treenit/turnaukset | Welhot turnaukset NH → kk-kalenteri",
-    "events": [
-      {
-        "date": "2026-09-20",
-        "time": "14:00",
-        "end": "15:00",
-        "who": "Ellen",
-        "title": "Ambrosia haku",
-        "place": "Kuopiohalli",
-        "kind": "muu",
-        "pickup": "Riikka"
-      },
-      {
-        "date": "2026-09-20",
-        "time": "16:00",
-        "end": "18:30",
-        "who": "Mea",
-        "title": "Lianna treeni",
-        "place": "Bella Center",
-        "kind": "treeni",
-        "driver": "Elina",
-        "pickup": "Elina",
-        "note": "lähtö ~12:05"
-      },
-      {
-        "date": "2026-09-20",
-        "time": "17:30",
-        "end": "20:00",
-        "who": "Milla",
-        "title": "Vivida treeni",
-        "place": "Bella Center",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-21",
-        "time": "11:00",
-        "end": "13:00",
-        "who": "Samuel",
-        "title": "Retki",
-        "place": "Pölläkänlahti",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-21",
-        "time": "17:00",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Ylä-Pyörö",
-        "kind": "treeni",
-        "source": "nimenhuuto:welhot2018",
-        "driver": "Sini/Topias"
-      },
-      {
-        "date": "2026-09-21",
-        "time": "17:30",
-        "end": "18:30",
-        "who": "Milla",
-        "title": "Vivida oheinen",
-        "place": "Luola",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-21",
-        "time": "18:30",
-        "end": "19:30",
-        "who": "Mea",
-        "title": "Liannan voimat",
-        "place": "Luola",
-        "kind": "treeni",
-        "driver": "Julia",
-        "pickup": "Enni"
-      },
-      {
-        "date": "2026-09-22",
-        "time": "",
-        "who": "perhe",
-        "title": "Pentutreffit Ella kotona",
-        "kind": "muu",
-        "place": "Koti"
-      },
-      {
-        "date": "2026-09-22",
-        "time": "14:00",
-        "end": "15:00",
-        "who": "Mea",
-        "title": "Arja",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-22",
-        "time": "16:30",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Lippumäki",
-        "kind": "treeni",
-        "source": "nimenhuuto:welhot2018",
-        "driver": "Topias",
-        "note": "lähtö ~16.15 · vie Topias"
-      },
-      {
-        "date": "2026-09-22",
-        "time": "17:00",
-        "end": "18:30",
-        "place": "Kuopiohalli",
-        "title": "Ambrosia treeni",
-        "note": "meidän kyydit",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-09-22",
-        "time": "17:00",
-        "end": "17:45",
-        "who": "Mea",
-        "title": "Valmennus",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-22",
-        "time": "17:30",
-        "end": "18:15",
-        "who": "Jussi",
-        "title": "Hallituksen kokous",
-        "kind": "työ",
-        "source": "manual:jussi"
-      },
-      {
-        "date": "2026-09-23",
-        "time": "",
-        "who": "Ellen",
-        "title": "Ilmoita kodin ja koulun päivään (deadline)",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-23",
-        "time": "",
-        "who": "Samuel",
-        "title": "Ilmoita kodin ja koulun päivään (deadline)",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-23",
-        "who": "perhe",
-        "title": "Ilmoita kodin ja koulun päivä",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-23",
-        "time": "18:00",
-        "end": "20:00",
-        "place": "Leo’s",
-        "title": "Ambrosia joukkueilta",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "perhe:wa",
-        "driver": "Jussi",
-        "note": "Perhe/WA vahvistus · ei Kuopiohallia"
-      },
-      {
-        "date": "2026-09-23",
-        "time": "18:00",
-        "end": "20:30",
-        "who": "Mea",
-        "title": "Lianna treeni",
-        "place": "Bella Center",
-        "kind": "treeni",
-        "driver": "Julia",
-        "pickup": "Enni"
-      },
-      {
-        "date": "2026-09-23",
-        "time": "18:00",
-        "end": "20:30",
-        "who": "Milla",
-        "title": "Vivida treeni",
-        "place": "Bella Center",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-24",
-        "time": "17:00",
-        "end": "18:30",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Puijonsarvi",
-        "kind": "treeni",
-        "source": "nimenhuuto:welhot2018",
-        "driver": "Topias"
-      },
-      {
-        "date": "2026-09-25",
-        "time": "",
-        "who": "Ellen",
-        "title": "Kodin ja koulun päivä",
-        "place": "Aurinkorinne",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-25",
-        "time": "",
-        "who": "Samuel",
-        "title": "Kodin ja koulun päivä",
-        "place": "Aurinkorinne",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-25",
-        "who": "perhe",
-        "title": "Kodin ja koulun päivä",
-        "place": "Aurinkorinteen koulu",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-25",
-        "time": "09:00",
-        "end": "18:00",
-        "who": "Ellen",
-        "title": "Ambrosia NTV + talkoot",
-        "place": "Luola",
-        "kind": "treeni",
-        "driver": "Riikka"
-      },
-      {
-        "date": "2026-09-25",
-        "time": "16:00",
-        "end": "18:30",
-        "place": "Luola",
-        "title": "Ambrosia treeni",
-        "note": "meidän vienti",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-09-25",
-        "time": "18:00",
-        "end": "20:30",
-        "who": "Mea",
-        "title": "Lianna treeni",
-        "place": "Bella Center",
-        "kind": "treeni",
-        "driver": "Amanda/Elina",
-        "pickup": "Amanda/Elina"
-      },
-      {
-        "date": "2026-09-25",
-        "time": "18:00",
-        "end": "20:30",
-        "who": "Milla",
-        "title": "Vivida treeni",
-        "place": "Bella Center",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-26",
-        "who": "Ellen",
-        "title": "Ambrosia NTV + talkoot",
-        "place": "Luola",
-        "kind": "treeni",
-        "time": "09:00",
-        "end": "18:00"
-      },
-      {
-        "date": "2026-09-26",
-        "time": "13:00",
-        "who": "Mea",
-        "title": "Synttärit",
-        "kind": "muisto"
-      },
-      {
-        "date": "2026-09-26",
-        "time": "16:00",
-        "end": "21:00",
-        "who": "Milla",
-        "title": "Vivida hiontaleiri",
-        "place": "Bella Center",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-27",
-        "who": "Ellen",
-        "title": "Ambrosia NTV + talkoot",
-        "place": "Luola",
-        "kind": "treeni",
-        "time": "09:00",
-        "end": "18:00"
-      },
-      {
-        "date": "2026-09-27",
-        "time": "11:30",
-        "end": "14:00",
-        "who": "Milla",
-        "title": "Vivida treeni",
-        "place": "Bella Center",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-27",
-        "time": "16:00",
-        "end": "18:30",
-        "who": "Mea",
-        "title": "Lianna treeni",
-        "place": "Luola",
-        "kind": "treeni",
-        "driver": "Riikka",
-        "pickup": "Riikka"
-      },
-      {
-        "date": "2026-09-28",
-        "time": "17:00",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Ylä-Pyörö",
-        "kind": "treeni",
-        "source": "nimenhuuto:welhot2018",
-        "driver": "Sini/Topias"
-      },
-      {
-        "date": "2026-09-28",
-        "time": "17:30",
-        "end": "18:30",
-        "who": "Milla",
-        "title": "Vivida oheinen",
-        "place": "Luola",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-28",
-        "time": "18:00",
-        "end": "19:00",
-        "who": "Mea",
-        "title": "Liannan voimat",
-        "place": "Kuoppari",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-09-29",
-        "time": "12:45",
-        "end": "13:45",
-        "who": "Mea",
-        "title": "Valokuvaus",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-09-29",
-        "time": "16:30",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Lippumäki",
-        "kind": "treeni",
-        "source": "nimenhuuto:welhot2018",
-        "driver": "Jussi",
-        "note": "lähtö ~16.15"
-      },
-      {
-        "date": "2026-09-29",
-        "time": "17:00",
-        "end": "18:30",
-        "place": "Kuopiohalli",
-        "title": "Ambrosia treeni",
-        "note": "meidän kyydit",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-09-30",
-        "who": "Ellen",
-        "title": "Koulukuvaus (lomake)",
-        "kind": "muu",
-        "time": ""
-      },
-      {
-        "date": "2026-09-30",
-        "time": "18:00",
-        "end": "20:30",
-        "place": "Kuopiohalli",
-        "title": "Ambrosia treeni",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-10-01",
-        "who": "Ellen",
-        "title": "Koulukuvaus (lomake)",
-        "kind": "muu",
-        "time": ""
-      },
-      {
-        "date": "2026-10-01",
-        "time": "",
-        "who": "Samuel",
-        "title": "Pelipassi hankittava",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-01",
-        "time": "17:00",
-        "end": "18:00",
-        "who": "Ellen",
-        "title": "Ambrosia vanhempainilta",
-        "place": "Bella Center",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-01",
-        "time": "17:00",
-        "end": "18:30",
-        "who": "Perhe",
-        "title": "Ambrosia vanhempainilta",
-        "place": "Bella Center parvi",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-01",
-        "time": "17:00",
-        "end": "18:30",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Puijonsarvi",
-        "kind": "treeni",
-        "source": "nimenhuuto:welhot2018",
-        "driver": "Topias"
-      },
-      {
-        "date": "2026-10-02",
-        "time": "16:00",
-        "end": "18:30",
-        "place": "Luola",
-        "title": "Ambrosia treeni",
-        "note": "meidän vienti",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-10-03",
-        "who": "Aino",
-        "title": "Ainon juhlat",
-        "kind": "juhla"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "12:30",
-        "end": "17:30",
-        "who": "Milla",
-        "title": "Vivida hiontaleiri",
-        "place": "Bella Center",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-10-03",
-        "time": "17:00",
-        "end": "20:00",
-        "who": "Samuel",
-        "title": "Welhot turnaus",
-        "place": "Joensuu, Nepenmäki",
-        "kind": "kisa",
-        "source": "nimenhuuto:welhot2018"
-      },
-      {
-        "date": "2026-10-04",
-        "time": "09:00",
-        "end": "16:00",
-        "who": "Samuel",
-        "title": "Welhot turnaus Junnuliiga",
-        "place": "Lippumäki",
-        "kind": "kisa",
-        "source": "nimenhuuto:welhot2018"
-      },
-      {
-        "date": "2026-10-05",
-        "time": "17:00",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Ylä-Pyörö",
-        "kind": "treeni",
-        "driver": "Sini/Topias"
-      },
-      {
-        "date": "2026-10-05",
-        "time": "18:30",
-        "end": "19:30",
-        "who": "Mea",
-        "title": "Liannan voimat",
-        "place": "Kuoppari",
-        "kind": "treeni"
-      },
-      {
-        "date": "2026-10-06",
-        "who": "Riikka",
-        "title": "Oulu",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-06",
-        "time": "16:30",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Lippumäki",
-        "kind": "treeni",
-        "driver": "Jussi"
-      },
-      {
-        "date": "2026-10-06",
-        "time": "17:00",
-        "end": "18:30",
-        "place": "Kuopiohalli",
-        "title": "Ambrosia treeni",
-        "note": "meidän kyydit",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-10-06",
-        "time": "17:00",
-        "end": "19:00",
-        "who": "Mea",
-        "title": "Lianna harkkakisa",
-        "place": "Ylä-Pyörön koulu",
-        "kind": "kisa"
-      },
-      {
-        "date": "2026-10-07",
-        "who": "Riikka",
-        "title": "Oulu",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-07",
-        "time": "17:00",
-        "who": "Mea",
-        "title": "Terapia",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-07",
-        "time": "18:00",
-        "end": "20:30",
-        "place": "Kuopiohalli",
-        "title": "Ambrosia treeni",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-10-08",
-        "who": "Riikka",
-        "title": "Oulu",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-08",
-        "time": "17:00",
-        "end": "19:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Puijonsarven koulu",
-        "kind": "treeni",
-        "driver": "Topias"
-      },
-      {
-        "date": "2026-10-09",
-        "who": "Riikka",
-        "title": "Oulu",
-        "kind": "muu"
-      },
-      {
-        "date": "2026-10-09",
-        "time": "16:00",
-        "end": "18:30",
-        "place": "Luola",
-        "title": "Ambrosia treeni",
-        "note": "meidän vienti",
-        "who": "Ellen",
-        "kind": "treeni",
-        "source": "gcal:voimistelu"
-      },
-      {
-        "date": "2026-10-12",
-        "time": "17:00",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Ylä-Pyörö",
-        "kind": "treeni",
-        "driver": "Sini/Topias"
-      },
-      {
-        "date": "2026-10-13",
-        "who": "perhe",
-        "title": "Lontoo-matka",
-        "kind": "matka",
-        "place": "C38QGW"
-      },
-      {
-        "date": "2026-10-14",
-        "who": "perhe",
-        "title": "Lontoo-matka",
-        "kind": "matka",
-        "place": "C38QGW"
-      },
-      {
-        "date": "2026-10-15",
-        "who": "perhe",
-        "title": "Lontoo-matka",
-        "kind": "matka",
-        "place": "C38QGW"
-      },
-      {
-        "date": "2026-10-16",
-        "who": "perhe",
-        "title": "Lontoo-matka",
-        "kind": "matka",
-        "place": "C38QGW"
-      },
-      {
-        "date": "2026-10-17",
-        "who": "perhe",
-        "title": "Lontoo-matka",
-        "kind": "matka",
-        "place": "C38QGW"
-      },
-      {
-        "date": "2026-10-19",
-        "time": "17:00",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Ylä-Pyörö",
-        "kind": "treeni",
-        "driver": "Sini/Topias"
-      },
-      {
-        "date": "2026-10-20",
-        "time": "16:30",
-        "end": "18:00",
-        "who": "Samuel",
-        "title": "Welhot",
-        "place": "Lippumäki",
-        "kind": "treeni",
-        "driver": "Jussi"
-      },
-      {
-        "date": "2026-10-24",
-        "who": "Riikka",
-        "title": "Synttärijuhlat kavereille",
-        "kind": "juhla"
-      },
-      {
-        "date": "2026-10-31",
-        "time": "09:00",
-        "end": "16:00",
-        "who": "Samuel",
-        "title": "Welhot turnaus",
-        "place": "Studentia, Kuopio",
-        "kind": "kisa",
-        "source": "nimenhuuto:welhot2018"
-      },
-      {
-        "date": "2026-11-15",
-        "time": "08:00",
-        "end": "16:00",
-        "who": "Samuel",
-        "title": "Welhot turnaus",
-        "place": "Suonenjoki, Lintharju",
-        "kind": "kisa",
-        "source": "nimenhuuto:welhot2018"
-      },
-      {
-        "date": "2026-11-28",
-        "time": "09:00",
-        "end": "16:00",
-        "who": "Samuel",
-        "title": "Welhot turnaus",
-        "place": "Siilinjärvi, Ahmo",
-        "kind": "kisa",
-        "source": "nimenhuuto:welhot2018"
-      },
-      {
-        "date": "2026-12-19",
-        "time": "09:00",
-        "end": "16:00",
-        "who": "Samuel",
-        "title": "Welhot turnaus",
-        "place": "Luola, Savilahti",
-        "kind": "kisa",
-        "source": "nimenhuuto:welhot2018"
-      }
+    events: [
+      { date: "2026-09-20", time: "14:00", end: "15:00", who: "Ellen", title: "Ambrosia haku", place: "Kuopiohalli", kind: "muu", pickup: "Riikka" },
+      { date: "2026-09-20", time: "16:00", end: "18:30", who: "Mea", title: "Lianna treeni", place: "Bella Center", kind: "treeni", driver: "Elina", pickup: "Elina" },
+      { date: "2026-09-20", time: "17:30", end: "20:00", who: "Milla", title: "Vivida treeni", place: "Bella Center", kind: "treeni" },
+      { date: "2026-09-21", time: "17:00", end: "18:00", who: "Samuel", title: "Welhot", place: "Ylä-Pyörö", kind: "treeni", driver: "Sini/Topias" },
+      { date: "2026-09-21", time: "18:30", end: "19:30", who: "Mea", title: "Lianna voimistelu", place: "Luola", kind: "treeni", driver: "Julia", pickup: "Enni" },
+      { date: "2026-09-22", time: "16:30", end: "18:00", who: "Samuel", title: "Welhot", place: "Lippumäki", kind: "treeni", driver: "Jussi" },
+      { date: "2026-09-23", time: "18:00", end: "20:30", who: "Mea", title: "Lianna treeni", place: "Bella Center", kind: "treeni", driver: "Julia (Reetta)", pickup: "Enni (Tiina)" },
+      { date: "2026-09-25", who: "perhe", title: "Kodin ja koulun päivä", place: "Aurinkorinteen koulu", kind: "muu" },
+      { date: "2026-09-26", time: "13:00", who: "Mea", title: "Synttärit", kind: "juhla" },
+      { date: "2026-10-02", who: "perhe", title: "Hääpäivä", kind: "juhla" },
+      { date: "2026-10-12", who: "Riikka", title: "Syntymäpäivä", kind: "juhla" },
+      { date: "2026-10-13", who: "perhe", title: "Lontoo-matka", kind: "matka" },
+      { date: "2026-10-24", who: "Riikka", title: "Synttärijuhlat kavereille", kind: "juhla" }
     ],
-    "schoolLunch": {
-      "2026-09-21": "Appelsiini-broilerikastike + riisi-kaura (kasvis: tofukasviskastike)",
-      "2026-09-22": "Kermaista kalakeittoa (kasvis: linssi-kasviskeittoa)",
+    schoolLunch: {
+      "2026-09-21": "Appelsiini-broilerikastike + riisi-kaura",
+      "2026-09-22": "Broilerikastike ja riisi",
       "2026-09-23": "Kasviskeitto ja sämpylä",
       "2026-09-24": "Makaronilaatikko",
-      "2026-09-25": "Kalakeitto",
-      "2026-09-28": "Nakkikeitto",
-      "2026-09-29": "Pasta bolognese",
-      "2026-09-30": "Uunilohi ja peruna",
-      "2026-10-01": "Kanawokki",
-      "2026-10-02": "Hernekeitto",
-      "2026-10-05": "Pinaattiletut",
-      "2026-10-06": "Jauhelihakastike ja peruna",
-      "2026-10-07": "Kalaleike ja peruna",
-      "2026-10-08": "Kasvispasta",
-      "2026-10-09": "Broilerikeitto"
+      "2026-09-25": "Kalakeitto"
     },
-    "homeMeals": {
-      "2026-09-19": "Nacho-pelti",
+    homeMeals: {
       "2026-09-20": "Hampparit",
       "2026-09-21": "Lohikeitto",
       "2026-09-22": "Kana + riisi + kermakastike",
@@ -1337,95 +484,14 @@ body.evening .photo-cap, body.night .photo-cap {
       "2026-09-24": "Tähteet",
       "2026-09-25": "Katkarapukeitto + patongit"
     },
-    "absences": [
-      {
-        "who": "Riikka",
-        "from": "2026-10-06",
-        "to": "2026-10-09",
-        "where": "Oulu",
-        "note": "Älä ehdota Riikkaa kusiksi näinä päivinä"
-      }
+    absences: [
+      { who: "Riikka", from: "2026-10-06", to: "2026-10-09", where: "Oulu" }
     ],
-    "anniversaries": [
-      {
-        "who": "Jussi",
-        "date": "1985-02-19",
-        "kind": "birthday"
-      },
-      {
-        "who": "Riikka",
-        "date": "1986-10-12",
-        "kind": "birthday"
-      },
-      {
-        "who": "Milla",
-        "date": "2010-06-01",
-        "kind": "birthday"
-      },
-      {
-        "who": "Mea",
-        "date": "2012-09-12",
-        "kind": "birthday"
-      },
-      {
-        "who": "Ellen",
-        "date": "2016-05-16",
-        "kind": "birthday"
-      },
-      {
-        "who": "Samuel",
-        "date": "2018-04-20",
-        "kind": "birthday"
-      },
-      {
-        "who": "perhe",
-        "date": "2010-10-02",
-        "kind": "wedding",
-        "label": "Hääpäivä"
-      },
-      {
-        "who": "Riikka",
-        "date": "2000-10-24",
-        "kind": "party",
-        "label": "synttärijuhlat kavereille",
-        "mmdd": "10-24"
-      }
-    ],
-    "weeklyDriverDefaults": [
-      {
-        "weekday": 1,
-        "who": "Samuel",
-        "titleContains": "Welhot",
-        "driver": "Sini/Topias"
-      },
-      {
-        "weekday": 2,
-        "who": "Samuel",
-        "titleContains": "Welhot",
-        "driver": "Jussi"
-      },
-      {
-        "weekday": 3,
-        "who": "Ellen",
-        "titleContains": "Ambrosia",
-        "driver": "Jussi"
-      },
-      {
-        "weekday": 4,
-        "who": "Samuel",
-        "titleContains": "Welhot",
-        "driver": "Topias"
-      },
-      {
-        "weekday": 5,
-        "who": "Ellen",
-        "titleContains": "Ambrosia",
-        "driver": "Riikka"
-      }
-    ],
-    "sources": {
-      "samuel_welhot": "https://welhot2018.nimenhuuto.com/"
-    }
+    anniversaries: [
+      { who: "Riikka", date: "1986-10-12", kind: "birthday" },
+      { who: "perhe", date: "2010-10-02", kind: "wedding", label: "Hääpäivä" },
+      { who: "Riikka", date: "2000-10-24", kind: "party", label: "synttärijuhlat kavereille", mmdd: "10-24" }
+    ]
   };
 
   var schedule = FALLBACK;
@@ -2118,7 +1184,7 @@ body.evening .photo-cap, body.night .photo-cap {
           });
           var parts = [];
           var used = {};
-          for (var ri = 0; ri < realEvs.length && parts.length < 3; ri++) {
+          for (var ri = 0; ri < realEvs.length && parts.length < 4; ri++) {
             var evx = realEvs[ri];
             var who = evx.who || "perhe";
             var rt = evx.title || "";
@@ -2266,14 +1332,14 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v67-ellen-ke-leos", function (data) {
+    getJSON("schedule.json?v=20260921v59c", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260922-v64-sync-20260922-0435", function (data) {
+    getJSON("photos-from-matkat.json?v=20260921v59c", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v70b-mea-menu">
+  <meta name="fiilis-build" content="20260922-v71-kuva-mea-menu">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,13 +128,13 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .head > * + * { margin-left: 2.037vmin; }
 .main { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; display: -ms-flexbox; display: flex; }
 .main > * + * { margin-left: .833vmin; }
-.col-kuva { -ms-flex: 1.12; flex: 1.12; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+.col-kuva { -ms-flex: 1.12; flex: 1.35; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .col-kuva > * + * { margin-top: .833vmin; }
 .col-kuva .photo-wrap { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
-.col-kuva .odotcard { -ms-flex: 0 0 24vmin; flex: 0 0 24vmin; padding: 1.111vmin 1.481vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
-.col-kuva .odotcard .cd-big { font-size: 4.2vmin; }
+.col-kuva .odotcard { -ms-flex: 0 0 18vmin; flex: 0 0 18vmin; padding: 1.111vmin 1.481vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
+.col-kuva .odotcard .cd-big { font-size: 3.6vmin; }
 .col-kuva .odotcard .cd-label { font-size: 1.85vmin; }
-.col-tieto { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+.col-tieto { -ms-flex: 1; flex: 0.92; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .col-tieto > * + * { margin-top: .833vmin; }
 .duo { -ms-flex: 0 0 23.5vmin; flex: 0 0 23.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
 .duo > * + * { margin-top: .556vmin; }
@@ -436,7 +436,7 @@ body.evening .photo-cap, body.night .photo-cap {
   var SYYSLOMA_END = "2026-10-18";
   /* Pienet odotukset Lontoon alle (synttärit, lomat, juhlat) */
   var EXTRA_EXPECTATIONS = [
-    { start: "2026-09-26", end: "2026-09-26", label: "Mea synttärit · sukulaiset · klo 13", menu: "kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)" },
+    { start: "2026-09-26", end: "2026-09-26", label: "Mea synttärit · sukulaiset · klo 13", menu: "pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)" },
     { start: "2026-10-02", end: "2026-10-02", label: "Hääpäivä" },
     { start: "2026-10-03", end: "2026-10-03", label: "Ainon juhlat" },
     { start: "2026-10-06", end: "2026-10-09", label: "Riikka Oulussa" },
@@ -477,7 +477,7 @@ body.evening .photo-cap, body.night .photo-cap {
       { date: "2026-09-22", time: "16:30", end: "18:00", who: "Samuel", title: "Welhot", place: "Lippumäki", kind: "treeni", driver: "Jussi" },
       { date: "2026-09-23", time: "18:00", end: "20:30", who: "Mea", title: "Lianna treeni", place: "Bella Center", kind: "treeni", driver: "Julia (Reetta)", pickup: "Enni (Tiina)" },
       { date: "2026-09-25", who: "perhe", title: "Kodin ja koulun päivä", place: "Aurinkorinteen koulu", kind: "muu" },
-      { date: "2026-09-26", time: "13:00", who: "Mea", title: "Synttärit · sukulaiset", kind: "juhla", note: "Menu: kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)" },
+      { date: "2026-09-26", time: "13:00", who: "Mea", title: "Synttärit · sukulaiset", kind: "juhla", note: "Menu: pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)" },
       { date: "2026-10-02", who: "perhe", title: "Hääpäivä", kind: "juhla" },
       { date: "2026-10-12", who: "Riikka", title: "Syntymäpäivä", kind: "juhla" },
       { date: "2026-10-13", who: "perhe", title: "Lontoo-matka", kind: "matka" },
@@ -1405,7 +1405,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v70b-mea-menu", function (data) {
+    getJSON("schedule.json?v=20260922-v71-kuva-mea-menu", function (data) {
       if (data) schedule = data;
       paint();
     });

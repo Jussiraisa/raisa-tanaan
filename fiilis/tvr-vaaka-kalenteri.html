@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v79-paras">
+  <meta name="fiilis-build" content="20260922-v80">
   <meta name="theme-color" content="#F7F1E3">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,16 +15,16 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
 .app {
-  height: 100%; padding: 1.8vmin 2.2vmin 8vmin;
+  height: 100%; padding: 1.6vmin 2vmin 8vmin;
   display: flex; flex-direction: column;
 }
 .head {
   flex: 0 0 auto; display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 1.4vmin;
+  margin-bottom: 1vmin;
 }
 .title {
   font-family: Newsreader, Georgia, serif;
-  font-size: 4vmin; font-weight: 400; color: #1a140e; letter-spacing: -.02em;
+  font-size: 3.6vmin; font-weight: 400; color: #1a140e; letter-spacing: -.02em;
 }
 .sub { font-size: 1.55vmin; color: #6c5c44; font-weight: 500; }
 .brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9a8b74; margin-left: 1vmin; }
@@ -34,54 +34,61 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
   display: flex; flex-direction: column;
 }
 .dow {
-  flex: 0 0 auto; display: flex; margin-bottom: .5vmin;
+  flex: 0 0 auto; display: flex; margin-bottom: .4vmin;
 }
 .dow span {
-  flex: 1; text-align: center; font-size: 1.25vmin; font-weight: 700;
+  flex: 1; text-align: center; font-size: 1.35vmin; font-weight: 700;
   letter-spacing: .08em; text-transform: uppercase; color: #8a7a62;
 }
 .month {
   flex: 1 1 auto; min-height: 0;
   display: flex; flex-direction: column;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .week {
-  flex: 1 1 0; min-height: 0; display: flex;
+  flex: 1 1 0; min-height: 12vmin; display: flex;
 }
-.week + .week { margin-top: .45vmin; }
-.week > * + * { margin-left: .45vmin; }
+.week + .week { margin-top: .4vmin; }
+.week > * + * { margin-left: .4vmin; }
 .day {
   flex: 1 1 0; min-width: 0; min-height: 0;
   background: #fffdf8;
   border: 1px solid rgba(44,36,24,.08);
-  border-radius: .9vmin;
-  padding: .55vmin .6vmin .5vmin;
-  overflow: hidden;
+  border-radius: .85vmin;
+  padding: .5vmin .55vmin .45vmin;
+  overflow: auto;
   display: flex; flex-direction: column;
-  box-shadow: 0 .25vmin .9vmin rgba(60,40,18,.04);
+  box-shadow: 0 .2vmin .8vmin rgba(60,40,18,.04);
 }
 .day.pad { visibility: hidden; border: 0; background: transparent; box-shadow: none; }
+.day.out {
+  opacity: .38;
+  background: rgba(255,253,248,.45);
+}
 .day.is-today {
-  background: rgba(184,136,62,.14);
+  background: rgba(184,136,62,.16);
   border: 1.5px solid #a3712a;
 }
 .day.is-lontoo:not(.is-today) { background: rgba(184,136,62,.08); }
 .day .hd {
   flex: 0 0 auto; display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: .3vmin;
+  margin-bottom: .25vmin;
 }
 .day .dn {
-  font-size: 1.7vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418;
+  font-size: 2vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418;
 }
 .day.is-today .dn { color: #8f6524; }
-.day .mo { font-size: 1.1vmin; font-weight: 500; color: #8a7a62; margin-left: .25vmin; }
-.day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
+.day .mo { font-size: 1.2vmin; font-weight: 600; color: #8a7a62; margin-left: .3vmin; }
+.day .wd { font-size: 1.15vmin; font-weight: 600; color: #9a8b74; }
+.day .evs { flex: 1 1 auto; min-height: 0; }
 .day .ev {
-  font-size: 1.35vmin; line-height: 1.28; font-weight: 600; color: #3a3228;
-  margin-top: .2vmin;
+  font-size: 1.55vmin; line-height: 1.3; font-weight: 600; color: #3a3228;
+  margin-top: .22vmin;
   white-space: normal; overflow-wrap: anywhere; word-break: break-word;
 }
 .day .ev .dot {
-  display: inline-block; width: .55vmin; height: .55vmin; border-radius: 999px;
+  display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
   margin-right: .3vmin; vertical-align: .12em;
 }
 .day .ev .t { font-variant-numeric: tabular-nums; font-weight: 700; color: #2c2418; }
@@ -107,7 +114,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
   .nav { height: calc(3.8rem + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); }
   .nav a { font-size: .75rem; min-width: 4.5rem; }
   .nav a .ic { font-size: 1.25rem; }
-  .day .ev { font-size: 1.15vmin; }
+  .day .ev { font-size: 1.35vmin; }
+  .day .dn { font-size: 1.7vmin; }
 }
   </style>
 </head>
@@ -115,7 +123,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
 <div class="app">
   <div class="head">
     <div class="title" id="monthTitle">Kalenteri</div>
-    <div><span class="sub" id="rangeLabel">Kuopio</span><span class="brand">v79 vaaka</span></div>
+    <div><span class="sub" id="rangeLabel">Kuopio</span><span class="brand">v80 vaaka</span></div>
   </div>
   <div class="grid-wrap">
     <div class="dow">
@@ -131,8 +139,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v79-paras";
-  var DAYS_FI = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var BUILD = "20260922-v80";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -203,6 +210,18 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
     if (w === "perhe" || w === "Perhe") return "";
     return w;
   }
+  /* Add n days to YYYY-MM-DD (UTC noon math → no DST edge) */
+  function addDaysIso(iso, n) {
+    var p = String(iso).split("-");
+    var dt = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12, 0, 0));
+    dt.setUTCDate(dt.getUTCDate() + n);
+    return dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate());
+  }
+  function weekdayMon0(iso) {
+    var p = String(iso).split("-");
+    var dt = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12, 0, 0));
+    return (dt.getUTCDay() + 6) % 7; /* 0=ma … 6=su */
+  }
   function eventsOn(iso) {
     var out = [];
     if (!schedule || !schedule.events) return out;
@@ -238,27 +257,40 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
 
   function paint() {
     var now = helsinkiNow();
+    var endIso = addDaysIso(now.iso, 30); /* today … today+30 = 31 days */
     var title = document.getElementById("monthTitle");
-    if (title) title.textContent = MONTHS[now.month - 1] + " " + now.year;
+    if (title) {
+      var endP = endIso.split("-");
+      var endMo = parseInt(endP[1], 10);
+      if (endMo === now.month) {
+        title.textContent = MONTHS[now.month - 1] + " " + now.year;
+      } else {
+        title.textContent = MONTHS[now.month - 1] + "–" + MONTHS[endMo - 1];
+      }
+    }
     var rl = document.getElementById("rangeLabel");
-    if (rl) rl.textContent = "Räisän perhe · Kuopio";
+    if (rl) {
+      var endD = parseInt(endIso.slice(8), 10);
+      var endM = parseInt(endIso.slice(5, 7), 10);
+      rl.textContent = now.day + "." + now.month + ". → " + endD + "." + endM + ". · 31 pv";
+    }
 
     var grid = document.getElementById("monthGrid");
     if (!grid) return;
 
-    var first = new Date(Date.UTC(now.year, now.month - 1, 1));
-    var startWd = first.getUTCDay(); /* 0=su */
-    var mondayOffset = (startWd + 6) % 7; /* mon-first */
-    var daysInMonth = new Date(Date.UTC(now.year, now.month, 0)).getUTCDate();
+    /* Rolling window aligned to Monday weeks — NOT month boundary */
+    var monOff = weekdayMon0(now.iso);
+    var gridStart = addDaysIso(now.iso, -monOff);
+    var endOff = weekdayMon0(endIso);
+    var gridEnd = addDaysIso(endIso, 6 - endOff);
+
     var cells = [];
-    for (var i = 0; i < mondayOffset; i++) cells.push(null);
-    for (var d = 1; d <= daysInMonth; d++) {
-      cells.push(now.year + "-" + pad(now.month) + "-" + pad(d));
+    var cur = gridStart;
+    while (cur <= gridEnd) {
+      cells.push(cur);
+      cur = addDaysIso(cur, 1);
     }
-    while (cells.length % 7 !== 0) cells.push(null);
-    /* fill to 5 or 6 weeks */
-    var weeks = Math.max(5, Math.ceil(cells.length / 7));
-    while (cells.length < weeks * 7) cells.push(null);
+    var weeks = Math.ceil(cells.length / 7);
 
     var html = "";
     for (var w = 0; w < weeks; w++) {
@@ -269,39 +301,50 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
           html += "<div class=\"day pad\"></div>";
           continue;
         }
+        var inWindow = (iso >= now.iso && iso <= endIso);
         var dayNum = parseInt(iso.slice(8), 10);
+        var moNum = parseInt(iso.slice(5, 7), 10);
         var cls = "day";
+        if (!inWindow) cls += " out";
         if (iso === now.iso) cls += " is-today";
         if (iso >= LONTOO_START && iso <= LONTOO_END) cls += " is-lontoo";
-        var evs = eventsOn(iso);
-        var extras = dayExtras(iso);
-        var lines = [];
-        var seen = {};
-        function addEv(e) {
-          if (!e || e.kind === "koulu") return;
-          var key = (e.who || "") + "|" + (e.title || "") + "|" + (e.time || "");
-          if (seen[key]) return;
-          seen[key] = 1;
-          lines.push(e);
-        }
-        for (var ei = 0; ei < evs.length; ei++) addEv(evs[ei]);
-        for (var xi = 0; xi < extras.length; xi++) addEv(extras[xi]);
 
         var evHtml = "";
-        if (!lines.length) {
-          evHtml = "<div class=\"empty-day\"> </div>";
-        } else {
-          for (var li = 0; li < lines.length; li++) {
-            var e = lines[li];
-            var who = shortWho(e.who);
-            var tbit = e.time ? "<span class=\"t\">" + esc(fmtHm(e.time)) + "</span> " : "";
-            var label = who ? (who + " · " + (e.title || "")) : (e.title || "");
-            evHtml += "<div class=\"ev\"><span class=\"dot\" style=\"background:"
-              + colorWho(e.who) + "\"></span>" + tbit + esc(label) + "</div>";
+        if (inWindow) {
+          var evs = eventsOn(iso);
+          var extras = dayExtras(iso);
+          var lines = [];
+          var seen = {};
+          function addEv(e) {
+            if (!e || e.kind === "koulu") return;
+            var key = (e.who || "") + "|" + (e.title || "") + "|" + (e.time || "");
+            if (seen[key]) return;
+            seen[key] = 1;
+            lines.push(e);
+          }
+          for (var ei = 0; ei < evs.length; ei++) addEv(evs[ei]);
+          for (var xi = 0; xi < extras.length; xi++) addEv(extras[xi]);
+
+          if (!lines.length) {
+            evHtml = "<div class=\"empty-day\"> </div>";
+          } else {
+            for (var li = 0; li < lines.length; li++) {
+              var e = lines[li];
+              var who = shortWho(e.who);
+              var tbit = e.time ? "<span class=\"t\">" + esc(fmtHm(e.time)) + "</span> " : "";
+              var label = who ? (who + " · " + (e.title || "")) : (e.title || "");
+              evHtml += "<div class=\"ev\"><span class=\"dot\" style=\"background:"
+                + colorWho(e.who) + "\"></span>" + tbit + esc(label) + "</div>";
+            }
           }
         }
+
+        var moBit = "";
+        if (dayNum === 1 || iso === now.iso || iso === gridStart) {
+          moBit = "<span class=\"mo\">" + MONTHS[moNum - 1].slice(0, 3) + "</span>";
+        }
         html += "<div class=\"" + cls + "\"><div class=\"hd\"><span class=\"dn\">" + dayNum
-          + "</span></div><div class=\"evs\">" + evHtml + "</div></div>";
+          + moBit + "</span></div><div class=\"evs\">" + evHtml + "</div></div>";
       }
       html += "</div>";
     }

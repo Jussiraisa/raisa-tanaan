@@ -4,111 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="P260922-v114-kerma">
-  <meta name="theme-color" content="#F2E4CF">
+  <meta name="fiilis-build" content="20260922-v94-restore">
+  <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-
-:root {
-  /* Neutral until body theme class applies — do not lock day colors on :root */
-  --bg: #F2E4CF;
-  --bg-deep: #EBD9C0;
-  --card: #F7EFE3;
-  --card-soft: #F7EFE3;
-  --text: #272522;
-  --muted: #6F6860;
-  --accent: #B89A72;
-  --shadow: rgba(60,40,18,.08);
-  --nav-bg: #F2E4CF;
-  --nav-fg: #5a4a34;
-  --ev: #272522;
-  --ev-time: #3a3530;
-  --wd: #6F6860;
-  --empty: #8A7C6A;
-  --badge-bg: rgba(184,154,114,.28);
-  --badge-fg: #6a5230;
-  --hero-overlay: rgba(40,30,20,.18);
-  --row-line: rgba(44,36,24,.07);
-  --meta: #7a6a55;
-}
-html.day, body.day, html[data-theme="day"], body[data-theme="day"] {
-  --bg: #F2E4CF;
-  --bg-deep: #EBD9C0;
-  --card: #F7EFE3;
-  --card-soft: #F7EFE3;
-  --text: #272522;
-  --muted: #6F6860;
-  --accent: #B89A72;
-  --shadow: rgba(60,40,18,.08);
-  --nav-bg: #F2E4CF;
-  --nav-fg: #5a4a34;
-  --ev: #272522;
-  --ev-time: #3a3530;
-  --wd: #6F6860;
-  --empty: #8A7C6A;
-  --badge-bg: rgba(184,154,114,.28);
-  --badge-fg: #6a5230;
-  --hero-overlay: rgba(40,30,20,.18);
-  --row-line: rgba(44,36,24,.07);
-  --meta: #7a6a55;
-}
-html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening"] {
-  --bg: #F2E4CF;
-  --bg-deep: #EBD9C0;
-  --card: #F7EFE3;
-  --card-soft: #F7EFE3;
-  --text: #272522;
-  --muted: #6F6860;
-  --accent: #B89A72;
-  --shadow: rgba(60,40,18,.10);
-  --nav-bg: #F2E4CF;
-  --nav-fg: #5a4a34;
-  --ev: #272522;
-  --ev-time: #3a3530;
-  --wd: #6F6860;
-  --empty: #8A7C6A;
-  --badge-bg: rgba(184,154,114,.28);
-  --badge-fg: #6a5230;
-  --hero-overlay: rgba(40,30,20,.16);
-  --row-line: rgba(44,36,24,.07);
-  --meta: #7a6a55;
-}
-html.night, body.night, html[data-theme="night"], body[data-theme="night"] {
-  --bg: #E8D7BC;
-  --bg-deep: #DFC9A8;
-  --card: #F7EFE3;
-  --card-soft: #F7EFE3;
-  --text: #272522;
-  --muted: #6F6860;
-  --accent: #B89A72;
-  --shadow: rgba(60,40,18,.12);
-  --nav-bg: #E8D7BC;
-  --nav-fg: #5a4a34;
-  --ev: #272522;
-  --ev-time: #3a3530;
-  --wd: #6F6860;
-  --empty: #8A7C6A;
-  --badge-bg: rgba(184,154,114,.28);
-  --badge-fg: #6a5230;
-  --hero-overlay: rgba(40,30,20,.14);
-  --row-line: rgba(44,36,24,.07);
-  --meta: #7a6a55;
-}
-html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
+html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; color: #2c2418;
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
-.muted { color: var(--muted); }
-.accent { color: var(--accent); }
-.empty { color: var(--muted); font-weight: 500; }
+.muted { color: #6c5c44; }
+.accent { color: #8f6524; }
+.empty { color: #9a8b74; font-weight: 500; }
 
 .tv {
   height: 100%; width: 100%;
   padding: 2.2vmin 2.8vmin 8.2vmin;
   display: flex; flex-direction: column;
-  background: var(--bg);
+  background: #EFD6B0;
 }
 
 /* —— Header —— */
@@ -121,28 +35,26 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   font-family: Newsreader, Georgia, serif;
   font-size: 8.8vmin; line-height: .92; font-weight: 400;
   letter-spacing: -.04em; font-variant-numeric: tabular-nums;
-  color: var(--text); min-width: 22vmin;
+  color: #1a140e; min-width: 22vmin;
 }
 .greet-block { flex: 1; min-width: 0; margin-left: 2.4vmin; padding-bottom: .6vmin; }
 .greet {
   font-family: Newsreader, Georgia, serif;
-  font-size: 2.6vmin; line-height: 1.15; font-weight: 400;
-  color: var(--accent); letter-spacing: -.01em; opacity: .88;
+  font-size: 3.4vmin; line-height: 1.15; font-weight: 400;
+  color: #8f6524; letter-spacing: -.01em;
 }
 .next-line {
-  margin-top: .7vmin; font-size: 2.55vmin; line-height: 1.35;
-  font-weight: 650; color: var(--text); white-space: nowrap;
+  margin-top: .55vmin; font-size: 1.65vmin; line-height: 1.35;
+  font-weight: 550; color: #5c4e3a; white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis;
 }
 .next-line .badge {
-  display: inline-block; margin-right: .65vmin;
-  padding: .18vmin .7vmin; border-radius: .45vmin;
-  background: var(--badge-bg); color: var(--badge-fg);
-  font-size: 1.35vmin; font-weight: 750; letter-spacing: .05em; text-transform: uppercase;
-  vertical-align: .15em;
+  display: inline-block; margin-right: .5vmin;
+  padding: .12vmin .55vmin; border-radius: .4vmin;
+  background: rgba(201,148,58,.22); color: #7a5214;
+  font-size: 1.2vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
 }
-.next-line strong { font-weight: 750; letter-spacing: -.01em; }
-.date-soft { margin-top: .35vmin; font-size: 1.35vmin; color: var(--muted); font-weight: 500; }
+.date-soft { margin-top: .35vmin; font-size: 1.35vmin; color: #8a7a62; font-weight: 500; }
 .wx {
   flex: 0 0 auto; text-align: right; padding-bottom: .8vmin; max-width: 28vmin;
 }
@@ -150,9 +62,9 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .wx .ic { font-size: 3.2vmin; margin-right: .6vmin; }
 .wx .temp {
   font-size: 3.2vmin; font-weight: 650; letter-spacing: -.02em;
-  font-variant-numeric: tabular-nums; color: var(--text);
+  font-variant-numeric: tabular-nums; color: #2c2418;
 }
-.wx .meta { font-size: 1.25vmin; color: var(--muted); margin-top: .2vmin; }
+.wx .meta { font-size: 1.25vmin; color: #6c5c44; margin-top: .2vmin; }
 
 /* —— Main: hero photo + side —— */
 .main {
@@ -162,16 +74,12 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .hero {
   flex: 1.85 1 0; min-width: 0; min-height: 0;
   position: relative; border-radius: 1.8vmin; overflow: hidden;
-  background: var(--bg-deep);
-  box-shadow: 0 .6vmin 2.2vmin var(--shadow);
+  background: #e2c9a4;
+  box-shadow: 0 .6vmin 2.2vmin rgba(60,40,18,.1);
 }
-.hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: var(--hero-overlay);
-}
+.hero img { width: 100%; height: 100%; object-fit: cover; display: block; image-orientation: from-image; }
 .hero .cap {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  position: absolute; left: 0; right: 0; bottom: 0;
   padding: 5vmin 2.2vmin 1.8vmin;
   color: #f7f1e3;
   background: linear-gradient(to bottom, rgba(40,30,20,0), rgba(40,30,20,.82));
@@ -192,26 +100,26 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .side > * + * { margin-top: 1.4vmin; }
 
 .block {
-  background: var(--card);
+  background: rgba(255,246,228,.72);
   border-radius: 1.4vmin;
-  padding: 1.35vmin 1.65vmin 1.45vmin;
+  padding: 1.3vmin 1.6vmin 1.4vmin;
   min-height: 0;
 }
 .block.grow { flex: 2.4 1 auto; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
-.block.soft { flex: 0 0 auto; background: var(--card-soft); }
+.block.soft { flex: 0 0 auto; background: transparent; padding-left: .2vmin; padding-right: .2vmin; }
 .lbl {
-  font-size: 1.38vmin; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: .75vmin;
+  font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: #8f6524; margin-bottom: .7vmin;
 }
 
 /* Tänään list — crystal clear */
 .today-list { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
 .ev-row {
   display: flex; align-items: flex-start;
-  padding: .55vmin 0;
-  font-size: 2.0vmin; line-height: 1.4; font-weight: 500;
-  color: var(--ev);
-  border-bottom: 1px solid var(--row-line);
+  padding: .38vmin 0;
+  font-size: 1.7vmin; line-height: 1.28; font-weight: 500;
+  color: #2c2418;
+  border-bottom: 1px solid rgba(44,36,24,.06);
 }
 .ev-row:last-child { border-bottom: 0; }
 .ev-row.past { opacity: .4; }
@@ -223,21 +131,21 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   white-space: nowrap; overflow: hidden;
   line-height: 1.15; padding-top: .05vmin;
 }
-.ev-row .when .t0 { font-weight: 750; font-size: 2.0vmin; letter-spacing: -.02em; color: var(--ev-time); }
-.ev-row .when .t1 { font-weight: 550; font-size: 1.5vmin; color: var(--muted); letter-spacing: -.02em; }
-.ev-row .when .t1::before { content: "– "; color: var(--muted); }
-.ev-row .when.solo .t0 { font-size: 2.05vmin; }
-.ev-row.live .when .t0 { color: var(--accent); }
-.ev-row.live .when .t1 { color: var(--accent); }
-.ev-row.past .when .t0, .ev-row.past .when .t1 { color: var(--muted); }
+.ev-row .when .t0 { font-weight: 750; font-size: 1.7vmin; letter-spacing: -.02em; color: #2c2418; }
+.ev-row .when .t1 { font-weight: 550; font-size: 1.35vmin; color: #6c5c44; letter-spacing: -.02em; }
+.ev-row .when .t1::before { content: "– "; color: #b0a090; }
+.ev-row .when.solo .t0 { font-size: 1.75vmin; }
+.ev-row.live .when .t0 { color: #8f6524; }
+.ev-row.live .when .t1 { color: #a07838; }
+.ev-row.past .when .t0, .ev-row.past .when .t1 { color: #9a8b74; }
 .ev-row .dot {
   width: .85vmin; height: .85vmin; border-radius: 999px;
   margin: .65vmin .7vmin 0 0; flex: 0 0 auto;
 }
 .ev-row .txt { flex: 1; min-width: 0; }
 .ev-row .who { font-weight: 700; }
-.ev-row .meta { font-size: 1.45vmin; color: var(--meta); margin-top: .08vmin; font-weight: 500; }
-.today-empty { font-size: 1.9vmin; color: var(--muted); padding: .4vmin 0; font-style: italic;
+.ev-row .meta { font-size: 1.3vmin; color: #7a6a55; margin-top: .05vmin; font-weight: 500; }
+.today-empty { font-size: 1.7vmin; color: #9a8b74; padding: .4vmin 0; font-style: italic;
   font-family: Newsreader, Georgia, serif; }
 
 
@@ -253,7 +161,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   display: flex; align-items: flex-start;
   padding: .35vmin 0;
   font-size: 1.55vmin; line-height: 1.3; font-weight: 550;
-  color: var(--text);
+  color: #3a2e1c;
   border-bottom: 1px solid rgba(163,113,42,.12);
 }
 .wilma-row:last-child { border-bottom: 0; }
@@ -261,8 +169,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   flex: 0 0 auto;
   font-size: 1.05vmin; font-weight: 700; letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--badge-fg);
-  background: var(--badge-bg);
+  color: #7a5418;
+  background: rgba(201, 148, 58, .28);
   border-radius: 999px;
   padding: .18vmin .65vmin;
   margin-right: .7vmin;
@@ -270,7 +178,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 }
 .wilma-row .txt { flex: 1; min-width: 0; }
 .wilma-row .who { font-weight: 700; }
-.wilma-row .meta { font-size: 1.25vmin; color: var(--meta); margin-top: .08vmin; font-weight: 500; }
+.wilma-row .meta { font-size: 1.25vmin; color: #7a6a55; margin-top: .08vmin; font-weight: 500; }
 .wilma-row.soft-note { opacity: .92; font-weight: 500; }
 
 /* Odotukset hero */
@@ -280,17 +188,17 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .odot-hero .cd-big {
   font-family: Newsreader, Georgia, serif;
   font-size: 3.6vmin; line-height: 1; font-weight: 400;
-  color: var(--accent); letter-spacing: -.02em; margin-right: 1.2vmin;
+  color: #a3712a; letter-spacing: -.02em; margin-right: 1.2vmin;
 }
 .odot-hero .cd-label {
-  font-size: 1.7vmin; font-weight: 550; color: var(--muted);
+  font-size: 1.7vmin; font-weight: 550; color: #5c4e3a;
 }
 .odot-list { margin-top: .55vmin; }
 .odote {
   display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 1.65vmin; line-height: 1.4; padding: .28vmin 0; color: var(--text);
+  font-size: 1.45vmin; line-height: 1.35; padding: .22vmin 0; color: #2c2418;
 }
-.odote .d { font-weight: 650; color: var(--accent); flex: 0 0 auto; margin-left: .8vmin; }
+.odote .d { font-weight: 650; color: #8f6524; flex: 0 0 auto; margin-left: .8vmin; }
 
 /* Huomenna + Ruoka duo */
 .duo {
@@ -300,19 +208,15 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .duo > * + * { margin-left: 1.2vmin; }
 .duo .block { flex: 1; }
 .tmw-line, .meal-line {
-  font-size: 1.75vmin; line-height: 1.4; font-weight: 550;
-  color: var(--ev); padding: .42vmin 0;
-  border-bottom: 1px solid var(--row-line);
+  font-size: 1.55vmin; line-height: 1.35; font-weight: 550;
+  color: #2c2418; padding: .35vmin 0;
+  border-bottom: 1px solid rgba(44,36,24,.06);
 }
 .tmw-line:last-child, .meal-line:last-child { border-bottom: 0; }
 .tmw-line .who { font-weight: 700; margin-right: .45vmin; }
-.tmw-line .t { font-variant-numeric: tabular-nums; font-weight: 650; color: var(--muted); margin-right: .45vmin; }
-.tmw-line .meta { color: var(--meta); font-weight: 500; font-size: 1.45vmin; }
-.tmw-line.school { font-weight: 650; }
-.tmw-line.school .t { font-weight: 800; color: var(--text); }
-.tmw-line.school .who { font-weight: 800; }
-
-.meal-line .d { font-weight: 700; color: var(--accent); margin-right: .55vmin; }
+.tmw-line .t { font-variant-numeric: tabular-nums; font-weight: 650; color: #6c5c44; margin-right: .45vmin; }
+.tmw-line .meta { color: #7a6a55; font-weight: 500; font-size: 1.35vmin; }
+.meal-line .d { font-weight: 700; color: #8f6524; margin-right: .55vmin; }
 
 /* Family pills + tagline */
 .foot-soft {
@@ -324,54 +228,46 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .chips > * + * { margin-left: .5vmin; }
 .chip {
   font-size: 1.15vmin; font-weight: 600; padding: .4vmin .85vmin;
-  border-radius: 999px; color: var(--text); opacity: .9;
+  border-radius: 999px; color: #2c2418; opacity: .9;
 }
 .tagline {
   font-family: Newsreader, Georgia, serif;
-  font-size: 1.35vmin; font-style: italic; color: var(--muted);
+  font-size: 1.35vmin; font-style: italic; color: #8a7a62;
 }
 .brand {
-  font-size: .9vmin; font-weight: 650; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--muted); margin-left: 1.2vmin; opacity: .72;
+  font-size: .95vmin; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: #9a8b74; margin-left: 1.2vmin;
 }
 
 /* Bottom nav — Tesla-like, TV-friendly */
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.10);
+  background: #EFD6B0; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
   backdrop-filter: blur(8px);
 }
 .nav a {
   color: inherit; text-decoration: none; text-align: center;
-  font-size: 1.3vmin; font-weight: 550; min-width: 12vmin;
-  padding: .55vmin 1.2vmin; opacity: .45;
+  font-size: 1.35vmin; font-weight: 600; min-width: 12vmin;
+  padding: .6vmin 1.2vmin; opacity: .68;
   border-radius: .6vmin;
-  transition: opacity .2s ease;
 }
-.nav a .ic { display: block; font-size: 2.3vmin; line-height: 1.15; margin-bottom: .15vmin; }
-.nav a.on { opacity: 1; color: var(--text); background: transparent;
-  box-shadow: inset 0 -.22vmin 0 var(--accent); }
+.nav a .ic { display: block; font-size: 2.4vmin; line-height: 1.15; margin-bottom: .15vmin; }
+.nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
+  box-shadow: inset 0 -.28vmin 0 #c9943a; }
 
-body.day .tv, body.evening .tv, body.night .tv { background: var(--bg); }
-body.evening .clock, body.night .clock { color: var(--text); }
-body.evening .greet, body.night .greet { color: var(--accent); }
-body.evening .block, body.night .block { background: var(--card); }
-body.evening .block.soft, body.night .block.soft { background: var(--card-soft); }
-body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow); }
-body.evening .ev-row, body.night .ev-row,
-body.evening .tmw-line, body.night .tmw-line,
-body.evening .meal-line, body.night .meal-line,
-body.evening .odote, body.night .odote { color: var(--ev); }
-body.evening .nav a.on, body.night .nav a.on { color: var(--text); }
+body.evening, body.evening .tv { background: #E8CFA0; }
+body.evening .clock { color: #120c06; }
+body.evening .greet { color: #7d5619; }
+body.evening .block { background: rgba(255,247,230,.5); }
+body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 @media (max-width: 900px) {
   .tv { padding-bottom: 5.2rem; }
   .nav { height: calc(3.8rem + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); }
   .nav a { font-size: .75rem; min-width: 4.5rem; }
   .nav a .ic { font-size: 1.25rem; }
-  .nav-tsla { font-size: .7rem; }
   .main { flex-direction: column; }
   .hero { flex: 0 0 42%; margin-bottom: 1vmin; }
   .side { margin-left: 0; }
@@ -396,28 +292,25 @@ body.evening .nav a.on, body.night .nav a.on { color: var(--text); }
 .action-bar {
   flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
   gap: 1vmin; max-height: 5.2vmin; overflow: hidden;
-  padding: .3vmin .7vmin; border-radius: 1vmin;
-  background: transparent; border: 1px solid transparent; opacity: .85;
+  padding: .35vmin .8vmin; border-radius: 1vmin;
+  background: rgba(201,148,58,.12); border: 1px solid rgba(163,113,42,.22);
 }
-.action-bar.has-items { background: rgba(184,154,114,.12); border-color: rgba(184,154,114,.22); opacity: 1; }
-body.evening .action-bar.has-items, body.night .action-bar.has-items {
-  background: rgba(199,167,125,.14); border-color: rgba(199,167,125,.28);
-}
+.action-bar.has-items { background: rgba(201,148,58,.18); border-color: rgba(163,113,42,.35); }
 .action-lbl {
   flex: 0 0 auto; font-size: 1.15vmin; font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; color: var(--accent); white-space: nowrap;
+  text-transform: uppercase; color: #8f6524; white-space: nowrap;
 }
 .action-list {
   flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
   gap: .7vmin; overflow: hidden; flex-wrap: nowrap;
 }
-.action-empty { font-size: 1.4vmin; color: var(--muted); font-weight: 500; }
+.action-empty { font-size: 1.4vmin; color: #9a8b74; font-weight: 500; }
 .action-pill {
   flex: 0 1 auto; max-width: 42vmin;
   display: inline-flex; align-items: center; gap: .45vmin;
   padding: .35vmin .75vmin; border-radius: 999px;
-  background: var(--card); border: 1px solid rgba(143,101,36,.28);
-  font-size: 1.45vmin; font-weight: 650; color: var(--text);
+  background: #FFF3DC; border: 1px solid rgba(143,101,36,.28);
+  font-size: 1.45vmin; font-weight: 650; color: #2c2418;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .action-pill .src {
@@ -437,20 +330,9 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
 .today-list.d10 .ev-row .when .t0 { font-size: 1.3vmin; }
 .today-list.d10 .ev-row .when .t1 { font-size: 1.05vmin; }
 .today-list .ev-row { min-height: 3.6vmin; align-items: flex-start; }
-
-.nav-tsla {
-  font-size: 1.2vmin; font-weight: 650; opacity: .88;
-  font-variant-numeric: tabular-nums; white-space: nowrap;
-  letter-spacing: .01em; line-height: 1.2; text-align: center;
-  min-width: 0; padding: .4vmin .6vmin; pointer-events: none;
-}
-.nav-tsla .up { color: #2f6b3a; }
-.nav-tsla .dn { color: #9a3d2e; }
-.nav-tsla .flat { color: inherit; opacity: .75; }
-
 </style>
 </head>
-<body class="day">
+<body class="morning">
 <div class="tv" id="app">
   <div class="head">
     <div class="clock" id="clock">––.––</div>
@@ -504,7 +386,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">20260922-v114-kerma</span>
+      <span class="brand">v94 restore</span>
     </div>
   </div>
 </div>
@@ -513,13 +395,11 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
   <a class="on" href="tvr-vaaka.html"><span class="ic">◎</span>Tänään</a>
   <a href="tvr-vaaka-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
   <a href="tvr-vaaka-muistot.html"><span class="ic">♡</span>Muistot</a>
-  <span class="nav-tsla" id="navTsla" title="TSLA"></span>
 </nav>
 
 <script>
 (function () {
-  var BUILD = "20260922-v114-kerma";
-  ;
+  var BUILD = "20260922-v94-restore";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -929,26 +809,11 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     return "Hyvää yötä";
   }
   function themeClass(hour) {
-    if (hour >= 7 && hour < 17) return "day";
-    if (hour >= 17 && hour < 22) return "evening";
-    return "night";
+    if (hour >= 5 && hour < 11) return "morning";
+    if (hour >= 11 && hour < 17) return "afternoon";
+    return "evening";
   }
-  function applyTheme(hour) {
-    var th = themeClass(hour);
-    document.documentElement.setAttribute("data-theme", th);
-    document.documentElement.className = th;
-    document.body.className = th;
-    document.body.setAttribute("data-theme", th);
-    var bg = th === "night" ? "#E8D7BC" : (th === "evening" ? "#F2E4CF" : "#F2E4CF");
-    var fg = "#272522";
-    document.documentElement.style.background = bg;
-    document.body.style.background = bg;
-    document.body.style.color = fg;
-    var tv = document.getElementById("app") || document.querySelector(".tv");
-    if (tv) { tv.style.background = bg; tv.style.color = fg; }
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", bg);
-  }
+  function applyTheme(hour) { document.body.className = themeClass(hour); }
   function parseMin(hm) {
     if (!hm) return null;
     var p = String(hm).split(":");
@@ -1082,29 +947,6 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     return cand;
   }
 
-
-  function schoolStartsForWd(wd) {
-    var list = (schedule && schedule.schoolStarts) || (FALLBACK && FALLBACK.schoolStarts) || [];
-    var out = [];
-    for (var i = 0; i < list.length; i++) {
-      var s = list[i];
-      if (!s) continue;
-      var wds = s.weekdays || [];
-      var ok = false;
-      for (var j = 0; j < wds.length; j++) {
-        if (wds[j] === wd) { ok = true; break; }
-      }
-      if (ok) out.push(s);
-    }
-    out.sort(function (a, b) {
-      var ta = parseMin(a.time); if (ta == null) ta = 9800;
-      var tb = parseMin(b.time); if (tb == null) tb = 9800;
-      if (ta !== tb) return ta - tb;
-      return String(a.who || "").localeCompare(String(b.who || ""));
-    });
-    return out;
-  }
-
   function dayEventsClean(iso) {
     var list = eventsOn(iso) || [];
     var out = [];
@@ -1132,14 +974,12 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     var out = dayEventsClean(now.iso);
     var nowMin = now.minutes;
     var live = null, next = null, nextDiff = 99999;
-    var soon = [];
     for (var i = 0; i < out.length; i++) {
       var e = out[i];
       var st = parseMin(e.time);
       if (st == null) continue;
       var en = parseMin(e.end); if (en == null) en = st + 60;
-      if (st <= nowMin && nowMin < en) { live = e; }
-      if (st > nowMin && st - nowMin <= 120) soon.push(e);
+      if (st <= nowMin && nowMin < en) { live = e; break; }
       if (st > nowMin && st - nowMin < nextDiff) { nextDiff = st - nowMin; next = e; }
     }
     function brief(e, badge) {
@@ -1154,37 +994,20 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
       return s;
     }
     if (live) el.innerHTML = brief(live, "Nyt");
-    else if (!live && soon.length >= 3) {
-      el.innerHTML = "<span class=\"badge\">Nyt</span><strong>Nyt tärkeintä:</strong> "
-        + soon.length + " tapahtumaa seuraavan 2 h aikana";
-    } else if (next) el.innerHTML = brief(next, "Seuraavaksi");
+    else if (next) el.innerHTML = brief(next, "Seuraavaksi");
     else el.innerHTML = "<span class=\"muted\">Rauhallinen päivä</span>";
   }
 
   function paintTodayList(now) {
     var el = document.getElementById("todayList");
     if (!el) return;
-    var all = dayEventsClean(now.iso);
-    if (!all.length) {
+    var out = dayEventsClean(now.iso);
+    if (!out.length) {
       el.className = "today-list";
       el.innerHTML = "<div class=\"today-empty\">Rauhaa · ei merkintöjä tänään</div>";
       return;
     }
     var nowMin = now.minutes;
-    var live = [], upcoming = [], past = [];
-    for (var i = 0; i < all.length; i++) {
-      var e0 = all[i];
-      var st0 = parseMin(e0.time);
-      var en0 = parseMin(e0.end); if (en0 == null && st0 != null) en0 = st0 + 60;
-      if (st0 != null && en0 != null && nowMin >= en0) past.push(e0);
-      else if (st0 != null && st0 <= nowMin && nowMin < en0) live.push(e0);
-      else upcoming.push(e0);
-    }
-    var out = live.concat(upcoming);
-    if (out.length < 5) {
-      for (var p = past.length - 1; p >= 0 && out.length < 5; p--) out.unshift(past[p]);
-    }
-    out = out.slice(0, 5);
     var html = "";
     for (var i = 0; i < out.length; i++) {
       var e = out[i];
@@ -1209,7 +1032,12 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
         + (meta.length ? "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>" : "")
         + "</div></div>";
     }
-    el.className = "today-list";
+    var dens = "";
+    if (out.length >= 12) dens = " d12";
+    else if (out.length >= 10) dens = " d10";
+    else if (out.length >= 8) dens = " d8";
+    else if (out.length >= 6) dens = " d6";
+    el.className = "today-list" + dens;
     el.innerHTML = html;
   }
 
@@ -1345,7 +1173,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     }
     items.sort(function (a, b) { return a.days - b.days; });
     var html = "";
-    var max = Math.min(items.length, 4);
+    var max = Math.min(items.length, 3);
     for (var j = 0; j < max; j++) {
       var it = items[j];
       var rem = it.days === 0 ? "nyt" : (it.days === 1 ? "huom" : it.days + " pv");
@@ -1356,22 +1184,42 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     listEl.innerHTML = html;
   }
 
+
+  function schoolStartsForWd(wd) {
+    var list = (schedule && schedule.schoolStarts) || (FALLBACK && FALLBACK.schoolStarts) || [];
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      if (!s) continue;
+      var days = s.weekdays || s.days || [];
+      if (days.indexOf(wd) >= 0) out.push(s);
+    }
+    out.sort(function (a, b) {
+      var ta = parseMin(a.time); if (ta == null) ta = 9999;
+      var tb = parseMin(b.time); if (tb == null) tb = 9999;
+      if (ta !== tb) return ta - tb;
+      return String(a.who || "").localeCompare(String(b.who || ""));
+    });
+    return out;
+  }
+
   function paintTomorrow(now) {
     var el = document.getElementById("tomorrowBox");
     if (!el) return;
-    /* School today-vs-tomorrow switches at 16:00 Helsinki (theme still flips at 18). */
+    /* Same-day school until 16:00 Helsinki; from 16:00 show tomorrow's school. */
     var showTomorrowSchool = (now.hour >= 16);
-    var schoolIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : now.iso;
     var schoolWd = showTomorrowSchool ? ((now.wd + 1) % 7) : now.wd;
     var schools = schoolStartsForWd(schoolWd);
     var hobbyIso = addDaysIso(now.iso, 1);
     var out = dayEventsClean(hobbyIso);
-    var lbl = document.querySelector("#huomenna .lbl");
-    if (lbl) {
-      if (schools.length) {
-        lbl.textContent = showTomorrowSchool ? "Huomenna · koulu" : "Tänään · koulu";
-      } else {
-        lbl.textContent = "Huomenna";
+    var lbl = document.querySelector("#huomenna .lbl") || document.querySelector(".duo .lbl");
+    /* Prefer the Huomenna label next to tomorrowBox */
+    var duo = el.parentElement;
+    if (duo) {
+      var lb = duo.querySelector(".lbl");
+      if (lb) {
+        if (schools.length) lb.textContent = showTomorrowSchool ? "Huomenna · koulu" : "Tänään · koulu";
+        else lb.textContent = "Huomenna";
       }
     }
     if (!schools.length && !out.length) {
@@ -1379,16 +1227,15 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
       return;
     }
     var html = "";
-    var shown = 0;
-    /* School: always one row per child (no compact merge). Hobbies fill remaining slots. */
+    var i;
     var MAX_SCHOOL = 4;
     var MAX_HOBBY = 2;
-    var i;
+    var shown = 0;
     if (schools.length) {
       for (i = 0; i < schools.length && shown < MAX_SCHOOL; i++) {
         var s = schools[i];
         var whoS = shortWho(s.who || "");
-        var timeS = fmtRange(s.time, s.end) || fmtHm(s.time) || "";
+        var timeS = fmtRange(s.time, s.end) || "";
         var labelS = s.label || "Koulu";
         html += "<div class=\"tmw-line school\">"
           + (whoS ? "<span class=\"who\">" + esc(whoS) + "</span>" : "")
@@ -1397,8 +1244,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
         shown++;
       }
     }
-    var maxEv = Math.min(out.length, MAX_HOBBY);
-    for (i = 0; i < maxEv; i++) {
+    for (i = 0; i < out.length && i < MAX_HOBBY; i++) {
       var e = out[i];
       var who = shortWho(e.who || "");
       var time = fmtRange(e.time, e.end) || "";
@@ -1421,7 +1267,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     var map = (schedule && schedule.homeMeals) || {};
     var html = "";
     var shown = 0;
-    for (var n = 0; n < 4 && shown < 2; n++) {
+    for (var n = 0; n < 4 && shown < 3; n++) {
       var iso = addDaysIso(now.iso, n);
       var dish = map[iso];
       if (!dish && n > 0) continue;
@@ -1571,72 +1417,5 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
   setInterval(loadWeather, 30 * 60 * 1000);
 })();
 </script>
-
-
-
-<script>
-(function () {
-  function paintTsla(d) {
-    var el = document.getElementById("navTsla");
-    if (!el || !d || d.price == null) return;
-    var p = Number(d.price);
-    var pct = Number(d.changePct);
-    if (isNaN(p)) return;
-    var priceStr = p.toFixed(2);
-    var cls = "flat";
-    var pctStr = "0.0%";
-    if (!isNaN(pct)) {
-      if (pct > 0.005) cls = "up";
-      else if (pct < -0.005) cls = "dn";
-      var sign = pct > 0 ? "+" : "";
-      pctStr = sign + pct.toFixed(1) + "%";
-    }
-    el.innerHTML = priceStr + " <span class=\"" + cls + "\">" + pctStr + "</span>";
-  }
-  function fromYahoo(raw) {
-    try {
-      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
-      var meta = j && j.chart && j.chart.result && j.chart.result[0] && j.chart.result[0].meta;
-      if (!meta) return null;
-      var price = Number(meta.regularMarketPrice);
-      var pct = Number(meta.regularMarketChangePercent);
-      if (pct == null || isNaN(pct)) pct = Number(meta.fulldayChangePercent);
-      if (isNaN(price)) return null;
-      return { price: price, changePct: pct };
-    } catch (e) { return null; }
-  }
-  function xhrGet(url, cb) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.timeout = 8000;
-    xhr.onload = function () {
-      if (xhr.status >= 200 && xhr.status < 300) cb(null, xhr.responseText);
-      else cb("status");
-    };
-    xhr.onerror = function () { cb("net"); };
-    xhr.ontimeout = function () { cb("timeout"); };
-    xhr.send();
-  }
-  function loadLive() {
-    var v = Math.floor(Date.now() / 60000);
-    // 1) same-origin cache first — shows immediately on phone
-    xhrGet("tsla.json?v=" + v, function (err0, text0) {
-      if (!err0 && text0) {
-        try { paintTsla(JSON.parse(text0)); } catch (e) {}
-      }
-      // 2) then try live Yahoo via proxy (non-blocking upgrade)
-      var yahooUrl = "https://api.allorigins.win/raw?url=" +
-        encodeURIComponent("https://query1.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=5d");
-      xhrGet(yahooUrl, function (err, text) {
-        var d = (!err && text) ? fromYahoo(text) : null;
-        if (d) paintTsla(d);
-      });
-    });
-  }
-  loadLive();
-  setInterval(loadLive, 60000);
-})();
-</script>
-
 </body>
 </html>

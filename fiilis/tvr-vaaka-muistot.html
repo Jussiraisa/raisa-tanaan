@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v94">
+  <meta name="fiilis-build" content="20260922-v95">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Muistot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,6 +70,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
   .nav { height: calc(3.8rem + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); }
   .nav a { font-size: .75rem; min-width: 4.5rem; }
   .nav a .ic { font-size: 1.25rem; }
+  .nav-tsla { font-size: .7rem; }
 }
   
 .chips {
@@ -96,7 +97,18 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
   .chip { font-size: .7rem; padding: .35rem .7rem; }
 }
 
-  </style>
+  
+.nav-tsla {
+  font-size: 1.2vmin; font-weight: 650; opacity: .88;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  letter-spacing: .01em; line-height: 1.2; text-align: center;
+  min-width: 0; padding: .4vmin .6vmin; pointer-events: none;
+}
+.nav-tsla .up { color: #2f6b3a; }
+.nav-tsla .dn { color: #9a3d2e; }
+.nav-tsla .flat { color: inherit; opacity: .75; }
+
+</style>
 </head>
 <body>
 <div class="stage" id="stage">
@@ -115,10 +127,11 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
   <a href="tvr-vaaka.html"><span class="ic">◎</span>Tänään</a>
   <a href="tvr-vaaka-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
   <a class="on" href="tvr-vaaka-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <span class="nav-tsla" id="navTsla" title="TSLA"></span>
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v94";
+  var BUILD = "20260922-v95";
   var LS_KEY = "fiilisMemAlbum";
   var PHOTO_DENY = {
     "matka-2018-lontoo-00-002.jpg": 1,
@@ -284,5 +297,98 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
   show();
 })();
 </script>
+
+
+<script>
+(function () {
+  function parseMoney(s) {
+    if (s == null) return NaN;
+    return parseFloat(String(s).replace(/[^0-9.\-]/g, ""));
+  }
+  function parsePct(s) {
+    if (s == null) return NaN;
+    return parseFloat(String(s).replace(/[^0-9.\-+]/g, ""));
+  }
+  function paintTsla(d) {
+    var el = document.getElementById("navTsla");
+    if (!el || !d || d.price == null) return;
+    var p = Number(d.price);
+    var pct = Number(d.changePct);
+    if (isNaN(p)) return;
+    var priceStr = p.toFixed(2);
+    var cls = "flat";
+    var pctStr = "0.0%";
+    if (!isNaN(pct)) {
+      if (pct > 0.005) cls = "up";
+      else if (pct < -0.005) cls = "dn";
+      var sign = pct > 0 ? "+" : "";
+      pctStr = sign + pct.toFixed(1) + "%";
+    }
+    el.innerHTML = priceStr + " <span class=\"" + cls + "\">" + pctStr + "</span>";
+  }
+  function fromNasdaq(raw) {
+    try {
+      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
+      var p = j && j.data && j.data.primaryData;
+      if (!p) return null;
+      var price = parseMoney(p.lastSalePrice);
+      var chg = parseMoney(p.netChange);
+      var pct = parsePct(p.percentageChange);
+      if (String(p.netChange || "").indexOf("-") >= 0 || p.deltaIndicator === "down") {
+        if (chg > 0) chg = -chg;
+        if (pct > 0) pct = -pct;
+      }
+      if (isNaN(price)) return null;
+      return { price: price, change: chg, changePct: pct };
+    } catch (e) { return null; }
+  }
+  function fromYahoo(raw) {
+    try {
+      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
+      var meta = j && j.chart && j.chart.result && j.chart.result[0] && j.chart.result[0].meta;
+      if (!meta) return null;
+      var price = Number(meta.regularMarketPrice);
+      var pct = Number(meta.regularMarketChangePercent);
+      if (pct == null || isNaN(pct)) pct = Number(meta.fulldayChangePercent);
+      if (isNaN(price)) return null;
+      return { price: price, changePct: pct };
+    } catch (e) { return null; }
+  }
+  function xhrGet(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.timeout = 12000;
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) cb(null, xhr.responseText);
+      else cb("status");
+    };
+    xhr.onerror = function () { cb("net"); };
+    xhr.ontimeout = function () { cb("timeout"); };
+    xhr.send();
+  }
+  function loadLive() {
+    var nasdaqUrl = "https://api.allorigins.win/raw?url=" +
+      encodeURIComponent("https://api.nasdaq.com/api/quote/TSLA/info?assetclass=stocks");
+    xhrGet(nasdaqUrl, function (err, text) {
+      var d = (!err && text) ? fromNasdaq(text) : null;
+      if (d) { paintTsla(d); return; }
+      var yahooUrl = "https://api.allorigins.win/raw?url=" +
+        encodeURIComponent("https://query1.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=5d");
+      xhrGet(yahooUrl, function (err2, text2) {
+        var d2 = (!err2 && text2) ? fromYahoo(text2) : null;
+        if (d2) { paintTsla(d2); return; }
+        var v = Math.floor(Date.now() / 60000);
+        xhrGet("tsla.json?v=" + v, function (err3, text3) {
+          if (err3 || !text3) return;
+          try { paintTsla(JSON.parse(text3)); } catch (e) {}
+        });
+      });
+    });
+  }
+  loadLive();
+  setInterval(loadLive, 60000);
+})();
+</script>
+
 </body>
 </html>

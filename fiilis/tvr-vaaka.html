@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v81">
+  <meta name="fiilis-build" content="20260922-v83">
   <meta name="theme-color" content="#F7F1E3">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,6 +278,41 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .side { overflow: hidden; }
 .block.grow { overflow: hidden; }
 .tv, .main, .hero { overflow: hidden; }
+
+.chips { display: none !important; }
+.action-bar {
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
+  gap: 1vmin; max-height: 5.2vmin; overflow: hidden;
+  padding: .35vmin .8vmin; border-radius: 1vmin;
+  background: rgba(201,148,58,.12); border: 1px solid rgba(163,113,42,.22);
+}
+.action-bar.has-items { background: rgba(201,148,58,.18); border-color: rgba(163,113,42,.35); }
+.action-lbl {
+  flex: 0 0 auto; font-size: 1.15vmin; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: #8f6524; white-space: nowrap;
+}
+.action-list {
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
+  gap: .7vmin; overflow: hidden; flex-wrap: nowrap;
+}
+.action-empty { font-size: 1.4vmin; color: #9a8b74; font-weight: 500; }
+.action-pill {
+  flex: 0 1 auto; max-width: 42vmin;
+  display: inline-flex; align-items: center; gap: .45vmin;
+  padding: .35vmin .75vmin; border-radius: 999px;
+  background: #fffdf8; border: 1px solid rgba(143,101,36,.28);
+  font-size: 1.45vmin; font-weight: 650; color: #2c2418;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.action-pill .src {
+  font-size: 1.05vmin; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; color: #fff8ea;
+  background: #8f6524; border-radius: .35vmin; padding: .08vmin .4vmin;
+}
+.action-pill.wa .src { background: #3d7a4a; }
+.action-pill.abs .src { background: #6c5c44; }
+.block.wilma { display: none !important; }
+
 </style>
 </head>
 <body class="morning">
@@ -299,12 +334,6 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     </div>
 
     <div class="side">
-      <!-- wilmaAlerts: Perhe/aamu-sync should fill schedule.wilmaAlerts [{title,who,due,needAction,note}]; missing key → [] -->
-      <div class="block wilma" id="wilmaBlock">
-        <div class="lbl">Huomio · Wilma</div>
-        <div id="wilmaList"></div>
-      </div>
-
       <div class="block grow">
         <div class="lbl">Tänään</div>
         <div class="today-list" id="todayList"><div class="today-empty">Rauhaa · ei merkintöjä</div></div>
@@ -333,10 +362,14 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   </div>
 
   <div class="foot-soft">
-    <div class="chips" id="chips"></div>
+    <!-- actionAlerts: schedule.wilmaAlerts + schedule.whatsappAlerts (needAction) -->
+    <div class="action-bar" id="actionBar">
+      <div class="action-lbl">Huomiot</div>
+      <div class="action-list" id="actionList"><span class="action-empty">Ei avoimia Wilma-/WhatsApp-asioita</span></div>
+    </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v81 vaaka</span>
+      <span class="brand">v83 vaaka</span>
     </div>
   </div>
 </div>
@@ -349,7 +382,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v81";
+  var BUILD = "20260922-v83";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -524,6 +557,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     ],
     /* Perhe/aamu-sync fills wilmaAlerts; treat missing as [] */
     wilmaAlerts: [],
+    whatsappAlerts: [],
     anniversaries: [
       { who: "Riikka", date: "1986-10-12", kind: "birthday" },
       { who: "perhe", date: "2010-10-02", kind: "wedding", label: "Hääpäivä" },
@@ -839,62 +873,71 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   }
 
   function paintWilmaAlerts(now) {
-    var block = document.getElementById("wilmaBlock");
-    var listEl = document.getElementById("wilmaList");
-    if (!block || !listEl) return;
+    var bar = document.getElementById("actionBar");
+    var listEl = document.getElementById("actionList");
+    if (!listEl) return;
     var items = [];
     var alerts = (schedule && schedule.wilmaAlerts) ? schedule.wilmaAlerts : [];
-    if (!alerts || !alerts.length) alerts = [];
     for (var i = 0; i < alerts.length; i++) {
       var a = alerts[i];
       if (!a) continue;
       if (a.needAction === false) continue;
-      var title = a.title || "Wilma-ilmoitus";
-      var who = a.who || "";
-      var meta = [];
-      if (a.due) meta.push("dl " + a.due);
-      if (a.note) meta.push(a.note);
       items.push({
-        kind: "wilma",
-        who: who,
-        title: title,
-        meta: meta.join(" · ")
+        src: "Wilma",
+        cls: "",
+        who: a.who || "",
+        title: a.title || a.note || "Wilma-viesti",
+        due: a.due || ""
+      });
+    }
+    var wa = (schedule && schedule.whatsappAlerts) ? schedule.whatsappAlerts : [];
+    for (var w = 0; w < wa.length; w++) {
+      var x = wa[w];
+      if (!x) continue;
+      if (x.needAction === false) continue;
+      items.push({
+        src: "WhatsApp",
+        cls: "wa",
+        who: x.who || x.group || "",
+        title: x.title || x.note || "Viesti",
+        due: x.due || ""
       });
     }
     var abs = (schedule && schedule.absences) ? schedule.absences : [];
     for (var j = 0; j < abs.length; j++) {
       var ab = abs[j];
       if (!ab || !ab.from || !ab.to) continue;
-      if (now.iso < ab.from || now.iso > ab.to) continue;
-      var where = ab.where ? (" · " + ab.where) : "";
-      var note = ab.note ? ab.note : (ab.who + " poissa" + where);
-      items.push({
-        kind: "absence",
-        who: ab.who || "",
-        title: note,
-        meta: ab.from === ab.to ? ab.from : (ab.from + "–" + ab.to)
-      });
+      if (ab.from <= now.iso && now.iso <= ab.to) {
+        items.push({
+          src: "Poissa",
+          cls: "abs",
+          who: ab.who || "",
+          title: (ab.where || "poissa") + (ab.note ? " · " + ab.note : ""),
+          due: ""
+        });
+      }
     }
     if (!items.length) {
-      block.className = "block wilma";
-      listEl.innerHTML = "";
+      if (bar) bar.className = "action-bar";
+      listEl.innerHTML = "<span class=\"action-empty\">Ei avoimia Wilma-/WhatsApp-asioita</span>";
       return;
     }
-    block.className = "block wilma show";
+    if (bar) bar.className = "action-bar has-items";
     var html = "";
-    for (var k = 0; k < items.length; k++) {
+    var max = Math.min(items.length, 4);
+    for (var k = 0; k < max; k++) {
       var it = items[k];
-      var chip = it.kind === "absence" ? "Poissa" : "Wilma";
-      var rowCls = it.kind === "absence" ? "wilma-row soft-note" : "wilma-row";
-      var whoBit = it.who ? ("<span class=\"who\">" + esc(it.who) + "</span> · ") : "";
-      html += "<div class=\"" + rowCls + "\">"
-        + "<span class=\"chip-att\">" + chip + "</span>"
-        + "<div class=\"txt\">" + whoBit + esc(it.title)
-        + (it.meta ? "<div class=\"meta\">" + esc(it.meta) + "</div>" : "")
-        + "</div></div>";
+      var label = (it.who ? it.who + " · " : "") + it.title;
+      if (it.due) label += " · " + it.due;
+      html += "<div class=\"action-pill " + it.cls + "\"><span class=\"src\">" + esc(it.src)
+        + "</span>" + esc(label) + "</div>";
+    }
+    if (items.length > max) {
+      html += "<div class=\"action-pill\"><span class=\"src\">+</span>" + (items.length - max) + " muuta</div>";
     }
     listEl.innerHTML = html;
   }
+
 
   function paintOdotukset(now) {
     var el = document.getElementById("countdown");
@@ -1044,16 +1087,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     if (cap) cap.innerHTML = "<div class=\"wh\">Muistatko…</div>" + esc(line);
   }
 
-  function paintChips() {
-    var el = document.getElementById("chips");
-    if (!el) return;
-    var html = "";
-    for (var i = 0; i < FAMILY.length; i++) {
-      var f = FAMILY[i];
-      html += "<span class=\"chip\" style=\"background:" + f.color + "\">" + esc(f.name) + "</span>";
-    }
-    el.innerHTML = html;
-  }
+  function paintChips() { /* removed — foot shows action alerts */ }
 
   function paint() {
     var now = helsinkiNow();

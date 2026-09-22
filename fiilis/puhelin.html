@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="fiilis-build" content="20260922-tesla-v2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Fiilis · Puhelin</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    min-height: 100%; min-height: 100dvh;
+    background: #F3EBDD;
+    color: #2a241c;
+    font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    padding: max(0.75rem, env(safe-area-inset-top)) max(0.9rem, env(safe-area-inset-right))
+             calc(4.6rem + env(safe-area-inset-bottom)) max(0.9rem, env(safe-area-inset-left));
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+  .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+  .card {
+    background: #fffaf3;
+    border: 1px solid rgba(90,70,40,.1);
+    border-radius: 1.1rem;
+    box-shadow: 0 0.35rem 1rem rgba(60,40,20,.06);
+    padding: 0.95rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hdr {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 0.85rem; gap: 0.6rem;
+  }
+  .greet { font-size: 1.85rem; font-weight: 700; line-height: 1.1; color: #1f1a14; }
+  .date { margin-top: 0.2rem; font-size: 0.92rem; color: #6a5c4a; font-weight: 500; }
+  .wxchip {
+    flex: 0 0 auto;
+    background: #fffaf3;
+    border: 1px solid rgba(90,70,40,.12);
+    border-radius: 1rem;
+    padding: 0.45rem 0.7rem;
+    text-align: center;
+    min-width: 4.4rem;
+  }
+  .wxchip .ico { font-size: 1.25rem; line-height: 1; }
+  .wxchip .t { font-size: 1.15rem; font-weight: 700; }
+  .wxchip .p { font-size: 0.68rem; color: #6a5c4a; margin-top: 0.1rem; }
+
+  .people {
+    display: flex; justify-content: space-between; gap: 0.25rem;
+    margin-bottom: 0.85rem; overflow-x: auto; padding-bottom: 0.15rem;
+  }
+  .person {
+    flex: 1 1 0; min-width: 2.8rem; text-align: center;
+  }
+  .person .av {
+    width: 2.55rem; height: 2.55rem; border-radius: 50%; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 0.95rem; position: relative;
+  }
+  .person .av .sd {
+    position: absolute; right: -1px; bottom: -1px;
+    width: 0.62rem; height: 0.62rem; border-radius: 50%;
+    border: 2px solid #F3EBDD; background: #a09080;
+  }
+  .person .av .sd.on { background: #3a9a5a; }
+  .person .nm { font-size: 0.68rem; font-weight: 600; margin-top: 0.28rem; color: #3a3228; }
+
+  .mem { padding: 0; overflow: hidden; position: relative; }
+  .mem img { width: 100%; height: 9.5rem; object-fit: cover; display: block; }
+  .mem .veil {
+    position: absolute; left: 0; right: 0; bottom: 0; top: 35%;
+    background: linear-gradient(180deg, transparent, rgba(20,16,10,.62));
+  }
+  .mem .lab {
+    position: absolute; left: 0.9rem; top: 0.75rem;
+    background: rgba(255,250,243,.92); color: #5c4e3a;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: .04em;
+    padding: 0.28rem 0.55rem; border-radius: 999px;
+  }
+  .mem .cap {
+    position: absolute; left: 0.9rem; right: 0.9rem; bottom: 0.75rem;
+    color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.4);
+  }
+  .mem .cap .pl {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.35rem; font-weight: 700; font-style: italic;
+  }
+  .mem .cap .yr { font-size: 0.8rem; opacity: .9; margin-top: 0.1rem; }
+
+  .next {
+    background: linear-gradient(135deg, #f3c4c0 0%, #e8a9a4 100%);
+    border: 1px solid rgba(160,70,70,.18);
+    color: #3a1e1c;
+  }
+  .next .lab {
+    font-size: 0.68rem; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; opacity: .75;
+  }
+  .next .title { font-size: 1.2rem; font-weight: 700; margin-top: 0.25rem; line-height: 1.2; }
+  .next .meta { font-size: 0.88rem; margin-top: 0.2rem; opacity: .85; }
+  .next .cd {
+    margin-top: 0.55rem; display: inline-block;
+    background: rgba(255,255,255,.45); border-radius: 999px;
+    padding: 0.28rem 0.7rem; font-weight: 700; font-size: 0.85rem;
+  }
+
+  .sect {
+    display: flex; align-items: center; justify-content: space-between;
+    margin: 0.15rem 0 0.55rem;
+  }
+  .sect h2 { font-size: 1.05rem; font-weight: 700; }
+  .sect a {
+    font-size: 0.82rem; color: #8f6524; text-decoration: none; font-weight: 600;
+  }
+  .tev {
+    display: flex; align-items: flex-start; gap: 0.55rem;
+    padding: 0.55rem 0; border-top: 1px solid rgba(90,70,40,.08);
+    font-size: 0.92rem;
+  }
+  .tev:first-child { border-top: none; padding-top: 0; }
+  .tev .when {
+    flex: 0 0 4.6rem; font-variant-numeric: tabular-nums; font-weight: 700; color: #2a241c;
+  }
+  .tev .dotc { width: 0.55rem; height: 0.55rem; border-radius: 50%; margin-top: 0.4rem; flex: 0 0 auto; }
+  .tev .txt { flex: 1 1 auto; min-width: 0; }
+  .tev .meta { color: #7a6a55; font-size: 0.8rem; margin-top: 0.1rem; }
+  .tev.past { opacity: .45; }
+  .tev.live .when, .tev.live .txt { color: #7a5214; font-weight: 700; }
+  .empty { color: #9a8a70; font-size: 0.9rem; }
+
+  .minirow { display: flex; gap: 0.65rem; margin-bottom: 0.75rem; }
+  .mini {
+    flex: 1 1 0; min-width: 0;
+    background: #fffaf3; border: 1px solid rgba(90,70,40,.1);
+    border-radius: 1rem; padding: 0.8rem 0.85rem;
+    box-shadow: 0 0.3rem 0.8rem rgba(60,40,20,.05);
+  }
+  .mini .l { font-size: 0.7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #7a6a55; }
+  .mini .b { font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem; line-height: 1.2; }
+  .mini .s { font-size: 0.78rem; color: #6a5c4a; margin-top: 0.15rem; }
+
+  .banner {
+    text-align: center;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic; font-size: 1.15rem; color: #6a5c4a;
+    padding: 0.4rem 0 0.2rem;
+  }
+
+  .nav {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    height: calc(3.7rem + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+    background: rgba(45,40,34,.96); color: #d8d0c4;
+    display: flex; align-items: center; justify-content: space-around;
+    z-index: 20;
+  }
+  .nav a {
+    color: inherit; text-decoration: none; text-align: center;
+    font-size: 0.68rem; font-weight: 600; opacity: .72; padding: 0.35rem 0.5rem; min-width: 3.8rem;
+  }
+  .nav a .ic { display: block; font-size: 1.2rem; line-height: 1.15; margin-bottom: 0.05rem; }
+  .nav a.on { opacity: 1; color: #fff; border-bottom: 2px solid #c45c4a; }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <div>
+      <div class="greet serif" id="greet">Hyvää päivää</div>
+      <div class="date" id="dateLine">—</div>
+    </div>
+    <div class="wxchip">
+      <div class="ico" id="wxIco">🌡️</div>
+      <div class="t serif" id="wxTemp">–°</div>
+      <div class="p">Kuopio</div>
+    </div>
+  </div>
+
+  <div class="people" id="peopleRow"></div>
+
+  <div class="card mem" id="memCard">
+    <img id="memImg" alt="">
+    <div class="veil"></div>
+    <div class="lab">Muistatko…</div>
+    <div class="cap">
+      <div class="pl" id="memPlace">—</div>
+      <div class="yr" id="memYear"></div>
+    </div>
+  </div>
+
+  <div class="card next" id="nextCard">
+    <div class="lab">Seuraavaksi</div>
+    <div class="title" id="nextTitle">—</div>
+    <div class="meta" id="nextMeta"></div>
+    <div class="cd" id="nextCd" style="display:none;"></div>
+  </div>
+
+  <div class="sect">
+    <h2>Tänään</h2>
+    <a href="tesla-kalenteri.html" id="showAll">Näytä kaikki ›</a>
+  </div>
+  <div class="card" id="todayCard">
+    <div id="todayList"><div class="empty">Ladataan…</div></div>
+  </div>
+
+  <div class="minirow">
+    <div class="mini">
+      <div class="l">Sää</div>
+      <div class="b" id="miniWx">—</div>
+      <div class="s" id="miniWxS">Kuopio</div>
+    </div>
+    <div class="mini">
+      <div class="l">Seuraava</div>
+      <div class="b" id="miniExp">—</div>
+      <div class="s" id="miniExpS"></div>
+    </div>
+  </div>
+
+  <div class="banner">Enemmän yhdessä.</div>
+
+<nav class="nav">
+  <a class="on" href="puhelin.html"><span class="ic">◎</span>Koti</a>
+  <a href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a href="tesla-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
+</nav>
+
+<script>
+(function () {
+  var BUILD = "20260922-tesla-v2";
+  var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var WHO_COLOR = {
+    Ellen: "#d48aa8", Samuel: "#5b8fd4", Milla: "#c9a227", Mea: "#e08a3c",
+    Jussi: "#5a7a5a", Riikka: "#7a6aad", perhe: "#c4a574", Perhe: "#c4a574"
+  };
+  var PEOPLE = ["Jussi", "Riikka", "Ellen", "Samuel", "Milla", "Mea"];
+  var schedule = null;
+  var photos = [];
+  var wxState = { current: null, daily: null };
+
+  function pad(n) { n = parseInt(n, 10); return n < 10 ? "0" + n : "" + n; }
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function helsinkiNow() {
+    var d = new Date();
+    var parts = {};
+    try {
+      var fmt = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/Helsinki",
+        year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", second: "2-digit",
+        weekday: "short", hour12: false
+      });
+      var arr = fmt.formatToParts(d);
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].type !== "literal") parts[arr[i].type] = arr[i].value;
+      }
+    } catch (e) {
+      var hki = new Date(d.getTime() + 3 * 60 * 60 * 1000);
+      parts.year = String(hki.getUTCFullYear());
+      parts.month = pad(hki.getUTCMonth() + 1);
+      parts.day = pad(hki.getUTCDate());
+      parts.hour = pad(hki.getUTCHours());
+      parts.minute = pad(hki.getUTCMinutes());
+      parts.weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][hki.getUTCDay()];
+    }
+    var wdMap = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    var wd = wdMap[parts.weekday]; if (wd == null) wd = new Date().getDay();
+    var hour = parseInt(parts.hour, 10); if (hour === 24) hour = 0;
+    var minute = parseInt(parts.minute, 10) || 0;
+    var year = parseInt(parts.year, 10), month = parseInt(parts.month, 10), day = parseInt(parts.day, 10);
+    return {
+      year: year, month: month, day: day, hour: hour, minute: minute, wd: wd,
+      iso: year + "-" + pad(month) + "-" + pad(day),
+      minutes: hour * 60 + minute
+    };
+  }
+  function greeting(hour) {
+    if (hour >= 5 && hour < 11) return "Hyvää huomenta";
+    if (hour >= 11 && hour < 17) return "Hyvää päivää";
+    if (hour >= 17 && hour < 20) return "Hyvää iltaa";
+    return "Hyvää yötä";
+  }
+  function parseMin(hm) {
+    if (!hm) return null;
+    var p = String(hm).split(":");
+    var h = +p[0], m = +(p[1] || 0);
+    if (isNaN(h)) return null;
+    return h * 60 + m;
+  }
+  function fmtHm(hm) {
+    if (!hm) return "";
+    var p = String(hm).split(":");
+    return Number(p[0]) + "." + pad(p[1] || "00");
+  }
+  function fmtRange(a, b) {
+    if (!a && !b) return "";
+    if (a && b) return fmtHm(a) + "–" + fmtHm(b);
+    return a ? fmtHm(a) : "";
+  }
+  function wmo(code) {
+    if (code === 0) return { icon: "☀️", phrase: "selkeää" };
+    if (code <= 2) return { icon: "🌤️", phrase: "melkein selkeää" };
+    if (code === 3) return { icon: "☁️", phrase: "pilvistä" };
+    if (code === 45 || code === 48) return { icon: "🌫️", phrase: "sumua" };
+    if (code >= 51 && code <= 57) return { icon: "🌦️", phrase: "tihkua" };
+    if (code >= 61 && code <= 67) return { icon: "🌧️", phrase: "sadetta" };
+    if (code >= 71 && code <= 77) return { icon: "❄️", phrase: "lunta" };
+    if (code >= 80 && code <= 82) return { icon: "🌦️", phrase: "kuuroja" };
+    if (code >= 85 && code <= 86) return { icon: "🌨️", phrase: "lumikuuroja" };
+    if (code >= 95) return { icon: "⛈️", phrase: "ukkosta" };
+    return { icon: "🌡️", phrase: "vaihtelevaa" };
+  }
+  function getJSON(url, cb) {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", url, true);
+      x.onreadystatechange = function () {
+        if (x.readyState === 4) {
+          if (x.status >= 200 && x.status < 300) {
+            try { cb(JSON.parse(x.responseText)); } catch (e) { cb(null); }
+          } else cb(null);
+        }
+      };
+      x.send();
+    } catch (e) { cb(null); }
+  }
+  function eventsOn(iso) {
+    var out = [];
+    if (!schedule || !schedule.events) return out;
+    for (var i = 0; i < schedule.events.length; i++) {
+      if (schedule.events[i].date === iso) out.push(schedule.events[i]);
+    }
+    out.sort(function (a, b) {
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      return ta - tb;
+    });
+    return out;
+  }
+  function todayNonSchool(now) {
+    var list = eventsOn(now.iso);
+    var out = [], seen = {};
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!e || e.kind === "koulu") continue;
+      var k = (e.time || "") + "|" + (e.who || "") + "|" + (e.title || "");
+      if (seen[k]) continue;
+      seen[k] = 1;
+      out.push(e);
+    }
+    return out;
+  }
+  function evEnd(e) {
+    var en = parseMin(e.end);
+    if (en != null) return en;
+    var st = parseMin(e.time);
+    if (st == null) return null;
+    return st + 60;
+  }
+  function colorWho(who) { return WHO_COLOR[who] || "#b8a090"; }
+  function initial(who) {
+    if (!who) return "?";
+    return String(who).charAt(0);
+  }
+  function matchesWho(e, who) {
+    if (!e) return false;
+    if (e.who === who) return true;
+    if ((e.who === "perhe" || e.who === "Perhe") && (who === "Jussi" || who === "Riikka")) return true;
+    if ((who === "Jussi" || who === "Riikka") && (e.driver === who || e.pickup === who)) return true;
+    return false;
+  }
+  function statusFor(who, now, list) {
+    var live = false;
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!matchesWho(e, who)) continue;
+      var st = parseMin(e.time), en = evEnd(e);
+      if (st != null && en != null && st <= now.minutes && now.minutes < en) { live = true; break; }
+    }
+    if (!live && (who === "Ellen" || who === "Samuel" || who === "Milla" || who === "Mea") &&
+        now.wd >= 1 && now.wd <= 5 && now.minutes < 14 * 60) live = true;
+    return live;
+  }
+
+  function daysUntil(iso, now) {
+    var a = now.iso.split("-").map(Number);
+    var b = iso.split("-").map(Number);
+    var da = Date.UTC(a[0], a[1] - 1, a[2]);
+    var db = Date.UTC(b[0], b[1] - 1, b[2]);
+    return Math.round((db - da) / 86400000);
+  }
+
+  function nextExpectation(now) {
+    if (!schedule || !schedule.expectations) return null;
+    var best = null, bestD = 99999;
+    for (var i = 0; i < schedule.expectations.length; i++) {
+      var ex = schedule.expectations[i];
+      var start = ex.start || "";
+      if (!start) continue;
+      var d = daysUntil(start, now);
+      if (d < 0) {
+        var end = ex.end || start;
+        if (daysUntil(end, now) >= 0) d = 0;
+        else continue;
+      }
+      if (d < bestD) { bestD = d; best = ex; best._days = d; }
+    }
+    return best;
+  }
+
+  function paintPeople(now) {
+    var row = document.getElementById("peopleRow");
+    if (!row) return;
+    var list = todayNonSchool(now);
+    var html = "";
+    for (var i = 0; i < PEOPLE.length; i++) {
+      var who = PEOPLE[i];
+      var on = statusFor(who, now, list);
+      html += "<div class=\"person\"><div class=\"av\" style=\"background:" + colorWho(who) + "\">" +
+        esc(initial(who)) + "<span class=\"sd" + (on ? " on" : "") + "\"></span></div>" +
+        "<div class=\"nm\">" + esc(who) + "</div></div>";
+    }
+    row.innerHTML = html;
+  }
+
+  function paintToday(now) {
+    var list = todayNonSchool(now);
+    var box = document.getElementById("todayList");
+    if (!box) return;
+    var liveIdx = -1, nextIdx = -1, nextDiff = 99999;
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      var st = parseMin(e.time), en = evEnd(e);
+      if (st != null && en != null && st <= now.minutes && now.minutes < en) { liveIdx = i; break; }
+      if (st != null && st > now.minutes) {
+        var d = st - now.minutes;
+        if (d < nextDiff) { nextDiff = d; nextIdx = i; }
+      }
+    }
+
+    var focus = liveIdx >= 0 ? list[liveIdx] : (nextIdx >= 0 ? list[nextIdx] : null);
+    var nt = document.getElementById("nextTitle");
+    var nm = document.getElementById("nextMeta");
+    var nc = document.getElementById("nextCd");
+    if (focus) {
+      if (nt) nt.textContent = (focus.who && focus.who !== "perhe" ? focus.who + " · " : "") + (focus.title || "");
+      var bits = [];
+      if (focus.time) bits.push(fmtRange(focus.time, focus.end));
+      if (focus.place) bits.push(focus.place);
+      if (focus.driver) bits.push("kuski " + focus.driver);
+      if (nm) nm.textContent = bits.join(" · ");
+      if (nc) {
+        if (liveIdx >= 0) {
+          nc.style.display = "inline-block";
+          nc.textContent = "Nyt käynnissä";
+        } else if (nextDiff < 99999) {
+          nc.style.display = "inline-block";
+          if (nextDiff < 60) nc.textContent = "Alkioon " + nextDiff + " min";
+          else nc.textContent = "Alkioon " + Math.floor(nextDiff / 60) + " h " + (nextDiff % 60) + " min";
+        } else {
+          nc.style.display = "none";
+        }
+      }
+    } else {
+      if (nt) nt.textContent = "Ei seuraavaa merkintää";
+      if (nm) nm.textContent = "Rauhallinen hetki";
+      if (nc) nc.style.display = "none";
+    }
+
+    var html = "";
+    for (var j = 0; j < list.length; j++) {
+      var e2 = list[j];
+      var st2 = parseMin(e2.time), en2 = evEnd(e2);
+      var cls = "tev";
+      if (st2 != null && en2 != null && now.minutes >= en2) cls += " past";
+      else if (j === liveIdx) cls += " live";
+      var when = fmtRange(e2.time, e2.end) || "—";
+      var meta = [];
+      if (e2.place) meta.push(e2.place);
+      if (e2.driver) meta.push(e2.driver);
+      html += "<div class=\"" + cls + "\"><div class=\"when\">" + esc(when) + "</div>";
+      html += "<div class=\"dotc\" style=\"background:" + colorWho(e2.who) + "\"></div>";
+      html += "<div class=\"txt\">" + esc((e2.who && e2.who !== "perhe" ? e2.who + " · " : "") + (e2.title || ""));
+      if (meta.length) html += "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>";
+      html += "</div></div>";
+    }
+    if (!html) html = "<div class=\"empty\">Ei merkintöjä tänään</div>";
+    box.innerHTML = html;
+  }
+
+  function paintMem(now) {
+    if (!photos.length) return;
+    var p = photos[Math.abs(now.day * 17 + now.month) % photos.length];
+    var img = document.getElementById("memImg");
+    var pl = document.getElementById("memPlace");
+    var yr = document.getElementById("memYear");
+    if (img) img.src = p.src;
+    if (pl) pl.textContent = p.place || "Muisto";
+    if (yr) yr.textContent = p.year || "";
+  }
+
+  function paintWx() {
+    var c = wxState.current;
+    if (!c) return;
+    var w = wmo(c.code);
+    var ico = document.getElementById("wxIco");
+    var temp = document.getElementById("wxTemp");
+    var mw = document.getElementById("miniWx");
+    var ms = document.getElementById("miniWxS");
+    if (ico) ico.textContent = w.icon;
+    if (temp) temp.textContent = Math.round(c.temp) + "°";
+    if (mw) mw.textContent = w.icon + " " + Math.round(c.temp) + "°";
+    var bits = [w.phrase];
+    if (c.wind != null) bits.push(Math.round(c.wind) + " m/s");
+    if (c.tmin != null && c.tmax != null) bits.push(Math.round(c.tmin) + "–" + Math.round(c.tmax) + "°");
+    if (ms) ms.textContent = bits.join(" · ");
+  }
+
+  function paintExp(now) {
+    var ex = nextExpectation(now);
+    var b = document.getElementById("miniExp");
+    var s = document.getElementById("miniExpS");
+    if (!ex) {
+      if (b) b.textContent = "—";
+      if (s) s.textContent = "";
+      return;
+    }
+    var label = ex.label || "Tapahtuma";
+    var short = label.split("·")[0].trim();
+    if (b) b.textContent = short;
+    var d = ex._days;
+    if (s) {
+      if (d === 0) s.textContent = "Tänään";
+      else if (d === 1) s.textContent = "Huomenna";
+      else s.textContent = d + " päivää";
+    }
+  }
+
+  function paint() {
+    var now = helsinkiNow();
+    var g = document.getElementById("greet");
+    var d = document.getElementById("dateLine");
+    if (g) g.textContent = greeting(now.hour);
+    if (d) d.textContent = DAYS[now.wd] + " " + now.day + "." + now.month + ".";
+    paintPeople(now);
+    paintToday(now);
+    paintMem(now);
+    paintWx();
+    paintExp(now);
+  }
+
+  function loadSchedule() {
+    getJSON("schedule.json?v=" + BUILD, function (data) {
+      if (data) schedule = data;
+      paint();
+    });
+  }
+  function loadPhotos() {
+    getJSON("photos-from-matkat.json?v=" + BUILD, function (data) {
+      if (data && data.length) photos = data;
+      paint();
+    });
+  }
+  function loadWx() {
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&current=temperature_2m,weather_code,wind_speed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min&wind_speed_unit=ms&timezone=Europe%2FHelsinki&forecast_days=5";
+    getJSON(url, function (data) {
+      if (!data) return;
+      if (data.current) {
+        wxState.current = {
+          temp: data.current.temperature_2m,
+          code: data.current.weather_code,
+          wind: data.current.wind_speed_10m
+        };
+      }
+      if (data.daily && wxState.current) {
+        wxState.current.tmin = data.daily.temperature_2m_min[0];
+        wxState.current.tmax = data.daily.temperature_2m_max[0];
+      }
+      paint();
+    });
+  }
+
+  loadSchedule();
+  loadPhotos();
+  loadWx();
+  setInterval(function () { paint(); }, 30000);
+  setInterval(loadWx, 15 * 60 * 1000);
+})();
+</script>
+</body>
+</html>

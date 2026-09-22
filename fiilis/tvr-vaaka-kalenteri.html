@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v82">
+  <meta name="fiilis-build" content="20260922-v87">
   <meta name="theme-color" content="#F7F1E3">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +24,9 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 }
 .title {
   font-family: Newsreader, Georgia, serif;
-  font-size: 3.6vmin; font-weight: 400; color: #1a140e; letter-spacing: -.02em;
+  font-size: 2.8vmin; font-weight: 400; color: #1a140e; letter-spacing: -.02em;
 }
-.sub { font-size: 1.55vmin; color: #6c5c44; font-weight: 500; }
+.sub { font-size: 1.35vmin; color: #6c5c44; font-weight: 500; }
 .brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9a8b74; margin-left: 1vmin; }
 
 .grid-wrap {
@@ -37,7 +37,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   flex: 0 0 auto; display: flex; margin-bottom: .4vmin;
 }
 .dow span {
-  flex: 1; text-align: center; font-size: 1.35vmin; font-weight: 700;
+  flex: 1; text-align: center; font-size: 1.15vmin; font-weight: 650;
   letter-spacing: .08em; text-transform: uppercase; color: #8a7a62;
 }
 .month {
@@ -55,7 +55,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   background: #fffdf8;
   border: 1px solid rgba(44,36,24,.08);
   border-radius: .85vmin;
-  padding: .5vmin .55vmin .45vmin;
+  padding: .35vmin .4vmin .3vmin;
   overflow: hidden;
   display: flex; flex-direction: column;
   box-shadow: 0 .2vmin .8vmin rgba(60,40,18,.04);
@@ -75,14 +75,14 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   margin-bottom: .25vmin;
 }
 .day .dn {
-  font-size: 2vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418;
+  font-size: 1.55vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418;
 }
 .day.is-today .dn { color: #8f6524; }
-.day .mo { font-size: 1.2vmin; font-weight: 600; color: #8a7a62; margin-left: .3vmin; }
-.day .wd { font-size: 1.15vmin; font-weight: 600; color: #9a8b74; }
+.day .mo { font-size: 1.0vmin; font-weight: 600; color: #8a7a62; margin-left: .25vmin; }
+.day .wd { font-size: 1.0vmin; font-weight: 600; color: #9a8b74; }
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
-  font-size: var(--ev-fs, 1.45vmin); line-height: 1.25; font-weight: 600; color: #3a3228;
+  font-size: var(--ev-fs, 1.15vmin); line-height: 1.2; line-height: 1.25; font-weight: 550; color: #5a4e3e;
   margin-top: .12vmin;
   white-space: normal; overflow-wrap: anywhere; word-break: break-word;
 }
@@ -91,7 +91,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 .month.tight .day .mo { font-size: 1vmin; }
 .month.tight .day .ev { margin-top: .06vmin; }
 .month.xtight .day .dn { font-size: 1.35vmin; }
-.month.xtight .day .ev { font-size: var(--ev-fs, 1.05vmin); line-height: 1.15; }
+.month.xtight .day .ev { font-size: var(--ev-fs, 0.95vmin); line-height: 1.15; }
 
 .day .ev .dot {
   display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
@@ -129,7 +129,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 <div class="app">
   <div class="head">
     <div class="title" id="monthTitle">Kalenteri</div>
-    <div><span class="sub" id="rangeLabel">Kuopio</span><span class="brand">v82 vaaka</span></div>
+    <div><span class="sub" id="rangeLabel">Kuopio</span><span class="brand">v87 vaaka</span></div>
   </div>
   <div class="grid-wrap">
     <div class="dow">
@@ -145,7 +145,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v82";
+  var BUILD = "20260922-v87";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -361,15 +361,15 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   function fitCal(grid) {
     if (!grid) return;
     grid.className = "month";
-    grid.style.setProperty("--ev-fs", "1.45vmin");
+    grid.style.setProperty("--ev-fs", "1.15vmin");
     var steps = [
-      { cls: "", fs: "1.45vmin" },
-      { cls: "", fs: "1.3vmin" },
-      { cls: "tight", fs: "1.2vmin" },
-      { cls: "tight", fs: "1.1vmin" },
-      { cls: "xtight", fs: "1.0vmin" },
-      { cls: "xtight", fs: "0.92vmin" },
-      { cls: "xtight", fs: "0.85vmin" }
+      { cls: "", fs: "1.15vmin" },
+      { cls: "", fs: "1.05vmin" },
+      { cls: "tight", fs: "0.98vmin" },
+      { cls: "tight", fs: "0.92vmin" },
+      { cls: "xtight", fs: "0.88vmin" },
+      { cls: "xtight", fs: "0.82vmin" },
+      { cls: "xtight", fs: "0.78vmin" }
     ];
     function overflows() {
       if (grid.scrollHeight > grid.clientHeight + 2) return true;

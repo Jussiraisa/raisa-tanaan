@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790093913018,
+  "updated": 1790094650280,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -230,6 +230,12 @@
     "cal-ot896g1o8ccv4k44abuac3ju34": {
       "driver": "Jussi",
       "note": "Joukkueilta Leo’s; ei Kuopiohallia"
+    },
+    "info-jussi-bille-jari-2026-09-24": {
+      "driver": "",
+      "status": "",
+      "ride": "",
+      "note": "Jari Väänänen · WA 22.9. Paikka auki."
     }
   },
   "cooks": {
@@ -306,6 +312,19 @@
       "driver": "Julia / Enni",
       "status": "open",
       "note": "WA: Ke 17.30 kyytiin Enni, Mea, Amanda. Enni kirjaston kautta Luolalle. Julia vie / Enni hakee (viikkosuunnitelma)."
+    },
+    {
+      "id": "info-jussi-bille-jari-2026-09-24",
+      "title": "Biljardi · Jari",
+      "date": "2026-09-24",
+      "start": "18:30",
+      "end": "20:00",
+      "place": "",
+      "kind": "info",
+      "who": "jussi",
+      "driver": "",
+      "status": "",
+      "note": "Jari Väänänen · WA 22.9. Paikka auki."
     },
     {
       "id": "info-ntv-kisat-2026-09-25",

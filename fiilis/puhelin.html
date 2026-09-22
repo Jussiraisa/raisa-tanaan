@@ -1,243 +1,326 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
-<meta name="fiilis-build" content="20260922-puhelin-v6b-tsla">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="fiilis-build" content="20260922-puhelin-v7-world">
+<meta name="theme-color" content="#F7F1E3">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Fiilis · Puhelin</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Fiilis">
+<title>Fiilis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body {
-    min-height: 100%; min-height: 100dvh;
-    background: #F7F1E3;
-    color: #2a241c;
-    font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
-    -webkit-tap-highlight-color: transparent;
-  }
-  body {
-    padding: max(0.75rem, env(safe-area-inset-top)) max(0.9rem, env(safe-area-inset-right))
-             calc(4.6rem + env(safe-area-inset-bottom)) max(0.9rem, env(safe-area-inset-left));
-    max-width: 28rem;
-    margin: 0 auto;
-  }
-  .serif { font-family: "Cormorant Garamond", Georgia, serif; }
-  .card {
-    background: #FFFBF5;
-    border: 1px solid rgba(90,70,40,.1);
-    border-radius: 1.1rem;
-    box-shadow: 0 0.35rem 1rem rgba(60,40,20,.06);
-    padding: 0.95rem 1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .hdr {
-    display: flex; align-items: flex-start; justify-content: space-between;
-    margin-bottom: 0.85rem; gap: 0.6rem;
-  }
-  .greet { font-size: 1.85rem; font-weight: 700; line-height: 1.1; color: #1f1a14; }
-  .date { margin-top: 0.2rem; font-size: 0.92rem; color: #6a5c4a; font-weight: 500; }
-  .wxchip {
-    flex: 0 0 auto;
-    background: #FFFBF5;
-    border: 1px solid rgba(90,70,40,.12);
-    border-radius: 1rem;
-    padding: 0.45rem 0.7rem;
-    text-align: center;
-    min-width: 4.4rem;
-  }
-  .wxchip .ico { font-size: 1.25rem; line-height: 1; }
-  .wxchip .t { font-size: 1.15rem; font-weight: 700; }
-  .wxchip .p { font-size: 0.68rem; color: #6a5c4a; margin-top: 0.1rem; }
-
-  .people {
-    display: flex; justify-content: space-between; gap: 0.25rem;
-    margin-bottom: 0.85rem; overflow-x: auto; padding-bottom: 0.15rem;
-  }
-  .person {
-    flex: 1 1 0; min-width: 2.8rem; text-align: center;
-  }
-  .person .av {
-    width: 2.55rem; height: 2.55rem; border-radius: 50%; margin: 0 auto;
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; font-weight: 700; font-size: 0.95rem; position: relative;
-  }
-  .person .av .sd {
-    position: absolute; right: -1px; bottom: -1px;
-    width: 0.62rem; height: 0.62rem; border-radius: 50%;
-    border: 2px solid #F7F1E3; background: #a09080;
-  }
-  .person .av .sd.on { background: #3a9a5a; }
-  .person .nm { font-size: 0.68rem; font-weight: 600; margin-top: 0.28rem; color: #3a3228; }
-
-  .mem { padding: 0; overflow: hidden; position: relative; }
-  .mem img { width: 100%; height: 9.5rem; object-fit: cover; display: block; }
-  .mem .veil {
-    position: absolute; left: 0; right: 0; bottom: 0; top: 35%;
-    background: linear-gradient(180deg, transparent, rgba(20,16,10,.62));
-  }
-  .mem .lab {
-    position: absolute; left: 0.9rem; top: 0.75rem;
-    background: rgba(255,250,243,.92); color: #5c4e3a;
-    font-size: 0.72rem; font-weight: 700; letter-spacing: .04em;
-    padding: 0.28rem 0.55rem; border-radius: 999px;
-  }
-  .mem .cap {
-    position: absolute; left: 0.9rem; right: 0.9rem; bottom: 0.75rem;
-    color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.4);
-  }
-  .mem .cap .pl {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 1.35rem; font-weight: 700; font-style: italic;
-  }
-  .mem .cap .yr { font-size: 0.8rem; opacity: .9; margin-top: 0.1rem; }
-
-  .next {
-    background: linear-gradient(135deg, #f3c4c0 0%, #e8a9a4 100%);
-    border: 1px solid rgba(160,70,70,.18);
-    color: #3a1e1c;
-  }
-  .next .lab {
-    font-size: 0.68rem; font-weight: 800; letter-spacing: .1em;
-    text-transform: uppercase; opacity: .75;
-  }
-  .next .title { font-size: 1.2rem; font-weight: 700; margin-top: 0.25rem; line-height: 1.2; }
-  .next .meta { font-size: 0.88rem; margin-top: 0.2rem; opacity: .85; }
-  .next .cd {
-    margin-top: 0.55rem; display: inline-block;
-    background: rgba(255,255,255,.45); border-radius: 999px;
-    padding: 0.28rem 0.7rem; font-weight: 700; font-size: 0.85rem;
-  }
-
-  .sect {
-    display: flex; align-items: center; justify-content: space-between;
-    margin: 0.15rem 0 0.55rem;
-  }
-  .sect h2 { font-size: 1.05rem; font-weight: 700; }
-  .sect a {
-    font-size: 0.82rem; color: #8f6524; text-decoration: none; font-weight: 600;
-  }
-  .tev {
-    display: flex; align-items: flex-start; gap: 0.55rem;
-    padding: 0.55rem 0; border-top: 1px solid rgba(90,70,40,.08);
-    font-size: 0.92rem;
-  }
-  .tev:first-child { border-top: none; padding-top: 0; }
-  .tev .when {
-    flex: 0 0 4.6rem; font-variant-numeric: tabular-nums; font-weight: 700; color: #2a241c;
-  }
-  .tev .dotc { width: 0.55rem; height: 0.55rem; border-radius: 50%; margin-top: 0.4rem; flex: 0 0 auto; }
-  .tev .txt { flex: 1 1 auto; min-width: 0; }
-  .tev .meta { color: #7a6a55; font-size: 0.8rem; margin-top: 0.1rem; }
-  .tev.past { opacity: .45; }
-  .tev.live .when, .tev.live .txt { color: #7a5214; font-weight: 700; }
-  .empty { color: #9a8a70; font-size: 0.9rem; }
-
-  .minirow { display: flex; gap: 0.65rem; margin-bottom: 0.75rem; }
-  .mini {
-    flex: 1 1 0; min-width: 0;
-    background: #FFFBF5; border: 1px solid rgba(90,70,40,.1);
-    border-radius: 1rem; padding: 0.8rem 0.85rem;
-    box-shadow: 0 0.3rem 0.8rem rgba(60,40,20,.05);
-  }
-  .mini .l { font-size: 0.7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #7a6a55; }
-  .mini .b { font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem; line-height: 1.2; }
-  .mini .s { font-size: 0.78rem; color: #6a5c4a; margin-top: 0.15rem; }
-
-  .banner {
-    text-align: center;
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-style: italic; font-size: 1.15rem; color: #6a5c4a;
-    padding: 0.4rem 0 0.2rem;
-  }
-
-  .nav {
-    position: fixed; left: 0; right: 0; bottom: 0;
-    height: calc(3.7rem + env(safe-area-inset-bottom));
-    padding-bottom: env(safe-area-inset-bottom);
-    background: rgba(45,40,34,.96); color: #d8d0c4;
-    display: flex; align-items: center; justify-content: space-around;
-    z-index: 20;
-  }
-  .nav a {
-    color: inherit; text-decoration: none; text-align: center;
-    font-size: 0.68rem; font-weight: 600; opacity: .72; padding: 0.35rem 0.5rem; min-width: 3.8rem;
-  }
-  .nav a .ic { display: block; font-size: 1.2rem; line-height: 1.15; margin-bottom: 0.05rem; }
-  .nav a.on { opacity: 1; color: #fff; border-bottom: 2px solid #c45c4a; }
-
-
-.nav-tsla {
-  font-size: .78rem; font-weight: 700; opacity: 1;
-  font-variant-numeric: tabular-nums; white-space: nowrap;
-  letter-spacing: .01em; line-height: 1.15; text-align: center;
-  min-width: 4.8rem; padding: .2rem .35rem; pointer-events: none;
-  color: #efe8dc;
+:root {
+  --cream: #F7F1E3;
+  --card: #FFFCF7;
+  --ink: #2A241C;
+  --muted: #7A6B58;
+  --line: rgba(90,70,40,.10);
+  --honey: #C9943A;
+  --coral: #C45C4A;
+  --nav: rgba(36,32,28,.97);
+  --shadow: 0 10px 28px rgba(60,40,18,.07);
+  --radius: 1.25rem;
 }
-.nav-tsla .up { color: #6fcf8a; }
-.nav-tsla .dn { color: #e07a6a; }
-.nav-tsla .flat { color: #efe8dc; opacity: .85; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  min-height: 100%; min-height: 100dvh;
+  background:
+    radial-gradient(120% 80% at 100% -10%, rgba(201,148,58,.12), transparent 55%),
+    radial-gradient(90% 60% at -10% 30%, rgba(196,92,74,.06), transparent 50%),
+    var(--cream);
+  color: var(--ink);
+  font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding:
+    max(0.7rem, env(safe-area-inset-top))
+    max(0.95rem, env(safe-area-inset-right))
+    calc(5.1rem + env(safe-area-inset-bottom))
+    max(0.95rem, env(safe-area-inset-left));
+}
+.serif { font-family: Fraunces, Georgia, serif; }
 
+.top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: .75rem; margin-bottom: .95rem;
+}
+.greet { font-size: 1.95rem; font-weight: 650; letter-spacing: -.02em; line-height: 1.08; }
+.subline { margin-top: .28rem; color: var(--muted); font-size: .92rem; font-weight: 500; }
+.clock {
+  font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink);
+}
+.wx {
+  flex: 0 0 auto;
+  min-width: 4.6rem;
+  text-align: center;
+  background: rgba(255,252,247,.88);
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: .55rem .65rem .5rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+.wx .ico { font-size: 1.35rem; line-height: 1; }
+.wx .t { font-size: 1.25rem; font-weight: 700; margin-top: .1rem; }
+.wx .p { font-size: .68rem; color: var(--muted); margin-top: .05rem; }
+
+.people {
+  display: flex; gap: .35rem; justify-content: space-between;
+  margin-bottom: 1rem; overflow-x: auto; scrollbar-width: none;
+}
+.people::-webkit-scrollbar { display: none; }
+.person { flex: 1 1 0; min-width: 3rem; text-align: center; }
+.av {
+  width: 2.7rem; height: 2.7rem; border-radius: 50%;
+  margin: 0 auto; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700; font-size: 1rem;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(40,30,20,.12);
+}
+.av .dot {
+  position: absolute; right: -1px; bottom: -1px;
+  width: .7rem; height: .7rem; border-radius: 50%;
+  background: #B0A090; border: 2px solid var(--cream);
+}
+.av .dot.on { background: #3A9A5A; }
+.person .nm {
+  margin-top: .32rem; font-size: .68rem; font-weight: 650; color: #4A3F32;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.hero {
+  position: relative; overflow: hidden;
+  border-radius: calc(var(--radius) + .15rem);
+  margin-bottom: .85rem;
+  box-shadow: var(--shadow);
+  background: #E8DFD0;
+  aspect-ratio: 16 / 11;
+}
+.hero img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: opacity .7s ease, transform 8s ease;
+  transform: scale(1.03);
+}
+.hero img.zoom { transform: scale(1.08); }
+.hero .veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,14,8,.08) 0%, transparent 35%, rgba(18,12,8,.72) 100%);
+  pointer-events: none;
+}
+.hero .chip {
+  position: absolute; left: .85rem; top: .85rem;
+  background: rgba(255,250,243,.94); color: #5C4E3A;
+  font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+  padding: .32rem .65rem; border-radius: 999px;
+}
+.hero .cap {
+  position: absolute; left: .95rem; right: .95rem; bottom: .9rem;
+  color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.35);
+}
+.hero .cap .pl {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.55rem; font-weight: 650; font-style: italic; line-height: 1.15;
+}
+.hero .cap .yr { margin-top: .15rem; font-size: .85rem; opacity: .92; font-weight: 600; }
+
+.card {
+  background: rgba(255,252,247,.94);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.05rem;
+  margin-bottom: .75rem;
+}
+.card.hope {
+  background: linear-gradient(145deg, #F6D2C8 0%, #EBB5AC 55%, #E3A39A 100%);
+  border-color: rgba(160,70,70,.14);
+  color: #3A1E1C;
+}
+.kicker {
+  font-size: .68rem; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; opacity: .72;
+}
+.hope .title {
+  margin-top: .28rem;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.35rem; font-weight: 650; line-height: 1.2;
+}
+.hope .meta { margin-top: .25rem; font-size: .9rem; opacity: .88; }
+.pill {
+  display: inline-block; margin-top: .65rem;
+  background: rgba(255,255,255,.48);
+  border-radius: 999px; padding: .32rem .75rem;
+  font-size: .85rem; font-weight: 700;
+}
+
+.meal .row {
+  display: flex; gap: .75rem; align-items: flex-start;
+}
+.meal .ico {
+  flex: 0 0 auto; width: 2.4rem; height: 2.4rem; border-radius: .85rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(201,148,58,.16); font-size: 1.2rem;
+}
+.meal .title { font-size: 1.05rem; font-weight: 700; line-height: 1.25; }
+.meal .sub { margin-top: .2rem; color: var(--muted); font-size: .84rem; }
+
+.sect {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin: .35rem 0 .55rem;
+}
+.sect h2 { font-size: 1.08rem; font-weight: 700; letter-spacing: -.01em; }
+.sect a { color: #8F6524; text-decoration: none; font-size: .84rem; font-weight: 650; }
+
+.tev {
+  display: flex; gap: .6rem; align-items: flex-start;
+  padding: .7rem 0; border-top: 1px solid var(--line);
+}
+.tev:first-child { border-top: 0; padding-top: 0; }
+.tev .when {
+  flex: 0 0 4.5rem; font-variant-numeric: tabular-nums;
+  font-weight: 700; font-size: .92rem; color: var(--ink); padding-top: .05rem;
+}
+.tev .rail {
+  flex: 0 0 auto; width: .55rem; display: flex; justify-content: center; padding-top: .45rem;
+}
+.tev .dot {
+  width: .55rem; height: .55rem; border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255,252,247,.95);
+}
+.tev .txt { flex: 1 1 auto; min-width: 0; }
+.tev .who { font-weight: 700; font-size: .95rem; }
+.tev .meta { margin-top: .12rem; color: var(--muted); font-size: .8rem; }
+.tev.past { opacity: .42; }
+.tev.live .when { color: var(--honey); }
+.tev.live .who { color: #7A5214; }
+.tev.live {
+  background: rgba(201,148,58,.08);
+  margin: 0 -.45rem; padding-left: .45rem; padding-right: .45rem;
+  border-radius: .75rem; border-top-color: transparent;
+}
+.empty { color: #9A8A70; font-size: .92rem; padding: .2rem 0; }
+
+.tomorrow {
+  display: flex; gap: .55rem; overflow-x: auto; padding-bottom: .15rem;
+  scrollbar-width: none; margin-bottom: .85rem;
+}
+.tomorrow::-webkit-scrollbar { display: none; }
+.tchip {
+  flex: 0 0 auto; min-width: 8.5rem; max-width: 11rem;
+  background: rgba(255,252,247,.9); border: 1px solid var(--line);
+  border-radius: 1rem; padding: .7rem .8rem; box-shadow: var(--shadow);
+}
+.tchip .t { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tchip .b { margin-top: .25rem; font-size: .92rem; font-weight: 700; line-height: 1.25; }
+.tchip .s { margin-top: .15rem; font-size: .78rem; color: var(--muted); }
+
+.quote {
+  text-align: center;
+  font-family: Fraunces, Georgia, serif;
+  font-style: italic; font-size: 1.12rem; color: #6A5C4A;
+  padding: .55rem .4rem .2rem;
+}
+
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  height: calc(4.05rem + env(safe-area-inset-bottom));
+  padding: .35rem 0.4rem env(safe-area-inset-bottom);
+  background: var(--nav); color: #D8D0C4;
+  display: flex; align-items: center; justify-content: space-around;
+  z-index: 40;
+  box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+}
+.nav a {
+  color: inherit; text-decoration: none; text-align: center;
+  font-size: .66rem; font-weight: 650; opacity: .7;
+  min-width: 3.5rem; padding: .25rem .35rem; border-radius: .7rem;
+}
+.nav a .ic { display: block; font-size: 1.2rem; line-height: 1.1; margin-bottom: .08rem; }
+.nav a.on {
+  opacity: 1; color: #fff;
+  background: rgba(255,255,255,.08);
+  box-shadow: inset 0 -.16rem 0 var(--coral);
+}
+.nav-tsla {
+  font-size: .76rem; font-weight: 750; color: #EFE8DC;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  text-align: center; min-width: 4.6rem; line-height: 1.15;
+  pointer-events: none;
+}
+.nav-tsla .up { color: #6FCF8A; }
+.nav-tsla .dn { color: #E07A6A; }
+.nav-tsla .flat { color: #EFE8DC; opacity: .85; }
 </style>
 </head>
 <body>
-  <div class="hdr">
+  <header class="top">
     <div>
       <div class="greet serif" id="greet">Hyvää päivää</div>
-      <div class="date" id="dateLine">—</div>
+      <div class="subline"><span class="clock" id="clock">––.––</span> · <span id="dateLine">—</span></div>
     </div>
-    <div class="wxchip">
-      <div class="ico" id="wxIco">🌡️</div>
+    <div class="wx" id="wxCard">
+      <div class="ico" id="wxIco">🌤</div>
       <div class="t serif" id="wxTemp">–°</div>
       <div class="p">Kuopio</div>
     </div>
-  </div>
+  </header>
 
-  <div class="people" id="peopleRow"></div>
+  <div class="people" id="peopleRow" aria-label="Perhe"></div>
 
-  <div class="card mem" id="memCard">
+  <section class="hero" id="memCard" aria-label="Muisto">
     <img id="memImg" alt="">
     <div class="veil"></div>
-    <div class="lab">Muistatko…</div>
+    <div class="chip">Muistatko…</div>
     <div class="cap">
       <div class="pl" id="memPlace">—</div>
       <div class="yr" id="memYear"></div>
     </div>
-  </div>
+  </section>
 
-  <div class="card next" id="nextCard">
-    <div class="lab">Seuraavaksi</div>
-    <div class="title" id="nextTitle">—</div>
-    <div class="meta" id="nextMeta"></div>
-    <div class="cd" id="nextCd" style="display:none;"></div>
-  </div>
+  <section class="card hope" id="hopeCard">
+    <div class="kicker" id="hopeKicker">Odotus</div>
+    <div class="title" id="hopeTitle">—</div>
+    <div class="meta" id="hopeMeta"></div>
+    <div class="pill" id="hopePill" style="display:none;"></div>
+  </section>
+
+  <section class="card meal" id="mealCard">
+    <div class="row">
+      <div class="ico">🍽️</div>
+      <div>
+        <div class="kicker">Ruoka tänään</div>
+        <div class="title" id="mealTitle">—</div>
+        <div class="sub" id="mealSub"></div>
+      </div>
+    </div>
+  </section>
 
   <div class="sect">
     <h2>Tänään</h2>
-    <a href="tesla-kalenteri.html?from=puhelin" id="showAll">Näytä kaikki ›</a>
+    <a href="tesla-kalenteri.html?from=puhelin">Kalenteri ›</a>
   </div>
-  <div class="card" id="todayCard">
+  <section class="card" id="todayCard">
     <div id="todayList"><div class="empty">Ladataan…</div></div>
+  </section>
+
+  <div class="sect">
+    <h2>Huomenna</h2>
+    <a href="tesla-muistot.html?from=puhelin">Muistot ›</a>
   </div>
+  <div class="tomorrow" id="tomorrowRow"></div>
 
-  <div class="minirow">
-    <div class="mini">
-      <div class="l">Sää</div>
-      <div class="b" id="miniWx">—</div>
-      <div class="s" id="miniWxS">Kuopio</div>
-    </div>
-    <div class="mini">
-      <div class="l">Seuraava</div>
-      <div class="b" id="miniExp">—</div>
-      <div class="s" id="miniExpS"></div>
-    </div>
-  </div>
+  <div class="quote" id="quote">Enemmän yhdessä.</div>
 
-  <div class="banner">Enemmän yhdessä.</div>
-
-<nav class="nav">
+<nav class="nav" aria-label="Päänavigaatio">
   <a class="on" href="puhelin.html"><span class="ic">◎</span>Koti</a>
   <a href="tesla-kalenteri.html?from=puhelin"><span class="ic">▦</span>Kalenteri</a>
   <a href="tesla-muistot.html?from=puhelin"><span class="ic">♡</span>Muistot</a>
@@ -247,18 +330,25 @@
 
 <script>
 (function () {
-  var BUILD = "20260922-puhelin-v6b-tsla";
+  var BUILD = "20260922-puhelin-v7-world";
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
   var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var PEOPLE = ["Jussi","Riikka","Ellen","Samuel","Milla","Mea"];
   var WHO_COLOR = {
-    Ellen: "#d48aa8", Samuel: "#5b8fd4", Milla: "#c9a227", Mea: "#e08a3c",
-    Jussi: "#5a7a5a", Riikka: "#7a6aad", perhe: "#c4a574", Perhe: "#c4a574"
+    Ellen: "#D48AA8", Samuel: "#5B8FD4", Milla: "#C9A227", Mea: "#E08A3C",
+    Jussi: "#5A7A5A", Riikka: "#7A6AAD", perhe: "#C4A574", Perhe: "#C4A574"
   };
-  var PEOPLE = ["Jussi", "Riikka", "Ellen", "Samuel", "Milla", "Mea"];
+  var QUOTES = [
+    "Enemmän yhdessä.",
+    "Pienet hetket tekevät suuren elämän.",
+    "Sama matka. Enemmän yhdessä.",
+    "Tänään riittää."
+  ];
   var schedule = null;
   var photos = [];
-  var wxState = { current: null, daily: null };
+  var photoIdx = 0;
+  var wxState = { current: null };
 
   function pad(n) { n = parseInt(n, 10); return n < 10 ? "0" + n : "" + n; }
   function esc(s) {
@@ -272,8 +362,7 @@
       var fmt = new Intl.DateTimeFormat("en-GB", {
         timeZone: "Europe/Helsinki",
         year: "numeric", month: "2-digit", day: "2-digit",
-        hour: "2-digit", minute: "2-digit", second: "2-digit",
-        weekday: "short", hour12: false
+        hour: "2-digit", minute: "2-digit", weekday: "short", hour12: false
       });
       var arr = fmt.formatToParts(d);
       for (var i = 0; i < arr.length; i++) {
@@ -302,7 +391,7 @@
   function greeting(hour) {
     if (hour >= 5 && hour < 11) return "Hyvää huomenta";
     if (hour >= 11 && hour < 17) return "Hyvää päivää";
-    if (hour >= 17 && hour < 20) return "Hyvää iltaa";
+    if (hour >= 17 && hour < 22) return "Hyvää iltaa";
     return "Hyvää yötä";
   }
   function parseMin(hm) {
@@ -322,16 +411,27 @@
     if (a && b) return fmtHm(a) + "–" + fmtHm(b);
     return a ? fmtHm(a) : "";
   }
+  function addDaysIso(iso, n) {
+    var p = iso.split("-");
+    var dt = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + n));
+    return dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate());
+  }
+  function daysUntil(iso, now) {
+    var a = now.iso.split("-").map(Number);
+    var b = String(iso).split("-").map(Number);
+    var da = Date.UTC(a[0], a[1] - 1, a[2]);
+    var db = Date.UTC(b[0], b[1] - 1, b[2]);
+    return Math.round((db - da) / 86400000);
+  }
   function wmo(code) {
     if (code === 0) return { icon: "☀️", phrase: "selkeää" };
-    if (code <= 2) return { icon: "🌤️", phrase: "melkein selkeää" };
+    if (code <= 2) return { icon: "🌤️", phrase: "puolipilvistä" };
     if (code === 3) return { icon: "☁️", phrase: "pilvistä" };
     if (code === 45 || code === 48) return { icon: "🌫️", phrase: "sumua" };
     if (code >= 51 && code <= 57) return { icon: "🌦️", phrase: "tihkua" };
     if (code >= 61 && code <= 67) return { icon: "🌧️", phrase: "sadetta" };
     if (code >= 71 && code <= 77) return { icon: "❄️", phrase: "lunta" };
     if (code >= 80 && code <= 82) return { icon: "🌦️", phrase: "kuuroja" };
-    if (code >= 85 && code <= 86) return { icon: "🌨️", phrase: "lumikuuroja" };
     if (code >= 95) return { icon: "⛈️", phrase: "ukkosta" };
     return { icon: "🌡️", phrase: "vaihtelevaa" };
   }
@@ -349,6 +449,8 @@
       x.send();
     } catch (e) { cb(null); }
   }
+  function colorWho(who) { return WHO_COLOR[who] || "#B8A090"; }
+  function initial(who) { return who ? String(who).charAt(0) : "?"; }
   function eventsOn(iso) {
     var out = [];
     if (!schedule || !schedule.events) return out;
@@ -362,7 +464,7 @@
     });
     return out;
   }
-  function todayNonSchool(now) {
+  function todayList(now) {
     var list = eventsOn(now.iso);
     var out = [], seen = {};
     for (var i = 0; i < list.length; i++) {
@@ -379,13 +481,7 @@
     var en = parseMin(e.end);
     if (en != null) return en;
     var st = parseMin(e.time);
-    if (st == null) return null;
-    return st + 60;
-  }
-  function colorWho(who) { return WHO_COLOR[who] || "#b8a090"; }
-  function initial(who) {
-    if (!who) return "?";
-    return String(who).charAt(0);
+    return st == null ? null : st + 60;
   }
   function matchesWho(e, who) {
     if (!e) return false;
@@ -395,26 +491,16 @@
     return false;
   }
   function statusFor(who, now, list) {
-    var live = false;
     for (var i = 0; i < list.length; i++) {
       var e = list[i];
       if (!matchesWho(e, who)) continue;
       var st = parseMin(e.time), en = evEnd(e);
-      if (st != null && en != null && st <= now.minutes && now.minutes < en) { live = true; break; }
+      if (st != null && en != null && st <= now.minutes && now.minutes < en) return true;
     }
-    if (!live && (who === "Ellen" || who === "Samuel" || who === "Milla" || who === "Mea") &&
-        now.wd >= 1 && now.wd <= 5 && now.minutes < 14 * 60) live = true;
-    return live;
+    if ((who === "Ellen" || who === "Samuel" || who === "Milla" || who === "Mea") &&
+        now.wd >= 1 && now.wd <= 5 && now.minutes >= 8 * 60 && now.minutes < 14 * 60) return true;
+    return false;
   }
-
-  function daysUntil(iso, now) {
-    var a = now.iso.split("-").map(Number);
-    var b = iso.split("-").map(Number);
-    var da = Date.UTC(a[0], a[1] - 1, a[2]);
-    var db = Date.UTC(b[0], b[1] - 1, b[2]);
-    return Math.round((db - da) / 86400000);
-  }
-
   function nextExpectation(now) {
     if (!schedule || !schedule.expectations) return null;
     var best = null, bestD = 99999;
@@ -430,28 +516,50 @@
       }
       if (d < bestD) { bestD = d; best = ex; best._days = d; }
     }
+    // Always keep London as soft fallback if within 40 days
+    var lonD = daysUntil(LONTOO_START, now);
+    if (now.iso >= LONTOO_START && now.iso <= LONTOO_END) {
+      return { label: "Lontoo", start: LONTOO_START, end: LONTOO_END, _days: 0, _kind: "trip" };
+    }
+    if ((!best || best._days > lonD) && lonD >= 0 && lonD <= 40) {
+      return { label: "Lontoo · 13.–17.10.", start: LONTOO_START, end: LONTOO_END, _days: lonD, _kind: "trip" };
+    }
     return best;
+  }
+
+  function paintHeader(now) {
+    var g = document.getElementById("greet");
+    var d = document.getElementById("dateLine");
+    var c = document.getElementById("clock");
+    if (g) g.textContent = greeting(now.hour);
+    if (d) d.textContent = DAYS[now.wd] + " " + now.day + "." + now.month + ".";
+    if (c) c.textContent = now.hour + "." + pad(now.minute);
+    var q = document.getElementById("quote");
+    if (q) q.textContent = QUOTES[now.day % QUOTES.length];
   }
 
   function paintPeople(now) {
     var row = document.getElementById("peopleRow");
     if (!row) return;
-    var list = todayNonSchool(now);
+    var list = todayList(now);
     var html = "";
     for (var i = 0; i < PEOPLE.length; i++) {
       var who = PEOPLE[i];
       var on = statusFor(who, now, list);
       html += "<div class=\"person\"><div class=\"av\" style=\"background:" + colorWho(who) + "\">" +
-        esc(initial(who)) + "<span class=\"sd" + (on ? " on" : "") + "\"></span></div>" +
+        esc(initial(who)) + "<span class=\"dot" + (on ? " on" : "") + "\"></span></div>" +
         "<div class=\"nm\">" + esc(who) + "</div></div>";
     }
     row.innerHTML = html;
   }
 
-  function paintToday(now) {
-    var list = todayNonSchool(now);
-    var box = document.getElementById("todayList");
-    if (!box) return;
+  function paintHope(now) {
+    var ex = nextExpectation(now);
+    var title = document.getElementById("hopeTitle");
+    var meta = document.getElementById("hopeMeta");
+    var pill = document.getElementById("hopePill");
+    var kick = document.getElementById("hopeKicker");
+    var list = todayList(now);
     var liveIdx = -1, nextIdx = -1, nextDiff = 99999;
     for (var i = 0; i < list.length; i++) {
       var e = list[i];
@@ -462,66 +570,137 @@
         if (d < nextDiff) { nextDiff = d; nextIdx = i; }
       }
     }
-
-    var focus = liveIdx >= 0 ? list[liveIdx] : (nextIdx >= 0 ? list[nextIdx] : null);
-    var nt = document.getElementById("nextTitle");
-    var nm = document.getElementById("nextMeta");
-    var nc = document.getElementById("nextCd");
-    if (focus) {
-      if (nt) nt.textContent = (focus.who && focus.who !== "perhe" ? focus.who + " · " : "") + (focus.title || "");
+    // Prefer near-term event if within 3h, else expectation
+    if (liveIdx >= 0 || (nextIdx >= 0 && nextDiff <= 180)) {
+      var focus = liveIdx >= 0 ? list[liveIdx] : list[nextIdx];
+      if (kick) kick.textContent = liveIdx >= 0 ? "Nyt" : "Seuraavaksi";
+      if (title) title.textContent = (focus.who && focus.who !== "perhe" && focus.who !== "Perhe" ? focus.who + " · " : "") + (focus.title || "");
       var bits = [];
       if (focus.time) bits.push(fmtRange(focus.time, focus.end));
       if (focus.place) bits.push(focus.place);
       if (focus.driver) bits.push("kuski " + focus.driver);
-      if (nm) nm.textContent = bits.join(" · ");
-      if (nc) {
-        if (liveIdx >= 0) {
-          nc.style.display = "inline-block";
-          nc.textContent = "Nyt käynnissä";
-        } else if (nextDiff < 99999) {
-          nc.style.display = "inline-block";
-          if (nextDiff < 60) nc.textContent = "Alkioon " + nextDiff + " min";
-          else nc.textContent = "Alkioon " + Math.floor(nextDiff / 60) + " h " + (nextDiff % 60) + " min";
-        } else {
-          nc.style.display = "none";
-        }
+      if (meta) meta.textContent = bits.join(" · ");
+      if (pill) {
+        pill.style.display = "inline-block";
+        if (liveIdx >= 0) pill.textContent = "Käynnissä";
+        else if (nextDiff < 60) pill.textContent = "Alkioon " + nextDiff + " min";
+        else pill.textContent = "Alkioon " + Math.floor(nextDiff / 60) + " h " + (nextDiff % 60) + " min";
       }
-    } else {
-      if (nt) nt.textContent = "Ei seuraavaa merkintää";
-      if (nm) nm.textContent = "Rauhallinen hetki";
-      if (nc) nc.style.display = "none";
+      return;
     }
+    if (ex) {
+      if (kick) kick.textContent = ex._kind === "trip" ? "Matka" : "Odotus";
+      if (title) title.textContent = ex.label || "Tulossa";
+      if (meta) meta.textContent = ex.menu ? String(ex.menu).split("·")[0].trim() : "";
+      if (pill) {
+        pill.style.display = "inline-block";
+        if (ex._days === 0) pill.textContent = "Tänään";
+        else if (ex._days === 1) pill.textContent = "Huomenna";
+        else pill.textContent = ex._days + " päivää";
+      }
+      return;
+    }
+    if (kick) kick.textContent = "Hetki";
+    if (title) title.textContent = "Rauhallinen päivä";
+    if (meta) meta.textContent = "Ei kiirettä juuri nyt";
+    if (pill) pill.style.display = "none";
+  }
 
+  function paintMeal(now) {
+    var title = document.getElementById("mealTitle");
+    var sub = document.getElementById("mealSub");
+    var home = schedule && schedule.homeMeals ? schedule.homeMeals[now.iso] : null;
+    var school = schedule && schedule.schoolLunch ? schedule.schoolLunch[now.iso] : null;
+    if (title) title.textContent = home || "Ei merkintää";
+    if (sub) sub.textContent = school ? ("Koulussa: " + school) : "Kotiruoka";
+  }
+
+  function paintToday(now) {
+    var box = document.getElementById("todayList");
+    if (!box) return;
+    var list = todayList(now);
+    var liveIdx = -1;
+    for (var i = 0; i < list.length; i++) {
+      var st = parseMin(list[i].time), en = evEnd(list[i]);
+      if (st != null && en != null && st <= now.minutes && now.minutes < en) { liveIdx = i; break; }
+    }
     var html = "";
     for (var j = 0; j < list.length; j++) {
-      var e2 = list[j];
-      var st2 = parseMin(e2.time), en2 = evEnd(e2);
+      var e = list[j];
+      var st2 = parseMin(e.time), en2 = evEnd(e);
       var cls = "tev";
       if (st2 != null && en2 != null && now.minutes >= en2) cls += " past";
       else if (j === liveIdx) cls += " live";
-      var when = fmtRange(e2.time, e2.end) || "—";
+      var when = fmtRange(e.time, e.end) || "koko pv";
       var meta = [];
-      if (e2.place) meta.push(e2.place);
-      if (e2.driver) meta.push(e2.driver);
+      if (e.place) meta.push(e.place);
+      if (e.driver) meta.push("kuski " + e.driver);
+      if (e.note) meta.push(e.note);
       html += "<div class=\"" + cls + "\"><div class=\"when\">" + esc(when) + "</div>";
-      html += "<div class=\"dotc\" style=\"background:" + colorWho(e2.who) + "\"></div>";
-      html += "<div class=\"txt\">" + esc((e2.who && e2.who !== "perhe" ? e2.who + " · " : "") + (e2.title || ""));
+      html += "<div class=\"rail\"><div class=\"dot\" style=\"background:" + colorWho(e.who) + "\"></div></div>";
+      html += "<div class=\"txt\"><div class=\"who\">" + esc((e.who && e.who !== "perhe" && e.who !== "Perhe" ? e.who + " · " : "") + (e.title || "")) + "</div>";
       if (meta.length) html += "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>";
       html += "</div></div>";
     }
-    if (!html) html = "<div class=\"empty\">Ei merkintöjä tänään</div>";
+    if (!html) html = "<div class=\"empty\">Ei merkintöjä tänään — hyvä niin.</div>";
     box.innerHTML = html;
   }
 
-  function paintMem(now) {
-    if (!photos.length) return;
-    var p = photos[Math.abs(now.day * 17 + now.month) % photos.length];
+  function paintTomorrow(now) {
+    var row = document.getElementById("tomorrowRow");
+    if (!row) return;
+    var iso = addDaysIso(now.iso, 1);
+    var list = eventsOn(iso);
+    var out = [], seen = {};
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!e || e.kind === "koulu") continue;
+      var k = (e.time || "") + "|" + (e.who || "") + "|" + (e.title || "");
+      if (seen[k]) continue;
+      seen[k] = 1;
+      out.push(e);
+    }
+    if (!out.length) {
+      row.innerHTML = "<div class=\"tchip\"><div class=\"t\">Huomenna</div><div class=\"b\">Vapaampi päivä</div><div class=\"s\">Ei treenejä listalla</div></div>";
+      return;
+    }
+    var html = "";
+    for (var j = 0; j < Math.min(out.length, 6); j++) {
+      var e2 = out[j];
+      html += "<div class=\"tchip\"><div class=\"t\">" + esc(fmtRange(e2.time, e2.end) || "päivä") +
+        "</div><div class=\"b\">" + esc((e2.who && e2.who !== "perhe" ? e2.who + " · " : "") + (e2.title || "")) +
+        "</div><div class=\"s\">" + esc(e2.place || "") + "</div></div>";
+    }
+    row.innerHTML = html;
+  }
+
+  function showPhoto(p) {
+    if (!p) return;
     var img = document.getElementById("memImg");
     var pl = document.getElementById("memPlace");
     var yr = document.getElementById("memYear");
-    if (img) img.src = p.src;
+    if (!img) return;
+    img.classList.remove("zoom");
+    img.style.opacity = "0";
+    var next = new Image();
+    next.onload = function () {
+      img.src = p.src;
+      img.style.opacity = "1";
+      setTimeout(function () { img.classList.add("zoom"); }, 40);
+    };
+    next.src = p.src;
     if (pl) pl.textContent = p.place || "Muisto";
     if (yr) yr.textContent = p.year || "";
+  }
+  function paintMem(now) {
+    if (!photos.length) return;
+    if (!photoIdx && photoIdx !== 0) photoIdx = Math.abs(now.day * 17 + now.month) % photos.length;
+    showPhoto(photos[photoIdx % photos.length]);
+  }
+  function rotateMem() {
+    if (photos.length < 2) return;
+    photoIdx = (photoIdx + 1) % photos.length;
+    showPhoto(photos[photoIdx]);
   }
 
   function paintWx() {
@@ -530,70 +709,28 @@
     var w = wmo(c.code);
     var ico = document.getElementById("wxIco");
     var temp = document.getElementById("wxTemp");
-    var mw = document.getElementById("miniWx");
-    var ms = document.getElementById("miniWxS");
     if (ico) ico.textContent = w.icon;
     if (temp) temp.textContent = Math.round(c.temp) + "°";
-    if (mw) mw.textContent = w.icon + " " + Math.round(c.temp) + "°";
-    var bits = [w.phrase];
-    if (c.wind != null) bits.push(Math.round(c.wind) + " m/s");
-    if (c.tmin != null && c.tmax != null) bits.push(Math.round(c.tmin) + "–" + Math.round(c.tmax) + "°");
-    if (ms) ms.textContent = bits.join(" · ");
-  }
-
-  function paintExp(now) {
-    var ex = nextExpectation(now);
-    var b = document.getElementById("miniExp");
-    var s = document.getElementById("miniExpS");
-    if (!ex) {
-      if (b) b.textContent = "—";
-      if (s) s.textContent = "";
-      return;
-    }
-    var label = ex.label || "Tapahtuma";
-    var short = label.split("·")[0].trim();
-    if (b) b.textContent = short;
-    var d = ex._days;
-    if (s) {
-      if (d === 0) s.textContent = "Tänään";
-      else if (d === 1) s.textContent = "Huomenna";
-      else s.textContent = d + " päivää";
-    }
   }
 
   function paint() {
     var now = helsinkiNow();
-    var g = document.getElementById("greet");
-    var d = document.getElementById("dateLine");
-    if (g) g.textContent = greeting(now.hour);
-    if (d) d.textContent = DAYS[now.wd] + " " + now.day + "." + now.month + ".";
+    paintHeader(now);
     paintPeople(now);
+    paintHope(now);
+    paintMeal(now);
     paintToday(now);
-    paintMem(now);
+    paintTomorrow(now);
     paintWx();
-    paintExp(now);
   }
 
-  function loadSchedule() {
-    getJSON("schedule.json?v=" + BUILD, function (data) {
-      if (data) schedule = data;
-      paint();
-    });
-  }
-  function daysUntilIso(iso, now) {
-    try {
-      var a = Date.parse(iso + "T12:00:00");
-      var b = Date.parse(now.iso + "T12:00:00");
-      return Math.round((a - b) / 86400000);
-    } catch (e) { return 99; }
-  }
   function londonW(now) {
-    var d = daysUntilIso(LONTOO_START, now);
-    if (now.iso >= LONTOO_START && now.iso <= LONTOO_END) return 0.50;
-    if (d < 0) return 0.10;
-    if (d > 21) return 0.25;
+    var d = daysUntil(LONTOO_START, now);
+    if (now.iso >= LONTOO_START && now.iso <= LONTOO_END) return 0.55;
+    if (d < 0) return 0.12;
+    if (d > 21) return 0.28;
     if (d >= 8) return 0.45;
-    return 0.60;
+    return 0.62;
   }
   function weightPhotos(list, now) {
     if (!list || !list.length) return list || [];
@@ -604,51 +741,46 @@
       var isL = (p.place && /lontoo/i.test(p.place)) || (p.tags && p.tags.indexOf("london") >= 0);
       if (isL) lon.push(p); else oth.push(p);
     }
-    var n = Math.min(list.length, 48);
+    var n = Math.min(list.length, 60);
     var nL = Math.round(n * lw);
     if (nL > lon.length) nL = lon.length;
     var out = lon.slice(0, nL).concat(oth.slice(0, n - nL));
-    // light shuffle
     for (var j = out.length - 1; j > 0; j--) {
       var k = Math.floor(Math.random() * (j + 1));
       var tmp = out[j]; out[j] = out[k]; out[k] = tmp;
     }
     return out.length ? out : list;
   }
-  function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=" + BUILD, function (data) {
-      if (data && data.length) photos = weightPhotos(data, helsinkiNow());
-      paint();
-    });
-  }
-  function loadWx() {
-    var url = "https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&current=temperature_2m,weather_code,wind_speed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min&wind_speed_unit=ms&timezone=Europe%2FHelsinki&forecast_days=5";
-    getJSON(url, function (data) {
-      if (!data) return;
-      if (data.current) {
-        wxState.current = {
-          temp: data.current.temperature_2m,
-          code: data.current.weather_code,
-          wind: data.current.wind_speed_10m
-        };
-      }
-      if (data.daily && wxState.current) {
-        wxState.current.tmin = data.daily.temperature_2m_min[0];
-        wxState.current.tmax = data.daily.temperature_2m_max[0];
-      }
-      paint();
-    });
-  }
 
-  loadSchedule();
-  loadPhotos();
-  loadWx();
+  getJSON("schedule.json?v=" + BUILD, function (data) {
+    if (data) schedule = data;
+    paint();
+  });
+  getJSON("photos-from-matkat.json?v=" + BUILD, function (data) {
+    if (data && data.length) {
+      photos = weightPhotos(data, helsinkiNow());
+      photoIdx = Math.floor(Math.random() * photos.length);
+      paintMem(helsinkiNow());
+    }
+  });
+  getJSON(
+    "https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&current=temperature_2m,weather_code,wind_speed_10m&timezone=Europe%2FHelsinki",
+    function (data) {
+      if (!data || !data.current) return;
+      wxState.current = {
+        temp: data.current.temperature_2m,
+        code: data.current.weather_code,
+        wind: data.current.wind_speed_10m
+      };
+      paintWx();
+    }
+  );
+
+  paint();
   setInterval(function () { paint(); }, 30000);
-  setInterval(loadWx, 15 * 60 * 1000);
+  setInterval(rotateMem, 12000);
 })();
 </script>
-
-
 
 <script>
 (function () {
@@ -656,7 +788,8 @@
     var el = document.getElementById("navTsla");
     if (!el || !d || d.price == null) return;
     var p = Number(d.price);
-    var pct = Number(d.changePct);
+    var pct = Number(d.changePct != null ? d.changePct : d.changePct);
+    if (isNaN(pct)) pct = Number(d.changePct);
     if (isNaN(p)) return;
     var priceStr = p.toFixed(2);
     var cls = "flat";
@@ -667,7 +800,16 @@
       var sign = pct > 0 ? "+" : "";
       pctStr = sign + pct.toFixed(1) + "%";
     }
-    el.innerHTML = priceStr + " <span class=\"" + cls + "\">" + pctStr + "</span>";
+    el.innerHTML = priceStr + "<br><span class=\"" + cls + "\">" + pctStr + "</span>";
+  }
+  function normalize(d) {
+    if (!d) return null;
+    var price = d.price;
+    var pct = d.changePct;
+    if (pct == null) pct = d.changePct;
+    if (pct == null) pct = d.changePct;
+    if (price == null) return null;
+    return { price: price, changePct: pct };
   }
   function fromYahoo(raw) {
     try {
@@ -676,7 +818,6 @@
       if (!meta) return null;
       var price = Number(meta.regularMarketPrice);
       var pct = Number(meta.regularMarketChangePercent);
-      if (pct == null || isNaN(pct)) pct = Number(meta.fulldayChangePercent);
       if (isNaN(price)) return null;
       return { price: price, changePct: pct };
     } catch (e) { return null; }
@@ -695,12 +836,13 @@
   }
   function loadLive() {
     var v = Math.floor(Date.now() / 60000);
-    // 1) same-origin cache first — shows immediately on phone
     xhrGet("tsla.json?v=" + v, function (err0, text0) {
       if (!err0 && text0) {
-        try { paintTsla(JSON.parse(text0)); } catch (e) {}
+        try {
+          var d0 = JSON.parse(text0);
+          paintTsla({ price: d0.price, changePct: (d0.changePct != null ? d0.changePct : d0.changePct) });
+        } catch (e) {}
       }
-      // 2) then try live Yahoo via proxy (non-blocking upgrade)
       var yahooUrl = "https://api.allorigins.win/raw?url=" +
         encodeURIComponent("https://query1.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=5d");
       xhrGet(yahooUrl, function (err, text) {
@@ -713,6 +855,5 @@
   setInterval(loadLive, 60000);
 })();
 </script>
-
 </body>
 </html>

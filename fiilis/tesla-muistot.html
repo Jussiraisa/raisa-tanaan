@@ -304,16 +304,9 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; }
 </script>
 
 
+
 <script>
 (function () {
-  function parseMoney(s) {
-    if (s == null) return NaN;
-    return parseFloat(String(s).replace(/[^0-9.\-]/g, ""));
-  }
-  function parsePct(s) {
-    if (s == null) return NaN;
-    return parseFloat(String(s).replace(/[^0-9.\-+]/g, ""));
-  }
   function paintTsla(d) {
     var el = document.getElementById("navTsla");
     if (!el || !d || d.price == null) return;
@@ -343,24 +336,10 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; }
       return { price: price, changePct: pct };
     } catch (e) { return null; }
   }
-  function fromNasdaq(raw) {
-    try {
-      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
-      var p = j && j.data && j.data.primaryData;
-      if (!p) return null;
-      var price = parseMoney(p.lastSalePrice);
-      var pct = parsePct(p.percentageChange);
-      if (String(p.netChange || "").indexOf("-") >= 0 || p.deltaIndicator === "down") {
-        if (pct > 0) pct = -pct;
-      }
-      if (isNaN(price)) return null;
-      return { price: price, changePct: pct };
-    } catch (e) { return null; }
-  }
   function xhrGet(url, cb) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
-    xhr.timeout = 10000;
+    xhr.timeout = 8000;
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 300) cb(null, xhr.responseText);
       else cb("status");
@@ -370,23 +349,18 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; }
     xhr.send();
   }
   function loadLive() {
-    // Prefer local tsla.json first (fast, same-origin), then live Yahoo via allorigins
     var v = Math.floor(Date.now() / 60000);
+    // 1) same-origin cache first — shows immediately on phone
     xhrGet("tsla.json?v=" + v, function (err0, text0) {
       if (!err0 && text0) {
         try { paintTsla(JSON.parse(text0)); } catch (e) {}
       }
+      // 2) then try live Yahoo via proxy (non-blocking upgrade)
       var yahooUrl = "https://api.allorigins.win/raw?url=" +
         encodeURIComponent("https://query1.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=5d");
       xhrGet(yahooUrl, function (err, text) {
         var d = (!err && text) ? fromYahoo(text) : null;
-        if (d) { paintTsla(d); return; }
-        var nasdaqUrl = "https://api.allorigins.win/raw?url=" +
-          encodeURIComponent("https://api.nasdaq.com/api/quote/TSLA/info?assetclass=stocks");
-        xhrGet(nasdaqUrl, function (err2, text2) {
-          var d2 = (!err2 && text2) ? fromNasdaq(text2) : null;
-          if (d2) paintTsla(d2);
-        });
+        if (d) paintTsla(d);
       });
     });
   }

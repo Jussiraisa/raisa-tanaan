@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v110-1010">
+  <meta name="fiilis-build" content="20260922-v111-ilta">
   <meta name="theme-color" content="#EDE6DB">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
 
-:root, body.day {
+:root {
+  /* Neutral until body theme class applies — do not lock day colors on :root */
   --bg: #EDE6DB;
   --bg-deep: #E6DED2;
   --card: #F6F1E9;
@@ -33,7 +34,28 @@
   --row-line: rgba(44,36,24,.07);
   --meta: #7a6a55;
 }
-body.evening {
+html.day, body.day, html[data-theme="day"], body[data-theme="day"] {
+  --bg: #EDE6DB;
+  --bg-deep: #E6DED2;
+  --card: #F6F1E9;
+  --card-soft: #F6F1E9;
+  --text: #272522;
+  --muted: #6F6860;
+  --accent: #B89A72;
+  --shadow: rgba(60,40,18,.08);
+  --nav-bg: #EDE6DB;
+  --nav-fg: #5a4a34;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
+  --empty: #8A7C6A;
+  --badge-bg: rgba(184,154,114,.28);
+  --badge-fg: #6a5230;
+  --hero-overlay: rgba(40,30,20,.18);
+  --row-line: rgba(44,36,24,.07);
+  --meta: #7a6a55;
+}
+html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening"] {
   --bg: #302C28;
   --bg-deep: #2A2622;
   --card: #3A3530;
@@ -54,7 +76,7 @@ body.evening {
   --row-line: rgba(241,235,226,.08);
   --meta: #BDB3A7;
 }
-body.night {
+html.night, body.night, html[data-theme="night"], body[data-theme="night"] {
   --bg: #26221F;
   --bg-deep: #221E1B;
   --card: #322E29;
@@ -428,7 +450,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
 
 </style>
 </head>
-<body class="morning">
+<body class="day">
 <div class="tv" id="app">
   <div class="head">
     <div class="clock" id="clock">––.––</div>
@@ -482,7 +504,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">20260922-v110-1010</span>
+      <span class="brand">20260922-v111-ilta</span>
     </div>
   </div>
 </div>
@@ -496,7 +518,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
 
 <script>
 (function () {
-  var BUILD = "20260922-v110-1010";
+  var BUILD = "20260922-v111-ilta";
   ;
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -907,19 +929,25 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     return "Hyvää yötä";
   }
   function themeClass(hour) {
-    if (hour >= 7 && hour < 18) return "day";
-    if (hour >= 18 && hour < 22) return "evening";
+    if (hour >= 7 && hour < 17) return "day";
+    if (hour >= 17 && hour < 22) return "evening";
     return "night";
   }
   function applyTheme(hour) {
     var th = themeClass(hour);
+    document.documentElement.setAttribute("data-theme", th);
+    document.documentElement.className = th;
     document.body.className = th;
     document.body.setAttribute("data-theme", th);
+    var bg = th === "night" ? "#26221F" : (th === "evening" ? "#302C28" : "#EDE6DB");
+    var fg = th === "day" ? "#272522" : "#F1EBE2";
+    document.documentElement.style.background = bg;
+    document.body.style.background = bg;
+    document.body.style.color = fg;
+    var tv = document.getElementById("app") || document.querySelector(".tv");
+    if (tv) { tv.style.background = bg; tv.style.color = fg; }
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) {
-      var tc = th === "night" ? "#26221F" : (th === "evening" ? "#302C28" : "#EDE6DB");
-      meta.setAttribute("content", tc);
-    }
+    if (meta) meta.setAttribute("content", bg);
   }
   function parseMin(hm) {
     if (!hm) return null;

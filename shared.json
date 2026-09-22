@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790068972532,
+  "updated": 1790078647449,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -262,14 +262,6 @@
       "status": ""
     },
     {
-      "id": "cal-74okcci48l1j6b9l652jab9k6p1kcba1892jab9i6ks4aga48d138c9h6c",
-      "title": "Mea Arja",
-      "date": "2026-09-22",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
       "id": "kyyti-samuel-welhot-2026-09-22",
       "who": "samuel",
       "title": "Welhot · Lippumäki · kuski Topias",
@@ -283,6 +275,14 @@
       "depart": "16:15"
     },
     {
+      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
+      "title": "Mea valmennus",
+      "date": "2026-09-22",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
+    },
+    {
       "id": "kyyti-ellen-ambrosia-2026-09-22",
       "who": "ellen",
       "title": "Ambrosia · Kuopiohalli (meidän kyydit)",
@@ -293,14 +293,6 @@
       "kind": "treeni",
       "driver": "Räisä",
       "status": "us"
-    },
-    {
-      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-22",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
     },
     {
       "id": "cal-kajgpe3pn2mrddtobgpf3lkhoo",
@@ -333,6 +325,15 @@
       "status": "open"
     },
     {
+      "id": "cal-ot896g1o8ccv4k44abuac3ju34",
+      "title": "Ellen · Ambrosia joukkueilta (Leo’s)",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "cal",
+      "place": "Leo's Leikkimaa"
+    },
+    {
       "id": "info-ellen-leos-2026-09-23",
       "who": "ellen",
       "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
@@ -345,14 +346,34 @@
       "status": ""
     },
     {
-      "id": "cal-ot896g1o8ccv4k44abuac3ju34",
-      "title": "Ellen · Ambrosia joukkueilta (Leo’s)",
+      "id": "sheet-mea-2026-09-23",
+      "who": "mea",
+      "title": "Lianna",
       "date": "2026-09-23",
       "start": "18:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Leo's Leikkimaa",
-      "driver": "Jussi"
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-23",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
+      "id": "info-kkp-2026-09-25",
+      "who": "",
+      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
+      "date": "2026-09-25",
+      "place": "Aurinkorinteen koulu",
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ntv-kisat-2026-09-25",
@@ -361,16 +382,6 @@
       "date": "2026-09-25",
       "dateEnd": "2026-09-27",
       "place": "Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-kkp-2026-09-25",
-      "who": "",
-      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
-      "date": "2026-09-25",
-      "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -592,26 +603,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "sheet-mea-2026-09-23",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-23",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
     }
   ],
   "schoolLunch": {

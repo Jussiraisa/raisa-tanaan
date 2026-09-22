@@ -1,94 +1,135 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-tesla-v8-cream">
-<title>Fiilis · Muistot</title>
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
-  body {
-    font-family: "Source Sans 3", system-ui, sans-serif;
-    background: #F7F1E3;
-    color: #2a241c;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .stage {
-    position: absolute; top: 1.6vmin; left: 1.6vmin; right: 1.6vmin; bottom: 7.4vmin;
-    border-radius: 1.6vmin; overflow: hidden;
-    background: #EDE6D8;
-    box-shadow: 0 .5vmin 1.8vmin rgba(60,40,20,.1);
-  }
-  .stage img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    -webkit-transition: opacity .8s ease; transition: opacity .8s ease;
-  }
-  .veil {
-    position: absolute; left: 0; right: 0; bottom: 0; height: 28%;
-    background: linear-gradient(180deg, transparent, rgba(20,16,10,.62));
-    pointer-events: none;
-  }
-  .cap {
-    position: absolute; left: 2.2vmin; right: 2.2vmin; bottom: 2.2vmin;
-    color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.45);
-  }
-  .cap .place {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 4.2vmin; font-weight: 700; font-style: italic;
-  }
-  .cap .year { font-size: 1.8vmin; opacity: .9; margin-top: .3vmin; font-weight: 600; }
-  .cap .tag {
-    margin-top: .6vmin; font-size: 1.55vmin; opacity: .85;
-    font-family: "Cormorant Garamond", Georgia, serif; font-style: italic;
-  }
-  .nav {
-    position: fixed; left: 0; right: 0; bottom: 0; height: 6.4vmin;
-    background: rgba(45,40,34,.94); color: #d8d0c4;
-    display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center;
-    -ms-flex-pack: distribute; justify-content: space-around;
-    padding: 0 2vmin; z-index: 20;
-  }
-  .nav a {
-    color: inherit; text-decoration: none; text-align: center;
-    font-size: 1.2vmin; font-weight: 600; min-width: 8vmin; padding: .4vmin .6vmin;
-    opacity: .72;
-  }
-  .nav a .ic { display: block; font-size: 2.2vmin; line-height: 1.1; margin-bottom: .1vmin; }
-  .nav a.on { opacity: 1; color: #fff; border-bottom: .28vmin solid #c45c4a; padding-bottom: .2vmin; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="fiilis-build" content="20260922-v96-sync">
+  <meta name="theme-color" content="#F7F1E3">
+  <title>Fiilis · Muistot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
+  <style>
+html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; }
+* { box-sizing: border-box; }
+.stage {
+  position: absolute; top: 1.8vmin; left: 2vmin; right: 2vmin; bottom: 8vmin;
+  border-radius: 1.8vmin; overflow: hidden; background: #e2c9a4;
+  box-shadow: 0 .6vmin 2.2vmin rgba(60,40,18,.12);
+}
+.stage img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: opacity .9s ease;
+}
+.veil {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 32%;
+  background: linear-gradient(180deg, transparent, rgba(20,16,10,.7));
+  pointer-events: none;
+}
+.cap {
+  position: absolute; left: 2.8vmin; right: 2.8vmin; bottom: 2.4vmin;
+  color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.4);
+}
+.cap .wh {
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  font-size: 1.4vmin; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; opacity: .85; margin-bottom: .4vmin;
+}
+.cap .place {
+  font-family: Newsreader, Georgia, serif;
+  font-size: 4.6vmin; font-weight: 400; font-style: italic;
+}
+.cap .year { font-size: 1.8vmin; opacity: .9; margin-top: .35vmin; font-weight: 600; }
+.cap .tag {
+  margin-top: .7vmin; font-size: 1.55vmin; opacity: .85;
+  font-family: Newsreader, Georgia, serif; font-style: italic;
+}
+.brand {
+  position: absolute; top: 2.2vmin; right: 2.8vmin;
+  font-size: .95vmin; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.7);
+  text-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
 
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0; height: 6.4vmin;
+  background: rgba(45,40,34,.94); color: #d8d0c4;
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 0 2vmin; z-index: 30;
+}
+.nav a {
+  color: inherit; text-decoration: none; text-align: center;
+  font-size: 1.2vmin; font-weight: 600; min-width: 8vmin;
+  padding: .4vmin .6vmin; opacity: .72;
+}
+.nav a .ic { display: block; font-size: 2.2vmin; line-height: 1.1; margin-bottom: .1vmin; }
+.nav a.on { opacity: 1; color: #fff; border-bottom: .28vmin solid #c45c4a; padding-bottom: .2vmin; }
+.nav-tsla {
+  font-size: 1.35vmin; font-weight: 650; opacity: .9;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  letter-spacing: .01em; line-height: 1.2; text-align: center;
+  min-width: 0; padding: .3vmin .5vmin; pointer-events: none;
+  color: #d8d0c4;
+}
+.nav-tsla .up { color: #6fcf8a; }
+.nav-tsla .dn { color: #e07a6a; }
+.nav-tsla .flat { color: #d8d0c4; opacity: .75; }
 @media (max-width: 700px) {
   .nav { height: calc(3.7rem + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); }
-  .nav a { font-size: 0.72rem; min-width: 4.2rem; padding: 0.35rem 0.4rem; }
+  .nav a { font-size: 0.72rem; min-width: 4.2rem; }
   .nav a .ic { font-size: 1.2rem; }
-  body { padding-bottom: 4.5rem; }
+  .nav-tsla { font-size: .72rem; }
 }
+
 </style>
 </head>
 <body>
 <div class="stage" id="stage">
+  <div class="chips" id="chips" aria-label="Albumivalinta"></div>
   <img id="photo" alt="">
   <div class="veil"></div>
+  <div class="brand">Tesla</div>
   <div class="cap">
+    <div class="wh">Muistatko…</div>
     <div class="place" id="place">Muistot</div>
     <div class="year" id="year"></div>
     <div class="tag">Sama matka. Enemmän yhdessä.</div>
   </div>
 </div>
-<nav class="nav">
-  <a id="navHome" href="tesla.html"><span class="ic">◎</span><span class="lab">Tänään</span></a>
-  <a id="navCal" href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
-  <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
-  <a id="navMem" href="tesla-muistot.html" class="on"><span class="ic">♡</span>Muistot</a>
-</nav>
+
 <script>
 (function () {
-  var BUILD = "20260922-tesla-v8-cream";
-  var photos = [];
+  P260922-v96-sync";
+  var LS_KEY = "fiilisMemAlbum";
+  var PHOTO_DENY = {
+    "matka-2018-lontoo-00-002.jpg": 1,
+    "matka-2018-lontoo-05-007.jpg": 1,
+    "matka-2022-eurooppa-01-031.jpg": 1,
+    "matka-2025-costa-brava-02-053.jpg": 1,
+    "matka-2025-lontoo-04-062.jpg": 1,
+    "matka-2026-brasilia-00-065.jpg": 1,
+    "matka-2026-brasilia-03-068.jpg": 1
+  };
+  var FALLBACK = [
+    { src: "photos-web/matka-2018-lontoo-cover-001.jpg", place: "Lontoo", year: "2018" },
+    { src: "photos-web/matka-2019-italia-cover-015.jpg", place: "Italia", year: "2019" },
+    { src: "photos-web/matka-2020-norja-cover-022.jpg", place: "Norja", year: "2020" },
+    { src: "photos-web/matka-2024-riviera-cover-043.jpg", place: "Riviera", year: "2024" },
+    { src: "photos-web/matka-2025-lontoo-cover-057.jpg", place: "Lontoo", year: "2025" },
+    { src: "photos-web/matka-2026-alicante-cover-071.jpg", place: "Alicante", year: "2026" }
+  ];
+  var albums = [];
+  var albumId = "kaikki";
+  var photos = FALLBACK.slice(0);
   var idx = 0;
+  var timer = null;
 
+  function photoDenied(src) {
+    if (!src) return true;
+    var base = String(src).split("/").pop();
+    return !!PHOTO_DENY[base];
+  }
   function getJSON(url, cb) {
     try {
       var x = new XMLHttpRequest();
@@ -103,7 +144,72 @@
       x.send();
     } catch (e) { cb(null); }
   }
-
+  function loadAlbumPref() {
+    try {
+      var v = localStorage.getItem(LS_KEY);
+      if (v) albumId = v;
+    } catch (e) {}
+  }
+  function saveAlbumPref() {
+    try { localStorage.setItem(LS_KEY, albumId); } catch (e) {}
+  }
+  function buildPool() {
+    var out = [];
+    if (!albums.length) { photos = FALLBACK.slice(0); return; }
+    if (albumId === "kaikki") {
+      for (var i = 0; i < albums.length; i++) {
+        var ph = albums[i].photos || [];
+        for (var j = 0; j < ph.length; j++) {
+          var m = ph[j];
+          if (m && m.src && !photoDenied(m.src)) {
+            out.push({ src: m.src, place: m.place || albums[i].title || "Muisto", year: m.year || "" });
+          }
+        }
+      }
+    } else {
+      for (var a = 0; a < albums.length; a++) {
+        if (albums[a].id === albumId) {
+          var list = albums[a].photos || [];
+          for (var k = 0; k < list.length; k++) {
+            var p = list[k];
+            if (p && p.src && !photoDenied(p.src)) {
+              out.push({ src: p.src, place: p.place || albums[a].title || "Muisto", year: p.year || "" });
+            }
+          }
+          break;
+        }
+      }
+    }
+    photos = out.length ? out : FALLBACK.slice(0);
+    idx = 0;
+  }
+  function renderChips() {
+    var el = document.getElementById("chips");
+    if (!el) return;
+    var items = [{ id: "kaikki", title: "Kaikki" }];
+    for (var i = 0; i < albums.length; i++) {
+      items.push({ id: albums[i].id, title: albums[i].title });
+    }
+    el.innerHTML = "";
+    for (var c = 0; c < items.length; c++) {
+      (function (it) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip" + (it.id === albumId ? " on" : "");
+        b.textContent = it.title;
+        b.setAttribute("aria-pressed", it.id === albumId ? "true" : "false");
+        b.onclick = function () {
+          albumId = it.id;
+          saveAlbumPref();
+          buildPool();
+          renderChips();
+          show();
+          restartTimer();
+        };
+        el.appendChild(b);
+      })(items[c]);
+    }
+  }
   function show() {
     if (!photos.length) return;
     var p = photos[idx % photos.length];
@@ -115,28 +221,62 @@
       setTimeout(function () {
         img.src = p.src;
         img.onload = function () { img.style.opacity = "1"; };
-      }, 200);
+      }, 220);
     }
     if (place) place.textContent = p.place || "Muisto";
     if (year) year.textContent = p.year || "";
   }
-
-  function next() {
-    if (!photos.length) return;
-    idx = (idx + 1) % photos.length;
-    show();
-  }
-
-  getJSON("photos-from-matkat.json?v=" + BUILD, function (data) {
-    if (data && data.length) {
-      photos = data;
-      idx = Math.floor(Math.random() * photos.length);
+  function restartTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(function () {
+      idx = (idx + 1) % photos.length;
       show();
-      setInterval(next, 8000);
+    }, 12000);
+  }
+  loadAlbumPref();
+  getJSON("photos-albums.json?v=" + BUILD, function (data) {
+    if (data && data.albums && data.albums.length) {
+      albums = data.albums;
+      var ok = false;
+      for (var i = 0; i < albums.length; i++) if (albums[i].id === albumId) ok = true;
+      if (albumId !== "kaikki" && !ok) albumId = "kaikki";
+      buildPool();
+      renderChips();
+      show();
+      restartTimer();
+      return;
     }
+    // fallback flat list
+    getJSON("photos-from-matkat.json?v=" + BUILD, function (flat) {
+      if (flat && flat.length) {
+        var out = [];
+        for (var i = 0; i < flat.length; i++) {
+          var m = flat[i];
+          if (m && m.src && !photoDenied(m.src)) {
+            out.push({ src: m.src, place: m.place || "Muisto", year: m.year || "" });
+          }
+        }
+        if (out.length >= 6) photos = out;
+      }
+      renderChips();
+      show();
+      restartTimer();
+    });
   });
+  show();
 })();
 </script>
+
+
+
+
+<nav class="nav">
+  <a id="navHome" href="tesla.html"><span class="ic">◎</span><span class="lab">Tänään</span></a>
+  <a id="navCal" href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
+  <a id="navMem" class="on" href="tesla-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <span class="nav-tsla" id="navTsla" title="TSLA"></span>
+</nav>
 
 <script>
 (function () {
@@ -160,6 +300,98 @@
   if (cal) cal.href = "tesla-kalenteri.html" + suf;
   var mem = document.getElementById("navMem");
   if (mem) mem.href = "tesla-muistot.html" + suf;
+})();
+</script>
+
+
+<script>
+(function () {
+  function parseMoney(s) {
+    if (s == null) return NaN;
+    return parseFloat(String(s).replace(/[^0-9.\-]/g, ""));
+  }
+  function parsePct(s) {
+    if (s == null) return NaN;
+    return parseFloat(String(s).replace(/[^0-9.\-+]/g, ""));
+  }
+  function paintTsla(d) {
+    var el = document.getElementById("navTsla");
+    if (!el || !d || d.price == null) return;
+    var p = Number(d.price);
+    var pct = Number(d.changePct);
+    if (isNaN(p)) return;
+    var priceStr = p.toFixed(2);
+    var cls = "flat";
+    var pctStr = "0.0%";
+    if (!isNaN(pct)) {
+      if (pct > 0.005) cls = "up";
+      else if (pct < -0.005) cls = "dn";
+      var sign = pct > 0 ? "+" : "";
+      pctStr = sign + pct.toFixed(1) + "%";
+    }
+    el.innerHTML = priceStr + " <span class=\"" + cls + "\">" + pctStr + "</span>";
+  }
+  function fromYahoo(raw) {
+    try {
+      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
+      var meta = j && j.chart && j.chart.result && j.chart.result[0] && j.chart.result[0].meta;
+      if (!meta) return null;
+      var price = Number(meta.regularMarketPrice);
+      var pct = Number(meta.regularMarketChangePercent);
+      if (pct == null || isNaN(pct)) pct = Number(meta.fulldayChangePercent);
+      if (isNaN(price)) return null;
+      return { price: price, changePct: pct };
+    } catch (e) { return null; }
+  }
+  function fromNasdaq(raw) {
+    try {
+      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
+      var p = j && j.data && j.data.primaryData;
+      if (!p) return null;
+      var price = parseMoney(p.lastSalePrice);
+      var pct = parsePct(p.percentageChange);
+      if (String(p.netChange || "").indexOf("-") >= 0 || p.deltaIndicator === "down") {
+        if (pct > 0) pct = -pct;
+      }
+      if (isNaN(price)) return null;
+      return { price: price, changePct: pct };
+    } catch (e) { return null; }
+  }
+  function xhrGet(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.timeout = 10000;
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) cb(null, xhr.responseText);
+      else cb("status");
+    };
+    xhr.onerror = function () { cb("net"); };
+    xhr.ontimeout = function () { cb("timeout"); };
+    xhr.send();
+  }
+  function loadLive() {
+    // Prefer local tsla.json first (fast, same-origin), then live Yahoo via allorigins
+    var v = Math.floor(Date.now() / 60000);
+    xhrGet("tsla.json?v=" + v, function (err0, text0) {
+      if (!err0 && text0) {
+        try { paintTsla(JSON.parse(text0)); } catch (e) {}
+      }
+      var yahooUrl = "https://api.allorigins.win/raw?url=" +
+        encodeURIComponent("https://query1.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=5d");
+      xhrGet(yahooUrl, function (err, text) {
+        var d = (!err && text) ? fromYahoo(text) : null;
+        if (d) { paintTsla(d); return; }
+        var nasdaqUrl = "https://api.allorigins.win/raw?url=" +
+          encodeURIComponent("https://api.nasdaq.com/api/quote/TSLA/info?assetclass=stocks");
+        xhrGet(nasdaqUrl, function (err2, text2) {
+          var d2 = (!err2 && text2) ? fromNasdaq(text2) : null;
+          if (d2) paintTsla(d2);
+        });
+      });
+    });
+  }
+  loadLive();
+  setInterval(loadLive, 60000);
 })();
 </script>
 

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v113-kerma">
-  <meta name="theme-color" content="#EDE6DB">
+  <meta name="P260922-v114-kerma">
+  <meta name="theme-color" content="#F2E4CF">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,15 @@
 
 :root {
   /* Neutral until body theme class applies — do not lock day colors on :root */
-  --bg: #EDE6DB;
-  --bg-deep: #E6DED2;
-  --card: #F6F1E9;
-  --card-soft: #F6F1E9;
+  --bg: #F2E4CF;
+  --bg-deep: #EBD9C0;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.08);
-  --nav-bg: #EDE6DB;
+  --nav-bg: #F2E4CF;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -35,15 +35,15 @@
   --meta: #7a6a55;
 }
 html.day, body.day, html[data-theme="day"], body[data-theme="day"] {
-  --bg: #EDE6DB;
-  --bg-deep: #E6DED2;
-  --card: #F6F1E9;
-  --card-soft: #F6F1E9;
+  --bg: #F2E4CF;
+  --bg-deep: #EBD9C0;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.08);
-  --nav-bg: #EDE6DB;
+  --nav-bg: #F2E4CF;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -56,15 +56,15 @@ html.day, body.day, html[data-theme="day"], body[data-theme="day"] {
   --meta: #7a6a55;
 }
 html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening"] {
-  --bg: #EDE6DB;
-  --bg-deep: #E6DED2;
-  --card: #F6F1E9;
-  --card-soft: #F6F1E9;
+  --bg: #F2E4CF;
+  --bg-deep: #EBD9C0;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.10);
-  --nav-bg: #EDE6DB;
+  --nav-bg: #F2E4CF;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -77,15 +77,15 @@ html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening
   --meta: #7a6a55;
 }
 html.night, body.night, html[data-theme="night"], body[data-theme="night"] {
-  --bg: #E4DAC8;
-  --bg-deep: #DCD0BC;
-  --card: #EFE6D8;
-  --card-soft: #EFE6D8;
+  --bg: #E8D7BC;
+  --bg-deep: #DFC9A8;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.12);
-  --nav-bg: #E4DAC8;
+  --nav-bg: #E8D7BC;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -504,7 +504,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">20260922-v113-kerma</span>
+      <span class="brand">20260922-v114-kerma</span>
     </div>
   </div>
 </div>
@@ -518,7 +518,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
 
 <script>
 (function () {
-  var BUILD = "20260922-v113-kerma";
+  var BUILD = "20260922-v114-kerma";
   ;
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -939,7 +939,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     document.documentElement.className = th;
     document.body.className = th;
     document.body.setAttribute("data-theme", th);
-    var bg = th === "night" ? "#E4DAC8" : (th === "evening" ? "#EDE6DB" : "#EDE6DB");
+    var bg = th === "night" ? "#E8D7BC" : (th === "evening" ? "#F2E4CF" : "#F2E4CF");
     var fg = "#272522";
     document.documentElement.style.background = bg;
     document.body.style.background = bg;
@@ -1359,8 +1359,8 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
   function paintTomorrow(now) {
     var el = document.getElementById("tomorrowBox");
     if (!el) return;
-    /* School today-vs-tomorrow switches at 17:00 Helsinki (theme still flips at 18). */
-    var showTomorrowSchool = (now.hour >= 17);
+    /* School today-vs-tomorrow switches at 16:00 Helsinki (theme still flips at 18). */
+    var showTomorrowSchool = (now.hour >= 16);
     var schoolIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : now.iso;
     var schoolWd = showTomorrowSchool ? ((now.wd + 1) % 7) : now.wd;
     var schools = schoolStartsForWd(schoolWd);

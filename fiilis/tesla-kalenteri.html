@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v113-kerma">
-  <meta name="theme-color" content="#EDE6DB">
+  <meta name="P260922-v114-kerma">
+  <meta name="theme-color" content="#F2E4CF">
   <title>Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
 :root, body.day {
-  --bg: #EDE6DB;
-  --card: #F6F1E9;
+  --bg: #F2E4CF;
+  --card: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --ev: #272522;
@@ -24,15 +24,15 @@
   --shadow: rgba(60,40,18,.06);
 }
 html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening"] {
-  --bg: #EDE6DB;
-  --bg-deep: #E6DED2;
-  --card: #F6F1E9;
-  --card-soft: #F6F1E9;
+  --bg: #F2E4CF;
+  --bg-deep: #EBD9C0;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.10);
-  --nav-bg: #EDE6DB;
+  --nav-bg: #F2E4CF;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -45,15 +45,15 @@ html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening
   --meta: #7a6a55;
 }
 html.night, body.night, html[data-theme="night"], body[data-theme="night"] {
-  --bg: #E4DAC8;
-  --bg-deep: #DCD0BC;
-  --card: #EFE6D8;
-  --card-soft: #EFE6D8;
+  --bg: #E8D7BC;
+  --bg-deep: #DFC9A8;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.12);
-  --nav-bg: #E4DAC8;
+  --nav-bg: #E8D7BC;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -227,7 +227,7 @@ body.evening .day .ev, body.night .day .ev {
   }
   applyTheme();
   setInterval(applyTheme, 60000);
-  var BUILD = "20260922-v113-kerma";
+  var BUILD = "20260922-v114-kerma";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

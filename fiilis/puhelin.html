@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-v113-kerma">
-<meta name="theme-color" content="#EDE6DB">
+<meta name="P260922-v114-kerma">
+<meta name="theme-color" content="#F2E4CF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Fiilis">
@@ -15,9 +15,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root, body.day {
-  --cream: #EDE6DB;
-  --bg: #EDE6DB;
-  --card: #F6F1E9;
+  --cream: #F2E4CF;
+  --bg: #F2E4CF;
+  --card: #F7EFE3;
   --ink: #272522;
   --text: #272522;
   --muted: #6F6860;
@@ -25,20 +25,20 @@
   --honey: #B89A72;
   --accent: #B89A72;
   --coral: #C45C4A;
-  --nav: #EDE6DB;
+  --nav: #F2E4CF;
   --shadow: 0 10px 28px rgba(60,40,18,.08);
   --radius: 1.25rem;
 }
 html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening"] {
-  --bg: #EDE6DB;
-  --bg-deep: #E6DED2;
-  --card: #F6F1E9;
-  --card-soft: #F6F1E9;
+  --bg: #F2E4CF;
+  --bg-deep: #EBD9C0;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.10);
-  --nav-bg: #EDE6DB;
+  --nav-bg: #F2E4CF;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -51,15 +51,15 @@ html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening
   --meta: #7a6a55;
 }
 html.night, body.night, html[data-theme="night"], body[data-theme="night"] {
-  --bg: #E4DAC8;
-  --bg-deep: #DCD0BC;
-  --card: #EFE6D8;
-  --card-soft: #EFE6D8;
+  --bg: #E8D7BC;
+  --bg-deep: #DFC9A8;
+  --card: #F7EFE3;
+  --card-soft: #F7EFE3;
   --text: #272522;
   --muted: #6F6860;
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.12);
-  --nav-bg: #E4DAC8;
+  --nav-bg: #E8D7BC;
   --nav-fg: #5a4a34;
   --ev: #272522;
   --ev-time: #3a3530;
@@ -380,7 +380,7 @@ body {
 
 <script>
 (function () {
-  var BUILD = "20260922-v113-kerma";
+  var BUILD = "20260922-v114-kerma";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -391,7 +391,7 @@ body {
     var th = themeClass(hour);
     document.body.className = th;
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", th === "night" ? "#E4DAC8" : (th === "evening" ? "#EDE6DB" : "#EDE6DB"));
+    if (meta) meta.setAttribute("content", th === "night" ? "#E8D7BC" : (th === "evening" ? "#F2E4CF" : "#F2E4CF"));
   }
 
   var LONTOO_START = "2026-10-13";
@@ -757,8 +757,8 @@ body {
   function paintTomorrow(now) {
     var row = document.getElementById("tomorrowRow");
     if (!row) return;
-    /* School today-vs-tomorrow at 17:00 Helsinki (theme still 18). */
-    var showTomorrowSchool = (now.hour >= 17);
+    /* School today-vs-tomorrow at 16:00 Helsinki (theme still 18). */
+    var showTomorrowSchool = (now.hour >= 16);
     var schoolWd = showTomorrowSchool ? ((now.wd + 1) % 7) : now.wd;
     var schools = schoolStartsForWd(schoolWd);
     var iso = addDaysIso(now.iso, 1);

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="fiilis-build" content="20260922-tesla-v2">
+<title>Fiilis · Kalenteri</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    background: #F3EBDD;
+    color: #2a241c;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .app {
+    height: 100%;
+    padding: 1.6vmin 2vmin 7.4vmin;
+    display: -ms-flexbox; display: flex;
+    -ms-flex-direction: column; flex-direction: column;
+  }
+  .head {
+    display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline;
+    -ms-flex-pack: justify; justify-content: space-between;
+    margin-bottom: 1.4vmin;
+  }
+  .title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 4.2vmin; font-weight: 700; color: #1f1a14;
+  }
+  .sub { font-size: 1.6vmin; color: #6a5c4a; font-weight: 500; }
+  .list {
+    -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0;
+    overflow: auto; padding-right: .4vmin;
+  }
+  .day {
+    background: rgba(255,252,246,.92);
+    border: 1px solid rgba(90,70,40,.1);
+    border-radius: 1.3vmin;
+    box-shadow: 0 .35vmin 1.2vmin rgba(60,40,20,.05);
+    padding: 1.3vmin 1.6vmin;
+    margin-bottom: 1.1vmin;
+  }
+  .day.today { border-color: rgba(143,101,36,.45); box-shadow: 0 .35vmin 1.2vmin rgba(143,101,36,.12); }
+  .day-h {
+    display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center;
+    margin-bottom: .7vmin;
+  }
+  .day-h .dn {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 2.4vmin; font-weight: 700; color: #1f1a14;
+  }
+  .day-h .dd { margin-left: 1vmin; font-size: 1.55vmin; color: #6a5c4a; font-weight: 600; }
+  .day-h .pill {
+    margin-left: auto; font-size: 1.2vmin; font-weight: 700;
+    background: rgba(201,148,58,.22); color: #7a5214;
+    padding: .25vmin .7vmin; border-radius: .5vmin;
+  }
+  .ev {
+    display: -ms-flexbox; display: flex; -ms-flex-align: flex-start; align-items: flex-start;
+    padding: .85vmin 0; border-top: 1px solid rgba(90,70,40,.08);
+    font-size: 1.85vmin; min-height: 4.2vmin;
+  }
+  .ev:first-of-type { border-top: none; }
+  .ev .when {
+    -ms-flex: 0 0 9vmin; flex: 0 0 9vmin;
+    font-variant-numeric: tabular-nums; font-weight: 700; color: #2a241c;
+  }
+  .ev .dotc {
+    width: 1vmin; height: 1vmin; border-radius: 50%;
+    margin: .7vmin .9vmin 0 0; -ms-flex: 0 0 auto; flex: 0 0 auto;
+  }
+  .ev .txt { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; }
+  .ev .who { font-weight: 700; }
+  .ev .meta { color: #7a6a55; font-size: 1.5vmin; margin-top: .15vmin; }
+  .empty { color: #9a8a70; font-size: 1.7vmin; padding: .4vmin 0; }
+
+  .nav {
+    position: fixed; left: 0; right: 0; bottom: 0; height: 6.4vmin;
+    background: rgba(45,40,34,.94); color: #d8d0c4;
+    display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center;
+    -ms-flex-pack: distribute; justify-content: space-around;
+    padding: 0 2vmin; z-index: 20;
+  }
+  .nav a {
+    color: inherit; text-decoration: none; text-align: center;
+    font-size: 1.2vmin; font-weight: 600; min-width: 8vmin; padding: .4vmin .6vmin;
+    opacity: .72;
+  }
+  .nav a .ic { display: block; font-size: 2.2vmin; line-height: 1.1; margin-bottom: .1vmin; }
+  .nav a.on { opacity: 1; color: #fff; border-bottom: .28vmin solid #c45c4a; padding-bottom: .2vmin; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="head">
+    <div class="title">Kalenteri</div>
+    <div class="sub" id="rangeLabel">Seuraavat 14 päivää</div>
+  </div>
+  <div class="list" id="calList"></div>
+</div>
+<nav class="nav">
+  <a href="tesla.html"><span class="ic">◎</span>Tänään</a>
+  <a class="on" href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
+  <a href="tesla-muistot.html"><span class="ic">♡</span>Muistot</a>
+</nav>
+<script>
+(function () {
+  var BUILD = "20260922-tesla-v2";
+  var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var WHO_COLOR = {
+    Ellen: "#d48aa8", Samuel: "#5b8fd4", Milla: "#c9a227", Mea: "#e08a3c",
+    Jussi: "#5a7a5a", Riikka: "#7a6aad", perhe: "#c4a574", Perhe: "#c4a574"
+  };
+  var schedule = null;
+
+  function pad(n) { n = parseInt(n, 10); return n < 10 ? "0" + n : "" + n; }
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function helsinkiNow() {
+    var d = new Date();
+    var parts = {};
+    try {
+      var fmt = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/Helsinki",
+        year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", weekday: "short", hour12: false
+      });
+      var arr = fmt.formatToParts(d);
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].type !== "literal") parts[arr[i].type] = arr[i].value;
+      }
+    } catch (e) {
+      var hki = new Date(d.getTime() + 3 * 60 * 60 * 1000);
+      parts.year = String(hki.getUTCFullYear());
+      parts.month = pad(hki.getUTCMonth() + 1);
+      parts.day = pad(hki.getUTCDate());
+      parts.weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][hki.getUTCDay()];
+    }
+    var wdMap = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    var wd = wdMap[parts.weekday]; if (wd == null) wd = new Date().getDay();
+    var year = parseInt(parts.year, 10), month = parseInt(parts.month, 10), day = parseInt(parts.day, 10);
+    return { year: year, month: month, day: day, wd: wd, iso: year + "-" + pad(month) + "-" + pad(day) };
+  }
+  function parseMin(hm) {
+    if (!hm) return null;
+    var p = String(hm).split(":");
+    var h = +p[0], m = +(p[1] || 0);
+    if (isNaN(h)) return null;
+    return h * 60 + m;
+  }
+  function fmtHm(hm) {
+    if (!hm) return "";
+    var p = String(hm).split(":");
+    return Number(p[0]) + "." + pad(p[1] || "00");
+  }
+  function fmtRange(a, b) {
+    if (!a && !b) return "";
+    if (a && b) return fmtHm(a) + "–" + fmtHm(b);
+    return a ? fmtHm(a) : "";
+  }
+  function getJSON(url, cb) {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", url, true);
+      x.onreadystatechange = function () {
+        if (x.readyState === 4) {
+          if (x.status >= 200 && x.status < 300) {
+            try { cb(JSON.parse(x.responseText)); } catch (e) { cb(null); }
+          } else cb(null);
+        }
+      };
+      x.send();
+    } catch (e) { cb(null); }
+  }
+  function addDays(iso, n) {
+    var p = iso.split("-");
+    var dt = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + n));
+    return dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate());
+  }
+  function eventsOn(iso) {
+    var out = [];
+    if (!schedule || !schedule.events) return out;
+    for (var i = 0; i < schedule.events.length; i++) {
+      if (schedule.events[i].date === iso) out.push(schedule.events[i]);
+    }
+    out.sort(function (a, b) {
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      return ta - tb;
+    });
+    return out;
+  }
+  function colorWho(who) { return WHO_COLOR[who] || "#b8a090"; }
+
+  function paint() {
+    var now = helsinkiNow();
+    var el = document.getElementById("calList");
+    if (!el) return;
+    var html = "";
+    var endIso = addDays(now.iso, 13);
+    var rl = document.getElementById("rangeLabel");
+    if (rl) rl.textContent = now.day + "." + now.month + ". – " +
+      parseInt(endIso.split("-")[2], 10) + "." + parseInt(endIso.split("-")[1], 10) + ".";
+
+    for (var i = 0; i < 14; i++) {
+      var iso = addDays(now.iso, i);
+      var p = iso.split("-");
+      var dt = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2]));
+      var wd = dt.getUTCDay();
+      var list = eventsOn(iso);
+      var isToday = iso === now.iso;
+      html += "<div class=\"day" + (isToday ? " today" : "") + "\">";
+      html += "<div class=\"day-h\"><div class=\"dn\">" + DAYS[wd] + "</div>";
+      html += "<div class=\"dd\">" + parseInt(p[2], 10) + "." + parseInt(p[1], 10) + ".</div>";
+      if (isToday) html += "<div class=\"pill\">Tänään</div>";
+      html += "</div>";
+      if (!list.length) {
+        html += "<div class=\"empty\">—</div>";
+      } else {
+        for (var j = 0; j < list.length; j++) {
+          var e = list[j];
+          if (e.kind === "koulu") continue;
+          var when = fmtRange(e.time, e.end) || "—";
+          var meta = [];
+          if (e.place) meta.push(e.place);
+          if (e.driver) meta.push("kuski " + e.driver);
+          html += "<div class=\"ev\">";
+          html += "<div class=\"when\">" + esc(when) + "</div>";
+          html += "<div class=\"dotc\" style=\"background:" + colorWho(e.who) + "\"></div>";
+          html += "<div class=\"txt\"><span class=\"who\">" + esc(e.who || "") + "</span> · " + esc(e.title || "");
+          if (meta.length) html += "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>";
+          html += "</div></div>";
+        }
+      }
+      html += "</div>";
+    }
+    el.innerHTML = html;
+  }
+
+  getJSON("schedule.json?v=" + BUILD, function (data) {
+    if (data) schedule = data;
+    paint();
+  });
+})();
+</script>
+</body>
+</html>

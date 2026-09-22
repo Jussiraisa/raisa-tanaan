@@ -1,387 +1,2150 @@
 [
   {
-    "src": "photos-web/matka-2018-lontoo-cover-001.jpg",
-    "place": "Lontoo",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-01-003.jpg",
-    "place": "Lontoo",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-02-004.jpg",
-    "place": "Lontoo",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-03-005.jpg",
-    "place": "Lontoo",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-04-006.jpg",
-    "place": "Lontoo",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-cover-008.jpg",
-    "place": "Tanska",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-00-009.jpg",
-    "place": "Tanska",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-01-010.jpg",
-    "place": "Tanska",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-02-011.jpg",
-    "place": "Tanska",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-03-012.jpg",
-    "place": "Tanska",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-04-013.jpg",
-    "place": "Tanska",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-05-014.jpg",
-    "place": "Tanska",
-    "year": "2018"
-  },
-  {
-    "src": "photos-web/matka-2019-italia-cover-015.jpg",
-    "place": "Italia",
-    "year": "2019"
-  },
-  {
-    "src": "photos-web/matka-2019-italia-00-016.jpg",
-    "place": "Italia",
-    "year": "2019"
-  },
-  {
-    "src": "photos-web/matka-2019-italia-01-017.jpg",
-    "place": "Italia",
-    "year": "2019"
-  },
-  {
-    "src": "photos-web/matka-2019-italia-02-018.jpg",
-    "place": "Italia",
-    "year": "2019"
-  },
-  {
-    "src": "photos-web/matka-2019-italia-03-019.jpg",
-    "place": "Italia",
-    "year": "2019"
-  },
-  {
-    "src": "photos-web/matka-2019-italia-04-020.jpg",
-    "place": "Italia",
-    "year": "2019"
-  },
-  {
-    "src": "photos-web/matka-2019-italia-05-021.jpg",
-    "place": "Italia",
-    "year": "2019"
-  },
-  {
-    "src": "photos-web/matka-2020-norja-cover-022.jpg",
-    "place": "Norja",
-    "year": "2020"
-  },
-  {
-    "src": "photos-web/matka-2020-norja-00-023.jpg",
-    "place": "Norja",
-    "year": "2020"
-  },
-  {
-    "src": "photos-web/matka-2020-norja-01-024.jpg",
-    "place": "Norja",
-    "year": "2020"
-  },
-  {
-    "src": "photos-web/matka-2020-norja-02-025.jpg",
-    "place": "Norja",
-    "year": "2020"
-  },
-  {
-    "src": "photos-web/matka-2020-norja-03-026.jpg",
-    "place": "Norja",
-    "year": "2020"
-  },
-  {
-    "src": "photos-web/matka-2020-norja-04-027.jpg",
-    "place": "Norja",
-    "year": "2020"
-  },
-  {
-    "src": "photos-web/matka-2020-norja-05-028.jpg",
-    "place": "Norja",
-    "year": "2020"
-  },
-  {
-    "src": "photos-web/matka-2022-eurooppa-cover-029.jpg",
-    "place": "Eurooppa",
-    "year": "2022"
-  },
-  {
-    "src": "photos-web/matka-2022-eurooppa-00-030.jpg",
-    "place": "Eurooppa",
-    "year": "2022"
-  },
-  {
-    "src": "photos-web/matka-2022-eurooppa-02-032.jpg",
-    "place": "Eurooppa",
-    "year": "2022"
-  },
-  {
-    "src": "photos-web/matka-2022-eurooppa-03-033.jpg",
-    "place": "Eurooppa",
-    "year": "2022"
-  },
-  {
-    "src": "photos-web/matka-2022-eurooppa-04-034.jpg",
-    "place": "Eurooppa",
-    "year": "2022"
-  },
-  {
-    "src": "photos-web/matka-2022-eurooppa-05-035.jpg",
-    "place": "Eurooppa",
-    "year": "2022"
-  },
-  {
-    "src": "photos-web/matka-2023-road-trip-cover-036.jpg",
-    "place": "Road Trip",
-    "year": "2023"
-  },
-  {
-    "src": "photos-web/matka-2023-road-trip-00-037.jpg",
-    "place": "Road Trip",
-    "year": "2023"
-  },
-  {
-    "src": "photos-web/matka-2023-road-trip-01-038.jpg",
-    "place": "Road Trip",
-    "year": "2023"
-  },
-  {
-    "src": "photos-web/matka-2023-road-trip-02-039.jpg",
-    "place": "Road Trip",
-    "year": "2023"
-  },
-  {
-    "src": "photos-web/matka-2023-road-trip-03-040.jpg",
-    "place": "Road Trip",
-    "year": "2023"
-  },
-  {
-    "src": "photos-web/matka-2023-road-trip-04-041.jpg",
-    "place": "Road Trip",
-    "year": "2023"
-  },
-  {
-    "src": "photos-web/matka-2023-road-trip-05-042.jpg",
-    "place": "Road Trip",
-    "year": "2023"
-  },
-  {
-    "src": "photos-web/matka-2024-riviera-cover-043.jpg",
-    "place": "Riviera",
-    "year": "2024"
-  },
-  {
-    "src": "photos-web/matka-2024-riviera-00-044.jpg",
-    "place": "Riviera",
-    "year": "2024"
-  },
-  {
-    "src": "photos-web/matka-2024-riviera-01-045.jpg",
-    "place": "Riviera",
-    "year": "2024"
-  },
-  {
-    "src": "photos-web/matka-2024-riviera-02-046.jpg",
-    "place": "Riviera",
-    "year": "2024"
-  },
-  {
-    "src": "photos-web/matka-2024-riviera-03-047.jpg",
-    "place": "Riviera",
-    "year": "2024"
-  },
-  {
-    "src": "photos-web/matka-2024-riviera-04-048.jpg",
-    "place": "Riviera",
-    "year": "2024"
-  },
-  {
-    "src": "photos-web/matka-2024-riviera-05-049.jpg",
-    "place": "Riviera",
-    "year": "2024"
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-cover-050.jpg",
-    "place": "Costa Brava",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-00-051.jpg",
-    "place": "Costa Brava",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-01-052.jpg",
-    "place": "Costa Brava",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-03-054.jpg",
-    "place": "Costa Brava",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-04-055.jpg",
-    "place": "Costa Brava",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-05-056.jpg",
-    "place": "Costa Brava",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-cover-057.jpg",
-    "place": "Lontoo",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-00-058.jpg",
-    "place": "Lontoo",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-01-059.jpg",
-    "place": "Lontoo",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-02-060.jpg",
-    "place": "Lontoo",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-03-061.jpg",
-    "place": "Lontoo",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-05-063.jpg",
-    "place": "Lontoo",
-    "year": "2025"
-  },
-  {
-    "src": "photos-web/matka-2026-brasilia-cover-064.jpg",
-    "place": "Brasilia",
-    "year": "2026"
-  },
-  {
-    "src": "photos-web/matka-2026-brasilia-01-066.jpg",
-    "place": "Brasilia",
-    "year": "2026"
-  },
-  {
-    "src": "photos-web/matka-2026-brasilia-02-067.jpg",
-    "place": "Brasilia",
-    "year": "2026"
-  },
-  {
-    "src": "photos-web/matka-2026-brasilia-04-069.jpg",
-    "place": "Brasilia",
-    "year": "2026"
-  },
-  {
-    "src": "photos-web/matka-2026-brasilia-05-070.jpg",
-    "place": "Brasilia",
-    "year": "2026"
-  },
-  {
-    "src": "photos-web/matka-2026-alicante-cover-071.jpg",
+    "src": "photos-web/alicante-01.jpg",
     "place": "Alicante",
-    "year": "2026"
+    "year": "",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
   },
   {
-    "src": "photos-web/matka-2026-alicante-00-072.jpg",
+    "src": "photos-web/alicante-02.jpg",
     "place": "Alicante",
-    "year": "2026"
+    "year": "",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
   },
   {
-    "src": "photos-web/matka-2026-alicante-01-073.jpg",
+    "src": "photos-web/alicante-03.jpg",
     "place": "Alicante",
-    "year": "2026"
+    "year": "",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
   },
   {
-    "src": "photos-web/matka-2026-alicante-02-074.jpg",
+    "src": "photos-web/alicante-04.jpg",
     "place": "Alicante",
-    "year": "2026"
+    "year": "",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
   },
   {
-    "src": "photos-web/matka-2026-alicante-03-075.jpg",
+    "src": "photos-web/alicante-05.jpg",
     "place": "Alicante",
-    "year": "2026"
+    "year": "",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
   },
   {
-    "src": "photos-web/matka-2026-alicante-04-076.jpg",
+    "src": "photos-web/kb-2018-lontoo-03.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-05.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-11.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "soft",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-17.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-25.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "calm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-29.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "soft",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-33.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-37.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-40.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-45.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2018-lontoo-48.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-03.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-08.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-11.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-14.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-21.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-24.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-28.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-34.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-45.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-51.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2024-riviera-64.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-01.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-03.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-04.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "soft",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-05.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-07.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-08.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-09.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "calm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-10.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-12.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-14.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-15.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-16.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-17.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-19.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-20.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-22.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "soft",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-23.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-24.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-25.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2025-lontoo-27.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "calm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-04.jpg",
     "place": "Alicante",
-    "year": "2026"
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
   },
   {
-    "src": "photos-web/matka-2026-alicante-05-077.jpg",
+    "src": "photos-web/kb-2026-alicante-06.jpg",
     "place": "Alicante",
-    "year": "2026"
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
   },
   {
-    "src": "photos-web/matka-2018-2026-kalastus-cover-078.jpg",
-    "place": "Kalastus",
-    "year": "2018–2026"
+    "src": "photos-web/kb-2026-alicante-10.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-18.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-24.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-38.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-41.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-47.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-48.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-57.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-64.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-69.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-77.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/kb-2026-alicante-82.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/london-01.jpg",
+    "place": "Lontoo",
+    "year": "",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/london-02.jpg",
+    "place": "Lontoo",
+    "year": "",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/london-03.jpg",
+    "place": "Lontoo",
+    "year": "",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
   },
   {
     "src": "photos-web/matka-2018-2026-kalastus-00-079.jpg",
     "place": "Kalastus",
-    "year": "2018–2026"
+    "year": "2018–2026",
+    "vibe": "soft",
+    "tags": [
+      "family",
+      "nature"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
   },
   {
     "src": "photos-web/matka-2018-2026-kalastus-01-080.jpg",
     "place": "Kalastus",
-    "year": "2018–2026"
+    "year": "2018–2026",
+    "vibe": "soft",
+    "tags": [
+      "family",
+      "nature"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
   },
   {
     "src": "photos-web/matka-2018-2026-kalastus-02-081.jpg",
     "place": "Kalastus",
-    "year": "2018–2026"
+    "year": "2018–2026",
+    "vibe": "soft",
+    "tags": [
+      "family",
+      "nature"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
   },
   {
     "src": "photos-web/matka-2018-2026-kalastus-03-082.jpg",
     "place": "Kalastus",
-    "year": "2018–2026"
+    "year": "2018–2026",
+    "vibe": "calm",
+    "tags": [
+      "family",
+      "nature"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
   },
   {
     "src": "photos-web/matka-2018-2026-kalastus-04-083.jpg",
     "place": "Kalastus",
-    "year": "2018–2026"
+    "year": "2018–2026",
+    "vibe": "calm",
+    "tags": [
+      "family",
+      "nature"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
   },
   {
     "src": "photos-web/matka-2018-2026-kalastus-05-084.jpg",
     "place": "Kalastus",
-    "year": "2018–2026"
+    "year": "2018–2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "nature"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-2026-kalastus-cover-078.jpg",
+    "place": "Kalastus",
+    "year": "2018–2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "nature"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-lontoo-01-003.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-lontoo-02-004.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-lontoo-03-005.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-lontoo-04-006.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "calm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-lontoo-cover-001.jpg",
+    "place": "Lontoo",
+    "year": "2018",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-tanska-00-009.jpg",
+    "place": "Tanska",
+    "year": "2018",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-tanska-01-010.jpg",
+    "place": "Tanska",
+    "year": "2018",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-tanska-02-011.jpg",
+    "place": "Tanska",
+    "year": "2018",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-tanska-03-012.jpg",
+    "place": "Tanska",
+    "year": "2018",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-tanska-04-013.jpg",
+    "place": "Tanska",
+    "year": "2018",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-tanska-05-014.jpg",
+    "place": "Tanska",
+    "year": "2018",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2018-tanska-cover-008.jpg",
+    "place": "Tanska",
+    "year": "2018",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2019-italia-00-016.jpg",
+    "place": "Italia",
+    "year": "2019",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2019-italia-01-017.jpg",
+    "place": "Italia",
+    "year": "2019",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2019-italia-02-018.jpg",
+    "place": "Italia",
+    "year": "2019",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2019-italia-03-019.jpg",
+    "place": "Italia",
+    "year": "2019",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2019-italia-04-020.jpg",
+    "place": "Italia",
+    "year": "2019",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2019-italia-05-021.jpg",
+    "place": "Italia",
+    "year": "2019",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2019-italia-cover-015.jpg",
+    "place": "Italia",
+    "year": "2019",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2020-norja-00-023.jpg",
+    "place": "Norja",
+    "year": "2020",
+    "vibe": "cozy",
+    "tags": [
+      "travel",
+      "nature",
+      "adventure"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2020-norja-01-024.jpg",
+    "place": "Norja",
+    "year": "2020",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "nature",
+      "adventure"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2020-norja-02-025.jpg",
+    "place": "Norja",
+    "year": "2020",
+    "vibe": "adventure",
+    "tags": [
+      "travel",
+      "nature",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2020-norja-03-026.jpg",
+    "place": "Norja",
+    "year": "2020",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "nature",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2020-norja-04-027.jpg",
+    "place": "Norja",
+    "year": "2020",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "nature",
+      "adventure"
+    ],
+    "slot": [
+      "evening",
+      "night",
+      "morning"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2020-norja-05-028.jpg",
+    "place": "Norja",
+    "year": "2020",
+    "vibe": "cozy",
+    "tags": [
+      "travel",
+      "nature",
+      "adventure"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2020-norja-cover-022.jpg",
+    "place": "Norja",
+    "year": "2020",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "nature",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2022-eurooppa-00-030.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2022-eurooppa-02-032.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2022-eurooppa-03-033.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2022-eurooppa-04-034.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2022-eurooppa-05-035.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2022-eurooppa-cover-029.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2023-road-trip-00-037.jpg",
+    "place": "Road Trip",
+    "year": "2023",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2023-road-trip-01-038.jpg",
+    "place": "Road Trip",
+    "year": "2023",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2023-road-trip-02-039.jpg",
+    "place": "Road Trip",
+    "year": "2023",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2023-road-trip-03-040.jpg",
+    "place": "Road Trip",
+    "year": "2023",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2023-road-trip-04-041.jpg",
+    "place": "Road Trip",
+    "year": "2023",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2023-road-trip-05-042.jpg",
+    "place": "Road Trip",
+    "year": "2023",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2023-road-trip-cover-036.jpg",
+    "place": "Road Trip",
+    "year": "2023",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "adventure"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2024-riviera-00-044.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2024-riviera-01-045.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2024-riviera-02-046.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2024-riviera-03-047.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2024-riviera-04-048.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2024-riviera-05-049.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2024-riviera-cover-043.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-costa-brava-00-051.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-costa-brava-01-052.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-costa-brava-03-054.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-costa-brava-04-055.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-costa-brava-05-056.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-costa-brava-cover-050.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-lontoo-00-058.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-lontoo-01-059.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "morning",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-lontoo-02-060.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-lontoo-03-061.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-lontoo-05-063.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2025-lontoo-cover-057.jpg",
+    "place": "Lontoo",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-alicante-00-072.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-alicante-01-073.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-alicante-02-074.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-alicante-03-075.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-alicante-04-076.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-alicante-05-077.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-alicante-cover-071.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "day",
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-brasilia-01-066.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-brasilia-02-067.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-brasilia-04-069.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-brasilia-05-070.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "joy"
+    ],
+    "slot": [
+      "afternoon",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/matka-2026-brasilia-cover-064.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "kids"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
   }
 ]

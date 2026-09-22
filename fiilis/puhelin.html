@@ -232,7 +232,9 @@
 
 <script>
 (function () {
-  var BUILD = "20260922-tesla-v2";
+  var BUILD = "20260922-puhelin-v3-mood";
+  var LONTOO_START = "2026-10-13";
+  var LONTOO_END = "2026-10-17";
   var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
   var WHO_COLOR = {
     Ellen: "#d48aa8", Samuel: "#5b8fd4", Milla: "#c9a227", Mea: "#e08a3c",
@@ -563,9 +565,44 @@
       paint();
     });
   }
+  function daysUntilIso(iso, now) {
+    try {
+      var a = Date.parse(iso + "T12:00:00");
+      var b = Date.parse(now.iso + "T12:00:00");
+      return Math.round((a - b) / 86400000);
+    } catch (e) { return 99; }
+  }
+  function londonW(now) {
+    var d = daysUntilIso(LONTOO_START, now);
+    if (now.iso >= LONTOO_START && now.iso <= LONTOO_END) return 0.50;
+    if (d < 0) return 0.10;
+    if (d > 21) return 0.25;
+    if (d >= 8) return 0.45;
+    return 0.60;
+  }
+  function weightPhotos(list, now) {
+    if (!list || !list.length) return list || [];
+    var lw = londonW(now);
+    var lon = [], oth = [];
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i];
+      var isL = (p.place && /lontoo/i.test(p.place)) || (p.tags && p.tags.indexOf("london") >= 0);
+      if (isL) lon.push(p); else oth.push(p);
+    }
+    var n = Math.min(list.length, 48);
+    var nL = Math.round(n * lw);
+    if (nL > lon.length) nL = lon.length;
+    var out = lon.slice(0, nL).concat(oth.slice(0, n - nL));
+    // light shuffle
+    for (var j = out.length - 1; j > 0; j--) {
+      var k = Math.floor(Math.random() * (j + 1));
+      var tmp = out[j]; out[j] = out[k]; out[k] = tmp;
+    }
+    return out.length ? out : list;
+  }
   function loadPhotos() {
     getJSON("photos-from-matkat.json?v=" + BUILD, function (data) {
-      if (data && data.length) photos = data;
+      if (data && data.length) photos = weightPhotos(data, helsinkiNow());
       paint();
     });
   }

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-22T12:56:51+03:00",
+  "updated": "2026-09-22T13:35:05+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -887,7 +887,7 @@
       "who": "Mea",
       "title": "Synttärit · sukulaiset",
       "kind": "juhla",
-      "note": "Menu: kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi (Jussi) · sienipiirakka + lohipiirakka (Jussi)"
+      "note": "Menu: pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
     }
   ],
   "schoolLunch": {
@@ -1010,7 +1010,7 @@
       "start": "2026-09-26",
       "end": "2026-09-26",
       "label": "Mea synttärit · sukulaiset · klo 13",
-      "menu": "kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
+      "menu": "pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
     },
     {
       "start": "2026-10-02",

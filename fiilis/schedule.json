@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-22T13:35:05+03:00",
+  "updated": "2026-09-22T15:35:00Z",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -363,6 +363,33 @@
       "title": "Vivida treeni",
       "place": "Bella Center",
       "kind": "treeni"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "",
+      "who": "Ellen",
+      "title": "Synttärijuhlat",
+      "kind": "juhla",
+      "place": "Koti",
+      "source": "manual:jussi"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "",
+      "who": "Mea",
+      "title": "Ellenin synttärijuhlat",
+      "kind": "juhla",
+      "place": "Koti",
+      "source": "manual:jussi"
+    },
+    {
+      "date": "2026-09-24",
+      "time": "",
+      "who": "perhe",
+      "title": "Ellenin synttärijuhlat (Ellen + Mea)",
+      "kind": "juhla",
+      "place": "Koti",
+      "source": "manual:jussi"
     },
     {
       "date": "2026-09-24",
@@ -1006,6 +1033,11 @@
     "samuel_welhot": "https://welhot2018.nimenhuuto.com/"
   },
   "expectations": [
+    {
+      "start": "2026-09-24",
+      "end": "2026-09-24",
+      "label": "Ellenin synttärijuhlat · Mea"
+    },
     {
       "start": "2026-09-26",
       "end": "2026-09-26",

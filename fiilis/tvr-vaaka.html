@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v105-hiekka">
-  <meta name="theme-color" content="#D4C4A8">
+  <meta name="fiilis-build" content="20260922-v110-1010">
+  <meta name="theme-color" content="#EDE6DB">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,52 +13,67 @@
   <style>
 
 :root, body.day {
-  --bg: #EFE6D8;
-  --bg-deep: #E8DCC8;
-  --card: #F7F1E6;
-  --card-soft: rgba(247,241,230,.55);
-  --text: #2A241C;
-  --muted: #6E6254;
-  --accent: #A67C3A;
+  --bg: #EDE6DB;
+  --bg-deep: #E6DED2;
+  --card: #F6F1E9;
+  --card-soft: #F6F1E9;
+  --text: #272522;
+  --muted: #6F6860;
+  --accent: #B89A72;
   --shadow: rgba(60,40,18,.08);
-  --nav-bg: #EFE6D8;
+  --nav-bg: #EDE6DB;
   --nav-fg: #5a4a34;
-  --ev: #3F362C;
-  --ev-time: #4A4034;
-  --wd: #6E6254;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
   --empty: #8A7C6A;
+  --badge-bg: rgba(184,154,114,.28);
+  --badge-fg: #6a5230;
+  --hero-overlay: rgba(40,30,20,.18);
+  --row-line: rgba(44,36,24,.07);
+  --meta: #7a6a55;
 }
 body.evening {
-  --bg: #D4C4A8;
-  --bg-deep: #CBB896;
-  --card: #E2D3B8;
-  --card-soft: #E2D3B8;
-  --text: #1A1510;
-  --muted: #4E453A;
-  --accent: #9A6E2E;
-  --shadow: rgba(60,40,18,.12);
-  --nav-bg: #D4C4A8;
-  --nav-fg: #3E3428;
-  --ev: #1A1510;
-  --ev-time: #2A2218;
-  --wd: #3E362C;
-  --empty: #5A5044;
+  --bg: #302C28;
+  --bg-deep: #2A2622;
+  --card: #3A3530;
+  --card-soft: #3A3530;
+  --text: #F1EBE2;
+  --muted: #BDB3A7;
+  --accent: #C7A77D;
+  --shadow: rgba(0,0,0,.28);
+  --nav-bg: #302C28;
+  --nav-fg: #BDB3A7;
+  --ev: #F1EBE2;
+  --ev-time: #E8DFD4;
+  --wd: #BDB3A7;
+  --empty: #9A9084;
+  --badge-bg: rgba(199,167,125,.30);
+  --badge-fg: #F1EBE2;
+  --hero-overlay: rgba(40,30,20,.12);
+  --row-line: rgba(241,235,226,.08);
+  --meta: #BDB3A7;
 }
 body.night {
-  --bg: #C2B090;
-  --bg-deep: #B5A282;
-  --card: #D0C0A0;
-  --card-soft: #D0C0A0;
-  --text: #14100C;
-  --muted: #453C32;
-  --accent: #9A6E2E;
-  --shadow: rgba(60,40,18,.14);
-  --nav-bg: #C2B090;
-  --nav-fg: #32281E;
-  --ev: #14100C;
-  --ev-time: #221C14;
-  --wd: #32281E;
-  --empty: #4A4034;
+  --bg: #26221F;
+  --bg-deep: #221E1B;
+  --card: #322E29;
+  --card-soft: #322E29;
+  --text: #F1EBE2;
+  --muted: #BDB3A7;
+  --accent: #C7A77D;
+  --shadow: rgba(0,0,0,.32);
+  --nav-bg: #26221F;
+  --nav-fg: #BDB3A7;
+  --ev: #F1EBE2;
+  --ev-time: #E8DFD4;
+  --wd: #BDB3A7;
+  --empty: #8A8074;
+  --badge-bg: rgba(199,167,125,.30);
+  --badge-fg: #F1EBE2;
+  --hero-overlay: rgba(40,30,20,.12);
+  --row-line: rgba(241,235,226,.08);
+  --meta: #BDB3A7;
 }
 html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -89,20 +104,22 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .greet-block { flex: 1; min-width: 0; margin-left: 2.4vmin; padding-bottom: .6vmin; }
 .greet {
   font-family: Newsreader, Georgia, serif;
-  font-size: 3.4vmin; line-height: 1.15; font-weight: 400;
-  color: var(--accent); letter-spacing: -.01em;
+  font-size: 2.6vmin; line-height: 1.15; font-weight: 400;
+  color: var(--accent); letter-spacing: -.01em; opacity: .88;
 }
 .next-line {
-  margin-top: .55vmin; font-size: 1.65vmin; line-height: 1.35;
-  font-weight: 550; color: var(--muted); white-space: nowrap;
+  margin-top: .7vmin; font-size: 2.55vmin; line-height: 1.35;
+  font-weight: 650; color: var(--text); white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis;
 }
 .next-line .badge {
-  display: inline-block; margin-right: .5vmin;
-  padding: .12vmin .55vmin; border-radius: .4vmin;
-  background: rgba(201,148,58,.22); color: #7a5214;
-  font-size: 1.2vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  display: inline-block; margin-right: .65vmin;
+  padding: .18vmin .7vmin; border-radius: .45vmin;
+  background: var(--badge-bg); color: var(--badge-fg);
+  font-size: 1.35vmin; font-weight: 750; letter-spacing: .05em; text-transform: uppercase;
+  vertical-align: .15em;
 }
+.next-line strong { font-weight: 750; letter-spacing: -.01em; }
 .date-soft { margin-top: .35vmin; font-size: 1.35vmin; color: var(--muted); font-weight: 500; }
 .wx {
   flex: 0 0 auto; text-align: right; padding-bottom: .8vmin; max-width: 28vmin;
@@ -127,8 +144,12 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   box-shadow: 0 .6vmin 2.2vmin var(--shadow);
 }
 .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: var(--hero-overlay);
+}
 .hero .cap {
-  position: absolute; left: 0; right: 0; bottom: 0;
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
   padding: 5vmin 2.2vmin 1.8vmin;
   color: #f7f1e3;
   background: linear-gradient(to bottom, rgba(40,30,20,0), rgba(40,30,20,.82));
@@ -149,26 +170,26 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .side > * + * { margin-top: 1.4vmin; }
 
 .block {
-  background: var(--card-soft);
+  background: var(--card);
   border-radius: 1.4vmin;
-  padding: 1.3vmin 1.6vmin 1.4vmin;
+  padding: 1.35vmin 1.65vmin 1.45vmin;
   min-height: 0;
 }
 .block.grow { flex: 2.4 1 auto; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
-.block.soft { flex: 0 0 auto; background: transparent; padding-left: .2vmin; padding-right: .2vmin; }
+.block.soft { flex: 0 0 auto; background: var(--card-soft); }
 .lbl {
-  font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: .7vmin;
+  font-size: 1.38vmin; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: .75vmin;
 }
 
 /* Tänään list — crystal clear */
 .today-list { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
 .ev-row {
   display: flex; align-items: flex-start;
-  padding: .38vmin 0;
-  font-size: 1.7vmin; line-height: 1.28; font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid rgba(44,36,24,.06);
+  padding: .55vmin 0;
+  font-size: 2.0vmin; line-height: 1.4; font-weight: 500;
+  color: var(--ev);
+  border-bottom: 1px solid var(--row-line);
 }
 .ev-row:last-child { border-bottom: 0; }
 .ev-row.past { opacity: .4; }
@@ -180,12 +201,12 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   white-space: nowrap; overflow: hidden;
   line-height: 1.15; padding-top: .05vmin;
 }
-.ev-row .when .t0 { font-weight: 750; font-size: 1.7vmin; letter-spacing: -.02em; color: var(--text); }
-.ev-row .when .t1 { font-weight: 550; font-size: 1.35vmin; color: var(--muted); letter-spacing: -.02em; }
+.ev-row .when .t0 { font-weight: 750; font-size: 2.0vmin; letter-spacing: -.02em; color: var(--ev-time); }
+.ev-row .when .t1 { font-weight: 550; font-size: 1.5vmin; color: var(--muted); letter-spacing: -.02em; }
 .ev-row .when .t1::before { content: "– "; color: var(--muted); }
-.ev-row .when.solo .t0 { font-size: 1.75vmin; }
+.ev-row .when.solo .t0 { font-size: 2.05vmin; }
 .ev-row.live .when .t0 { color: var(--accent); }
-.ev-row.live .when .t1 { color: #a07838; }
+.ev-row.live .when .t1 { color: var(--accent); }
 .ev-row.past .when .t0, .ev-row.past .when .t1 { color: var(--muted); }
 .ev-row .dot {
   width: .85vmin; height: .85vmin; border-radius: 999px;
@@ -193,8 +214,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 }
 .ev-row .txt { flex: 1; min-width: 0; }
 .ev-row .who { font-weight: 700; }
-.ev-row .meta { font-size: 1.3vmin; color: #7a6a55; margin-top: .05vmin; font-weight: 500; }
-.today-empty { font-size: 1.7vmin; color: var(--muted); padding: .4vmin 0; font-style: italic;
+.ev-row .meta { font-size: 1.45vmin; color: var(--meta); margin-top: .08vmin; font-weight: 500; }
+.today-empty { font-size: 1.9vmin; color: var(--muted); padding: .4vmin 0; font-style: italic;
   font-family: Newsreader, Georgia, serif; }
 
 
@@ -210,7 +231,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   display: flex; align-items: flex-start;
   padding: .35vmin 0;
   font-size: 1.55vmin; line-height: 1.3; font-weight: 550;
-  color: #3a2e1c;
+  color: var(--text);
   border-bottom: 1px solid rgba(163,113,42,.12);
 }
 .wilma-row:last-child { border-bottom: 0; }
@@ -218,8 +239,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   flex: 0 0 auto;
   font-size: 1.05vmin; font-weight: 700; letter-spacing: .06em;
   text-transform: uppercase;
-  color: #7a5418;
-  background: rgba(201, 148, 58, .28);
+  color: var(--badge-fg);
+  background: var(--badge-bg);
   border-radius: 999px;
   padding: .18vmin .65vmin;
   margin-right: .7vmin;
@@ -227,7 +248,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 }
 .wilma-row .txt { flex: 1; min-width: 0; }
 .wilma-row .who { font-weight: 700; }
-.wilma-row .meta { font-size: 1.25vmin; color: #7a6a55; margin-top: .08vmin; font-weight: 500; }
+.wilma-row .meta { font-size: 1.25vmin; color: var(--meta); margin-top: .08vmin; font-weight: 500; }
 .wilma-row.soft-note { opacity: .92; font-weight: 500; }
 
 /* Odotukset hero */
@@ -245,7 +266,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .odot-list { margin-top: .55vmin; }
 .odote {
   display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 1.45vmin; line-height: 1.35; padding: .22vmin 0; color: var(--text);
+  font-size: 1.65vmin; line-height: 1.4; padding: .28vmin 0; color: var(--text);
 }
 .odote .d { font-weight: 650; color: var(--accent); flex: 0 0 auto; margin-left: .8vmin; }
 
@@ -257,14 +278,14 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 .duo > * + * { margin-left: 1.2vmin; }
 .duo .block { flex: 1; }
 .tmw-line, .meal-line {
-  font-size: 1.55vmin; line-height: 1.35; font-weight: 550;
-  color: var(--text); padding: .35vmin 0;
-  border-bottom: 1px solid rgba(44,36,24,.06);
+  font-size: 1.75vmin; line-height: 1.4; font-weight: 550;
+  color: var(--ev); padding: .42vmin 0;
+  border-bottom: 1px solid var(--row-line);
 }
 .tmw-line:last-child, .meal-line:last-child { border-bottom: 0; }
 .tmw-line .who { font-weight: 700; margin-right: .45vmin; }
 .tmw-line .t { font-variant-numeric: tabular-nums; font-weight: 650; color: var(--muted); margin-right: .45vmin; }
-.tmw-line .meta { color: #7a6a55; font-weight: 500; font-size: 1.35vmin; }
+.tmw-line .meta { color: var(--meta); font-weight: 500; font-size: 1.45vmin; }
 .tmw-line.school { font-weight: 650; }
 .tmw-line.school .t { font-weight: 800; color: var(--text); }
 .tmw-line.school .who { font-weight: 800; }
@@ -288,33 +309,40 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
   font-size: 1.35vmin; font-style: italic; color: var(--muted);
 }
 .brand {
-  font-size: .95vmin; font-weight: 700; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--muted); margin-left: 1.2vmin;
+  font-size: .9vmin; font-weight: 650; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); margin-left: 1.2vmin; opacity: .72;
 }
 
 /* Bottom nav — Tesla-like, TV-friendly */
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.16);
+  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.10);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
   backdrop-filter: blur(8px);
 }
 .nav a {
   color: inherit; text-decoration: none; text-align: center;
-  font-size: 1.35vmin; font-weight: 600; min-width: 12vmin;
-  padding: .6vmin 1.2vmin; opacity: .68;
+  font-size: 1.3vmin; font-weight: 550; min-width: 12vmin;
+  padding: .55vmin 1.2vmin; opacity: .45;
   border-radius: .6vmin;
+  transition: opacity .2s ease;
 }
-.nav a .ic { display: block; font-size: 2.4vmin; line-height: 1.15; margin-bottom: .15vmin; }
-.nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
-  box-shadow: inset 0 -.28vmin 0 #c9943a; }
+.nav a .ic { display: block; font-size: 2.3vmin; line-height: 1.15; margin-bottom: .15vmin; }
+.nav a.on { opacity: 1; color: var(--text); background: transparent;
+  box-shadow: inset 0 -.22vmin 0 var(--accent); }
 
 body.day .tv, body.evening .tv, body.night .tv { background: var(--bg); }
 body.evening .clock, body.night .clock { color: var(--text); }
 body.evening .greet, body.night .greet { color: var(--accent); }
-body.evening .block, body.night .block { background: var(--card-soft); }
+body.evening .block, body.night .block { background: var(--card); }
+body.evening .block.soft, body.night .block.soft { background: var(--card-soft); }
 body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow); }
+body.evening .ev-row, body.night .ev-row,
+body.evening .tmw-line, body.night .tmw-line,
+body.evening .meal-line, body.night .meal-line,
+body.evening .odote, body.night .odote { color: var(--ev); }
+body.evening .nav a.on, body.night .nav a.on { color: var(--text); }
 
 @media (max-width: 900px) {
   .tv { padding-bottom: 5.2rem; }
@@ -346,10 +374,13 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
 .action-bar {
   flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
   gap: 1vmin; max-height: 5.2vmin; overflow: hidden;
-  padding: .35vmin .8vmin; border-radius: 1vmin;
-  background: rgba(201,148,58,.12); border: 1px solid rgba(163,113,42,.22);
+  padding: .3vmin .7vmin; border-radius: 1vmin;
+  background: transparent; border: 1px solid transparent; opacity: .85;
 }
-.action-bar.has-items { background: rgba(201,148,58,.18); border-color: rgba(163,113,42,.35); }
+.action-bar.has-items { background: rgba(184,154,114,.12); border-color: rgba(184,154,114,.22); opacity: 1; }
+body.evening .action-bar.has-items, body.night .action-bar.has-items {
+  background: rgba(199,167,125,.14); border-color: rgba(199,167,125,.28);
+}
 .action-lbl {
   flex: 0 0 auto; font-size: 1.15vmin; font-weight: 700; letter-spacing: .06em;
   text-transform: uppercase; color: var(--accent); white-space: nowrap;
@@ -451,7 +482,7 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">20260922-v105-hiekka</span>
+      <span class="brand">20260922-v110-1010</span>
     </div>
   </div>
 </div>
@@ -465,7 +496,7 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
 
 <script>
 (function () {
-  var BUILD = "20260922-v105-hiekka";
+  var BUILD = "20260922-v110-1010";
   ;
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -884,6 +915,11 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
     var th = themeClass(hour);
     document.body.className = th;
     document.body.setAttribute("data-theme", th);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      var tc = th === "night" ? "#26221F" : (th === "evening" ? "#302C28" : "#EDE6DB");
+      meta.setAttribute("content", tc);
+    }
   }
   function parseMin(hm) {
     if (!hm) return null;
@@ -1068,12 +1104,14 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
     var out = dayEventsClean(now.iso);
     var nowMin = now.minutes;
     var live = null, next = null, nextDiff = 99999;
+    var soon = [];
     for (var i = 0; i < out.length; i++) {
       var e = out[i];
       var st = parseMin(e.time);
       if (st == null) continue;
       var en = parseMin(e.end); if (en == null) en = st + 60;
-      if (st <= nowMin && nowMin < en) { live = e; break; }
+      if (st <= nowMin && nowMin < en) { live = e; }
+      if (st > nowMin && st - nowMin <= 120) soon.push(e);
       if (st > nowMin && st - nowMin < nextDiff) { nextDiff = st - nowMin; next = e; }
     }
     function brief(e, badge) {
@@ -1088,20 +1126,37 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
       return s;
     }
     if (live) el.innerHTML = brief(live, "Nyt");
-    else if (next) el.innerHTML = brief(next, "Seuraavaksi");
+    else if (!live && soon.length >= 3) {
+      el.innerHTML = "<span class=\"badge\">Nyt</span><strong>Nyt tärkeintä:</strong> "
+        + soon.length + " tapahtumaa seuraavan 2 h aikana";
+    } else if (next) el.innerHTML = brief(next, "Seuraavaksi");
     else el.innerHTML = "<span class=\"muted\">Rauhallinen päivä</span>";
   }
 
   function paintTodayList(now) {
     var el = document.getElementById("todayList");
     if (!el) return;
-    var out = dayEventsClean(now.iso);
-    if (!out.length) {
+    var all = dayEventsClean(now.iso);
+    if (!all.length) {
       el.className = "today-list";
       el.innerHTML = "<div class=\"today-empty\">Rauhaa · ei merkintöjä tänään</div>";
       return;
     }
     var nowMin = now.minutes;
+    var live = [], upcoming = [], past = [];
+    for (var i = 0; i < all.length; i++) {
+      var e0 = all[i];
+      var st0 = parseMin(e0.time);
+      var en0 = parseMin(e0.end); if (en0 == null && st0 != null) en0 = st0 + 60;
+      if (st0 != null && en0 != null && nowMin >= en0) past.push(e0);
+      else if (st0 != null && st0 <= nowMin && nowMin < en0) live.push(e0);
+      else upcoming.push(e0);
+    }
+    var out = live.concat(upcoming);
+    if (out.length < 5) {
+      for (var p = past.length - 1; p >= 0 && out.length < 5; p--) out.unshift(past[p]);
+    }
+    out = out.slice(0, 5);
     var html = "";
     for (var i = 0; i < out.length; i++) {
       var e = out[i];
@@ -1126,12 +1181,7 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
         + (meta.length ? "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>" : "")
         + "</div></div>";
     }
-    var dens = "";
-    if (out.length >= 12) dens = " d12";
-    else if (out.length >= 10) dens = " d10";
-    else if (out.length >= 8) dens = " d8";
-    else if (out.length >= 6) dens = " d6";
-    el.className = "today-list" + dens;
+    el.className = "today-list";
     el.innerHTML = html;
   }
 
@@ -1267,7 +1317,7 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
     }
     items.sort(function (a, b) { return a.days - b.days; });
     var html = "";
-    var max = Math.min(items.length, 3);
+    var max = Math.min(items.length, 4);
     for (var j = 0; j < max; j++) {
       var it = items[j];
       var rem = it.days === 0 ? "nyt" : (it.days === 1 ? "huom" : it.days + " pv");
@@ -1281,33 +1331,65 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
   function paintTomorrow(now) {
     var el = document.getElementById("tomorrowBox");
     if (!el) return;
-    var iso = addDaysIso(now.iso, 1);
-    var wd = (now.wd + 1) % 7;
-    var schools = schoolStartsForWd(wd);
-    var out = dayEventsClean(iso);
-    var evening = (now.hour >= 18 || now.hour < 7);
+    /* School today-vs-tomorrow switches at 17:00 Helsinki (theme still flips at 18). */
+    var showTomorrowSchool = (now.hour >= 17);
+    var schoolIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : now.iso;
+    var schoolWd = showTomorrowSchool ? ((now.wd + 1) % 7) : now.wd;
+    var schools = schoolStartsForWd(schoolWd);
+    var hobbyIso = addDaysIso(now.iso, 1);
+    var out = dayEventsClean(hobbyIso);
     var lbl = document.querySelector("#huomenna .lbl");
     if (lbl) {
-      if (evening && schools.length) lbl.textContent = "Huomenna · koulu";
-      else lbl.textContent = "Huomenna";
+      if (schools.length) {
+        lbl.textContent = showTomorrowSchool ? "Huomenna · koulu" : "Tänään · koulu";
+      } else {
+        lbl.textContent = "Huomenna";
+      }
     }
     if (!schools.length && !out.length) {
       el.innerHTML = "<div class=\"empty\">Ei merkintöjä</div>";
       return;
     }
     var html = "";
+    var shown = 0;
+    var MAX = 3;
     var i;
-    for (i = 0; i < schools.length; i++) {
-      var s = schools[i];
-      var whoS = shortWho(s.who || "");
-      var timeS = fmtRange(s.time, s.end) || fmtHm(s.time) || "";
-      var labelS = s.label || "Koulu";
-      html += "<div class=\"tmw-line school\">"
-        + (whoS ? "<span class=\"who\">" + esc(whoS) + "</span>" : "")
-        + (timeS ? "<span class=\"t\">" + esc(timeS) + "</span>" : "")
-        + "<span>" + esc(labelS) + "</span></div>";
+    if (schools.length) {
+      if (schools.length <= 2) {
+        for (i = 0; i < schools.length && shown < MAX; i++) {
+          var s = schools[i];
+          var whoS = shortWho(s.who || "");
+          var timeS = fmtRange(s.time, s.end) || fmtHm(s.time) || "";
+          var labelS = s.label || "Koulu";
+          html += "<div class=\"tmw-line school\">"
+            + (whoS ? "<span class=\"who\">" + esc(whoS) + "</span>" : "")
+            + (timeS ? "<span class=\"t\">" + esc(timeS) + "</span>" : "")
+            + "<span>" + esc(labelS) + "</span></div>";
+          shown++;
+        }
+      } else {
+        var names = [];
+        var tMin = 99999, tMax = -1, hasEnd = false;
+        for (i = 0; i < schools.length; i++) {
+          var s2 = schools[i];
+          var nm = shortWho(s2.who || "");
+          if (nm && names.indexOf(nm) < 0) names.push(nm);
+          var st = parseMin(s2.time); if (st != null && st < tMin) tMin = st;
+          var en = parseMin(s2.end); if (en != null) { hasEnd = true; if (en > tMax) tMax = en; }
+        }
+        var tCompact = "";
+        if (tMin < 99999) {
+          tCompact = (Math.floor(tMin / 60)) + "." + pad(tMin % 60);
+          if (hasEnd && tMax >= 0) tCompact += "–" + (Math.floor(tMax / 60)) + "." + pad(tMax % 60);
+        }
+        html += "<div class=\"tmw-line school\">"
+          + "<span class=\"who\">" + esc(names.join(" · ")) + "</span>"
+          + (tCompact ? "<span class=\"t\">" + esc(tCompact) + "</span>" : "")
+          + "<span>Koulu</span></div>";
+        shown++;
+      }
     }
-    var room = Math.max(0, 6 - schools.length);
+    var room = Math.max(0, MAX - shown);
     var maxEv = Math.min(out.length, room);
     for (i = 0; i < maxEv; i++) {
       var e = out[i];
@@ -1332,7 +1414,7 @@ body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow
     var map = (schedule && schedule.homeMeals) || {};
     var html = "";
     var shown = 0;
-    for (var n = 0; n < 4 && shown < 3; n++) {
+    for (var n = 0; n < 4 && shown < 2; n++) {
       var iso = addDaysIso(now.iso, n);
       var dish = map[iso];
       if (!dish && n > 0) continue;

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
-<meta name="fiilis-build" content="20260922-v100-kontrasti">
-<meta name="theme-color" content="#F3EFE8">
+<meta name="fiilis-build" content="20260922-v110-1010">
+<meta name="theme-color" content="#EDE6DB">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Fiilis · Muistot</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
   height: 100%; height: 100dvh; overflow: hidden;
-  background: #F3EFE8; color: #2A241C;
+  background: #EDE6DB; color: #272522;
   font-family: "Source Sans 3", system-ui, sans-serif;
 }
 .stage {
@@ -55,19 +55,19 @@ html, body {
   position: fixed; left: 0; right: 0; bottom: 0;
   height: calc(4.05rem + env(safe-area-inset-bottom));
   padding: .35rem .4rem env(safe-area-inset-bottom);
-  background: rgba(36,32,28,.97); color: #D8D0C4;
+  background: #EDE6DB; color: #6F6860;
   display: flex; align-items: center; justify-content: space-around;
-  z-index: 40; box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+  z-index: 40; border-top: 1px solid rgba(120,90,40,.10); box-shadow: none;
 }
 .nav a {
   color: inherit; text-decoration: none; text-align: center;
-  font-size: .66rem; font-weight: 650; opacity: .7;
+  font-size: .66rem; font-weight: 550; opacity: .45;
   min-width: 3.5rem; padding: .25rem .35rem; border-radius: .7rem;
 }
 .nav a .ic { display: block; font-size: 1.2rem; line-height: 1.1; margin-bottom: .08rem; }
-.nav a.on { opacity: 1; color: #fff; background: rgba(255,255,255,.08); box-shadow: inset 0 -.16rem 0 #C45C4A; }
+.nav a.on { opacity: 1; color: #272522; background: transparent; box-shadow: inset 0 -.16rem 0 #B89A72; }
 .nav-tsla {
-  font-size: .76rem; font-weight: 750; color: #EFE8DC;
+  font-size: .76rem; font-weight: 650; color: #6F6860;
   font-variant-numeric: tabular-nums; white-space: nowrap;
   text-align: center; min-width: 4.6rem; line-height: 1.15; pointer-events: none;
 }
@@ -98,7 +98,7 @@ html, body {
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v100-kontrasti";
+  var BUILD = "20260922-v110-1010";
   var LS = "fiilisMemAlbum";
   var albums = [], albumId = "kaikki", photos = [], idx = 0, timer = null;
   function getJSON(url, cb) {

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-wa-padel24">
-  <meta name="theme-color" content="#EFE6D8">
+  <meta name="fiilis-build" content="20260922-v110-1010">
+  <meta name="theme-color" content="#EDE6DB">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,52 +13,52 @@
   <style>
 
 :root, body.theme-day {
-  --bg: #EFE6D8;
-  --bg-deep: #E8DCC8;
-  --card: #F7F1E6;
-  --card-soft: rgba(247,241,230,.55);
-  --text: #2A241C;
-  --muted: #6E6254;
-  --accent: #A67C3A;
+  --bg: #EDE6DB;
+  --bg-deep: #E6DED2;
+  --card: #F6F1E9;
+  --card-soft: #F6F1E9;
+  --text: #272522;
+  --muted: #6F6860;
+  --accent: #B89A72;
   --shadow: rgba(60,40,18,.08);
-  --nav-bg: #EFE6D8;
+  --nav-bg: #EDE6DB;
   --nav-fg: #5a4a34;
-  --ev: #3F362C;
-  --ev-time: #4A4034;
-  --wd: #6E6254;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
   --empty: #8A7C6A;
 }
 body.theme-evening {
-  --bg: #D9CDB8;
-  --bg-deep: #D0C2AA;
-  --card: #EDE4D4;
-  --card-soft: rgba(228,216,196,.62);
-  --text: #1F1A14;
-  --muted: #5E5448;
-  --accent: #A67C3A;
-  --shadow: rgba(60,40,18,.10);
-  --nav-bg: #D9CDB8;
-  --nav-fg: #4a3e30;
-  --ev: #2C261E;
-  --ev-time: #3A3228;
-  --wd: #4E463C;
-  --empty: #6A5E50;
+  --bg: #302C28;
+  --bg-deep: #2A2622;
+  --card: #3A3530;
+  --card-soft: #3A3530;
+  --text: #F1EBE2;
+  --muted: #BDB3A7;
+  --accent: #C7A77D;
+  --shadow: rgba(0,0,0,.28);
+  --nav-bg: #302C28;
+  --nav-fg: #BDB3A7;
+  --ev: #F1EBE2;
+  --ev-time: #E8DFD4;
+  --wd: #BDB3A7;
+  --empty: #9A9084;
 }
 body.theme-night {
-  --bg: #C4B49A;
-  --bg-deep: #B8A88E;
-  --card: #CFC0A8;
-  --card-soft: rgba(207,192,168,.68);
-  --text: #1A1510;
-  --muted: #52483C;
-  --accent: #A67C3A;
-  --shadow: rgba(60,40,18,.12);
-  --nav-bg: #C4B49A;
-  --nav-fg: #3e3428;
-  --ev: #1A1510;
-  --ev-time: #2A221A;
-  --wd: #3E362C;
-  --empty: #52483C;
+  --bg: #26221F;
+  --bg-deep: #221E1B;
+  --card: #322E29;
+  --card-soft: #322E29;
+  --text: #F1EBE2;
+  --muted: #BDB3A7;
+  --accent: #C7A77D;
+  --shadow: rgba(0,0,0,.32);
+  --nav-bg: #26221F;
+  --nav-fg: #BDB3A7;
+  --ev: #F1EBE2;
+  --ev-time: #E8DFD4;
+  --wd: #BDB3A7;
+  --empty: #8A8074;
 }
 html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -124,11 +124,11 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   margin-bottom: .25vmin;
 }
 .day .dn {
-  font-size: 1.55vmin; font-weight: 750; font-variant-numeric: tabular-nums; color: #1A140E !important; -webkit-text-fill-color: #1A140E !important;
+  font-size: 1.55vmin; font-weight: 750; font-variant-numeric: tabular-nums; color: var(--ev) !important; -webkit-text-fill-color: var(--ev) !important;
 }
 .day.is-today .dn { color: var(--accent); }
 .day .mo { font-size: 1.0vmin; font-weight: 600; color: var(--muted); margin-left: .25vmin; }
-.day .wd { font-size: 1.0vmin; font-weight: 700; color: #3A3228 !important; }
+.day .wd { font-size: 1.0vmin; font-weight: 700; color: var(--wd) !important; }
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
   font-size: var(--ev-fs, 1.25vmin); line-height: 1.28; font-weight: 650;
@@ -139,8 +139,14 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   opacity: 1 !important;
 }
 body.theme-evening .day .ev, body.theme-night .day .ev {
-  color: #120E0A !important;
-  -webkit-text-fill-color: #120E0A !important;
+  color: var(--ev) !important;
+  -webkit-text-fill-color: var(--ev) !important;
+}
+body.theme-evening .day .dn, body.theme-night .day .dn,
+body.theme-evening .day .wd, body.theme-night .day .wd,
+body.theme-evening .day .ev .t, body.theme-night .day .ev .t {
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important;
 }
 .month.tight .day { padding: .28vmin .35vmin .25vmin; }
 .month.tight .day .dn { font-size: 1.55vmin; }
@@ -153,23 +159,23 @@ body.theme-evening .day .ev, body.theme-night .day .ev {
   display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
   margin-right: .3vmin; vertical-align: .12em;
 }
-.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 0.95em; color: #1A140E !important; -webkit-text-fill-color: #1A140E !important; }
-.day .empty-day { font-size: 1.2vmin; color: #4A4034 !important; margin-top: .2vmin; }
+.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 0.95em; color: var(--ev) !important; -webkit-text-fill-color: var(--ev) !important; }
+.day .empty-day { font-size: 1.2vmin; color: var(--empty) !important; margin-top: .2vmin; }
 
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.16);
+  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.10);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
 }
 .nav a {
   color: inherit; text-decoration: none; text-align: center;
-  font-size: 1.35vmin; font-weight: 600; min-width: 12vmin;
-  padding: .6vmin 1.2vmin; opacity: .68; border-radius: .6vmin;
+  font-size: 1.3vmin; font-weight: 550; min-width: 12vmin;
+  padding: .55vmin 1.2vmin; opacity: .45; border-radius: .6vmin;
 }
-.nav a .ic { display: block; font-size: 2.4vmin; line-height: 1.15; margin-bottom: .15vmin; }
-.nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
-  box-shadow: inset 0 -.28vmin 0 #c9943a; }
+.nav a .ic { display: block; font-size: 2.3vmin; line-height: 1.15; margin-bottom: .15vmin; }
+.nav a.on { opacity: 1; color: var(--text); background: transparent;
+  box-shadow: inset 0 -.22vmin 0 var(--accent); }
 
 @media (max-width: 900px) {
   .app { padding-bottom: 5.2rem; }
@@ -214,7 +220,7 @@ body.theme-evening .day .ev, body.theme-night .day .ev {
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-wa-padel24";
+  var BUILD = "20260922-v110-1010";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

@@ -4,48 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-wa-padel24">
-  <meta name="theme-color" content="#F3EFE8">
+  <meta name="fiilis-build" content="20260922-v110-1010">
+  <meta name="theme-color" content="#EDE6DB">
   <title>Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
 :root, body.day {
-  --bg: #F3EFE8;
-  --card: #F7F1E6;
-  --text: #2A241C;
-  --muted: #6E6254;
-  --ev: #3F362C;
-  --ev-time: #4A4034;
-  --wd: #6E6254;
+  --bg: #EDE6DB;
+  --card: #F6F1E9;
+  --text: #272522;
+  --muted: #6F6860;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
   --empty: #8A7C6A;
-  --accent: #A67C3A;
+  --accent: #B89A72;
   --shadow: rgba(60,40,18,.06);
 }
 body.evening {
-  --bg: #E8DFD0;
-  --card: #F0E8DA;
-  --text: #1F1A14;
-  --muted: #5E5448;
-  --ev: #2C261E;
-  --ev-time: #3A3228;
-  --wd: #4E463C;
-  --empty: #6A5E50;
-  --accent: #A67C3A;
-  --shadow: rgba(60,40,18,.08);
+  --bg: #302C28;
+  --card: #3A3530;
+  --text: #F1EBE2;
+  --muted: #BDB3A7;
+  --ev: #F1EBE2;
+  --ev-time: #E8DFD4;
+  --wd: #BDB3A7;
+  --empty: #9A9084;
+  --accent: #C7A77D;
+  --shadow: rgba(0,0,0,.28);
 }
 body.night {
-  --bg: #DED4C4;
-  --card: #E8DFD0;
-  --text: #1A1510;
-  --muted: #52483C;
-  --ev: #1A1510;
-  --ev-time: #2A221A;
-  --wd: #3E362C;
-  --empty: #52483C;
-  --accent: #A67C3A;
-  --shadow: rgba(60,40,18,.10);
+  --bg: #26221F;
+  --card: #322E29;
+  --text: #F1EBE2;
+  --muted: #BDB3A7;
+  --ev: #F1EBE2;
+  --ev-time: #E8DFD4;
+  --wd: #BDB3A7;
+  --empty: #8A8074;
+  --accent: #C7A77D;
+  --shadow: rgba(0,0,0,.32);
 }
 html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -119,15 +119,15 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
   font-size: var(--ev-fs, 1.25vmin); line-height: 1.28; font-weight: 650;
-  color: #1A140E !important;
-  -webkit-text-fill-color: #1A140E !important;
+  color: var(--ev) !important;
+  -webkit-text-fill-color: var(--ev) !important;
   margin-top: .14vmin;
   white-space: normal; overflow-wrap: anywhere; word-break: break-word;
   opacity: 1 !important;
 }
 body.evening .day .ev, body.night .day .ev {
-  color: #120E0A !important;
-  -webkit-text-fill-color: #120E0A !important;
+  color: var(--ev) !important;
+  -webkit-text-fill-color: var(--ev) !important;
 }
 .month.tight .day { padding: .28vmin .35vmin .25vmin; }
 .month.tight .day .dn { font-size: 1.55vmin; }
@@ -140,29 +140,30 @@ body.evening .day .ev, body.night .day .ev {
   display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
   margin-right: .3vmin; vertical-align: .12em;
 }
-.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 0.95em; color: #1A140E !important; -webkit-text-fill-color: #1A140E !important; }
+.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 0.95em; color: var(--ev) !important; -webkit-text-fill-color: var(--ev) !important; }
 .day .empty-day { font-size: 1.2vmin; color: var(--empty); margin-top: .2vmin; }
 
 
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.4vmin;
-  background: rgba(45,40,34,.94); color: #d8d0c4;
+  background: var(--bg); color: var(--muted);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 2vmin; z-index: 30;
+  border-top: 1px solid rgba(120,90,40,.10);
 }
 .nav a {
   color: inherit; text-decoration: none; text-align: center;
-  font-size: 1.2vmin; font-weight: 600; min-width: 8vmin;
-  padding: .4vmin .6vmin; opacity: .72;
+  font-size: 1.2vmin; font-weight: 550; min-width: 8vmin;
+  padding: .4vmin .6vmin; opacity: .45;
 }
 .nav a .ic { display: block; font-size: 2.2vmin; line-height: 1.1; margin-bottom: .1vmin; }
-.nav a.on { opacity: 1; color: #fff; border-bottom: .28vmin solid #c45c4a; padding-bottom: .2vmin; }
+.nav a.on { opacity: 1; color: var(--text); border-bottom: .22vmin solid var(--accent); padding-bottom: .2vmin; }
 .nav-tsla {
   font-size: 1.35vmin; font-weight: 650; opacity: .9;
   font-variant-numeric: tabular-nums; white-space: nowrap;
   letter-spacing: .01em; line-height: 1.2; text-align: center;
   min-width: 0; padding: .3vmin .5vmin; pointer-events: none;
-  color: #d8d0c4;
+  color: var(--muted);
 }
 .nav-tsla .up { color: #6fcf8a; }
 .nav-tsla .dn { color: #e07a6a; }
@@ -208,7 +209,7 @@ body.evening .day .ev, body.night .day .ev {
   }
   applyTheme();
   setInterval(applyTheme, 60000);
-  var BUILD = "20260922-wa-padel24";
+  var BUILD = "20260922-v110-1010";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

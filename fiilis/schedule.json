@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-22T15:35:00Z",
+  "updated": "2026-09-22T19:19:15+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -352,8 +352,10 @@
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
-      "driver": "Julia",
-      "pickup": "Enni"
+      "driver": "Enni",
+      "pickup": "Enni",
+      "note": "kyytiin 17.30 Enni+Mea+Amanda · Enni kirjaston kautta Luolalle · viikko: Julia vie / Enni hakee",
+      "source": "perhe:wa"
     },
     {
       "date": "2026-09-23",
@@ -1027,6 +1029,13 @@
       "who": "Ellen",
       "titleContains": "Ambrosia",
       "driver": "Riikka"
+    },
+    {
+      "who": "Mea",
+      "titleContains": "Lianna",
+      "driver": "Julia",
+      "pickup": "Enni",
+      "note": "viikkosuunnitelma: Julia vie / Enni hakee"
     }
   ],
   "sources": {

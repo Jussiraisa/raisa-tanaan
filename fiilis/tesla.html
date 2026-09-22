@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-tesla-v8-cream">
+<meta name="fiilis-build" content="20260922-tesla-v9-tsla">
 <title>Fiilis · Tesla</title>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
@@ -184,6 +184,18 @@
   }
   .meal-row .v { font-size: 2.25vmin; font-weight: 600; color: #2a241c; line-height: 1.25; }
   .meal-row .v.muted { color: #7a6a55; font-weight: 500; font-size: 2vmin; }
+
+.nav-tsla {
+  font-size: 1.35vmin; font-weight: 650; opacity: .9;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  letter-spacing: .01em; line-height: 1.2; text-align: center;
+  min-width: 0; padding: .3vmin .5vmin; pointer-events: none;
+  color: #d8d0c4;
+}
+.nav-tsla .up { color: #6fcf8a; }
+.nav-tsla .dn { color: #e07a6a; }
+.nav-tsla .flat { color: #d8d0c4; opacity: .75; }
+
 </style>
 </head>
 <body>
@@ -269,11 +281,12 @@
   <a id="navCal" href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
   <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
   <a id="navMem" href="tesla-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <span class="nav-tsla" id="navTsla" title="TSLA"></span>
 </nav>
 
 <script>
 (function () {
-  var BUILD = "20260922-tesla-v8-cream";
+  var BUILD = "20260922-tesla-v9-tsla";
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
   var DAYS = [
@@ -790,6 +803,99 @@
   if (cal) cal.href = "tesla-kalenteri.html" + suf;
   var mem = document.getElementById("navMem");
   if (mem) mem.href = "tesla-muistot.html" + suf;
+})();
+</script>
+
+
+
+<script>
+(function () {
+  function parseMoney(s) {
+    if (s == null) return NaN;
+    return parseFloat(String(s).replace(/[^0-9.\-]/g, ""));
+  }
+  function parsePct(s) {
+    if (s == null) return NaN;
+    return parseFloat(String(s).replace(/[^0-9.\-+]/g, ""));
+  }
+  function paintTsla(d) {
+    var el = document.getElementById("navTsla");
+    if (!el || !d || d.price == null) return;
+    var p = Number(d.price);
+    var pct = Number(d.changePct);
+    if (isNaN(p)) return;
+    var priceStr = p.toFixed(2);
+    var cls = "flat";
+    var pctStr = "0.0%";
+    if (!isNaN(pct)) {
+      if (pct > 0.005) cls = "up";
+      else if (pct < -0.005) cls = "dn";
+      var sign = pct > 0 ? "+" : "";
+      pctStr = sign + pct.toFixed(1) + "%";
+    }
+    el.innerHTML = priceStr + " <span class=\"" + cls + "\">" + pctStr + "</span>";
+  }
+  function fromNasdaq(raw) {
+    try {
+      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
+      var p = j && j.data && j.data.primaryData;
+      if (!p) return null;
+      var price = parseMoney(p.lastSalePrice);
+      var chg = parseMoney(p.netChange);
+      var pct = parsePct(p.percentageChange);
+      if (String(p.netChange || "").indexOf("-") >= 0 || p.deltaIndicator === "down") {
+        if (chg > 0) chg = -chg;
+        if (pct > 0) pct = -pct;
+      }
+      if (isNaN(price)) return null;
+      return { price: price, change: chg, changePct: pct };
+    } catch (e) { return null; }
+  }
+  function fromYahoo(raw) {
+    try {
+      var j = typeof raw === "string" ? JSON.parse(raw) : raw;
+      var meta = j && j.chart && j.chart.result && j.chart.result[0] && j.chart.result[0].meta;
+      if (!meta) return null;
+      var price = Number(meta.regularMarketPrice);
+      var pct = Number(meta.regularMarketChangePercent);
+      if (pct == null || isNaN(pct)) pct = Number(meta.fulldayChangePercent);
+      if (isNaN(price)) return null;
+      return { price: price, changePct: pct };
+    } catch (e) { return null; }
+  }
+  function xhrGet(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.timeout = 12000;
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) cb(null, xhr.responseText);
+      else cb("status");
+    };
+    xhr.onerror = function () { cb("net"); };
+    xhr.ontimeout = function () { cb("timeout"); };
+    xhr.send();
+  }
+  function loadLive() {
+    var nasdaqUrl = "https://api.allorigins.win/raw?url=" +
+      encodeURIComponent("https://api.nasdaq.com/api/quote/TSLA/info?assetclass=stocks");
+    xhrGet(nasdaqUrl, function (err, text) {
+      var d = (!err && text) ? fromNasdaq(text) : null;
+      if (d) { paintTsla(d); return; }
+      var yahooUrl = "https://api.allorigins.win/raw?url=" +
+        encodeURIComponent("https://query1.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=5d");
+      xhrGet(yahooUrl, function (err2, text2) {
+        var d2 = (!err2 && text2) ? fromYahoo(text2) : null;
+        if (d2) { paintTsla(d2); return; }
+        var v = Math.floor(Date.now() / 60000);
+        xhrGet("tsla.json?v=" + v, function (err3, text3) {
+          if (err3 || !text3) return;
+          try { paintTsla(JSON.parse(text3)); } catch (e) {}
+        });
+      });
+    });
+  }
+  loadLive();
+  setInterval(loadLive, 60000);
 })();
 </script>
 

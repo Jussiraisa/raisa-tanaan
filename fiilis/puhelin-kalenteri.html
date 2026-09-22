@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="fiilis-build" content="20260922-puhelin-v8-fix">
+<meta name="theme-color" content="#F7F1E3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Fiilis · Kalenteri</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  min-height: 100%; min-height: 100dvh;
+  background: #F7F1E3; color: #2A241C;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  max-width: 28rem; margin: 0 auto;
+  padding: max(.75rem, env(safe-area-inset-top)) max(.95rem, env(safe-area-inset-right))
+           calc(5.1rem + env(safe-area-inset-bottom)) max(.95rem, env(safe-area-inset-left));
+}
+.serif { font-family: Fraunces, Georgia, serif; }
+.head { margin-bottom: .9rem; }
+.head h1 { font-size: 1.85rem; font-weight: 700; letter-spacing: -.02em; }
+.head .sub { margin-top: .25rem; color: #7A6B58; font-size: .92rem; font-weight: 500; }
+.day {
+  background: #FFFCF7; border: 1px solid rgba(90,70,40,.1);
+  border-radius: 1.15rem; padding: .95rem 1rem;
+  margin-bottom: .7rem; box-shadow: 0 8px 22px rgba(60,40,18,.06);
+}
+.day.today { border-color: rgba(201,148,58,.45); box-shadow: 0 8px 22px rgba(201,148,58,.12); }
+.day-h { display: flex; align-items: baseline; gap: .55rem; margin-bottom: .55rem; }
+.day-h .dn { font-family: Fraunces, Georgia, serif; font-size: 1.25rem; font-weight: 700; }
+.day-h .dd { color: #7A6B58; font-size: .88rem; font-weight: 600; }
+.day-h .pill {
+  margin-left: auto; font-size: .7rem; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase; background: rgba(201,148,58,.2); color: #7A5214;
+  padding: .2rem .55rem; border-radius: 999px;
+}
+.ev {
+  display: flex; gap: .55rem; align-items: flex-start;
+  padding: .65rem 0; border-top: 1px solid rgba(90,70,40,.08);
+  font-size: .95rem;
+}
+.ev:first-of-type { border-top: none; padding-top: .15rem; }
+.ev .when {
+  flex: 0 0 4.6rem; font-variant-numeric: tabular-nums; font-weight: 700; color: #2A241C;
+}
+.ev .dot {
+  width: .55rem; height: .55rem; border-radius: 50%; margin-top: .45rem; flex: 0 0 auto;
+}
+.ev .txt { flex: 1 1 auto; min-width: 0; }
+.ev .who { font-weight: 700; }
+.ev .meta { color: #7A6B58; font-size: .8rem; margin-top: .12rem; }
+.empty { color: #9A8A70; font-size: .9rem; padding: .2rem 0; }
+
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  height: calc(4.05rem + env(safe-area-inset-bottom));
+  padding: .35rem .4rem env(safe-area-inset-bottom);
+  background: rgba(36,32,28,.97); color: #D8D0C4;
+  display: flex; align-items: center; justify-content: space-around;
+  z-index: 40; box-shadow: 0 -8px 24px rgba(0,0,0,.18);
+}
+.nav a {
+  color: inherit; text-decoration: none; text-align: center;
+  font-size: .66rem; font-weight: 650; opacity: .7;
+  min-width: 3.5rem; padding: .25rem .35rem; border-radius: .7rem;
+}
+.nav a .ic { display: block; font-size: 1.2rem; line-height: 1.1; margin-bottom: .08rem; }
+.nav a.on { opacity: 1; color: #fff; background: rgba(255,255,255,.08); box-shadow: inset 0 -.16rem 0 #C45C4A; }
+.nav-tsla {
+  font-size: .76rem; font-weight: 750; color: #EFE8DC;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  text-align: center; min-width: 4.6rem; line-height: 1.15; pointer-events: none;
+}
+.nav-tsla .up { color: #6FCF8A; }
+.nav-tsla .dn { color: #E07A6A; }
+.nav-tsla .flat { color: #EFE8DC; opacity: .85; }
+
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1 class="serif">Kalenteri</h1>
+    <div class="sub" id="rangeLabel">Seuraavat 14 päivää</div>
+  </div>
+  <div id="calList"><div class="empty">Ladataan…</div></div>
+
+<nav class="nav">
+  <a href="puhelin.html"><span class="ic">◎</span>Koti</a>
+  <a class="on" href="puhelin-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a href="puhelin-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
+  <span class="nav-tsla" id="navTsla" title="TSLA"></span>
+</nav>
+
+<script>
+(function () {
+  var BUILD = "20260922-puhelin-v8-fix";
+  var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var WHO_COLOR = {
+    Ellen:"#D48AA8", Samuel:"#5B8FD4", Milla:"#C9A227", Mea:"#E08A3C",
+    Jussi:"#5A7A5A", Riikka:"#7A6AAD", perhe:"#C4A574", Perhe:"#C4A574"
+  };
+  var schedule = null;
+  function pad(n){ n=parseInt(n,10); return n<10?"0"+n:""+n; }
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function helsinkiNow(){
+    var d=new Date(), parts={};
+    try{
+      var arr=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Helsinki",year:"numeric",month:"2-digit",day:"2-digit",weekday:"short",hour12:false}).formatToParts(d);
+      for(var i=0;i<arr.length;i++) if(arr[i].type!=="literal") parts[arr[i].type]=arr[i].value;
+    }catch(e){
+      var h=new Date(d.getTime()+3*3600*1000);
+      parts.year=String(h.getUTCFullYear()); parts.month=pad(h.getUTCMonth()+1); parts.day=pad(h.getUTCDate());
+      parts.weekday=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][h.getUTCDay()];
+    }
+    var wdMap={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    var wd=wdMap[parts.weekday]; if(wd==null) wd=new Date().getDay();
+    var y=+parts.year,m=+parts.month,day=+parts.day;
+    return {year:y,month:m,day:day,wd:wd,iso:y+"-"+pad(m)+"-"+pad(day)};
+  }
+  function addDays(iso,n){
+    var p=iso.split("-");
+    var dt=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]+n));
+    return dt.getUTCFullYear()+"-"+pad(dt.getUTCMonth()+1)+"-"+pad(dt.getUTCDate());
+  }
+  function parseMin(hm){ if(!hm) return null; var p=String(hm).split(":"); var h=+p[0],m=+(p[1]||0); return isNaN(h)?null:h*60+m; }
+  function fmtHm(hm){ if(!hm) return ""; var p=String(hm).split(":"); return Number(p[0])+"."+pad(p[1]||"00"); }
+  function fmtRange(a,b){ if(!a&&!b) return ""; if(a&&b) return fmtHm(a)+"–"+fmtHm(b); return a?fmtHm(a):""; }
+  function colorWho(w){ return WHO_COLOR[w]||"#B8A090"; }
+  function getJSON(url,cb){
+    try{ var x=new XMLHttpRequest(); x.open("GET",url,true);
+      x.onreadystatechange=function(){ if(x.readyState===4){ if(x.status>=200&&x.status<300){ try{cb(JSON.parse(x.responseText));}catch(e){cb(null);} } else cb(null);} };
+      x.send();
+    }catch(e){ cb(null); }
+  }
+  function eventsOn(iso){
+    var out=[]; if(!schedule||!schedule.events) return out;
+    for(var i=0;i<schedule.events.length;i++) if(schedule.events[i].date===iso) out.push(schedule.events[i]);
+    out.sort(function(a,b){ var ta=parseMin(a.time); if(ta==null) ta=9800; var tb=parseMin(b.time); if(tb==null) tb=9800; return ta-tb; });
+    return out;
+  }
+  function paint(){
+    var now=helsinkiNow();
+    var end=addDays(now.iso,13);
+    var rl=document.getElementById("rangeLabel");
+    if(rl) rl.textContent = now.day+"."+now.month+". – "+parseInt(end.slice(8),10)+"."+parseInt(end.slice(5,7),10)+".";
+    var el=document.getElementById("calList"); if(!el) return;
+    var html="";
+    for(var i=0;i<14;i++){
+      var iso=addDays(now.iso,i);
+      var p=iso.split("-");
+      var dt=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]));
+      var wd=dt.getUTCDay();
+      var list=eventsOn(iso);
+      var isToday=iso===now.iso;
+      html+="<div class=\"day"+(isToday?" today":"")+"\">";
+      html+="<div class=\"day-h\"><div class=\"dn\">"+DAYS[wd]+"</div>";
+      html+="<div class=\"dd\">"+parseInt(p[2],10)+"."+parseInt(p[1],10)+".</div>";
+      if(isToday) html+="<div class=\"pill\">Tänään</div>";
+      html+="</div>";
+      var shown=0;
+      for(var j=0;j<list.length;j++){
+        var e=list[j];
+        if(!e||e.kind==="koulu") continue;
+        shown++;
+        var when=fmtRange(e.time,e.end)||"—";
+        var meta=[]; if(e.place) meta.push(e.place); if(e.driver) meta.push("kuski "+e.driver); if(e.pickup) meta.push("haku "+e.pickup);
+        html+="<div class=\"ev\"><div class=\"when\">"+esc(when)+"</div>";
+        html+="<div class=\"dot\" style=\"background:"+colorWho(e.who)+"\"></div>";
+        html+="<div class=\"txt\"><span class=\"who\">"+esc(e.who&&e.who!=="perhe"&&e.who!=="Perhe"?e.who+" · ":"")+"</span>"+esc(e.title||"");
+        if(meta.length) html+="<div class=\"meta\">"+esc(meta.join(" · "))+"</div>";
+        html+="</div></div>";
+      }
+      if(!shown) html+="<div class=\"empty\">—</div>";
+      html+="</div>";
+    }
+    el.innerHTML=html;
+  }
+  getJSON("schedule.json?v="+BUILD, function(data){ if(data) schedule=data; paint(); });
+})();
+</script>
+
+<script>
+(function () {
+  function paintTsla(d) {
+    var el = document.getElementById("navTsla");
+    if (!el || !d || d.price == null) return;
+    var p = Number(d.price), pct = Number(d.changePct);
+    if (isNaN(p)) return;
+    var cls = "flat", pctStr = "0.0%";
+    if (!isNaN(pct)) {
+      if (pct > 0.005) cls = "up";
+      else if (pct < -0.005) cls = "dn";
+      pctStr = (pct > 0 ? "+" : "") + pct.toFixed(1) + "%";
+    }
+    el.innerHTML = p.toFixed(2) + "<br><span class=\"" + cls + "\">" + pctStr + "</span>";
+  }
+  function xhrGet(url, cb) {
+    var x = new XMLHttpRequest();
+    x.open("GET", url, true); x.timeout = 8000;
+    x.onload = function () { (x.status >= 200 && x.status < 300) ? cb(null, x.responseText) : cb("s"); };
+    x.onerror = function () { cb("n"); }; x.ontimeout = function () { cb("t"); }; x.send();
+  }
+  function load() {
+    var v = Math.floor(Date.now() / 60000);
+    xhrGet("tsla.json?v=" + v, function (e, t) {
+      if (!e && t) { try { var d = JSON.parse(t); paintTsla(d); } catch (err) {} }
+    });
+  }
+  load(); setInterval(load, 60000);
+})();
+</script>
+
+</body>
+</html>

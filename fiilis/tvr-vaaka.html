@@ -4,25 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v95">
-  <meta name="theme-color" content="#EFD6B0">
+  <meta name="fiilis-build" content="20260922-v98-warm">
+  <meta name="theme-color" content="#EFE6D8">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; color: #2c2418;
+
+:root, body.day {
+  --bg: #EFE6D8;
+  --bg-deep: #E8DCC8;
+  --card: #F7F1E6;
+  --card-soft: rgba(247,241,230,.55);
+  --text: #2A241C;
+  --muted: #6E6254;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.08);
+  --nav-bg: #EFE6D8;
+  --nav-fg: #5a4a34;
+}
+body.evening {
+  --bg: #D9CDB8;
+  --bg-deep: #D0C2AA;
+  --card: #E4D8C4;
+  --card-soft: rgba(228,216,196,.62);
+  --text: #1F1A14;
+  --muted: #5E5448;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.10);
+  --nav-bg: #D9CDB8;
+  --nav-fg: #4a3e30;
+}
+body.night {
+  --bg: #C4B49A;
+  --bg-deep: #B8A88E;
+  --card: #CFC0A8;
+  --card-soft: rgba(207,192,168,.68);
+  --text: #1A1510;
+  --muted: #52483C;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.12);
+  --nav-bg: #C4B49A;
+  --nav-fg: #3e3428;
+}
+html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
-.muted { color: #6c5c44; }
-.accent { color: #8f6524; }
+.muted { color: var(--muted); }
+.accent { color: var(--accent); }
 .empty { color: #9a8b74; font-weight: 500; }
 
 .tv {
   height: 100%; width: 100%;
   padding: 2.2vmin 2.8vmin 8.2vmin;
   display: flex; flex-direction: column;
-  background: #EFD6B0;
+  background: var(--bg);
 }
 
 /* —— Header —— */
@@ -35,17 +72,17 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
   font-family: Newsreader, Georgia, serif;
   font-size: 8.8vmin; line-height: .92; font-weight: 400;
   letter-spacing: -.04em; font-variant-numeric: tabular-nums;
-  color: #1a140e; min-width: 22vmin;
+  color: var(--text); min-width: 22vmin;
 }
 .greet-block { flex: 1; min-width: 0; margin-left: 2.4vmin; padding-bottom: .6vmin; }
 .greet {
   font-family: Newsreader, Georgia, serif;
   font-size: 3.4vmin; line-height: 1.15; font-weight: 400;
-  color: #8f6524; letter-spacing: -.01em;
+  color: var(--accent); letter-spacing: -.01em;
 }
 .next-line {
   margin-top: .55vmin; font-size: 1.65vmin; line-height: 1.35;
-  font-weight: 550; color: #5c4e3a; white-space: nowrap;
+  font-weight: 550; color: var(--muted); white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis;
 }
 .next-line .badge {
@@ -54,7 +91,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
   background: rgba(201,148,58,.22); color: #7a5214;
   font-size: 1.2vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
 }
-.date-soft { margin-top: .35vmin; font-size: 1.35vmin; color: #8a7a62; font-weight: 500; }
+.date-soft { margin-top: .35vmin; font-size: 1.35vmin; color: var(--muted); font-weight: 500; }
 .wx {
   flex: 0 0 auto; text-align: right; padding-bottom: .8vmin; max-width: 28vmin;
 }
@@ -62,9 +99,9 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .wx .ic { font-size: 3.2vmin; margin-right: .6vmin; }
 .wx .temp {
   font-size: 3.2vmin; font-weight: 650; letter-spacing: -.02em;
-  font-variant-numeric: tabular-nums; color: #2c2418;
+  font-variant-numeric: tabular-nums; color: var(--text);
 }
-.wx .meta { font-size: 1.25vmin; color: #6c5c44; margin-top: .2vmin; }
+.wx .meta { font-size: 1.25vmin; color: var(--muted); margin-top: .2vmin; }
 
 /* —— Main: hero photo + side —— */
 .main {
@@ -74,8 +111,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .hero {
   flex: 1.85 1 0; min-width: 0; min-height: 0;
   position: relative; border-radius: 1.8vmin; overflow: hidden;
-  background: #e2c9a4;
-  box-shadow: 0 .6vmin 2.2vmin rgba(60,40,18,.1);
+  background: var(--bg-deep);
+  box-shadow: 0 .6vmin 2.2vmin var(--shadow);
 }
 .hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero .cap {
@@ -100,7 +137,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .side > * + * { margin-top: 1.4vmin; }
 
 .block {
-  background: rgba(255,246,228,.72);
+  background: var(--card-soft);
   border-radius: 1.4vmin;
   padding: 1.3vmin 1.6vmin 1.4vmin;
   min-height: 0;
@@ -109,7 +146,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .block.soft { flex: 0 0 auto; background: transparent; padding-left: .2vmin; padding-right: .2vmin; }
 .lbl {
   font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; color: #8f6524; margin-bottom: .7vmin;
+  text-transform: uppercase; color: var(--accent); margin-bottom: .7vmin;
 }
 
 /* Tänään list — crystal clear */
@@ -118,7 +155,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
   display: flex; align-items: flex-start;
   padding: .38vmin 0;
   font-size: 1.7vmin; line-height: 1.28; font-weight: 500;
-  color: #2c2418;
+  color: var(--text);
   border-bottom: 1px solid rgba(44,36,24,.06);
 }
 .ev-row:last-child { border-bottom: 0; }
@@ -131,11 +168,11 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
   white-space: nowrap; overflow: hidden;
   line-height: 1.15; padding-top: .05vmin;
 }
-.ev-row .when .t0 { font-weight: 750; font-size: 1.7vmin; letter-spacing: -.02em; color: #2c2418; }
-.ev-row .when .t1 { font-weight: 550; font-size: 1.35vmin; color: #6c5c44; letter-spacing: -.02em; }
+.ev-row .when .t0 { font-weight: 750; font-size: 1.7vmin; letter-spacing: -.02em; color: var(--text); }
+.ev-row .when .t1 { font-weight: 550; font-size: 1.35vmin; color: var(--muted); letter-spacing: -.02em; }
 .ev-row .when .t1::before { content: "– "; color: #b0a090; }
 .ev-row .when.solo .t0 { font-size: 1.75vmin; }
-.ev-row.live .when .t0 { color: #8f6524; }
+.ev-row.live .when .t0 { color: var(--accent); }
 .ev-row.live .when .t1 { color: #a07838; }
 .ev-row.past .when .t0, .ev-row.past .when .t1 { color: #9a8b74; }
 .ev-row .dot {
@@ -188,17 +225,17 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .odot-hero .cd-big {
   font-family: Newsreader, Georgia, serif;
   font-size: 3.6vmin; line-height: 1; font-weight: 400;
-  color: #a3712a; letter-spacing: -.02em; margin-right: 1.2vmin;
+  color: var(--accent); letter-spacing: -.02em; margin-right: 1.2vmin;
 }
 .odot-hero .cd-label {
-  font-size: 1.7vmin; font-weight: 550; color: #5c4e3a;
+  font-size: 1.7vmin; font-weight: 550; color: var(--muted);
 }
 .odot-list { margin-top: .55vmin; }
 .odote {
   display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 1.45vmin; line-height: 1.35; padding: .22vmin 0; color: #2c2418;
+  font-size: 1.45vmin; line-height: 1.35; padding: .22vmin 0; color: var(--text);
 }
-.odote .d { font-weight: 650; color: #8f6524; flex: 0 0 auto; margin-left: .8vmin; }
+.odote .d { font-weight: 650; color: var(--accent); flex: 0 0 auto; margin-left: .8vmin; }
 
 /* Huomenna + Ruoka duo */
 .duo {
@@ -209,14 +246,14 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .duo .block { flex: 1; }
 .tmw-line, .meal-line {
   font-size: 1.55vmin; line-height: 1.35; font-weight: 550;
-  color: #2c2418; padding: .35vmin 0;
+  color: var(--text); padding: .35vmin 0;
   border-bottom: 1px solid rgba(44,36,24,.06);
 }
 .tmw-line:last-child, .meal-line:last-child { border-bottom: 0; }
 .tmw-line .who { font-weight: 700; margin-right: .45vmin; }
-.tmw-line .t { font-variant-numeric: tabular-nums; font-weight: 650; color: #6c5c44; margin-right: .45vmin; }
+.tmw-line .t { font-variant-numeric: tabular-nums; font-weight: 650; color: var(--muted); margin-right: .45vmin; }
 .tmw-line .meta { color: #7a6a55; font-weight: 500; font-size: 1.35vmin; }
-.meal-line .d { font-weight: 700; color: #8f6524; margin-right: .55vmin; }
+.meal-line .d { font-weight: 700; color: var(--accent); margin-right: .55vmin; }
 
 /* Family pills + tagline */
 .foot-soft {
@@ -228,11 +265,11 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .chips > * + * { margin-left: .5vmin; }
 .chip {
   font-size: 1.15vmin; font-weight: 600; padding: .4vmin .85vmin;
-  border-radius: 999px; color: #2c2418; opacity: .9;
+  border-radius: 999px; color: var(--text); opacity: .9;
 }
 .tagline {
   font-family: Newsreader, Georgia, serif;
-  font-size: 1.35vmin; font-style: italic; color: #8a7a62;
+  font-size: 1.35vmin; font-style: italic; color: var(--muted);
 }
 .brand {
   font-size: .95vmin; font-weight: 700; letter-spacing: .12em;
@@ -242,7 +279,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 /* Bottom nav — Tesla-like, TV-friendly */
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: #EFD6B0; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
+  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.16);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
   backdrop-filter: blur(8px);
@@ -257,11 +294,11 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
   box-shadow: inset 0 -.28vmin 0 #c9943a; }
 
-body.evening, body.evening .tv { background: #E8CFA0; }
-body.evening .clock { color: #120c06; }
-body.evening .greet { color: #7d5619; }
-body.evening .block { background: rgba(255,247,230,.5); }
-body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
+body.day .tv, body.evening .tv, body.night .tv { background: var(--bg); }
+body.evening .clock, body.night .clock { color: var(--text); }
+body.evening .greet, body.night .greet { color: var(--accent); }
+body.evening .block, body.night .block { background: var(--card-soft); }
+body.evening .hero, body.night .hero { box-shadow: 0 .6vmin 2.4vmin var(--shadow); }
 
 @media (max-width: 900px) {
   .tv { padding-bottom: 5.2rem; }
@@ -299,7 +336,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .action-bar.has-items { background: rgba(201,148,58,.18); border-color: rgba(163,113,42,.35); }
 .action-lbl {
   flex: 0 0 auto; font-size: 1.15vmin; font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; color: #8f6524; white-space: nowrap;
+  text-transform: uppercase; color: var(--accent); white-space: nowrap;
 }
 .action-list {
   flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
@@ -310,8 +347,8 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   flex: 0 1 auto; max-width: 42vmin;
   display: inline-flex; align-items: center; gap: .45vmin;
   padding: .35vmin .75vmin; border-radius: 999px;
-  background: #FFF3DC; border: 1px solid rgba(143,101,36,.28);
-  font-size: 1.45vmin; font-weight: 650; color: #2c2418;
+  background: var(--card); border: 1px solid rgba(143,101,36,.28);
+  font-size: 1.45vmin; font-weight: 650; color: var(--text);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .action-pill .src {
@@ -398,7 +435,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v94 vaaka</span>
+      <span class="brand">v98 warm</span>
     </div>
   </div>
 </div>
@@ -412,7 +449,8 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v95";
+  var BUILD = "20260922-v98-warm";
+  ;
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -822,9 +860,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     return "Hyvää yötä";
   }
   function themeClass(hour) {
-    if (hour >= 5 && hour < 11) return "morning";
-    if (hour >= 11 && hour < 17) return "afternoon";
-    return "evening";
+    if (hour >= 7 && hour < 18) return "day";
+    if (hour >= 18 && hour < 22) return "evening";
+    return "night";
   }
   function applyTheme(hour) { document.body.className = themeClass(hour); }
   function parseMin(hm) {

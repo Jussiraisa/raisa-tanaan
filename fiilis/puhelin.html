@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-puhelin-v9-tap">
-<meta name="theme-color" content="#F7F1E3">
+<meta name="fiilis-build" content="20260922-puhelin-v10-warm">
+<meta name="theme-color" content="#F3EFE8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Fiilis">
@@ -14,17 +14,36 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --cream: #F7F1E3;
-  --card: #FFFCF7;
+:root, body.day {
+  --cream: #F3EFE8;
+  --bg: #F3EFE8;
+  --card: #F7F1E6;
   --ink: #2A241C;
-  --muted: #7A6B58;
+  --text: #2A241C;
+  --muted: #6E6254;
   --line: rgba(90,70,40,.10);
-  --honey: #C9943A;
+  --honey: #A67C3A;
+  --accent: #A67C3A;
   --coral: #C45C4A;
   --nav: rgba(36,32,28,.97);
-  --shadow: 0 10px 28px rgba(60,40,18,.07);
+  --shadow: 0 10px 28px rgba(60,40,18,.08);
   --radius: 1.25rem;
+}
+body.evening {
+  --cream: #E8DFD0;
+  --bg: #E8DFD0;
+  --card: #F0E8DA;
+  --ink: #1F1A14;
+  --text: #1F1A14;
+  --muted: #5E5448;
+}
+body.night {
+  --cream: #DED4C4;
+  --bg: #DED4C4;
+  --card: #E8DFD0;
+  --ink: #1A1510;
+  --text: #1A1510;
+  --muted: #52483C;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
@@ -62,7 +81,7 @@ body {
   flex: 0 0 auto;
   min-width: 4.6rem;
   text-align: center;
-  background: rgba(255,252,247,.88);
+  background: rgba(247,241,230,.88);
   border: 1px solid var(--line);
   border-radius: 1.15rem;
   padding: .55rem .65rem .5rem;
@@ -119,7 +138,7 @@ body {
 }
 .hero .chip {
   position: absolute; left: .85rem; top: .85rem;
-  background: rgba(255,250,243,.94); color: #5C4E3A;
+  background: rgba(247,241,230,.94); color: #5C4E3A;
   font-size: .72rem; font-weight: 700; letter-spacing: .04em;
   padding: .32rem .65rem; border-radius: 999px;
 }
@@ -134,7 +153,7 @@ body {
 .hero .cap .yr { margin-top: .15rem; font-size: .85rem; opacity: .92; font-weight: 600; }
 
 .card {
-  background: rgba(255,252,247,.94);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -195,7 +214,7 @@ body {
 }
 .tev .dot {
   width: .55rem; height: .55rem; border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(255,252,247,.95);
+  box-shadow: 0 0 0 3px rgba(247,241,230,.95);
 }
 .tev .txt { flex: 1 1 auto; min-width: 0; }
 .tev .who { font-weight: 700; font-size: .95rem; }
@@ -217,7 +236,7 @@ body {
 .tomorrow::-webkit-scrollbar { display: none; }
 .tchip {
   flex: 0 0 auto; min-width: 8.5rem; max-width: 11rem;
-  background: rgba(255,252,247,.9); border: 1px solid var(--line);
+  background: var(--card); border: 1px solid var(--line);
   border-radius: 1rem; padding: .7rem .8rem; box-shadow: var(--shadow);
 }
 .tchip .t { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
@@ -331,7 +350,15 @@ body {
 
 <script>
 (function () {
-  var BUILD = "20260922-puhelin-v9-tap";
+  var BUILD = "20260922-puhelin-v10-warm";
+
+  function themeClass(hour) {
+    if (hour >= 7 && hour < 18) return "day";
+    if (hour >= 18 && hour < 22) return "evening";
+    return "night";
+  }
+  function applyTheme(hour) { document.body.className = themeClass(hour); }
+
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
   var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
@@ -727,6 +754,7 @@ body {
 
   function paint() {
     var now = helsinkiNow();
+    applyTheme(now.hour);
     paintHeader(now);
     paintPeople(now);
     paintHope(now);

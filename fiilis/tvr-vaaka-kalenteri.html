@@ -4,14 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v95">
-  <meta name="theme-color" content="#EFD6B0">
+  <meta name="fiilis-build" content="20260922-v98-warm">
+  <meta name="theme-color" content="#EFE6D8">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; color: #2c2418;
+
+:root, body.day {
+  --bg: #EFE6D8;
+  --bg-deep: #E8DCC8;
+  --card: #F7F1E6;
+  --card-soft: rgba(247,241,230,.55);
+  --text: #2A241C;
+  --muted: #6E6254;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.08);
+  --nav-bg: #EFE6D8;
+  --nav-fg: #5a4a34;
+}
+body.evening {
+  --bg: #D9CDB8;
+  --bg-deep: #D0C2AA;
+  --card: #E4D8C4;
+  --card-soft: rgba(228,216,196,.62);
+  --text: #1F1A14;
+  --muted: #5E5448;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.10);
+  --nav-bg: #D9CDB8;
+  --nav-fg: #4a3e30;
+}
+body.night {
+  --bg: #C4B49A;
+  --bg-deep: #B8A88E;
+  --card: #CFC0A8;
+  --card-soft: rgba(207,192,168,.68);
+  --text: #1A1510;
+  --muted: #52483C;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.12);
+  --nav-bg: #C4B49A;
+  --nav-fg: #3e3428;
+}
+html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
 .app {
@@ -24,9 +61,9 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 }
 .title {
   font-family: Newsreader, Georgia, serif;
-  font-size: 2.8vmin; font-weight: 400; color: #1a140e; letter-spacing: -.02em;
+  font-size: 2.8vmin; font-weight: 400; color: var(--text); letter-spacing: -.02em;
 }
-.sub { font-size: 1.35vmin; color: #6c5c44; font-weight: 500; }
+.sub { font-size: 1.35vmin; color: var(--muted); font-weight: 500; }
 .brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9a8b74; margin-left: 1vmin; }
 
 .grid-wrap {
@@ -38,7 +75,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 }
 .dow span {
   flex: 1; text-align: center; font-size: 1.15vmin; font-weight: 650;
-  letter-spacing: .08em; text-transform: uppercase; color: #8a7a62;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
 }
 .month {
   flex: 1 1 auto; min-height: 0;
@@ -52,22 +89,22 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 .week > * + * { margin-left: .4vmin; }
 .day {
   flex: 1 1 0; min-width: 0; min-height: 0;
-  background: #FFF3DC;
+  background: var(--card);
   border: 1px solid rgba(44,36,24,.08);
   border-radius: .85vmin;
   padding: .35vmin .4vmin .3vmin;
   overflow: hidden;
   display: flex; flex-direction: column;
-  box-shadow: 0 .2vmin .8vmin rgba(60,40,18,.04);
+  box-shadow: 0 .2vmin .8vmin var(--shadow);
 }
 .day.pad { visibility: hidden; border: 0; background: transparent; box-shadow: none; }
 .day.out {
   opacity: .38;
-  background: rgba(255,253,248,.45);
+  background: var(--card-soft);
 }
 .day.is-today {
-  background: rgba(184,136,62,.16);
-  border: 1.5px solid #a3712a;
+  background: rgba(166,124,58,.16);
+  border: 1.5px solid var(--accent);
 }
 .day.is-lontoo:not(.is-today) { background: rgba(184,136,62,.08); }
 .day .hd {
@@ -75,10 +112,10 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   margin-bottom: .25vmin;
 }
 .day .dn {
-  font-size: 1.4vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418;
+  font-size: 1.4vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text);
 }
-.day.is-today .dn { color: #8f6524; }
-.day .mo { font-size: 1.0vmin; font-weight: 600; color: #8a7a62; margin-left: .25vmin; }
+.day.is-today .dn { color: var(--accent); }
+.day .mo { font-size: 1.0vmin; font-weight: 600; color: var(--muted); margin-left: .25vmin; }
 .day .wd { font-size: 1.0vmin; font-weight: 600; color: #9a8b74; }
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
@@ -102,7 +139,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: #EFD6B0; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
+  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.16);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
 }
@@ -141,7 +178,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 <div class="app">
   <div class="head">
     <div class="title" id="monthTitle">Kalenteri</div>
-    <div><span class="sub" id="rangeLabel">Kuopio</span><span class="brand">v94 vaaka</span></div>
+    <div><span class="sub" id="rangeLabel">Kuopio</span><span class="brand">v98 warm</span></div>
   </div>
   <div class="grid-wrap">
     <div class="dow">
@@ -158,7 +195,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v95";
+  var BUILD = "20260922-v98-warm";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -169,6 +206,14 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
   var schedule = null;
+
+
+  function themeClass(hour) {
+    if (hour >= 7 && hour < 18) return "day";
+    if (hour >= 18 && hour < 22) return "evening";
+    return "night";
+  }
+  function applyTheme(hour) { document.body.className = themeClass(hour); }
 
   function pad(n) { n = parseInt(n, 10); return n < 10 ? "0" + n : "" + n; }
   function esc(s) {
@@ -408,6 +453,8 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
     if (data) schedule = data;
     paint();
   });
+  applyTheme(helsinkiNow().hour);
+  setInterval(function () { applyTheme(helsinkiNow().hour); }, 30000);
   paint();
   window.addEventListener("resize", function () {
     var g = document.getElementById("monthGrid");

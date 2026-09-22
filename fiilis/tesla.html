@@ -6,16 +6,44 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-tesla-v9-tsla">
+<meta name="fiilis-build" content="20260922-tesla-v10-warm">
 <title>Fiilis · Tesla</title>
 <style>
+
+  :root, body.day {
+    --bg: #F3EFE8;
+    --card: #F7F1E6;
+    --card-soft: rgba(247,241,230,.92);
+    --text: #2A241C;
+    --muted: #6E6254;
+    --accent: #A67C3A;
+    --shadow: rgba(60,40,18,.08);
+  }
+  body.evening {
+    --bg: #E8DFD0;
+    --card: #F0E8DA;
+    --card-soft: rgba(240,232,218,.92);
+    --text: #1F1A14;
+    --muted: #5E5448;
+    --accent: #A67C3A;
+    --shadow: rgba(60,40,18,.10);
+  }
+  body.night {
+    --bg: #DED4C4;
+    --card: #E8DFD0;
+    --card-soft: rgba(232,223,208,.92);
+    --text: #1A1510;
+    --muted: #52483C;
+    --accent: #A67C3A;
+    --shadow: rgba(60,40,18,.12);
+  }
   @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; }
   body {
     font-family: "Source Sans 3", system-ui, sans-serif;
-    background: #F7F1E3;
-    color: #2a241c;
+    background: var(--bg);
+    color: var(--text);
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
   }
@@ -31,37 +59,37 @@
   .col > * + * { margin-top: 1.2vmin; }
   .grow { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
   .card {
-    background: rgba(255,252,246,.92);
+    background: var(--card-soft);
     border: 1px solid rgba(90,70,40,.1);
     border-radius: 1.4vmin;
-    box-shadow: 0 .4vmin 1.4vmin rgba(60,40,20,.06);
+    box-shadow: 0 .4vmin 1.4vmin var(--shadow);
     padding: 1.4vmin 1.6vmin;
   }
   .serif { font-family: "Cormorant Garamond", Georgia, serif; }
 
   .top { -ms-flex: 0 0 34%; flex: 0 0 34%; min-height: 0; }
-  .hello { font-size: 3.2vmin; font-weight: 600; color: #3a3228; }
-  .clock { font-size: 9.2vmin; font-weight: 700; line-height: .95; letter-spacing: -.02em; color: #1f1a14; margin-top: .2vmin; }
-  .date { font-size: 2.35vmin; color: #6a5c4a; margin-top: .3vmin; font-weight: 500; }
+  .hello { font-size: 3.2vmin; font-weight: 600; color: var(--text); }
+  .clock { font-size: 9.2vmin; font-weight: 700; line-height: .95; letter-spacing: -.02em; color: var(--text); margin-top: .2vmin; }
+  .date { font-size: 2.35vmin; color: var(--muted); margin-top: .3vmin; font-weight: 500; }
   .navcard {
     margin-top: 1.4vmin;
-    background: #FFFBF5;
+    background: var(--card);
     border: 1px solid rgba(90,70,40,.12);
     border-radius: 1.2vmin;
     padding: 1.1vmin 1.3vmin;
   }
-  .navcard .lab { font-size: 1.7vmin; color: #7a6a55; font-weight: 600; margin-bottom: .35vmin; }
+  .navcard .lab { font-size: 1.7vmin; color: var(--muted); font-weight: 600; margin-bottom: .35vmin; }
   .navcard .dest {
     display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center;
-    font-size: 2.8vmin; font-weight: 700; color: #1f1a14;
+    font-size: 2.8vmin; font-weight: 700; color: var(--text);
   }
   .navcard .dest .arr { color: #2f6fed; font-size: 2.4vmin; margin-right: .6vmin; }
-  .navcard .meta { margin-top: .35vmin; font-size: 1.95vmin; color: #5c4e3a; }
-  .navcard.empty .dest { color: #7a6a55; font-weight: 600; font-size: 2.3vmin; }
+  .navcard .meta { margin-top: .35vmin; font-size: 1.95vmin; color: var(--muted); }
+  .navcard.empty .dest { color: var(--muted); font-weight: 600; font-size: 2.3vmin; }
 
   .photo {
     position: relative; overflow: hidden; border-radius: 1.4vmin;
-    background: #EDE6D8; min-width: 0;
+    background: var(--bg); min-width: 0;
   }
   .photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .45s ease; }
   .photo .capL, .photo .capR {
@@ -79,9 +107,9 @@
   }
   .wx .ico { font-size: 7vmin; line-height: 1; }
   .wx .temp { font-size: 6.8vmin; font-weight: 700; line-height: 1; margin-top: .3vmin; }
-  .wx .place { font-size: 1.95vmin; color: #6a5c4a; margin-top: .2vmin; }
-  .wx .phr { font-size: 2.05vmin; color: #3a3228; margin-top: .5vmin; font-weight: 600; }
-  .wx .hl { font-size: 1.9vmin; color: #6a5c4a; margin-top: .35vmin; }
+  .wx .place { font-size: 1.95vmin; color: var(--muted); margin-top: .2vmin; }
+  .wx .phr { font-size: 2.05vmin; color: var(--text); margin-top: .5vmin; font-weight: 600; }
+  .wx .hl { font-size: 1.9vmin; color: var(--muted); margin-top: .35vmin; }
 
   .people { -ms-flex: 0 0 auto; flex: 0 0 auto; margin-top: 1.2vmin; }
   .people .chip {
@@ -97,12 +125,12 @@
     font-weight: 700; font-size: 2vmin; color: #fff; margin-right: .9vmin;
   }
   .chip .nm { font-weight: 700; font-size: 2.1vmin; line-height: 1.15; }
-  .chip .st { font-size: 1.75vmin; color: #6a5c4a; margin-top: .15vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .chip .st { font-size: 1.75vmin; color: var(--muted); margin-top: .15vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .dot { display: inline-block; width: .7vmin; height: .7vmin; border-radius: 50%; margin-left: .45vmin; vertical-align: middle; }
 
   .bottom { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; margin-top: 1.2vmin; }
   .bottom .card { height: 100%; overflow: hidden; }
-  .sect { font-size: 2.4vmin; font-weight: 700; color: #2a241c; margin-bottom: .8vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
+  .sect { font-size: 2.4vmin; font-weight: 700; color: var(--text); margin-bottom: .8vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
   .sect .chev { margin-left: .4vmin; color: #9a8a70; font-weight: 500; }
 
   .today-list { overflow: auto; height: calc(100% - 2.6vmin); }
@@ -114,10 +142,10 @@
   .tev.live .when, .tev.live .txt { font-weight: 700; color: #7a5214; }
   .tev .when {
     -ms-flex: 0 0 7.5vmin; flex: 0 0 7.5vmin;
-    font-variant-numeric: tabular-nums; font-weight: 650; color: #2a241c;
+    font-variant-numeric: tabular-nums; font-weight: 650; color: var(--text);
   }
   .tev .dotc { width: .85vmin; height: .85vmin; border-radius: 50%; margin: .55vmin .7vmin 0 0; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-  .tev .txt { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; color: #3a3228; }
+  .tev .txt { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; color: var(--text); }
   .tev .txt .meta { color: #7a6a55; font-weight: 500; }
   .nowpill {
     display: inline-block; margin-bottom: .7vmin; padding: .35vmin .8vmin;
@@ -158,7 +186,7 @@
   .tagline {
     margin-top: .7vmin; text-align: center;
     font-family: "Cormorant Garamond", Georgia, serif; font-style: italic;
-    font-size: 1.7vmin; color: #6a5c4a;
+    font-size: 1.7vmin; color: var(--muted);
   }
 
   .nav {
@@ -179,10 +207,10 @@
   .meal-block { margin-top: .4vmin; }
   .meal-row { margin-bottom: .85vmin; }
   .meal-row .k {
-    font-size: 1.7vmin; font-weight: 700; color: #8f6524; letter-spacing: .03em;
+    font-size: 1.7vmin; font-weight: 700; color: var(--accent); letter-spacing: .03em;
     text-transform: uppercase; margin-bottom: .25vmin;
   }
-  .meal-row .v { font-size: 2.25vmin; font-weight: 600; color: #2a241c; line-height: 1.25; }
+  .meal-row .v { font-size: 2.25vmin; font-weight: 600; color: var(--text); line-height: 1.25; }
   .meal-row .v.muted { color: #7a6a55; font-weight: 500; font-size: 2vmin; }
 
 .nav-tsla {
@@ -286,7 +314,15 @@
 
 <script>
 (function () {
-  var BUILD = "20260922-tesla-v9-tsla";
+  var BUILD = "20260922-tesla-v10-warm";
+
+  function themeClass(hour) {
+    if (hour >= 7 && hour < 18) return "day";
+    if (hour >= 18 && hour < 22) return "evening";
+    return "night";
+  }
+  function applyTheme(hour) { document.body.className = themeClass(hour); }
+
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
   var DAYS = [
@@ -688,6 +724,7 @@
 
   function paint() {
     var now = helsinkiNow();
+    applyTheme(now.hour);
     var clock = document.getElementById("clock");
     var greet = document.getElementById("greet");
     var dateEl = document.getElementById("dateLine");

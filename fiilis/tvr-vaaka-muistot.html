@@ -4,19 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v95">
-  <meta name="theme-color" content="#EFD6B0">
+  <meta name="fiilis-build" content="20260922-v98-warm">
+  <meta name="theme-color" content="#EFE6D8">
   <title>Räisä · Fiilis · Muistot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
+
+:root, body.day {
+  --bg: #EFE6D8;
+  --bg-deep: #E8DCC8;
+  --card: #F7F1E6;
+  --card-soft: rgba(247,241,230,.55);
+  --text: #2A241C;
+  --muted: #6E6254;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.08);
+  --nav-bg: #EFE6D8;
+  --nav-fg: #5a4a34;
+}
+body.evening {
+  --bg: #D9CDB8;
+  --bg-deep: #D0C2AA;
+  --card: #E4D8C4;
+  --card-soft: rgba(228,216,196,.62);
+  --text: #1F1A14;
+  --muted: #5E5448;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.10);
+  --nav-bg: #D9CDB8;
+  --nav-fg: #4a3e30;
+}
+body.night {
+  --bg: #C4B49A;
+  --bg-deep: #B8A88E;
+  --card: #CFC0A8;
+  --card-soft: rgba(207,192,168,.68);
+  --text: #1A1510;
+  --muted: #52483C;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.12);
+  --nav-bg: #C4B49A;
+  --nav-fg: #3e3428;
+}
+html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text); }
 * { box-sizing: border-box; }
 .stage {
   position: absolute; top: 1.8vmin; left: 2vmin; right: 2vmin; bottom: 8vmin;
-  border-radius: 1.8vmin; overflow: hidden; background: #e2c9a4;
-  box-shadow: 0 .6vmin 2.2vmin rgba(60,40,18,.12);
+  border-radius: 1.8vmin; overflow: hidden; background: var(--bg-deep);
+  box-shadow: 0 .6vmin 2.2vmin var(--shadow);
 }
 .stage img {
   width: 100%; height: 100%; object-fit: cover; display: block;
@@ -53,7 +90,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
 }
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: #EFD6B0; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
+  background: var(--nav-bg); color: var(--nav-fg); border-top: 1px solid rgba(120,90,40,.16);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
 }
@@ -115,7 +152,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
   <div class="chips" id="chips" aria-label="Albumivalinta"></div>
   <img id="photo" alt="">
   <div class="veil"></div>
-  <div class="brand">v94 vaaka</div>
+  <div class="brand">v98 warm</div>
   <div class="cap">
     <div class="wh">Muistatko…</div>
     <div class="place" id="place">Muistot</div>
@@ -131,7 +168,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v95";
+  var BUILD = "20260922-v98-warm";
   var LS_KEY = "fiilisMemAlbum";
   var PHOTO_DENY = {
     "matka-2018-lontoo-00-002.jpg": 1,
@@ -155,6 +192,25 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
   var photos = FALLBACK.slice(0);
   var idx = 0;
   var timer = null;
+
+
+
+  function helsinkiNow() {
+    var d = new Date();
+    var parts = {};
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Helsinki",
+      hour: "2-digit", minute: "2-digit", hour12: false,
+      year: "numeric", month: "2-digit", day: "2-digit"
+    }).formatToParts(d).forEach(function (p) { parts[p.type] = p.value; });
+    return { hour: parseInt(parts.hour, 10), minute: parseInt(parts.minute, 10) };
+  }
+  function themeClass(hour) {
+    if (hour >= 7 && hour < 18) return "day";
+    if (hour >= 18 && hour < 22) return "evening";
+    return "night";
+  }
+  function applyTheme(hour) { document.body.className = themeClass(hour); }
 
   function photoDenied(src) {
     if (!src) return true;
@@ -295,6 +351,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; }
     });
   });
   show();
+  applyTheme(helsinkiNow().hour);
+  setInterval(function () { applyTheme(helsinkiNow().hour); }, 30000);
 })();
 </script>
 

@@ -226,10 +226,10 @@
 </div>
 
 <nav class="nav">
-  <a class="on" href="tesla.html"><span class="ic">◎</span>Tänään</a>
-  <a href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a id="navHome" class="on" href="tesla.html"><span class="ic">◎</span><span class="lab">Tänään</span></a>
+  <a id="navCal" href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
   <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
-  <a href="tesla-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <a id="navMem" href="tesla-muistot.html"><span class="ic">♡</span>Muistot</a>
 </nav>
 
 <script>
@@ -641,5 +641,31 @@
   setInterval(loadWx, 15 * 60 * 1000);
 })();
 </script>
+
+<script>
+(function () {
+  function fromPhone() {
+    try {
+      var q = location.search || "";
+      if (q.indexOf("from=puhelin") >= 0) return true;
+      if (window.matchMedia && window.matchMedia("(max-width: 700px)").matches) return true;
+    } catch (e) {}
+    return false;
+  }
+  var phone = fromPhone();
+  var home = document.getElementById("navHome");
+  if (home) {
+    home.href = phone ? "puhelin.html" : "tesla.html";
+    var lab = home.querySelector(".lab");
+    if (lab) lab.textContent = phone ? "Koti" : "Tänään";
+  }
+  var suf = phone ? "?from=puhelin" : "";
+  var cal = document.getElementById("navCal");
+  if (cal) cal.href = "tesla-kalenteri.html" + suf;
+  var mem = document.getElementById("navMem");
+  if (mem) mem.href = "tesla-muistot.html" + suf;
+})();
+</script>
+
 </body>
 </html>

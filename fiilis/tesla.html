@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-tesla-v2">
+<meta name="fiilis-build" content="20260922-tesla-v2-ruoka">
 <title>Fiilis · Tesla</title>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
@@ -37,9 +37,9 @@
   .serif { font-family: "Cormorant Garamond", Georgia, serif; }
 
   .top { -ms-flex: 0 0 34%; flex: 0 0 34%; min-height: 0; }
-  .hello { font-size: 2.4vmin; font-weight: 600; color: #3a3228; }
-  .clock { font-size: 7.2vmin; font-weight: 700; line-height: .95; letter-spacing: -.02em; color: #1f1a14; margin-top: .2vmin; }
-  .date { font-size: 1.7vmin; color: #6a5c4a; margin-top: .3vmin; font-weight: 500; }
+  .hello { font-size: 2.85vmin; font-weight: 600; color: #3a3228; }
+  .clock { font-size: 8.2vmin; font-weight: 700; line-height: .95; letter-spacing: -.02em; color: #1f1a14; margin-top: .2vmin; }
+  .date { font-size: 2.05vmin; color: #6a5c4a; margin-top: .3vmin; font-weight: 500; }
   .navcard {
     margin-top: 1.4vmin;
     background: #fffaf2;
@@ -47,14 +47,14 @@
     border-radius: 1.2vmin;
     padding: 1.1vmin 1.3vmin;
   }
-  .navcard .lab { font-size: 1.25vmin; color: #7a6a55; font-weight: 600; margin-bottom: .35vmin; }
+  .navcard .lab { font-size: 1.5vmin; color: #7a6a55; font-weight: 600; margin-bottom: .35vmin; }
   .navcard .dest {
     display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center;
-    font-size: 2.1vmin; font-weight: 700; color: #1f1a14;
+    font-size: 2.45vmin; font-weight: 700; color: #1f1a14;
   }
   .navcard .dest .arr { color: #2f6fed; font-size: 2.4vmin; margin-right: .6vmin; }
-  .navcard .meta { margin-top: .35vmin; font-size: 1.45vmin; color: #5c4e3a; }
-  .navcard.empty .dest { color: #7a6a55; font-weight: 600; font-size: 1.7vmin; }
+  .navcard .meta { margin-top: .35vmin; font-size: 1.7vmin; color: #5c4e3a; }
+  .navcard.empty .dest { color: #7a6a55; font-weight: 600; font-size: 2vmin; }
 
   .photo {
     position: relative; overflow: hidden; border-radius: 1.4vmin;
@@ -74,11 +74,11 @@
     -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center;
     min-width: 18vmin;
   }
-  .wx .ico { font-size: 5.5vmin; line-height: 1; }
-  .wx .temp { font-size: 5.2vmin; font-weight: 700; line-height: 1; margin-top: .3vmin; }
-  .wx .place { font-size: 1.5vmin; color: #6a5c4a; margin-top: .2vmin; }
-  .wx .phr { font-size: 1.55vmin; color: #3a3228; margin-top: .5vmin; font-weight: 600; }
-  .wx .hl { font-size: 1.45vmin; color: #6a5c4a; margin-top: .35vmin; }
+  .wx .ico { font-size: 6.2vmin; line-height: 1; }
+  .wx .temp { font-size: 6vmin; font-weight: 700; line-height: 1; margin-top: .3vmin; }
+  .wx .place { font-size: 1.75vmin; color: #6a5c4a; margin-top: .2vmin; }
+  .wx .phr { font-size: 1.8vmin; color: #3a3228; margin-top: .5vmin; font-weight: 600; }
+  .wx .hl { font-size: 1.7vmin; color: #6a5c4a; margin-top: .35vmin; }
 
   .people { -ms-flex: 0 0 auto; flex: 0 0 auto; margin-top: 1.2vmin; }
   .people .chip {
@@ -91,21 +91,21 @@
     width: 4.2vmin; height: 4.2vmin; border-radius: 50%;
     -ms-flex: 0 0 auto; flex: 0 0 auto;
     display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center;
-    font-weight: 700; font-size: 1.55vmin; color: #fff; margin-right: .9vmin;
+    font-weight: 700; font-size: 1.8vmin; color: #fff; margin-right: .9vmin;
   }
-  .chip .nm { font-weight: 700; font-size: 1.55vmin; line-height: 1.15; }
-  .chip .st { font-size: 1.25vmin; color: #6a5c4a; margin-top: .15vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .chip .nm { font-weight: 700; font-size: 1.85vmin; line-height: 1.15; }
+  .chip .st { font-size: 1.5vmin; color: #6a5c4a; margin-top: .15vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .dot { display: inline-block; width: .7vmin; height: .7vmin; border-radius: 50%; margin-left: .45vmin; vertical-align: middle; }
 
   .bottom { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; margin-top: 1.2vmin; }
   .bottom .card { height: 100%; overflow: hidden; }
-  .sect { font-size: 1.7vmin; font-weight: 700; color: #2a241c; margin-bottom: .8vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
+  .sect { font-size: 2.05vmin; font-weight: 700; color: #2a241c; margin-bottom: .8vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
   .sect .chev { margin-left: .4vmin; color: #9a8a70; font-weight: 500; }
 
   .today-list { overflow: auto; height: calc(100% - 2.6vmin); }
   .tev {
     display: -ms-flexbox; display: flex; -ms-flex-align: flex-start; align-items: flex-start;
-    padding: .55vmin 0; font-size: 1.55vmin;
+    padding: .6vmin 0; font-size: 1.85vmin;
   }
   .tev.past { opacity: .4; }
   .tev.live .when, .tev.live .txt { font-weight: 700; color: #7a5214; }
@@ -119,7 +119,7 @@
   .nowpill {
     display: inline-block; margin-bottom: .7vmin; padding: .35vmin .8vmin;
     background: rgba(201,148,58,.22); border: 1px solid rgba(143,101,36,.35);
-    border-radius: .7vmin; font-size: 1.45vmin; font-weight: 700; color: #2c2418;
+    border-radius: .7vmin; font-size: 1.7vmin; font-weight: 700; color: #2c2418;
   }
   .nowpill .b {
     display: inline-block; margin-right: .4vmin; padding: .05vmin .4vmin;
@@ -133,9 +133,9 @@
     display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column;
     -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center;
   }
-  .wd .d { font-size: 1.35vmin; font-weight: 700; color: #6a5c4a; letter-spacing: .04em; }
-  .wd .i { font-size: 3vmin; margin: .5vmin 0; line-height: 1; }
-  .wd .t { font-size: 1.35vmin; color: #3a3228; font-weight: 600; }
+  .wd .d { font-size: 1.6vmin; font-weight: 700; color: #6a5c4a; letter-spacing: .04em; }
+  .wd .i { font-size: 3.4vmin; margin: .5vmin 0; line-height: 1; }
+  .wd .t { font-size: 1.6vmin; color: #3a3228; font-weight: 600; }
   .wd.on .d { color: #8f6524; }
 
   .quote { position: relative; overflow: hidden; padding: 0; background: #2a241c; }
@@ -148,7 +148,7 @@
     position: absolute; left: 1.4vmin; right: 1.4vmin; top: 50%;
     -webkit-transform: translateY(-50%); transform: translateY(-50%);
     text-align: center; color: #fff; font-family: "Cormorant Garamond", Georgia, serif;
-    font-style: italic; font-size: 2.35vmin; line-height: 1.25;
+    font-style: italic; font-size: 2.7vmin; line-height: 1.25;
     text-shadow: 0 1px 6px rgba(0,0,0,.45);
   }
   .quote .heart { position: absolute; top: 1vmin; left: 1.2vmin; color: rgba(255,255,255,.85); font-size: 1.6vmin; }
@@ -167,11 +167,20 @@
   }
   .nav a {
     color: inherit; text-decoration: none; text-align: center;
-    font-size: 1.2vmin; font-weight: 600; min-width: 8vmin; padding: .4vmin .6vmin;
+    font-size: 1.4vmin; font-weight: 600; min-width: 8vmin; padding: .4vmin .6vmin;
     opacity: .72;
   }
-  .nav a .ic { display: block; font-size: 2.2vmin; line-height: 1.1; margin-bottom: .1vmin; }
+  .nav a .ic { display: block; font-size: 2.5vmin; line-height: 1.1; margin-bottom: .1vmin; }
   .nav a.on { opacity: 1; color: #fff; border-bottom: .28vmin solid #c45c4a; padding-bottom: .2vmin; }
+
+  .meal-block { margin-top: .4vmin; }
+  .meal-row { margin-bottom: .85vmin; }
+  .meal-row .k {
+    font-size: 1.45vmin; font-weight: 700; color: #8f6524; letter-spacing: .03em;
+    text-transform: uppercase; margin-bottom: .25vmin;
+  }
+  .meal-row .v { font-size: 1.9vmin; font-weight: 600; color: #2a241c; line-height: 1.25; }
+  .meal-row .v.muted { color: #7a6a55; font-weight: 500; font-size: 1.7vmin; }
 </style>
 </head>
 <body>
@@ -204,16 +213,23 @@
   <div class="row people" id="peopleRow"></div>
 
   <div class="row bottom grow">
-    <div class="card grow" style="flex:1.15; -ms-flex:1.15; min-width:0;">
+    <div class="card grow" style="flex:1.2; -ms-flex:1.2; min-width:0;">
       <div class="sect">Tänään <span class="chev">›</span></div>
       <div id="nowBox"></div>
       <div class="today-list" id="todayList"></div>
     </div>
-    <div class="card grow" style="flex:1; -ms-flex:1; min-width:0;">
-      <div class="sect">Viikon sää · Kuopio</div>
+    <div class="card grow" style="flex:0.95; -ms-flex:0.95; min-width:0;">
+      <div class="sect">Ruoka</div>
+      <div class="meal-block" id="mealBox">
+        <div class="meal-row"><div class="k">Kouluruoka</div><div class="v muted" id="mealSchool">—</div></div>
+        <div class="meal-row"><div class="k">Kotona</div><div class="v muted" id="mealHome">—</div></div>
+      </div>
+    </div>
+    <div class="card grow" style="flex:0.9; -ms-flex:0.9; min-width:0;">
+      <div class="sect">Viikon sää</div>
       <div class="week" id="weekWx"></div>
     </div>
-    <div class="col grow" style="flex:1; -ms-flex:1; min-width:0;">
+    <div class="col grow" style="flex:0.95; -ms-flex:0.95; min-width:0;">
       <div class="card quote grow" id="quoteCard">
         <img id="quoteImg" alt="">
         <div class="veil"></div>
@@ -583,6 +599,35 @@
     }
     var qt = document.getElementById("quoteTxt");
     if (qt) qt.textContent = "”" + QUOTES[now.day % QUOTES.length] + "”";
+  }
+
+
+  function paintMeals(now) {
+    var schoolEl = document.getElementById("mealSchool");
+    var homeEl = document.getElementById("mealHome");
+    if (!schoolEl && !homeEl) return;
+    var schoolMap = (schedule && schedule.schoolLunch) || {};
+    var homeMap = (schedule && schedule.homeMeals) || {};
+    var school = schoolMap[now.iso] || "";
+    var home = homeMap[now.iso] || "";
+    if (schoolEl) {
+      if (school) {
+        schoolEl.className = "v";
+        schoolEl.textContent = school;
+      } else {
+        schoolEl.className = "v muted";
+        schoolEl.textContent = "Ei merkintää";
+      }
+    }
+    if (homeEl) {
+      if (home) {
+        homeEl.className = "v";
+        homeEl.textContent = home;
+      } else {
+        homeEl.className = "v muted";
+        homeEl.textContent = "Ei merkintää";
+      }
+    }
   }
 
   function paint() {

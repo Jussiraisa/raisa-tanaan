@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v91">
-  <meta name="theme-color" content="#E9C99A">
+  <meta name="fiilis-build" content="20260922-v92">
+  <meta name="theme-color" content="#E4BE86">
   <title>Räisä · Fiilis · Muistot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; }
+html, body { height: 100%; margin: 0; overflow: hidden; background: #E4BE86; }
 * { box-sizing: border-box; }
 .stage {
   position: absolute; top: 1.8vmin; left: 2vmin; right: 2vmin; bottom: 8vmin;
@@ -53,7 +53,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; }
 }
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: rgba(42, 36, 28, .94); color: #d8d0c4;
+  background: rgba(253, 244, 224, .94); color: #5a4a34; border-top: 1px solid rgba(120,90,40,.18); backdrop-filter: blur(8px);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
 }
@@ -63,7 +63,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; }
   padding: .6vmin 1.2vmin; opacity: .68; border-radius: .6vmin;
 }
 .nav a .ic { display: block; font-size: 2.4vmin; line-height: 1.15; margin-bottom: .15vmin; }
-.nav a.on { opacity: 1; color: #fff; background: rgba(255,255,255,.08);
+.nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
   box-shadow: inset 0 -.28vmin 0 #c9943a; }
 @media (max-width: 900px) {
   .stage { bottom: 5.2rem; }
@@ -103,7 +103,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; }
   <div class="chips" id="chips" aria-label="Albumivalinta"></div>
   <img id="photo" alt="">
   <div class="veil"></div>
-  <div class="brand">v91 vaaka</div>
+  <div class="brand">v92 vaaka</div>
   <div class="cap">
     <div class="wh">Muistatko…</div>
     <div class="place" id="place">Muistot</div>
@@ -118,7 +118,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; }
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v91";
+  var BUILD = "20260922-v92";
   var LS_KEY = "fiilisMemAlbum";
   var PHOTO_DENY = {
     "matka-2018-lontoo-00-002.jpg": 1,

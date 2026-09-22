@@ -1447,6 +1447,7 @@ body.evening .photo-cap, body.night .photo-cap {
     if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ".";
     paintKidsDay(now);
     paintParents(now);
+    paintTodayStrip(now);
     paintOdotukset(now);
     paintTomorrow(now);
     paintMeals(now);
@@ -1462,6 +1463,7 @@ body.evening .photo-cap, body.night .photo-cap {
     if (clockEl) clockEl.textContent = pad(now.hour) + "." + pad(now.minute);
     var greetEl = document.getElementById("greet");
     if (greetEl) greetEl.textContent = greeting(now.hour);
+    paintTodayStrip(now);
   }
 
   function loadSchedule() {

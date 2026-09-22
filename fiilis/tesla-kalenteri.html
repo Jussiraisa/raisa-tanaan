@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v100-kontrasti">
+  <meta name="fiilis-build" content="20260922-v101-tumma">
   <meta name="theme-color" content="#F3EFE8">
   <title>Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,9 +118,16 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 .day .wd { font-size: 1.0vmin; font-weight: 600; color: var(--wd); }
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
-  font-size: var(--ev-fs, 1.0vmin); line-height: 1.2; line-height: 1.25; font-weight: 550; color: var(--ev);
-  margin-top: .12vmin;
+  font-size: var(--ev-fs, 1.25vmin); line-height: 1.28; font-weight: 650;
+  color: #1A140E !important;
+  -webkit-text-fill-color: #1A140E !important;
+  margin-top: .14vmin;
   white-space: normal; overflow-wrap: anywhere; word-break: break-word;
+  opacity: 1 !important;
+}
+body.evening .day .ev, body.night .day .ev {
+  color: #120E0A !important;
+  -webkit-text-fill-color: #120E0A !important;
 }
 .month.tight .day { padding: .28vmin .35vmin .25vmin; }
 .month.tight .day .dn { font-size: 1.55vmin; }
@@ -133,7 +140,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
   margin-right: .3vmin; vertical-align: .12em;
 }
-.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.92em; color: var(--ev-time); }
+.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 0.95em; color: #1A140E !important; -webkit-text-fill-color: #1A140E !important; }
 .day .empty-day { font-size: 1.2vmin; color: var(--empty); margin-top: .2vmin; }
 
 
@@ -201,7 +208,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   }
   applyTheme();
   setInterval(applyTheme, 60000);
-  var BUILD = "20260922-v100-kontrasti";
+  var BUILD = "20260922-v101-tumma";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

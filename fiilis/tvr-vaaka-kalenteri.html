@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v100-kontrasti">
+  <meta name="fiilis-build" content="20260922-v101-tumma">
   <meta name="theme-color" content="#EFE6D8">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
 
-:root, body.day {
+:root, body.theme-day {
   --bg: #EFE6D8;
   --bg-deep: #E8DCC8;
   --card: #F7F1E6;
@@ -28,10 +28,10 @@
   --wd: #6E6254;
   --empty: #8A7C6A;
 }
-body.evening {
+body.theme-evening {
   --bg: #D9CDB8;
   --bg-deep: #D0C2AA;
-  --card: #E4D8C4;
+  --card: #EDE4D4;
   --card-soft: rgba(228,216,196,.62);
   --text: #1F1A14;
   --muted: #5E5448;
@@ -44,7 +44,7 @@ body.evening {
   --wd: #4E463C;
   --empty: #6A5E50;
 }
-body.night {
+body.theme-night {
   --bg: #C4B49A;
   --bg-deep: #B8A88E;
   --card: #CFC0A8;
@@ -124,16 +124,23 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   margin-bottom: .25vmin;
 }
 .day .dn {
-  font-size: 1.4vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text);
+  font-size: 1.55vmin; font-weight: 750; font-variant-numeric: tabular-nums; color: #1A140E !important; -webkit-text-fill-color: #1A140E !important;
 }
 .day.is-today .dn { color: var(--accent); }
 .day .mo { font-size: 1.0vmin; font-weight: 600; color: var(--muted); margin-left: .25vmin; }
-.day .wd { font-size: 1.0vmin; font-weight: 600; color: var(--wd); }
+.day .wd { font-size: 1.0vmin; font-weight: 700; color: #3A3228 !important; }
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
-  font-size: var(--ev-fs, 1.0vmin); line-height: 1.2; line-height: 1.25; font-weight: 550; color: var(--ev);
-  margin-top: .12vmin;
+  font-size: var(--ev-fs, 1.25vmin); line-height: 1.28; font-weight: 650;
+  color: #1A140E !important;
+  -webkit-text-fill-color: #1A140E !important;
+  margin-top: .14vmin;
   white-space: normal; overflow-wrap: anywhere; word-break: break-word;
+  opacity: 1 !important;
+}
+body.theme-evening .day .ev, body.theme-night .day .ev {
+  color: #120E0A !important;
+  -webkit-text-fill-color: #120E0A !important;
 }
 .month.tight .day { padding: .28vmin .35vmin .25vmin; }
 .month.tight .day .dn { font-size: 1.55vmin; }
@@ -146,8 +153,8 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
   margin-right: .3vmin; vertical-align: .12em;
 }
-.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.92em; color: var(--ev-time); }
-.day .empty-day { font-size: 1.2vmin; color: var(--empty); margin-top: .2vmin; }
+.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 0.95em; color: #1A140E !important; -webkit-text-fill-color: #1A140E !important; }
+.day .empty-day { font-size: 1.2vmin; color: #4A4034 !important; margin-top: .2vmin; }
 
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
@@ -207,7 +214,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v100-kontrasti";
+  var BUILD = "20260922-v101-tumma";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -221,9 +228,9 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 
 
   function themeClass(hour) {
-    if (hour >= 7 && hour < 18) return "day";
-    if (hour >= 18 && hour < 22) return "evening";
-    return "night";
+    if (hour >= 7 && hour < 18) return "theme-day";
+    if (hour >= 18 && hour < 22) return "theme-evening";
+    return "theme-night";
   }
   function applyTheme(hour) { document.body.className = themeClass(hour); }
 
@@ -431,7 +438,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   function fitCal(grid) {
     if (!grid) return;
     grid.className = "month";
-    grid.style.setProperty("--ev-fs", "1.0vmin");
+    grid.style.setProperty("--ev-fs", "1.25vmin");
     var steps = [
       { cls: "", fs: "1.0vmin" },
       { cls: "", fs: "0.92vmin" },

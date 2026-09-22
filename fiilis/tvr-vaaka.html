@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v83">
+  <meta name="fiilis-build" content="20260922-v85">
   <meta name="theme-color" content="#F7F1E3">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,10 +125,19 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
 .ev-row.past { opacity: .4; }
 .ev-row.live { font-weight: 650; }
 .ev-row .when {
-  flex: 0 0 9.5vmin; font-variant-numeric: tabular-nums;
-  font-weight: 700; color: #2c2418;
+  flex: 0 0 8.2vmin;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap; overflow: hidden;
+  line-height: 1.15; padding-top: .05vmin;
 }
-.ev-row.live .when { color: #8f6524; }
+.ev-row .when .t0 { font-weight: 750; font-size: 1.7vmin; letter-spacing: -.02em; color: #2c2418; }
+.ev-row .when .t1 { font-weight: 550; font-size: 1.35vmin; color: #6c5c44; letter-spacing: -.02em; }
+.ev-row .when .t1::before { content: "– "; color: #b0a090; }
+.ev-row .when.solo .t0 { font-size: 1.75vmin; }
+.ev-row.live .when .t0 { color: #8f6524; }
+.ev-row.live .when .t1 { color: #a07838; }
+.ev-row.past .when .t0, .ev-row.past .when .t1 { color: #9a8b74; }
 .ev-row .dot {
   width: .85vmin; height: .85vmin; border-radius: 999px;
   margin: .65vmin .7vmin 0 0; flex: 0 0 auto;
@@ -313,6 +322,14 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .action-pill.abs .src { background: #6c5c44; }
 .block.wilma { display: none !important; }
 
+
+.today-list.d6 .ev-row .when .t0 { font-size: 1.55vmin; }
+.today-list.d6 .ev-row .when .t1 { font-size: 1.25vmin; }
+.today-list.d8 .ev-row .when .t0 { font-size: 1.45vmin; }
+.today-list.d8 .ev-row .when .t1 { font-size: 1.15vmin; }
+.today-list.d10 .ev-row .when .t0 { font-size: 1.3vmin; }
+.today-list.d10 .ev-row .when .t1 { font-size: 1.05vmin; }
+.today-list .ev-row { min-height: 3.6vmin; align-items: flex-start; }
 </style>
 </head>
 <body class="morning">
@@ -369,7 +386,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v83 vaaka</span>
+      <span class="brand">v85 vaaka</span>
     </div>
   </div>
 </div>
@@ -382,7 +399,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v84-moodphotos";
+  var BUILD = "20260922-v85";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -999,14 +1016,17 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       var cls = "ev-row";
       if (st != null && en != null && nowMin >= en) cls += " past";
       else if (st != null && st <= nowMin && nowMin < en) cls += " live";
-      var when = fmtRange(e.time, e.end) || "—";
+      var t0 = fmtHm(e.time) || "—";
+      var t1 = fmtHm(e.end) || "";
       var who = shortWho(e.who || "");
       var meta = [];
       var drv = driverOf(e, now.iso);
       if (e.place) meta.push(e.place);
       if (drv) meta.push(drv);
       html += "<div class=\"" + cls + "\">"
-        + "<div class=\"when\">" + esc(when) + "</div>"
+        + "<div class=\"when" + (t1 ? "" : " solo") + "\"><span class=\"t0\">" + esc(t0) + "</span>"
+        + (t1 ? ("<span class=\"t1\">" + esc(t1) + "</span>") : "")
+        + "</div>"
         + "<div class=\"dot\" style=\"background:" + colorForWho(e.who) + "\"></div>"
         + "<div class=\"txt\"><span class=\"who\">" + esc(who) + "</span> · " + esc(e.title || "")
         + (meta.length ? "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>" : "")

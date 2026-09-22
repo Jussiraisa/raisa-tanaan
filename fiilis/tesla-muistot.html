@@ -58,6 +58,13 @@
   }
   .nav a .ic { display: block; font-size: 2.2vmin; line-height: 1.1; margin-bottom: .1vmin; }
   .nav a.on { opacity: 1; color: #fff; border-bottom: .28vmin solid #c45c4a; padding-bottom: .2vmin; }
+
+@media (max-width: 700px) {
+  .nav { height: calc(3.7rem + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .nav a { font-size: 0.72rem; min-width: 4.2rem; padding: 0.35rem 0.4rem; }
+  .nav a .ic { font-size: 1.2rem; }
+  body { padding-bottom: 4.5rem; }
+}
 </style>
 </head>
 <body>
@@ -71,10 +78,10 @@
   </div>
 </div>
 <nav class="nav">
-  <a href="tesla.html"><span class="ic">◎</span>Tänään</a>
-  <a href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a id="navHome" href="tesla.html"><span class="ic">◎</span><span class="lab">Tänään</span></a>
+  <a id="navCal" href="tesla-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
   <a href="tvr-vaaka.html"><span class="ic">⌂</span>Koti-TV</a>
-  <a class="on" href="tesla-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <a id="navMem" href="tesla-muistot.html" class="on"><span class="ic">♡</span>Muistot</a>
 </nav>
 <script>
 (function () {
@@ -130,5 +137,31 @@
   });
 })();
 </script>
+
+<script>
+(function () {
+  function fromPhone() {
+    try {
+      var q = location.search || "";
+      if (q.indexOf("from=puhelin") >= 0) return true;
+      if (window.matchMedia && window.matchMedia("(max-width: 700px)").matches) return true;
+    } catch (e) {}
+    return false;
+  }
+  var phone = fromPhone();
+  var home = document.getElementById("navHome");
+  if (home) {
+    home.href = phone ? "puhelin.html" : "tesla.html";
+    var lab = home.querySelector(".lab");
+    if (lab) lab.textContent = phone ? "Koti" : "Tänään";
+  }
+  var suf = phone ? "?from=puhelin" : "";
+  var cal = document.getElementById("navCal");
+  if (cal) cal.href = "tesla-kalenteri.html" + suf;
+  var mem = document.getElementById("navMem");
+  if (mem) mem.href = "tesla-muistot.html" + suf;
+})();
+</script>
+
 </body>
 </html>

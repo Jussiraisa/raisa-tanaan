@@ -242,6 +242,9 @@ body {
 .tchip .t { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .tchip .b { margin-top: .25rem; font-size: .92rem; font-weight: 700; line-height: 1.25; }
 .tchip .s { margin-top: .15rem; font-size: .78rem; color: var(--muted); }
+.tchip.school .t { color: var(--text); font-weight: 900; }
+.tchip.school .b { font-weight: 800; }
+
 
 .quote {
   text-align: center;
@@ -350,7 +353,7 @@ body {
 
 <script>
 (function () {
-  var BUILD = "20260922-wa-padel24";
+  var BUILD = "20260922-v102-koulu";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -374,6 +377,28 @@ body {
     "Tänään riittää."
   ];
   var schedule = null;
+  var SCHOOL_STARTS_FALLBACK = [
+    { who: "Ellen", label: "Koulu", time: "10:00", end: "13:00", weekdays: [1] },
+    { who: "Ellen", label: "Koulu", time: "08:00", end: "13:00", weekdays: [2] },
+    { who: "Ellen", label: "Koulu", time: "08:45", end: "15:00", weekdays: [3] },
+    { who: "Ellen", label: "Koulu", time: "10:00", end: "15:00", weekdays: [4] },
+    { who: "Ellen", label: "Koulu", time: "08:00", end: "13:00", weekdays: [5] },
+    { who: "Samuel", label: "Koulu", time: "08:45", end: "13:00", weekdays: [1] },
+    { who: "Samuel", label: "Koulu", time: "08:45", end: "13:00", weekdays: [2] },
+    { who: "Samuel", label: "Koulu", time: "08:45", end: "13:00", weekdays: [3] },
+    { who: "Samuel", label: "Koulu", time: "08:00", end: "12:00", weekdays: [4] },
+    { who: "Samuel", label: "Koulu", time: "08:00", end: "13:00", weekdays: [5] },
+    { who: "Milla", label: "Koulu", time: "09:40", end: "15:50", weekdays: [1] },
+    { who: "Milla", label: "Koulu", time: "09:40", end: "14:20", weekdays: [2] },
+    { who: "Milla", label: "Koulu", time: "09:40", end: "14:20", weekdays: [3] },
+    { who: "Milla", label: "Koulu", time: "08:10", end: "15:50", weekdays: [4] },
+    { who: "Milla", label: "Koulu", time: "09:40", end: "14:20", weekdays: [5] },
+    { who: "Mea", label: "Koulu", time: "08:00", end: "13:00", weekdays: [1] },
+    { who: "Mea", label: "Koulu", time: "08:00", end: "13:00", weekdays: [2] },
+    { who: "Mea", label: "Koulu", time: "10:00", end: "14:50", weekdays: [3] },
+    { who: "Mea", label: "Koulu", time: "08:00", end: "14:45", weekdays: [4] },
+    { who: "Mea", label: "Koulu", time: "08:00", end: "14:45", weekdays: [5] }
+  ];
   var photos = [];
   var photoIdx = 0;
   var wxState = { current: null };
@@ -674,11 +699,36 @@ body {
     box.innerHTML = html;
   }
 
+
+  function schoolStartsForWd(wd) {
+    var list = (schedule && schedule.schoolStarts) || SCHOOL_STARTS_FALLBACK;
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      if (!s) continue;
+      var wds = s.weekdays || [];
+      var ok = false;
+      for (var j = 0; j < wds.length; j++) {
+        if (wds[j] === wd) { ok = true; break; }
+      }
+      if (ok) out.push(s);
+    }
+    out.sort(function (a, b) {
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      if (ta !== tb) return ta - tb;
+      return String(a.who || "").localeCompare(String(b.who || ""));
+    });
+    return out;
+  }
+
   function paintTomorrow(now) {
     var row = document.getElementById("tomorrowRow");
     if (!row) return;
     var iso = addDaysIso(now.iso, 1);
-    var list = eventsOn(iso);
+    var wd = (now.wd + 1) % 7;
+    var schools = schoolStartsForWd(wd);
+    var list = eventsOn(iso) || [];
     var out = [], seen = {};
     for (var i = 0; i < list.length; i++) {
       var e = list[i];
@@ -688,12 +738,35 @@ body {
       seen[k] = 1;
       out.push(e);
     }
-    if (!out.length) {
+    var evening = (now.hour >= 18 || now.hour < 7);
+    var h2 = document.querySelector(".sect h2");
+    /* Prefer the Huomenna section heading */
+    var sects = document.querySelectorAll(".sect h2");
+    for (var hi = 0; hi < sects.length; hi++) {
+      var ht = sects[hi].textContent || "";
+      if (ht.indexOf("Huomenna") === 0 || ht === "Huomenna · koulu") {
+        h2 = sects[hi];
+        break;
+      }
+    }
+    if (h2) {
+      if (evening && schools.length) h2.textContent = "Huomenna · koulu";
+      else h2.textContent = "Huomenna";
+    }
+    if (!schools.length && !out.length) {
       row.innerHTML = "<div class=\"tchip\"><div class=\"t\">Huomenna</div><div class=\"b\">Vapaampi päivä</div><div class=\"s\">Ei treenejä listalla</div></div>";
       return;
     }
     var html = "";
-    for (var j = 0; j < Math.min(out.length, 6); j++) {
+    var j;
+    for (j = 0; j < schools.length; j++) {
+      var s = schools[j];
+      html += "<div class=\"tchip school\"><div class=\"t\">" + esc(fmtHm(s.time) || "") +
+        "</div><div class=\"b\">" + esc((s.who || "") + " · " + (s.label || "Koulu")) +
+        "</div><div class=\"s\">Koulu</div></div>";
+    }
+    var room = Math.max(0, 6 - schools.length);
+    for (j = 0; j < Math.min(out.length, room); j++) {
       var e2 = out[j];
       html += "<div class=\"tchip\"><div class=\"t\">" + esc(fmtRange(e2.time, e2.end) || "päivä") +
         "</div><div class=\"b\">" + esc((e2.who && e2.who !== "perhe" ? e2.who + " · " : "") + (e2.title || "")) +

@@ -382,7 +382,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v83";
+  var BUILD = "20260922-v84-moodphotos";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -569,6 +569,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   var weather = { icon: "", temp: "", phrase: "" };
   var photoIdx = 0;
   var photos = PHOTOS.slice(0);
+  var photoCatalog = [];
+  var photoDeck = [];
+  var photoDeckKey = "";
   var PHOTO_DENY = {
     "matka-2018-lontoo-00-002.jpg": 1,
     "matka-2018-lontoo-05-007.jpg": 1,
@@ -592,6 +595,152 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     return out;
   }
   photos = filterPhotos(photos);
+
+  function photoSlotName(hour) {
+    if (hour >= 5 && hour < 10) return "morning";
+    if (hour >= 10 && hour < 15) return "day";
+    if (hour >= 15 && hour < 18) return "afternoon";
+    if (hour >= 18 && hour < 22) return "evening";
+    return "night";
+  }
+  function londonWeight(now) {
+    var d = daysUntil(LONTOO_START, now);
+    if (now.iso >= LONTOO_START && now.iso <= LONTOO_END) return 0.50;
+    if (d < 0) return 0.10;
+    if (d > 21) return 0.25;
+    if (d >= 8) return 0.45;
+    return 0.60;
+  }
+  function vibeTargets(slot, wd) {
+    // Circadian + weekday mood
+    var base;
+    if (slot === "morning") base = ["warm", "soft"];
+    else if (slot === "day") base = ["bright", "joy"];
+    else if (slot === "afternoon") base = ["bright", "adventure"];
+    else if (slot === "evening") base = ["cozy", "calm"];
+    else base = ["calm"];
+    // Weekday tint
+    if (wd === 1) {
+      // Ma soft hopeful familiar
+      if (slot === "morning" || slot === "evening") base = ["soft", "warm", "calm"];
+      else base = ["warm", "soft", "bright"];
+    } else if (wd === 5) {
+      // Pe anticipation/travel
+      base = base.concat(["adventure", "joy", "bright"]);
+    } else if (wd === 6 || wd === 0) {
+      // La–Su leisure outdoors family
+      base = base.concat(["joy", "bright", "adventure"]);
+    } else if (wd === 3 || wd === 4) {
+      // Ke–To variety
+      base = base.concat(["bright", "joy", "cozy", "adventure", "warm"]);
+    }
+    return base;
+  }
+  function hasTag(p, tag) {
+    var t = p.tags;
+    if (!t || !t.length) return false;
+    for (var i = 0; i < t.length; i++) if (t[i] === tag) return true;
+    return false;
+  }
+  function isLondon(p) {
+    if (!p) return false;
+    if (p.place && /lontoo/i.test(p.place)) return true;
+    return hasTag(p, "london");
+  }
+  function matchesSlot(p, slot) {
+    var s = p.slot;
+    if (!s || !s.length) return true;
+    for (var i = 0; i < s.length; i++) if (s[i] === slot) return true;
+    // afternoon accepts day photos
+    if (slot === "afternoon") {
+      for (var j = 0; j < s.length; j++) if (s[j] === "day") return true;
+    }
+    return false;
+  }
+  function shuffleInPlace(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+    }
+    return arr;
+  }
+  function buildPhotoDeck(now) {
+    var srcList = (photoCatalog && photoCatalog.length) ? photoCatalog : photos;
+    srcList = filterPhotos(srcList);
+    if (!srcList.length) return photos.slice(0);
+    var slot = photoSlotName(now.hour);
+    var lw = londonWeight(now);
+    var vibes = vibeTargets(slot, now.wd);
+    var lon = [];
+    var other = [];
+    for (var i = 0; i < srcList.length; i++) {
+      var p = srcList[i];
+      if (isLondon(p)) lon.push(p); else other.push(p);
+    }
+    function score(p) {
+      var sc = 1;
+      if (matchesSlot(p, slot)) sc += 3;
+      var v = p.vibe || "";
+      for (var k = 0; k < vibes.length; k++) {
+        if (v === vibes[k]) { sc += 4; break; }
+      }
+      if (hasTag(p, "family")) sc += 1;
+      if (slot === "morning" && (v === "soft" || v === "warm")) sc += 2;
+      if (slot === "night" && (v === "calm" || v === "cozy")) sc += 2;
+      if ((now.wd === 6 || now.wd === 0) && (hasTag(p, "kids") || hasTag(p, "nature"))) sc += 1;
+      if (now.wd === 5 && hasTag(p, "travel")) sc += 1;
+      return sc;
+    }
+    function pickWeighted(pool, n) {
+      if (!pool.length || n <= 0) return [];
+      var scored = [];
+      for (var i = 0; i < pool.length; i++) {
+        scored.push({ p: pool[i], s: score(pool[i]), r: Math.random() });
+      }
+      scored.sort(function (a, b) {
+        if (b.s !== a.s) return b.s - a.s;
+        return a.r - b.r;
+      });
+      var out = [];
+      var seen = {};
+      for (var j = 0; j < scored.length && out.length < n; j++) {
+        var src = scored[j].p.src;
+        if (seen[src]) continue;
+        seen[src] = 1;
+        out.push(scored[j].p);
+      }
+      return out;
+    }
+    var deckSize = Math.min(36, Math.max(12, srcList.length));
+    var nLon = Math.round(deckSize * lw);
+    if (nLon > lon.length) nLon = lon.length;
+    if (nLon < 0) nLon = 0;
+    var nOth = deckSize - nLon;
+    var picked = pickWeighted(lon, nLon).concat(pickWeighted(other, nOth));
+    if (picked.length < 8) {
+      // fallback: fill from all
+      picked = pickWeighted(srcList, deckSize);
+    }
+    return shuffleInPlace(picked);
+  }
+  function ensurePhotoDeck(now, force) {
+    var slot = photoSlotName(now.hour);
+    var key = now.iso + "|" + now.hour + "|" + slot;
+    // reshuffle hourly or when slot changes
+    var hourKey = now.iso + "-h" + now.hour + "-s" + slot;
+    if (!force && photoDeck.length && photoDeckKey === hourKey) return;
+    photoDeck = buildPhotoDeck(now);
+    photoDeckKey = hourKey;
+    photoIdx = 0;
+    if (photoDeck.length) photos = photoDeck;
+  }
+  function photoRotateMs(now) {
+    var slot = photoSlotName(now.hour);
+    if (slot === "evening" || slot === "night") return 22000;
+    if (slot === "morning") return 20000;
+    return 18000;
+  }
+
 
   function pad(n) { n = parseInt(n, 10); return n < 10 ? "0" + n : "" + n; }
   function esc(s) {
@@ -1129,12 +1278,24 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         var out = [];
         for (var i = 0; i < data.length; i++) {
           var m = data[i];
-          if (m && m.src && String(m.src).indexOf("matka-") >= 0) {
-            out.push({ src: m.src, place: m.place || "Muisto", year: m.year || "" });
-          }
+          if (!m || !m.src) continue;
+          var src = String(m.src);
+          if (src.indexOf("photos-web/") < 0 && src.indexOf("matka-") < 0 && src.indexOf("kb-") < 0 && src.indexOf("london") < 0 && src.indexOf("alicante") < 0) continue;
+          out.push({
+            src: m.src,
+            place: m.place || "Muisto",
+            year: m.year || "",
+            vibe: m.vibe || "",
+            tags: m.tags || [],
+            slot: m.slot || []
+          });
         }
         out = filterPhotos(out);
-        if (out.length >= 8) photos = out;
+        if (out.length >= 8) {
+          photoCatalog = out;
+          photos = out;
+          ensurePhotoDeck(helsinkiNow(), true);
+        }
       }
       paintPhoto();
     });
@@ -1169,11 +1330,21 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   setInterval(tickClock, 1000);
   setInterval(function () { paint(); }, 30000);
   setInterval(function () { loadSchedule(); }, 60000);
-  setInterval(function () {
-    if (!photos.length) return;
-    photoIdx = (photoIdx + 1) % photos.length;
-    paintPhoto();
-  }, 16000);
+  var photoTimer = null;
+  function schedulePhotoRotate() {
+    if (photoTimer) clearTimeout(photoTimer);
+    var now = helsinkiNow();
+    var ms = photoRotateMs(now);
+    photoTimer = setTimeout(function () {
+      ensurePhotoDeck(helsinkiNow(), false);
+      var list = (photoDeck && photoDeck.length) ? photoDeck : photos;
+      if (!list.length) { schedulePhotoRotate(); return; }
+      photoIdx = (photoIdx + 1) % list.length;
+      paintPhoto();
+      schedulePhotoRotate();
+    }, ms);
+  }
+  schedulePhotoRotate();
   setInterval(loadWeather, 30 * 60 * 1000);
 })();
 </script>

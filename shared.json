@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790088872671,
+  "updated": 1790090339213,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -260,17 +260,13 @@
       "place": "Lippumäen uima- ja liikuntahalli"
     },
     {
-      "id": "kyyti-samuel-welhot-2026-09-22",
-      "who": "samuel",
-      "title": "Welhot · Lippumäki · kuski Topias",
-      "date": "2026-09-22",
-      "start": "16:30",
-      "end": "18:00",
-      "place": "Lippumäki",
-      "kind": "kyyti",
-      "driver": "Topias",
-      "status": "us",
-      "depart": "16:15"
+      "id": "cal-ot896g1o8ccv4k44abuac3ju34",
+      "title": "Ellen · Ambrosia joukkueilta (Leo’s)",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "cal",
+      "place": "Leo's Leikkimaa"
     },
     {
       "id": "kyyti-ellen-ambrosia-2026-09-22",
@@ -283,14 +279,6 @@
       "kind": "treeni",
       "driver": "Räisä",
       "status": "us"
-    },
-    {
-      "id": "cal-kajgpe3pn2mrddtobgpf3lkhoo",
-      "title": "Hallituksen kokous",
-      "date": "2026-09-22",
-      "start": "17:30",
-      "end": "18:15",
-      "kind": "cal"
     },
     {
       "id": "info-pentutreffit-2026-09-22",
@@ -314,15 +302,6 @@
       "kind": "info",
       "driver": "Jussi",
       "status": ""
-    },
-    {
-      "id": "cal-ot896g1o8ccv4k44abuac3ju34",
-      "title": "Ellen · Ambrosia joukkueilta (Leo’s)",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Leo's Leikkimaa"
     },
     {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",

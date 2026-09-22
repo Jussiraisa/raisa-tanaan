@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790050887987,
+  "updated": "2026-09-22T07:43:45.594257+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -221,6 +221,10 @@
     "kyyti-samuel-welhot-2026-09-22": {
       "driver": "Topias",
       "note": "Jussi ei vie — Topias. Lähtö ~16.15"
+    },
+    "kyyti-ellen-ambrosia-2026-09-22": {
+      "driver": "Räisä",
+      "note": "Voimistelu-kalenteri: meidän kyydit"
     }
   },
   "cooks": {
@@ -274,6 +278,18 @@
       "driver": "Topias",
       "status": "us",
       "depart": "16:15"
+    },
+    {
+      "id": "kyyti-ellen-ambrosia-2026-09-22",
+      "who": "ellen",
+      "title": "Ambrosia · Kuopiohalli (meidän kyydit)",
+      "date": "2026-09-22",
+      "start": "17:00",
+      "end": "18:30",
+      "place": "Kuopiohalli",
+      "kind": "treeni",
+      "driver": "Räisä",
+      "status": "us"
     },
     {
       "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
@@ -333,6 +349,26 @@
       "end": "20:00",
       "kind": "cal",
       "place": "Leo's Leikkimaa"
+    },
+    {
+      "id": "sheet-mea-2026-09-23",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-23",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     },
     {
       "id": "info-ntv-kisat-2026-09-25",
@@ -572,26 +608,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "sheet-mea-2026-09-23",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-23",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
     }
   ],
   "schoolLunch": {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v94-restore">
+  <meta name="fiilis-build" content="20260922-v94b-kouluruoka">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -219,6 +219,15 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .meal-line .d { font-weight: 700; color: #8f6524; margin-right: .55vmin; }
 
 /* Family pills + tagline */
+
+.school-lunch {
+  font-size: 1.05vmin; line-height: 1.25; font-weight: 500;
+  color: rgba(60,44,24,.55); letter-spacing: .01em;
+  margin-top: .35vmin; max-width: 72vmin;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.school-lunch b { font-weight: 650; color: rgba(60,44,24,.62); margin-right: .35vmin; }
+
 .foot-soft {
   flex: 0 0 auto;
   display: flex; align-items: center; justify-content: space-between;
@@ -385,8 +394,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       <div class="action-list" id="actionList"><span class="action-empty">Ei avoimia Wilma-/WhatsApp-asioita</span></div>
     </div>
     <div>
+      <div class="school-lunch" id="schoolLunch">Kouluruoka · —</div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v94 restore</span>
+      <span class="brand">v94b-kouluruoka</span>
     </div>
   </div>
 </div>
@@ -399,7 +409,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v94-restore";
+  var BUILD = "20260922-v94b-kouluruoka";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1259,6 +1269,23 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         + "</span></div>";
     }
     el.innerHTML = html;
+  }
+
+
+  function paintSchoolLunch(now) {
+    var el = document.getElementById("schoolLunch");
+    if (!el) return;
+    var map = (schedule && (schedule.schoolLunch || schedule.schoolMeals)) || (FALLBACK && (FALLBACK.schoolLunch || FALLBACK.schoolMeals)) || {};
+    var today = map[now.iso] || "";
+    var tomo = map[addDaysIso(now.iso, 1)] || "";
+    var parts = [];
+    if (today) parts.push("tänään " + today);
+    if (tomo) parts.push("huom " + tomo);
+    if (!parts.length) {
+      el.textContent = "Kouluruoka · —";
+      return;
+    }
+    el.innerHTML = "<b>Kouluruoka</b>" + esc(parts.join(" · "));
   }
 
   function paintMeals(now) {

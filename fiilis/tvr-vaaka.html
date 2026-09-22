@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v73-odot-row">
+  <meta name="fiilis-build" content="20260922-v74-tanaan-header">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,16 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .clock { -ms-flex: 0 0 auto; flex: 0 0 auto; color: #1a140e; background: #fffcf5; box-shadow: 0 .46vmin 1.39vmin rgba(40,28,14,.12); border-radius: 1.204vmin; padding: .556vmin 1.111vmin .37vmin; min-width: 20vmin; text-align: center; }
 .greet-block { -ms-flex: 1; flex: 1; min-width: 0; }
 .greet { color: #8f6524; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.today-strip { margin-top: .45vmin; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 1.35vmin; line-height: 1.35; font-weight: 500; color: #5c4e3a; letter-spacing: .01em; }
+.today-strip .tl { font-weight: 650; color: #8f6524; margin-right: .55vmin; }
+.today-strip .sep { color: rgba(92,78,58,.35); margin: 0 .45vmin; }
+.today-strip .t { font-variant-numeric: tabular-nums; font-weight: 650; color: #2c2418; }
+.today-strip .w { font-weight: 600; color: #6c5c44; }
+.today-strip .x { font-weight: 500; color: #5c4e3a; }
+body.evening .today-strip, body.night .today-strip { color: #5a4c38; }
+body.evening .today-strip .tl, body.night .today-strip .tl { color: #7d5619; }
+body.evening .today-strip .t, body.night .today-strip .t { color: #241b0f; }
 .sub { color: #6c5c44; margin-top: .556vmin; }
 .date { color: #6c5c44; margin-top: .2vmin; }
 .wx { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; max-width: 34vmin; }
@@ -126,7 +136,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .foot .brand { font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em; color: #73634a; white-space: nowrap; text-transform: uppercase; }
 .tv { height: 100%; width: 100%; padding: 1.019vmin 2.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; background: #f7f1e3; }
 .tv > * + * { margin-top: .833vmin; }
-.head { -ms-flex: 0 0 13vmin; flex: 0 0 13vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
+.head { -ms-flex: 0 0 14.2vmin; flex: 0 0 14.2vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
 .head > * + * { margin-left: 2.037vmin; }
 .main { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; display: -ms-flexbox; display: flex; }
 .main > * + * { margin-left: .833vmin; }
@@ -249,6 +259,7 @@ body.evening .photo-cap, body.night .photo-cap {
     <div class="clock t-kello" id="clock">––.––</div>
     <div class="greet-block">
       <div class="greet t-tervehdys" id="greet">Hyvää huomenta</div>
+      <div class="today-strip" id="todayStrip"><span class="tl">Tänään</span><span class="muted">…</span></div>
       <div class="sub t-meta" id="subLine">Räisän perhe · Kuopio</div>
       <div class="date t-rivi" id="dateLine">Maanantai</div>
     </div>
@@ -328,7 +339,7 @@ body.evening .photo-cap, body.night .photo-cap {
   <div class="foot">
     <div class="chips" id="chips"></div>
     <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-    <span class="brand">v64 vaaka</span>
+    <span class="brand">v74 vaaka</span>
   </div>
 
 </div>
@@ -1057,6 +1068,50 @@ body.evening .photo-cap, body.night .photo-cap {
     return day + "|" + who + "|" + title;
   }
 
+
+  function paintTodayStrip(now) {
+    var el = document.getElementById("todayStrip");
+    if (!el) return;
+    var list = eventsOn(now.iso) || [];
+    var out = [];
+    var seen = {};
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!e) continue;
+      if (e.kind === "koulu") continue;
+      var k = eventDedupeKey(e, now.iso);
+      if (seen[k]) continue;
+      seen[k] = 1;
+      out.push(e);
+    }
+    out.sort(function (a, b) {
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      if (ta !== tb) return ta - tb;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
+    if (!out.length) {
+      el.innerHTML = "<span class=\"tl\">Tänään</span><span class=\"muted\">rauhaa · ei merkintöjä</span>";
+      return;
+    }
+    var parts = [];
+    var max = Math.min(out.length, 6);
+    for (var j = 0; j < max; j++) {
+      var e = out[j];
+      var who = shortWho(e.who || "") || (e.who === "perhe" || e.who === "Perhe" ? "Perhe" : (e.who || ""));
+      var time = e.time ? String(e.time).replace(":", ".") : "";
+      if (e.end && time) time += "–" + String(e.end).replace(":", ".");
+      var title = e.title || "";
+      var bit = "";
+      if (time) bit += "<span class=\"t\">" + esc(time) + "</span> ";
+      if (who) bit += "<span class=\"w\">" + esc(who) + "</span> ";
+      bit += "<span class=\"x\">" + esc(title) + "</span>";
+      if (e.driver) bit += " <span class=\"muted\">· " + esc(e.driver) + "</span>";
+      parts.push(bit);
+    }
+    el.innerHTML = "<span class=\"tl\">Tänään</span>" + parts.join("<span class=\"sep\">·</span>");
+  }
+
   function paintTomorrow(now) {
     /* Vanhempien pikaosio: mitä huomenna pitää hoitaa / tietää. */
     var el = document.getElementById("tomorrowBox");
@@ -1410,7 +1465,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v73-odot-row", function (data) {
+    getJSON("schedule.json?v=20260922-v74-tanaan-header", function (data) {
       if (data) schedule = data;
       paint();
     });

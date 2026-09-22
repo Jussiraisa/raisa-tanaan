@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v99-ilta">
+  <meta name="fiilis-build" content="20260922-v100-kontrasti">
   <meta name="theme-color" content="#F3EFE8">
   <title>Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,10 +24,10 @@
   --shadow: rgba(60,40,18,.06);
 }
 body.evening {
-  --bg: #EBE2D4;
-  --card: #F5EFE4;
-  --text: #2A241C;
-  --muted: #5A5044;
+  --bg: #E8DFD0;
+  --card: #F0E8DA;
+  --text: #1F1A14;
+  --muted: #5E5448;
   --ev: #2C261E;
   --ev-time: #3A3228;
   --wd: #4E463C;
@@ -36,14 +36,14 @@ body.evening {
   --shadow: rgba(60,40,18,.08);
 }
 body.night {
-  --bg: #E4D9C6;
-  --card: #EFE6D8;
-  --text: #241E18;
+  --bg: #DED4C4;
+  --card: #E8DFD0;
+  --text: #1A1510;
   --muted: #52483C;
-  --ev: #241E18;
-  --ev-time: #322A22;
-  --wd: #463E34;
-  --empty: #5E5246;
+  --ev: #1A1510;
+  --ev-time: #2A221A;
+  --wd: #3E362C;
+  --empty: #52483C;
   --accent: #A67C3A;
   --shadow: rgba(60,40,18,.10);
 }
@@ -201,7 +201,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   }
   applyTheme();
   setInterval(applyTheme, 60000);
-  var BUILD = "20260922-v99-ilta";
+  var BUILD = "20260922-v100-kontrasti";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v99-ilta">
+  <meta name="fiilis-build" content="20260922-v100-kontrasti">
   <meta name="theme-color" content="#EFE6D8">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,15 +29,15 @@
   --empty: #8A7C6A;
 }
 body.evening {
-  --bg: #EBE2D4;
-  --bg-deep: #E4D9C8;
-  --card: #F5EFE4;
-  --card-soft: rgba(245,239,228,.62);
-  --text: #2A241C;
-  --muted: #5A5044;
+  --bg: #D9CDB8;
+  --bg-deep: #D0C2AA;
+  --card: #E4D8C4;
+  --card-soft: rgba(228,216,196,.62);
+  --text: #1F1A14;
+  --muted: #5E5448;
   --accent: #A67C3A;
   --shadow: rgba(60,40,18,.10);
-  --nav-bg: #EBE2D4;
+  --nav-bg: #D9CDB8;
   --nav-fg: #4a3e30;
   --ev: #2C261E;
   --ev-time: #3A3228;
@@ -45,20 +45,20 @@ body.evening {
   --empty: #6A5E50;
 }
 body.night {
-  --bg: #E4D9C6;
-  --bg-deep: #DDD2BE;
-  --card: #EFE6D8;
-  --card-soft: rgba(239,230,216,.68);
-  --text: #241E18;
+  --bg: #C4B49A;
+  --bg-deep: #B8A88E;
+  --card: #CFC0A8;
+  --card-soft: rgba(207,192,168,.68);
+  --text: #1A1510;
   --muted: #52483C;
   --accent: #A67C3A;
   --shadow: rgba(60,40,18,.12);
-  --nav-bg: #E4D9C6;
+  --nav-bg: #C4B49A;
   --nav-fg: #3e3428;
-  --ev: #241E18;
-  --ev-time: #322A22;
-  --wd: #463E34;
-  --empty: #5E5246;
+  --ev: #1A1510;
+  --ev-time: #2A221A;
+  --wd: #3E362C;
+  --empty: #52483C;
 }
 html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -207,7 +207,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v99-ilta";
+  var BUILD = "20260922-v100-kontrasti";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

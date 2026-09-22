@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790080316764,
+  "updated": 1790088872671,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -285,14 +285,6 @@
       "status": "us"
     },
     {
-      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260922T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-22",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
-    },
-    {
       "id": "cal-kajgpe3pn2mrddtobgpf3lkhoo",
       "title": "Hallituksen kokous",
       "date": "2026-09-22",
@@ -331,26 +323,6 @@
       "end": "20:00",
       "kind": "cal",
       "place": "Leo's Leikkimaa"
-    },
-    {
-      "id": "sheet-mea-2026-09-23",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-23",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
     },
     {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",
@@ -612,6 +584,26 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "sheet-mea-2026-09-23",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-23",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

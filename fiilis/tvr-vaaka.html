@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v94b-kouluruoka">
+  <meta name="fiilis-build" content="20260922-v94c-tsla-ruoka">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,7 +221,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 /* Family pills + tagline */
 
 .school-lunch {
-  font-size: 1.05vmin; line-height: 1.25; font-weight: 500;
+  font-size: 1.25vmin; line-height: 1.3; font-weight: 550;
   color: rgba(60,44,24,.55); letter-spacing: .01em;
   margin-top: .35vmin; max-width: 72vmin;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -263,6 +263,18 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
   border-radius: .6vmin;
 }
 .nav a .ic { display: block; font-size: 2.4vmin; line-height: 1.15; margin-bottom: .15vmin; }
+
+.nav-tsla {
+  font-size: 1.15vmin; font-weight: 650; opacity: .88;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+  letter-spacing: .01em; line-height: 1.2; text-align: center;
+  min-width: 0; padding: .4vmin .6vmin; pointer-events: none;
+  color: #5c4e3a;
+}
+.nav-tsla .up { color: #2f6b3a; }
+.nav-tsla .dn { color: #9a3d2e; }
+.nav-tsla .flat { color: inherit; opacity: .75; }
+
 .nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
   box-shadow: inset 0 -.28vmin 0 #c9943a; }
 
@@ -396,7 +408,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     <div>
       <div class="school-lunch" id="schoolLunch">Kouluruoka · —</div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v94b-kouluruoka</span>
+      <span class="brand">v94c-tsla-ruoka</span>
     </div>
   </div>
 </div>
@@ -405,11 +417,12 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   <a class="on" href="tvr-vaaka.html"><span class="ic">◎</span>Tänään</a>
   <a href="tvr-vaaka-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
   <a href="tvr-vaaka-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <span class="nav-tsla" id="navTsla" title="Tesla"></span>
 </nav>
 
 <script>
 (function () {
-  var BUILD = "20260922-v94b-kouluruoka";
+  var BUILD = "20260922-v94c-tsla-ruoka";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1276,17 +1289,23 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     var el = document.getElementById("schoolLunch");
     if (!el) return;
     var map = (schedule && (schedule.schoolLunch || schedule.schoolMeals)) || (FALLBACK && (FALLBACK.schoolLunch || FALLBACK.schoolMeals)) || {};
-    var today = map[now.iso] || "";
-    var tomo = map[addDaysIso(now.iso, 1)] || "";
-    var parts = [];
-    if (today) parts.push("tänään " + today);
-    if (tomo) parts.push("huom " + tomo);
-    if (!parts.length) {
+    /* After 16:00 emphasize tomorrow's school lunch; before 16 today's. */
+    var focusIso = (now.hour >= 16) ? addDaysIso(now.iso, 1) : now.iso;
+    var focus = map[focusIso] || "";
+    var otherIso = (now.hour >= 16) ? now.iso : addDaysIso(now.iso, 1);
+    var other = map[otherIso] || "";
+    if (!focus && !other) {
       el.textContent = "Kouluruoka · —";
       return;
     }
-    el.innerHTML = "<b>Kouluruoka</b>" + esc(parts.join(" · "));
+    var mainLbl = (now.hour >= 16) ? "huom" : "tänään";
+    var altLbl = (now.hour >= 16) ? "tänään" : "huom";
+    var html = "<b>Kouluruoka</b>";
+    if (focus) html += esc(mainLbl + " " + focus);
+    if (other) html += esc(" · " + altLbl + " " + other);
+    el.innerHTML = html;
   }
+
 
   function paintMeals(now) {
     var el = document.getElementById("mealBox");
@@ -1349,7 +1368,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     paintOdotukset(now);
     paintTomorrow(now);
     paintMeals(now);
+    paintSchoolLunch(now);
     paintWx();
+    paintTsla();
   }
 
   function tickClock() {
@@ -1360,6 +1381,30 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     var greetEl = document.getElementById("greet");
     if (greetEl) greetEl.textContent = greeting(now.hour);
     paintNextLine(now);
+  }
+
+
+  function paintTsla(d) {
+    var el = document.getElementById("navTsla");
+    if (!el) return;
+    if (!d || d.price == null) return;
+    var price = Number(d.price);
+    var pct = Number(d.changePct);
+    if (isNaN(price)) return;
+    var cls = "flat";
+    var pctStr = "0.0%";
+    if (!isNaN(pct)) {
+      if (pct > 0.005) cls = "up";
+      else if (pct < -0.005) cls = "dn";
+      var sign = pct > 0 ? "+" : "";
+      pctStr = sign + pct.toFixed(1) + "%";
+    }
+    el.innerHTML = price.toFixed(2) + " <span class=\"" + cls + "\">" + pctStr + "</span>";
+  }
+  function loadTsla() {
+    getJSON("tsla.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
+      if (data) paintTsla(data);
+    });
   }
 
   function loadSchedule() {

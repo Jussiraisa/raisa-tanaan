@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v70-mea-synttarit">
+  <meta name="fiilis-build" content="20260922-v70b-mea-menu">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1020,6 +1020,9 @@ body.evening .photo-cap, body.night .photo-cap {
         ? (parseInt(e.start.slice(8), 10) + ".–" + parseInt(e.end.slice(8), 10) + "." + parseInt(e.end.slice(5, 7), 10) + ".")
         : null;
       pushItem(e.label || e.title || "Odotus", e.start, eWhen);
+      if (e.menu && items.length && items[items.length - 1].iso === e.start) {
+        items[items.length - 1].menu = e.menu;
+      }
     }
 
     items.sort(function (a, b) { return a.days - b.days; });
@@ -1402,7 +1405,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v69-odotukset", function (data) {
+    getJSON("schedule.json?v=20260922-v70b-mea-menu", function (data) {
       if (data) schedule = data;
       paint();
     });

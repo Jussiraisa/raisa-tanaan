@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-v112-koulu">
+<meta name="fiilis-build" content="20260922-v113-kerma">
 <meta name="theme-color" content="#EDE6DB">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -29,29 +29,47 @@
   --shadow: 0 10px 28px rgba(60,40,18,.08);
   --radius: 1.25rem;
 }
-body.evening {
-  --cream: #302C28;
-  --bg: #302C28;
-  --card: #3A3530;
-  --ink: #F1EBE2;
-  --text: #F1EBE2;
-  --muted: #BDB3A7;
-  --honey: #C7A77D;
-  --accent: #C7A77D;
-  --nav: #302C28;
-  --line: rgba(241,235,226,.10);
+html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening"] {
+  --bg: #EDE6DB;
+  --bg-deep: #E6DED2;
+  --card: #F6F1E9;
+  --card-soft: #F6F1E9;
+  --text: #272522;
+  --muted: #6F6860;
+  --accent: #B89A72;
+  --shadow: rgba(60,40,18,.10);
+  --nav-bg: #EDE6DB;
+  --nav-fg: #5a4a34;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
+  --empty: #8A7C6A;
+  --badge-bg: rgba(184,154,114,.28);
+  --badge-fg: #6a5230;
+  --hero-overlay: rgba(40,30,20,.16);
+  --row-line: rgba(44,36,24,.07);
+  --meta: #7a6a55;
 }
-body.night {
-  --cream: #26221F;
-  --bg: #26221F;
-  --card: #322E29;
-  --ink: #F1EBE2;
-  --text: #F1EBE2;
-  --muted: #BDB3A7;
-  --honey: #C7A77D;
-  --accent: #C7A77D;
-  --nav: #26221F;
-  --line: rgba(241,235,226,.10);
+html.night, body.night, html[data-theme="night"], body[data-theme="night"] {
+  --bg: #E4DAC8;
+  --bg-deep: #DCD0BC;
+  --card: #EFE6D8;
+  --card-soft: #EFE6D8;
+  --text: #272522;
+  --muted: #6F6860;
+  --accent: #B89A72;
+  --shadow: rgba(60,40,18,.12);
+  --nav-bg: #E4DAC8;
+  --nav-fg: #5a4a34;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
+  --empty: #8A7C6A;
+  --badge-bg: rgba(184,154,114,.28);
+  --badge-fg: #6a5230;
+  --hero-overlay: rgba(40,30,20,.14);
+  --row-line: rgba(44,36,24,.07);
+  --meta: #7a6a55;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
@@ -362,7 +380,7 @@ body {
 
 <script>
 (function () {
-  var BUILD = "20260922-v112-koulu";
+  var BUILD = "20260922-v113-kerma";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -373,7 +391,7 @@ body {
     var th = themeClass(hour);
     document.body.className = th;
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", th === "night" ? "#26221F" : (th === "evening" ? "#302C28" : "#EDE6DB"));
+    if (meta) meta.setAttribute("content", th === "night" ? "#E4DAC8" : (th === "evening" ? "#EDE6DB" : "#EDE6DB"));
   }
 
   var LONTOO_START = "2026-10-13";

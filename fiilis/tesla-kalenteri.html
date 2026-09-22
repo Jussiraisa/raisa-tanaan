@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v110-1010">
+  <meta name="fiilis-build" content="20260922-v113-kerma">
   <meta name="theme-color" content="#EDE6DB">
   <title>Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,29 +23,47 @@
   --accent: #B89A72;
   --shadow: rgba(60,40,18,.06);
 }
-body.evening {
-  --bg: #302C28;
-  --card: #3A3530;
-  --text: #F1EBE2;
-  --muted: #BDB3A7;
-  --ev: #F1EBE2;
-  --ev-time: #E8DFD4;
-  --wd: #BDB3A7;
-  --empty: #9A9084;
-  --accent: #C7A77D;
-  --shadow: rgba(0,0,0,.28);
+html.evening, body.evening, html[data-theme="evening"], body[data-theme="evening"] {
+  --bg: #EDE6DB;
+  --bg-deep: #E6DED2;
+  --card: #F6F1E9;
+  --card-soft: #F6F1E9;
+  --text: #272522;
+  --muted: #6F6860;
+  --accent: #B89A72;
+  --shadow: rgba(60,40,18,.10);
+  --nav-bg: #EDE6DB;
+  --nav-fg: #5a4a34;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
+  --empty: #8A7C6A;
+  --badge-bg: rgba(184,154,114,.28);
+  --badge-fg: #6a5230;
+  --hero-overlay: rgba(40,30,20,.16);
+  --row-line: rgba(44,36,24,.07);
+  --meta: #7a6a55;
 }
-body.night {
-  --bg: #26221F;
-  --card: #322E29;
-  --text: #F1EBE2;
-  --muted: #BDB3A7;
-  --ev: #F1EBE2;
-  --ev-time: #E8DFD4;
-  --wd: #BDB3A7;
-  --empty: #8A8074;
-  --accent: #C7A77D;
-  --shadow: rgba(0,0,0,.32);
+html.night, body.night, html[data-theme="night"], body[data-theme="night"] {
+  --bg: #E4DAC8;
+  --bg-deep: #DCD0BC;
+  --card: #EFE6D8;
+  --card-soft: #EFE6D8;
+  --text: #272522;
+  --muted: #6F6860;
+  --accent: #B89A72;
+  --shadow: rgba(60,40,18,.12);
+  --nav-bg: #E4DAC8;
+  --nav-fg: #5a4a34;
+  --ev: #272522;
+  --ev-time: #3a3530;
+  --wd: #6F6860;
+  --empty: #8A7C6A;
+  --badge-bg: rgba(184,154,114,.28);
+  --badge-fg: #6a5230;
+  --hero-overlay: rgba(40,30,20,.14);
+  --row-line: rgba(44,36,24,.07);
+  --meta: #7a6a55;
 }
 html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -209,7 +227,7 @@ body.evening .day .ev, body.night .day .ev {
   }
   applyTheme();
   setInterval(applyTheme, 60000);
-  var BUILD = "20260922-v110-1010";
+  var BUILD = "20260922-v113-kerma";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

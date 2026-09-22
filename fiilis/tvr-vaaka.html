@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v71-kuva-mea-menu">
+  <meta name="fiilis-build" content="20260922-v72-odotukset-2col">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,16 +92,18 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .mday .dn .mo { font-size: .85vmin; font-weight: 500; color: #73634a; margin-left: .19vmin; }
 .mlabel { font-size: .62vmin; line-height: 1.1; font-weight: 600; color: #6c5c44; margin-top: .07vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mdot { display: inline-block; width: .4vmin; height: .4vmin; border-radius: 999px; margin-right: .22vmin; vertical-align: middle; }
-.countdown { -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.cd-label { font-size: 1.67vmin; line-height: 1.3; font-weight: 550; color: #6c5c44; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.cd-big { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 6.02vmin; line-height: 1.05; font-weight: 400; letter-spacing: -.02em; color: #a3712a; margin-top: .37vmin; text-transform: lowercase; }
+.countdown { -ms-flex: 1 1 48%; flex: 1 1 48%; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; padding-right: 1.111vmin; border-right: 1px solid rgba(44,36,24,.10); }
+.cd-label { font-size: 1.67vmin; line-height: 1.25; font-weight: 550; color: #6c5c44; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cd-big { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 5.2vmin; line-height: 1.02; font-weight: 400; letter-spacing: -.02em; color: #a3712a; margin-top: .28vmin; text-transform: lowercase; }
 .cd-big::first-letter { text-transform: uppercase; }
-#odoteList { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; margin-top: 1.111vmin; border-top: 1px solid rgba(44,36,24,.08); padding-top: .556vmin; }
-.odote { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: flex-start; align-items: flex-start; font-size: 1.3vmin; line-height: 1.3; font-weight: 500; color: #2c2418; padding: .28vmin 0; overflow: hidden; }
-.odote > span:first-child { white-space: normal; }
-.odote > * + * { margin-left: .833vmin; }
-.odote > span:first-child { overflow: hidden; text-overflow: ellipsis; }
-.odote .d { -ms-flex: 0 0 auto; flex: 0 0 auto; font-weight: 650; }
+.odot-row { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-align: stretch; align-items: stretch; }
+.odot-row > * + * { margin-left: 0; }
+#odoteList { -ms-flex: 1 1 52%; flex: 1 1 52%; min-width: 0; min-height: 0; margin-top: 0; border-top: 0; padding-top: 0; padding-left: 1.111vmin; overflow: auto; }
+.odote { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: flex-start; align-items: flex-start; font-size: 1.2vmin; line-height: 1.25; font-weight: 500; color: #2c2418; padding: .22vmin 0; overflow: hidden; }
+.odote > span:first-child { white-space: normal; overflow: hidden; min-width: 0; -ms-flex: 1 1 auto; flex: 1 1 auto; }
+.odote > * + * { margin-left: .556vmin; }
+.odote .d { -ms-flex: 0 0 auto; flex: 0 0 auto; font-weight: 650; font-size: 1.15vmin; }
+.odote .muted { font-size: 1.05vmin; }
 .tmw-line { display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline; font-size: 1.67vmin; line-height: 1.3; font-weight: 550; color: #2c2418; padding: .556vmin 0; border-bottom: 1px solid rgba(44,36,24,.08); white-space: nowrap; overflow: hidden; }
 .tmw-line > * + * { margin-left: .556vmin; }
 .tmw-line:last-child { border-bottom: 0; }
@@ -131,9 +133,9 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .col-kuva { -ms-flex: 1.12; flex: 1.35; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .col-kuva > * + * { margin-top: .833vmin; }
 .col-kuva .photo-wrap { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
-.col-kuva .odotcard { -ms-flex: 0 0 18vmin; flex: 0 0 18vmin; padding: 1.111vmin 1.481vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
-.col-kuva .odotcard .cd-big { font-size: 3.6vmin; }
-.col-kuva .odotcard .cd-label { font-size: 1.85vmin; }
+.col-kuva .odotcard { -ms-flex: 0 0 16.5vmin; flex: 0 0 16.5vmin; padding: 1.111vmin 1.481vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
+.col-kuva .odotcard .cd-big { font-size: 4.6vmin; }
+.col-kuva .odotcard .cd-label { font-size: 1.7vmin; }
 .col-tieto { -ms-flex: 1; flex: 0.92; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .col-tieto > * + * { margin-top: .833vmin; }
 .duo { -ms-flex: 0 0 23.5vmin; flex: 0 0 23.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
@@ -217,7 +219,8 @@ body.evening .mday .dn .mo, body.night .mday .dn .mo { color: #6e5e45; }
 body.evening .mlabel, body.night .mlabel { color: #63533c; }
 body.evening .cd-label, body.night .cd-label { color: #63533c; }
 body.evening .cd-big, body.night .cd-big { color: #96661f; }
-body.evening #odoteList, body.night #odoteList { border-top: 1px solid rgba(36,27,15,.12); }
+body.evening .countdown, body.night .countdown { border-right-color: rgba(36,27,15,.14); }
+body.evening #odoteList, body.night #odoteList { border-top: 0; }
 body.evening .odote, body.night .odote { color: #241b0f; }
 body.evening .tmw-line, body.night .tmw-line { color: #241b0f; border-bottom: 1px solid rgba(36,27,15,.12); }
 body.evening .tmw-line .who, body.night .tmw-line .who { color: #241b0f; }
@@ -262,11 +265,13 @@ body.evening .photo-cap, body.night .photo-cap {
       </div>
       <div class="card odotcard">
         <div class="lbl">Odotukset</div>
-        <div class="countdown" id="countdown">
-          <div class="cd-label">Lontoo · 13.–17.10.</div>
-          <div class="cd-big">– päivää</div>
+        <div class="odot-row">
+          <div class="countdown" id="countdown">
+            <div class="cd-label">Lontoo · 13.–17.10.</div>
+            <div class="cd-big">– päivää</div>
+          </div>
+          <div class="scroll" id="odoteList"></div>
         </div>
-        <div class="scroll" id="odoteList"></div>
       </div>
     </div>
 
@@ -1405,7 +1410,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v71-kuva-mea-menu", function (data) {
+    getJSON("schedule.json?v=20260922-v72-odotukset-2col", function (data) {
       if (data) schedule = data;
       paint();
     });

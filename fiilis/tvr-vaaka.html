@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v91">
-  <meta name="theme-color" content="#E9C99A">
+  <meta name="fiilis-build" content="20260922-v92">
+  <meta name="theme-color" content="#E4BE86">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; color: #2c2418;
+html, body { height: 100%; margin: 0; overflow: hidden; background: #E4BE86; color: #2c2418;
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
 .muted { color: #6c5c44; }
@@ -22,7 +22,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; col
   height: 100%; width: 100%;
   padding: 2.2vmin 2.8vmin 8.2vmin;
   display: flex; flex-direction: column;
-  background: #E9C99A;
+  background: #E4BE86;
 }
 
 /* —— Header —— */
@@ -242,7 +242,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; col
 /* Bottom nav — Tesla-like, TV-friendly */
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: rgba(42, 36, 28, .94); color: #d8d0c4;
+  background: rgba(253, 244, 224, .94); color: #5a4a34; border-top: 1px solid rgba(120,90,40,.18); backdrop-filter: blur(8px);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
   backdrop-filter: blur(8px);
@@ -254,10 +254,10 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #E9C99A; col
   border-radius: .6vmin;
 }
 .nav a .ic { display: block; font-size: 2.4vmin; line-height: 1.15; margin-bottom: .15vmin; }
-.nav a.on { opacity: 1; color: #fff; background: rgba(255,255,255,.08);
+.nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
   box-shadow: inset 0 -.28vmin 0 #c9943a; }
 
-body.evening, body.evening .tv { background: #E3C08C; }
+body.evening, body.evening .tv { background: #DEBA82; }
 body.evening .clock { color: #120c06; }
 body.evening .greet { color: #7d5619; }
 body.evening .block { background: rgba(255,247,230,.5); }
@@ -386,7 +386,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v91 vaaka</span>
+      <span class="brand">v92 vaaka</span>
     </div>
   </div>
 </div>
@@ -399,7 +399,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v91";
+  var BUILD = "20260922-v92";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },

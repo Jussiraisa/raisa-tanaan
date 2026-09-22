@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-tesla-v5">
+<meta name="fiilis-build" content="20260922-tesla-v6">
 <title>Fiilis · Tesla</title>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap");
@@ -190,7 +190,7 @@
 
 <script>
 (function () {
-  var EXPECT = "20260922-tesla-v5";
+  var EXPECT = "20260922-tesla-v6";
   try {
     var prev = localStorage.getItem("fiilisTeslaBuild");
     if (prev && prev !== EXPECT) {
@@ -259,6 +259,7 @@
         <div class="q" id="quoteTxt">”Pienet hetket tekevät suuren elämän.”</div>
       </div>
       <div class="tagline">Sama matka. Enemmän yhdessä.</div>
+      <div id="buildStamp" style="text-align:center;font-size:1.1vmin;color:#b0a090;margin-top:.3vmin;"></div>
     </div>
   </div>
 </div>
@@ -272,7 +273,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260922-tesla-v5";
+  var BUILD = "20260922-tesla-v6";
   var DAYS = [
     { key: "su", full: "Sunnuntai", short: "SU" },
     { key: "ma", full: "Maanantai", short: "MA" },
@@ -607,30 +608,40 @@
     return photos[Math.abs(seed) % photos.length];
   }
 
+  var PHOTO_MS = 12000;
+  var lastPhotoSlot = -1;
+
   function paintPhotos(now) {
     if (!photos.length) return;
-    var a = photos[photoIdx % photos.length];
-    var b = photos[(photoIdx + 11) % photos.length];
-    if (a) {
-      var img = document.getElementById("heroImg");
-      var cap = document.getElementById("photoCapL");
-      if (img && img.getAttribute("src") !== a.src) img.src = a.src;
+    var slot = Math.floor(Date.now() / PHOTO_MS);
+    lastPhotoSlot = slot;
+    var a = photos[slot % photos.length];
+    var b = photos[(slot + 13) % photos.length];
+    var img = document.getElementById("heroImg");
+    var cap = document.getElementById("photoCapL");
+    var q = document.getElementById("quoteImg");
+    if (a && img) {
+      var srcA = a.src + (a.src.indexOf("?") >= 0 ? "&" : "?") + "slot=" + slot;
+      if (img.getAttribute("data-slot") !== String(slot)) {
+        img.setAttribute("data-slot", String(slot));
+        img.src = srcA;
+      }
       if (cap) cap.textContent = (a.place || "") + (a.year ? " " + a.year : "");
     }
-    if (b) {
-      var q = document.getElementById("quoteImg");
-      if (q && q.getAttribute("src") !== b.src) q.src = b.src;
+    if (b && q) {
+      var srcB = b.src + (b.src.indexOf("?") >= 0 ? "&" : "?") + "slot=" + (slot + 13);
+      if (q.getAttribute("data-slot") !== String(slot + 13)) {
+        q.setAttribute("data-slot", String(slot + 13));
+        q.src = srcB;
+      }
     }
     var qt = document.getElementById("quoteTxt");
-    if (qt) qt.textContent = "”" + QUOTES[(now.day + photoIdx) % QUOTES.length] + "”";
+    if (qt && now) qt.textContent = "”" + QUOTES[slot % QUOTES.length] + "”";
   }
 
   function nextPhotos() {
-    if (!photos.length) return;
-    photoIdx = (photoIdx + 1) % photos.length;
     paintPhotos(helsinkiNow());
   }
-
 
   function paintMeals(now) {
     var schoolEl = document.getElementById("mealSchool");
@@ -673,6 +684,8 @@
     paintMeals(now);
     paintWx();
     paintPhotos(now);
+    var bs = document.getElementById("buildStamp");
+    if (bs) bs.textContent = BUILD;
   }
 
   function loadSchedule() {
@@ -713,7 +726,7 @@
   loadPhotos();
   loadWx();
   setInterval(function () { paint(); }, 30000);
-  setInterval(nextPhotos, 25000);
+  setInterval(nextPhotos, 3000);
   setInterval(loadWx, 15 * 60 * 1000);
 })();
 </script>

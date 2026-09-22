@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v111-ilta">
+  <meta name="fiilis-build" content="20260922-v112-koulu">
   <meta name="theme-color" content="#EDE6DB">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -504,7 +504,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     </div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">20260922-v111-ilta</span>
+      <span class="brand">20260922-v112-koulu</span>
     </div>
   </div>
 </div>
@@ -518,7 +518,7 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
 
 <script>
 (function () {
-  var BUILD = "20260922-v111-ilta";
+  var BUILD = "20260922-v112-koulu";
   ;
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -1380,45 +1380,24 @@ body.evening .action-bar.has-items, body.night .action-bar.has-items {
     }
     var html = "";
     var shown = 0;
-    var MAX = 3;
+    /* School: always one row per child (no compact merge). Hobbies fill remaining slots. */
+    var MAX_SCHOOL = 4;
+    var MAX_HOBBY = 2;
     var i;
     if (schools.length) {
-      if (schools.length <= 2) {
-        for (i = 0; i < schools.length && shown < MAX; i++) {
-          var s = schools[i];
-          var whoS = shortWho(s.who || "");
-          var timeS = fmtRange(s.time, s.end) || fmtHm(s.time) || "";
-          var labelS = s.label || "Koulu";
-          html += "<div class=\"tmw-line school\">"
-            + (whoS ? "<span class=\"who\">" + esc(whoS) + "</span>" : "")
-            + (timeS ? "<span class=\"t\">" + esc(timeS) + "</span>" : "")
-            + "<span>" + esc(labelS) + "</span></div>";
-          shown++;
-        }
-      } else {
-        var names = [];
-        var tMin = 99999, tMax = -1, hasEnd = false;
-        for (i = 0; i < schools.length; i++) {
-          var s2 = schools[i];
-          var nm = shortWho(s2.who || "");
-          if (nm && names.indexOf(nm) < 0) names.push(nm);
-          var st = parseMin(s2.time); if (st != null && st < tMin) tMin = st;
-          var en = parseMin(s2.end); if (en != null) { hasEnd = true; if (en > tMax) tMax = en; }
-        }
-        var tCompact = "";
-        if (tMin < 99999) {
-          tCompact = (Math.floor(tMin / 60)) + "." + pad(tMin % 60);
-          if (hasEnd && tMax >= 0) tCompact += "–" + (Math.floor(tMax / 60)) + "." + pad(tMax % 60);
-        }
+      for (i = 0; i < schools.length && shown < MAX_SCHOOL; i++) {
+        var s = schools[i];
+        var whoS = shortWho(s.who || "");
+        var timeS = fmtRange(s.time, s.end) || fmtHm(s.time) || "";
+        var labelS = s.label || "Koulu";
         html += "<div class=\"tmw-line school\">"
-          + "<span class=\"who\">" + esc(names.join(" · ")) + "</span>"
-          + (tCompact ? "<span class=\"t\">" + esc(tCompact) + "</span>" : "")
-          + "<span>Koulu</span></div>";
+          + (whoS ? "<span class=\"who\">" + esc(whoS) + "</span>" : "")
+          + (timeS ? "<span class=\"t\">" + esc(timeS) + "</span>" : "")
+          + "<span>" + esc(labelS) + "</span></div>";
         shown++;
       }
     }
-    var room = Math.max(0, MAX - shown);
-    var maxEv = Math.min(out.length, room);
+    var maxEv = Math.min(out.length, MAX_HOBBY);
     for (i = 0; i < maxEv; i++) {
       var e = out[i];
       var who = shortWho(e.who || "");

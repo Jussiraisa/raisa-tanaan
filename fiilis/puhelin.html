@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-v110-1010">
+<meta name="fiilis-build" content="20260922-v112-koulu">
 <meta name="theme-color" content="#EDE6DB">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -362,7 +362,7 @@ body {
 
 <script>
 (function () {
-  var BUILD = "20260922-v110-1010";
+  var BUILD = "20260922-v112-koulu";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -775,36 +775,19 @@ body {
     var html = "";
     var j;
     var shown = 0;
-    var MAX = 3;
-    if (schools.length > 2) {
-      var names = [];
-      var tMin = 99999, tMax = -1, hasEnd = false;
-      for (j = 0; j < schools.length; j++) {
-        var s0 = schools[j];
-        var nm = s0.who || "";
-        if (nm && names.indexOf(nm) < 0) names.push(nm);
-        var st = parseMin(s0.time); if (st != null && st < tMin) tMin = st;
-        var en = parseMin(s0.end); if (en != null) { hasEnd = true; if (en > tMax) tMax = en; }
-      }
-      var tCompact = "";
-      if (tMin < 99999) {
-        tCompact = (Math.floor(tMin / 60)) + "." + ("0" + (tMin % 60)).slice(-2);
-        if (hasEnd && tMax >= 0) tCompact += "–" + (Math.floor(tMax / 60)) + "." + ("0" + (tMax % 60)).slice(-2);
-      }
-      html += "<div class=\"tchip school\"><div class=\"t\">" + esc(tCompact) +
-        "</div><div class=\"b\">" + esc(names.join(" · ") + " · Koulu") +
-        "</div><div class=\"s\">Koulu</div></div>";
-      shown = 1;
-    } else {
-      for (j = 0; j < schools.length && shown < MAX; j++) {
+    var MAX_SCHOOL = 4;
+    var MAX_HOBBY = 2;
+    if (schools.length) {
+      for (j = 0; j < schools.length && shown < MAX_SCHOOL; j++) {
         var s = schools[j];
         html += "<div class=\"tchip school\"><div class=\"t\">" + esc(fmtRange(s.time, s.end) || fmtHm(s.time) || "") +
-          "</div><div class=\"b\">" + esc((s.who || "") + " · " + (s.label || "Koulu")) +
-          "</div><div class=\"s\">Koulu</div></div>";
+          "</div><div class=\"b\">" + esc((shortWho(s.who) || "") + (s.who ? " · " : "") + (s.label || "Koulu")) +
+          "</div></div>";
         shown++;
       }
     }
-    var room = Math.max(0, MAX - shown);
+    var room = Math.max(0, MAX_HOBBY);
+
     for (j = 0; j < Math.min(out.length, room); j++) {
       var e2 = out[j];
       html += "<div class=\"tchip\"><div class=\"t\">" + esc(fmtRange(e2.time, e2.end) || "päivä") +

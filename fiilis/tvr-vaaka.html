@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v64-fiilis-vaaka">
+  <meta name="fiilis-build" content="20260922-v69-odotukset">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +97,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .cd-big { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 6.02vmin; line-height: 1.05; font-weight: 400; letter-spacing: -.02em; color: #a3712a; margin-top: .37vmin; text-transform: lowercase; }
 .cd-big::first-letter { text-transform: uppercase; }
 #odoteList { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; margin-top: 1.111vmin; border-top: 1px solid rgba(44,36,24,.08); padding-top: .556vmin; }
-.odote { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: baseline; align-items: baseline; font-size: 1.48vmin; line-height: 1.35; font-weight: 500; color: #2c2418; padding: .37vmin 0; white-space: nowrap; overflow: hidden; }
+.odote { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: baseline; align-items: baseline; font-size: 1.3vmin; line-height: 1.3; font-weight: 500; color: #2c2418; padding: .28vmin 0; white-space: nowrap; overflow: hidden; }
 .odote > * + * { margin-left: .833vmin; }
 .odote > span:first-child { overflow: hidden; text-overflow: ellipsis; }
 .odote .d { -ms-flex: 0 0 auto; flex: 0 0 auto; font-weight: 650; }
@@ -130,8 +130,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .col-kuva { -ms-flex: 1.12; flex: 1.12; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .col-kuva > * + * { margin-top: .833vmin; }
 .col-kuva .photo-wrap { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
-.col-kuva .odotcard { -ms-flex: 0 0 12vmin; flex: 0 0 12vmin; padding: 1.111vmin 1.481vmin; }
-.col-kuva .odotcard .cd-big { font-size: 5.2vmin; }
+.col-kuva .odotcard { -ms-flex: 0 0 24vmin; flex: 0 0 24vmin; padding: 1.111vmin 1.481vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
+.col-kuva .odotcard .cd-big { font-size: 4.2vmin; }
 .col-kuva .odotcard .cd-label { font-size: 1.85vmin; }
 .col-tieto { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .col-tieto > * + * { margin-top: .833vmin; }
@@ -265,6 +265,7 @@ body.evening .photo-cap, body.night .photo-cap {
           <div class="cd-label">Lontoo · 13.–17.10.</div>
           <div class="cd-big">– päivää</div>
         </div>
+        <div class="scroll" id="odoteList"></div>
       </div>
     </div>
 
@@ -430,6 +431,18 @@ body.evening .photo-cap, body.night .photo-cap {
   ];
   var LONTOO_START = "2026-10-13";
   var LONTOO_END = "2026-10-17";
+  var SYYSLOMA_START = "2026-10-10";
+  var SYYSLOMA_END = "2026-10-18";
+  /* Pienet odotukset Lontoon alle (synttärit, lomat, juhlat) */
+  var EXTRA_EXPECTATIONS = [
+    { start: "2026-09-26", end: "2026-09-26", label: "Mea · synttärit" },
+    { start: "2026-10-02", end: "2026-10-02", label: "Hääpäivä" },
+    { start: "2026-10-03", end: "2026-10-03", label: "Ainon juhlat" },
+    { start: "2026-10-06", end: "2026-10-09", label: "Riikka Oulussa" },
+    { start: "2026-10-10", end: "2026-10-18", label: "Syysloma · 10.–18.10." },
+    { start: "2026-10-12", end: "2026-10-12", label: "Riikka · syntymäpäivä" },
+    { start: "2026-10-24", end: "2026-10-24", label: "Riikka · synttärijuhlat" }
+  ];
   var FALLBACK = {
     timezone: "Europe/Helsinki",
     schoolStarts: [
@@ -932,13 +945,56 @@ body.evening .photo-cap, body.night .photo-cap {
     }
     if (!listEl) return;
     var items = [];
-    var anns = (schedule && schedule.anniversaries) || FALLBACK.anniversaries;
+    var seen = {};
+    function pushItem(label2, iso, whenOverride) {
+      if (!label2 || !iso) return;
+      var du = daysUntil(iso, now);
+      if (du < 0 || du > 50) return;
+      var key = String(label2).toLowerCase() + "|" + iso;
+      if (seen[key]) return;
+      /* älä toista Lontoota pienessä listassa */
+      if (/lontoo/i.test(label2)) return;
+      seen[key] = 1;
+      var when = whenOverride;
+      if (!when) {
+        var ip = isoParts(iso);
+        when = ip.d + "." + ip.m + ".";
+      }
+      items.push({ label: label2, days: du, when: when, iso: iso });
+    }
+
+    /* Kiinteät odotukset: syysloma, synttärit, juhlat */
+    var extras = EXTRA_EXPECTATIONS || [];
+    for (var xi = 0; xi < extras.length; xi++) {
+      var x = extras[xi];
+      if (!x || !x.start) continue;
+      var xIso = x.start;
+      if (now.iso > (x.end || x.start)) continue;
+      if (now.iso >= x.start && x.end && now.iso <= x.end) {
+        /* käynnissä: näytä silti, days=0 */
+        pushItem(x.label, now.iso, x.label.indexOf("·") >= 0 ? "" : "");
+        /* fix when for ranges */
+        items[items.length - 1].when = (x.end && x.end !== x.start)
+          ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
+          : (parseInt(x.start.slice(8), 10) + "." + parseInt(x.start.slice(5, 7), 10) + ".");
+        items[items.length - 1].days = 0;
+        continue;
+      }
+      var whenR = (x.end && x.end !== x.start)
+        ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
+        : (parseInt(x.start.slice(8), 10) + "." + parseInt(x.start.slice(5, 7), 10) + ".");
+      pushItem(x.label, xIso, whenR);
+      if (items.length && items[items.length - 1].iso === xIso) {
+        items[items.length - 1].when = whenR;
+      }
+    }
+
+    /* Synttärit / merkkipäivät schedule.anniversaries */
+    var anns = (schedule && schedule.anniversaries) || FALLBACK.anniversaries || [];
     for (var i = 0; i < anns.length; i++) {
       var a = anns[i];
       var iso = nextAnniversaryIso(a, now);
       if (!iso) continue;
-      var du = daysUntil(iso, now);
-      if (du < 0 || du > 45) continue;
       var label2 = a.label || "";
       if (!label2) {
         if (a.kind === "birthday") label2 = (a.who || "") + " · syntymäpäivä";
@@ -948,23 +1004,33 @@ body.evening .photo-cap, body.night .photo-cap {
       } else if (a.who && a.who !== "perhe" && label2.indexOf(a.who) < 0) {
         label2 = a.who + " · " + label2;
       }
-      var ip = isoParts(iso);
-      items.push({ label: label2, days: du, when: ip.d + "." + ip.m + "." });
+      pushItem(label2, iso, null);
     }
+
+    /* schedule.expectations jos synkattu */
+    var exp = (schedule && schedule.expectations) || [];
+    for (var ei = 0; ei < exp.length; ei++) {
+      var e = exp[ei];
+      if (!e || !e.start) continue;
+      if (now.iso > (e.end || e.start)) continue;
+      var eWhen = (e.end && e.end !== e.start)
+        ? (parseInt(e.start.slice(8), 10) + ".–" + parseInt(e.end.slice(8), 10) + "." + parseInt(e.end.slice(5, 7), 10) + ".")
+        : null;
+      pushItem(e.label || e.title || "Odotus", e.start, eWhen);
+    }
+
     items.sort(function (a, b) { return a.days - b.days; });
     var html = "";
-    var max = Math.min(items.length, 3);
+    var max = Math.min(items.length, 6);
     for (var j = 0; j < max; j++) {
       var it = items[j];
-      var rem = it.days === 0 ? "tänään" : (it.days === 1 ? "huomenna" : it.days + " pv");
+      var rem = it.days === 0 ? "nyt" : (it.days === 1 ? "huomenna" : it.days + " pv");
       html += "<div class=\"odote\"><span>" + esc(it.label)
-        + " <span class=\"muted\">" + esc(it.when) + "</span></span>"
-        + "<span class=\"d accent\">" + esc(rem) + "</span></div>";
+        + (it.when ? (" <span class=\"muted\">" + esc(it.when) + "</span>") : "")
+        + "</span><span class=\"d accent\">" + esc(rem) + "</span></div>";
     }
     listEl.innerHTML = html || "<div class=\"empty muted\">Hiljaista odotuksissa</div>";
   }
-
-
 
   function normEventTitle(t) {
     var s = String(t || "").toLowerCase();
@@ -1332,7 +1398,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v59c", function (data) {
+    getJSON("schedule.json?v=20260922-v69-odotukset", function (data) {
       if (data) schedule = data;
       paint();
     });

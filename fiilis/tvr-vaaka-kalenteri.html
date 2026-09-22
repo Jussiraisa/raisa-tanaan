@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-wa23-mea">
+  <meta name="fiilis-build" content="20260922-v99-ilta">
   <meta name="theme-color" content="#EFE6D8">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,30 +23,42 @@
   --shadow: rgba(60,40,18,.08);
   --nav-bg: #EFE6D8;
   --nav-fg: #5a4a34;
+  --ev: #3F362C;
+  --ev-time: #4A4034;
+  --wd: #6E6254;
+  --empty: #8A7C6A;
 }
 body.evening {
-  --bg: #D9CDB8;
-  --bg-deep: #D0C2AA;
-  --card: #E4D8C4;
-  --card-soft: rgba(228,216,196,.62);
-  --text: #1F1A14;
-  --muted: #5E5448;
+  --bg: #EBE2D4;
+  --bg-deep: #E4D9C8;
+  --card: #F5EFE4;
+  --card-soft: rgba(245,239,228,.62);
+  --text: #2A241C;
+  --muted: #5A5044;
   --accent: #A67C3A;
   --shadow: rgba(60,40,18,.10);
-  --nav-bg: #D9CDB8;
+  --nav-bg: #EBE2D4;
   --nav-fg: #4a3e30;
+  --ev: #2C261E;
+  --ev-time: #3A3228;
+  --wd: #4E463C;
+  --empty: #6A5E50;
 }
 body.night {
-  --bg: #C4B49A;
-  --bg-deep: #B8A88E;
-  --card: #CFC0A8;
-  --card-soft: rgba(207,192,168,.68);
-  --text: #1A1510;
+  --bg: #E4D9C6;
+  --bg-deep: #DDD2BE;
+  --card: #EFE6D8;
+  --card-soft: rgba(239,230,216,.68);
+  --text: #241E18;
   --muted: #52483C;
   --accent: #A67C3A;
   --shadow: rgba(60,40,18,.12);
-  --nav-bg: #C4B49A;
+  --nav-bg: #E4D9C6;
   --nav-fg: #3e3428;
+  --ev: #241E18;
+  --ev-time: #322A22;
+  --wd: #463E34;
+  --empty: #5E5246;
 }
 html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -64,7 +76,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   font-size: 2.8vmin; font-weight: 400; color: var(--text); letter-spacing: -.02em;
 }
 .sub { font-size: 1.35vmin; color: var(--muted); font-weight: 500; }
-.brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9a8b74; margin-left: 1vmin; }
+.brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--wd); margin-left: 1vmin; }
 
 .grid-wrap {
   flex: 1 1 auto; min-height: 0;
@@ -116,10 +128,10 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 }
 .day.is-today .dn { color: var(--accent); }
 .day .mo { font-size: 1.0vmin; font-weight: 600; color: var(--muted); margin-left: .25vmin; }
-.day .wd { font-size: 1.0vmin; font-weight: 600; color: #9a8b74; }
+.day .wd { font-size: 1.0vmin; font-weight: 600; color: var(--wd); }
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
-  font-size: var(--ev-fs, 1.0vmin); line-height: 1.2; line-height: 1.25; font-weight: 550; color: #5a4e3e;
+  font-size: var(--ev-fs, 1.0vmin); line-height: 1.2; line-height: 1.25; font-weight: 550; color: var(--ev);
   margin-top: .12vmin;
   white-space: normal; overflow-wrap: anywhere; word-break: break-word;
 }
@@ -134,8 +146,8 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
   margin-right: .3vmin; vertical-align: .12em;
 }
-.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.92em; color: #6a5c48; }
-.day .empty-day { font-size: 1.2vmin; color: #b0a090; margin-top: .2vmin; }
+.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.92em; color: var(--ev-time); }
+.day .empty-day { font-size: 1.2vmin; color: var(--empty); margin-top: .2vmin; }
 
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
@@ -195,7 +207,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-wa23-mea";
+  var BUILD = "20260922-v99-ilta";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

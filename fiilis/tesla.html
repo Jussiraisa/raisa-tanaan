@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-wa23-mea">
+<meta name="fiilis-build" content="20260922-v99-ilta">
 <title>Fiilis · Tesla</title>
 <style>
 
@@ -20,19 +20,19 @@
     --shadow: rgba(60,40,18,.08);
   }
   body.evening {
-    --bg: #E8DFD0;
-    --card: #F0E8DA;
-    --card-soft: rgba(240,232,218,.92);
-    --text: #1F1A14;
-    --muted: #5E5448;
+    --bg: #EBE2D4;
+    --card: #F5EFE4;
+    --card-soft: rgba(245,239,228,.92);
+    --text: #2A241C;
+    --muted: #5A5044;
     --accent: #A67C3A;
     --shadow: rgba(60,40,18,.10);
   }
   body.night {
-    --bg: #DED4C4;
-    --card: #E8DFD0;
-    --card-soft: rgba(232,223,208,.92);
-    --text: #1A1510;
+    --bg: #E4D9C6;
+    --card: #EFE6D8;
+    --card-soft: rgba(239,230,216,.92);
+    --text: #241E18;
     --muted: #52483C;
     --accent: #A67C3A;
     --shadow: rgba(60,40,18,.12);
@@ -299,7 +299,7 @@
         <div class="q" id="quoteTxt">”Pienet hetket tekevät suuren elämän.”</div>
       </div>
       <div class="tagline">Sama matka. Enemmän yhdessä.</div>
-      <div id="buildStamp" style="text-align:center;font-size:1.1vmin;color:#b0a090;margin-top:.3vmin;"></div>
+      <div id="buildStamp" style="text-align:center;font-size:1.1vmin;color:var(--muted);margin-top:.3vmin;"></div>
     </div>
   </div>
 </div>
@@ -314,7 +314,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260922-wa23-mea";
+  var BUILD = "20260922-v99-ilta";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";

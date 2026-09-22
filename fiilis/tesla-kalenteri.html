@@ -4,14 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-wa23-mea">
+  <meta name="fiilis-build" content="20260922-v99-ilta">
   <meta name="theme-color" content="#F3EFE8">
   <title>Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: #F3EFE8; color: #2A241C;
+:root, body.day {
+  --bg: #F3EFE8;
+  --card: #F7F1E6;
+  --text: #2A241C;
+  --muted: #6E6254;
+  --ev: #3F362C;
+  --ev-time: #4A4034;
+  --wd: #6E6254;
+  --empty: #8A7C6A;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.06);
+}
+body.evening {
+  --bg: #EBE2D4;
+  --card: #F5EFE4;
+  --text: #2A241C;
+  --muted: #5A5044;
+  --ev: #2C261E;
+  --ev-time: #3A3228;
+  --wd: #4E463C;
+  --empty: #6A5E50;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.08);
+}
+body.night {
+  --bg: #E4D9C6;
+  --card: #EFE6D8;
+  --text: #241E18;
+  --muted: #52483C;
+  --ev: #241E18;
+  --ev-time: #322A22;
+  --wd: #463E34;
+  --empty: #5E5246;
+  --accent: #A67C3A;
+  --shadow: rgba(60,40,18,.10);
+}
+html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text);
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
 .app {
@@ -24,10 +60,10 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 }
 .title {
   font-family: Newsreader, Georgia, serif;
-  font-size: 2.8vmin; font-weight: 400; color: #1a140e; letter-spacing: -.02em;
+  font-size: 2.8vmin; font-weight: 400; color: var(--text); letter-spacing: -.02em;
 }
-.sub { font-size: 1.35vmin; color: #6c5c44; font-weight: 500; }
-.brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9a8b74; margin-left: 1vmin; }
+.sub { font-size: 1.35vmin; color: var(--muted); font-weight: 500; }
+.brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--wd); margin-left: 1vmin; }
 
 .grid-wrap {
   flex: 1 1 auto; min-height: 0;
@@ -38,7 +74,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 }
 .dow span {
   flex: 1; text-align: center; font-size: 1.15vmin; font-weight: 650;
-  letter-spacing: .08em; text-transform: uppercase; color: #8a7a62;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
 }
 .month {
   flex: 1 1 auto; min-height: 0;
@@ -52,13 +88,13 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 .week > * + * { margin-left: .4vmin; }
 .day {
   flex: 1 1 0; min-width: 0; min-height: 0;
-  background: #F7F1E6;
+  background: var(--card);
   border: 1px solid rgba(44,36,24,.08);
   border-radius: .85vmin;
   padding: .35vmin .4vmin .3vmin;
   overflow: hidden;
   display: flex; flex-direction: column;
-  box-shadow: 0 .2vmin .8vmin rgba(60,40,18,.04);
+  box-shadow: 0 .2vmin .8vmin var(--shadow);
 }
 .day.pad { visibility: hidden; border: 0; background: transparent; box-shadow: none; }
 .day.out {
@@ -75,14 +111,14 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   margin-bottom: .25vmin;
 }
 .day .dn {
-  font-size: 1.4vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418;
+  font-size: 1.4vmin; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text);
 }
 .day.is-today .dn { color: #8f6524; }
-.day .mo { font-size: 1.0vmin; font-weight: 600; color: #8a7a62; margin-left: .25vmin; }
-.day .wd { font-size: 1.0vmin; font-weight: 600; color: #9a8b74; }
+.day .mo { font-size: 1.0vmin; font-weight: 600; color: var(--muted); margin-left: .25vmin; }
+.day .wd { font-size: 1.0vmin; font-weight: 600; color: var(--wd); }
 .day .evs { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .day .ev {
-  font-size: var(--ev-fs, 1.0vmin); line-height: 1.2; line-height: 1.25; font-weight: 550; color: #5a4e3e;
+  font-size: var(--ev-fs, 1.0vmin); line-height: 1.2; line-height: 1.25; font-weight: 550; color: var(--ev);
   margin-top: .12vmin;
   white-space: normal; overflow-wrap: anywhere; word-break: break-word;
 }
@@ -97,8 +133,8 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   display: inline-block; width: .6vmin; height: .6vmin; border-radius: 999px;
   margin-right: .3vmin; vertical-align: .12em;
 }
-.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.92em; color: #6a5c48; }
-.day .empty-day { font-size: 1.2vmin; color: #b0a090; margin-top: .2vmin; }
+.day .ev .t { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 0.92em; color: var(--ev-time); }
+.day .empty-day { font-size: 1.2vmin; color: var(--empty); margin-top: .2vmin; }
 
 
 .nav {
@@ -149,8 +185,23 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 
 <script>
 (function () {
-  var BUILD = "20260922-wa23-mea";
-  P260922-v96-sync";
+
+  function themeClass(hour) {
+    if (hour >= 7 && hour < 18) return "day";
+    if (hour >= 18 && hour < 22) return "evening";
+    return "night";
+  }
+  function applyTheme() {
+    var h = new Date().getHours();
+    try {
+      var parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Helsinki", hour: "numeric", hour12: false }).formatToParts(new Date());
+      for (var i = 0; i < parts.length; i++) if (parts[i].type === "hour") h = parseInt(parts[i].value, 10);
+    } catch (e) {}
+    document.body.className = themeClass(h);
+  }
+  applyTheme();
+  setInterval(applyTheme, 60000);
+  var BUILD = "20260922-v99-ilta";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

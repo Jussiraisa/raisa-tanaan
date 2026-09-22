@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v98-warm">
+  <meta name="fiilis-build" content="20260922-v99-ilta">
   <meta name="theme-color" content="#EFE6D8">
   <title>Räisä · Fiilis · Muistot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,30 +23,42 @@
   --shadow: rgba(60,40,18,.08);
   --nav-bg: #EFE6D8;
   --nav-fg: #5a4a34;
+  --ev: #3F362C;
+  --ev-time: #4A4034;
+  --wd: #6E6254;
+  --empty: #8A7C6A;
 }
 body.evening {
-  --bg: #D9CDB8;
-  --bg-deep: #D0C2AA;
-  --card: #E4D8C4;
-  --card-soft: rgba(228,216,196,.62);
-  --text: #1F1A14;
-  --muted: #5E5448;
+  --bg: #EBE2D4;
+  --bg-deep: #E4D9C8;
+  --card: #F5EFE4;
+  --card-soft: rgba(245,239,228,.62);
+  --text: #2A241C;
+  --muted: #5A5044;
   --accent: #A67C3A;
   --shadow: rgba(60,40,18,.10);
-  --nav-bg: #D9CDB8;
+  --nav-bg: #EBE2D4;
   --nav-fg: #4a3e30;
+  --ev: #2C261E;
+  --ev-time: #3A3228;
+  --wd: #4E463C;
+  --empty: #6A5E50;
 }
 body.night {
-  --bg: #C4B49A;
-  --bg-deep: #B8A88E;
-  --card: #CFC0A8;
-  --card-soft: rgba(207,192,168,.68);
-  --text: #1A1510;
+  --bg: #E4D9C6;
+  --bg-deep: #DDD2BE;
+  --card: #EFE6D8;
+  --card-soft: rgba(239,230,216,.68);
+  --text: #241E18;
   --muted: #52483C;
   --accent: #A67C3A;
   --shadow: rgba(60,40,18,.12);
-  --nav-bg: #C4B49A;
+  --nav-bg: #E4D9C6;
   --nav-fg: #3e3428;
+  --ev: #241E18;
+  --ev-time: #322A22;
+  --wd: #463E34;
+  --empty: #5E5246;
 }
 html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: var(--text); }
 * { box-sizing: border-box; }
@@ -168,7 +180,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); c
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v98-warm";
+  var BUILD = "20260922-v99-ilta";
   var LS_KEY = "fiilisMemAlbum";
   var PHOTO_DENY = {
     "matka-2018-lontoo-00-002.jpg": 1,

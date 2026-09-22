@@ -373,7 +373,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
     <div class="side">
       <div class="block grow">
-        <div class="lbl">Tänään</div>
+        <div class="lbl" id="todayLbl">Tänään</div>
         <div class="today-list" id="todayList"><div class="today-empty">Rauhaa · ei merkintöjä</div></div>
       </div>
 
@@ -422,7 +422,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v94c-tsla-ruoka";
+  var BUILD = "20260922-v94d-today-rollover";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -991,20 +991,36 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     return out;
   }
 
+  function eventEndMin(e) {
+    var st = parseMin(e && e.time);
+    if (st == null) return null;
+    var en = parseMin(e.end);
+    return en != null ? en : st + 60;
+  }
+  function lastTimedEventEndMin(iso) {
+    var list = dayEventsClean(iso);
+    var last = null;
+    for (var i = 0; i < list.length; i++) {
+      var en = eventEndMin(list[i]);
+      if (en == null) continue;
+      if (last == null || en > last) last = en;
+    }
+    return last;
+  }
+  /** When today's last timed hobby/event is over → Tänään shows tomorrow. */
+  function todayFocus(now) {
+    var last = lastTimedEventEndMin(now.iso);
+    if (last != null && now.minutes >= last) {
+      return { iso: addDaysIso(now.iso, 1), label: "Huomenna", rolled: true };
+    }
+    return { iso: now.iso, label: "Tänään", rolled: false };
+  }
+
   function paintNextLine(now) {
     var el = document.getElementById("nextLine");
     if (!el) return;
-    var out = dayEventsClean(now.iso);
-    var nowMin = now.minutes;
-    var live = null, next = null, nextDiff = 99999;
-    for (var i = 0; i < out.length; i++) {
-      var e = out[i];
-      var st = parseMin(e.time);
-      if (st == null) continue;
-      var en = parseMin(e.end); if (en == null) en = st + 60;
-      if (st <= nowMin && nowMin < en) { live = e; break; }
-      if (st > nowMin && st - nowMin < nextDiff) { nextDiff = st - nowMin; next = e; }
-    }
+    var focus = todayFocus(now);
+    var out = dayEventsClean(focus.iso);
     function brief(e, badge) {
       var who = shortWho(e.who || "");
       var time = e.time ? String(e.time).replace(":", ".") : "";
@@ -1016,6 +1032,25 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       if (e.place) s += " <span class=\"muted\">· " + esc(e.place) + "</span>";
       return s;
     }
+    if (focus.rolled) {
+      var first = null;
+      for (var i = 0; i < out.length; i++) {
+        if (parseMin(out[i].time) != null) { first = out[i]; break; }
+      }
+      if (first) el.innerHTML = brief(first, "Huomenna");
+      else el.innerHTML = "<span class=\"muted\">Rauhallinen ilta</span>";
+      return;
+    }
+    var nowMin = now.minutes;
+    var live = null, next = null, nextDiff = 99999;
+    for (var i = 0; i < out.length; i++) {
+      var e = out[i];
+      var st = parseMin(e.time);
+      if (st == null) continue;
+      var en = parseMin(e.end); if (en == null) en = st + 60;
+      if (st <= nowMin && nowMin < en) { live = e; break; }
+      if (st > nowMin && st - nowMin < nextDiff) { nextDiff = st - nowMin; next = e; }
+    }
     if (live) el.innerHTML = brief(live, "Nyt");
     else if (next) el.innerHTML = brief(next, "Seuraavaksi");
     else el.innerHTML = "<span class=\"muted\">Rauhallinen päivä</span>";
@@ -1024,13 +1059,16 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   function paintTodayList(now) {
     var el = document.getElementById("todayList");
     if (!el) return;
-    var out = dayEventsClean(now.iso);
+    var focus = todayFocus(now);
+    var lbl = document.getElementById("todayLbl");
+    if (lbl) lbl.textContent = focus.label;
+    var out = dayEventsClean(focus.iso);
     if (!out.length) {
       el.className = "today-list";
-      el.innerHTML = "<div class=\"today-empty\">Rauhaa · ei merkintöjä tänään</div>";
+      el.innerHTML = "<div class=\"today-empty\">Rauhaa · ei merkintöjä " + (focus.rolled ? "huomenna" : "tänään") + "</div>";
       return;
     }
-    var nowMin = now.minutes;
+    var nowMin = focus.rolled ? -1 : now.minutes;
     var html = "";
     for (var i = 0; i < out.length; i++) {
       var e = out[i];
@@ -1043,7 +1081,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       var t1 = fmtHm(e.end) || "";
       var who = shortWho(e.who || "");
       var meta = [];
-      var drv = driverOf(e, now.iso);
+      var drv = driverOf(e, focus.iso);
       if (e.place) meta.push(e.place);
       if (drv) meta.push(drv);
       html += "<div class=\"" + cls + "\">"
@@ -1245,7 +1283,8 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         else lb.textContent = "Huomenna";
       }
     }
-    if (!schools.length && !out.length) {
+    var rolled = todayFocus(now).rolled;
+    if (!schools.length && (rolled || !out.length)) {
       el.innerHTML = "<div class=\"empty\">Ei merkintöjä</div>";
       return;
     }
@@ -1267,19 +1306,25 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         shown++;
       }
     }
-    for (i = 0; i < out.length && i < MAX_HOBBY; i++) {
-      var e = out[i];
-      var who = shortWho(e.who || "");
-      var time = fmtRange(e.time, e.end) || "";
-      var bits = [];
-      if (e.driver) bits.push(e.driver);
-      if (e.place) bits.push(e.place);
-      html += "<div class=\"tmw-line\">"
-        + (who ? "<span class=\"who\">" + esc(who) + "</span>" : "")
-        + (time ? "<span class=\"t\">" + esc(time) + "</span>" : "")
-        + "<span>" + esc(e.title || "")
-        + (bits.length ? "<span class=\"meta\"> · " + esc(bits.join(" · ")) + "</span>" : "")
-        + "</span></div>";
+    if (!todayFocus(now).rolled) {
+      for (i = 0; i < out.length && i < MAX_HOBBY; i++) {
+        var e = out[i];
+        var who = shortWho(e.who || "");
+        var time = fmtRange(e.time, e.end) || "";
+        var bits = [];
+        if (e.driver) bits.push(e.driver);
+        if (e.place) bits.push(e.place);
+        html += "<div class=\"tmw-line\">"
+          + (who ? "<span class=\"who\">" + esc(who) + "</span>" : "")
+          + (time ? "<span class=\"t\">" + esc(time) + "</span>" : "")
+          + "<span>" + esc(e.title || "")
+          + (bits.length ? "<span class=\"meta\"> · " + esc(bits.join(" · ")) + "</span>" : "")
+          + "</span></div>";
+      }
+    }
+    if (!html) {
+      el.innerHTML = "<div class=\"empty\">Ei merkintöjä</div>";
+      return;
     }
     el.innerHTML = html;
   }

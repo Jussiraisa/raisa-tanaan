@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v70c-daytap">
+  <meta name="fiilis-build" content="20260922-v70d-today-rollover">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#EDE6DB">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -349,7 +349,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   <div class="foot">
     <div class="chips" id="chips"></div>
     <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-    <span class="brand">v70c-daytap</span>
+    <span class="brand">v70d-today-rollover</span>
   </div>
 </div>
 
@@ -816,14 +816,38 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   function remainingEvents(now) {
     var list = eventsOn(now.iso);
     var out = [];
+    var hadTimed = false;
+    var lastEnd = null;
     for (var i = 0; i < list.length; i++) {
       var e = list[i];
       if (e.kind === "matka") continue;
       var end = parseMin(e.end);
       var start = parseMin(e.time);
       var doneAt = end != null ? end : (start != null ? start + 60 : null);
+      if (doneAt != null) {
+        hadTimed = true;
+        if (lastEnd == null || doneAt > lastEnd) lastEnd = doneAt;
+      }
       if (doneAt != null && doneAt <= now.minutes) continue;
       out.push(e);
+    }
+    /* After today's last timed non-matka event → show tomorrow's list. */
+    if (hadTimed && lastEnd != null && now.minutes >= lastEnd) {
+      var tomIso = addDaysIso(now.iso, 1);
+      var tom = eventsOn(tomIso);
+      out = [];
+      for (var j = 0; j < tom.length; j++) {
+        var te = tom[j];
+        if (!te || te.kind === "matka") continue;
+        out.push(te);
+      }
+      out.sort(function (a, b) {
+        var ta = parseMin(a.time); if (ta == null) ta = 9800;
+        var tb = parseMin(b.time); if (tb == null) tb = 9800;
+        if (ta !== tb) return ta - tb;
+        return String(a.title || "").localeCompare(String(b.title || ""));
+      });
+      return out;
     }
     return out;
   }

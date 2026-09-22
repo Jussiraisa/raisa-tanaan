@@ -100,7 +100,7 @@
 
   <div class="row bottom grow">
     <div class="card grow" style="flex:1.35; -ms-flex:1.35; min-width:0;">
-      <div class="sect">Tänään <span class="chev">›</span></div>
+      <div class="sect"><span id="todayLbl">Tänään</span> <span class="chev">›</span></div>
       <div id="nowBox"></div>
       <div class="today-list" id="todayList"></div>
     </div>
@@ -134,7 +134,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260922-v113-kerma";
+  var BUILD = "20260922-v114-today-rollover";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -238,6 +238,11 @@
     if (a && b) return fmtHm(a) + "–" + fmtHm(b);
     return a ? fmtHm(a) : "";
   }
+  function addDaysIso(iso, n) {
+    var p = String(iso).split("-");
+    var d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + n));
+    return d.getUTCFullYear() + "-" + pad(d.getUTCMonth() + 1) + "-" + pad(d.getUTCDate());
+  }
   function wmo(code) {
     if (code === 0) return { icon: "☀️", phrase: "selkeää" };
     if (code <= 2) return { icon: "🌤️", phrase: "melkein selkeää" };
@@ -298,6 +303,39 @@
     var st = parseMin(e.time);
     if (st == null) return null;
     return st + 60;
+  }
+  function lastTimedNonSchoolEndMin(iso) {
+    var list = eventsOn(iso);
+    var last = null;
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!e || e.kind === "koulu") continue;
+      var en = evEnd(e);
+      if (en == null) continue;
+      if (last == null || en > last) last = en;
+    }
+    return last;
+  }
+  /** When today's last timed hobby/event is over → Tänään shows tomorrow. */
+  function todayFocus(now) {
+    var last = lastTimedNonSchoolEndMin(now.iso);
+    if (last != null && now.minutes >= last) {
+      return { iso: addDaysIso(now.iso, 1), label: "Huomenna", rolled: true };
+    }
+    return { iso: now.iso, label: "Tänään", rolled: false };
+  }
+  function eventsNonSchoolOn(iso) {
+    var list = eventsOn(iso);
+    var out = [], seen = {};
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!e || e.kind === "koulu") continue;
+      var k = (e.time || "") + "|" + (e.who || "") + "|" + (e.title || "");
+      if (seen[k]) continue;
+      seen[k] = 1;
+      out.push(e);
+    }
+    return out;
   }
   function colorWho(who) { return WHO_COLOR[who] || "#b8a090"; }
   function initial(who) {
@@ -360,23 +398,38 @@
   }
 
   function paintToday(now) {
-    var list = todayNonSchool(now);
+    var focus = todayFocus(now);
+    var lbl = document.getElementById("todayLbl");
+    if (lbl) lbl.textContent = focus.label;
+    var list = eventsNonSchoolOn(focus.iso);
     var box = document.getElementById("todayList");
     var nowBox = document.getElementById("nowBox");
     if (!box) return;
+    var nowMin = focus.rolled ? -1 : now.minutes;
     var liveIdx = -1, nextIdx = -1, nextDiff = 99999;
     for (var i = 0; i < list.length; i++) {
       var e = list[i];
       var st = parseMin(e.time);
       var en = evEnd(e);
-      if (st != null && en != null && st <= now.minutes && now.minutes < en) { liveIdx = i; break; }
-      if (st != null && st > now.minutes) {
-        var d = st - now.minutes;
+      if (st != null && en != null && st <= nowMin && nowMin < en) { liveIdx = i; break; }
+      if (st != null && st > nowMin) {
+        var d = st - nowMin;
         if (d < nextDiff) { nextDiff = d; nextIdx = i; }
       }
     }
     if (nowBox) {
-      if (liveIdx >= 0) {
+      if (focus.rolled) {
+        var first = null;
+        for (var fi = 0; fi < list.length; fi++) {
+          if (parseMin(list[fi].time) != null) { first = list[fi]; break; }
+        }
+        if (first) {
+          nowBox.innerHTML = "<div class=\"nowpill\"><span class=\"b\">Huomenna</span>" +
+            esc(fmtRange(first.time, first.end)) + " " + esc(first.who || "") + " " + esc(first.title || "") + "</div>";
+        } else {
+          nowBox.innerHTML = "";
+        }
+      } else if (liveIdx >= 0) {
         var L = list[liveIdx];
         nowBox.innerHTML = "<div class=\"nowpill\"><span class=\"b\">Nyt</span>" +
           esc(fmtRange(L.time, L.end)) + " " + esc(L.who || "") + " " + esc(L.title || "") + "</div>";
@@ -395,7 +448,7 @@
       var st2 = parseMin(e2.time);
       var en2 = evEnd(e2);
       var cls = "tev";
-      if (st2 != null && en2 != null && now.minutes >= en2) cls += " past";
+      if (st2 != null && en2 != null && nowMin >= en2) cls += " past";
       else if (j === liveIdx) cls += " live";
       var when = fmtRange(e2.time, e2.end) || "—";
       var bits = [];
@@ -411,21 +464,21 @@
       if (meta.length) html += " <span class=\"meta\">· " + esc(meta.join(" · ")) + "</span>";
       html += "</div></div>";
     }
-    if (!html) html = "<div class=\"tev\"><div class=\"txt\" style=\"color:#7a6a55\">Ei merkintöjä tänään</div></div>";
+    if (!html) html = "<div class=\"tev\"><div class=\"txt\" style=\"color:#7a6a55\">Ei merkintöjä " + (focus.rolled ? "huomenna" : "tänään") + "</div></div>";
     box.innerHTML = html;
 
     var card = document.getElementById("navCard");
     var dest = document.getElementById("navDest");
     var metaEl = document.getElementById("navMeta");
-    var focus = liveIdx >= 0 ? list[liveIdx] : (nextIdx >= 0 ? list[nextIdx] : null);
-    if (focus && dest && metaEl && card) {
+    var navFocus = liveIdx >= 0 ? list[liveIdx] : (nextIdx >= 0 ? list[nextIdx] : null);
+    if (navFocus && dest && metaEl && card) {
       card.className = "navcard";
-      dest.textContent = focus.place || focus.title || "—";
+      dest.textContent = navFocus.place || navFocus.title || "—";
       var parts = [];
-      if (focus.time) parts.push(fmtRange(focus.time, focus.end));
-      if (focus.who) parts.push(focus.who);
-      if (focus.title && focus.place) parts.push(focus.title);
-      if (focus.driver) parts.push("kuski " + focus.driver);
+      if (navFocus.time) parts.push(fmtRange(navFocus.time, navFocus.end));
+      if (navFocus.who) parts.push(navFocus.who);
+      if (navFocus.title && navFocus.place) parts.push(navFocus.title);
+      if (navFocus.driver) parts.push("kuski " + navFocus.driver);
       metaEl.innerHTML = esc(parts.join(" · "));
     } else if (dest && metaEl && card) {
       card.className = "navcard empty";

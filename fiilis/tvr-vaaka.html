@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v72-odotukset-2col">
+  <meta name="fiilis-build" content="20260922-v73-odot-row">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,13 +92,13 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .mday .dn .mo { font-size: .85vmin; font-weight: 500; color: #73634a; margin-left: .19vmin; }
 .mlabel { font-size: .62vmin; line-height: 1.1; font-weight: 600; color: #6c5c44; margin-top: .07vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mdot { display: inline-block; width: .4vmin; height: .4vmin; border-radius: 999px; margin-right: .22vmin; vertical-align: middle; }
-.countdown { -ms-flex: 1 1 48%; flex: 1 1 48%; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; padding-right: 1.111vmin; border-right: 1px solid rgba(44,36,24,.10); }
+.countdown { -ms-flex: 0 0 42%; flex: 0 0 42%; width: 42%; max-width: 42%; min-width: 0; min-height: 0; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; padding-right: 1.2vmin; border-right: 1px solid rgba(44,36,24,.12); }
 .cd-label { font-size: 1.67vmin; line-height: 1.25; font-weight: 550; color: #6c5c44; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .cd-big { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 5.2vmin; line-height: 1.02; font-weight: 400; letter-spacing: -.02em; color: #a3712a; margin-top: .28vmin; text-transform: lowercase; }
 .cd-big::first-letter { text-transform: uppercase; }
-.odot-row { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-align: stretch; align-items: stretch; }
+.odot-row { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; width: 100%; display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; -ms-flex-align: stretch; align-items: stretch; -ms-flex-pack: start; justify-content: flex-start; }
 .odot-row > * + * { margin-left: 0; }
-#odoteList { -ms-flex: 1 1 52%; flex: 1 1 52%; min-width: 0; min-height: 0; margin-top: 0; border-top: 0; padding-top: 0; padding-left: 1.111vmin; overflow: auto; }
+#odoteList { -ms-flex: 1 1 58%; flex: 1 1 58%; width: 58%; max-width: 58%; min-width: 0; min-height: 0; box-sizing: border-box; margin: 0; border: 0; padding: 0 0 0 1.2vmin; overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 .odote { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: flex-start; align-items: flex-start; font-size: 1.2vmin; line-height: 1.25; font-weight: 500; color: #2c2418; padding: .22vmin 0; overflow: hidden; }
 .odote > span:first-child { white-space: normal; overflow: hidden; min-width: 0; -ms-flex: 1 1 auto; flex: 1 1 auto; }
 .odote > * + * { margin-left: .556vmin; }
@@ -133,7 +133,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .col-kuva { -ms-flex: 1.12; flex: 1.35; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
 .col-kuva > * + * { margin-top: .833vmin; }
 .col-kuva .photo-wrap { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
-.col-kuva .odotcard { -ms-flex: 0 0 16.5vmin; flex: 0 0 16.5vmin; padding: 1.111vmin 1.481vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
+.col-kuva .odotcard { -ms-flex: 0 0 17vmin; flex: 0 0 17vmin; height: 17vmin; padding: .9vmin 1.3vmin; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; overflow: hidden; }
 .col-kuva .odotcard .cd-big { font-size: 4.6vmin; }
 .col-kuva .odotcard .cd-label { font-size: 1.7vmin; }
 .col-tieto { -ms-flex: 1; flex: 0.92; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
@@ -1410,7 +1410,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v72-odotukset-2col", function (data) {
+    getJSON("schedule.json?v=20260922-v73-odot-row", function (data) {
       if (data) schedule = data;
       paint();
     });

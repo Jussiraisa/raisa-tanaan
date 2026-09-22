@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v70d-today-rollover">
+  <meta name="fiilis-build" content="20260922-v70e-today-group">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#EDE6DB">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -277,10 +277,16 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   background: #EFE8DC; border: 1px solid rgba(44,36,24,.06);
 }
 .day-ev .when {
-  flex: 0 0 auto; min-width: 4.6rem;
+  flex: 0 0 auto; min-width: 6.4rem;
   font-variant-numeric: tabular-nums; font-weight: 700; font-size: .95rem;
-  color: #5a4a34;
+  color: #5a4a34; white-space: nowrap;
 }
+.today-group-lbl, .day-group-lbl {
+  font-size: .72rem; font-weight: 650; letter-spacing: .1em;
+  text-transform: uppercase; color: #a09078;
+  margin: 6px 0 2px; opacity: .9;
+}
+.today-group-lbl:first-child, .day-group-lbl:first-child { margin-top: 0; }
 .day-ev .body { flex: 1; min-width: 0; }
 .day-ev .who { font-weight: 700; }
 .day-ev .meta { font-size: .82rem; color: #6F6860; margin-top: 2px; }
@@ -349,7 +355,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   <div class="foot">
     <div class="chips" id="chips"></div>
     <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-    <span class="brand">v70d-today-rollover</span>
+    <span class="brand">v70e-today-group</span>
   </div>
 </div>
 
@@ -673,6 +679,34 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     if (a && b) return fmtHm(a) + "–" + fmtHm(b);
     return a ? fmtHm(a) : "";
   }
+  var KID_WHO_RANK = { Ellen: 1, Mea: 2, Milla: 3, Samuel: 4 };
+  function isKidHobby(e) {
+    if (!e) return false;
+    var who = e.who || "";
+    if (!KID_WHO_RANK[who]) return false;
+    var title = String(e.title || "");
+    if (/deadline|ilmoita|wilma/i.test(title)) return false;
+    var kind = String(e.kind || "").toLowerCase();
+    if (kind === "treeni" || kind === "harrastus" || kind === "kisa") return true;
+    if (e.time && kind !== "koulu") return true;
+    return false;
+  }
+  function whoRankToday(who) {
+    return KID_WHO_RANK[who] || 9;
+  }
+  function sortTodayEvents(list) {
+    return (list || []).slice().sort(function (a, b) {
+      var ha = isKidHobby(a) ? 0 : 1;
+      var hb = isKidHobby(b) ? 0 : 1;
+      if (ha !== hb) return ha - hb;
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      if (ta !== tb) return ta - tb;
+      var wa = whoRankToday(a.who), wb = whoRankToday(b.who);
+      if (wa !== wb) return wa - wb;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
+  }
 
   function daysUntil(iso, now) {
     var a = Date.UTC(now.year, now.month - 1, now.day);
@@ -951,7 +985,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
         html += "<div class=\"kid-empty\">Ei koulua</div>";
       }
       html += "<div class=\"kid-sec\">Treenit" + (tgt && tgt.tomorrow ? " · tänään+huom" : "") + "</div>";
-      var evs = eventsForKid(now, kid, tgt.focusIso);
+      var evs = eventsForKid(now, kid, tgt.focusIso).filter(isKidHobby);
       if (!evs.length) {
         html += "<div class=\"kid-empty\">—</div>";
       } else {
@@ -1086,21 +1120,26 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
       seen[k] = 1;
       out.push(e);
     }
-    out.sort(function (a, b) {
-      var ta = parseMin(a.time); if (ta == null) ta = 9800;
-      var tb = parseMin(b.time); if (tb == null) tb = 9800;
-      /* Kyydit / treenit ensin aikajärjestyksessä; ilman aikaa loppuun */
-      if (ta !== tb) return ta - tb;
-      return String(a.title || "").localeCompare(String(b.title || ""));
-    });
+    out = sortTodayEvents(out);
     if (!out.length) {
       el.innerHTML = "<div class=\"tmw-empty\">Ei merkintöjä huomenna</div>";
       return;
     }
+    var hasHobby = false, hasOther = false;
+    for (var gi = 0; gi < out.length; gi++) {
+      if (isKidHobby(out[gi])) hasHobby = true; else hasOther = true;
+    }
+    var showLabels = hasHobby && hasOther;
+    var lastGroup = null;
     var html = "";
     var max = Math.min(out.length, 10);
     for (var i = 0; i < max; i++) {
       var e = out[i];
+      var grp = isKidHobby(e) ? "hobby" : "other";
+      if (showLabels && grp !== lastGroup) {
+        html += "<div class=\"today-group-lbl\">" + (grp === "hobby" ? "Treenit" : "Muut") + "</div>";
+        lastGroup = grp;
+      }
       var who = e.who || "";
       var sw = shortWho(who);
       if (!sw) sw = (who === "perhe" || who === "Perhe") ? "Perhe" : who;
@@ -1234,24 +1273,40 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
       if (iso === now.iso) title.textContent += " · tänään";
     }
     var evs = dayBucketEvents(iso, now) || [];
-    /* Prefer real events first, keep koulu */
+    /* Treenit ensin, sitten muut; koulu loppuun */
     evs = evs.slice().sort(function (a, b) {
       function rank(e) {
-        if (e.kind === "koulu") return 2;
-        var ta = parseMin(e.time); return ta == null ? 1 : 0;
+        if (e.kind === "koulu") return 3;
+        if (isKidHobby(e)) return 0;
+        return 1;
       }
       var ra = rank(a), rb = rank(b);
       if (ra !== rb) return ra - rb;
       var ta = parseMin(a.time); if (ta == null) ta = 9800;
       var tb = parseMin(b.time); if (tb == null) tb = 9800;
-      return ta - tb;
+      if (ta !== tb) return ta - tb;
+      return whoRankToday(a.who) - whoRankToday(b.who);
     });
     if (!evs.length) {
       list.innerHTML = "<div class=\"day-empty\">Ei merkintöjä tälle päivälle</div>";
     } else {
+      var hasHobby = false, hasOther = false;
+      for (var gi = 0; gi < evs.length; gi++) {
+        if (evs[gi].kind === "koulu") continue;
+        if (isKidHobby(evs[gi])) hasHobby = true; else hasOther = true;
+      }
+      var showLabels = hasHobby && hasOther;
+      var lastGroup = null;
       var html = "";
       for (var i = 0; i < evs.length; i++) {
         var e = evs[i];
+        if (showLabels && e.kind !== "koulu") {
+          var grp = isKidHobby(e) ? "hobby" : "other";
+          if (grp !== lastGroup) {
+            html += "<div class=\"day-group-lbl\">" + (grp === "hobby" ? "Treenit" : "Muut") + "</div>";
+            lastGroup = grp;
+          }
+        }
         var who = shortWho(e.who || "") || (e.who === "perhe" || e.who === "Perhe" ? "Perhe" : (e.who || ""));
         var when = fmtEvTime(e);
         var meta = [];

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v94-restore">
+  <meta name="fiilis-build" content="20260922-v94e-today-group">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,7 +158,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260922-v94-restore";
+  var BUILD = "20260922-v94e-today-group";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -208,6 +208,11 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
     if (!hm) return "";
     var p = String(hm).split(":");
     return Number(p[0]) + "." + pad(p[1] || "00");
+  }
+  function fmtRange(a, b) {
+    if (!a && !b) return "";
+    if (a && b) return fmtHm(a) + "–" + fmtHm(b);
+    return a ? fmtHm(a) : "";
   }
   function getJSON(url, cb) {
     try {
@@ -350,7 +355,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
             for (var li = 0; li < lines.length; li++) {
               var e = lines[li];
               var who = shortWho(e.who);
-              var tbit = e.time ? "<span class=\"t\">" + esc(fmtHm(e.time)) + "</span> " : "";
+              var tbit = (e.time || e.end) ? "<span class=\"t\">" + esc(fmtRange(e.time, e.end) || "—") + "</span> " : "";
               var label = who ? (who + " · " + (e.title || "")) : (e.title || "");
               evHtml += "<div class=\"ev\"><span class=\"dot\" style=\"background:"
                 + colorWho(e.who) + "\"></span>" + tbit + esc(label) + "</div>";

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v94d-today-rollover">
+  <meta name="fiilis-build" content="20260922-v94e-today-group">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,19 +125,20 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .ev-row.past { opacity: .4; }
 .ev-row.live { font-weight: 650; }
 .ev-row .when {
-  flex: 0 0 8.2vmin;
-  display: flex; flex-direction: column; justify-content: flex-start;
+  flex: 0 0 12.2vmin;
   font-variant-numeric: tabular-nums;
   white-space: nowrap; overflow: hidden;
-  line-height: 1.15; padding-top: .05vmin;
+  line-height: 1.2; padding-top: .05vmin;
+  font-weight: 750; font-size: 1.55vmin; letter-spacing: -.02em; color: #2c2418;
 }
-.ev-row .when .t0 { font-weight: 750; font-size: 1.7vmin; letter-spacing: -.02em; color: #2c2418; }
-.ev-row .when .t1 { font-weight: 550; font-size: 1.35vmin; color: #6c5c44; letter-spacing: -.02em; }
-.ev-row .when .t1::before { content: "– "; color: #b0a090; }
-.ev-row .when.solo .t0 { font-size: 1.75vmin; }
-.ev-row.live .when .t0 { color: #8f6524; }
-.ev-row.live .when .t1 { color: #a07838; }
-.ev-row.past .when .t0, .ev-row.past .when .t1 { color: #9a8b74; }
+.ev-row.live .when { color: #8f6524; }
+.ev-row.past .when { color: #9a8b74; }
+.today-group-lbl {
+  font-size: 1.05vmin; font-weight: 650; letter-spacing: .1em;
+  text-transform: uppercase; color: #a09078;
+  margin: .55vmin 0 .12vmin; opacity: .9;
+}
+.today-group-lbl:first-child { margin-top: 0; }
 .ev-row .dot {
   width: .85vmin; height: .85vmin; border-radius: 999px;
   margin: .65vmin .7vmin 0 0; flex: 0 0 auto;
@@ -344,13 +345,11 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .block.wilma { display: none !important; }
 
 
-.today-list.d6 .ev-row .when .t0 { font-size: 1.55vmin; }
-.today-list.d6 .ev-row .when .t1 { font-size: 1.25vmin; }
-.today-list.d8 .ev-row .when .t0 { font-size: 1.45vmin; }
-.today-list.d8 .ev-row .when .t1 { font-size: 1.15vmin; }
-.today-list.d10 .ev-row .when .t0 { font-size: 1.3vmin; }
-.today-list.d10 .ev-row .when .t1 { font-size: 1.05vmin; }
-.today-list .ev-row { min-height: 3.6vmin; align-items: flex-start; }
+.today-list.d6 .ev-row .when { font-size: 1.4vmin; flex-basis: 11vmin; }
+.today-list.d8 .ev-row .when { font-size: 1.3vmin; flex-basis: 10.2vmin; }
+.today-list.d10 .ev-row .when { font-size: 1.2vmin; flex-basis: 9.5vmin; }
+.today-list.d12 .ev-row .when { font-size: 1.1vmin; flex-basis: 9vmin; }
+.today-list .ev-row { min-height: 3.2vmin; align-items: flex-start; }
 </style>
 </head>
 <body class="morning">
@@ -422,7 +421,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v94d-today-rollover";
+  var BUILD = "20260922-v94e-today-group";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -854,6 +853,34 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     if (a && b) return fmtHm(a) + "–" + fmtHm(b);
     return a ? fmtHm(a) : "";
   }
+  var KID_WHO_RANK = { Ellen: 1, Mea: 2, Milla: 3, Samuel: 4 };
+  function isKidHobby(e) {
+    if (!e) return false;
+    var who = e.who || "";
+    if (!KID_WHO_RANK[who]) return false;
+    var title = String(e.title || "");
+    if (/deadline|ilmoita|wilma/i.test(title)) return false;
+    var kind = String(e.kind || "").toLowerCase();
+    if (kind === "treeni" || kind === "harrastus" || kind === "kisa") return true;
+    if (e.time && kind !== "koulu") return true;
+    return false;
+  }
+  function whoRankToday(who) {
+    return KID_WHO_RANK[who] || 9;
+  }
+  function sortTodayEvents(list) {
+    return (list || []).slice().sort(function (a, b) {
+      var ha = isKidHobby(a) ? 0 : 1;
+      var hb = isKidHobby(b) ? 0 : 1;
+      if (ha !== hb) return ha - hb;
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      if (ta !== tb) return ta - tb;
+      var wa = whoRankToday(a.who), wb = whoRankToday(b.who);
+      if (wa !== wb) return wa - wb;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
+  }
   function daysUntil(iso, now) {
     var a = Date.UTC(now.year, now.month - 1, now.day);
     var p = String(iso).split("-");
@@ -1062,32 +1089,40 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     var focus = todayFocus(now);
     var lbl = document.getElementById("todayLbl");
     if (lbl) lbl.textContent = focus.label;
-    var out = dayEventsClean(focus.iso);
+    var out = sortTodayEvents(dayEventsClean(focus.iso));
     if (!out.length) {
       el.className = "today-list";
       el.innerHTML = "<div class=\"today-empty\">Rauhaa · ei merkintöjä " + (focus.rolled ? "huomenna" : "tänään") + "</div>";
       return;
     }
     var nowMin = focus.rolled ? -1 : now.minutes;
+    var hasHobby = false, hasOther = false;
+    for (var gi = 0; gi < out.length; gi++) {
+      if (isKidHobby(out[gi])) hasHobby = true; else hasOther = true;
+    }
+    var showLabels = hasHobby && hasOther;
+    var lastGroup = null;
     var html = "";
     for (var i = 0; i < out.length; i++) {
       var e = out[i];
+      var grp = isKidHobby(e) ? "hobby" : "other";
+      if (showLabels && grp !== lastGroup) {
+        html += "<div class=\"today-group-lbl\">" + (grp === "hobby" ? "Treenit" : "Muut") + "</div>";
+        lastGroup = grp;
+      }
       var st = parseMin(e.time);
       var en = parseMin(e.end); if (en == null && st != null) en = st + 60;
       var cls = "ev-row";
       if (st != null && en != null && nowMin >= en) cls += " past";
       else if (st != null && st <= nowMin && nowMin < en) cls += " live";
-      var t0 = fmtHm(e.time) || "—";
-      var t1 = fmtHm(e.end) || "";
+      var when = fmtRange(e.time, e.end) || "—";
       var who = shortWho(e.who || "");
       var meta = [];
       var drv = driverOf(e, focus.iso);
       if (e.place) meta.push(e.place);
       if (drv) meta.push(drv);
       html += "<div class=\"" + cls + "\">"
-        + "<div class=\"when" + (t1 ? "" : " solo") + "\"><span class=\"t0\">" + esc(t0) + "</span>"
-        + (t1 ? ("<span class=\"t1\">" + esc(t1) + "</span>") : "")
-        + "</div>"
+        + "<div class=\"when\">" + esc(when) + "</div>"
         + "<div class=\"dot\" style=\"background:" + colorForWho(e.who) + "\"></div>"
         + "<div class=\"txt\"><span class=\"who\">" + esc(who) + "</span> · " + esc(e.title || "")
         + (meta.length ? "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>" : "")

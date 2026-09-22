@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v80">
+  <meta name="fiilis-build" content="20260922-v81">
   <meta name="theme-color" content="#F7F1E3">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,7 +113,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; col
 }
 
 /* Tänään list — crystal clear */
-.today-list { flex: 1; min-height: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
+.today-list { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
 .ev-row {
   display: flex; align-items: flex-start;
   padding: .38vmin 0;
@@ -263,7 +263,22 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   .hero { flex: 0 0 42%; margin-bottom: 1vmin; }
   .side { margin-left: 0; }
 }
-  </style>
+  
+.today-list .ev-row { flex: 0 1 auto; min-height: 0; }
+.today-list.d6 .ev-row { padding: .32vmin 0; font-size: 1.85vmin; }
+.today-list.d8 .ev-row { padding: .2vmin 0; font-size: 1.6vmin; }
+.today-list.d8 .ev-row .meta { font-size: 1.25vmin; }
+.today-list.d10 .ev-row { padding: .1vmin 0; font-size: 1.4vmin; }
+.today-list.d10 .ev-row .meta { font-size: 1.15vmin; display: none; }
+.today-list.d12 .ev-row { padding: .06vmin 0; font-size: 1.25vmin; }
+.today-list.d12 .ev-row .meta { display: none; }
+.today-list .ev-row .txt { overflow: hidden; }
+.today-list .ev-row .txt > span, .today-list .ev-row .who { white-space: nowrap; }
+.wilma-strip { flex: 0 0 auto; max-height: 10vmin; overflow: hidden; }
+.side { overflow: hidden; }
+.block.grow { overflow: hidden; }
+.tv, .main, .hero { overflow: hidden; }
+</style>
 </head>
 <body class="morning">
 <div class="tv" id="app">
@@ -321,7 +336,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     <div class="chips" id="chips"></div>
     <div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-      <span class="brand">v80 vaaka</span>
+      <span class="brand">v81 vaaka</span>
     </div>
   </div>
 </div>
@@ -334,7 +349,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v80";
+  var BUILD = "20260922-v81";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -788,6 +803,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     if (!el) return;
     var out = dayEventsClean(now.iso);
     if (!out.length) {
+      el.className = "today-list";
       el.innerHTML = "<div class=\"today-empty\">Rauhaa · ei merkintöjä tänään</div>";
       return;
     }
@@ -813,6 +829,12 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         + (meta.length ? "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>" : "")
         + "</div></div>";
     }
+    var dens = "";
+    if (out.length >= 12) dens = " d12";
+    else if (out.length >= 10) dens = " d10";
+    else if (out.length >= 8) dens = " d8";
+    else if (out.length >= 6) dens = " d6";
+    el.className = "today-list" + dens;
     el.innerHTML = html;
   }
 

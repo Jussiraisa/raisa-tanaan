@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-22T12:39:53+03:00",
+  "updated": "2026-09-22T12:56:51+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -450,13 +450,6 @@
     },
     {
       "date": "2026-09-26",
-      "time": "13:00",
-      "who": "Mea",
-      "title": "Synttärit",
-      "kind": "muisto"
-    },
-    {
-      "date": "2026-09-26",
       "time": "16:00",
       "end": "21:00",
       "who": "Milla",
@@ -887,6 +880,14 @@
       "title": "Syysloma alkaa",
       "kind": "loma",
       "endDate": "2026-10-18"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "13:00",
+      "who": "Mea",
+      "title": "Synttärit · sukulaiset",
+      "kind": "juhla",
+      "note": "Menu: kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi (Jussi) · sienipiirakka + lohipiirakka (Jussi)"
     }
   ],
   "schoolLunch": {
@@ -1008,7 +1009,8 @@
     {
       "start": "2026-09-26",
       "end": "2026-09-26",
-      "label": "Mea · synttärit"
+      "label": "Mea synttärit · sukulaiset · klo 13",
+      "menu": "kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
     },
     {
       "start": "2026-10-02",

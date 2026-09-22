@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v70b-phone">
+  <meta name="fiilis-build" content="20260922-v70c-daytap">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#EDE6DB">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -238,7 +238,58 @@ body.evening .tv, body.night .tv { background: #302C28; }
 .photo-cap { background: -webkit-linear-gradient(top, rgba(30,26,22,0), rgba(30,26,22,.82)); background: linear-gradient(to bottom, rgba(30,26,22,0), rgba(30,26,22,.82)); }
 body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-gradient(top, rgba(20,17,14,0), rgba(20,17,14,.85)); background: linear-gradient(to bottom, rgba(20,17,14,0), rgba(20,17,14,.85)); }
 
-  </style>
+  
+.mday { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.mday.pad { cursor: default; pointer-events: none; }
+.mday:active { transform: scale(.98); }
+.day-sheet {
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(40,30,18,.45);
+  display: none; align-items: flex-end; justify-content: center;
+  padding: 0;
+}
+.day-sheet.on { display: flex; }
+.day-sheet-card {
+  width: 100%; max-height: min(78vh, 640px);
+  background: #F6F1E9; color: #272522;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -8px 40px rgba(40,30,18,.18);
+  padding: 14px 16px calc(18px + env(safe-area-inset-bottom, 0px));
+  overflow: auto;
+}
+.day-sheet-hd {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-bottom: 10px;
+}
+.day-sheet-hd h2 {
+  margin: 0; font-family: Newsreader, Georgia, serif;
+  font-size: 1.35rem; font-weight: 500; letter-spacing: -.02em;
+}
+.day-sheet-x {
+  border: 0; background: rgba(60,44,24,.08); color: #5c4e3a;
+  width: 36px; height: 36px; border-radius: 999px;
+  font-size: 1.25rem; line-height: 1; cursor: pointer;
+}
+.day-sheet-list { display: flex; flex-direction: column; gap: 8px; }
+.day-ev {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 12px; border-radius: 12px;
+  background: #EFE8DC; border: 1px solid rgba(44,36,24,.06);
+}
+.day-ev .when {
+  flex: 0 0 auto; min-width: 4.6rem;
+  font-variant-numeric: tabular-nums; font-weight: 700; font-size: .95rem;
+  color: #5a4a34;
+}
+.day-ev .body { flex: 1; min-width: 0; }
+.day-ev .who { font-weight: 700; }
+.day-ev .meta { font-size: .82rem; color: #6F6860; margin-top: 2px; }
+.day-ev .dot {
+  width: 8px; height: 8px; border-radius: 999px; margin-top: .45rem; flex: 0 0 auto;
+}
+.day-empty { color: #6F6860; font-style: italic; padding: 8px 2px; }
+
+</style>
 </head>
 <body class="morning">
 <div class="tv" id="app">
@@ -298,9 +349,20 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   <div class="foot">
     <div class="chips" id="chips"></div>
     <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-    <span class="brand">v70</span>
+    <span class="brand">v70c-daytap</span>
   </div>
 </div>
+
+<div class="day-sheet" id="daySheet" aria-hidden="true">
+  <div class="day-sheet-card" role="dialog" aria-modal="true" aria-labelledby="daySheetTitle">
+    <div class="day-sheet-hd">
+      <h2 id="daySheetTitle">Päivä</h2>
+      <button type="button" class="day-sheet-x" id="daySheetClose" aria-label="Sulje">×</button>
+    </div>
+    <div class="day-sheet-list" id="daySheetList"></div>
+  </div>
+</div>
+
 <script>
 (function () {
   var DAYS = [
@@ -1127,6 +1189,69 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     return out;
   }
 
+
+  function fmtEvTime(e) {
+    if (!e) return "";
+    if (e.time && e.end) return fmtRange(e.time, e.end);
+    if (e.time) return fmtHm(e.time);
+    return "päivä";
+  }
+  function openDaySheet(iso) {
+    var sheet = document.getElementById("daySheet");
+    var title = document.getElementById("daySheetTitle");
+    var list = document.getElementById("daySheetList");
+    if (!sheet || !list) return;
+    var now = helsinkiNow();
+    var p = isoParts(iso);
+    var wd = new Date(Date.UTC(p.y, p.m - 1, p.d)).getUTCDay();
+    var dayName = DAYS[wd] ? (DAYS[wd].full || DAYS[wd].short) : "";
+    if (title) {
+      title.textContent = (dayName ? dayName + " " : "") + p.d + "." + p.m + ".";
+      if (iso === now.iso) title.textContent += " · tänään";
+    }
+    var evs = dayBucketEvents(iso, now) || [];
+    /* Prefer real events first, keep koulu */
+    evs = evs.slice().sort(function (a, b) {
+      function rank(e) {
+        if (e.kind === "koulu") return 2;
+        var ta = parseMin(e.time); return ta == null ? 1 : 0;
+      }
+      var ra = rank(a), rb = rank(b);
+      if (ra !== rb) return ra - rb;
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      return ta - tb;
+    });
+    if (!evs.length) {
+      list.innerHTML = "<div class=\"day-empty\">Ei merkintöjä tälle päivälle</div>";
+    } else {
+      var html = "";
+      for (var i = 0; i < evs.length; i++) {
+        var e = evs[i];
+        var who = shortWho(e.who || "") || (e.who === "perhe" || e.who === "Perhe" ? "Perhe" : (e.who || ""));
+        var when = fmtEvTime(e);
+        var meta = [];
+        if (e.place) meta.push(e.place);
+        if (e.driver) meta.push(e.driver);
+        if (e.kind === "koulu") meta.push("koulu");
+        html += "<div class=\"day-ev\"><span class=\"dot\" style=\"background:" + colorForWho(e.who) + "\"></span>"
+          + "<div class=\"when\">" + esc(when) + "</div>"
+          + "<div class=\"body\"><div class=\"who\">" + esc(who ? (who + " · ") : "") + esc(e.title || e.label || "Merkintä") + "</div>"
+          + (meta.length ? "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>" : "")
+          + "</div></div>";
+      }
+      list.innerHTML = html;
+    }
+    sheet.className = "day-sheet on";
+    sheet.setAttribute("aria-hidden", "false");
+  }
+  function closeDaySheet() {
+    var sheet = document.getElementById("daySheet");
+    if (!sheet) return;
+    sheet.className = "day-sheet";
+    sheet.setAttribute("aria-hidden", "true");
+  }
+
   function paintMonthCal(now) {
     var grid = document.getElementById("monthCalGrid");
     var lbl = document.getElementById("monthCalLbl");
@@ -1212,7 +1337,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
         } else if (iso >= LONTOO_START && iso <= LONTOO_END) {
           label = "<div class=\"mlabel\">Lontoo</div>";
         }
-        cells.push("<div class=\"" + cls + "\"><div class=\"dn\">" + num + "</div>"
+        cells.push("<div class=\"" + cls + "\" data-iso=\"" + iso + "\" role=\"button\" tabindex=\"0\"><div class=\"dn\">" + num + "</div>"
           + label
           + "</div>");
       }
@@ -1229,7 +1354,19 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
         for (var j = 0; j < 7; j++) html += cells[i + j];
         html += "</div>";
       }
+      
       grid.innerHTML = html;
+      grid.onclick = function (ev) {
+        var node = ev.target;
+        while (node && node !== grid) {
+          if (node.getAttribute && node.getAttribute("data-iso")) {
+            openDaySheet(node.getAttribute("data-iso"));
+            return;
+          }
+          node = node.parentNode;
+        }
+      };
+
     } catch (err) {
       grid.textContent = "Kalenteri ei ladannut";
     }
@@ -1423,6 +1560,12 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   paintChips();
   paint();
   paintPhoto();
+  
+  var daySheet = document.getElementById("daySheet");
+  var daySheetClose = document.getElementById("daySheetClose");
+  if (daySheetClose) daySheetClose.onclick = function (e) { e.stopPropagation(); closeDaySheet(); };
+  if (daySheet) daySheet.onclick = function (e) { if (e.target === daySheet) closeDaySheet(); };
+
   loadSchedule();
   loadPhotos();
   loadWeather();

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v76-nyt-korostus">
+  <meta name="fiilis-build" content="20260922-v77-rauha">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,15 +26,15 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .serif { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; }
 .empty { color: #73634a; font-size: 1.48vmin; font-weight: 500; }
 .card { background: #fbf6eb; border: 1px solid rgba(44,36,24,.08); border-radius: 1.481vmin; box-shadow: 0 .28vmin .93vmin rgba(80,50,20,.06); padding: 1.111vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
-.lbl { font-size: 1.57vmin; line-height: 1; font-weight: 600; letter-spacing: .06em; color: #8f6524; margin-bottom: 1.111vmin; -ms-flex: 0 0 auto; flex: 0 0 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lbl { font-size: 1.15vmin; line-height: 1; font-weight: 600; letter-spacing: .06em; color: #8f6524; margin-bottom: .55vmin; -ms-flex: 0 0 auto; flex: 0 0 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .scroll { min-height: 0; overflow: hidden; }
 .clock { -ms-flex: 0 0 auto; flex: 0 0 auto; color: #1a140e; background: #fffcf5; box-shadow: 0 .46vmin 1.39vmin rgba(40,28,14,.12); border-radius: 1.204vmin; padding: .556vmin 1.111vmin .37vmin; min-width: 20vmin; text-align: center; }
 .greet-block { -ms-flex: 1; flex: 1; min-width: 0; }
 .greet { color: #8f6524; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.today-strip { margin-top: .3vmin; max-width: min(78vmin, 100%); overflow: visible; white-space: normal; font-size: 1.22vmin; line-height: 1.4; font-weight: 500; color: #5c4e3a; letter-spacing: .01em; }
-.today-strip .nowbox { display: inline-block; margin: 0 .55vmin .2vmin 0; padding: .18vmin .7vmin; border-radius: .55vmin; background: rgba(201,148,58,.22); border: 1px solid rgba(143,101,36,.35); color: #2c2418; font-size: 1.38vmin; font-weight: 650; line-height: 1.35; white-space: nowrap; vertical-align: baseline; }
-.today-strip .nowbox .badge { display: inline-block; margin-right: .45vmin; padding: .05vmin .4vmin; border-radius: .35vmin; background: #8f6524; color: #fff8ea; font-size: 1.05vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; vertical-align: .05em; }
+.today-strip { margin-top: .45vmin; max-width: min(92vmin, 100%); overflow: visible; white-space: normal; font-size: 1.55vmin; line-height: 1.45; font-weight: 550; color: #5c4e3a; letter-spacing: .01em; }
+.today-strip .nowbox { display: inline-block; margin: 0 .55vmin .25vmin 0; padding: .28vmin .85vmin; border-radius: .55vmin; background: rgba(201,148,58,.22); border: 1px solid rgba(143,101,36,.35); color: #2c2418; font-size: 1.65vmin; font-weight: 650; line-height: 1.35; white-space: nowrap; vertical-align: baseline; }
+.today-strip .nowbox .badge { display: inline-block; margin-right: .45vmin; padding: .05vmin .45vmin; border-radius: .35vmin; background: #8f6524; color: #fff8ea; font-size: 1.15vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; vertical-align: .05em; }
 .today-strip .nowbox .t { font-variant-numeric: tabular-nums; font-weight: 750; }
 .today-strip .list { display: inline; }
 .today-strip .item { white-space: nowrap; }
@@ -42,7 +42,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .today-strip .item.live { font-weight: 700; color: #2c2418; }
 .today-strip .item.live .t, .today-strip .item.live .w, .today-strip .item.live .x { color: #7a5214; font-weight: 700; }
 .today-strip .item.up .t { color: #2c2418; }
-.today-strip .tl { font-weight: 650; color: #8f6524; margin-right: .45vmin; }
+.today-strip .tl { font-weight: 700; color: #8f6524; margin-right: .55vmin; font-size: 1.65vmin; }
 .today-strip .sep { color: rgba(92,78,58,.35); margin: 0 .35vmin; }
 .today-strip .t { font-variant-numeric: tabular-nums; font-weight: 650; color: #2c2418; }
 .today-strip .w { font-weight: 600; color: #6c5c44; }
@@ -52,8 +52,8 @@ body.evening .today-strip .tl, body.night .today-strip .tl { color: #7d5619; }
 body.evening .today-strip .t, body.night .today-strip .t { color: #241b0f; }
 body.evening .today-strip .nowbox, body.night .today-strip .nowbox { background: rgba(201,148,58,.28); border-color: rgba(125,86,25,.4); }
 body.evening .today-strip .nowbox .badge, body.night .today-strip .nowbox .badge { background: #7d5619; }
-.sub { color: #6c5c44; margin-top: .556vmin; }
-.date { color: #6c5c44; margin-top: .2vmin; }
+.sub { color: #6c5c44; margin-top: .35vmin; font-size: 1.2vmin; }
+.date { color: #6c5c44; margin-top: .15vmin; font-size: 1.25vmin; }
 .wx { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; max-width: 34vmin; }
 .wx > * + * { margin-left: .833vmin; }
 .wxicon { font-size: 3.6vmin; line-height: 1; }
@@ -62,27 +62,27 @@ body.evening .today-strip .nowbox .badge, body.night .today-strip .nowbox .badge
 .wxmeta { font-size: 1.3vmin; line-height: 1.3; font-weight: 500; letter-spacing: .02em; color: #6c5c44; margin-top: .2vmin; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .kids-row { -ms-flex: 1; flex: 1; display: -ms-flexbox; display: flex; min-height: 0; }
 .kids-row > * + * { margin-left: 1.481vmin; }
-.kid-card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: 1.204vmin; box-shadow: none; padding: 1.111vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; overflow: hidden; }
+.kid-card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: .9vmin; box-shadow: none; padding: .55vmin .65vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; overflow: hidden; }
 .kid-head { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex: 0 0 auto; flex: 0 0 auto; }
 .kid-head > * + * { margin-left: .37vmin; }
-.kid-dot { width: 1.11vmin; height: 1.11vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.kid-name { font-size: 1.85vmin; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; color: #2c2418; }
-.kid-body { margin-top: .556vmin; min-height: 0; overflow: hidden; }
-.kid-sec { font-size: 1.1vmin; line-height: 1; font-weight: 700; letter-spacing: .06em; color: #8f6524; margin: .556vmin 0 .37vmin; }
+.kid-dot { width: .85vmin; height: .85vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.kid-name { font-size: 1.35vmin; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; color: #2c2418; }
+.kid-body { margin-top: .28vmin; min-height: 0; overflow: hidden; }
+.kid-sec { font-size: .85vmin; line-height: 1; font-weight: 700; letter-spacing: .06em; color: #8f6524; margin: .556vmin 0 .37vmin; }
 .kid-sec:first-child { margin-top: 0; }
-.kid-line { font-size: 1.48vmin; line-height: 1.3; font-weight: 500; color: #2c2418; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kid-line { font-size: 1.1vmin; line-height: 1.3; font-weight: 500; color: #2c2418; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .kid-line .t { font-weight: 650; }
 .kid-line.m { color: #6c5c44; font-weight: 500; }
-.kid-empty { font-size: 1.48vmin; line-height: 1.3; color: #73634a; }
-.kid-body > *:nth-child(n+8) { display: none; }
+.kid-empty { font-size: 1.05vmin; line-height: 1.3; color: #73634a; }
+.kid-body > *:nth-child(n+6) { display: none; }
 .parents-row { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; }
 .parents-row > * + * { margin-left: 1.481vmin; }
-.parent-card { -ms-flex: 1; flex: 1; min-width: 0; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: .833vmin; padding: .37vmin 1.111vmin; overflow: hidden; }
+.parent-card { -ms-flex: 1; flex: 1; min-width: 0; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: .65vmin; padding: .2vmin .65vmin; overflow: hidden; }
 .parent-card > * + * { margin-left: .556vmin; }
-.parent-dot { width: 1.11vmin; height: 1.11vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.parent-name { font-size: 1.67vmin; font-weight: 700; letter-spacing: -.01em; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.parent-body { font-size: 1.48vmin; font-weight: 500; color: #6c5c44; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.duo-lunch { -ms-flex: 0 0 auto; flex: 0 0 auto; font-size: 1.48vmin; line-height: 1.3; font-weight: 500; color: #6c5c44; padding: 0 1.111vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.parent-dot { width: .8vmin; height: .8vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.parent-name { font-size: 1.2vmin; font-weight: 700; letter-spacing: -.01em; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.parent-body { font-size: 1.05vmin; font-weight: 500; color: #6c5c44; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.duo-lunch { -ms-flex: 0 0 auto; flex: 0 0 auto; font-size: 1.05vmin; line-height: 1.3; font-weight: 500; color: #6c5c44; padding: 0 1.111vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .photo-wrap { position: relative; border-radius: 1.481vmin; border: 1px solid rgba(44,36,24,.08); box-shadow: 0 .56vmin 1.76vmin rgba(80,50,20,.09); overflow: hidden; background: #f3ebdd; }
 .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .photo-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.778vmin 1.481vmin 1.111vmin; color: #f7f1e3; font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 1.76vmin; line-height: 1.25; font-weight: 400; }
@@ -142,62 +142,83 @@ body.evening .today-strip .nowbox .badge, body.night .today-strip .nowbox .badge
 .foot > * + * { margin-left: 1.111vmin; }
 .chips { display: -ms-flexbox; display: flex; min-width: 0; overflow: hidden; }
 .chips > * + * { margin-left: .556vmin; }
-.chip { font-size: 1.3vmin; line-height: 1; font-weight: 600; padding: .46vmin .833vmin; border-radius: 999px; color: #2c2418; opacity: .88; white-space: nowrap; }
-.foot .tagline { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 1.57vmin; font-style: italic; font-weight: 400; color: #73634a; white-space: nowrap; }
-.foot .brand { font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em; color: #73634a; white-space: nowrap; text-transform: uppercase; }
+.chip { font-size: .95vmin; line-height: 1; font-weight: 600; padding: .28vmin .55vmin; border-radius: 999px; color: #2c2418; opacity: .88; white-space: nowrap; }
+.foot .tagline { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 1.15vmin; font-style: italic; font-weight: 400; color: #73634a; white-space: nowrap; }
+.foot .brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; color: #73634a; white-space: nowrap; text-transform: uppercase; }
 .tv { height: 100%; width: 100%; padding: 1.019vmin 2.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; background: #f7f1e3; }
 .tv > * + * { margin-top: .833vmin; }
 .head { -ms-flex: 0 0 16.2vmin; flex: 0 0 16.2vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
 .head > * + * { margin-left: 2.037vmin; }
 .main { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; display: -ms-flexbox; display: flex; }
 .main > * + * { margin-left: .833vmin; }
-.col-kuva { -ms-flex: 1.12; flex: 1.35; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
-.col-kuva > * + * { margin-top: .833vmin; }
+.col-kuva { -ms-flex: 1.6; flex: 1.75; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+.col-kuva > * + * { margin-top: .65vmin; }
 .col-kuva .photo-wrap { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
-.col-kuva .odotcard { -ms-flex: 0 0 17vmin; flex: 0 0 17vmin; height: 17vmin; padding: .9vmin 1.3vmin; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; overflow: hidden; }
-.col-kuva .odotcard .cd-big { font-size: 4.6vmin; }
-.col-kuva .odotcard .cd-label { font-size: 1.7vmin; }
-.col-tieto { -ms-flex: 1; flex: 0.92; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
-.col-tieto > * + * { margin-top: .833vmin; }
-.duo { -ms-flex: 0 0 23.5vmin; flex: 0 0 23.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
-.duo > * + * { margin-top: .556vmin; }
+.col-kuva .odotcard { -ms-flex: 0 0 18.5vmin; flex: 0 0 18.5vmin; height: 18.5vmin; padding: .85vmin 1.2vmin; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; overflow: hidden; }
+.col-kuva .odotcard .lbl { font-size: 1.45vmin; margin-bottom: .45vmin; letter-spacing: .07em; }
+.col-kuva .odotcard .cd-big { font-size: 5.0vmin; }
+.col-kuva .odotcard .cd-label { font-size: 1.75vmin; }
+.col-kuva .odotcard .odote { font-size: 1.35vmin; }
+.col-kuva .odotcard .odote .d { font-size: 1.25vmin; }
+.col-tieto { -ms-flex: 1; flex: 0.72; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+.col-tieto > * + * { margin-top: .55vmin; }
+.duo { -ms-flex: 0 0 16.5vmin; flex: 0 0 16.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
+.duo > * + * { margin-top: .35vmin; }
 .col-tieto .kid-line { white-space: normal; }
-.kid-more { font-size: 1.39vmin; line-height: 1.3; font-weight: 600; color: #73634a; margin-top: .37vmin; }
-.col-tieto .kid-body > *:nth-child(n+9) { display: none; }
-.kal-rivi { -ms-flex: 1 1 auto; flex: 1 1 auto; display: -ms-flexbox; display: flex; min-height: 0; }
-.kal-rivi .card { -ms-flex: 1; flex: 1; }
-.kal-rivi .card { padding: .833vmin; }
-.kal-rivi .lbl { margin-bottom: .556vmin; }
+.kid-more { font-size: 1.0vmin; line-height: 1.3; font-weight: 600; color: #73634a; margin-top: .2vmin; }
+.col-tieto .kid-body > *:nth-child(n+6) { display: none; }
+.kids-row > * + * { margin-left: .65vmin; }
+.parents-row > * + * { margin-left: .65vmin; }
+/* Kalenteri: pieni, rauhallinen */
+.kal-rivi { -ms-flex: 0 0 11vmin; flex: 0 0 11vmin; height: 11vmin; margin-top: auto; display: -ms-flexbox; display: flex; min-height: 0; max-height: 11vmin; }
+.kal-rivi .card { -ms-flex: 1; flex: 1; padding: .4vmin .55vmin; }
+.kal-rivi .lbl { margin-bottom: .25vmin; font-size: .95vmin; }
 .kal-rivi .month-row.month-head { padding-bottom: 0; }
-.kal-rivi .mday { padding: .28vmin .556vmin; }
-.kal-rivi .mday .dn { font-size: 1vmin; }
-.kal-rivi .mday .dn .mo { font-size: .95vmin; }
-.kal-rivi .mlabel { font-size: .8vmin; line-height: 1.05; margin-top: .05vmin; }
-.kal-rivi .mdot { width: .5vmin; height: .5vmin; margin-right: .28vmin; }
-.kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel ~ .mlabel ~ .mlabel { display: none; }
-.list-duo { -ms-flex: 0 0 20.5vmin; flex: 0 0 20.5vmin; display: -ms-flexbox; display: flex; min-height: 0; }
+.kal-rivi .mdow { font-size: .75vmin; }
+.kal-rivi .month-row + .month-row { margin-top: .15vmin; }
+.kal-rivi .month-row > * + * { margin-left: .15vmin; }
+.kal-rivi .mday { padding: .08vmin .2vmin; border-radius: .35vmin; }
+.kal-rivi .mday .dn { font-size: .72vmin; }
+.kal-rivi .mday .dn .mo { font-size: .65vmin; }
+.kal-rivi .mlabel { font-size: .55vmin; line-height: 1.0; margin-top: .02vmin; }
+.kal-rivi .mdot { width: .32vmin; height: .32vmin; margin-right: .15vmin; }
+.kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel { display: none; }
+/* Huomenna + Ruoka: korostettu ala-alue */
+.list-duo { -ms-flex: 0 0 17.5vmin; flex: 0 0 17.5vmin; display: -ms-flexbox; display: flex; min-height: 0; }
 .list-duo > * + * { margin-left: .833vmin; }
-.list-duo .card { padding: 1.111vmin 1.481vmin; }
-.list-duo .tmw-line { white-space: normal; -ms-flex-align: baseline; align-items: baseline; }
+.list-duo .card { padding: 1.0vmin 1.35vmin; }
+.list-duo .tomorrowcard .lbl,
+.list-duo .mealcard .lbl { font-size: 1.45vmin; margin-bottom: .55vmin; letter-spacing: .07em; }
+.list-duo .tmw-line { white-space: normal; -ms-flex-align: baseline; align-items: baseline; font-size: 1.8vmin; padding: .35vmin 0; }
 .list-duo .tmw-line .title { white-space: normal; }
-.list-duo .meal-line { white-space: normal; }
+.list-duo .tmw-line .place { font-size: 1.45vmin; }
+.list-duo .meal-line { white-space: normal; font-size: 1.7vmin; padding: .35vmin 0; }
 .list-duo .meal-line .t { white-space: normal; }
-.list-duo .wxcard { -ms-flex: 1.45; flex: 1.45; }
-.list-duo .tomorrowcard { -ms-flex: 1.15; flex: 1.15; }
+.list-duo .tomorrowcard { -ms-flex: 1.35; flex: 1.35; }
 .list-duo .mealcard { -ms-flex: 1; flex: 1; }
-.foot { -ms-flex: 0 0 2.8vmin; flex: 0 0 2.8vmin; }
-.list-duo .tmw-line:nth-child(n+4) { display: none; }
-.list-duo .meal-line:nth-child(n+5) { display: none; }
-body.evening .col-tieto .kid-line, body.night .col-tieto .kid-line { font-size: 1.62vmin; }
-body.evening .col-tieto .kid-body > *:nth-child(n+6), body.night .col-tieto .kid-body > *:nth-child(n+6) { display: none; }
-body.evening .kal-rivi .mlabel, body.night .kal-rivi .mlabel { font-size: .9vmin; }
-body.evening .kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel ~ .mlabel, body.night .kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel ~ .mlabel { display: none; }
-body.evening .kal-rivi .mday .dn, body.night .kal-rivi .mday .dn { font-size: 1.25vmin; }
-body.evening .list-duo .tmw-line, body.night .list-duo .tmw-line { font-size: 1.85vmin; }
-body.evening .list-duo .meal-line, body.night .list-duo .meal-line { font-size: 1.85vmin; }
-body.evening .list-duo .tmw-line:nth-child(n+3), body.night .list-duo .tmw-line:nth-child(n+3) { display: none; }
-body.evening .list-duo .meal-line:nth-child(n+4), body.night .list-duo .meal-line:nth-child(n+4) { display: none; }
-body.evening .wxday .tm, body.night .wxday .tm { font-size: 1.39vmin; }
+.list-duo .tmw-line:nth-child(n+5) { display: none; }
+.list-duo .meal-line:nth-child(n+6) { display: none; }
+/* Viikkosää: ohut koko-leveys rivi alaosassa */
+.wx-mini { -ms-flex: 0 0 5.4vmin; flex: 0 0 5.4vmin; height: 5.4vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; padding: .25vmin .65vmin; }
+.wx-mini .lbl { font-size: .9vmin; margin-bottom: .2vmin; opacity: .85; }
+.wx-mini .wxstrip { -ms-flex: 1; flex: 1; min-height: 0; }
+.wx-mini .wxstrip > * + * { margin-left: .35vmin; }
+.wx-mini .wxday { padding: .15vmin .2vmin; border-radius: .45vmin; -ms-flex-pack: center; justify-content: center; }
+.wx-mini .wxday .dn { font-size: .7vmin; }
+.wx-mini .wxday .ic { font-size: 1.35vmin; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+.wx-mini .wxday .tm { font-size: .75vmin; }
+.wx-mini .wxday .extra { display: none; }
+.foot { -ms-flex: 0 0 2.4vmin; flex: 0 0 2.4vmin; }
+body.evening .col-tieto .kid-line, body.night .col-tieto .kid-line { font-size: 1.15vmin; }
+body.evening .col-tieto .kid-body > *:nth-child(n+5), body.night .col-tieto .kid-body > *:nth-child(n+5) { display: none; }
+body.evening .kal-rivi .mlabel, body.night .kal-rivi .mlabel { font-size: .55vmin; }
+body.evening .kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel, body.night .kal-rivi .mday .mlabel ~ .mlabel ~ .mlabel { display: none; }
+body.evening .kal-rivi .mday .dn, body.night .kal-rivi .mday .dn { font-size: .78vmin; }
+body.evening .list-duo .tmw-line, body.night .list-duo .tmw-line { font-size: 1.95vmin; }
+body.evening .list-duo .meal-line, body.night .list-duo .meal-line { font-size: 1.9vmin; }
+body.evening .list-duo .tmw-line:nth-child(n+5), body.night .list-duo .tmw-line:nth-child(n+5) { display: none; }
+body.evening .list-duo .meal-line:nth-child(n+6), body.night .list-duo .meal-line:nth-child(n+6) { display: none; }
+body.evening .wx-mini .wxday .tm, body.night .wx-mini .wxday .tm { font-size: .8vmin; }
 
 /* ---- Ilta ---- */
 body.evening html, body.night html, body.evening body, body.night body { background: #f1e6d2; color: #241b0f; }
@@ -330,12 +351,8 @@ body.evening .photo-cap, body.night .photo-cap {
 
   </div>
 
-  <!-- 3 · viikkosää + kaksi listakorttia koko leveydellä -->
+  <!-- 3 · Huomenna + Ruoka korostettuna -->
   <div class="list-duo">
-    <div class="card wxcard">
-      <div class="lbl">Viikkosää · Kuopio</div>
-      <div class="wxstrip" id="weekWx"><div class="wxday"><div class="dn">ma</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">ti</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">ke</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">to</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">pe</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">la</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">su</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div></div>
-    </div>
     <div class="card tomorrowcard">
       <div class="lbl">Huomenna</div>
       <div class="scroll" id="tomorrowBox"><div class="empty muted">—</div></div>
@@ -346,11 +363,17 @@ body.evening .photo-cap, body.night .photo-cap {
     </div>
   </div>
 
+  <!-- 3b · viikkosää ohut rivi -->
+  <div class="card wx-mini">
+    <div class="lbl">Viikkosää · Kuopio</div>
+    <div class="wxstrip" id="weekWx"><div class="wxday"><div class="dn">ma</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">ti</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">ke</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">to</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">pe</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">la</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">su</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div></div>
+  </div>
+
   <!-- 4 · alatunniste -->
   <div class="foot">
     <div class="chips" id="chips"></div>
     <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-    <span class="brand">v76 vaaka</span>
+    <span class="brand">v77 vaaka</span>
   </div>
 
 </div>

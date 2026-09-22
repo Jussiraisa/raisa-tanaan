@@ -4,433 +4,298 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v78-kal-7pv">
-  <meta name="theme-color" content="#f7f1e3">
-  <title>Räisä · Fiilis TV</title>
+  <meta name="fiilis-build" content="20260922-v79-paras">
+  <meta name="theme-color" content="#F7F1E3">
+  <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-/* Fiilis TV — VAAKA 1920 × 1080. Ei kiertoa: paneeli on vaakatasossa.
-   Käännetty staattiseksi CSS:ksi build3.py:llä. Ei var()-muuttujia eikä gap-ominaisuutta.
-   Älä muokkaa tätä lohkoa käsin. */
-html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; color: #2c2418; font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+html, body { height: 100%; margin: 0; overflow: hidden; background: #F7F1E3; color: #2c2418;
+  font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
-.t-kello { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 9.26vmin; line-height: .92; font-weight: 400; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
-.t-tervehdys { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 3.52vmin; line-height: 1.1; font-weight: 400; letter-spacing: -.01em; }
-.t-meta { font-size: 1.48vmin; line-height: 1.3; font-weight: 500; letter-spacing: .04em; }
-.t-rivi { font-size: 1.67vmin; line-height: 1.3; font-weight: 550; }
-.t-luku-suuri { font-size: 2.69vmin; line-height: 1; font-weight: 650; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .muted { color: #6c5c44; }
 .accent { color: #8f6524; }
-.serif { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; }
-.empty { color: #73634a; font-size: 1.48vmin; font-weight: 500; }
-.card { background: #fbf6eb; border: 1px solid rgba(44,36,24,.08); border-radius: 1.481vmin; box-shadow: 0 .28vmin .93vmin rgba(80,50,20,.06); padding: 1.111vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
-.lbl { font-size: 1.15vmin; line-height: 1; font-weight: 600; letter-spacing: .06em; color: #8f6524; margin-bottom: .55vmin; -ms-flex: 0 0 auto; flex: 0 0 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.scroll { min-height: 0; overflow: hidden; }
-.clock { -ms-flex: 0 0 auto; flex: 0 0 auto; color: #1a140e; background: #fffcf5; box-shadow: 0 .46vmin 1.39vmin rgba(40,28,14,.12); border-radius: 1.204vmin; padding: .556vmin 1.111vmin .37vmin; min-width: 20vmin; text-align: center; }
-.greet-block { -ms-flex: 1; flex: 1; min-width: 0; }
-.greet { color: #8f6524; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.empty { color: #9a8b74; font-weight: 500; }
 
-.today-strip { margin-top: .45vmin; max-width: min(92vmin, 100%); overflow: visible; white-space: normal; font-size: 1.55vmin; line-height: 1.45; font-weight: 550; color: #5c4e3a; letter-spacing: .01em; }
-.today-strip .nowbox { display: inline-block; margin: 0 .55vmin .25vmin 0; padding: .28vmin .85vmin; border-radius: .55vmin; background: rgba(201,148,58,.22); border: 1px solid rgba(143,101,36,.35); color: #2c2418; font-size: 1.65vmin; font-weight: 650; line-height: 1.35; white-space: nowrap; vertical-align: baseline; }
-.today-strip .nowbox .badge { display: inline-block; margin-right: .45vmin; padding: .05vmin .45vmin; border-radius: .35vmin; background: #8f6524; color: #fff8ea; font-size: 1.15vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; vertical-align: .05em; }
-.today-strip .nowbox .t { font-variant-numeric: tabular-nums; font-weight: 750; }
-.today-strip .list { display: inline; }
-.today-strip .item { white-space: nowrap; }
-.today-strip .item.past { opacity: .42; }
-.today-strip .item.live { font-weight: 700; color: #2c2418; }
-.today-strip .item.live .t, .today-strip .item.live .w, .today-strip .item.live .x { color: #7a5214; font-weight: 700; }
-.today-strip .item.up .t { color: #2c2418; }
-.today-strip .tl { font-weight: 700; color: #8f6524; margin-right: .55vmin; font-size: 1.65vmin; }
-.today-strip .sep { color: rgba(92,78,58,.35); margin: 0 .35vmin; }
-.today-strip .t { font-variant-numeric: tabular-nums; font-weight: 650; color: #2c2418; }
-.today-strip .w { font-weight: 600; color: #6c5c44; }
-.today-strip .x { font-weight: 500; color: #5c4e3a; }
-body.evening .today-strip, body.night .today-strip { color: #5a4c38; }
-body.evening .today-strip .tl, body.night .today-strip .tl { color: #7d5619; }
-body.evening .today-strip .t, body.night .today-strip .t { color: #241b0f; }
-body.evening .today-strip .nowbox, body.night .today-strip .nowbox { background: rgba(201,148,58,.28); border-color: rgba(125,86,25,.4); }
-body.evening .today-strip .nowbox .badge, body.night .today-strip .nowbox .badge { background: #7d5619; }
-.sub { color: #6c5c44; margin-top: .35vmin; font-size: 1.2vmin; }
-.date { color: #6c5c44; margin-top: .15vmin; font-size: 1.25vmin; }
-.wx { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; max-width: 34vmin; }
-.wx > * + * { margin-left: .833vmin; }
-.wxicon { font-size: 3.6vmin; line-height: 1; }
-.wxbody { text-align: right; min-width: 0; }
-.wxtemp { color: #2c2418; }
-.wxmeta { font-size: 1.3vmin; line-height: 1.3; font-weight: 500; letter-spacing: .02em; color: #6c5c44; margin-top: .2vmin; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.kids-row { -ms-flex: 1; flex: 1; display: -ms-flexbox; display: flex; min-height: 0; }
-.kids-row > * + * { margin-left: 1.481vmin; }
-.kid-card { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: .9vmin; box-shadow: none; padding: .55vmin .65vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; overflow: hidden; }
-.kid-head { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.kid-head > * + * { margin-left: .37vmin; }
-.kid-dot { width: .85vmin; height: .85vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.kid-name { font-size: 1.35vmin; line-height: 1.15; font-weight: 700; letter-spacing: -.01em; color: #2c2418; }
-.kid-body { margin-top: .28vmin; min-height: 0; overflow: hidden; }
-.kid-sec { font-size: .85vmin; line-height: 1; font-weight: 700; letter-spacing: .06em; color: #8f6524; margin: .556vmin 0 .37vmin; }
-.kid-sec:first-child { margin-top: 0; }
-.kid-line { font-size: 1.1vmin; line-height: 1.3; font-weight: 500; color: #2c2418; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.kid-line .t { font-weight: 650; }
-.kid-line.m { color: #6c5c44; font-weight: 500; }
-.kid-empty { font-size: 1.05vmin; line-height: 1.3; color: #73634a; }
-.kid-body > *:nth-child(n+6) { display: none; }
-.parents-row { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; }
-.parents-row > * + * { margin-left: 1.481vmin; }
-.parent-card { -ms-flex: 1; flex: 1; min-width: 0; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; background: #f3ebdd; border: 1px solid rgba(44,36,24,.08); border-radius: .65vmin; padding: .2vmin .65vmin; overflow: hidden; }
-.parent-card > * + * { margin-left: .556vmin; }
-.parent-dot { width: .8vmin; height: .8vmin; border-radius: 999px; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.parent-name { font-size: 1.2vmin; font-weight: 700; letter-spacing: -.01em; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.parent-body { font-size: 1.05vmin; font-weight: 500; color: #6c5c44; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.duo-lunch { -ms-flex: 0 0 auto; flex: 0 0 auto; font-size: 1.05vmin; line-height: 1.3; font-weight: 500; color: #6c5c44; padding: 0 1.111vmin; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.photo-wrap { position: relative; border-radius: 1.481vmin; border: 1px solid rgba(44,36,24,.08); box-shadow: 0 .56vmin 1.76vmin rgba(80,50,20,.09); overflow: hidden; background: #f3ebdd; }
-.photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.photo-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.778vmin 1.481vmin 1.111vmin; color: #f7f1e3; font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 1.76vmin; line-height: 1.25; font-weight: 400; }
-.photo-cap .wh { font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 1.48vmin; line-height: 1.3; font-weight: 500; letter-spacing: .04em; opacity: .85; margin-bottom: .2vmin; }
-.wxstrip { -ms-flex: 1; flex: 1; display: -ms-flexbox; display: flex; min-height: 0; }
-.wxstrip > * + * { margin-left: .556vmin; }
-.wxday { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; text-align: center; background: #fffdf8; border: 1px solid rgba(44,36,24,.08); border-radius: .833vmin; box-shadow: none; padding: .556vmin .37vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: center; align-items: center; overflow: hidden; }
-.wxday.is-today { background: rgba(184,136,62,.16); border: 1.5px solid #a3712a; }
-.wxday .dn { font-size: 1.2vmin; line-height: 1; font-weight: 700; letter-spacing: .05em; color: #73634a; text-transform: uppercase; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.wxday.is-today .dn { color: #8f6524; }
-.wxday .ic { font-size: 2.2vmin; line-height: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; min-height: 0; overflow: hidden; }
-.wxday .tm { font-size: 1.2vmin; line-height: 1.05; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.wxday .extra { font-size: 1.02vmin; line-height: 1.05; font-weight: 550; font-variant-numeric: tabular-nums; white-space: nowrap; color: #6c5c44; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.month-grid { -ms-flex: 1; flex: 1; min-height: 0; overflow: hidden; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
-.month-row { display: -ms-flexbox; display: flex; -ms-flex: 1; flex: 1; min-height: 0; }
-.month-row + .month-row { margin-top: .37vmin; }
-.month-row > * + * { margin-left: .37vmin; }
-.month-row.month-head { -ms-flex: 0 0 auto; flex: 0 0 auto; padding-bottom: .37vmin; }
-.month-row > .mdow, .month-row > .mday { -ms-flex: 1; flex: 1; min-width: 0; min-height: 0; }
-.mdow { text-align: center; font-size: 1.2vmin; line-height: 1; font-weight: 700; letter-spacing: .05em; color: #73634a; text-transform: uppercase; }
-.mday { background: #fffdf8; border: 1px solid rgba(44,36,24,.08); border-radius: .556vmin; box-shadow: none; padding: .19vmin .37vmin; overflow: visible; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
-.mday.pad { visibility: hidden; border: 0; background: transparent; }
-.mday.is-school { background: rgba(255,255,255,.32); }
-.mday.is-lontoo { background: rgba(184,136,62,.09); }
-.mday.is-today { background: rgba(184,136,62,.16); border: 1.5px solid #a3712a; }
-.mday .dn { font-size: .93vmin; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; color: #2c2418; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.mday.is-today .dn { color: #1a140e; }
-.mday .dn .mo { font-size: .85vmin; font-weight: 500; color: #73634a; margin-left: .19vmin; }
-.mlabel { font-size: 1.15vmin; line-height: 1.2; font-weight: 600; color: #6c5c44; margin-top: .08vmin; white-space: normal; overflow: visible; overflow-wrap: anywhere; word-break: break-word; }
-.mdot { display: inline-block; width: .4vmin; height: .4vmin; border-radius: 999px; margin-right: .22vmin; vertical-align: middle; }
-.countdown { -ms-flex: 0 0 42%; flex: 0 0 42%; width: 42%; max-width: 42%; min-width: 0; min-height: 0; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; padding-right: 1.2vmin; border-right: 1px solid rgba(44,36,24,.12); }
-.cd-label { font-size: 1.67vmin; line-height: 1.25; font-weight: 550; color: #6c5c44; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.cd-big { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 5.2vmin; line-height: 1.02; font-weight: 400; letter-spacing: -.02em; color: #a3712a; margin-top: .28vmin; text-transform: lowercase; }
-.cd-big::first-letter { text-transform: uppercase; }
-.odot-row { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; width: 100%; display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; -ms-flex-align: stretch; align-items: stretch; -ms-flex-pack: start; justify-content: flex-start; }
-.odot-row > * + * { margin-left: 0; }
-#odoteList { -ms-flex: 1 1 58%; flex: 1 1 58%; width: 58%; max-width: 58%; min-width: 0; min-height: 0; box-sizing: border-box; margin: 0; border: 0; padding: 0 0 0 1.2vmin; overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; }
-.odote { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: flex-start; align-items: flex-start; font-size: 1.2vmin; line-height: 1.25; font-weight: 500; color: #2c2418; padding: .22vmin 0; overflow: hidden; }
-.odote > span:first-child { white-space: normal; overflow: hidden; min-width: 0; -ms-flex: 1 1 auto; flex: 1 1 auto; }
-.odote > * + * { margin-left: .556vmin; }
-.odote .d { -ms-flex: 0 0 auto; flex: 0 0 auto; font-weight: 650; font-size: 1.15vmin; }
-.odote .muted { font-size: 1.05vmin; }
-.tmw-line { display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline; font-size: 1.67vmin; line-height: 1.3; font-weight: 550; color: #2c2418; padding: .556vmin 0; border-bottom: 1px solid rgba(44,36,24,.08); white-space: nowrap; overflow: hidden; }
-.tmw-line > * + * { margin-left: .556vmin; }
-.tmw-line:last-child { border-bottom: 0; }
-.tmw-line .who { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 4.2vmin; font-weight: 700; color: #2c2418; }
-.tmw-line .t { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 7vmin; font-variant-numeric: tabular-nums; color: #6c5c44; font-weight: 650; }
-.tmw-line .title { -ms-flex: 1; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-.tmw-line .place { -ms-flex: 0 0 auto; flex: 0 0 auto; font-size: 1.48vmin; font-weight: 500; color: #6c5c44; }
-.tmw-empty { font-size: 1.48vmin; color: #73634a; padding: .556vmin 0; }
-.meal-line { display: -ms-flexbox; display: flex; font-size: 1.67vmin; line-height: 1.3; font-weight: 550; color: #2c2418; padding: .556vmin 0; border-bottom: 1px solid rgba(44,36,24,.08); white-space: nowrap; overflow: hidden; }
-.meal-line > * + * { margin-left: .556vmin; }
-.meal-line:last-child { border-bottom: 0; }
-.meal-line .d { -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 5.5vmin; font-weight: 700; }
-.meal-line .t { -ms-flex: 1; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-.foot { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: center; align-items: center; }
-.foot > * + * { margin-left: 1.111vmin; }
-.chips { display: -ms-flexbox; display: flex; min-width: 0; overflow: hidden; }
-.chips > * + * { margin-left: .556vmin; }
-.chip { font-size: .95vmin; line-height: 1; font-weight: 600; padding: .28vmin .55vmin; border-radius: 999px; color: #2c2418; opacity: .88; white-space: nowrap; }
-.foot .tagline { font-family: Newsreader, Georgia, "Times New Roman", Times, serif; font-size: 1.15vmin; font-style: italic; font-weight: 400; color: #73634a; white-space: nowrap; }
-.foot .brand { font-size: .95vmin; font-weight: 700; letter-spacing: .1em; color: #73634a; white-space: nowrap; text-transform: uppercase; }
-.tv { height: 100%; width: 100%; padding: 1.019vmin 2.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; background: #f7f1e3; }
-.tv > * + * { margin-top: .833vmin; }
-.head { -ms-flex: 0 0 16.2vmin; flex: 0 0 16.2vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
-.head > * + * { margin-left: 2.037vmin; }
-.main { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; display: -ms-flexbox; display: flex; }
-.main > * + * { margin-left: .833vmin; }
-.col-kuva { -ms-flex: 1.6; flex: 1.75; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
-.col-kuva > * + * { margin-top: .65vmin; }
-.col-kuva .photo-wrap { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; min-height: 0; }
-.col-kuva .odotcard { -ms-flex: 0 0 18.5vmin; flex: 0 0 18.5vmin; height: 18.5vmin; padding: .85vmin 1.2vmin; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; overflow: hidden; }
-.col-kuva .odotcard .lbl { font-size: 1.45vmin; margin-bottom: .45vmin; letter-spacing: .07em; }
-.col-kuva .odotcard .cd-big { font-size: 5.0vmin; }
-.col-kuva .odotcard .cd-label { font-size: 1.75vmin; }
-.col-kuva .odotcard .odote { font-size: 1.35vmin; }
-.col-kuva .odotcard .odote .d { font-size: 1.25vmin; }
-.col-tieto { -ms-flex: 1; flex: 0.72; min-width: 0; min-height: 0; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
-.col-tieto > * + * { margin-top: .55vmin; }
-.duo { -ms-flex: 0 0 16.5vmin; flex: 0 0 16.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
-.duo > * + * { margin-top: .35vmin; }
-.col-tieto .kid-line { white-space: normal; }
-.kid-more { font-size: 1.0vmin; line-height: 1.3; font-weight: 600; color: #73634a; margin-top: .2vmin; }
-.col-tieto .kid-body > *:nth-child(n+6) { display: none; }
-.kids-row > * + * { margin-left: .65vmin; }
-.parents-row > * + * { margin-left: .65vmin; }
-/* Kalenteri: matala 7-päivän kaista — kaikki otsikot wrapilla, ei piilotusta */
-.kal-rivi { -ms-flex: 0 0 auto; flex: 0 0 auto; height: auto; min-height: 11vmin; max-height: 18vmin; margin-top: auto; display: -ms-flexbox; display: flex; min-width: 0; }
-.kal-rivi .card { -ms-flex: 1; flex: 1; padding: .4vmin .55vmin .5vmin; overflow: visible; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; }
-.kal-rivi .lbl { margin-bottom: .35vmin; font-size: .95vmin; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.kal-rivi .month-grid, .kal-rivi #monthCalGrid {
-  -ms-flex: 1; flex: 1; min-height: 0; overflow: visible;
-  display: -ms-flexbox; display: flex;
+.tv {
+  height: 100%; width: 100%;
+  padding: 2.2vmin 2.8vmin 8.2vmin;
+  display: flex; flex-direction: column;
+  background: #F7F1E3;
 }
-.kal-rivi .week-strip {
-  -ms-flex: 1; flex: 1; min-height: 0; width: 100%;
-  display: -ms-flexbox; display: flex;
+
+/* —— Header —— */
+.head {
+  flex: 0 0 auto;
+  display: flex; align-items: flex-end;
+  margin-bottom: 1.8vmin;
 }
-.kal-rivi .week-strip > * + * { margin-left: .45vmin; }
-.kal-rivi .wday {
-  -ms-flex: 1; flex: 1; min-width: 0; min-height: 0;
-  padding: .35vmin .4vmin .4vmin;
-  border-radius: .55vmin;
-  background: #fffdf8;
-  border: 1px solid rgba(44,36,24,.08);
-  overflow: visible;
-  display: -ms-flexbox; display: flex;
-  -ms-flex-direction: column; flex-direction: column;
+.clock {
+  font-family: Newsreader, Georgia, serif;
+  font-size: 8.8vmin; line-height: .92; font-weight: 400;
+  letter-spacing: -.04em; font-variant-numeric: tabular-nums;
+  color: #1a140e; min-width: 22vmin;
 }
-.kal-rivi .wday.is-today {
-  background: rgba(184,136,62,.16);
-  border: 1.5px solid #a3712a;
+.greet-block { flex: 1; min-width: 0; margin-left: 2.4vmin; padding-bottom: .6vmin; }
+.greet {
+  font-family: Newsreader, Georgia, serif;
+  font-size: 3.4vmin; line-height: 1.15; font-weight: 400;
+  color: #8f6524; letter-spacing: -.01em;
 }
-.kal-rivi .wday.is-lontoo:not(.is-today) { background: rgba(184,136,62,.09); }
-.kal-rivi .wday .hd {
-  display: -ms-flexbox; display: flex;
-  -ms-flex-align: baseline; align-items: baseline;
-  -ms-flex-pack: justify; justify-content: space-between;
-  -ms-flex: 0 0 auto; flex: 0 0 auto;
-  margin-bottom: .2vmin;
+.next-line {
+  margin-top: .55vmin; font-size: 1.65vmin; line-height: 1.35;
+  font-weight: 550; color: #5c4e3a; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
 }
-.kal-rivi .wday .dn {
-  font-size: 1.05vmin; line-height: 1; font-weight: 700;
-  letter-spacing: .06em; text-transform: uppercase; color: #73634a;
+.next-line .badge {
+  display: inline-block; margin-right: .5vmin;
+  padding: .12vmin .55vmin; border-radius: .4vmin;
+  background: rgba(201,148,58,.22); color: #7a5214;
+  font-size: 1.2vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
 }
-.kal-rivi .wday.is-today .dn { color: #8f6524; }
-.kal-rivi .wday .dd {
-  font-size: 1.35vmin; line-height: 1; font-weight: 650;
+.date-soft { margin-top: .35vmin; font-size: 1.35vmin; color: #8a7a62; font-weight: 500; }
+.wx {
+  flex: 0 0 auto; text-align: right; padding-bottom: .8vmin; max-width: 28vmin;
+}
+.wx .row { display: flex; align-items: center; justify-content: flex-end; }
+.wx .ic { font-size: 3.2vmin; margin-right: .6vmin; }
+.wx .temp {
+  font-size: 3.2vmin; font-weight: 650; letter-spacing: -.02em;
   font-variant-numeric: tabular-nums; color: #2c2418;
 }
-.kal-rivi .wday .evs {
-  -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; overflow: visible;
-}
-.kal-rivi .wday .mlabel {
-  font-size: 1.2vmin; line-height: 1.25; font-weight: 600;
-  color: #5c4e3a; margin-top: .12vmin;
-  white-space: normal; overflow: visible;
-  overflow-wrap: anywhere; word-break: break-word;
-}
-.kal-rivi .wday .mdot {
-  display: inline-block; width: .45vmin; height: .45vmin;
-  border-radius: 999px; margin-right: .2vmin; vertical-align: .15em;
-}
-.kal-rivi .wday .empty-day {
-  font-size: 1.1vmin; color: #9a8b74; margin-top: .15vmin; font-weight: 500;
-}
-body.evening .kal-rivi .wday, body.night .kal-rivi .wday { background: #fbf3e2; border-color: rgba(36,27,15,.12); }
-body.evening .kal-rivi .wday.is-today, body.night .kal-rivi .wday.is-today { background: rgba(163,113,42,.24); border: 1.5px solid #96661f; }
-body.evening .kal-rivi .wday .dn, body.night .kal-rivi .wday .dn { color: #6e5e45; }
-body.evening .kal-rivi .wday.is-today .dn, body.night .kal-rivi .wday.is-today .dn { color: #7d5619; }
-body.evening .kal-rivi .wday .dd, body.night .kal-rivi .wday .dd { color: #241b0f; }
-body.evening .kal-rivi .wday .mlabel, body.night .kal-rivi .wday .mlabel { color: #63533c; font-size: 1.2vmin; }
-/* Huomenna + Ruoka: korostettu ala-alue */
-.list-duo { -ms-flex: 0 0 17.5vmin; flex: 0 0 17.5vmin; display: -ms-flexbox; display: flex; min-height: 0; }
-.list-duo > * + * { margin-left: .833vmin; }
-.list-duo .card { padding: 1.0vmin 1.35vmin; }
-.list-duo .tomorrowcard .lbl,
-.list-duo .mealcard .lbl { font-size: 1.45vmin; margin-bottom: .55vmin; letter-spacing: .07em; }
-.list-duo .tmw-line { white-space: normal; -ms-flex-align: baseline; align-items: baseline; font-size: 1.8vmin; padding: .35vmin 0; }
-.list-duo .tmw-line .title { white-space: normal; }
-.list-duo .tmw-line .place { font-size: 1.45vmin; }
-.list-duo .meal-line { white-space: normal; font-size: 1.7vmin; padding: .35vmin 0; }
-.list-duo .meal-line .t { white-space: normal; }
-.list-duo .tomorrowcard { -ms-flex: 1.35; flex: 1.35; }
-.list-duo .mealcard { -ms-flex: 1; flex: 1; }
-.list-duo .tmw-line:nth-child(n+5) { display: none; }
-.list-duo .meal-line:nth-child(n+6) { display: none; }
-/* Viikkosää: ohut koko-leveys rivi alaosassa */
-.wx-mini { -ms-flex: 0 0 5.4vmin; flex: 0 0 5.4vmin; height: 5.4vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; min-height: 0; padding: .25vmin .65vmin; }
-.wx-mini .lbl { font-size: .9vmin; margin-bottom: .2vmin; opacity: .85; }
-.wx-mini .wxstrip { -ms-flex: 1; flex: 1; min-height: 0; }
-.wx-mini .wxstrip > * + * { margin-left: .35vmin; }
-.wx-mini .wxday { padding: .15vmin .2vmin; border-radius: .45vmin; -ms-flex-pack: center; justify-content: center; }
-.wx-mini .wxday .dn { font-size: .7vmin; }
-.wx-mini .wxday .ic { font-size: 1.35vmin; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-.wx-mini .wxday .tm { font-size: .75vmin; }
-.wx-mini .wxday .extra { display: none; }
-.foot { -ms-flex: 0 0 2.4vmin; flex: 0 0 2.4vmin; }
-body.evening .col-tieto .kid-line, body.night .col-tieto .kid-line { font-size: 1.15vmin; }
-body.evening .col-tieto .kid-body > *:nth-child(n+5), body.night .col-tieto .kid-body > *:nth-child(n+5) { display: none; }
-body.evening .kal-rivi .mlabel, body.night .kal-rivi .mlabel { font-size: 1.2vmin; }
-/* evening: keep all calendar labels visible */
-body.evening .kal-rivi .mday .dn, body.night .kal-rivi .mday .dn { font-size: .95vmin; }
-body.evening .list-duo .tmw-line, body.night .list-duo .tmw-line { font-size: 1.95vmin; }
-body.evening .list-duo .meal-line, body.night .list-duo .meal-line { font-size: 1.9vmin; }
-body.evening .list-duo .tmw-line:nth-child(n+5), body.night .list-duo .tmw-line:nth-child(n+5) { display: none; }
-body.evening .list-duo .meal-line:nth-child(n+6), body.night .list-duo .meal-line:nth-child(n+6) { display: none; }
-body.evening .wx-mini .wxday .tm, body.night .wx-mini .wxday .tm { font-size: .8vmin; }
+.wx .meta { font-size: 1.25vmin; color: #6c5c44; margin-top: .2vmin; }
 
-/* ---- Ilta ---- */
-body.evening html, body.night html, body.evening body, body.night body { background: #f1e6d2; color: #241b0f; }
-body.evening .muted, body.night .muted { color: #63533c; }
-body.evening .accent, body.night .accent { color: #7d5619; }
-body.evening .empty, body.night .empty { color: #6e5e45; }
-body.evening .card, body.night .card { background: #f8f0df; border: 1px solid rgba(36,27,15,.12); box-shadow: 0 .28vmin 1.02vmin rgba(80,50,20,.09); }
-body.evening .lbl, body.night .lbl { color: #7d5619; }
-body.evening .clock, body.night .clock { color: #120c06; background: #fff7e6; box-shadow: 0 .46vmin 1.57vmin rgba(40,28,14,.16); }
-body.evening .greet, body.night .greet { color: #7d5619; }
-body.evening .sub, body.night .sub { color: #63533c; }
-body.evening .date, body.night .date { color: #63533c; }
-body.evening .wxtemp, body.night .wxtemp { color: #241b0f; }
-body.evening .wxmeta, body.night .wxmeta { color: #63533c; }
-body.evening .kid-card, body.night .kid-card { background: #eee2cc; border: 1px solid rgba(36,27,15,.12); }
-body.evening .kid-name, body.night .kid-name { color: #241b0f; }
-body.evening .kid-sec, body.night .kid-sec { color: #7d5619; }
-body.evening .kid-line, body.night .kid-line { color: #241b0f; }
-body.evening .kid-line.m, body.night .kid-line.m { color: #63533c; }
-body.evening .kid-empty, body.night .kid-empty { color: #6e5e45; }
-body.evening .parent-card, body.night .parent-card { background: #eee2cc; border: 1px solid rgba(36,27,15,.12); }
-body.evening .parent-name, body.night .parent-name { color: #241b0f; }
-body.evening .parent-body, body.night .parent-body { color: #63533c; }
-body.evening .duo-lunch, body.night .duo-lunch { color: #63533c; }
-body.evening .photo-wrap, body.night .photo-wrap { border: 1px solid rgba(36,27,15,.12); box-shadow: 0 .56vmin 1.94vmin rgba(80,50,20,.13); background: #eee2cc; }
-body.evening .wxday, body.night .wxday { background: #fbf3e2; border: 1px solid rgba(36,27,15,.12); }
-body.evening .wxday.is-today, body.night .wxday.is-today { background: rgba(163,113,42,.24); border: 1.5px solid #96661f; }
-body.evening .wxday .dn, body.night .wxday .dn { color: #6e5e45; }
-body.evening .wxday.is-today .dn, body.night .wxday.is-today .dn { color: #7d5619; }
-body.evening .wxday .tm, body.night .wxday .tm { color: #241b0f; }
-body.evening .wxday .extra, body.night .wxday .extra { color: #63533c; }
-body.evening .mdow, body.night .mdow { color: #6e5e45; }
-body.evening .mday, body.night .mday { background: #fbf3e2; border: 1px solid rgba(36,27,15,.12); }
-body.evening .mday.is-school, body.night .mday.is-school { background: rgba(255,247,230,.24); }
-body.evening .mday.is-lontoo, body.night .mday.is-lontoo { background: rgba(163,113,42,.15); }
-body.evening .mday.is-today, body.night .mday.is-today { background: rgba(163,113,42,.24); border: 1.5px solid #96661f; }
-body.evening .mday .dn, body.night .mday .dn { color: #241b0f; }
-body.evening .mday.is-today .dn, body.night .mday.is-today .dn { color: #120c06; }
-body.evening .mday .dn .mo, body.night .mday .dn .mo { color: #6e5e45; }
-body.evening .mlabel, body.night .mlabel { color: #63533c; }
-body.evening .cd-label, body.night .cd-label { color: #63533c; }
-body.evening .cd-big, body.night .cd-big { color: #96661f; }
-body.evening .countdown, body.night .countdown { border-right-color: rgba(36,27,15,.14); }
-body.evening #odoteList, body.night #odoteList { border-top: 0; }
-body.evening .odote, body.night .odote { color: #241b0f; }
-body.evening .tmw-line, body.night .tmw-line { color: #241b0f; border-bottom: 1px solid rgba(36,27,15,.12); }
-body.evening .tmw-line .who, body.night .tmw-line .who { color: #241b0f; }
-body.evening .tmw-line .t, body.night .tmw-line .t { color: #63533c; }
-body.evening .tmw-line .place, body.night .tmw-line .place { color: #63533c; }
-body.evening .tmw-empty, body.night .tmw-empty { color: #6e5e45; }
-body.evening .meal-line, body.night .meal-line { color: #241b0f; border-bottom: 1px solid rgba(36,27,15,.12); }
-body.evening .chip, body.night .chip { color: #241b0f; }
-body.evening .foot .tagline, body.night .foot .tagline { color: #6e5e45; }
-body.evening .foot .brand, body.night .foot .brand { color: #6e5e45; }
-body.evening .tv, body.night .tv { background: #f1e6d2; }
-body.evening .kid-more, body.night .kid-more { color: #6e5e45; }
-.photo-cap { background: -webkit-linear-gradient(top, rgba(40,30,20,0), rgba(40,30,20,.85));
-  background: linear-gradient(to bottom, rgba(40,30,20,0), rgba(40,30,20,.85)); }
-body.evening .photo-cap, body.night .photo-cap {
-  background: -webkit-linear-gradient(top, rgba(29,20,9,0), rgba(29,20,9,.88));
-  background: linear-gradient(to bottom, rgba(29,20,9,0), rgba(29,20,9,.88)); }
+/* —— Main: hero photo + side —— */
+.main {
+  flex: 1 1 auto; min-height: 0;
+  display: flex; align-items: stretch;
+}
+.hero {
+  flex: 1.55 1 0; min-width: 0; min-height: 0;
+  position: relative; border-radius: 1.8vmin; overflow: hidden;
+  background: #efe6d4;
+  box-shadow: 0 .6vmin 2.2vmin rgba(60,40,18,.1);
+}
+.hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero .cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 5vmin 2.2vmin 1.8vmin;
+  color: #f7f1e3;
+  background: linear-gradient(to bottom, rgba(40,30,20,0), rgba(40,30,20,.82));
+  font-family: Newsreader, Georgia, serif;
+  font-size: 2.4vmin; line-height: 1.25; font-weight: 400;
+}
+.hero .cap .wh {
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  font-size: 1.35vmin; font-weight: 500; letter-spacing: .08em;
+  text-transform: uppercase; opacity: .82; margin-bottom: .35vmin;
+}
 
+.side {
+  flex: 1 1 0; min-width: 0; min-height: 0;
+  margin-left: 2.2vmin;
+  display: flex; flex-direction: column;
+}
+.side > * + * { margin-top: 1.4vmin; }
+
+.block {
+  background: rgba(255,252,246,.55);
+  border-radius: 1.4vmin;
+  padding: 1.3vmin 1.6vmin 1.4vmin;
+  min-height: 0;
+}
+.block.grow { flex: 1 1 auto; overflow: hidden; display: flex; flex-direction: column; }
+.block.soft { background: transparent; padding-left: .2vmin; padding-right: .2vmin; }
+.lbl {
+  font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: #8f6524; margin-bottom: .7vmin;
+}
+
+/* Tänään list — crystal clear */
+.today-list { flex: 1; min-height: 0; overflow: hidden; }
+.ev-row {
+  display: flex; align-items: flex-start;
+  padding: .55vmin 0;
+  font-size: 1.85vmin; line-height: 1.35; font-weight: 500;
+  color: #2c2418;
+  border-bottom: 1px solid rgba(44,36,24,.06);
+}
+.ev-row:last-child { border-bottom: 0; }
+.ev-row.past { opacity: .4; }
+.ev-row.live { font-weight: 650; }
+.ev-row .when {
+  flex: 0 0 9.5vmin; font-variant-numeric: tabular-nums;
+  font-weight: 700; color: #2c2418;
+}
+.ev-row.live .when { color: #8f6524; }
+.ev-row .dot {
+  width: .85vmin; height: .85vmin; border-radius: 999px;
+  margin: .65vmin .7vmin 0 0; flex: 0 0 auto;
+}
+.ev-row .txt { flex: 1; min-width: 0; }
+.ev-row .who { font-weight: 700; }
+.ev-row .meta { font-size: 1.45vmin; color: #7a6a55; margin-top: .1vmin; font-weight: 500; }
+.today-empty { font-size: 1.7vmin; color: #9a8b74; padding: .4vmin 0; font-style: italic;
+  font-family: Newsreader, Georgia, serif; }
+
+/* Odotukset hero */
+.odot-hero {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+}
+.odot-hero .cd-big {
+  font-family: Newsreader, Georgia, serif;
+  font-size: 3.6vmin; line-height: 1; font-weight: 400;
+  color: #a3712a; letter-spacing: -.02em; margin-right: 1.2vmin;
+}
+.odot-hero .cd-label {
+  font-size: 1.7vmin; font-weight: 550; color: #5c4e3a;
+}
+.odot-list { margin-top: .55vmin; }
+.odote {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 1.45vmin; line-height: 1.35; padding: .22vmin 0; color: #2c2418;
+}
+.odote .d { font-weight: 650; color: #8f6524; flex: 0 0 auto; margin-left: .8vmin; }
+
+/* Huomenna + Ruoka duo */
+.duo {
+  flex: 0 0 auto;
+  display: flex; min-height: 0;
+}
+.duo > * + * { margin-left: 1.2vmin; }
+.duo .block { flex: 1; }
+.tmw-line, .meal-line {
+  font-size: 1.55vmin; line-height: 1.35; font-weight: 550;
+  color: #2c2418; padding: .35vmin 0;
+  border-bottom: 1px solid rgba(44,36,24,.06);
+}
+.tmw-line:last-child, .meal-line:last-child { border-bottom: 0; }
+.tmw-line .who { font-weight: 700; margin-right: .45vmin; }
+.tmw-line .t { font-variant-numeric: tabular-nums; font-weight: 650; color: #6c5c44; margin-right: .45vmin; }
+.tmw-line .meta { color: #7a6a55; font-weight: 500; font-size: 1.35vmin; }
+.meal-line .d { font-weight: 700; color: #8f6524; margin-right: .55vmin; }
+
+/* Family pills + tagline */
+.foot-soft {
+  flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 1.4vmin;
+}
+.chips { display: flex; }
+.chips > * + * { margin-left: .5vmin; }
+.chip {
+  font-size: 1.15vmin; font-weight: 600; padding: .4vmin .85vmin;
+  border-radius: 999px; color: #2c2418; opacity: .9;
+}
+.tagline {
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.35vmin; font-style: italic; color: #8a7a62;
+}
+.brand {
+  font-size: .95vmin; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: #9a8b74; margin-left: 1.2vmin;
+}
+
+/* Bottom nav — Tesla-like, TV-friendly */
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
+  background: rgba(42, 36, 28, .94); color: #d8d0c4;
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 0 4vmin; z-index: 30;
+  backdrop-filter: blur(8px);
+}
+.nav a {
+  color: inherit; text-decoration: none; text-align: center;
+  font-size: 1.35vmin; font-weight: 600; min-width: 12vmin;
+  padding: .6vmin 1.2vmin; opacity: .68;
+  border-radius: .6vmin;
+}
+.nav a .ic { display: block; font-size: 2.4vmin; line-height: 1.15; margin-bottom: .15vmin; }
+.nav a.on { opacity: 1; color: #fff; background: rgba(255,255,255,.08);
+  box-shadow: inset 0 -.28vmin 0 #c9943a; }
+
+body.evening, body.evening .tv { background: #f1e6d2; }
+body.evening .clock { color: #120c06; }
+body.evening .greet { color: #7d5619; }
+body.evening .block { background: rgba(255,247,230,.5); }
+body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
+
+@media (max-width: 900px) {
+  .tv { padding-bottom: 5.2rem; }
+  .nav { height: calc(3.8rem + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .nav a { font-size: .75rem; min-width: 4.5rem; }
+  .nav a .ic { font-size: 1.25rem; }
+  .main { flex-direction: column; }
+  .hero { flex: 0 0 42%; margin-bottom: 1vmin; }
+  .side { margin-left: 0; }
+}
   </style>
 </head>
 <body class="morning">
 <div class="tv" id="app">
-
-  <!-- 1 · otsikko, koko leveys -->
   <div class="head">
-    <div class="clock t-kello" id="clock">––.––</div>
+    <div class="clock" id="clock">––.––</div>
     <div class="greet-block">
-      <div class="greet t-tervehdys" id="greet">Hyvää huomenta</div>
-      <div class="today-strip" id="todayStrip"><span class="tl">Tänään</span><span class="muted">…</span></div>
-      <div class="sub t-meta" id="subLine">Räisän perhe · Kuopio</div>
-      <div class="date t-rivi" id="dateLine">Maanantai</div>
+      <div class="greet" id="greet">Hyvää huomenta</div>
+      <div class="next-line" id="nextLine"><span class="muted">…</span></div>
+      <div class="date-soft" id="dateLine">Räisän perhe · Kuopio</div>
     </div>
-    <div class="wx t-luku-suuri" id="wx"><div class="wxbody"><div class="wxtemp muted">Kuopio</div></div></div>
+    <div class="wx" id="wx"><div class="meta muted">Kuopio</div></div>
   </div>
 
-  <!-- 2 · pääalue: kuva vasemmalla, tieto oikealla -->
   <div class="main">
+    <div class="hero">
+      <img id="photo" src="photos-web/matka-2018-lontoo-cover-001.jpg" alt="">
+      <div class="cap" id="photoCap"><div class="wh">Muistatko…</div>Lontoo · 2018</div>
+    </div>
 
-    <div class="col-kuva">
-      <div class="photo-wrap">
-        <img id="photo" src="photos-web/matka-2018-lontoo-cover-001.jpg" alt="">
-        <div class="photo-cap" id="photoCap"><div class="wh">Muistatko…</div>Lontoo · 2018</div>
+    <div class="side">
+      <div class="block grow">
+        <div class="lbl">Tänään</div>
+        <div class="today-list" id="todayList"><div class="today-empty">Rauhaa · ei merkintöjä</div></div>
       </div>
-      <div class="card odotcard">
+
+      <div class="block soft" id="odotBlock">
         <div class="lbl">Odotukset</div>
-        <div class="odot-row">
-          <div class="countdown" id="countdown">
-            <div class="cd-label">Lontoo · 13.–17.10.</div>
-            <div class="cd-big">– päivää</div>
-          </div>
-          <div class="scroll" id="odoteList"></div>
+        <div class="odot-hero" id="countdown">
+          <div class="cd-big">–</div>
+          <div class="cd-label">Lontoo · 13.–17.10.</div>
         </div>
+        <div class="odot-list" id="odoteList"></div>
       </div>
-    </div>
 
-    <div class="col-tieto">
       <div class="duo">
-        <div class="kids-row" id="kidsRow">
-          <div class="kid-card" data-kid="Ellen"><div class="kid-head"><span class="kid-dot" style="background:#e8b4bc"></span><span class="kid-name">Ellen</span></div><div class="kid-body muted">…</div></div>
-          <div class="kid-card" data-kid="Samuel"><div class="kid-head"><span class="kid-dot" style="background:#a8c4dc"></span><span class="kid-name">Samuel</span></div><div class="kid-body muted">…</div></div>
-          <div class="kid-card" data-kid="Milla"><div class="kid-head"><span class="kid-dot" style="background:#e0c48a"></span><span class="kid-name">Milla</span></div><div class="kid-body muted">…</div></div>
-          <div class="kid-card" data-kid="Mea"><div class="kid-head"><span class="kid-dot" style="background:#c4b0dc"></span><span class="kid-name">Mea</span></div><div class="kid-body muted">…</div></div>
+        <div class="block" id="huomenna">
+          <div class="lbl">Huomenna</div>
+          <div id="tomorrowBox"><div class="empty">—</div></div>
         </div>
-        <div class="parents-row" id="parentsRow">
-          <div class="parent-card" data-parent="Jussi">
-            <span class="parent-dot" style="background:#c5bfb6"></span>
-            <span class="parent-name">Jussi</span>
-            <span class="parent-body muted" id="parentJussi">…</span>
-          </div>
-          <div class="parent-card" data-parent="Riikka">
-            <span class="parent-dot" style="background:#d4c0a0"></span>
-            <span class="parent-name">Riikka</span>
-            <span class="parent-body muted" id="parentRiikka">…</span>
-          </div>
-        </div>
-        <div class="duo-lunch" id="schoolLunch" style="display:none"></div>
-      </div>
-
-      <div class="kal-rivi">
-        <div class="card monthcard">
-          <div class="lbl" id="monthCalLbl">Kalenteri</div>
-          <div class="month-grid" id="monthCalGrid"><div class="empty muted">…</div></div>
+        <div class="block" id="ruoka">
+          <div class="lbl">Ruoka</div>
+          <div id="mealBox"><div class="empty">—</div></div>
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- 3 · Huomenna + Ruoka korostettuna -->
-  <div class="list-duo">
-    <div class="card tomorrowcard">
-      <div class="lbl">Huomenna</div>
-      <div class="scroll" id="tomorrowBox"><div class="empty muted">—</div></div>
-    </div>
-    <div class="card mealcard">
-      <div class="lbl meal-lbl">Kotona ruoka</div>
-      <div class="scroll meal-scroll" id="mealBox"><div class="empty muted">—</div></div>
-    </div>
-  </div>
-
-  <!-- 3b · viikkosää ohut rivi -->
-  <div class="card wx-mini">
-    <div class="lbl">Viikkosää · Kuopio</div>
-    <div class="wxstrip" id="weekWx"><div class="wxday"><div class="dn">ma</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">ti</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">ke</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">to</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">pe</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">la</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div><div class="wxday"><div class="dn">su</div><div class="ic"></div><div class="tm">–</div><div class="extra"></div></div></div>
-  </div>
-
-  <!-- 4 · alatunniste -->
-  <div class="foot">
+  <div class="foot-soft">
     <div class="chips" id="chips"></div>
-    <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-    <span class="brand">v78 vaaka</span>
+    <div>
+      <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
+      <span class="brand">v79 vaaka</span>
+    </div>
   </div>
-
 </div>
+
+<nav class="nav">
+  <a class="on" href="tvr-vaaka.html"><span class="ic">◎</span>Tänään</a>
+  <a href="tvr-vaaka-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
+  <a href="tvr-vaaka-muistot.html"><span class="ic">♡</span>Muistot</a>
+</nav>
+
 <script>
 (function () {
+  var BUILD = "20260922-v79-paras";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -612,11 +477,8 @@ body.evening .photo-cap, body.night .photo-cap {
 
   var schedule = FALLBACK;
   var weather = { icon: "", temp: "", phrase: "" };
-  var weekWx = [];
   var photoIdx = 0;
   var photos = PHOTOS.slice(0);
-
-  /* Hard denylist: food/drink/object close-ups without people/scenery */
   var PHOTO_DENY = {
     "matka-2018-lontoo-00-002.jpg": 1,
     "matka-2018-lontoo-05-007.jpg": 1,
@@ -646,7 +508,6 @@ body.evening .photo-cap, body.night .photo-cap {
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
-
   function helsinkiNow() {
     var d = new Date();
     var parts = {};
@@ -674,7 +535,7 @@ body.evening .photo-cap, body.night .photo-cap {
     var wd = wdMap[parts.weekday];
     if (wd == null) wd = new Date().getDay();
     var hour = parseInt(parts.hour, 10);
-    if (parts.hhour === "24") hour = 0;
+    if (parts.hour === "24") hour = 0;
     var minute = parseInt(parts.minute, 10) || 0;
     var year = parseInt(parts.year, 10);
     var month = parseInt(parts.month, 10);
@@ -685,25 +546,18 @@ body.evening .photo-cap, body.night .photo-cap {
       minutes: hour * 60 + minute
     };
   }
-
   function greeting(hour) {
     if (hour >= 5 && hour < 11) return "Hyvää huomenta";
     if (hour >= 11 && hour < 17) return "Hyvää päivää";
-    if (hour >= 17 && hour < 20) return "Hyvää iltaa";
+    if (hour >= 17 && hour < 22) return "Hyvää iltaa";
     return "Hyvää yötä";
   }
-
   function themeClass(hour) {
     if (hour >= 5 && hour < 11) return "morning";
     if (hour >= 11 && hour < 17) return "afternoon";
-    /* Always cream paper — no black night on kitchen TV */
     return "evening";
   }
-
-  function applyTheme(hour) {
-    document.body.className = themeClass(hour);
-  }
-
+  function applyTheme(hour) { document.body.className = themeClass(hour); }
   function parseMin(hm) {
     if (!hm) return null;
     var p = String(hm).split(":");
@@ -721,25 +575,21 @@ body.evening .photo-cap, body.night .photo-cap {
     if (a && b) return fmtHm(a) + "–" + fmtHm(b);
     return a ? fmtHm(a) : "";
   }
-
   function daysUntil(iso, now) {
     var a = Date.UTC(now.year, now.month - 1, now.day);
     var p = String(iso).split("-");
     var b = Date.UTC(+p[0], +p[1] - 1, +p[2]);
     return Math.round((b - a) / 86400000);
   }
-
   function addDaysIso(iso, n) {
     var p = String(iso).split("-");
     var d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + n));
     return d.getUTCFullYear() + "-" + pad(d.getUTCMonth() + 1) + "-" + pad(d.getUTCDate());
   }
-
   function isoParts(iso) {
     var p = String(iso).split("-");
     return { y: +p[0], m: +p[1], d: +p[2] };
   }
-
   function wmo(code) {
     if (code === 0) return { icon: "☀️", phrase: "selkeää" };
     if (code <= 2) return { icon: "🌤️", phrase: "melkein selkeää" };
@@ -753,7 +603,6 @@ body.evening .photo-cap, body.night .photo-cap {
     if (code >= 95) return { icon: "⛈️", phrase: "ukkosta" };
     return { icon: "🌡️", phrase: "vaihtelevaa" };
   }
-
   function getJSON(url, cb) {
     try {
       var x = new XMLHttpRequest();
@@ -762,92 +611,41 @@ body.evening .photo-cap, body.night .photo-cap {
         if (x.readyState === 4) {
           if (x.status >= 200 && x.status < 300) {
             try { cb(JSON.parse(x.responseText)); } catch (e) { cb(null); }
-          } else {
-            cb(null);
-          }
+          } else { cb(null); }
         }
       };
       x.send();
     } catch (e) { cb(null); }
   }
-
-  function chipHtml(who) {
-    var col = WHO_COLOR[who];
-    if (!col) return esc(who || "");
-    return "<span class=\"namechip\" style=\"background:" + col + "\">" + esc(who) + "</span>";
+  function shortWho(who) {
+    var w = String(who || "");
+    if (w === "Ellen") return "Ellen";
+    if (w === "Samuel") return "Samuel";
+    if (w === "Milla") return "Milla";
+    if (w === "Mea") return "Mea";
+    if (w === "Jussi") return "Jussi";
+    if (w === "Riikka") return "Riikka";
+    if (w === "perhe" || w === "Perhe") return "Perhe";
+    return w;
   }
-
-  function isAbsentDriver(name, iso) {
-    if (!name || !schedule || !schedule.absences) return false;
-    var abs = schedule.absences;
-    for (var i = 0; i < abs.length; i++) {
-      var a = abs[i];
-      if (a.who === name && iso >= a.from && iso <= a.to) return true;
-    }
-    return false;
+  function colorForWho(who) {
+    if (!who) return "#c4a574";
+    if (WHO_COLOR[who]) return WHO_COLOR[who];
+    if (who === "perhe" || who === "Perhe") return "#c4a574";
+    return "#b8a090";
   }
-
-  function driverOf(e, iso) {
-    if (!e) return "";
-    var d = e.driver || "";
-    var p = e.pickup || "";
-    if (d && isAbsentDriver(d, iso)) d = "";
-    if (p && isAbsentDriver(p, iso)) p = "";
-    if (d && p && d === p) return d;
-    if (d && p) return d + " / " + p;
-    return d || p || "";
+  function normEventTitle(t) {
+    var s = String(t || "").toLowerCase();
+    s = s.replace(/[·•.]/g, " ");
+    s = s.replace(/\s+/g, " ").replace(/^\s+|\s+$/g, "");
+    return s;
   }
-
-  function schoolTarget(now) {
-    /* Illalla (klo 17+) näytä seuraava koulupäivä: koulu + treenit + kouluruoka. */
-    var wd = now.wd;
-    var hour = now.hour;
-    var evening = hour >= 17;
-    var tomorrow = false;
-    var dayIdx = wd;
-    var lunchIso = now.iso;
-    var focusIso = now.iso;
-    var label = "Koulu";
-    if (wd === 0) {
-      dayIdx = 1; tomorrow = true;
-      lunchIso = focusIso = addDaysIso(now.iso, 1);
-      label = "Koulu · maanantai";
-    } else if (wd === 6) {
-      dayIdx = 1; tomorrow = true;
-      lunchIso = focusIso = addDaysIso(now.iso, 2);
-      label = "Koulu · maanantai";
-    } else if (evening && wd === 5) {
-      dayIdx = 1; tomorrow = true;
-      lunchIso = focusIso = addDaysIso(now.iso, 3);
-      label = "Koulu · maanantai";
-    } else if (evening && wd >= 1 && wd <= 4) {
-      dayIdx = wd + 1; tomorrow = true;
-      lunchIso = focusIso = addDaysIso(now.iso, 1);
-      label = "Koulu · huomenna";
-    }
-    return { wd: dayIdx, tomorrow: tomorrow, lunchIso: lunchIso, focusIso: focusIso, label: label };
+  function eventDedupeKey(e, dayIso) {
+    var who = String(e && e.who ? e.who : "").toLowerCase();
+    var title = normEventTitle(e && e.title ? e.title : "");
+    var day = dayIso || (e && e.date ? e.date : "");
+    return day + "|" + who + "|" + title;
   }
-
-  function schoolForTarget(tgt) {
-    var out = [];
-    if (!schedule || !schedule.schoolStarts) return out;
-    var list = schedule.schoolStarts;
-    for (var i = 0; i < list.length; i++) {
-      var s = list[i];
-      var wds = s.weekdays || [];
-      var ok = false;
-      for (var j = 0; j < wds.length; j++) if (wds[j] === tgt.wd) ok = true;
-      if (ok) out.push(s);
-    }
-    out.sort(function (a, b) {
-      var ia = KID_ORDER.indexOf(a.who); if (ia < 0) ia = 99;
-      var ib = KID_ORDER.indexOf(b.who); if (ib < 0) ib = 99;
-      if (ia !== ib) return ia - ib;
-      return (parseMin(a.time) || 0) - (parseMin(b.time) || 0);
-    });
-    return out;
-  }
-
   function eventsOn(iso) {
     var out = [];
     if (!schedule || !schedule.events) return out;
@@ -860,156 +658,24 @@ body.evening .photo-cap, body.night .photo-cap {
     });
     return out;
   }
-
-  function remainingEvents(now) {
-    var list = eventsOn(now.iso);
-    var out = [];
-    for (var i = 0; i < list.length; i++) {
-      var e = list[i];
-      if (e.kind === "matka") continue;
-      var end = parseMin(e.end);
-      var start = parseMin(e.time);
-      var doneAt = end != null ? end : (start != null ? start + 60 : null);
-      if (doneAt != null && doneAt <= now.minutes) continue;
-      out.push(e);
+  function isAbsentDriver(name, iso) {
+    if (!name || !schedule || !schedule.absences) return false;
+    var abs = schedule.absences;
+    for (var i = 0; i < abs.length; i++) {
+      var a = abs[i];
+      if (a.who === name && iso >= a.from && iso <= a.to) return true;
     }
-    return out;
+    return false;
   }
-
-  function eventsForKid(now, kid, focusIso) {
-    /* Näytä treenit sekä tältä päivältä (jäljellä) että focus-päivältä (illalla huomenna). */
-    var isoFocus = focusIso || now.iso;
-    var seen = {};
-    var out = [];
-    function addList(list, iso) {
-      for (var i = 0; i < list.length; i++) {
-        var e = list[i];
-        if (e.kind === "matka") continue;
-        if ((e.who || "") !== kid) continue;
-        var key = (e.date || iso) + "|" + (e.time || "") + "|" + (e.title || "");
-        if (seen[key]) continue;
-        seen[key] = 1;
-        out.push(e);
-      }
-    }
-    if (isoFocus === now.iso) {
-      addList(remainingEvents(now), now.iso);
-    } else {
-      addList(remainingEvents(now), now.iso);
-      addList(eventsOn(isoFocus), isoFocus);
-    }
-    out.sort(function (a, b) {
-      var da = a.date || ""; var db = b.date || "";
-      if (da !== db) return da < db ? -1 : 1;
-      return (parseMin(a.time) || 0) - (parseMin(b.time) || 0);
-    });
-    return out;
-  }
-
-
-  function parentBits(now, name) {
-    var bits = [];
-    var evs = remainingEvents(now);
-    for (var i = 0; i < evs.length; i++) {
-      var e = evs[i];
-      var w = e.who || "";
-      if (w === name || w === "perhe" || w === "vanhemmat") {
-        var line = (fmtRange(e.time, e.end) ? fmtRange(e.time, e.end) + " " : "") + (e.title || "");
-        if (e.place) line += " · " + e.place;
-        bits.push(line);
-      }
-      // driving duties for kids
-      var drv = driverOf(e, now.iso);
-      if (drv && drv.indexOf(name) >= 0 && w !== name) {
-        bits.push("kyyti " + (e.who || "") + (e.title ? " · " + e.title : "") + (fmtRange(e.time, e.end) ? " " + fmtRange(e.time, e.end) : ""));
-      }
-    }
-    // absences / travel from schedule
-    if (schedule && schedule.absences) {
-      for (var a = 0; a < schedule.absences.length; a++) {
-        var ab = schedule.absences[a];
-        if (ab.who === name && ab.from <= now.iso && ab.to >= now.iso) {
-          bits.push((ab.where || "poissa") + (ab.note ? " · " + ab.note : ""));
-        }
-      }
-    }
-    return bits;
-  }
-
-  function paintParents(now) {
-    var names = ["Jussi", "Riikka"];
-    for (var i = 0; i < names.length; i++) {
-      var n = names[i];
-      var el = document.getElementById(n === "Jussi" ? "parentJussi" : "parentRiikka");
-      if (!el) continue;
-      var bits = parentBits(now, n);
-      if (!bits.length) {
-        el.textContent = "kotona / arki";
-        el.className = "parent-body muted";
-      } else {
-        el.textContent = bits.slice(0, 2).join(" · ");
-        el.className = "parent-body";
-      }
-    }
-  }
-
-  function paintKidsDay(now) {
-    var tgt = schoolTarget(now);
-    var schools = schoolForTarget(tgt);
-    var byWho = {};
-    for (var i = 0; i < schools.length; i++) {
-      byWho[schools[i].who] = schools[i];
-    }
-    var cards = document.querySelectorAll("#kidsRow .kid-card");
-    for (var c = 0; c < cards.length; c++) {
-      var card = cards[c];
-      var kid = card.getAttribute("data-kid");
-      var body = card.querySelector(".kid-body");
-      if (!body) continue;
-      var html = "";
-      html += "<div class=\"kid-sec\">Koulu" + (tgt && tgt.tomorrow ? " · huom" : "") + "</div>";
-      var sch = byWho[kid];
-      if (sch) {
-        html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(sch.time, sch.end)) + "</span></div>";
-      } else {
-        html += "<div class=\"kid-empty\">Ei koulua</div>";
-      }
-      html += "<div class=\"kid-sec\">Treenit" + (tgt && tgt.tomorrow ? " · tänään+huom" : "") + "</div>";
-      var evs = eventsForKid(now, kid, tgt.focusIso);
-      if (!evs.length) {
-        html += "<div class=\"kid-empty\">—</div>";
-      } else {
-        var eMax = Math.min(evs.length, 3);
-        for (var e = 0; e < eMax; e++) {
-          var ev = evs[e];
-          var drv = driverOf(ev, tgt.focusIso || now.iso);
-          var dayHint = (ev.date && ev.date !== now.iso) ? (ev.date === tgt.focusIso ? "huom " : "") : "";
-          html += "<div class=\"kid-line\"><span class=\"t\">" + esc(dayHint + (fmtRange(ev.time, ev.end) || "")) + "</span> "
-            + esc(ev.title || "") + "</div>";
-          if (ev.place || drv) {
-            html += "<div class=\"kid-line m\">" + esc(ev.place || "")
-              + (drv ? (ev.place ? " · " : "") + esc(drv) : "") + "</div>";
-          }
-        }
-        if (evs.length > eMax) {
-          html += "<div class=\"kid-more\">+" + (evs.length - eMax) + " muuta</div>";
-        }
-      }
-      body.innerHTML = html;
-    }
-    var lunchEl = document.getElementById("schoolLunch");
-    if (lunchEl) {
-      var lunch = "";
-      if (schedule && schedule.schoolLunch) lunch = schedule.schoolLunch[tgt.lunchIso] || "";
-      if (lunch) {
-        lunchEl.style.display = "block";
-        lunchEl.innerHTML = "<span class=\"accent\">Kouluruoka</span> · " + esc(lunch)
-          + (tgt && tgt.label ? " <span class=\"muted\">(" + esc(tgt.label) + ")</span>" : "");
-      } else {
-        lunchEl.style.display = "none";
-        lunchEl.innerHTML = "";
-      }
-    }
+  function driverOf(e, iso) {
+    if (!e) return "";
+    var d = e.driver || "";
+    var p = e.pickup || "";
+    if (d && isAbsentDriver(d, iso)) d = "";
+    if (p && isAbsentDriver(p, iso)) p = "";
+    if (d && p && d === p) return d;
+    if (d && p) return d + " / " + p;
+    return d || p || "";
   }
 
 
@@ -1025,6 +691,92 @@ body.evening .photo-cap, body.night .photo-cap {
     return cand;
   }
 
+  function dayEventsClean(iso) {
+    var list = eventsOn(iso) || [];
+    var out = [];
+    var seen = {};
+    for (var i = 0; i < list.length; i++) {
+      var e = list[i];
+      if (!e || e.kind === "koulu") continue;
+      var k = eventDedupeKey(e, iso);
+      if (seen[k]) continue;
+      seen[k] = 1;
+      out.push(e);
+    }
+    out.sort(function (a, b) {
+      var ta = parseMin(a.time); if (ta == null) ta = 9800;
+      var tb = parseMin(b.time); if (tb == null) tb = 9800;
+      if (ta !== tb) return ta - tb;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
+    return out;
+  }
+
+  function paintNextLine(now) {
+    var el = document.getElementById("nextLine");
+    if (!el) return;
+    var out = dayEventsClean(now.iso);
+    var nowMin = now.minutes;
+    var live = null, next = null, nextDiff = 99999;
+    for (var i = 0; i < out.length; i++) {
+      var e = out[i];
+      var st = parseMin(e.time);
+      if (st == null) continue;
+      var en = parseMin(e.end); if (en == null) en = st + 60;
+      if (st <= nowMin && nowMin < en) { live = e; break; }
+      if (st > nowMin && st - nowMin < nextDiff) { nextDiff = st - nowMin; next = e; }
+    }
+    function brief(e, badge) {
+      var who = shortWho(e.who || "");
+      var time = e.time ? String(e.time).replace(":", ".") : "";
+      if (e.end && time) time += "–" + String(e.end).replace(":", ".");
+      var s = "<span class=\"badge\">" + badge + "</span>";
+      if (time) s += "<strong>" + esc(time) + "</strong> ";
+      if (who) s += esc(who) + " · ";
+      s += esc(e.title || "");
+      if (e.place) s += " <span class=\"muted\">· " + esc(e.place) + "</span>";
+      return s;
+    }
+    if (live) el.innerHTML = brief(live, "Nyt");
+    else if (next) el.innerHTML = brief(next, "Seuraavaksi");
+    else el.innerHTML = "<span class=\"muted\">Rauhallinen päivä</span>";
+  }
+
+  function paintTodayList(now) {
+    var el = document.getElementById("todayList");
+    if (!el) return;
+    var out = dayEventsClean(now.iso);
+    if (!out.length) {
+      el.innerHTML = "<div class=\"today-empty\">Rauhaa · ei merkintöjä tänään</div>";
+      return;
+    }
+    var nowMin = now.minutes;
+    var html = "";
+    var max = Math.min(out.length, 8);
+    for (var i = 0; i < max; i++) {
+      var e = out[i];
+      var st = parseMin(e.time);
+      var en = parseMin(e.end); if (en == null && st != null) en = st + 60;
+      var cls = "ev-row";
+      if (st != null && en != null && nowMin >= en) cls += " past";
+      else if (st != null && st <= nowMin && nowMin < en) cls += " live";
+      var when = fmtRange(e.time, e.end) || "—";
+      var who = shortWho(e.who || "");
+      var meta = [];
+      var drv = driverOf(e, now.iso);
+      if (e.place) meta.push(e.place);
+      if (drv) meta.push(drv);
+      html += "<div class=\"" + cls + "\">"
+        + "<div class=\"when\">" + esc(when) + "</div>"
+        + "<div class=\"dot\" style=\"background:" + colorForWho(e.who) + "\"></div>"
+        + "<div class=\"txt\"><span class=\"who\">" + esc(who) + "</span> · " + esc(e.title || "")
+        + (meta.length ? "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>" : "")
+        + "</div></div>";
+    }
+    if (out.length > max) html += "<div class=\"meta muted\">+" + (out.length - max) + " muuta</div>";
+    el.innerHTML = html;
+  }
+
   function paintOdotukset(now) {
     var el = document.getElementById("countdown");
     var listEl = document.getElementById("odoteList");
@@ -1032,19 +784,13 @@ body.evening .photo-cap, body.night .photo-cap {
       var d = daysUntil(LONTOO_START, now);
       var label = "Lontoo · 13.–17.10.";
       var big = "";
-      if (d > 1) {
-        big = d + " PÄIVÄÄ";
-      } else if (d === 1) {
-        big = "HUOMENNA";
-      } else if (d === 0 || (now.iso >= LONTOO_START && now.iso <= LONTOO_END)) {
-        label = "Lontoo";
-        big = "nyt menossa";
-      } else {
-        label = "Lontoo";
-        big = "kiitos matkasta";
-      }
-      el.innerHTML = "<div class=\"cd-label\">" + esc(label) + "</div>"
-        + "<div class=\"cd-big\">" + esc(big) + "</div>";
+      if (d > 1) big = d + " päivää";
+      else if (d === 1) big = "huomenna";
+      else if (d === 0 || (now.iso >= LONTOO_START && now.iso <= LONTOO_END)) {
+        label = "Lontoo"; big = "nyt menossa";
+      } else { label = "Lontoo"; big = "kiitos matkasta"; }
+      el.innerHTML = "<div class=\"cd-big\">" + esc(big) + "</div>"
+        + "<div class=\"cd-label\">" + esc(label) + "</div>";
     }
     if (!listEl) return;
     var items = [];
@@ -1055,7 +801,6 @@ body.evening .photo-cap, body.night .photo-cap {
       if (du < 0 || du > 50) return;
       var key = String(label2).toLowerCase() + "|" + iso;
       if (seen[key]) return;
-      /* älä toista Lontoota pienessä listassa */
       if (/lontoo/i.test(label2)) return;
       seen[key] = 1;
       var when = whenOverride;
@@ -1065,36 +810,21 @@ body.evening .photo-cap, body.night .photo-cap {
       }
       items.push({ label: label2, days: du, when: when, iso: iso });
     }
-
-    /* Kiinteät odotukset: syysloma, synttärit, juhlat */
     var extras = EXTRA_EXPECTATIONS || [];
     for (var xi = 0; xi < extras.length; xi++) {
       var x = extras[xi];
       if (!x || !x.start) continue;
-      var xIso = x.start;
       if (now.iso > (x.end || x.start)) continue;
-      if (now.iso >= x.start && x.end && now.iso <= x.end) {
-        /* käynnissä: näytä silti, days=0 */
-        pushItem(x.label, now.iso, x.label.indexOf("·") >= 0 ? "" : "");
-        /* fix when for ranges */
-        items[items.length - 1].when = (x.end && x.end !== x.start)
-          ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
-          : (parseInt(x.start.slice(8), 10) + "." + parseInt(x.start.slice(5, 7), 10) + ".");
-        items[items.length - 1].days = 0;
-        if (x.menu) items[items.length - 1].menu = x.menu;
-        continue;
-      }
       var whenR = (x.end && x.end !== x.start)
         ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
         : (parseInt(x.start.slice(8), 10) + "." + parseInt(x.start.slice(5, 7), 10) + ".");
-      pushItem(x.label, xIso, whenR);
-      if (items.length && items[items.length - 1].iso === xIso) {
-        items[items.length - 1].when = whenR;
-        if (x.menu) items[items.length - 1].menu = x.menu;
+      if (now.iso >= x.start && x.end && now.iso <= x.end) {
+        pushItem(x.label, now.iso, whenR);
+        if (items.length) items[items.length - 1].days = 0;
+      } else {
+        pushItem(x.label, x.start, whenR);
       }
     }
-
-    /* Synttärit / merkkipäivät schedule.anniversaries */
     var anns = (schedule && schedule.anniversaries) || FALLBACK.anniversaries || [];
     for (var i = 0; i < anns.length; i++) {
       var a = anns[i];
@@ -1104,219 +834,48 @@ body.evening .photo-cap, body.night .photo-cap {
       if (!label2) {
         if (a.kind === "birthday") label2 = (a.who || "") + " · syntymäpäivä";
         else if (a.kind === "wedding") label2 = "Hääpäivä";
-        else if (a.kind === "party") label2 = (a.who || "") + " · juhlat";
         else label2 = a.who || "Merkkipäivä";
       } else if (a.who && a.who !== "perhe" && label2.indexOf(a.who) < 0) {
         label2 = a.who + " · " + label2;
       }
       pushItem(label2, iso, null);
     }
-
-    /* schedule.expectations jos synkattu */
-    var exp = (schedule && schedule.expectations) || [];
-    for (var ei = 0; ei < exp.length; ei++) {
-      var e = exp[ei];
-      if (!e || !e.start) continue;
-      if (now.iso > (e.end || e.start)) continue;
-      var eWhen = (e.end && e.end !== e.start)
-        ? (parseInt(e.start.slice(8), 10) + ".–" + parseInt(e.end.slice(8), 10) + "." + parseInt(e.end.slice(5, 7), 10) + ".")
-        : null;
-      pushItem(e.label || e.title || "Odotus", e.start, eWhen);
-      if (e.menu && items.length && items[items.length - 1].iso === e.start) {
-        items[items.length - 1].menu = e.menu;
-      }
-    }
-
     items.sort(function (a, b) { return a.days - b.days; });
     var html = "";
-    var max = Math.min(items.length, 6);
+    var max = Math.min(items.length, 3);
     for (var j = 0; j < max; j++) {
       var it = items[j];
-      var rem = it.days === 0 ? "nyt" : (it.days === 1 ? "huomenna" : it.days + " pv");
+      var rem = it.days === 0 ? "nyt" : (it.days === 1 ? "huom" : it.days + " pv");
       html += "<div class=\"odote\"><span>" + esc(it.label)
         + (it.when ? (" <span class=\"muted\">" + esc(it.when) + "</span>") : "")
-        + (it.menu ? ("<br><span class=\"muted\" style=\"font-size:1.05vmin\">" + esc(it.menu) + "</span>") : "")
-        + "</span><span class=\"d accent\">" + esc(rem) + "</span></div>";
+        + "</span><span class=\"d\">" + esc(rem) + "</span></div>";
     }
-    listEl.innerHTML = html || "<div class=\"empty muted\">Hiljaista odotuksissa</div>";
+    listEl.innerHTML = html;
   }
-
-  function normEventTitle(t) {
-    var s = String(t || "").toLowerCase();
-    s = s.replace(/[·•.]/g, " ");
-    s = s.replace(/\s+/g, " ").replace(/^\s+|\s+$/g, "");
-    return s;
-  }
-  function eventDedupeKey(e, dayIso) {
-    var who = String(e && e.who ? e.who : "").toLowerCase();
-    var title = normEventTitle(e && e.title ? e.title : "");
-    var day = dayIso || (e && e.date ? e.date : "");
-    return day + "|" + who + "|" + title;
-  }
-
-
-  function paintTodayStrip(now) {
-    var el = document.getElementById("todayStrip");
-    if (!el) return;
-    var list = eventsOn(now.iso) || [];
-    var out = [];
-    var seen = {};
-    for (var i = 0; i < list.length; i++) {
-      var e = list[i];
-      if (!e) continue;
-      if (e.kind === "koulu") continue;
-      var k = eventDedupeKey(e, now.iso);
-      if (seen[k]) continue;
-      seen[k] = 1;
-      out.push(e);
-    }
-    out.sort(function (a, b) {
-      var ta = parseMin(a.time); if (ta == null) ta = 9800;
-      var tb = parseMin(b.time); if (tb == null) tb = 9800;
-      if (ta !== tb) return ta - tb;
-      return String(a.title || "").localeCompare(String(b.title || ""));
-    });
-    if (!out.length) {
-      el.innerHTML = "<span class=\"tl\">Tänään</span><span class=\"muted\">rauhaa · ei merkintöjä</span>";
-      return;
-    }
-
-    var nowMin = (now.hour | 0) * 60 + (now.minute | 0);
-    function evStart(e) { return parseMin(e.time); }
-    function evEnd(e) {
-      var en = parseMin(e.end);
-      if (en != null) return en;
-      var st = evStart(e);
-      if (st == null) return null;
-      /* oletus: 60 min jos loppua ei ole */
-      return st + 60;
-    }
-
-    var liveIdx = -1;
-    var nextIdx = -1;
-    var nextDiff = 99999;
-    for (var j = 0; j < out.length; j++) {
-      var e = out[j];
-      var st = evStart(e);
-      if (st == null) continue;
-      var en = evEnd(e);
-      if (st <= nowMin && nowMin < en) {
-        liveIdx = j;
-        break;
-      }
-      if (st > nowMin) {
-        var d = st - nowMin;
-        if (d < nextDiff) { nextDiff = d; nextIdx = j; }
-      }
-    }
-
-    function fmtItem(e, cls) {
-      var who = shortWho(e.who || "") || (e.who === "perhe" || e.who === "Perhe" ? "Perhe" : (e.who || ""));
-      var time = e.time ? String(e.time).replace(":", ".") : "";
-      if (e.end && time) time += "–" + String(e.end).replace(":", ".");
-      var title = e.title || "";
-      var bit = "<span class=\"item" + (cls ? " " + cls : "") + "\">";
-      if (time) bit += "<span class=\"t\">" + esc(time) + "</span> ";
-      if (who) bit += "<span class=\"w\">" + esc(who) + "</span> ";
-      bit += "<span class=\"x\">" + esc(title) + "</span>";
-      if (e.driver) bit += " <span class=\"muted\">· " + esc(e.driver) + "</span>";
-      else if (e.place) bit += " <span class=\"muted\">· " + esc(e.place) + "</span>";
-      bit += "</span>";
-      return bit;
-    }
-
-    function fmtNowBox(e, kind, mins) {
-      var who = shortWho(e.who || "") || (e.who === "perhe" || e.who === "Perhe" ? "Perhe" : (e.who || ""));
-      var time = e.time ? String(e.time).replace(":", ".") : "";
-      if (e.end && time) time += "–" + String(e.end).replace(":", ".");
-      var title = e.title || "";
-      var badge = kind === "live" ? "Nyt" : "Seuraavaksi";
-      var extra = "";
-      if (kind === "next" && mins != null && mins <= 90) {
-        if (mins <= 0) extra = "";
-        else if (mins < 60) extra = " · " + mins + " min";
-        else extra = " · " + Math.floor(mins / 60) + " h " + (mins % 60) + " min";
-      }
-      var s = "<span class=\"nowbox\"><span class=\"badge\">" + badge + "</span>";
-      if (time) s += "<span class=\"t\">" + esc(time) + "</span> ";
-      if (who) s += esc(who) + " ";
-      s += esc(title);
-      if (e.driver) s += " · " + esc(e.driver);
-      else if (e.place) s += " · " + esc(e.place);
-      s += esc(extra) + "</span>";
-      return s;
-    }
-
-    var focus = "";
-    if (liveIdx >= 0) focus = fmtNowBox(out[liveIdx], "live", 0);
-    else if (nextIdx >= 0) focus = fmtNowBox(out[nextIdx], "next", nextDiff);
-
-    var parts = [];
-    for (var k = 0; k < out.length; k++) {
-      var e = out[k];
-      var st = evStart(e);
-      var en = evEnd(e);
-      var cls = "up";
-      if (st != null && en != null && nowMin >= en) cls = "past";
-      else if (k === liveIdx) cls = "live";
-      else if (st != null && st > nowMin) cls = "up";
-      else if (st == null) cls = "up";
-      parts.push(fmtItem(e, cls));
-    }
-
-    el.innerHTML = "<span class=\"tl\">Tänään</span> " + focus +
-      "<span class=\"list\">" + parts.join("<span class=\"sep\">·</span>") + "</span>";
-  }
-
 
   function paintTomorrow(now) {
-    /* Vanhempien pikaosio: mitä huomenna pitää hoitaa / tietää. */
     var el = document.getElementById("tomorrowBox");
     if (!el) return;
     var iso = addDaysIso(now.iso, 1);
-    var list = eventsOn(iso);
-    var out = [];
-    var seen = {};
-    for (var i = 0; i < list.length; i++) {
-      var e = list[i];
-      if (!e) continue;
-      if (e.kind === "koulu") continue;
-      var k = eventDedupeKey(e, iso);
-      if (seen[k]) continue;
-      seen[k] = 1;
-      out.push(e);
-    }
-    out.sort(function (a, b) {
-      var ta = parseMin(a.time); if (ta == null) ta = 9800;
-      var tb = parseMin(b.time); if (tb == null) tb = 9800;
-      /* Kyydit / treenit ensin aikajärjestyksessä; ilman aikaa loppuun */
-      if (ta !== tb) return ta - tb;
-      return String(a.title || "").localeCompare(String(b.title || ""));
-    });
+    var out = dayEventsClean(iso);
     if (!out.length) {
-      el.innerHTML = "<div class=\"tmw-empty\">Ei merkintöjä huomenna</div>";
+      el.innerHTML = "<div class=\"empty\">Ei merkintöjä</div>";
       return;
     }
     var html = "";
-    var max = Math.min(out.length, 10);
+    var max = Math.min(out.length, 5);
     for (var i = 0; i < max; i++) {
       var e = out[i];
-      var who = e.who || "";
-      var sw = shortWho(who);
-      if (!sw) sw = (who === "perhe" || who === "Perhe") ? "Perhe" : who;
+      var who = shortWho(e.who || "");
       var time = fmtRange(e.time, e.end) || "";
-      var title = e.title || "";
       var bits = [];
-      if (e.driver) bits.push("vie " + e.driver);
-      if (e.pickup && e.pickup !== e.driver) bits.push("haku " + e.pickup);
-      if (e.note) bits.push(e.note);
+      if (e.driver) bits.push(e.driver);
       if (e.place) bits.push(e.place);
-      var meta = bits.join(" · ");
       html += "<div class=\"tmw-line\">"
-        + "<span class=\"who\">" + esc(sw || "·") + "</span>"
-        + (time ? "<span class=\"t\">" + esc(time) + "</span>" : "<span class=\"t\"> </span>")
-        + "<span class=\"title\">" + esc(title)
-        + (meta ? "<span class=\"meta\"> · " + esc(meta) + "</span>" : "")
+        + (who ? "<span class=\"who\">" + esc(who) + "</span>" : "")
+        + (time ? "<span class=\"t\">" + esc(time) + "</span>" : "")
+        + "<span>" + esc(e.title || "")
+        + (bits.length ? "<span class=\"meta\"> · " + esc(bits.join(" · ")) + "</span>" : "")
         + "</span></div>";
     }
     el.innerHTML = html;
@@ -1328,211 +887,30 @@ body.evening .photo-cap, body.night .photo-cap {
     var map = (schedule && schedule.homeMeals) || {};
     var html = "";
     var shown = 0;
-    for (var n = 0; n < 5 && shown < 3; n++) {
+    for (var n = 0; n < 4 && shown < 3; n++) {
       var iso = addDaysIso(now.iso, n);
       var dish = map[iso];
       if (!dish && n > 0) continue;
       var wd = (now.wd + n) % 7;
-      var dayLbl = n === 0 ? "Tänään" : DAYS[wd].short;
-      html += "<div class=\"meal-line\"><span class=\"d accent\">" + esc(dayLbl) + "</span>"
-        + "<span class=\"t\">" + esc(dish || "Ei merkintää") + "</span></div>";
+      var dayLbl = n === 0 ? "Tänään" : (n === 1 ? "Huom" : DAYS[wd].short);
+      html += "<div class=\"meal-line\"><span class=\"d\">" + esc(dayLbl) + "</span>"
+        + "<span>" + esc(dish || "Ei merkintää") + "</span></div>";
       shown++;
     }
-    el.innerHTML = html || "<div class=\"empty muted\">Ei merkintää</div>";
-  }
-
-  function monthShortFi(m) {
-    return ["tammi","helmi","maalis","huhti","touko","kesä","heinä","elo","syys","loka","marras","joulu"][m - 1] || "";
-  }
-
-  function shortWho(who) {
-    var w = String(who || "");
-    if (w === "Ellen") return "Ell";
-    if (w === "Samuel") return "Sam";
-    if (w === "Milla") return "Mil";
-    if (w === "Mea") return "Mea";
-    if (w === "Jussi") return "Jus";
-    if (w === "Riikka") return "Rik";
-    if (w === "perhe" || w === "Perhe") return "";
-    return w.length > 3 ? w.slice(0, 3) : w;
-  }
-  function colorForWho(who) {
-    if (!who) return "#c4a574";
-    if (WHO_COLOR[who]) return WHO_COLOR[who];
-    if (who === "perhe") return "#c4a574";
-    return "#b8a090";
-  }
-
-  function dayBucketEvents(iso, now) {
-    var out = [];
-    var seen = {};
-    function push(ev) {
-      if (!ev) return;
-      var key = eventDedupeKey(ev, iso);
-      if (seen[key]) return;
-      seen[key] = 1;
-      out.push(ev);
-    }
-    var list = eventsOn(iso);
-    for (var i = 0; i < list.length; i++) push(list[i]);
-    var p = isoParts(iso);
-    var dt = new Date(Date.UTC(p.y, p.m - 1, p.d));
-    var wd = dt.getUTCDay();
-    if (wd >= 1 && wd <= 5 && schedule && schedule.schoolStarts) {
-      var ss = schedule.schoolStarts;
-      var kids = {};
-      for (var s = 0; s < ss.length; s++) {
-        var row = ss[s];
-        var wds = row.weekdays || [];
-        var ok = false;
-        for (var j = 0; j < wds.length; j++) if (wds[j] === wd) ok = true;
-        if (ok && row.who && !kids[row.who]) {
-          kids[row.who] = 1;
-          push({ who: row.who, title: "Koulu", kind: "koulu", _soft: 1 });
-        }
-      }
-    }
-    var anns = (schedule && schedule.anniversaries) || [];
-    var mmdd = pad(p.m) + "-" + pad(p.d);
-    for (var a = 0; a < anns.length; a++) {
-      var ann = anns[a];
-      var raw = String(ann.date || ann.mmdd || "");
-      var aMmdd = ann.mmdd && String(ann.mmdd).length === 5 ? String(ann.mmdd) : (raw.length >= 5 ? raw.slice(-5) : "");
-      if (aMmdd !== mmdd) continue;
-      var title = ann.label || "";
-      if (!title) {
-        if (ann.kind === "birthday") title = "Syntymäpäivä";
-        else if (ann.kind === "wedding") title = "Hääpäivä";
-        else title = "Merkkipäivä";
-      }
-      push({ who: ann.who || "perhe", title: title, kind: "juhla" });
-    }
-    if (iso >= LONTOO_START && iso <= LONTOO_END) {
-      push({ who: "perhe", title: "Lontoo", kind: "matka" });
-    }
-    return out;
-  }
-
-  function paintMonthCal(now) {
-    var grid = document.getElementById("monthCalGrid");
-    var lbl = document.getElementById("monthCalLbl");
-    if (!grid) return;
-    try {
-      if (lbl) {
-        var endIso = addDaysIso(now.iso, 6);
-        var sp = isoParts(now.iso);
-        var ep = isoParts(endIso);
-        lbl.textContent = "Seuraavat 7 pv · " + sp.d + "." + sp.m + ".–" + ep.d + "." + ep.m + ".";
-      }
-      var html = "<div class=\"week-strip\">";
-      var dows = ["su","ma","ti","ke","to","pe","la"];
-      for (var n = 0; n < 7; n++) {
-        var iso = addDaysIso(now.iso, n);
-        var ip = isoParts(iso);
-        var dt = new Date(Date.UTC(ip.y, ip.m - 1, ip.d));
-        var wd = dt.getUTCDay();
-        var cls = "wday";
-        if (iso === now.iso) cls += " is-today";
-        if (iso >= LONTOO_START && iso <= LONTOO_END) cls += " is-lontoo";
-        var evs = dayBucketEvents(iso, now);
-        var realEvs = [];
-        for (var e = 0; e < evs.length; e++) {
-          if (evs[e].kind === "koulu") continue;
-          realEvs.push(evs[e]);
-        }
-        realEvs.sort(function (a, b) {
-          function score(ev) {
-            var k = ev.kind || "", t = (ev.title || "").toLowerCase();
-            if (k === "kisa" || t.indexOf("turnaus") >= 0) return 0;
-            if (k === "juhla" || k === "matka") return 1;
-            if (k === "treeni") return 2;
-            return 3;
-          }
-          var ta = parseMin(a.time); if (ta == null) ta = 9000;
-          var tb = parseMin(b.time); if (tb == null) tb = 9000;
-          var sa = score(a), sb = score(b);
-          if (sa !== sb) return sa - sb;
-          return ta - tb;
-        });
-        var label = "";
-        var used = {};
-        for (var ri = 0; ri < realEvs.length; ri++) {
-          var evx = realEvs[ri];
-          var who = evx.who || "perhe";
-          var rt = evx.title || "";
-          if (!rt) rt = who;
-          var sw = shortWho(who);
-          var tbit = "";
-          if (evx.time) tbit = String(evx.time).replace(":", ".") + " ";
-          var line = tbit + (sw ? (sw + " · " + rt) : rt);
-          if (used[line]) continue;
-          used[line] = 1;
-          label += "<div class=\"mlabel\"><span class=\"mdot\" style=\"background:"
-            + colorForWho(who) + "\"></span>" + esc(line) + "</div>";
-        }
-        if (!label && iso >= LONTOO_START && iso <= LONTOO_END) {
-          label = "<div class=\"mlabel\">Lontoo</div>";
-        }
-        if (!label) label = "<div class=\"empty-day\">—</div>";
-        html += "<div class=\"" + cls + "\">"
-          + "<div class=\"hd\"><span class=\"dn\">" + esc(dows[wd]) + "</span>"
-          + "<span class=\"dd\">" + esc(String(ip.d) + "." + String(ip.m) + ".") + "</span></div>"
-          + "<div class=\"evs\">" + label + "</div></div>";
-      }
-      html += "</div>";
-      grid.innerHTML = html;
-    } catch (err) {
-      grid.textContent = "Kalenteri ei ladannut";
-    }
+    el.innerHTML = html || "<div class=\"empty\">Ei merkintää</div>";
   }
 
   function paintWx() {
     var el = document.getElementById("wx");
     if (!el) return;
     if (!weather.temp) {
-      el.innerHTML = "<div class=\"wxbody\"><div class=\"wxtemp muted\">Kuopio</div></div>";
+      el.innerHTML = "<div class=\"meta muted\">Kuopio</div>";
       return;
     }
-    var meta = weather.phrase || "";
-    if (weather.feels != null && weather.feels !== "") meta += (meta ? " · " : "") + "tuntuu " + weather.feels + "°";
-    if (weather.wind != null && weather.wind !== "") meta += (meta ? " · " : "") + "tuuli " + weather.wind + " m/s";
-    el.innerHTML = "<div class=\"wxicon\">" + weather.icon + "</div><div class=\"wxbody\"><div class=\"wxtemp\">"
-      + esc(weather.temp) + "</div><div class=\"wxmeta muted\">" + esc(meta) + "</div></div>";
-  }
-
-  function paintWeekWx(now) {
-    var el = document.getElementById("weekWx");
-    if (!el) return;
-    if (!weekWx.length) {
-      var sk = "";
-      for (var s0 = 0; s0 < 7; s0++) {
-        sk += "<div class=\"wxday\"><div class=\"dn\">" + DAYS[(now.wd + s0) % 7].short
-          + "</div><div class=\"ic\"></div><div class=\"tm\">–</div><div class=\"extra\"></div></div>";
-      }
-      el.innerHTML = sk;
-      return;
-    }
-    var html = "";
-    for (var i = 0; i < weekWx.length && i < 7; i++) {
-      var d = weekWx[i];
-      var cls = d.iso === now.iso ? "wxday is-today" : "wxday";
-      var extraBits = [];
-      if (d.iso === now.iso && weather && weather.feels != null && weather.feels !== "") {
-        extraBits.push("≈" + weather.feels + "°");
-      }
-      if (d.wind != null && d.wind !== "") extraBits.push(d.wind + "m/s");
-      else if (d.iso === now.iso && weather && weather.wind != null && weather.wind !== "") {
-        extraBits.push(weather.wind + "m/s");
-      }
-      var extra = extraBits.length
-        ? "<div class=\"extra\">" + esc(extraBits.join(" · ")) + "</div>"
-        : "";
-      html += "<div class=\"" + cls + "\"><div class=\"dn\">" + esc(d.dn) + "</div>"
-        + "<div class=\"ic\">" + d.icon + "</div>"
-        + "<div class=\"tm\">" + esc(d.tmin + "–" + d.tmax + "°") + "</div>"
-        + extra + "</div>";
-    }
-    el.innerHTML = html;
+    var meta = weather.phrase || "Kuopio";
+    el.innerHTML = "<div class=\"row\"><span class=\"ic\">" + weather.icon
+      + "</span><span class=\"temp\">" + esc(weather.temp) + "</span></div>"
+      + "<div class=\"meta muted\">" + esc(meta) + "</div>";
   }
 
   function paintPhoto() {
@@ -1566,16 +944,13 @@ body.evening .photo-cap, body.night .photo-cap {
     var greetEl = document.getElementById("greet");
     if (greetEl) greetEl.textContent = greeting(now.hour);
     var dateEl = document.getElementById("dateLine");
-    if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ".";
-    paintKidsDay(now);
-    paintParents(now);
-    paintTodayStrip(now);
+    if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ". · Kuopio";
+    paintNextLine(now);
+    paintTodayList(now);
     paintOdotukset(now);
     paintTomorrow(now);
     paintMeals(now);
-    paintMonthCal(now);
     paintWx();
-    paintWeekWx(now);
   }
 
   function tickClock() {
@@ -1585,18 +960,17 @@ body.evening .photo-cap, body.night .photo-cap {
     if (clockEl) clockEl.textContent = pad(now.hour) + "." + pad(now.minute);
     var greetEl = document.getElementById("greet");
     if (greetEl) greetEl.textContent = greeting(now.hour);
-    paintTodayStrip(now);
+    paintNextLine(now);
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v78-kal-7pv", function (data) {
+    getJSON("schedule.json?v=" + BUILD, function (data) {
       if (data) schedule = data;
       paint();
     });
   }
-
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260922-v78-kal-7pv", function (data) {
+    getJSON("photos-from-matkat.json?v=" + BUILD, function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {
@@ -1611,63 +985,22 @@ body.evening .photo-cap, body.night .photo-cap {
       paintPhoto();
     });
   }
-
   function loadWeather() {
     getJSON(
-      "https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&current=temperature_2m,apparent_temperature,wind_speed_10m,weather_code&daily=weathercode,temperature_2m_max,temperature_2m_min,wind_speed_10m_max,apparent_temperature_max,apparent_temperature_min&wind_speed_unit=ms&timezone=Europe%2FHelsinki&forecast_days=7",
+      "https://api.open-meteo.com/v1/forecast?latitude=62.8924&longitude=27.6770&current=temperature_2m,apparent_temperature,wind_speed_10m,weather_code&daily=weathercode,temperature_2m_max,temperature_2m_min&wind_speed_unit=ms&timezone=Europe%2FHelsinki&forecast_days=3",
       function (data) {
-        if (!data || !data.daily) return;
+        if (!data) return;
         try {
-          var tmin = Math.round(data.daily.temperature_2m_min[0]);
-          var tmax = Math.round(data.daily.temperature_2m_max[0]);
-          var code0 = (data.daily.weathercode || data.daily.weather_code)[0];
-          var w = wmo(code0);
-          var feels = null;
-          var wind = null;
+          var w = { icon: "🌡️", phrase: "" };
           if (data.current) {
-            if (data.current.apparent_temperature != null) feels = Math.round(data.current.apparent_temperature);
-            if (data.current.wind_speed_10m != null) wind = Math.round(data.current.wind_speed_10m);
-            if (data.current.weather_code != null) w = wmo(data.current.weather_code);
-            if (data.current.temperature_2m != null) {
-              weather = {
-                icon: w.icon,
-                temp: Math.round(data.current.temperature_2m) + "°",
-                phrase: w.phrase,
-                feels: feels,
-                wind: wind
-              };
-            } else {
-              weather = { icon: w.icon, temp: tmin + "–" + tmax + "°", phrase: w.phrase, feels: feels, wind: wind };
-            }
-          } else {
-            if (data.daily.apparent_temperature_max) feels = Math.round(data.daily.apparent_temperature_max[0]);
-            if (data.daily.wind_speed_10m_max) wind = Math.round(data.daily.wind_speed_10m_max[0]);
-            weather = { icon: w.icon, temp: tmin + "–" + tmax + "°", phrase: w.phrase, feels: feels, wind: wind };
+            w = wmo(data.current.weather_code);
+            weather = {
+              icon: w.icon,
+              temp: Math.round(data.current.temperature_2m) + "°",
+              phrase: w.phrase
+            };
           }
-          var arr = [];
-          var times = data.daily.time || [];
-          for (var i = 0; i < times.length && i < 7; i++) {
-            var iso = times[i];
-            var p = isoParts(iso);
-            var dt = new Date(Date.UTC(p.y, p.m - 1, p.d));
-            var wd = dt.getUTCDay();
-            var ww = wmo((data.daily.weathercode || data.daily.weather_code)[i]);
-            var windMax = null;
-            if (data.daily.wind_speed_10m_max && data.daily.wind_speed_10m_max[i] != null) {
-              windMax = Math.round(data.daily.wind_speed_10m_max[i]);
-            }
-            arr.push({
-              iso: iso,
-              dn: DAYS[wd].short,
-              icon: ww.icon,
-              tmin: Math.round(data.daily.temperature_2m_min[i]),
-              tmax: Math.round(data.daily.temperature_2m_max[i]),
-              wind: windMax
-            });
-          }
-          weekWx = arr;
           paintWx();
-          paintWeekWx(helsinkiNow());
         } catch (e) {}
       }
     );
@@ -1689,6 +1022,6 @@ body.evening .photo-cap, body.night .photo-cap {
   }, 16000);
   setInterval(loadWeather, 30 * 60 * 1000);
 })();
-  </script>
+</script>
 </body>
 </html>

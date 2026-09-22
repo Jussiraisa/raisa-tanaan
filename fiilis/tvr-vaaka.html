@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v75-tanaan-wrap">
+  <meta name="fiilis-build" content="20260922-v76-nyt-korostus">
   <meta name="theme-color" content="#f7f1e3">
   <title>Räisä · Fiilis TV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,16 +32,26 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #f7f1e3; col
 .greet-block { -ms-flex: 1; flex: 1; min-width: 0; }
 .greet { color: #8f6524; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.today-strip { margin-top: .35vmin; max-width: min(72vmin, 100%); overflow: visible; white-space: normal; font-size: 1.28vmin; line-height: 1.45; font-weight: 500; color: #5c4e3a; letter-spacing: .01em; }
+.today-strip { margin-top: .3vmin; max-width: min(78vmin, 100%); overflow: visible; white-space: normal; font-size: 1.22vmin; line-height: 1.4; font-weight: 500; color: #5c4e3a; letter-spacing: .01em; }
+.today-strip .nowbox { display: inline-block; margin: 0 .55vmin .2vmin 0; padding: .18vmin .7vmin; border-radius: .55vmin; background: rgba(201,148,58,.22); border: 1px solid rgba(143,101,36,.35); color: #2c2418; font-size: 1.38vmin; font-weight: 650; line-height: 1.35; white-space: nowrap; vertical-align: baseline; }
+.today-strip .nowbox .badge { display: inline-block; margin-right: .45vmin; padding: .05vmin .4vmin; border-radius: .35vmin; background: #8f6524; color: #fff8ea; font-size: 1.05vmin; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; vertical-align: .05em; }
+.today-strip .nowbox .t { font-variant-numeric: tabular-nums; font-weight: 750; }
+.today-strip .list { display: inline; }
 .today-strip .item { white-space: nowrap; }
-.today-strip .tl { font-weight: 650; color: #8f6524; margin-right: .55vmin; }
-.today-strip .sep { color: rgba(92,78,58,.35); margin: 0 .45vmin; }
+.today-strip .item.past { opacity: .42; }
+.today-strip .item.live { font-weight: 700; color: #2c2418; }
+.today-strip .item.live .t, .today-strip .item.live .w, .today-strip .item.live .x { color: #7a5214; font-weight: 700; }
+.today-strip .item.up .t { color: #2c2418; }
+.today-strip .tl { font-weight: 650; color: #8f6524; margin-right: .45vmin; }
+.today-strip .sep { color: rgba(92,78,58,.35); margin: 0 .35vmin; }
 .today-strip .t { font-variant-numeric: tabular-nums; font-weight: 650; color: #2c2418; }
 .today-strip .w { font-weight: 600; color: #6c5c44; }
 .today-strip .x { font-weight: 500; color: #5c4e3a; }
 body.evening .today-strip, body.night .today-strip { color: #5a4c38; }
 body.evening .today-strip .tl, body.night .today-strip .tl { color: #7d5619; }
 body.evening .today-strip .t, body.night .today-strip .t { color: #241b0f; }
+body.evening .today-strip .nowbox, body.night .today-strip .nowbox { background: rgba(201,148,58,.28); border-color: rgba(125,86,25,.4); }
+body.evening .today-strip .nowbox .badge, body.night .today-strip .nowbox .badge { background: #7d5619; }
 .sub { color: #6c5c44; margin-top: .556vmin; }
 .date { color: #6c5c44; margin-top: .2vmin; }
 .wx { -ms-flex: 0 0 auto; flex: 0 0 auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; max-width: 34vmin; }
@@ -137,7 +147,7 @@ body.evening .today-strip .t, body.night .today-strip .t { color: #241b0f; }
 .foot .brand { font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em; color: #73634a; white-space: nowrap; text-transform: uppercase; }
 .tv { height: 100%; width: 100%; padding: 1.019vmin 2.5vmin; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; background: #f7f1e3; }
 .tv > * + * { margin-top: .833vmin; }
-.head { -ms-flex: 0 0 15.5vmin; flex: 0 0 15.5vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
+.head { -ms-flex: 0 0 16.2vmin; flex: 0 0 16.2vmin; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
 .head > * + * { margin-left: 2.037vmin; }
 .main { -ms-flex: 1 1 auto; flex: 1 1 auto; min-height: 0; display: -ms-flexbox; display: flex; }
 .main > * + * { margin-left: .833vmin; }
@@ -340,7 +350,7 @@ body.evening .photo-cap, body.night .photo-cap {
   <div class="foot">
     <div class="chips" id="chips"></div>
     <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
-    <span class="brand">v75 vaaka</span>
+    <span class="brand">v76 vaaka</span>
   </div>
 
 </div>
@@ -1095,23 +1105,92 @@ body.evening .photo-cap, body.night .photo-cap {
       el.innerHTML = "<span class=\"tl\">Tänään</span><span class=\"muted\">rauhaa · ei merkintöjä</span>";
       return;
     }
-    var parts = [];
+
+    var nowMin = (now.hour | 0) * 60 + (now.minute | 0);
+    function evStart(e) { return parseMin(e.time); }
+    function evEnd(e) {
+      var en = parseMin(e.end);
+      if (en != null) return en;
+      var st = evStart(e);
+      if (st == null) return null;
+      /* oletus: 60 min jos loppua ei ole */
+      return st + 60;
+    }
+
+    var liveIdx = -1;
+    var nextIdx = -1;
+    var nextDiff = 99999;
     for (var j = 0; j < out.length; j++) {
       var e = out[j];
+      var st = evStart(e);
+      if (st == null) continue;
+      var en = evEnd(e);
+      if (st <= nowMin && nowMin < en) {
+        liveIdx = j;
+        break;
+      }
+      if (st > nowMin) {
+        var d = st - nowMin;
+        if (d < nextDiff) { nextDiff = d; nextIdx = j; }
+      }
+    }
+
+    function fmtItem(e, cls) {
       var who = shortWho(e.who || "") || (e.who === "perhe" || e.who === "Perhe" ? "Perhe" : (e.who || ""));
       var time = e.time ? String(e.time).replace(":", ".") : "";
       if (e.end && time) time += "–" + String(e.end).replace(":", ".");
       var title = e.title || "";
-      var bit = "<span class=\"item\">";
+      var bit = "<span class=\"item" + (cls ? " " + cls : "") + "\">";
       if (time) bit += "<span class=\"t\">" + esc(time) + "</span> ";
       if (who) bit += "<span class=\"w\">" + esc(who) + "</span> ";
       bit += "<span class=\"x\">" + esc(title) + "</span>";
       if (e.driver) bit += " <span class=\"muted\">· " + esc(e.driver) + "</span>";
-      if (e.place && !e.driver) bit += " <span class=\"muted\">· " + esc(e.place) + "</span>";
+      else if (e.place) bit += " <span class=\"muted\">· " + esc(e.place) + "</span>";
       bit += "</span>";
-      parts.push(bit);
+      return bit;
     }
-    el.innerHTML = "<span class=\"tl\">Tänään</span> " + parts.join("<span class=\"sep\"> · </span>");
+
+    function fmtNowBox(e, kind, mins) {
+      var who = shortWho(e.who || "") || (e.who === "perhe" || e.who === "Perhe" ? "Perhe" : (e.who || ""));
+      var time = e.time ? String(e.time).replace(":", ".") : "";
+      if (e.end && time) time += "–" + String(e.end).replace(":", ".");
+      var title = e.title || "";
+      var badge = kind === "live" ? "Nyt" : "Seuraavaksi";
+      var extra = "";
+      if (kind === "next" && mins != null && mins <= 90) {
+        if (mins <= 0) extra = "";
+        else if (mins < 60) extra = " · " + mins + " min";
+        else extra = " · " + Math.floor(mins / 60) + " h " + (mins % 60) + " min";
+      }
+      var s = "<span class=\"nowbox\"><span class=\"badge\">" + badge + "</span>";
+      if (time) s += "<span class=\"t\">" + esc(time) + "</span> ";
+      if (who) s += esc(who) + " ";
+      s += esc(title);
+      if (e.driver) s += " · " + esc(e.driver);
+      else if (e.place) s += " · " + esc(e.place);
+      s += esc(extra) + "</span>";
+      return s;
+    }
+
+    var focus = "";
+    if (liveIdx >= 0) focus = fmtNowBox(out[liveIdx], "live", 0);
+    else if (nextIdx >= 0) focus = fmtNowBox(out[nextIdx], "next", nextDiff);
+
+    var parts = [];
+    for (var k = 0; k < out.length; k++) {
+      var e = out[k];
+      var st = evStart(e);
+      var en = evEnd(e);
+      var cls = "up";
+      if (st != null && en != null && nowMin >= en) cls = "past";
+      else if (k === liveIdx) cls = "live";
+      else if (st != null && st > nowMin) cls = "up";
+      else if (st == null) cls = "up";
+      parts.push(fmtItem(e, cls));
+    }
+
+    el.innerHTML = "<span class=\"tl\">Tänään</span> " + focus +
+      "<span class=\"list\">" + parts.join("<span class=\"sep\">·</span>") + "</span>";
   }
 
 
@@ -1470,7 +1549,7 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260922-v75-tanaan-wrap", function (data) {
+    getJSON("schedule.json?v=20260922-v76-nyt-korostus", function (data) {
       if (data) schedule = data;
       paint();
     });

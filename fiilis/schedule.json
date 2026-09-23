@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T13:32:32",
+  "updated": "2026-09-23T14:58:29",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -258,14 +258,6 @@
     },
     {
       "date": "2026-09-22",
-      "time": "",
-      "who": "perhe",
-      "title": "Pentutreffit Ella kotona",
-      "kind": "muu",
-      "place": "Koti"
-    },
-    {
-      "date": "2026-09-22",
       "time": "14:00",
       "end": "15:00",
       "who": "Mea",
@@ -313,31 +305,12 @@
       "source": "manual:jussi"
     },
     {
-      "date": "2026-09-23",
+      "date": "2026-09-22",
       "time": "",
-      "who": "Ellen",
-      "title": "Kodin ja koulun päivä · deadline",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-23",
-      "who": "Milla",
-      "title": "Vapaapäivä koulusta",
-      "kind": "muu",
-      "source": "perhe"
-    },
-    {
-      "date": "2026-09-23",
-      "time": "",
-      "who": "Samuel",
-      "title": "Kodin ja koulun päivä · deadline",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-23",
       "who": "perhe",
-      "title": "Kodin ja koulun päivä",
-      "kind": "muu"
+      "title": "Pentutreffit Ella kotona",
+      "kind": "muu",
+      "place": "Koti"
     },
     {
       "date": "2026-09-23",
@@ -374,6 +347,33 @@
       "kind": "treeni"
     },
     {
+      "date": "2026-09-23",
+      "time": "",
+      "who": "Ellen",
+      "title": "Kodin ja koulun päivä · deadline",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-23",
+      "who": "Milla",
+      "title": "Vapaapäivä koulusta",
+      "kind": "muu",
+      "source": "perhe"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "",
+      "who": "Samuel",
+      "title": "Kodin ja koulun päivä · deadline",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-23",
+      "who": "perhe",
+      "title": "Kodin ja koulun päivä",
+      "kind": "muu"
+    },
+    {
       "date": "2026-09-24",
       "time": "17:00",
       "end": "18:30",
@@ -394,29 +394,6 @@
       "place": "",
       "note": "Paikka auki (WA)",
       "source": "perhe:wa"
-    },
-    {
-      "date": "2026-09-25",
-      "time": "",
-      "who": "Ellen",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinne",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-25",
-      "time": "",
-      "who": "Samuel",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinne",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-25",
-      "who": "perhe",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinteen koulu",
-      "kind": "muu"
     },
     {
       "date": "2026-09-25",
@@ -469,6 +446,29 @@
       "title": "Vivida treeni",
       "place": "Bella Center",
       "kind": "treeni"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "",
+      "who": "Ellen",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinne",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "",
+      "who": "Samuel",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinne",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-25",
+      "who": "perhe",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinteen koulu",
+      "kind": "muu"
     },
     {
       "date": "2026-09-26",
@@ -610,13 +610,6 @@
     },
     {
       "date": "2026-09-30",
-      "who": "Ellen",
-      "title": "Koulukuvaus (lomake)",
-      "kind": "muu",
-      "time": ""
-    },
-    {
-      "date": "2026-09-30",
       "time": "18:00",
       "end": "20:30",
       "place": "Kuopiohalli",
@@ -646,18 +639,11 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-01",
+      "date": "2026-09-30",
       "who": "Ellen",
       "title": "Koulukuvaus (lomake)",
       "kind": "muu",
       "time": ""
-    },
-    {
-      "date": "2026-10-01",
-      "time": "",
-      "who": "Samuel",
-      "title": "Pelipassi hankittava",
-      "kind": "muu"
     },
     {
       "date": "2026-10-01",
@@ -698,6 +684,20 @@
       "driver": "Topias"
     },
     {
+      "date": "2026-10-01",
+      "who": "Ellen",
+      "title": "Koulukuvaus (lomake)",
+      "kind": "muu",
+      "time": ""
+    },
+    {
+      "date": "2026-10-01",
+      "time": "",
+      "who": "Samuel",
+      "title": "Pelipassi hankittava",
+      "kind": "muu"
+    },
+    {
       "date": "2026-10-02",
       "time": "16:00",
       "end": "18:30",
@@ -717,12 +717,6 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-10-03",
-      "who": "Aino",
-      "title": "Ainon juhlat",
-      "kind": "juhla"
     },
     {
       "date": "2026-10-03",
@@ -752,6 +746,12 @@
       "place": "Joensuu, Nepenmäki",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
+    },
+    {
+      "date": "2026-10-03",
+      "who": "Aino",
+      "title": "Ainon juhlat",
+      "kind": "juhla"
     },
     {
       "date": "2026-10-04",
@@ -829,20 +829,6 @@
     },
     {
       "date": "2026-10-06",
-      "who": "Ellen",
-      "title": "Äidinkielen koe",
-      "kind": "muu",
-      "place": "",
-      "source": "wilma:perhe"
-    },
-    {
-      "date": "2026-10-06",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-10-06",
       "time": "09:00",
       "end": "10:00",
       "who": "Mea",
@@ -883,10 +869,28 @@
       "kind": "kisa"
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-06",
+      "who": "Ellen",
+      "title": "Äidinkielen koe",
+      "kind": "muu",
+      "place": "",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-10-06",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
+    },
+    {
+      "date": "2026-10-07",
+      "time": "17:00",
+      "end": "18:00",
+      "who": "Mea",
+      "title": "Terapia · Tarja Pajunen",
+      "kind": "muu",
+      "source": "perhe:gcal",
+      "note": "Perhe-kalenteri (paikkaa ei annettu)"
     },
     {
       "date": "2026-10-07",
@@ -920,7 +924,7 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-08",
+      "date": "2026-10-07",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
@@ -936,15 +940,7 @@
       "driver": "Topias"
     },
     {
-      "date": "2026-10-09",
-      "who": "Ellen",
-      "title": "Matematiikan koe",
-      "kind": "muu",
-      "place": "",
-      "source": "wilma:perhe"
-    },
-    {
-      "date": "2026-10-09",
+      "date": "2026-10-08",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
@@ -980,6 +976,20 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Ellen",
+      "title": "Matematiikan koe",
+      "kind": "muu",
+      "place": "",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
     },
     {
       "date": "2026-10-10",
@@ -1269,8 +1279,18 @@
     },
     {
       "start": "2026-10-06",
+      "end": "2026-10-06",
+      "label": "Mea · terapia klo 9–10 · Minna"
+    },
+    {
+      "start": "2026-10-06",
       "end": "2026-10-09",
       "label": "Riikka Oulussa"
+    },
+    {
+      "start": "2026-10-07",
+      "end": "2026-10-07",
+      "label": "Mea · terapia klo 17–18 · Tarja Pajunen"
     },
     {
       "start": "2026-10-09",

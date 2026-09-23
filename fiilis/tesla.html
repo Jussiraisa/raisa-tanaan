@@ -168,6 +168,7 @@
   }
   .school-strip .sk .t {
     font-weight: 750; font-variant-numeric: tabular-nums; margin-right: .35vmin;
+    letter-spacing: -.02em;
   }
   .school-strip .sk .w { color: var(--muted); font-weight: 600; }
 
@@ -343,7 +344,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v116-school-starts";
+  var BUILD = "20260923-v117-school-ends";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -615,7 +616,7 @@
       var sf = schoolFocus(now);
       var ss = schoolStartForWho(who, sf.wd);
       if (ss && ss.time) {
-        var stxt = "Koulu " + fmtHm(ss.time);
+        var stxt = "Koulu " + (fmtRange(ss.time, ss.end) || fmtHm(ss.time));
         if (sf.tomorrow) stxt = (sf.label.indexOf("ma") >= 0 ? "ma " : "huom ") + stxt;
         var liveSchool = !sf.tomorrow && now.minutes < (parseMin(ss.end) != null ? parseMin(ss.end) : 14 * 60);
         return { text: stxt, live: liveSchool, color: colorWho(who) };
@@ -743,7 +744,7 @@
       html += "<div class=\"school-strip\">";
       for (var si = 0; si < schools.length; si++) {
         var sc = schools[si];
-        html += "<span class=\"sk\"><span class=\"t\">" + esc(fmtHm(sc.time) || "—")
+        html += "<span class=\"sk\"><span class=\"t\">" + esc(fmtRange(sc.time, sc.end) || fmtHm(sc.time) || "—")
           + "</span><span class=\"w\">" + esc(sc.who || "") + "</span></span>";
       }
       html += "</div>";

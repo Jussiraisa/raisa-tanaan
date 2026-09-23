@@ -97,5 +97,5 @@
   "buyMonthKwh": 326.2,
   "buyAvgSnt": 11.7,
   "saunaEveningWarn": false,
-  "saunaWanted": true
+  "saunaWanted": false
 }

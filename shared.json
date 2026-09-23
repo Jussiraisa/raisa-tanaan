@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790175384556,
+  "updated": 1790175749489,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -359,11 +359,11 @@
     },
     {
       "id": "info-mea-synttarit-2026-09-26",
-      "title": "Mea synttärit",
+      "title": "Mea synttärit · sukulaiset",
       "date": "2026-09-26",
       "start": "13:00",
       "end": "",
-      "place": "",
+      "place": "Koti",
       "kind": "info",
       "who": "mea",
       "driver": "",
@@ -590,7 +590,7 @@
     {
       "id": "info-mea-synttarit-leivonta-2026-09-25",
       "who": "mea",
-      "title": "Mea synttärit · leivonta (kakku + keksit)",
+      "title": "Mea synttärit · prep (keksit, macarons, focaccia-taikina)",
       "date": "2026-09-25",
       "start": "15:00",
       "end": "18:00",
@@ -602,7 +602,7 @@
     {
       "id": "info-mea-synttarit-piirakat-2026-09-26",
       "who": "mea",
-      "title": "Mea synttärit · piirakat aamulla",
+      "title": "Mea synttärit · sienipiirakka + valmistelu",
       "date": "2026-09-26",
       "start": "08:00",
       "end": "11:30",
@@ -630,6 +630,18 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-mea-synttarit-porkkanakakku-2026-09-24",
+      "who": "riikka",
+      "title": "Mea synttärit · porkkanakakku (to–pe)",
+      "date": "2026-09-24",
+      "start": "",
+      "end": "",
+      "place": "Koti",
+      "kind": "info",
+      "driver": "",
+      "status": ""
     }
   ],
   "schoolLunch": {

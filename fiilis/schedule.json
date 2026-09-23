@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T14:58:29",
+  "updated": "2026-09-23T18:00:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Synkka 23.9.2026 aamu: Voimistelu-kalenterista täydennetty puuttuvat Lianna/Vivida (30.9, 2.–5.10, 7.10, 9.10) + Lianna laji 28.9 Hatsala; paikat 27.9 Bella & 5.10 voimat Luola. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. WA-kyydit Perhe 22.9. (SendToAgent ei saatavilla).",
+  "note": "Synkka 23.9.2026 aamu: Voimistelu-kalenterista täydennetty puuttuvat Lianna/Vivida (30.9, 2.–5.10, 7.10, 9.10) + Lianna laji 28.9 Hatsala; paikat 27.9 Bella & 5.10 voimat Luola. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. WA-kyydit Perhe 22.9. (SendToAgent ei saatavilla). | Mea synttärit menu päivitetty 23.9.18:00: focaccia/sienipiirakka/pikkupizzat/cocktail/popparit/sipsit/pannarit/macarons/keksit/porkkanakakku/karkit; ei lohipiirakkaa/Millan kakkua.",
   "events": [
     {
       "date": "2026-09-20",
@@ -410,11 +410,11 @@
       "time": "15:00",
       "end": "18:00",
       "who": "Mea",
-      "title": "Synttärit · leivonta (kakku + keksit)",
+      "title": "Synttärit · prep (keksit, macarons, focaccia-taikina)",
       "place": "Koti",
       "kind": "muu",
       "source": "perhe:kalenteri",
-      "note": "Milla kakku · Samuel+Mea keksit"
+      "note": "Samuel keksit · mummi+Mea macarons · Riikka focaccia yön yli · porkkanakakku to–pe"
     },
     {
       "date": "2026-09-25",
@@ -475,11 +475,11 @@
       "time": "08:00",
       "end": "11:30",
       "who": "Jussi",
-      "title": "Synttärit · piirakat + valmistelu",
+      "title": "Synttärit · sienipiirakka + valmistelu",
       "place": "Koti",
       "kind": "muu",
       "source": "perhe:kalenteri",
-      "note": "sieni- + lohipiirakka"
+      "note": "sienipiirakka pe/la auki · focaccia paisto · keksit paisto · pannarit mummo"
     },
     {
       "date": "2026-09-26",
@@ -496,7 +496,8 @@
       "who": "Mea",
       "title": "Synttärit · sukulaiset",
       "kind": "juhla",
-      "note": "Menu: pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
+      "note": "Menu: focaccia (Riikka) · sienipiirakka (Jussi pe/la?) · pikkupizzat · cocktail-tikut (mozzarella-tomaatti, kurkku-paprika-viinirypäle) · popparit · sipsit · pannarit (mummo) · macarons (mummi+Mea) · keksit (Samuel) · porkkanakakku (Riikka) · karkkeja · kahvi/tee",
+      "place": "Koti"
     },
     {
       "date": "2026-09-26",
@@ -1108,6 +1109,15 @@
       "place": "Luola, Savilahti",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
+    },
+    {
+      "date": "2026-09-24",
+      "who": "Riikka",
+      "title": "Synttärit · porkkanakakku (to–pe)",
+      "place": "Koti",
+      "kind": "muu",
+      "source": "perhe",
+      "note": "Porkkanakakku Mea synttäreihin · jatkuu pe"
     }
   ],
   "schoolLunch": {
@@ -1242,20 +1252,25 @@
   },
   "expectations": [
     {
+      "start": "2026-09-24",
+      "end": "2026-09-25",
+      "label": "Mea synttärit · porkkanakakku (Riikka to–pe)"
+    },
+    {
       "start": "2026-09-25",
       "end": "2026-09-25",
-      "label": "Mea synttärit · pe leivonta (kakku + keksit)"
+      "label": "Mea synttärit · pe prep (keksit, macarons, focaccia-taikina)"
     },
     {
       "start": "2026-09-26",
       "end": "2026-09-26",
-      "label": "Mea synttärit · la aamu piirakat"
+      "label": "Mea synttärit · la aamu sienipiirakka + paistot"
     },
     {
       "start": "2026-09-26",
       "end": "2026-09-26",
       "label": "Mea synttärit · sukulaiset · klo 13",
-      "menu": "pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
+      "menu": "focaccia (Riikka) · sienipiirakka (Jussi pe/la?) · pikkupizzat · cocktail-tikut (mozzarella-tomaatti, kurkku-paprika-viinirypäle) · popparit · sipsit · pannarit (mummo) · macarons (mummi+Mea) · keksit (Samuel) · porkkanakakku (Riikka) · karkkeja · kahvi/tee"
     },
     {
       "start": "2026-10-02",

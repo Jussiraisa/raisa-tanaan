@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790175749489,
+  "updated": 1790183212184,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -259,36 +259,6 @@
   "note": "",
   "extras": [
     {
-      "id": "cal-ot896g1o8ccv4k44abuac3ju34",
-      "title": "Ellen · Ambrosia joukkueilta (Leo’s)",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Leo's Leikkimaa"
-    },
-    {
-      "id": "cal-up1jsanogpkg00ntev54onp6ak",
-      "title": "Padel · Jari",
-      "date": "2026-09-24",
-      "start": "18:30",
-      "end": "20:00",
-      "kind": "cal",
-      "place": ""
-    },
-    {
-      "id": "info-ellen-leos-2026-09-23",
-      "who": "ellen",
-      "title": "Ambrosia joukkueilta · Leo’s (ei Kuopiohallia)",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:00",
-      "place": "Leo's Leikkimaa",
-      "kind": "info",
-      "driver": "Jussi",
-      "status": ""
-    },
-    {
       "id": "info-ilmoitus-kkp-deadline-2026-09-23",
       "who": "",
       "title": "Ilmoita kodin ja koulun päivään (Ellen+Samuel)",
@@ -312,6 +282,47 @@
       "note": "WA: Ke 17.30 kyytiin Enni, Mea, Amanda. Enni kirjaston kautta Luolalle. Julia vie / Enni hakee (viikkosuunnitelma)."
     },
     {
+      "id": "sheet-mea-2026-09-23",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-23",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
+      "id": "info-mea-synttarit-porkkanakakku-2026-09-24",
+      "who": "riikka",
+      "title": "Mea synttärit · porkkanakakku (to–pe)",
+      "date": "2026-09-24",
+      "start": "",
+      "end": "",
+      "place": "Koti",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "cal-up1jsanogpkg00ntev54onp6ak",
+      "title": "Padel · Jari",
+      "date": "2026-09-24",
+      "start": "18:30",
+      "end": "20:00",
+      "kind": "cal",
+      "place": ""
+    },
+    {
       "id": "info-jussi-padel-jari-2026-09-24",
       "title": "Padel · Jari",
       "date": "2026-09-24",
@@ -325,22 +336,22 @@
       "note": "Jari Väänänen · WA 22.9. \"bille\" = padel. Paikka auki."
     },
     {
+      "id": "info-kkp-2026-09-25",
+      "who": "",
+      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
+      "date": "2026-09-25",
+      "place": "Aurinkorinteen koulu",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-ntv-kisat-2026-09-25",
       "who": "ellen",
       "title": "Ambrosia NTV-kisat + talkoot",
       "date": "2026-09-25",
       "dateEnd": "2026-09-27",
       "place": "Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-kkp-2026-09-25",
-      "who": "",
-      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
-      "date": "2026-09-25",
-      "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -356,6 +367,30 @@
       "kind": "kyyti",
       "driver": "Amanda / Elina",
       "status": "open"
+    },
+    {
+      "id": "info-mea-synttarit-leivonta-2026-09-25",
+      "who": "mea",
+      "title": "Mea synttärit · prep (keksit, macarons, focaccia-taikina)",
+      "date": "2026-09-25",
+      "start": "15:00",
+      "end": "18:00",
+      "place": "Koti",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "info-mea-synttarit-piirakat-2026-09-26",
+      "who": "mea",
+      "title": "Mea synttärit · sienipiirakka + valmistelu",
+      "date": "2026-09-26",
+      "start": "08:00",
+      "end": "11:30",
+      "place": "Koti",
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-mea-synttarit-2026-09-26",
@@ -425,6 +460,15 @@
       "place": "Aurinkorinteen koulu"
     },
     {
+      "id": "info-samuel-pelipassi-2026-10-01",
+      "who": "samuel",
+      "title": "Welhot P9 pelipassi hankittava",
+      "date": "2026-10-01",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-koulukuvaus-ellen-2026-09-30",
       "who": "ellen",
       "title": "Koulukuvaus 4C klo 12.30 (lomake opettajalle)",
@@ -446,10 +490,11 @@
       "status": ""
     },
     {
-      "id": "info-samuel-pelipassi-2026-10-01",
+      "id": "info-samuel-turnaus-2026-10-03",
       "who": "samuel",
-      "title": "Welhot P9 pelipassi hankittava",
-      "date": "2026-10-01",
+      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
+      "date": "2026-10-03",
+      "place": "Joensuu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -467,16 +512,6 @@
       "status": ""
     },
     {
-      "id": "info-samuel-turnaus-2026-10-03",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
-      "date": "2026-10-03",
-      "place": "Joensuu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
       "title": "Liannan voimat",
@@ -489,13 +524,13 @@
       "status": ""
     },
     {
-      "id": "info-lianna-harkkakisa-2026-10-06",
-      "who": "mea",
-      "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
+      "id": "info-ellen-koe-aidinkieli-2026-10-06",
+      "who": "ellen",
+      "title": "Koe · äidinkieli",
       "date": "2026-10-06",
-      "start": "17:00",
-      "end": "19:00",
-      "place": "Ylä-Pyörön koulu",
+      "start": "",
+      "end": "",
+      "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
       "status": ""
@@ -512,6 +547,18 @@
       "status": ""
     },
     {
+      "id": "info-lianna-harkkakisa-2026-10-06",
+      "who": "mea",
+      "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
+      "date": "2026-10-06",
+      "start": "17:00",
+      "end": "19:00",
+      "place": "Ylä-Pyörön koulu",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
       "id": "info-mea-terapia-2026-10-07",
       "who": "mea",
       "title": "Terapia",
@@ -520,6 +567,18 @@
       "end": "",
       "kind": "info",
       "place": "",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "info-ellen-koe-matematiikka-2026-10-09",
+      "who": "ellen",
+      "title": "Koe · matematiikka",
+      "date": "2026-10-09",
+      "start": "",
+      "end": "",
+      "place": "Aurinkorinteen koulu",
+      "kind": "info",
       "driver": "",
       "status": ""
     },
@@ -559,86 +618,6 @@
       "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
       "date": "2026-12-19",
       "place": "Kuopio Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-ellen-koe-aidinkieli-2026-10-06",
-      "who": "ellen",
-      "title": "Koe · äidinkieli",
-      "date": "2026-10-06",
-      "start": "",
-      "end": "",
-      "place": "Aurinkorinteen koulu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-ellen-koe-matematiikka-2026-10-09",
-      "who": "ellen",
-      "title": "Koe · matematiikka",
-      "date": "2026-10-09",
-      "start": "",
-      "end": "",
-      "place": "Aurinkorinteen koulu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-mea-synttarit-leivonta-2026-09-25",
-      "who": "mea",
-      "title": "Mea synttärit · prep (keksit, macarons, focaccia-taikina)",
-      "date": "2026-09-25",
-      "start": "15:00",
-      "end": "18:00",
-      "place": "Koti",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-mea-synttarit-piirakat-2026-09-26",
-      "who": "mea",
-      "title": "Mea synttärit · sienipiirakka + valmistelu",
-      "date": "2026-09-26",
-      "start": "08:00",
-      "end": "11:30",
-      "place": "Koti",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "sheet-mea-2026-09-23",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-23",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "info-mea-synttarit-porkkanakakku-2026-09-24",
-      "who": "riikka",
-      "title": "Mea synttärit · porkkanakakku (to–pe)",
-      "date": "2026-09-24",
-      "start": "",
-      "end": "",
-      "place": "Koti",
       "kind": "info",
       "driver": "",
       "status": ""

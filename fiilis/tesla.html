@@ -237,6 +237,32 @@
 
   .meal-block { margin-top: .4vmin; }
   .meal-row { margin-bottom: .85vmin; }
+  .news-block {
+    margin-top: 1.1vmin; padding-top: .85vmin;
+    border-top: 1px solid rgba(44,36,24,.08);
+    min-height: 0; overflow: hidden;
+  }
+  .news-sect {
+    font-size: 1.35vmin; font-weight: 650; letter-spacing: .1em;
+    text-transform: uppercase; color: #a09078;
+    margin: .45vmin 0 .25vmin;
+  }
+  .news-sect:first-child { margin-top: 0; }
+  .news-list { font-size: 1.85vmin; line-height: 1.35; color: var(--text); }
+  .news-line {
+    display: -ms-flexbox; display: flex; -ms-flex-align: flex-start; align-items: flex-start;
+    gap: .45vmin; padding: .28vmin 0;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .news-line .dot {
+    width: .55vmin; height: .55vmin; border-radius: 50%;
+    background: #c4a574; margin-top: .7vmin; -ms-flex: 0 0 auto; flex: 0 0 auto;
+  }
+  .news-line .ttl {
+    min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: 600;
+  }
+  .news-empty { color: var(--muted); font-size: 1.7vmin; font-style: italic; }
+
   .meal-row .k {
     font-size: 1.7vmin; font-weight: 700; color: var(--accent); letter-spacing: .03em;
     text-transform: uppercase; margin-bottom: .25vmin;
@@ -321,6 +347,12 @@
         <div class="meal-row"><div class="k">Kouluruoka</div><div class="v muted" id="mealSchool">—</div></div>
         <div class="meal-row"><div class="k">Kotona</div><div class="v muted" id="mealHome">—</div></div>
       </div>
+      <div class="news-block" id="newsBox">
+        <div class="news-sect">Yle</div>
+        <div class="news-list" id="newsYle"><div class="news-empty">—</div></div>
+        <div class="news-sect">X maailmalla</div>
+        <div class="news-list" id="newsX"><div class="news-empty">—</div></div>
+      </div>
     </div>
     <div class="col grow" style="flex:1.1; -ms-flex:1.1; min-width:0;">
       <div class="card quote grow" id="quoteCard">
@@ -345,7 +377,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v119-milla-off";
+  var BUILD = "20260923-v120-yle-x-news";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -929,6 +961,29 @@
     }
   }
 
+
+  var newsData = null;
+
+  function paintNews() {
+    var yleEl = document.getElementById("newsYle");
+    var xEl = document.getElementById("newsX");
+    if (!yleEl && !xEl) return;
+    function lines(arr, maxN) {
+      arr = arr || [];
+      var html = "";
+      var n = Math.min(arr.length, maxN);
+      for (var i = 0; i < n; i++) {
+        var it = arr[i];
+        if (!it || !it.title) continue;
+        html += "<div class=\"news-line\"><span class=\"dot\"></span><span class=\"ttl\">"
+          + esc(it.title) + "</span></div>";
+      }
+      return html || "<div class=\"news-empty\">Ei otsikoita juuri nyt</div>";
+    }
+    if (yleEl) yleEl.innerHTML = lines(newsData && newsData.yle, 3);
+    if (xEl) xEl.innerHTML = lines(newsData && newsData.x, 4);
+  }
+
   function paint() {
     var now = helsinkiNow();
     applyTheme(now.hour);
@@ -941,6 +996,7 @@
     paintToday(now);
     paintPeople(now);
     paintMeals(now);
+    paintNews();
     paintWx();
     paintPhotos(now);
     var bs = document.getElementById("buildStamp");
@@ -951,6 +1007,10 @@
     getJSON("schedule.json?v=" + BUILD, function (data) {
       if (data) schedule = data;
       paint();
+    });
+    getJSON("news.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/300000), function (data) {
+      if (data) newsData = data;
+      paintNews();
     });
   }
   function daysUntilIso(iso, now) {

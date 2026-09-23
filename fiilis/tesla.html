@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260923-v98-today-no-overlap">
+<meta name="fiilis-build" content="20260923-v99-today-ellipsis">
 <title>Fiilis · Tesla</title>
 <style>
 
@@ -177,7 +177,8 @@
 
   .today-group-lbl:first-child { margin-top: 0; }
   .tev .dotc { width: .85vmin; height: .85vmin; border-radius: 50%; margin: .55vmin .7vmin 0 0; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-  .tev .txt { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; color: var(--text); }
+  .tev .txt { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; color: var(--text); overflow: hidden; }
+  .tev .line { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .tev .txt .meta { color: #7a6a55; font-weight: 500; }
   .nowpill {
     display: inline-block; margin-bottom: .7vmin; padding: .35vmin .8vmin;
@@ -379,7 +380,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v98-today-no-overlap";
+  var BUILD = "20260923-v99-today-ellipsis";
   var FALLBACK = {
     events: [
       { date: "2026-09-25", time: "15:00", end: "18:00", who: "Mea", title: "Synttärit · leivonta (kakku + keksit)", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "Milla kakku · Samuel+Mea keksit" },
@@ -843,8 +844,8 @@
       html += "<div class=\"" + cls + "\">";
       html += "<div class=\"when\">" + esc(when) + "</div>";
       html += "<div class=\"dotc\" style=\"background:" + colorWho(e2.who) + "\"></div>";
-      html += "<div class=\"txt\">" + esc(bits.join(" · "));
-      if (meta.length) html += " <span class=\"meta\">· " + esc(meta.join(" · ")) + "</span>";
+      html += "<div class=\"txt\"><div class=\"line\">" + esc(bits.join(" · ")) + "</div>";
+      if (meta.length) html += "<div class=\"meta\">" + esc(meta.join(" · ")) + "</div>";
       html += "</div></div>";
     }
     if (!html) html = "<div class=\"tev\"><div class=\"txt\" style=\"color:#7a6a55\">Ei merkintöjä " + (focus.rolled ? "huomenna" : "tänään") + "</div></div>";

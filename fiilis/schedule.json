@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T08:29:37",
+  "updated": "2026-09-23T08:29:43",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1268,6 +1268,16 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "label": "Riikka · synttärijuhlat"
+    },
+    {
+      "start": "2026-10-06",
+      "end": "2026-10-06",
+      "label": "Ellen · koe äidinkieli"
+    },
+    {
+      "start": "2026-10-09",
+      "end": "2026-10-09",
+      "label": "Ellen · koe matematiikka"
     }
   ]
 }

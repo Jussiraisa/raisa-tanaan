@@ -345,7 +345,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v118-when-width";
+  var BUILD = "20260923-v119-milla-off";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -615,7 +615,13 @@
     }
     if ((who === "Ellen" || who === "Samuel" || who === "Milla" || who === "Mea")) {
       var sf = schoolFocus(now);
-      var ss = schoolStartForWho(who, sf.wd);
+      if (!sf.tomorrow && isSchoolOff(who, now.iso)) {
+        return { text: "Vapaapäivä koulusta", live: false, color: colorWho(who) };
+      }
+      if (sf.tomorrow && isSchoolOff(who, sf.iso)) {
+        return { text: "huom vapaapäivä", live: false, color: colorWho(who) };
+      }
+      var ss = schoolStartForWho(who, sf.wd, sf.iso);
       if (ss && ss.time) {
         var stxt = "Koulu " + (fmtRange(ss.time, ss.end) || fmtHm(ss.time));
         if (sf.tomorrow) stxt = (sf.label.indexOf("ma") >= 0 ? "ma " : "huom ") + stxt;
@@ -631,14 +637,30 @@
 
 
   var KID_SCHOOL_ORDER = ["Ellen", "Samuel", "Milla", "Mea"];
-  function schoolStartsForWd(wd) {
+
+  function isSchoolOff(who, iso) {
+    if (!who || !iso || !schedule || !schedule.absences) return false;
+    var abs = schedule.absences;
+    for (var i = 0; i < abs.length; i++) {
+      var a = abs[i];
+      if (!a || a.who !== who) continue;
+      if (a.from && a.to && iso >= a.from && iso <= a.to) {
+        if (a.kind === "schoolOff") return true;
+        if (/vapaa|koulu/i.test(String(a.note || "") + " " + String(a.where || ""))) return true;
+      }
+    }
+    return false;
+  }
+  function schoolStartsForWd(wd, iso) {
     var list = (schedule && schedule.schoolStarts) || [];
     var out = [];
     for (var i = 0; i < list.length; i++) {
       var s = list[i];
       if (!s) continue;
       var days = s.weekdays || s.days || [];
-      if (days.indexOf(wd) >= 0) out.push(s);
+      if (days.indexOf(wd) < 0) continue;
+      if (iso && isSchoolOff(s.who, iso)) continue;
+      out.push(s);
     }
     out.sort(function (a, b) {
       var ia = KID_SCHOOL_ORDER.indexOf(a.who); if (ia < 0) ia = 99;
@@ -661,8 +683,8 @@
     }
     return { wd: wd, iso: now.iso, label: "Koulu", tomorrow: false };
   }
-  function schoolStartForWho(who, wd) {
-    var list = schoolStartsForWd(wd);
+  function schoolStartForWho(who, wd, iso) {
+    var list = schoolStartsForWd(wd, iso);
     for (var i = 0; i < list.length; i++) {
       if (list[i].who === who) return list[i];
     }
@@ -739,7 +761,7 @@
     var lastGroup = null;
     var html = "";
     var schFocus = schoolFocus(now);
-    var schools = schoolStartsForWd(schFocus.wd);
+    var schools = schoolStartsForWd(schFocus.wd, schFocus.iso);
     if (schools.length) {
       html += "<div class=\"today-group-lbl\">" + esc(schFocus.label) + "</div>";
       html += "<div class=\"school-strip\">";

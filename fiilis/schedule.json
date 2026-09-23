@@ -355,6 +355,13 @@
     },
     {
       "date": "2026-09-23",
+      "who": "Milla",
+      "title": "Vapaapäivä koulusta",
+      "kind": "muu",
+      "source": "perhe"
+    },
+    {
+      "date": "2026-09-23",
       "time": "",
       "who": "Samuel",
       "title": "Ilmoita kodin ja koulun päivään (deadline)",
@@ -1100,6 +1107,14 @@
       "to": "2026-10-09",
       "where": "Oulu",
       "note": "Älä ehdota Riikkaa kusiksi näinä päivinä"
+    },
+    {
+      "who": "Milla",
+      "from": "2026-09-23",
+      "to": "2026-09-23",
+      "kind": "schoolOff",
+      "where": "vapaapäivä",
+      "note": "Vapaapäivä koulusta"
     }
   ],
   "anniversaries": [

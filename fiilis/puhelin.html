@@ -814,16 +814,33 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     return { wd: dayIdx, tomorrow: tomorrow, lunchIso: lunchIso, focusIso: focusIso, label: label };
   }
 
+
+  function isSchoolOff(who, iso) {
+    if (!who || !iso || !schedule || !schedule.absences) return false;
+    var abs = schedule.absences;
+    for (var i = 0; i < abs.length; i++) {
+      var a = abs[i];
+      if (!a || a.who !== who) continue;
+      if (a.from && a.to && iso >= a.from && iso <= a.to) {
+        if (a.kind === "schoolOff") return true;
+        if (/vapaa|koulu/i.test(String(a.note || "") + " " + String(a.where || ""))) return true;
+      }
+    }
+    return false;
+  }
   function schoolForTarget(tgt) {
     var out = [];
     if (!schedule || !schedule.schoolStarts) return out;
     var list = schedule.schoolStarts;
+    var iso = tgt.focusIso || tgt.lunchIso || "";
     for (var i = 0; i < list.length; i++) {
       var s = list[i];
       var wds = s.weekdays || [];
       var ok = false;
       for (var j = 0; j < wds.length; j++) if (wds[j] === tgt.wd) ok = true;
-      if (ok) out.push(s);
+      if (!ok) continue;
+      if (iso && isSchoolOff(s.who, iso)) continue;
+      out.push(s);
     }
     out.sort(function (a, b) {
       var ia = KID_ORDER.indexOf(a.who); if (ia < 0) ia = 99;

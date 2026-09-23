@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v94e-today-group">
+  <meta name="fiilis-build" content="20260923-v94f-milla-off">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -421,7 +421,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260922-v94e-today-group";
+  var BUILD = "20260923-v94f-milla-off";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1281,14 +1281,30 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   }
 
 
-  function schoolStartsForWd(wd) {
+
+  function isSchoolOff(who, iso) {
+    if (!who || !iso || !schedule || !schedule.absences) return false;
+    var abs = schedule.absences;
+    for (var i = 0; i < abs.length; i++) {
+      var a = abs[i];
+      if (!a || a.who !== who) continue;
+      if (a.from && a.to && iso >= a.from && iso <= a.to) {
+        if (a.kind === "schoolOff") return true;
+        if (/vapaa|koulu/i.test(String(a.note || "") + " " + String(a.where || ""))) return true;
+      }
+    }
+    return false;
+  }
+  function schoolStartsForWd(wd, iso) {
     var list = (schedule && schedule.schoolStarts) || (FALLBACK && FALLBACK.schoolStarts) || [];
     var out = [];
     for (var i = 0; i < list.length; i++) {
       var s = list[i];
       if (!s) continue;
       var days = s.weekdays || s.days || [];
-      if (days.indexOf(wd) >= 0) out.push(s);
+      if (days.indexOf(wd) < 0) continue;
+      if (iso && isSchoolOff(s.who, iso)) continue;
+      out.push(s);
     }
     out.sort(function (a, b) {
       var ta = parseMin(a.time); if (ta == null) ta = 9999;
@@ -1305,7 +1321,11 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     /* Same-day school until 16:00 Helsinki; from 16:00 show tomorrow's school. */
     var showTomorrowSchool = (now.hour >= 16);
     var schoolWd = showTomorrowSchool ? ((now.wd + 1) % 7) : now.wd;
-    var schools = schoolStartsForWd(schoolWd);
+    var schoolIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : now.iso;
+    if (now.wd === 5 && showTomorrowSchool) schoolIso = addDaysIso(now.iso, 3);
+    if (now.wd === 6) schoolIso = addDaysIso(now.iso, 2);
+    if (now.wd === 0) schoolIso = addDaysIso(now.iso, 1);
+    var schools = schoolStartsForWd(schoolWd, schoolIso);
     var hobbyIso = addDaysIso(now.iso, 1);
     var out = dayEventsClean(hobbyIso);
     var lbl = document.querySelector("#huomenna .lbl") || document.querySelector(".duo .lbl");

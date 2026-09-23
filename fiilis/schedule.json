@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T10:31:44",
+  "updated": "2026-09-23T11:37:13",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -258,6 +258,14 @@
     },
     {
       "date": "2026-09-22",
+      "time": "",
+      "who": "perhe",
+      "title": "Pentutreffit Ella kotona",
+      "kind": "muu",
+      "place": "Koti"
+    },
+    {
+      "date": "2026-09-22",
       "time": "14:00",
       "end": "15:00",
       "who": "Mea",
@@ -305,12 +313,31 @@
       "source": "manual:jussi"
     },
     {
-      "date": "2026-09-22",
+      "date": "2026-09-23",
       "time": "",
-      "who": "perhe",
-      "title": "Pentutreffit Ella kotona",
+      "who": "Ellen",
+      "title": "Ilmoita kodin ja koulun päivään (deadline)",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-23",
+      "who": "Milla",
+      "title": "Vapaapäivä koulusta",
       "kind": "muu",
-      "place": "Koti"
+      "source": "perhe"
+    },
+    {
+      "date": "2026-09-23",
+      "time": "",
+      "who": "Samuel",
+      "title": "Ilmoita kodin ja koulun päivään (deadline)",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-23",
+      "who": "perhe",
+      "title": "Ilmoita kodin ja koulun päivä",
+      "kind": "muu"
     },
     {
       "date": "2026-09-23",
@@ -347,33 +374,6 @@
       "kind": "treeni"
     },
     {
-      "date": "2026-09-23",
-      "time": "",
-      "who": "Ellen",
-      "title": "Ilmoita kodin ja koulun päivään (deadline)",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-23",
-      "who": "Milla",
-      "title": "Vapaapäivä koulusta",
-      "kind": "muu",
-      "source": "perhe"
-    },
-    {
-      "date": "2026-09-23",
-      "time": "",
-      "who": "Samuel",
-      "title": "Ilmoita kodin ja koulun päivään (deadline)",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-23",
-      "who": "perhe",
-      "title": "Ilmoita kodin ja koulun päivä",
-      "kind": "muu"
-    },
-    {
       "date": "2026-09-24",
       "time": "17:00",
       "end": "18:30",
@@ -397,6 +397,29 @@
     },
     {
       "date": "2026-09-25",
+      "time": "",
+      "who": "Ellen",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinne",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "",
+      "who": "Samuel",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinne",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-25",
+      "who": "perhe",
+      "title": "Kodin ja koulun päivä",
+      "place": "Aurinkorinteen koulu",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-09-25",
       "time": "09:00",
       "end": "18:00",
       "who": "Ellen",
@@ -404,6 +427,17 @@
       "place": "Luola",
       "kind": "treeni",
       "driver": "Riikka"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "15:00",
+      "end": "18:00",
+      "who": "Mea",
+      "title": "Synttärit · leivonta (kakku + keksit)",
+      "place": "Koti",
+      "kind": "muu",
+      "source": "perhe:kalenteri",
+      "note": "Milla kakku · Samuel+Mea keksit"
     },
     {
       "date": "2026-09-25",
@@ -437,27 +471,15 @@
       "kind": "treeni"
     },
     {
-      "date": "2026-09-25",
-      "time": "",
-      "who": "Ellen",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinne",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-25",
-      "time": "",
-      "who": "Samuel",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinne",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-25",
-      "who": "perhe",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinteen koulu",
-      "kind": "muu"
+      "date": "2026-09-26",
+      "time": "08:00",
+      "end": "11:30",
+      "who": "Jussi",
+      "title": "Synttärit · piirakat + valmistelu",
+      "place": "Koti",
+      "kind": "muu",
+      "source": "perhe:kalenteri",
+      "note": "sieni- + lohipiirakka"
     },
     {
       "date": "2026-09-26",
@@ -588,6 +610,13 @@
     },
     {
       "date": "2026-09-30",
+      "who": "Ellen",
+      "title": "Koulukuvaus (lomake)",
+      "kind": "muu",
+      "time": ""
+    },
+    {
+      "date": "2026-09-30",
       "time": "18:00",
       "end": "20:30",
       "place": "Kuopiohalli",
@@ -617,11 +646,18 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-09-30",
+      "date": "2026-10-01",
       "who": "Ellen",
       "title": "Koulukuvaus (lomake)",
       "kind": "muu",
       "time": ""
+    },
+    {
+      "date": "2026-10-01",
+      "time": "",
+      "who": "Samuel",
+      "title": "Pelipassi hankittava",
+      "kind": "muu"
     },
     {
       "date": "2026-10-01",
@@ -662,20 +698,6 @@
       "driver": "Topias"
     },
     {
-      "date": "2026-10-01",
-      "who": "Ellen",
-      "title": "Koulukuvaus (lomake)",
-      "kind": "muu",
-      "time": ""
-    },
-    {
-      "date": "2026-10-01",
-      "time": "",
-      "who": "Samuel",
-      "title": "Pelipassi hankittava",
-      "kind": "muu"
-    },
-    {
       "date": "2026-10-02",
       "time": "16:00",
       "end": "18:30",
@@ -695,6 +717,12 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-10-03",
+      "who": "Aino",
+      "title": "Ainon juhlat",
+      "kind": "juhla"
     },
     {
       "date": "2026-10-03",
@@ -724,12 +752,6 @@
       "place": "Joensuu, Nepenmäki",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
-    },
-    {
-      "date": "2026-10-03",
-      "who": "Aino",
-      "title": "Ainon juhlat",
-      "kind": "juhla"
     },
     {
       "date": "2026-10-04",
@@ -804,6 +826,23 @@
     },
     {
       "date": "2026-10-06",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-06",
+      "time": "09:00",
+      "end": "10:00",
+      "who": "Mea",
+      "title": "Terapia · Minna Proskin-Ruuskanen",
+      "place": "Maaherrankatu (kirjaston vastapäätä, 2. krs), Kuopio",
+      "kind": "muu",
+      "source": "perhe:gcal",
+      "note": "Perhe-kalenteri"
+    },
+    {
+      "date": "2026-10-06",
       "time": "16:30",
       "end": "18:00",
       "who": "Samuel",
@@ -833,16 +872,9 @@
       "kind": "kisa"
     },
     {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "who": "Riikka",
       "title": "Oulu",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-10-07",
-      "time": "17:00",
-      "who": "Mea",
-      "title": "Terapia",
       "kind": "muu"
     },
     {
@@ -877,7 +909,7 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-08",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
@@ -893,18 +925,18 @@
       "driver": "Topias"
     },
     {
-      "date": "2026-10-08",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu"
-    },
-    {
       "date": "2026-10-09",
       "who": "Ellen",
       "title": "Matematiikan koe",
       "kind": "muu",
       "place": "",
       "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
     },
     {
       "date": "2026-10-09",
@@ -937,12 +969,6 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-10-09",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu"
     },
     {
       "date": "2026-10-10",
@@ -1061,28 +1087,6 @@
       "place": "Luola, Savilahti",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
-    },
-    {
-      "date": "2026-09-25",
-      "time": "15:00",
-      "end": "18:00",
-      "who": "Mea",
-      "title": "Synttärit · leivonta (kakku + keksit)",
-      "place": "Koti",
-      "kind": "muu",
-      "source": "perhe:kalenteri",
-      "note": "Milla kakku · Samuel+Mea keksit"
-    },
-    {
-      "date": "2026-09-26",
-      "time": "08:00",
-      "end": "11:30",
-      "who": "Jussi",
-      "title": "Synttärit · piirakat + valmistelu",
-      "place": "Koti",
-      "kind": "muu",
-      "source": "perhe:kalenteri",
-      "note": "sieni- + lohipiirakka"
     }
   ],
   "schoolLunch": {

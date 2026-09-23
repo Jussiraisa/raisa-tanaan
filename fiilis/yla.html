@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260923-v97-mea-26">
+  <meta name="fiilis-build" content="20260923-v98-today-no-overlap">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,7 +113,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 }
 
 /* Tänään list — crystal clear */
-.today-list { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
+.today-list { flex: 1; min-height: 0; overflow-x: hidden; overflow-y: auto; display: flex; flex-direction: column; justify-content: flex-start; }
 .ev-row {
   display: flex; align-items: flex-start;
   padding: .38vmin 0;
@@ -125,15 +125,24 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .ev-row.past { opacity: .4; }
 .ev-row.live { font-weight: 650; }
 .ev-row .when {
-  flex: 0 0 12.2vmin;
+  flex: 0 0 14.5vmin;
+  min-width: 14.5vmin;
+  max-width: 14.5vmin;
   font-variant-numeric: tabular-nums;
-  white-space: nowrap; overflow: hidden;
-  line-height: 1.2; padding-top: .05vmin;
-  font-weight: 750; font-size: 1.55vmin; letter-spacing: -.02em; color: #2c2418;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  line-height: 1.2;
+  padding-top: .05vmin;
+  font-weight: 750;
+  font-size: 1.55vmin;
+  letter-spacing: -.02em;
+  color: #2c2418;
 }
 .ev-row.live .when { color: #8f6524; }
 .ev-row.past .when { color: #9a8b74; }
 .today-group-lbl {
+  flex: 0 0 auto;
   font-size: 1.05vmin; font-weight: 650; letter-spacing: .1em;
   text-transform: uppercase; color: #a09078;
   margin: .55vmin 0 .12vmin; opacity: .9;
@@ -145,7 +154,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 }
 .ev-row .txt { flex: 1; min-width: 0; }
 .ev-row .who { font-weight: 700; }
-.ev-row .meta { font-size: 1.3vmin; color: #7a6a55; margin-top: .05vmin; font-weight: 500; }
+.ev-row .meta { font-size: 1.3vmin; color: #7a6a55; margin-top: .15vmin; line-height: 1.25; font-weight: 500; }
 .today-empty { font-size: 1.7vmin; color: #9a8b74; padding: .4vmin 0; font-style: italic;
   font-family: Newsreader, Georgia, serif; }
 
@@ -295,7 +304,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   .side { margin-left: 0; }
 }
   
-.today-list .ev-row { flex: 0 1 auto; min-height: 0; }
+.today-list .ev-row { flex: 0 0 auto; min-height: auto; align-items: flex-start; }
 .today-list.d6 .ev-row { padding: .32vmin 0; font-size: 1.85vmin; }
 .today-list.d8 .ev-row { padding: .2vmin 0; font-size: 1.6vmin; }
 .today-list.d8 .ev-row .meta { font-size: 1.25vmin; }
@@ -345,11 +354,18 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .block.wilma { display: none !important; }
 
 
-.today-list.d6 .ev-row .when { font-size: 1.4vmin; flex-basis: 11vmin; }
-.today-list.d8 .ev-row .when { font-size: 1.3vmin; flex-basis: 10.2vmin; }
-.today-list.d10 .ev-row .when { font-size: 1.2vmin; flex-basis: 9.5vmin; }
-.today-list.d12 .ev-row .when { font-size: 1.1vmin; flex-basis: 9vmin; }
-.today-list .ev-row { min-height: 3.2vmin; align-items: flex-start; }
+.today-list.d6 .ev-row .when,
+.today-list.d8 .ev-row .when,
+.today-list.d10 .ev-row .when,
+.today-list.d12 .ev-row .when {
+  flex-basis: 14.5vmin;
+  min-width: 14.5vmin;
+  max-width: 14.5vmin;
+}
+.today-list.d6 .ev-row .when { font-size: 1.45vmin; }
+.today-list.d8 .ev-row .when { font-size: 1.35vmin; }
+.today-list.d10 .ev-row .when { font-size: 1.25vmin; }
+.today-list.d12 .ev-row .when { font-size: 1.15vmin; }
 </style>
 </head>
 <body class="morning">
@@ -421,7 +437,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260923-v97-mea-26";
+  var BUILD = "20260923-v98-today-no-overlap";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },

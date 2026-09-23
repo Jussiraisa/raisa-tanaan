@@ -377,7 +377,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v120-yle-x-news";
+  var BUILD = "20260923-v121-ellen-kokeet";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -657,6 +657,8 @@
       if (ss && ss.time) {
         var stxt = "Koulu " + (fmtRange(ss.time, ss.end) || fmtHm(ss.time));
         if (sf.tomorrow) stxt = (sf.label.indexOf("ma") >= 0 ? "ma " : "huom ") + stxt;
+        var examN2 = (who === "Ellen") ? ellenExamNote(sf.iso) : "";
+        if (examN2) stxt += " · " + examN2;
         var liveSchool = !sf.tomorrow && now.minutes < (parseMin(ss.end) != null ? parseMin(ss.end) : 14 * 60);
         return { text: stxt, live: liveSchool, color: colorWho(who) };
       }
@@ -670,6 +672,11 @@
 
   var KID_SCHOOL_ORDER = ["Ellen", "Samuel", "Milla", "Mea"];
 
+  function ellenExamNote(iso) {
+    if (iso === "2026-10-06") return "Äikän koe";
+    if (iso === "2026-10-09") return "Matikan koe";
+    return "";
+  }
   function isSchoolOff(who, iso) {
     if (!who || !iso || !schedule || !schedule.absences) return false;
     var abs = schedule.absences;
@@ -799,8 +806,9 @@
       html += "<div class=\"school-strip\">";
       for (var si = 0; si < schools.length; si++) {
         var sc = schools[si];
+        var examN = (sc.who === "Ellen") ? ellenExamNote(schFocus.iso) : "";
         html += "<span class=\"sk\"><span class=\"t\">" + esc(fmtRange(sc.time, sc.end) || fmtHm(sc.time) || "—")
-          + "</span><span class=\"w\">" + esc(sc.who || "") + "</span></span>";
+          + "</span><span class=\"w\">" + esc(sc.who || "") + (examN ? (" · " + esc(examN)) : "") + "</span></span>";
       }
       html += "</div>";
     }

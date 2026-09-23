@@ -997,7 +997,13 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
       html += "<div class=\"kid-sec\">Koulu" + (tgt && tgt.tomorrow ? " · huom" : "") + "</div>";
       var sch = byWho[kid];
       if (sch) {
-        html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(sch.time, sch.end)) + "</span></div>";
+        var examN = "";
+        if (kid === "Ellen" && tgt && tgt.focusIso) {
+          if (tgt.focusIso === "2026-10-06") examN = "Äikän koe";
+          else if (tgt.focusIso === "2026-10-09") examN = "Matikan koe";
+        }
+        html += "<div class=\"kid-line\"><span class=\"t\">" + esc(fmtRange(sch.time, sch.end)) + "</span>"
+          + (examN ? (" · " + esc(examN)) : "") + "</div>";
       } else {
         html += "<div class=\"kid-empty\">Ei koulua</div>";
       }
@@ -1073,6 +1079,24 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     }
     if (!listEl) return;
     var items = [];
+    var seen = {};
+    var exps = (schedule && schedule.expectations) || [];
+    for (var xi = 0; xi < exps.length; xi++) {
+      var x = exps[xi];
+      if (!x || !x.start) continue;
+      if (now.iso > (x.end || x.start)) continue;
+      var duX = daysUntil(x.start, now);
+      if (now.iso >= x.start && x.end && now.iso <= x.end) duX = 0;
+      if (duX < 0 || duX > 50) continue;
+      if (/lontoo/i.test(String(x.label || ""))) continue;
+      var keyX = String(x.label || "").toLowerCase() + "|" + x.start;
+      if (seen[keyX]) continue;
+      seen[keyX] = 1;
+      var whenX = (x.end && x.end !== x.start)
+        ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
+        : (parseInt(x.start.slice(8), 10) + "." + parseInt(x.start.slice(5, 7), 10) + ".");
+      items.push({ label: x.label, days: duX, when: whenX });
+    }
     var anns = (schedule && schedule.anniversaries) || FALLBACK.anniversaries;
     for (var i = 0; i < anns.length; i++) {
       var a = anns[i];
@@ -1089,6 +1113,9 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
       } else if (a.who && a.who !== "perhe" && label2.indexOf(a.who) < 0) {
         label2 = a.who + " · " + label2;
       }
+      var keyA = String(label2).toLowerCase() + "|" + iso;
+      if (seen[keyA]) continue;
+      seen[keyA] = 1;
       var ip = isoParts(iso);
       items.push({ label: label2, days: du, when: ip.d + "." + ip.m + "." });
     }
@@ -1569,14 +1596,14 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v59c", function (data) {
+    getJSON("schedule.json?v=20260923v95ellen", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v59c", function (data) {
+    getJSON("photos-from-matkat.json?v=20260923v95ellen", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

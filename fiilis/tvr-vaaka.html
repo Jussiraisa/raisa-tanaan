@@ -421,7 +421,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260923-v94f-milla-off";
+  var BUILD = "20260923-v95-ellen-kokeet";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -533,6 +533,8 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     { start: "2026-10-02", end: "2026-10-02", label: "Hääpäivä" },
     { start: "2026-10-03", end: "2026-10-03", label: "Ainon juhlat" },
     { start: "2026-10-06", end: "2026-10-09", label: "Riikka Oulussa" },
+    { start: "2026-10-06", end: "2026-10-06", label: "Ellen · äidinkielen koe" },
+    { start: "2026-10-09", end: "2026-10-09", label: "Ellen · matematiikan koe" },
     { start: "2026-10-10", end: "2026-10-18", label: "Syysloma · 10.–18.10." },
     { start: "2026-10-12", end: "2026-10-12", label: "Riikka · syntymäpäivä" },
     { start: "2026-10-24", end: "2026-10-24", label: "Riikka · synttärijuhlat" }
@@ -1237,7 +1239,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       }
       items.push({ label: label2, days: du, when: when, iso: iso });
     }
-    var extras = EXTRA_EXPECTATIONS || [];
+    var extras = ((schedule && schedule.expectations) || []).concat(EXTRA_EXPECTATIONS || []);
     for (var xi = 0; xi < extras.length; xi++) {
       var x = extras[xi];
       if (!x || !x.start) continue;
@@ -1282,6 +1284,11 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 
 
+  function ellenExamNote(iso) {
+    if (iso === "2026-10-06") return "Äikän koe";
+    if (iso === "2026-10-09") return "Matikan koe";
+    return "";
+  }
   function isSchoolOff(who, iso) {
     if (!who || !iso || !schedule || !schedule.absences) return false;
     var abs = schedule.absences;
@@ -1354,10 +1361,11 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         var whoS = shortWho(s.who || "");
         var timeS = fmtRange(s.time, s.end) || "";
         var labelS = s.label || "Koulu";
+        var examN = (s.who === "Ellen") ? ellenExamNote(schoolIso) : "";
         html += "<div class=\"tmw-line school\">"
           + (whoS ? "<span class=\"who\">" + esc(whoS) + "</span>" : "")
           + (timeS ? "<span class=\"t\">" + esc(timeS) + "</span>" : "")
-          + "<span>" + esc(labelS) + "</span></div>";
+          + "<span>" + esc(labelS) + (examN ? (" · " + esc(examN)) : "") + "</span></div>";
         shown++;
       }
     }

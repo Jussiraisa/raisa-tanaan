@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T08:29:43",
+  "updated": "2026-09-23T08:30:38",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -823,6 +823,14 @@
     },
     {
       "date": "2026-10-06",
+      "who": "Ellen",
+      "title": "Äidinkielen koe",
+      "kind": "muu",
+      "place": "",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-10-06",
       "time": "16:30",
       "end": "18:00",
       "who": "Samuel",
@@ -916,6 +924,14 @@
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Ellen",
+      "title": "Matematiikan koe",
+      "kind": "muu",
+      "place": "",
+      "source": "wilma:perhe"
     },
     {
       "date": "2026-10-09",
@@ -1072,24 +1088,6 @@
       "place": "Luola, Savilahti",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
-    },
-    {
-      "date": "2026-10-06",
-      "time": "",
-      "who": "Ellen",
-      "title": "Koe · äidinkieli",
-      "place": "Aurinkorinteen koulu",
-      "kind": "muu",
-      "source": "wilma:perhe"
-    },
-    {
-      "date": "2026-10-09",
-      "time": "",
-      "who": "Ellen",
-      "title": "Koe · matematiikka",
-      "place": "Aurinkorinteen koulu",
-      "kind": "muu",
-      "source": "wilma:perhe"
     }
   ],
   "schoolLunch": {
@@ -1250,6 +1248,16 @@
       "label": "Riikka Oulussa"
     },
     {
+      "start": "2026-10-06",
+      "end": "2026-10-06",
+      "label": "Ellen · äidinkielen koe"
+    },
+    {
+      "start": "2026-10-09",
+      "end": "2026-10-09",
+      "label": "Ellen · matematiikan koe"
+    },
+    {
       "start": "2026-10-10",
       "end": "2026-10-18",
       "label": "Syysloma · 10.–18.10."
@@ -1268,16 +1276,6 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "label": "Riikka · synttärijuhlat"
-    },
-    {
-      "start": "2026-10-06",
-      "end": "2026-10-06",
-      "label": "Ellen · koe äidinkieli"
-    },
-    {
-      "start": "2026-10-09",
-      "end": "2026-10-09",
-      "label": "Ellen · koe matematiikka"
     }
   ]
 }

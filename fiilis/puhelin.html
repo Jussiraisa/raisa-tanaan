@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260922-v70e-today-group">
+  <meta name="fiilis-build" content="20260923-v97-mea-26">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#EDE6DB">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1599,14 +1599,14 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260923v96meaprep", function (data) {
+    getJSON("schedule.json?v=20260923v97mea26", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260923v96meaprep", function (data) {
+    getJSON("photos-from-matkat.json?v=20260923v97mea26", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

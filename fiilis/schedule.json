@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T09:20:58",
+  "updated": "2026-09-23T10:31:44",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -394,33 +394,6 @@
       "place": "",
       "note": "Paikka auki (WA)",
       "source": "perhe:wa"
-    },
-    {
-      "date": "2026-09-24",
-      "time": "",
-      "who": "Ellen",
-      "title": "Synttärijuhlat",
-      "kind": "juhla",
-      "place": "Koti",
-      "source": "manual:jussi"
-    },
-    {
-      "date": "2026-09-24",
-      "time": "",
-      "who": "Mea",
-      "title": "Ellenin synttärijuhlat",
-      "kind": "juhla",
-      "place": "Koti",
-      "source": "manual:jussi"
-    },
-    {
-      "date": "2026-09-24",
-      "time": "",
-      "who": "perhe",
-      "title": "Ellenin synttärijuhlat (Ellen + Mea)",
-      "kind": "juhla",
-      "place": "Koti",
-      "source": "manual:jussi"
     },
     {
       "date": "2026-09-25",
@@ -1243,11 +1216,6 @@
     "samuel_welhot": "https://welhot2018.nimenhuuto.com/"
   },
   "expectations": [
-    {
-      "start": "2026-09-24",
-      "end": "2026-09-24",
-      "label": "Ellenin synttärijuhlat · Mea"
-    },
     {
       "start": "2026-09-25",
       "end": "2026-09-25",

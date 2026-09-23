@@ -377,7 +377,14 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v121-ellen-kokeet";
+  var BUILD = "20260923-v122-mea-prep";
+  var FALLBACK = {
+    events: [
+      { date: "2026-09-25", time: "15:00", end: "18:00", who: "Mea", title: "Synttärit · leivonta (kakku + keksit)", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "Milla kakku · Samuel+Mea keksit" },
+      { date: "2026-09-26", time: "08:00", end: "11:30", who: "Jussi", title: "Synttärit · piirakat + valmistelu", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "sieni- + lohipiirakka" },
+      { date: "2026-09-26", time: "13:00", who: "Mea", title: "Synttärit · sukulaiset", kind: "juhla", note: "Menu: pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)" }
+    ]
+  };
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -410,7 +417,7 @@
     "Yhdessä ollaan kotona."
   ];
 
-  var schedule = null;
+  var schedule = FALLBACK;
   var photos = [];
   var photoIdx = 0;
   var wxState = { current: null, daily: null };

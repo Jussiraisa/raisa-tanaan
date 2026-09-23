@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T09:18:41",
+  "updated": "2026-09-23T09:20:58",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1249,10 +1249,20 @@
       "label": "Ellenin synttärijuhlat · Mea"
     },
     {
+      "start": "2026-09-25",
+      "end": "2026-09-25",
+      "label": "Mea synttärit · pe leivonta (kakku + keksit)"
+    },
+    {
       "start": "2026-09-26",
       "end": "2026-09-26",
       "label": "Mea synttärit · sukulaiset · klo 13",
       "menu": "pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
+    },
+    {
+      "start": "2026-09-26",
+      "end": "2026-09-26",
+      "label": "Mea synttärit · la aamu piirakat"
     },
     {
       "start": "2026-10-02",
@@ -1298,16 +1308,6 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "label": "Riikka · synttärijuhlat"
-    },
-    {
-      "start": "2026-09-25",
-      "end": "2026-09-25",
-      "label": "Mea synttärit · pe leivonta (kakku + keksit)"
-    },
-    {
-      "start": "2026-09-26",
-      "end": "2026-09-26",
-      "label": "Mea synttärit · la aamu piirakat"
     }
   ]
 }

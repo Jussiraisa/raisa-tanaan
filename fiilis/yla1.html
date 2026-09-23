@@ -421,7 +421,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260923-v95-ellen-kokeet";
+  var BUILD = "20260923-v96-mea-prep";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -529,6 +529,8 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   var SYYSLOMA_END = "2026-10-18";
   /* Pienet odotukset Lontoon alle (synttärit, lomat, juhlat) */
   var EXTRA_EXPECTATIONS = [
+    { start: "2026-09-25", end: "2026-09-25", label: "Mea synttärit · pe leivonta (kakku + keksit)" },
+    { start: "2026-09-26", end: "2026-09-26", label: "Mea synttärit · la aamu piirakat" },
     { start: "2026-09-26", end: "2026-09-26", label: "Mea synttärit · sukulaiset · klo 13", menu: "pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)" },
     { start: "2026-10-02", end: "2026-10-02", label: "Hääpäivä" },
     { start: "2026-10-03", end: "2026-10-03", label: "Ainon juhlat" },
@@ -572,6 +574,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       { date: "2026-09-22", time: "16:30", end: "18:00", who: "Samuel", title: "Welhot", place: "Lippumäki", kind: "treeni", driver: "Jussi" },
       { date: "2026-09-23", time: "18:00", end: "20:30", who: "Mea", title: "Lianna treeni", place: "Bella Center", kind: "treeni", driver: "Julia (Reetta)", pickup: "Enni (Tiina)" },
       { date: "2026-09-25", who: "perhe", title: "Kodin ja koulun päivä", place: "Aurinkorinteen koulu", kind: "muu" },
+      { date: "2026-09-25", time: "15:00", end: "18:00", who: "Mea", title: "Synttärit · leivonta (kakku + keksit)", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "Milla kakku · Samuel+Mea keksit" },
+      { date: "2026-09-26", time: "08:00", end: "11:30", who: "Jussi", title: "Synttärit · piirakat + valmistelu", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "sieni- + lohipiirakka" },
+
       { date: "2026-09-26", time: "13:00", who: "Mea", title: "Synttärit · sukulaiset", kind: "juhla", note: "Menu: pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)" },
       { date: "2026-10-02", who: "perhe", title: "Hääpäivä", kind: "juhla" },
       { date: "2026-10-12", who: "Riikka", title: "Syntymäpäivä", kind: "juhla" },

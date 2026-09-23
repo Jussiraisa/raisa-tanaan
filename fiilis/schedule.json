@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T11:37:13",
+  "updated": "2026-09-23T12:53:50",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -788,6 +788,17 @@
     },
     {
       "date": "2026-10-05",
+      "time": "08:00",
+      "end": "12:00",
+      "who": "perhe",
+      "title": "Tesla · kotihuolto",
+      "place": "Rakovalkeankatu 11",
+      "kind": "muu",
+      "source": "perhe:gcal",
+      "note": "Mekanikko tulee kotiin — auto oltava kotona aamulla"
+    },
+    {
+      "date": "2026-10-05",
       "time": "17:00",
       "end": "18:00",
       "who": "Samuel",
@@ -1228,13 +1239,13 @@
     {
       "start": "2026-09-26",
       "end": "2026-09-26",
-      "label": "Mea synttärit · sukulaiset · klo 13",
-      "menu": "pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
+      "label": "Mea synttärit · la aamu piirakat"
     },
     {
       "start": "2026-09-26",
       "end": "2026-09-26",
-      "label": "Mea synttärit · la aamu piirakat"
+      "label": "Mea synttärit · sukulaiset · klo 13",
+      "menu": "pikkupitsat · cocktail-tikut (kurkku, paprika, mozzarella) · kakku (Milla) · keksit (Samuel+Mea) · limpparit · kahvi · sienipiirakka + lohipiirakka (Jussi)"
     },
     {
       "start": "2026-10-02",
@@ -1247,14 +1258,19 @@
       "label": "Ainon juhlat"
     },
     {
-      "start": "2026-10-06",
-      "end": "2026-10-09",
-      "label": "Riikka Oulussa"
+      "start": "2026-10-05",
+      "end": "2026-10-05",
+      "label": "Tesla · kotihuolto klo 8–12"
     },
     {
       "start": "2026-10-06",
       "end": "2026-10-06",
       "label": "Ellen · äidinkielen koe"
+    },
+    {
+      "start": "2026-10-06",
+      "end": "2026-10-09",
+      "label": "Riikka Oulussa"
     },
     {
       "start": "2026-10-09",

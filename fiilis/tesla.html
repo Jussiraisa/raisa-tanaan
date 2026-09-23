@@ -148,9 +148,10 @@
   .tev.past { opacity: .4; }
   .tev.live .when, .tev.live .txt { font-weight: 700; color: #7a5214; }
   .tev .when {
-    -ms-flex: 0 0 12vmin; flex: 0 0 12vmin;
+    -ms-flex: 0 0 16.5vmin; flex: 0 0 16.5vmin;
     font-variant-numeric: tabular-nums; font-weight: 650; color: var(--text);
-    white-space: nowrap; overflow: hidden;
+    white-space: nowrap; overflow: visible;
+    letter-spacing: -.02em;
   }
   .today-group-lbl {
     font-size: 1.35vmin; font-weight: 650; letter-spacing: .1em;
@@ -344,7 +345,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v117-school-ends";
+  var BUILD = "20260923-v118-when-width";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-23T08:30:38",
+  "updated": "2026-09-23T09:18:41",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1088,6 +1088,28 @@
       "place": "Luola, Savilahti",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
+    },
+    {
+      "date": "2026-09-25",
+      "time": "15:00",
+      "end": "18:00",
+      "who": "Mea",
+      "title": "Synttärit · leivonta (kakku + keksit)",
+      "place": "Koti",
+      "kind": "muu",
+      "source": "perhe:kalenteri",
+      "note": "Milla kakku · Samuel+Mea keksit"
+    },
+    {
+      "date": "2026-09-26",
+      "time": "08:00",
+      "end": "11:30",
+      "who": "Jussi",
+      "title": "Synttärit · piirakat + valmistelu",
+      "place": "Koti",
+      "kind": "muu",
+      "source": "perhe:kalenteri",
+      "note": "sieni- + lohipiirakka"
     }
   ],
   "schoolLunch": {
@@ -1276,6 +1298,16 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "label": "Riikka · synttärijuhlat"
+    },
+    {
+      "start": "2026-09-25",
+      "end": "2026-09-25",
+      "label": "Mea synttärit · pe leivonta (kakku + keksit)"
+    },
+    {
+      "start": "2026-09-26",
+      "end": "2026-09-26",
+      "label": "Mea synttärit · la aamu piirakat"
     }
   ]
 }

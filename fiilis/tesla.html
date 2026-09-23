@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260922-v115-today-group">
+<meta name="fiilis-build" content="20260923-v116-school-starts">
 <title>Fiilis · Tesla</title>
 <style>
 
@@ -157,6 +157,20 @@
     text-transform: uppercase; color: #a09078;
     margin: .55vmin 0 .2vmin; opacity: .9;
   }
+  .school-strip {
+    display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap;
+    gap: .5vmin 1.1vmin; margin: .15vmin 0 .65vmin; padding: 0 0 .55vmin;
+    border-bottom: 1px solid rgba(44,36,24,.08);
+  }
+  .school-strip .sk {
+    font-size: 1.9vmin; font-weight: 650; color: var(--text);
+    white-space: nowrap;
+  }
+  .school-strip .sk .t {
+    font-weight: 750; font-variant-numeric: tabular-nums; margin-right: .35vmin;
+  }
+  .school-strip .sk .w { color: var(--muted); font-weight: 600; }
+
   .today-group-lbl:first-child { margin-top: 0; }
   .tev .dotc { width: .85vmin; height: .85vmin; border-radius: 50%; margin: .55vmin .7vmin 0 0; -ms-flex: 0 0 auto; flex: 0 0 auto; }
   .tev .txt { -ms-flex: 1 1 auto; flex: 1 1 auto; min-width: 0; color: var(--text); }
@@ -329,7 +343,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260922-v115-today-group";
+  var BUILD = "20260923-v116-school-starts";
 
   function themeClass(hour) {
     if (hour >= 7 && hour < 18) return "day";
@@ -597,10 +611,60 @@
       var t = next.time ? fmtHm(next.time) + " " : "";
       return { text: t + (next.title || ""), live: false, color: colorWho(who) };
     }
-    if ((who === "Ellen" || who === "Samuel" || who === "Milla" || who === "Mea") && now.wd >= 1 && now.wd <= 5 && now.minutes < 14 * 60) {
-      return { text: "Koulupäivä", live: true, color: colorWho(who) };
+    if ((who === "Ellen" || who === "Samuel" || who === "Milla" || who === "Mea")) {
+      var sf = schoolFocus(now);
+      var ss = schoolStartForWho(who, sf.wd);
+      if (ss && ss.time) {
+        var stxt = "Koulu " + fmtHm(ss.time);
+        if (sf.tomorrow) stxt = (sf.label.indexOf("ma") >= 0 ? "ma " : "huom ") + stxt;
+        var liveSchool = !sf.tomorrow && now.minutes < (parseMin(ss.end) != null ? parseMin(ss.end) : 14 * 60);
+        return { text: stxt, live: liveSchool, color: colorWho(who) };
+      }
+      if (!sf.tomorrow && now.wd >= 1 && now.wd <= 5 && now.minutes < 14 * 60) {
+        return { text: "Koulupäivä", live: true, color: colorWho(who) };
+      }
     }
     return { text: "Vapaata", live: false, color: "#a09080" };
+  }
+
+
+  var KID_SCHOOL_ORDER = ["Ellen", "Samuel", "Milla", "Mea"];
+  function schoolStartsForWd(wd) {
+    var list = (schedule && schedule.schoolStarts) || [];
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      if (!s) continue;
+      var days = s.weekdays || s.days || [];
+      if (days.indexOf(wd) >= 0) out.push(s);
+    }
+    out.sort(function (a, b) {
+      var ia = KID_SCHOOL_ORDER.indexOf(a.who); if (ia < 0) ia = 99;
+      var ib = KID_SCHOOL_ORDER.indexOf(b.who); if (ib < 0) ib = 99;
+      if (ia !== ib) return ia - ib;
+      var ta = parseMin(a.time); if (ta == null) ta = 9999;
+      var tb = parseMin(b.time); if (tb == null) tb = 9999;
+      return ta - tb;
+    });
+    return out;
+  }
+  /** Same-day school until 16:00 Helsinki; from 16:00 / weekend → next school day. */
+  function schoolFocus(now) {
+    var wd = now.wd;
+    if (wd === 0) return { wd: 1, iso: addDaysIso(now.iso, 1), label: "Koulu · ma", tomorrow: true };
+    if (wd === 6) return { wd: 1, iso: addDaysIso(now.iso, 2), label: "Koulu · ma", tomorrow: true };
+    if (now.hour >= 16) {
+      if (wd === 5) return { wd: 1, iso: addDaysIso(now.iso, 3), label: "Koulu · ma", tomorrow: true };
+      return { wd: wd + 1, iso: addDaysIso(now.iso, 1), label: "Koulu · huom", tomorrow: true };
+    }
+    return { wd: wd, iso: now.iso, label: "Koulu", tomorrow: false };
+  }
+  function schoolStartForWho(who, wd) {
+    var list = schoolStartsForWd(wd);
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].who === who) return list[i];
+    }
+    return null;
   }
 
   function paintPeople(now) {
@@ -672,6 +736,18 @@
     var showLabels = hasHobby && hasOther;
     var lastGroup = null;
     var html = "";
+    var schFocus = schoolFocus(now);
+    var schools = schoolStartsForWd(schFocus.wd);
+    if (schools.length) {
+      html += "<div class=\"today-group-lbl\">" + esc(schFocus.label) + "</div>";
+      html += "<div class=\"school-strip\">";
+      for (var si = 0; si < schools.length; si++) {
+        var sc = schools[si];
+        html += "<span class=\"sk\"><span class=\"t\">" + esc(fmtHm(sc.time) || "—")
+          + "</span><span class=\"w\">" + esc(sc.who || "") + "</span></span>";
+      }
+      html += "</div>";
+    }
     for (var j = 0; j < list.length; j++) {
       var e2 = list[j];
       var grp = isKidHobby(e2) ? "hobby" : "other";

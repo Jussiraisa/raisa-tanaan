@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790094667205,
+  "updated": 1790136301695,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -268,15 +268,13 @@
       "place": "Leo's Leikkimaa"
     },
     {
-      "id": "info-pentutreffit-2026-09-22",
-      "title": "Pentutreffit · Ella kotona",
-      "date": "2026-09-22",
-      "start": "",
-      "end": "",
-      "place": "Koti",
-      "kind": "info",
-      "driver": "",
-      "status": ""
+      "id": "cal-up1jsanogpkg00ntev54onp6ak",
+      "title": "Padel · Jari",
+      "date": "2026-09-24",
+      "start": "18:30",
+      "end": "20:00",
+      "kind": "cal",
+      "place": ""
     },
     {
       "id": "info-ellen-leos-2026-09-23",

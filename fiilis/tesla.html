@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260923-v100-mea-terapia-7-10">
+<meta name="fiilis-build" content="20260923-v101-sauna-warn">
 <title>Fiilis · Tesla</title>
 <style>
 
@@ -284,6 +284,30 @@
 .nav-tsla .dn { color: #e07a6a; }
 .nav-tsla .flat { color: #d8d0c4; opacity: .75; }
 
+
+.sauna-warn {
+  display: none;
+  align-items: center;
+  gap: .45vmin;
+  margin-left: .8vmin;
+  padding: .35vmin .85vmin;
+  border-radius: 999px;
+  background: rgba(176, 48, 42, .14);
+  border: 1px solid rgba(176, 48, 42, .38);
+  color: #8f2a22;
+  font-size: 1.35vmin;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.sauna-warn.on { display: inline-flex; }
+.sauna-warn .dot {
+  width: .85vmin; height: .85vmin; border-radius: 50%;
+  background: #c43b32;
+  box-shadow: 0 0 0 .35vmin rgba(196,59,50,.22);
+  flex: 0 0 auto;
+}
 </style>
 </head>
 <body>
@@ -315,6 +339,7 @@
     <div class="card col" style="flex:0 0 24%; -ms-flex:0 0 24%; min-width:22vmin;">
       <div class="hello serif" id="greet">Hyvää päivää</div>
       <div class="clock serif" id="clock">--.--</div>
+    <span class="sauna-warn" id="saunaWarn" aria-live="polite"><span class="dot"></span>Sauna</span>
       <div class="date" id="dateLine">—</div>
       <div class="navcard empty" id="navCard">
         <div class="lab">Seuraavaksi</div>
@@ -380,7 +405,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260923-v100-mea-terapia-7-10";
+  var BUILD = "20260923-v101-sauna-warn";
   var FALLBACK = {
     events: [
       { date: "2026-09-25", time: "15:00", end: "18:00", who: "Mea", title: "Synttärit · leivonta (kakku + keksit)", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "Milla kakku · Samuel+Mea keksit" },
@@ -1021,10 +1046,32 @@
     if (bs) bs.textContent = BUILD;
   }
 
+  
+  function paintSaunaWarn(d) {
+    var el = document.getElementById("saunaWarn");
+    if (!el) return;
+    var warn = !!(d && (d.saunaEveningWarn === true || d.saunaEveningWarn === "on" || d.saunaEveningWarn === 1));
+    var wanted = !(d && (d.saunaWanted === false || d.saunaWanted === "off" || d.saunaWanted === 0));
+    if (warn && wanted) {
+      el.className = "sauna-warn on";
+      el.setAttribute("title", "Saunailta ei ehdi lämmetä");
+    } else {
+      el.className = "sauna-warn";
+      el.removeAttribute("title");
+    }
+  }
+  function loadHa() {
+    getJSON("ha.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
+      if (data) paintSaunaWarn(data);
+    });
+  }
+
   function loadSchedule() {
     getJSON("schedule.json?v=" + BUILD, function (data) {
       if (data) schedule = data;
-      paint();
+      loadHa();
+  setInterval(loadHa, 60000);
+  paint();
     });
     getJSON("news.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/300000), function (data) {
       if (data) newsData = data;

@@ -295,13 +295,39 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
 }
 .day-empty { color: #6F6860; font-style: italic; padding: 8px 2px; }
 
+
+/* sauna head row */
+.head .clock { display: inline-block; vertical-align: middle; }
+.sauna-warn {
+  display: none;
+  align-items: center;
+  gap: .45vmin;
+  margin-left: .4rem;
+  padding: .2rem .45rem;
+  border-radius: 999px;
+  background: rgba(176, 48, 42, .14);
+  border: 1px solid rgba(176, 48, 42, .38);
+  color: #8f2a22;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.sauna-warn.on { display: inline-flex; }
+.sauna-warn .dot {
+  width: .45rem; height: .45rem; border-radius: 50%;
+  background: #c43b32;
+  box-shadow: 0 0 0 .2rem rgba(196,59,50,.22);
+  flex: 0 0 auto;
+}
 </style>
 </head>
 <body class="morning">
 <div class="tv" id="app">
 
   <div class="head">
-    <div class="clock t-kello" id="clock">––.––</div>
+    <div class="clock t-kello" id="clock">––.––</div> <span class="sauna-warn" id="saunaWarn" aria-live="polite"><span class="dot"></span>Sauna</span>
     <div class="greet-block">
       <div class="greet t-tervehdys" id="greet">Hyvää huomenta</div>
       <div class="sub t-meta" id="subLine">Räisän perhe · Kuopio</div>
@@ -1598,6 +1624,26 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     if (greetEl) greetEl.textContent = greeting(now.hour);
   }
 
+  
+  function paintSaunaWarn(d) {
+    var el = document.getElementById("saunaWarn");
+    if (!el) return;
+    var warn = !!(d && (d.saunaEveningWarn === true || d.saunaEveningWarn === "on" || d.saunaEveningWarn === 1));
+    var wanted = !(d && (d.saunaWanted === false || d.saunaWanted === "off" || d.saunaWanted === 0));
+    if (warn && wanted) {
+      el.className = "sauna-warn on";
+      el.setAttribute("title", "Saunailta ei ehdi lämmetä");
+    } else {
+      el.className = "sauna-warn";
+      el.removeAttribute("title");
+    }
+  }
+  function loadHa() {
+    getJSON("ha.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
+      if (data) paintSaunaWarn(data);
+    });
+  }
+
   function loadSchedule() {
     getJSON("schedule.json?v=20260923v97mea26", function (data) {
       if (data) schedule = data;
@@ -1692,6 +1738,8 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   if (daySheetClose) daySheetClose.onclick = function (e) { e.stopPropagation(); closeDaySheet(); };
   if (daySheet) daySheet.onclick = function (e) { if (e.target === daySheet) closeDaySheet(); };
 
+  loadHa();
+  setInterval(loadHa, 60000);
   loadSchedule();
   loadPhotos();
   loadWeather();

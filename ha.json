@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1789406124887,
+  "updated": 1790165611108,
   "powerW": 1184,
   "gridW": 1156,
   "solarW": 28,
@@ -95,5 +95,7 @@
   "soldMonthKwh": 125.1,
   "sellAvgSnt": 3.8,
   "buyMonthKwh": 326.2,
-  "buyAvgSnt": 11.7
+  "buyAvgSnt": 11.7,
+  "saunaEveningWarn": false,
+  "saunaWanted": true
 }

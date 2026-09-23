@@ -1,0 +1,8 @@
+{
+  "v": 1,
+  "updated": 1790165611108,
+  "saunaEveningWarn": false,
+  "saunaWanted": true,
+  "source": "Home Assistant · binary_sensor.sauna_ilta_ei_lammin",
+  "capturedAt": "2026-09-23T15:13+03:00"
+}

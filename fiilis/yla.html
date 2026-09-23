@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260923-v100-mea-terapia-7-10">
+  <meta name="fiilis-build" content="20260923-v101-sauna-warn">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -370,12 +370,42 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .today-list.d8 .ev-row .when { font-size: 1.35vmin; }
 .today-list.d10 .ev-row .when { font-size: 1.25vmin; }
 .today-list.d12 .ev-row .when { font-size: 1.15vmin; }
+
+/* sauna head row */
+.head-left { display: flex; align-items: center; gap: .6vmin; flex: 0 0 auto; }
+.head .clock { display: inline-block; vertical-align: middle; }
+.sauna-warn {
+  display: none;
+  align-items: center;
+  gap: .45vmin;
+  margin-left: .8vmin;
+  padding: .35vmin .85vmin;
+  border-radius: 999px;
+  background: rgba(176, 48, 42, .14);
+  border: 1px solid rgba(176, 48, 42, .38);
+  color: #8f2a22;
+  font-size: 1.35vmin;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.sauna-warn.on { display: inline-flex; }
+.sauna-warn .dot {
+  width: .85vmin; height: .85vmin; border-radius: 50%;
+  background: #c43b32;
+  box-shadow: 0 0 0 .35vmin rgba(196,59,50,.22);
+  flex: 0 0 auto;
+}
 </style>
 </head>
 <body class="morning">
 <div class="tv" id="app">
   <div class="head">
-    <div class="clock" id="clock">––.––</div>
+    <div class="head-left">
+      <div class="clock" id="clock">––.––</div>
+      <span class="sauna-warn" id="saunaWarn" aria-live="polite"><span class="dot"></span>Sauna</span>
+    </div>
     <div class="greet-block">
       <div class="greet" id="greet">Hyvää huomenta</div>
       <div class="next-line" id="nextLine"><span class="muted">…</span></div>
@@ -441,7 +471,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260923-v100-mea-terapia-7-10";
+  var BUILD = "20260923-v101-sauna-warn";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1536,6 +1566,26 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     }
     el.innerHTML = price.toFixed(2) + " <span class=\"" + cls + "\">" + pctStr + "</span>";
   }
+  
+  function paintSaunaWarn(d) {
+    var el = document.getElementById("saunaWarn");
+    if (!el) return;
+    var warn = !!(d && (d.saunaEveningWarn === true || d.saunaEveningWarn === "on" || d.saunaEveningWarn === 1));
+    var wanted = !(d && (d.saunaWanted === false || d.saunaWanted === "off" || d.saunaWanted === 0));
+    if (warn && wanted) {
+      el.className = "sauna-warn on";
+      el.setAttribute("title", "Saunailta ei ehdi lämmetä");
+    } else {
+      el.className = "sauna-warn";
+      el.removeAttribute("title");
+    }
+  }
+  function loadHa() {
+    getJSON("ha.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
+      if (data) paintSaunaWarn(data);
+    });
+  }
+
   function loadTsla() {
     getJSON("tsla.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
       if (data) paintTsla(data);
@@ -1602,6 +1652,8 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   paintPhoto();
   loadSchedule();
   loadTsla();
+  loadHa();
+  setInterval(loadHa, 60000);
   setInterval(loadTsla, 60000);
   loadPhotos();
   loadWeather();

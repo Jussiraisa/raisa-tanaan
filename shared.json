@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790260848156,
+  "updated": 1790264356193,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -317,6 +317,16 @@
       "status": ""
     },
     {
+      "id": "sheet-mea-2026-09-25",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
       "id": "info-mea-synttarit-piirakat-2026-09-26",
       "who": "mea",
       "title": "Mea synttärit · sienipiirakka + valmistelu",
@@ -557,28 +567,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "kyyti-samuel-welhot-2026-09-24",
-      "who": "samuel",
-      "title": "Welhot · Riikka vie+hakee",
-      "date": "2026-09-24",
-      "start": "17:00",
-      "end": "18:30",
-      "place": "Puijonsarvi",
-      "kind": "kyyti",
-      "driver": "Riikka",
-      "status": "us"
-    },
-    {
-      "id": "sheet-mea-2026-09-25",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
     }
   ],
   "schoolLunch": {

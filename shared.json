@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790264356193,
+  "updated": 1790269258816,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -260,28 +260,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "cal-up1jsanogpkg00ntev54onp6ak",
-      "title": "Padel · Jari",
-      "date": "2026-09-24",
-      "start": "18:30",
-      "end": "20:00",
-      "kind": "cal",
-      "place": ""
-    },
-    {
-      "id": "info-jussi-padel-jari-2026-09-24",
-      "title": "Padel · Jari",
-      "date": "2026-09-24",
-      "start": "18:30",
-      "end": "20:00",
-      "place": "",
-      "kind": "info",
-      "who": "jussi",
-      "driver": "",
-      "status": "",
-      "note": "Jari Väänänen · WA 22.9. \"bille\" = padel. Paikka auki."
     },
     {
       "id": "kyyti-mea-lianna-2026-09-25",

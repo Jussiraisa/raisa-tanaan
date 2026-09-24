@@ -396,6 +396,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
 </div>
 
 <script>
+  var BUILD = "20260924-v102-koulu-fix";
 (function () {
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -1644,7 +1645,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260923v97mea26", function (data) {
+    getJSON("schedule.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
       if (data) schedule = data;
       paint();
     });

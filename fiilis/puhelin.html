@@ -1652,7 +1652,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260923v97mea26", function (data) {
+    getJSON("photos-from-matkat.json?v=" + BUILD + "", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

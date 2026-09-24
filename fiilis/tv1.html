@@ -1030,6 +1030,7 @@
     return { icon: "🌡️", phrase: "vaihtelevaa" };
   }
 
+    var BUILD = "20260924-v102-koulu-fix";
   function getJSON(url, cb) {
     try {
       var x = new XMLHttpRequest();
@@ -1745,14 +1746,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260923v97mea26", function (data) {
+    getJSON("schedule.json?v=" + BUILD + "", function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260923v97mea26", function (data) {
+    getJSON("photos-from-matkat.json?v=" + BUILD + "", function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

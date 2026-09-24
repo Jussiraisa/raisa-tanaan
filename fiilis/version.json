@@ -1,6 +1,7 @@
 {
   "schedule": "2026-09-24-ellen-no-thu-welhot-manen",
-  "updated": "2026-09-24T07:28:46+03:00",
+  "updated": "2026-09-24T11:55:00+03:00",
   "ui": "20260924-v102-koulu-fix",
-  "poll": "v102"
+  "poll": "v102",
+  "note": "cache-bust sync: tvr/tvl/tv1 + kalenterit → sama BUILD kuin vaaka/tesla/puhelin"
 }

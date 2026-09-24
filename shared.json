@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-24T07:18:44+03:00",
+  "updated": 1790223785905,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -557,6 +557,16 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "sheet-mea-2026-09-25",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

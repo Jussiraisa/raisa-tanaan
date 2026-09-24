@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-24T07:17:45+03:00",
+  "updated": "2026-09-24T07:18:22+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -105,16 +105,6 @@
     "info-ellen-leos-2026-09-23": {
       "driver": "Jussi",
       "note": "Joukkueilta Leo’s; ei Kuopiohallia"
-    },
-    "info-ilmoitus-kkp-deadline-2026-09-23": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-kkp-2026-09-25": {
-      "driver": "",
-      "status": "",
-      "ride": ""
     },
     "info-mea-synttarit-2026-09-26": {
       "driver": "",
@@ -251,7 +241,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "24.9. Samuel Welhot kyydit Meidän (Jussi); NTV-kisat 25–27.9 poistettu (ei kisoja); Kodin ja koulun päivä säilyy",
+  "note": "24.9. Samuel Welhot kyydit Meidän (Jussi); NTV-kisat 25–27.9 poistettu (ei kisoja); Kodin ja koulun päivä säilyy | Torstai Samuel Welhot oletuskuski Meidän | KKP pe 25.9. pois (ei mennä)",
   "extras": [
     {
       "id": "info-mea-synttarit-porkkanakakku-2026-09-24",
@@ -286,16 +276,6 @@
       "driver": "",
       "status": "",
       "note": "Jari Väänänen · WA 22.9. \"bille\" = padel. Paikka auki."
-    },
-    {
-      "id": "info-kkp-2026-09-25",
-      "who": "",
-      "title": "Kodin ja koulun päivä (Ellen + Samuel)",
-      "date": "2026-09-25",
-      "place": "Aurinkorinteen koulu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
     },
     {
       "id": "kyyti-mea-lianna-2026-09-25",
@@ -601,6 +581,12 @@
       "2026-09-25": "NTV-kisat peruttu (Jussi: ei kisoja)",
       "2026-09-26": "NTV-kisat peruttu (Jussi: ei kisoja)",
       "2026-09-27": "NTV-kisat peruttu (Jussi: ei kisoja)"
+    },
+    "info-kkp-2026-09-25": {
+      "id": "info-kkp-2026-09-25",
+      "title": "Kodin ja koulun päivä",
+      "date": "2026-09-25",
+      "reason": "Jussi 24.9.: ei mennä"
     }
   }
 }

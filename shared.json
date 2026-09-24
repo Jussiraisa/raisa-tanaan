@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-09-24T12:05:00+03:00",
+  "updated": 1790242381752,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -559,16 +559,6 @@
       "status": ""
     },
     {
-      "id": "sheet-mea-2026-09-25",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
       "id": "kyyti-samuel-welhot-2026-09-24",
       "who": "samuel",
       "title": "Welhot · Riikka vie+hakee",
@@ -579,6 +569,16 @@
       "kind": "kyyti",
       "driver": "Riikka",
       "status": "us"
+    },
+    {
+      "id": "sheet-mea-2026-09-25",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

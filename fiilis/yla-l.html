@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260923-v101-sauna-warn">
+  <meta name="fiilis-build" content="20260924-v102-koulu-fix">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1391,8 +1391,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     if (now.wd === 6) schoolIso = addDaysIso(now.iso, 2);
     if (now.wd === 0) schoolIso = addDaysIso(now.iso, 1);
     var schools = schoolStartsForWd(schoolWd, schoolIso);
-    var hobbyIso = addDaysIso(now.iso, 1);
-    var out = dayEventsClean(hobbyIso);
+    /* Aamulla vain tämän päivän koulu. Huomisen treenit vain kun koulu-osio on jo huomisessa (klo 16+). */
+    var hobbyIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : null;
+    var out = hobbyIso ? dayEventsClean(hobbyIso) : [];
     var lbl = document.querySelector("#huomenna .lbl") || document.querySelector(".duo .lbl");
     /* Prefer the Huomenna label next to tomorrowBox */
     var duo = el.parentElement;
@@ -1427,7 +1428,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         shown++;
       }
     }
-    if (!todayFocus(now).rolled) {
+    if (showTomorrowSchool && out.length) {
       for (i = 0; i < out.length && i < MAX_HOBBY; i++) {
         var e = out[i];
         var who = shortWho(e.who || "");

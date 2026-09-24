@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790223785905,
+  "updated": 1790224090141,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -223,10 +223,10 @@
       "note": "Jari Väänänen · WA 22.9. bille=padel. Paikka auki."
     },
     "samuel-sahly-to": {
-      "driver": "Meidän",
-      "status": "us",
+      "driver": "Manen äiti",
+      "status": "other",
       "ride": "vie+hakee",
-      "note": "torstai-oletus Meidän (ei Topias)"
+      "note": "24.9. Manen äiti ajaa (Jussi)"
     }
   },
   "cooks": {
@@ -247,7 +247,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "to Welhot-oletus Meidän; Kodin ja koulun pe 25.9 pois (ei osallistuta); NTV 25–27.9 pois",
+  "note": "to 24.9 Welhot Manen äiti; Ellen ei treeniä to; pe Ambrosia Luola OK",
   "extras": [
     {
       "id": "info-mea-synttarit-porkkanakakku-2026-09-24",
@@ -567,6 +567,18 @@
       "end": "20:30",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "kyyti-samuel-welhot-2026-09-24",
+      "who": "samuel",
+      "title": "Welhot · Manen äiti vie+hakee",
+      "date": "2026-09-24",
+      "start": "17:00",
+      "end": "18:30",
+      "place": "Puijonsarvi",
+      "kind": "kyyti",
+      "driver": "Manen äiti",
+      "status": "other"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-24T07:17:45+03:00",
+  "updated": "2026-09-24T07:18:13+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -348,30 +348,10 @@
     },
     {
       "date": "2026-09-23",
-      "time": "",
-      "who": "Ellen",
-      "title": "Kodin ja koulun päivä · deadline",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-23",
       "who": "Milla",
       "title": "Vapaapäivä koulusta",
       "kind": "muu",
       "source": "perhe"
-    },
-    {
-      "date": "2026-09-23",
-      "time": "",
-      "who": "Samuel",
-      "title": "Kodin ja koulun päivä · deadline",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-23",
-      "who": "perhe",
-      "title": "Kodin ja koulun päivä",
-      "kind": "muu"
     },
     {
       "date": "2026-09-24",
@@ -447,29 +427,6 @@
       "title": "Vivida treeni",
       "place": "Bella Center",
       "kind": "treeni"
-    },
-    {
-      "date": "2026-09-25",
-      "time": "",
-      "who": "Ellen",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinne",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-25",
-      "time": "",
-      "who": "Samuel",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinne",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-09-25",
-      "who": "perhe",
-      "title": "Kodin ja koulun päivä",
-      "place": "Aurinkorinteen koulu",
-      "kind": "muu"
     },
     {
       "date": "2026-09-26",
@@ -1214,7 +1171,7 @@
       "weekday": 4,
       "who": "Samuel",
       "titleContains": "Welhot",
-      "driver": "Topias"
+      "driver": "Meidän"
     },
     {
       "weekday": 5,

@@ -1,7 +1,7 @@
 {
-  "schedule": "2026-09-24-ellen-no-thu-welhot-manen",
-  "updated": "2026-09-24T11:55:00+03:00",
-  "ui": "20260924-v102-koulu-fix",
-  "poll": "v102",
+  "schedule": "2026-09-24-welhot-riikka",
+  "updated": "2026-09-24T12:00:00+03:00",
+  "ui": "20260924-v103-welhot-riikka",
+  "poll": "v103",
   "note": "cache-bust sync: tvr/tvl/tv1 + kalenterit → sama BUILD kuin vaaka/tesla/puhelin"
 }

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-09-24T12:00:00+03:00",
+  "updated": "2026-09-24T12:05:00+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -223,10 +223,10 @@
       "note": "Jari Väänänen · WA 22.9. bille=padel. Paikka auki."
     },
     "samuel-sahly-to": {
-      "driver": "Riikka",
+      "driver": "Meidän",
       "status": "us",
       "ride": "vie+hakee",
-      "note": "24.9. kyydit Riikalla (korjattu)"
+      "note": "Oletus: torstai aina meidän, ellei WA/Fiilis sano muuta (Jussi 24.9.2026)"
     }
   },
   "cooks": {
@@ -247,7 +247,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "to 24.9 Welhot Riikka; Ellen ei treeniä to; pe Ambrosia Luola OK",
+  "note": "to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK",
   "extras": [
     {
       "id": "info-mea-synttarit-porkkanakakku-2026-09-24",

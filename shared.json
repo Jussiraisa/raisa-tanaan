@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": 1790223199415,
+  "updated": "2026-09-24T07:16:57+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -112,11 +112,6 @@
       "ride": ""
     },
     "info-kkp-2026-09-25": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-ntv-kisat-2026-09-25": {
       "driver": "",
       "status": "",
       "ride": ""
@@ -256,7 +251,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "",
+  "note": "24.9. Samuel Welhot kyydit Meidän (Jussi); NTV-kisat poistettu (ei kisoja)",
   "extras": [
     {
       "id": "info-mea-synttarit-porkkanakakku-2026-09-24",
@@ -303,17 +298,6 @@
       "status": ""
     },
     {
-      "id": "info-ntv-kisat-2026-09-25",
-      "who": "ellen",
-      "title": "Ambrosia NTV-kisat + talkoot",
-      "date": "2026-09-25",
-      "dateEnd": "2026-09-27",
-      "place": "Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "kyyti-mea-lianna-2026-09-25",
       "who": "mea",
       "title": "Lianna · Amanda (Elina) vie+hakee",
@@ -324,16 +308,6 @@
       "kind": "kyyti",
       "driver": "Amanda / Elina",
       "status": "open"
-    },
-    {
-      "id": "cal-0g0qjfejb9roovhcieicii1ov8",
-      "title": "Ellen · Ambrosia NTV-kisat",
-      "date": "2026-09-25",
-      "dateEnd": "2026-09-27",
-      "start": "08:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Luola"
     },
     {
       "id": "cal-i9bbie018n6v0475l8ombjtf48",

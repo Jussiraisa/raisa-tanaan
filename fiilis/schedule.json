@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-24T06:01:00",
+  "updated": "2026-09-24T07:16:51+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -382,7 +382,9 @@
       "place": "Puijonsarvi",
       "kind": "treeni",
       "source": "nimenhuuto:welhot2018",
-      "driver": "Topias"
+      "driver": "Meidän",
+      "pickup": "Meidän",
+      "note": "Jussi vahvisti 24.9.: meidän kyydit (ei Topias)"
     },
     {
       "date": "2026-09-24",
@@ -403,16 +405,6 @@
       "kind": "muu",
       "source": "perhe",
       "note": "Porkkanakakku Mea synttäreihin · jatkuu pe"
-    },
-    {
-      "date": "2026-09-25",
-      "time": "09:00",
-      "end": "18:00",
-      "who": "Ellen",
-      "title": "Ambrosia NTV + talkoot",
-      "place": "Luola",
-      "kind": "treeni",
-      "driver": "Riikka"
     },
     {
       "date": "2026-09-25",
@@ -492,15 +484,6 @@
     },
     {
       "date": "2026-09-26",
-      "who": "Ellen",
-      "title": "Ambrosia NTV + talkoot",
-      "place": "Luola",
-      "kind": "treeni",
-      "time": "09:00",
-      "end": "18:00"
-    },
-    {
-      "date": "2026-09-26",
       "time": "13:00",
       "who": "Mea",
       "title": "Synttärit · sukulaiset",
@@ -516,15 +499,6 @@
       "title": "Vivida hiontaleiri",
       "place": "Bella Center",
       "kind": "treeni"
-    },
-    {
-      "date": "2026-09-27",
-      "who": "Ellen",
-      "title": "Ambrosia NTV + talkoot",
-      "place": "Luola",
-      "kind": "treeni",
-      "time": "09:00",
-      "end": "18:00"
     },
     {
       "date": "2026-09-27",

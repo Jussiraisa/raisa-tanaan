@@ -1,8 +1,8 @@
 {
   "symbol": "TSLA",
-  "price": 380.255,
-  "changePct": 0.036,
+  "price": 379.91,
+  "changePct": -0.055,
   "currency": "USD",
-  "updated": "2026-09-24T18:58:03Z",
+  "updated": "2026-09-24T19:53:35Z",
   "source": "yahoo-chart"
 }

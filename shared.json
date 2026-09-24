@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-09-24T07:18:22+03:00",
+  "updated": "2026-09-24T07:18:31+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -241,7 +241,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "24.9. Samuel Welhot kyydit Meidän (Jussi); NTV-kisat 25–27.9 poistettu (ei kisoja); Kodin ja koulun päivä säilyy | Torstai Samuel Welhot oletuskuski Meidän | KKP pe 25.9. pois (ei mennä)",
+  "note": "24.9. Samuel Welhot kyydit Meidän; to-Welhot oletuskuski Meidän (ei Topias); NTV 25–27.9 pois; Kodin ja koulun pe 25.9 pois (ei osallistuta)",
   "extras": [
     {
       "id": "info-mea-synttarit-porkkanakakku-2026-09-24",
@@ -587,6 +587,9 @@
       "title": "Kodin ja koulun päivä",
       "date": "2026-09-25",
       "reason": "Jussi 24.9.: ei mennä"
+    },
+    "kodin-ja-koulun-paiva": {
+      "2026-09-25": "Perhe ei osallistu"
     }
   }
 }

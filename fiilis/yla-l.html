@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260925-v106-lg-keepalive">
+  <meta name="fiilis-build" content="20260925-v107-lg-keepalive">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -401,30 +401,11 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   flex: 0 0 auto;
 }
 
-/* LG: näkymätön mediasoitto pitää kelloruudun poissa (ei pelkkä CSS) */
-#lgKeepAlive {
-  position: fixed;
-  width: 2px;
-  height: 2px;
-  right: 0;
-  bottom: 0;
-  opacity: 0.01;
-  pointer-events: none;
-  z-index: 0;
-  border: 0;
-  outline: none;
-  overflow: hidden;
-}
 </style>
+<script src="lg-keepalive.js?v=107" defer></script>
 </head>
 <body class="morning">
 
-<!-- Näkymätön äänetön loop: LG tulkitsee aktiiviseksi mediasoitoksi → kello-screensaver ei aktivoidu -->
-<video id="lgKeepAlive" muted autoplay loop playsinline webkit-playsinline
-  preload="auto" aria-hidden="true" tabindex="-1">
-  <source src="lg-keepalive.webm" type="video/webm">
-  <source src="lg-keepalive.mp4" type="video/mp4">
-</video>
 
 <div class="tv" id="app">
   <div class="head">
@@ -497,7 +478,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260925-v106-lg-keepalive";
+  var BUILD = "20260925-v107-lg-keepalive";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1704,76 +1685,6 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   schedulePhotoRotate();
   setInterval(loadWeather, 30 * 60 * 1000);
 
-  /* LG TV: pidä äänetön HTML5-video käynnissä (kello/screensaver). Canvas-stream varmistuksena. */
-  (function lgKeepAliveMedia() {
-    var v = document.getElementById("lgKeepAlive");
-    if (!v) return;
-    var usingCanvas = false;
-    function ensurePlaying() {
-      try {
-        if (v.paused || v.ended) {
-          var p = v.play();
-          if (p && p.catch) p.catch(function () {});
-        }
-      } catch (e) {}
-    }
-    function attachCanvasStream() {
-      if (usingCanvas) return;
-      try {
-        if (!v.captureStream && !(window.HTMLCanvasElement && HTMLCanvasElement.prototype.captureStream)) return;
-        var c = document.createElement("canvas");
-        c.width = 16; c.height = 16;
-        var ctx = c.getContext("2d", { alpha: false });
-        if (!ctx || !c.captureStream) return;
-        function paint() {
-          var n = (Date.now() / 400) | 0;
-          ctx.fillStyle = "#000";
-          ctx.fillRect(0, 0, 16, 16);
-          ctx.fillStyle = "rgb(" + (n % 3) + "," + ((n + 1) % 3) + ",0)";
-          ctx.fillRect(0, 0, 1, 1);
-        }
-        paint();
-        var stream = c.captureStream(2);
-        try { v.pause(); } catch (e1) {}
-        v.removeAttribute("src");
-        while (v.firstChild) v.removeChild(v.firstChild);
-        v.srcObject = stream;
-        usingCanvas = true;
-        setInterval(paint, 500);
-        ensurePlaying();
-      } catch (e) {}
-    }
-    v.addEventListener("ended", ensurePlaying);
-    v.addEventListener("pause", function () {
-      setTimeout(ensurePlaying, 250);
-    });
-    v.addEventListener("error", function () {
-      attachCanvasStream();
-    });
-    document.addEventListener("visibilitychange", function () {
-      if (!document.hidden) ensurePlaying();
-    });
-    window.addEventListener("focus", ensurePlaying);
-    // Wake Lock jos selain tukee (harvinainen TV:ssä, mutta harmiton)
-    function requestWake() {
-      try {
-        if (navigator.wakeLock && navigator.wakeLock.request) {
-          navigator.wakeLock.request("screen").catch(function () {});
-        }
-      } catch (e) {}
-    }
-    requestWake();
-    setInterval(requestWake, 60000);
-    setInterval(ensurePlaying, 15000);
-    // Käynnistä heti + uudelleen kun DOM valmis
-    ensurePlaying();
-    setTimeout(ensurePlaying, 800);
-    setTimeout(function () {
-      // Jos tiedosto ei ole soittanut ~2 s, siirry canvas-streamiin
-      if (v.readyState < 2 && !usingCanvas) attachCanvasStream();
-      ensurePlaying();
-    }, 2000);
-  })();
 })();
 </script>
 </body>

@@ -1,7 +1,7 @@
 {
   "schedule": "2026-09-25-ellen-vienti",
-  "updated": "2026-09-25T14:51:57+03:00",
-  "ui": "20260925-v106-lg-keepalive",
-  "poll": "v106",
-  "note": "LG keepalive: näkymätön äänetön video/loop tv-vaaka + yläkerta (ei kelloscreensaveria)"
+  "updated": "2026-09-25T17:36:10+03:00",
+  "ui": "20260925-v107-lg-keepalive",
+  "poll": "v107",
+  "note": "v107 LG/Android keepalive: fullscreen motion video + corner + silent audio (tvr/tvl/tv1 + vaaka/ylä)"
 }

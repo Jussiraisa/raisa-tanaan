@@ -1,7 +1,7 @@
 {
   "schedule": "2026-09-25-ellen-vienti",
-  "updated": "2026-09-25T17:36:10+03:00",
-  "ui": "20260925-v107-lg-keepalive",
-  "poll": "v107",
-  "note": "v107 LG/Android keepalive: fullscreen motion video + corner + silent audio (tvr/tvl/tv1 + vaaka/ylä)"
+  "updated": "2026-09-25T18:46:43+03:00",
+  "ui": "20260925-v108-lg-keepalive",
+  "poll": "v108",
+  "note": "v108 yläkerta/vaaka keepalive: isompi video + audio + soft reload 12min"
 }

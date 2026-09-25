@@ -1,22 +1,24 @@
-/* Fiilis TV keepalive v111 — muistokuva on itsessään pyörivä video.
-   LG sammuttaa näytön, jos video on piilossa tai nurkassa. Video peittää
-   muistokuvan ja piirtää saman kuvan, joten ruutu näyttää samalta ja
-   televisio näkee ison toistuvan videon. Ei mustaa laatikkoa.
-   Lataa: <script src="lg-keepalive.js?v=111" defer></script> */
+/* Fiilis TV keepalive v112
+   LG sammuttaa ruudun, jos video on piilossa tai vain nurkassa.
+   Muistokuva on iso toistuva video (sama kuva), joten televisio
+   näkee toiston eikä nurkkaan tule laatikkoa.
+   Jos selaimesta puuttuu canvas-video, sama alue toistaa pienen
+   hiekanvärisen videon kuvan päällä, läpikuultavana.
+   Lataa: <script src="lg-keepalive.js?v=112" defer></script> */
 (function () {
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "111";
-  var RELOAD_MS = 8 * 60 * 1000;
+  var BUILD = "112";
+  var RELOAD_MS = 12 * 60 * 1000;
 
   var STYLE = [
-    ".hero,#fiilisKeepAliveHost{position:relative;}",
+    ".hero,.photo-wrap{position:relative;}",
     "#fiilisKeepAliveVideo{",
     "position:absolute;left:0;top:0;width:100%;height:100%;",
-    "object-fit:cover;z-index:2;pointer-events:none;background:transparent;",
-    "opacity:1;}",
-    ".hero .cap,.photo-wrap .photo-cap,.hero .cap *{position:relative;z-index:4;}"
+    "object-fit:cover;z-index:2;pointer-events:none;",
+    "background:transparent;opacity:.18;}",
+    ".hero .cap,.photo-wrap .photo-cap{z-index:5;}"
   ].join("");
 
   function injectStyle() {
@@ -29,7 +31,7 @@
   }
 
   function removeOld() {
-    ["fiilisKeepAliveCorner", "fiilisKeepAliveFrame", "lgKeepAlive"].forEach(function (id) {
+    ["fiilisKeepAliveCorner", "fiilisKeepAliveFrame", "fiilisKeepAliveStrip", "lgKeepAlive"].forEach(function (id) {
       var el = document.getElementById(id);
       if (el && el.parentNode) el.parentNode.removeChild(el);
     });
@@ -38,15 +40,12 @@
   function host() {
     var img = document.getElementById("photo");
     if (img && img.parentElement) return img.parentElement;
-    var hero = document.querySelector(".hero");
-    if (hero) return hero;
-    return document.body;
+    return document.querySelector(".hero") || document.body;
   }
 
   function makeVideo(parent) {
     var old = document.getElementById("fiilisKeepAliveVideo");
     if (old && old.parentNode) old.parentNode.removeChild(old);
-    parent.id = parent.id || "fiilisKeepAliveHost";
     var v = document.createElement("video");
     v.id = "fiilisKeepAliveVideo";
     v.muted = true;
@@ -86,11 +85,13 @@
     return true;
   }
 
-  function attach(v, parent) {
+  function attachCanvas(v, parent) {
+    if (!window.HTMLCanvasElement || !HTMLCanvasElement.prototype.captureStream) return false;
     var c = document.createElement("canvas");
     var ctx = c.getContext("2d", { alpha: false });
-    if (!ctx || !c.captureStream) return false;
+    if (!ctx) return false;
     var img = document.getElementById("photo");
+    var revealed = false;
     function size() {
       var r = parent.getBoundingClientRect();
       var w = Math.max(960, Math.round(r.width) || 1280);
@@ -102,18 +103,24 @@
     }
     function paint() {
       size();
-      var rgb = [239, 214, 176];
-      ctx.fillStyle = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
+      ctx.fillStyle = "#EFD6B0";
       ctx.fillRect(0, 0, c.width, c.height);
-      if (img && img.complete) coverDraw(ctx, img, c.width, c.height);
-      var n = (Date.now() / 500 | 0) % 2;
-      var px = ctx.getImageData(2, 2, 1, 1);
-      px.data[0] = Math.min(255, px.data[0] + (n ? 1 : -1));
-      ctx.putImageData(px, 2, 2);
+      var drew = img && img.complete && coverDraw(ctx, img, c.width, c.height);
+      var n = (Date.now() / 400 | 0) % 2;
+      ctx.fillStyle = n ? "#EFD6B1" : "#EFD6AF";
+      ctx.fillRect(1, 1, 3, 3);
+      if (drew && !revealed) {
+        revealed = true;
+        v.style.opacity = "1";
+      }
     }
     paint();
-    try { v.srcObject = c.captureStream(10); } catch (e) { return false; }
-    setInterval(paint, 200);
+    var stream;
+    try { stream = c.captureStream(8); } catch (e) { return false; }
+    if (!stream) return false;
+    try { v.srcObject = stream; } catch (e) { return false; }
+    try { v.removeAttribute("src"); } catch (e2) {}
+    setInterval(paint, 250);
     if (img) img.addEventListener("load", paint);
     playHard(v);
     return true;
@@ -150,7 +157,7 @@
       if (!(window.webOS && webOS.service && webOS.service.request)) return;
       webOS.service.request("luna://com.palm.power/com/palm/power", {
         method: "activityStart",
-        parameters: { id: "fiilis-keepalive", duration_ms: 600000 },
+        parameters: { id: "fiilis-keepalive", duration_ms: 900000 },
         onSuccess: function () {},
         onFailure: function () {}
       });
@@ -173,22 +180,42 @@
     removeOld();
     var parent = host();
     var v = makeVideo(parent);
+    var mp4 = "keepalive.mp4?v=" + BUILD;
+    v.src = mp4;
+    v.loop = true;
+    playHard(v);
+    var canvasOn = attachCanvas(v, parent);
+    if (!canvasOn) v.style.opacity = "0.2";
+
     function kick() {
-      if (!v.srcObject) attach(v, parent);
-      playHard(v);
+      if (v.ended || v.paused || v.readyState < 2) {
+        if (!v.srcObject) {
+          if (!v.getAttribute("src")) v.src = mp4;
+        }
+        playHard(v);
+      } else {
+        playHard(v);
+      }
       requestWake();
       webosHold();
     }
-    v.addEventListener("pause", function () { setTimeout(kick, 250); });
+    v.addEventListener("pause", function () { setTimeout(kick, 200); });
+    v.addEventListener("ended", function () { playHard(v); });
+    v.addEventListener("error", function () {
+      if (!v.srcObject) {
+        v.src = mp4 + "&r=" + Date.now();
+        playHard(v);
+      }
+    });
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) kick();
     });
     startAudio();
     kick();
-    setTimeout(kick, 600);
+    setTimeout(kick, 500);
     setTimeout(kick, 2000);
-    setInterval(kick, 7000);
-    setInterval(requestWake, 30000);
+    setInterval(kick, 5000);
+    setInterval(requestWake, 25000);
     setInterval(webosHold, 90000);
     setTimeout(softReload, RELOAD_MS);
   }

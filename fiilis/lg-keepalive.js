@@ -1,20 +1,22 @@
-/* Fiilis TV keepalive v110 — TV pysyy päällä, ei mustaa nurkkalaatikkoa.
-   LG laskee vain ruudulla näkyvän videon. Yläreunassa on taustanvärinen
-   ohut kaista (sama sävy kuin sivu), joka vaihtaa pikseleitä. Audio +
-   wake lock + webOS-aktiviteetti + reload ~4 min.
-   Lataa: <script src="lg-keepalive.js?v=110" defer></script> */
+/* Fiilis TV keepalive v111 — muistokuva on itsessään pyörivä video.
+   LG sammuttaa näytön, jos video on piilossa tai nurkassa. Video peittää
+   muistokuvan ja piirtää saman kuvan, joten ruutu näyttää samalta ja
+   televisio näkee ison toistuvan videon. Ei mustaa laatikkoa.
+   Lataa: <script src="lg-keepalive.js?v=111" defer></script> */
 (function () {
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "110";
-  var RELOAD_MS = 4 * 60 * 1000;
+  var BUILD = "111";
+  var RELOAD_MS = 8 * 60 * 1000;
 
   var STYLE = [
+    ".hero,#fiilisKeepAliveHost{position:relative;}",
     "#fiilisKeepAliveVideo{",
-    "position:fixed;left:0;top:0;width:100vw;height:14px;",
-    "opacity:1;pointer-events:none;border:0;outline:none;z-index:2147483000;",
-    "object-fit:cover;background:transparent;}"
+    "position:absolute;left:0;top:0;width:100%;height:100%;",
+    "object-fit:cover;z-index:2;pointer-events:none;background:transparent;",
+    "opacity:1;}",
+    ".hero .cap,.photo-wrap .photo-cap,.hero .cap *{position:relative;z-index:4;}"
   ].join("");
 
   function injectStyle() {
@@ -33,25 +35,18 @@
     });
   }
 
-  function parseRgb(str) {
-    var m = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/.exec(str || "");
-    if (!m) return [239, 214, 176];
-    return [+m[1], +m[2], +m[3]];
+  function host() {
+    var img = document.getElementById("photo");
+    if (img && img.parentElement) return img.parentElement;
+    var hero = document.querySelector(".hero");
+    if (hero) return hero;
+    return document.body;
   }
 
-  function pageRgb() {
-    try {
-      var el = document.body || document.documentElement;
-      var c = getComputedStyle(el).backgroundColor;
-      return parseRgb(c);
-    } catch (e) {
-      return [239, 214, 176];
-    }
-  }
-
-  function makeVideo() {
+  function makeVideo(parent) {
     var old = document.getElementById("fiilisKeepAliveVideo");
     if (old && old.parentNode) old.parentNode.removeChild(old);
+    parent.id = parent.id || "fiilisKeepAliveHost";
     var v = document.createElement("video");
     v.id = "fiilisKeepAliveVideo";
     v.muted = true;
@@ -67,12 +62,11 @@
     v.setAttribute("preload", "auto");
     v.setAttribute("aria-hidden", "true");
     v.tabIndex = -1;
-    document.body.appendChild(v);
+    parent.appendChild(v);
     return v;
   }
 
   function playHard(v) {
-    if (!v) return;
     try {
       v.muted = true;
       v.volume = 0;
@@ -81,25 +75,46 @@
     } catch (e) {}
   }
 
-  function attachCanvas(v) {
+  function coverDraw(ctx, img, w, h) {
+    var iw = img.naturalWidth || img.width;
+    var ih = img.naturalHeight || img.height;
+    if (!iw || !ih) return false;
+    var scale = Math.max(w / iw, h / ih);
+    var dw = iw * scale;
+    var dh = ih * scale;
+    ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+    return true;
+  }
+
+  function attach(v, parent) {
     var c = document.createElement("canvas");
-    c.width = 640;
-    c.height = 36;
     var ctx = c.getContext("2d", { alpha: false });
     if (!ctx || !c.captureStream) return false;
+    var img = document.getElementById("photo");
+    function size() {
+      var r = parent.getBoundingClientRect();
+      var w = Math.max(960, Math.round(r.width) || 1280);
+      var h = Math.max(540, Math.round(r.height) || 720);
+      if (w > 1920) w = 1920;
+      if (h > 1080) h = 1080;
+      if (c.width !== w) c.width = w;
+      if (c.height !== h) c.height = h;
+    }
     function paint() {
-      var rgb = pageRgb();
+      size();
+      var rgb = [239, 214, 176];
       ctx.fillStyle = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
-      ctx.fillRect(0, 0, 640, 36);
-      var t = Date.now() / 180;
-      var x = (t % 640) | 0;
-      var d = ((Date.now() / 700) | 0) % 2 ? 2 : -2;
-      ctx.fillStyle = "rgb(" + (rgb[0] + d) + "," + (rgb[1] + d) + "," + (rgb[2] + d) + ")";
-      ctx.fillRect(x, 0, 8, 36);
+      ctx.fillRect(0, 0, c.width, c.height);
+      if (img && img.complete) coverDraw(ctx, img, c.width, c.height);
+      var n = (Date.now() / 500 | 0) % 2;
+      var px = ctx.getImageData(2, 2, 1, 1);
+      px.data[0] = Math.min(255, px.data[0] + (n ? 1 : -1));
+      ctx.putImageData(px, 2, 2);
     }
     paint();
-    v.srcObject = c.captureStream(8);
-    setInterval(paint, 120);
+    try { v.srcObject = c.captureStream(10); } catch (e) { return false; }
+    setInterval(paint, 200);
+    if (img) img.addEventListener("load", paint);
     playHard(v);
     return true;
   }
@@ -112,23 +127,20 @@
       var osc = ac.createOscillator();
       var gain = ac.createGain();
       gain.gain.value = 0.00002;
-      osc.frequency.value = 38;
-      osc.type = "sine";
+      osc.frequency.value = 40;
       osc.connect(gain);
       gain.connect(ac.destination);
       osc.start();
       setInterval(function () {
         try { if (ac.state === "suspended") ac.resume(); } catch (e) {}
-      }, 15000);
+      }, 12000);
     } catch (e) {}
   }
 
   function requestWake() {
     try {
       if (navigator.wakeLock && navigator.wakeLock.request) {
-        navigator.wakeLock.request("screen").then(function (lock) {
-          window.__fiilisWakeLock = lock;
-        }).catch(function () {});
+        navigator.wakeLock.request("screen").catch(function () {});
       }
     } catch (e) {}
   }
@@ -138,7 +150,7 @@
       if (!(window.webOS && webOS.service && webOS.service.request)) return;
       webOS.service.request("luna://com.palm.power/com/palm/power", {
         method: "activityStart",
-        parameters: { id: "fiilis-keepalive", duration_ms: 300000 },
+        parameters: { id: "fiilis-keepalive", duration_ms: 600000 },
         onSuccess: function () {},
         onFailure: function () {}
       });
@@ -159,24 +171,25 @@
   function boot() {
     injectStyle();
     removeOld();
-    var v = makeVideo();
+    var parent = host();
+    var v = makeVideo(parent);
     function kick() {
-      if (!v.srcObject) attachCanvas(v);
+      if (!v.srcObject) attach(v, parent);
       playHard(v);
       requestWake();
       webosHold();
     }
-    v.addEventListener("pause", function () { setTimeout(kick, 200); });
-    v.addEventListener("ended", kick);
+    v.addEventListener("pause", function () { setTimeout(kick, 250); });
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) kick();
     });
     startAudio();
     kick();
-    setTimeout(kick, 500);
-    setInterval(kick, 8000);
-    setInterval(requestWake, 40000);
-    setInterval(webosHold, 120000);
+    setTimeout(kick, 600);
+    setTimeout(kick, 2000);
+    setInterval(kick, 7000);
+    setInterval(requestWake, 30000);
+    setInterval(webosHold, 90000);
     setTimeout(softReload, RELOAD_MS);
   }
 

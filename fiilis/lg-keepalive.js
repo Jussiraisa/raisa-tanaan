@@ -1,40 +1,42 @@
-/* Fiilis TV keepalive v108 — LG / Android kello & energiasäästö.
-   Liikkuva video (täysi peitto + nurkka) + AudioContext + pehmeä reload ~12 min.
-   Lataa: <script src="lg-keepalive.js?v=108" defer></script> */
+/* Fiilis TV keepalive v109 — TV pysyy päällä, ei näkyvää nurkkavideota.
+   Video on ruudun ulkopuolella (dekooderi elossa). AudioContext + wake lock +
+   pehmeä reload ~9 min nollaa LG:n kellon idle-ajastimen.
+   Lataa: <script src="lg-keepalive.js?v=109" defer></script> */
 (function () {
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "108";
-  var RELOAD_MS = 12 * 60 * 1000;
+  var BUILD = "109";
+  var RELOAD_MS = 9 * 60 * 1000;
 
   var STYLE = [
     "#fiilisKeepAliveVideo{",
-    "position:fixed;inset:0;width:100vw;height:100vh;z-index:2147483000;",
-    "opacity:0.045;pointer-events:none;border:0;outline:none;object-fit:cover;",
-    "background:#000;}",
-    "#fiilisKeepAliveCorner{",
-    "position:fixed;right:0;bottom:0;width:180px;height:101px;z-index:2147483001;",
-    "opacity:0.18;pointer-events:none;border:0;outline:none;object-fit:cover;",
-    "background:#000;}",
-    "#fiilisKeepAliveFrame{",
-    "position:fixed;left:0;bottom:0;width:120px;height:68px;z-index:2147483002;",
-    "opacity:0.12;pointer-events:none;border:0;overflow:hidden;}"
+    "position:fixed;left:-800px;top:-800px;width:64px;height:36px;",
+    "opacity:0;pointer-events:none;border:0;outline:none;",
+    "z-index:-1;background:transparent;}"
   ].join("");
 
   function injectStyle() {
-    if (document.getElementById("fiilisKeepAliveStyle")) return;
+    var old = document.getElementById("fiilisKeepAliveStyle");
+    if (old && old.parentNode) old.parentNode.removeChild(old);
     var s = document.createElement("style");
     s.id = "fiilisKeepAliveStyle";
     s.textContent = STYLE;
     (document.head || document.documentElement).appendChild(s);
   }
 
-  function makeVideo(id) {
-    var old = document.getElementById(id);
+  function removeVisible() {
+    ["fiilisKeepAliveCorner", "fiilisKeepAliveFrame", "lgKeepAlive"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.parentNode) el.parentNode.removeChild(el);
+    });
+  }
+
+  function makeVideo() {
+    var old = document.getElementById("fiilisKeepAliveVideo");
     if (old && old.parentNode) old.parentNode.removeChild(old);
     var v = document.createElement("video");
-    v.id = id;
+    v.id = "fiilisKeepAliveVideo";
     v.muted = true;
     v.defaultMuted = true;
     v.autoplay = true;
@@ -75,26 +77,22 @@
   function attachCanvas(v) {
     try {
       var c = document.createElement("canvas");
-      c.width = 320;
-      c.height = 180;
+      c.width = 64;
+      c.height = 36;
       var ctx = c.getContext("2d", { alpha: false });
       if (!ctx || !c.captureStream) return false;
       function paint() {
         var t = Date.now() / 1000;
-        ctx.fillStyle = "#050505";
-        ctx.fillRect(0, 0, 320, 180);
-        for (var i = 0; i < 8; i++) {
-          var x = ((Math.sin(t * 0.7 + i) + 1) * 0.5 * 300) | 0;
-          var y = ((Math.cos(t * 0.9 + i * 0.6) + 1) * 0.5 * 160) | 0;
-          ctx.fillStyle = "rgb(" + (8 + i) + "," + (6 + i) + "," + (4 + i) + ")";
-          ctx.fillRect(x, y, 12, 12);
-        }
+        ctx.fillStyle = "#111";
+        ctx.fillRect(0, 0, 64, 36);
+        ctx.fillStyle = "#222";
+        ctx.fillRect((t * 8) % 64, 8, 4, 4);
       }
       paint();
       while (v.firstChild) v.removeChild(v.firstChild);
       v.removeAttribute("src");
-      v.srcObject = c.captureStream(10);
-      setInterval(paint, 100);
+      v.srcObject = c.captureStream(8);
+      setInterval(paint, 120);
       playHard(v);
       return true;
     } catch (e) {
@@ -153,37 +151,26 @@
 
   function boot() {
     injectStyle();
-    var legacy = document.getElementById("lgKeepAlive");
-    if (legacy && legacy.parentNode) legacy.parentNode.removeChild(legacy);
-
-    var full = makeVideo("fiilisKeepAliveVideo");
-    var corner = makeVideo("fiilisKeepAliveCorner");
+    removeVisible();
+    var full = makeVideo();
 
     function kick() {
       playHard(full);
-      playHard(corner);
       requestWake();
     }
 
     full.addEventListener("error", function () { attachCanvas(full); });
-    corner.addEventListener("error", function () { attachCanvas(corner); });
     full.addEventListener("pause", function () { setTimeout(kick, 200); });
-    corner.addEventListener("pause", function () { setTimeout(kick, 200); });
     full.addEventListener("ended", kick);
-    corner.addEventListener("ended", kick);
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) kick();
     });
     window.addEventListener("focus", kick);
 
-    // Pidä dekooderi elossa seekillä
     setInterval(function () {
       try {
         if (full.readyState >= 2 && full.duration && isFinite(full.duration) && full.duration > 1) {
           full.currentTime = (full.currentTime + 0.4) % (full.duration - 0.05);
-        }
-        if (corner.readyState >= 2 && corner.duration && isFinite(corner.duration) && corner.duration > 1) {
-          corner.currentTime = (corner.currentTime + 0.55) % (corner.duration - 0.05);
         }
       } catch (e) {}
       kick();
@@ -195,12 +182,9 @@
     setTimeout(kick, 1500);
     setTimeout(function () {
       if (full.readyState < 2) attachCanvas(full);
-      if (corner.readyState < 2) attachCanvas(corner);
       kick();
     }, 3000);
     setInterval(requestWake, 40000);
-
-    // Nollaa TV:n idle-ajastin pehmeällä reloadilla (~12 min)
     setTimeout(softReload, RELOAD_MS);
   }
 

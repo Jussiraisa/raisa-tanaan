@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790333843546,
+  "updated": 1790334239262,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -597,6 +597,15 @@
       "end": "11:30",
       "kind": "cal",
       "place": "Koti"
+    },
+    {
+      "id": "cal-b2mg169svkblipcfglk8odec0s",
+      "title": "Milla · Vivida hiontaleiri",
+      "date": "2026-09-26",
+      "start": "16:00",
+      "end": "20:00",
+      "kind": "cal",
+      "place": "Bella Center"
     }
   ],
   "schoolLunch": {

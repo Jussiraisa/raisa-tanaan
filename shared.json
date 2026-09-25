@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790321432840,
+  "updated": 1790322463563,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -261,6 +261,27 @@
       "kind": "kyyti",
       "driver": "Amanda / Elina",
       "status": "open"
+    },
+    {
+      "id": "kyyti-ellen-ambrosia-2026-09-25",
+      "who": "ellen",
+      "title": "Ambrosia · meidän vienti",
+      "date": "2026-09-25",
+      "start": "16:00",
+      "end": "18:30",
+      "place": "Luola",
+      "kind": "kyyti",
+      "driver": "Meidän",
+      "status": "us",
+      "ride": "vie"
+    },
+    {
+      "id": "cal-ls1akg1qlcir6kmlmkjo8rrip8",
+      "title": "Milla · KE01 koe (kemia)",
+      "date": "2026-09-25",
+      "start": "09:00",
+      "end": "12:00",
+      "kind": "cal"
     },
     {
       "id": "cal-i9bbie018n6v0475l8ombjtf48",
@@ -564,19 +585,6 @@
       "title": "Poistumisharjoitus",
       "date": "2026-09-28",
       "kind": "info"
-    },
-    {
-      "id": "kyyti-ellen-ambrosia-2026-09-25",
-      "who": "ellen",
-      "title": "Ambrosia · meidän vienti",
-      "date": "2026-09-25",
-      "start": "16:00",
-      "end": "18:30",
-      "place": "Luola",
-      "kind": "kyyti",
-      "driver": "Meidän",
-      "status": "us",
-      "ride": "vie"
     },
     {
       "id": "sheet-mea-2026-09-25",

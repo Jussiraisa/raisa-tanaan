@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790309345616,
+  "updated": 1790310084935,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -283,16 +283,6 @@
       "status": ""
     },
     {
-      "id": "sheet-mea-2026-09-25",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
       "id": "cal-mtcfg3mq1jgucj30arct8pnsbs",
       "title": "Mea synttärit · piirakat + valmistelu aamulla",
       "date": "2026-09-26",
@@ -551,6 +541,26 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "sheet-mea-2026-09-25",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-26",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-26",
+      "start": "16:00",
+      "end": "20:00",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

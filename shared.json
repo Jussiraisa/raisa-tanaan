@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790323935558,
+  "updated": 1790327008240,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -579,14 +579,6 @@
       "end": "20:00",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "cal-ls1akg1qlcir6kmlmkjo8rrip8",
-      "title": "Milla · KE01 koe (kemia)",
-      "date": "2026-09-25",
-      "start": "09:00",
-      "end": "12:00",
-      "kind": "cal"
     },
     {
       "id": "cal-i9bbie018n6v0475l8ombjtf48",

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-25T07:45:00+03:00",
+  "updated": "2026-09-25T07:44:53",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -681,7 +681,9 @@
       "place": "Puijonsarvi",
       "kind": "treeni",
       "source": "nimenhuuto:welhot2018",
-      "driver": "Topias"
+      "driver": "Meidän",
+      "pickup": "Meidän",
+      "note": "torstai-oletus meidän"
     },
     {
       "date": "2026-10-02",
@@ -956,7 +958,9 @@
       "title": "Welhot",
       "place": "Puijonsarven koulu",
       "kind": "treeni",
-      "driver": "Topias"
+      "driver": "Meidän",
+      "pickup": "Meidän",
+      "note": "torstai-oletus meidän"
     },
     {
       "date": "2026-10-09",

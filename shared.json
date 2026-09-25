@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790327008240,
+  "updated": 1790327982236,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -561,26 +561,6 @@
       "kind": "info"
     },
     {
-      "id": "sheet-mea-2026-09-25",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-26",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-26",
-      "start": "16:00",
-      "end": "20:00",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
       "id": "cal-i9bbie018n6v0475l8ombjtf48",
       "title": "Mea synttärit · leivonta (kakku + keksit)",
       "date": "2026-09-25",
@@ -606,6 +586,26 @@
       "end": "20:00",
       "kind": "cal",
       "place": "Bella Center"
+    },
+    {
+      "id": "sheet-mea-2026-09-25",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-26",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-26",
+      "start": "16:00",
+      "end": "20:00",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

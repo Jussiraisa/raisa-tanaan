@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790313126568,
+  "updated": 1790321432840,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -272,6 +272,15 @@
       "place": "Koti"
     },
     {
+      "id": "cal-mtcfg3mq1jgucj30arct8pnsbs",
+      "title": "Mea synttärit · piirakat + valmistelu aamulla",
+      "date": "2026-09-26",
+      "start": "08:00",
+      "end": "11:30",
+      "kind": "cal",
+      "place": "Koti"
+    },
+    {
       "id": "info-mea-synttarit-leivonta-2026-09-25",
       "who": "mea",
       "title": "Mea synttärit · prep (keksit, macarons, focaccia-taikina)",
@@ -282,15 +291,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "cal-mtcfg3mq1jgucj30arct8pnsbs",
-      "title": "Mea synttärit · piirakat + valmistelu aamulla",
-      "date": "2026-09-26",
-      "start": "08:00",
-      "end": "11:30",
-      "kind": "cal",
-      "place": "Koti"
     },
     {
       "id": "info-mea-synttarit-piirakat-2026-09-26",
@@ -315,15 +315,6 @@
       "who": "mea",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "cal-b2mg169svkblipcfglk8odec0s",
-      "title": "Milla · Vivida hiontaleiri",
-      "date": "2026-09-26",
-      "start": "16:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Bella Center"
     },
     {
       "id": "info-milla-hionta-2026-09-26",

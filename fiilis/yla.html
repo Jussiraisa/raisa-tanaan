@@ -325,33 +325,36 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 .chips { display: none !important; }
 .action-bar {
-  flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
-  gap: 1vmin; max-height: 5.2vmin; overflow: hidden;
-  padding: .35vmin .8vmin; border-radius: 1vmin;
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start;
+  gap: .45vmin .7vmin; max-height: 6.2vmin; overflow: hidden;
+  padding: .22vmin .55vmin; border-radius: .85vmin;
   background: rgba(201,148,58,.12); border: 1px solid rgba(163,113,42,.22);
 }
 .action-bar.has-items { background: rgba(201,148,58,.18); border-color: rgba(163,113,42,.35); }
 .action-lbl {
-  flex: 0 0 auto; font-size: 1.15vmin; font-weight: 700; letter-spacing: .06em;
+  flex: 0 0 auto; font-size: .92vmin; font-weight: 700; letter-spacing: .05em;
   text-transform: uppercase; color: #8f6524; white-space: nowrap;
+  padding-top: .28vmin; line-height: 1.1;
 }
 .action-list {
-  flex: 1 1 auto; min-width: 0; display: flex; align-items: center;
-  gap: .7vmin; overflow: hidden; flex-wrap: nowrap;
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: center; align-content: flex-start;
+  gap: .28vmin .4vmin; overflow: hidden; flex-wrap: wrap;
+  max-height: 5.6vmin;
 }
-.action-empty { font-size: 1.4vmin; color: #9a8b74; font-weight: 500; }
+.action-empty { font-size: 1.05vmin; color: #9a8b74; font-weight: 500; }
 .action-pill {
-  flex: 0 1 auto; max-width: 42vmin;
-  display: inline-flex; align-items: center; gap: .45vmin;
-  padding: .35vmin .75vmin; border-radius: 999px;
+  flex: 0 1 auto; max-width: 34vmin;
+  display: inline-flex; align-items: center; gap: .3vmin;
+  padding: .15vmin .45vmin; border-radius: 999px;
   background: #FFF3DC; border: 1px solid rgba(143,101,36,.28);
-  font-size: 1.45vmin; font-weight: 650; color: #2c2418;
+  font-size: 1.05vmin; font-weight: 600; color: #2c2418;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  line-height: 1.15;
 }
 .action-pill .src {
-  font-size: 1.05vmin; font-weight: 700; letter-spacing: .04em;
+  font-size: .78vmin; font-weight: 700; letter-spacing: .03em;
   text-transform: uppercase; color: #fff8ea;
-  background: #8f6524; border-radius: .35vmin; padding: .08vmin .4vmin;
+  background: #8f6524; border-radius: .28vmin; padding: .04vmin .28vmin;
 }
 .action-pill.wa .src { background: #3d7a4a; }
 .action-pill.abs .src { background: #6c5c44; }
@@ -471,7 +474,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260925-v104-wilma";
+  var BUILD = "20260925-v105-wilma-2r";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1249,7 +1252,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     }
     if (bar) bar.className = "action-bar has-items";
     var html = "";
-    var max = Math.min(items.length, 4);
+    var max = Math.min(items.length, 6);
     for (var k = 0; k < max; k++) {
       var it = items[k];
       var label = (it.who ? it.who + " · " : "") + it.title;

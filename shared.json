@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-09-25T07:30:00+03:00",
+  "updated": "2026-09-25T07:40:00+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -8,9 +8,10 @@
       "ride": "vie+hakee"
     },
     "ellen-ambrosia-pe": {
-      "driver": "Riikka",
+      "driver": "Meidän",
       "status": "us",
-      "ride": "vie"
+      "ride": "vie",
+      "note": "25.9. meidän vienti (Jussi vahvisti)"
     },
     "samuel-sahly-ma": {
       "driver": "Sini/Topias",
@@ -592,6 +593,19 @@
       "title": "Poistumisharjoitus",
       "date": "2026-09-28",
       "kind": "info"
+    },
+    {
+      "id": "kyyti-ellen-ambrosia-2026-09-25",
+      "who": "ellen",
+      "title": "Ambrosia · meidän vienti",
+      "date": "2026-09-25",
+      "start": "16:00",
+      "end": "18:30",
+      "place": "Luola",
+      "kind": "kyyti",
+      "driver": "Meidän",
+      "status": "us",
+      "ride": "vie"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790348429890,
+  "updated": 1790350408579,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -261,19 +261,6 @@
       "kind": "kyyti",
       "driver": "Amanda / Elina",
       "status": "open"
-    },
-    {
-      "id": "kyyti-ellen-ambrosia-2026-09-25",
-      "who": "ellen",
-      "title": "Ambrosia · meidän vienti",
-      "date": "2026-09-25",
-      "start": "16:00",
-      "end": "18:30",
-      "place": "Luola",
-      "kind": "kyyti",
-      "driver": "Meidän",
-      "status": "us",
-      "ride": "vie"
     },
     {
       "id": "info-mea-synttarit-piirakat-2026-09-26",

@@ -1,7 +1,7 @@
 {
   "schedule": "2026-09-25-ellen-vienti",
-  "updated": "2026-09-25T07:40:00+03:00",
-  "ui": "20260925-v105-wilma-2r",
-  "poll": "v105",
-  "note": "cache-bust sync: tvr/tvl/tv1 + kalenterit → sama BUILD kuin vaaka/tesla/puhelin"
+  "updated": "2026-09-25T14:51:57+03:00",
+  "ui": "20260925-v106-lg-keepalive",
+  "poll": "v106",
+  "note": "LG keepalive: näkymätön äänetön video/loop tv-vaaka + yläkerta (ei kelloscreensaveria)"
 }

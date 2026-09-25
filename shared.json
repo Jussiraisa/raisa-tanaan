@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-09-25T07:45:00+03:00",
+  "updated": 1790313126568,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -248,7 +248,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Ellen pe-vienti meidän-oletus. Wilma 25.9 synkattu Fiilikseen. to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK",
+  "note": "Ellen pe-vienti meidän-oletus. Wilma 25.9 synkattu Fiilikseen. to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK Vivida hionta 26.9. & 3.10. klo 16–20 (sheet).",
   "extras": [
     {
       "id": "kyyti-mea-lianna-2026-09-25",
@@ -321,7 +321,7 @@
       "title": "Milla · Vivida hiontaleiri",
       "date": "2026-09-26",
       "start": "16:00",
-      "end": "21:00",
+      "end": "20:00",
       "kind": "cal",
       "place": "Bella Center"
     },
@@ -331,7 +331,7 @@
       "title": "Vivida hiontaleiri",
       "date": "2026-09-26",
       "start": "16:00",
-      "end": "21:00",
+      "end": "20:00",
       "place": "Bella Center",
       "kind": "treeni",
       "driver": "",
@@ -416,8 +416,8 @@
       "who": "milla",
       "title": "Vivida hiontaleiri",
       "date": "2026-10-03",
-      "start": "12:30",
-      "end": "17:30",
+      "start": "16:00",
+      "end": "20:00",
       "place": "Bella Center",
       "kind": "treeni",
       "driver": "",
@@ -535,26 +535,6 @@
       "status": ""
     },
     {
-      "id": "sheet-mea-2026-09-25",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-26",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-26",
-      "start": "16:00",
-      "end": "20:00",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
       "id": "info-koulukuvaus-samuel-2026-10-01",
       "who": "samuel",
       "title": "Koulukuvaus (lomake pe 25.9.)",
@@ -606,6 +586,26 @@
       "driver": "Meidän",
       "status": "us",
       "ride": "vie"
+    },
+    {
+      "id": "sheet-mea-2026-09-25",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-26",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-26",
+      "start": "16:00",
+      "end": "20:00",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

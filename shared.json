@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790327982236,
+  "updated": 1790333843546,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -561,33 +561,6 @@
       "kind": "info"
     },
     {
-      "id": "cal-i9bbie018n6v0475l8ombjtf48",
-      "title": "Mea synttärit · leivonta (kakku + keksit)",
-      "date": "2026-09-25",
-      "start": "15:00",
-      "end": "18:00",
-      "kind": "cal",
-      "place": "Koti"
-    },
-    {
-      "id": "cal-mtcfg3mq1jgucj30arct8pnsbs",
-      "title": "Mea synttärit · piirakat + valmistelu aamulla",
-      "date": "2026-09-26",
-      "start": "08:00",
-      "end": "11:30",
-      "kind": "cal",
-      "place": "Koti"
-    },
-    {
-      "id": "cal-b2mg169svkblipcfglk8odec0s",
-      "title": "Milla · Vivida hiontaleiri",
-      "date": "2026-09-26",
-      "start": "16:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Bella Center"
-    },
-    {
       "id": "sheet-mea-2026-09-25",
       "who": "mea",
       "title": "Lianna",
@@ -606,6 +579,24 @@
       "end": "20:00",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "cal-i9bbie018n6v0475l8ombjtf48",
+      "title": "Mea synttärit · leivonta (kakku + keksit)",
+      "date": "2026-09-25",
+      "start": "15:00",
+      "end": "18:00",
+      "kind": "cal",
+      "place": "Koti"
+    },
+    {
+      "id": "cal-mtcfg3mq1jgucj30arct8pnsbs",
+      "title": "Mea synttärit · piirakat + valmistelu aamulla",
+      "date": "2026-09-26",
+      "start": "08:00",
+      "end": "11:30",
+      "kind": "cal",
+      "place": "Koti"
     }
   ],
   "schoolLunch": {

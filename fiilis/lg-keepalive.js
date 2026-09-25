@@ -1,19 +1,20 @@
-/* Fiilis TV keepalive v109 — TV pysyy päällä, ei näkyvää nurkkavideota.
-   Video on ruudun ulkopuolella (dekooderi elossa). AudioContext + wake lock +
-   pehmeä reload ~9 min nollaa LG:n kellon idle-ajastimen.
-   Lataa: <script src="lg-keepalive.js?v=109" defer></script> */
+/* Fiilis TV keepalive v110 — TV pysyy päällä, ei mustaa nurkkalaatikkoa.
+   LG laskee vain ruudulla näkyvän videon. Yläreunassa on taustanvärinen
+   ohut kaista (sama sävy kuin sivu), joka vaihtaa pikseleitä. Audio +
+   wake lock + webOS-aktiviteetti + reload ~4 min.
+   Lataa: <script src="lg-keepalive.js?v=110" defer></script> */
 (function () {
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "109";
-  var RELOAD_MS = 9 * 60 * 1000;
+  var BUILD = "110";
+  var RELOAD_MS = 4 * 60 * 1000;
 
   var STYLE = [
     "#fiilisKeepAliveVideo{",
-    "position:fixed;left:-800px;top:-800px;width:64px;height:36px;",
-    "opacity:0;pointer-events:none;border:0;outline:none;",
-    "z-index:-1;background:transparent;}"
+    "position:fixed;left:0;top:0;width:100vw;height:14px;",
+    "opacity:1;pointer-events:none;border:0;outline:none;z-index:2147483000;",
+    "object-fit:cover;background:transparent;}"
   ].join("");
 
   function injectStyle() {
@@ -25,11 +26,27 @@
     (document.head || document.documentElement).appendChild(s);
   }
 
-  function removeVisible() {
+  function removeOld() {
     ["fiilisKeepAliveCorner", "fiilisKeepAliveFrame", "lgKeepAlive"].forEach(function (id) {
       var el = document.getElementById(id);
       if (el && el.parentNode) el.parentNode.removeChild(el);
     });
+  }
+
+  function parseRgb(str) {
+    var m = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/.exec(str || "");
+    if (!m) return [239, 214, 176];
+    return [+m[1], +m[2], +m[3]];
+  }
+
+  function pageRgb() {
+    try {
+      var el = document.body || document.documentElement;
+      var c = getComputedStyle(el).backgroundColor;
+      return parseRgb(c);
+    } catch (e) {
+      return [239, 214, 176];
+    }
   }
 
   function makeVideo() {
@@ -50,16 +67,6 @@
     v.setAttribute("preload", "auto");
     v.setAttribute("aria-hidden", "true");
     v.tabIndex = -1;
-    var bust = "v=" + BUILD + "&t=" + (Date.now() / 600000 | 0);
-    [
-      { src: "lg-keepalive.webm?" + bust, type: "video/webm" },
-      { src: "lg-keepalive.mp4?" + bust, type: "video/mp4" }
-    ].forEach(function (s) {
-      var el = document.createElement("source");
-      el.src = s.src;
-      el.type = s.type;
-      v.appendChild(el);
-    });
     document.body.appendChild(v);
     return v;
   }
@@ -75,35 +82,32 @@
   }
 
   function attachCanvas(v) {
-    try {
-      var c = document.createElement("canvas");
-      c.width = 64;
-      c.height = 36;
-      var ctx = c.getContext("2d", { alpha: false });
-      if (!ctx || !c.captureStream) return false;
-      function paint() {
-        var t = Date.now() / 1000;
-        ctx.fillStyle = "#111";
-        ctx.fillRect(0, 0, 64, 36);
-        ctx.fillStyle = "#222";
-        ctx.fillRect((t * 8) % 64, 8, 4, 4);
-      }
-      paint();
-      while (v.firstChild) v.removeChild(v.firstChild);
-      v.removeAttribute("src");
-      v.srcObject = c.captureStream(8);
-      setInterval(paint, 120);
-      playHard(v);
-      return true;
-    } catch (e) {
-      return false;
+    var c = document.createElement("canvas");
+    c.width = 640;
+    c.height = 36;
+    var ctx = c.getContext("2d", { alpha: false });
+    if (!ctx || !c.captureStream) return false;
+    function paint() {
+      var rgb = pageRgb();
+      ctx.fillStyle = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
+      ctx.fillRect(0, 0, 640, 36);
+      var t = Date.now() / 180;
+      var x = (t % 640) | 0;
+      var d = ((Date.now() / 700) | 0) % 2 ? 2 : -2;
+      ctx.fillStyle = "rgb(" + (rgb[0] + d) + "," + (rgb[1] + d) + "," + (rgb[2] + d) + ")";
+      ctx.fillRect(x, 0, 8, 36);
     }
+    paint();
+    v.srcObject = c.captureStream(8);
+    setInterval(paint, 120);
+    playHard(v);
+    return true;
   }
 
   function startAudio() {
     try {
       var AC = window.AudioContext || window.webkitAudioContext;
-      if (!AC) return null;
+      if (!AC) return;
       var ac = new AC();
       var osc = ac.createOscillator();
       var gain = ac.createGain();
@@ -113,19 +117,10 @@
       osc.connect(gain);
       gain.connect(ac.destination);
       osc.start();
-      function resume() {
-        try {
-          if (ac.state === "suspended") ac.resume();
-        } catch (e) {}
-      }
-      resume();
-      setInterval(resume, 15000);
-      document.addEventListener("visibilitychange", resume);
-      window.addEventListener("focus", resume);
-      return ac;
-    } catch (e) {
-      return null;
-    }
+      setInterval(function () {
+        try { if (ac.state === "suspended") ac.resume(); } catch (e) {}
+      }, 15000);
+    } catch (e) {}
   }
 
   function requestWake() {
@@ -135,6 +130,18 @@
           window.__fiilisWakeLock = lock;
         }).catch(function () {});
       }
+    } catch (e) {}
+  }
+
+  function webosHold() {
+    try {
+      if (!(window.webOS && webOS.service && webOS.service.request)) return;
+      webOS.service.request("luna://com.palm.power/com/palm/power", {
+        method: "activityStart",
+        parameters: { id: "fiilis-keepalive", duration_ms: 300000 },
+        onSuccess: function () {},
+        onFailure: function () {}
+      });
     } catch (e) {}
   }
 
@@ -151,40 +158,25 @@
 
   function boot() {
     injectStyle();
-    removeVisible();
-    var full = makeVideo();
-
+    removeOld();
+    var v = makeVideo();
     function kick() {
-      playHard(full);
+      if (!v.srcObject) attachCanvas(v);
+      playHard(v);
       requestWake();
+      webosHold();
     }
-
-    full.addEventListener("error", function () { attachCanvas(full); });
-    full.addEventListener("pause", function () { setTimeout(kick, 200); });
-    full.addEventListener("ended", kick);
+    v.addEventListener("pause", function () { setTimeout(kick, 200); });
+    v.addEventListener("ended", kick);
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) kick();
     });
-    window.addEventListener("focus", kick);
-
-    setInterval(function () {
-      try {
-        if (full.readyState >= 2 && full.duration && isFinite(full.duration) && full.duration > 1) {
-          full.currentTime = (full.currentTime + 0.4) % (full.duration - 0.05);
-        }
-      } catch (e) {}
-      kick();
-    }, 8000);
-
     startAudio();
     kick();
-    setTimeout(kick, 400);
-    setTimeout(kick, 1500);
-    setTimeout(function () {
-      if (full.readyState < 2) attachCanvas(full);
-      kick();
-    }, 3000);
+    setTimeout(kick, 500);
+    setInterval(kick, 8000);
     setInterval(requestWake, 40000);
+    setInterval(webosHold, 120000);
     setTimeout(softReload, RELOAD_MS);
   }
 

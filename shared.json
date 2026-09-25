@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790350408579,
+  "updated": 1790357623925,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -263,6 +263,15 @@
       "status": "open"
     },
     {
+      "id": "cal-mtcfg3mq1jgucj30arct8pnsbs",
+      "title": "Mea synttärit · piirakat + valmistelu aamulla",
+      "date": "2026-09-26",
+      "start": "08:00",
+      "end": "11:30",
+      "kind": "cal",
+      "place": "Koti"
+    },
+    {
       "id": "info-mea-synttarit-piirakat-2026-09-26",
       "who": "mea",
       "title": "Mea synttärit · sienipiirakka + valmistelu",
@@ -287,6 +296,15 @@
       "status": ""
     },
     {
+      "id": "cal-b2mg169svkblipcfglk8odec0s",
+      "title": "Milla · Vivida hiontaleiri",
+      "date": "2026-09-26",
+      "start": "16:00",
+      "end": "20:00",
+      "kind": "cal",
+      "place": "Bella Center"
+    },
+    {
       "id": "info-milla-hionta-2026-09-26",
       "who": "milla",
       "title": "Vivida hiontaleiri",
@@ -299,6 +317,16 @@
       "status": ""
     },
     {
+      "id": "sheet-milla-2026-09-26",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-26",
+      "start": "16:00",
+      "end": "20:00",
+      "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
       "id": "kyyti-mea-lianna-2026-09-27",
       "who": "mea",
       "title": "Lianna · Riikka vie+hakee",
@@ -309,6 +337,13 @@
       "kind": "kyyti",
       "driver": "Riikka",
       "status": "open"
+    },
+    {
+      "id": "info-poistumisharjoitus-2026-09-28",
+      "who": "ellen+samuel",
+      "title": "Poistumisharjoitus",
+      "date": "2026-09-28",
+      "kind": "info"
     },
     {
       "id": "info-mea-voimat-2026-09-28",
@@ -342,6 +377,14 @@
       "place": "Aurinkorinteen koulu"
     },
     {
+      "id": "info-koulukuvaus-samuel-2026-10-01",
+      "who": "samuel",
+      "title": "Koulukuvaus (lomake pe 25.9.)",
+      "date": "2026-10-01",
+      "kind": "info",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
       "id": "info-samuel-pelipassi-2026-10-01",
       "who": "samuel",
       "title": "Welhot P9 pelipassi hankittava",
@@ -349,6 +392,15 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "info-koulukuvaus-ellen-2026-10-01",
+      "who": "ellen",
+      "title": "Koulukuvaus 4C klo 12.30",
+      "date": "2026-10-01",
+      "start": "12:30",
+      "kind": "info",
+      "place": "Aurinkorinteen koulu"
     },
     {
       "id": "info-ellen-vanhempainilta-2026-10-01",
@@ -361,6 +413,22 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "info-mea-ke-koe-2026-10-02",
+      "who": "mea",
+      "title": "KE-koe klo 14.15",
+      "date": "2026-10-02",
+      "start": "14:15",
+      "kind": "info"
+    },
+    {
+      "id": "info-milla-rooma-hakemus-2026-10-02",
+      "who": "milla",
+      "title": "Rooman hakemus klo 22 · 200 €",
+      "date": "2026-10-02",
+      "start": "22:00",
+      "kind": "info"
     },
     {
       "id": "info-samuel-turnaus-2026-10-03",
@@ -494,84 +562,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-koulukuvaus-samuel-2026-10-01",
-      "who": "samuel",
-      "title": "Koulukuvaus (lomake pe 25.9.)",
-      "date": "2026-10-01",
-      "kind": "info",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "info-koulukuvaus-ellen-2026-10-01",
-      "who": "ellen",
-      "title": "Koulukuvaus 4C klo 12.30",
-      "date": "2026-10-01",
-      "start": "12:30",
-      "kind": "info",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "info-mea-ke-koe-2026-10-02",
-      "who": "mea",
-      "title": "KE-koe klo 14.15",
-      "date": "2026-10-02",
-      "start": "14:15",
-      "kind": "info"
-    },
-    {
-      "id": "info-milla-rooma-hakemus-2026-10-02",
-      "who": "milla",
-      "title": "Rooman hakemus klo 22 · 200 €",
-      "date": "2026-10-02",
-      "start": "22:00",
-      "kind": "info"
-    },
-    {
-      "id": "info-poistumisharjoitus-2026-09-28",
-      "who": "ellen+samuel",
-      "title": "Poistumisharjoitus",
-      "date": "2026-09-28",
-      "kind": "info"
-    },
-    {
-      "id": "sheet-mea-2026-09-25",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-26",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-26",
-      "start": "16:00",
-      "end": "20:00",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "cal-mtcfg3mq1jgucj30arct8pnsbs",
-      "title": "Mea synttärit · piirakat + valmistelu aamulla",
-      "date": "2026-09-26",
-      "start": "08:00",
-      "end": "11:30",
-      "kind": "cal",
-      "place": "Koti"
-    },
-    {
-      "id": "cal-b2mg169svkblipcfglk8odec0s",
-      "title": "Milla · Vivida hiontaleiri",
-      "date": "2026-09-26",
-      "start": "16:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Bella Center"
     }
   ],
   "schoolLunch": {

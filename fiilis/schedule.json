@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-25T07:40:00+03:00",
+  "updated": "2026-09-25T07:45:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Synkka 25.9.: Ellen Ambrosia pe — meidän vienti. Wilma 25.9. (Perhe→Fiilis): koulukuvaukset, poistumisharjoitus 28.9., kokeet, Mea päivätyö, Milla Rooma-hakemus 2.10.; kodin ja koulun pe 25.9. ei (perhe ei mene). Synkka 25.9.2026 aamu: Lisätty Mea Valmennus ti 6.10 klo 17:00–17:45; Voimistelu-aukot syysloman alkuun: Vivida la 10.10 + su 11.10, Lianna su 11.10, Lianna laji+voimat ma 12.10. Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. SendToAgent ei saatavilla — WA-kyydit ennallaan. · Sääntö 24.9.: Samuel Welhot torstai = aina meidän kyydit, ellei WhatsAppissa sovita tai Jussi kirjoita Fiilikseen. Synkka 24.9. klo 12: Samuel Welhot to — kyydit Riikka (ei meidän). Synkka 24.9.: to Welhot Riikka; Ellen ei treenaa to; pe Ambrosia Luola säilyy. Synkka 24.9.2026 aamu: Lisätty Mea Valmennus ti 29.9. klo 17:00–17:45 (jussi.raisa-kalenteri). Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu 24.9. aamu. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. SendToAgent ei saatavilla — WA-kyydit ennallaan. Mea synttärit menu päivitetty 23.9.18:00: focaccia/sienipiirakka/pikkupizzat/cocktail/popparit/sipsit/pannarit/macarons/keksit/porkkanakakku/karkit; ei lohipiirakkaa/Millan kakkua. · 24.9 Welhot Meidän; NTV-kisat poistettu · Kodin ja koulun pe 25.9 pois (ei osallistuta); to Welhot-oletus Meidän",
+  "note": "Sääntö 25.9.: Ellen Ambrosia pe-vienti = aina meidän, ellei WhatsAppissa sovita tai Jussi kirjoita Fiilikseen. Synkka 25.9.: Ellen Ambrosia pe — meidän vienti. Wilma 25.9. (Perhe→Fiilis): koulukuvaukset, poistumisharjoitus 28.9., kokeet, Mea päivätyö, Milla Rooma-hakemus 2.10.; kodin ja koulun pe 25.9. ei (perhe ei mene). Synkka 25.9.2026 aamu: Lisätty Mea Valmennus ti 6.10 klo 17:00–17:45; Voimistelu-aukot syysloman alkuun: Vivida la 10.10 + su 11.10, Lianna su 11.10, Lianna laji+voimat ma 12.10. Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. SendToAgent ei saatavilla — WA-kyydit ennallaan. · Sääntö 24.9.: Samuel Welhot torstai = aina meidän kyydit, ellei WhatsAppissa sovita tai Jussi kirjoita Fiilikseen. Synkka 24.9. klo 12: Samuel Welhot to — kyydit Riikka (ei meidän). Synkka 24.9.: to Welhot Riikka; Ellen ei treenaa to; pe Ambrosia Luola säilyy. Synkka 24.9.2026 aamu: Lisätty Mea Valmennus ti 29.9. klo 17:00–17:45 (jussi.raisa-kalenteri). Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu 24.9. aamu. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. SendToAgent ei saatavilla — WA-kyydit ennallaan. Mea synttärit menu päivitetty 23.9.18:00: focaccia/sienipiirakka/pikkupizzat/cocktail/popparit/sipsit/pannarit/macarons/keksit/porkkanakakku/karkit; ei lohipiirakkaa/Millan kakkua. · 24.9 Welhot Meidän; NTV-kisat poistettu · Kodin ja koulun pe 25.9 pois (ei osallistuta); to Welhot-oletus Meidän",
   "events": [
     {
       "date": "2026-09-20",
@@ -1303,7 +1303,8 @@
       "weekday": 5,
       "who": "Ellen",
       "titleContains": "Ambrosia",
-      "driver": "Riikka"
+      "driver": "Meidän",
+      "note": "Oletus: pe vienti aina meidän, ellei WA/Fiilis sano muuta (Jussi 25.9.2026)"
     },
     {
       "who": "Mea",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-09-25T07:40:00+03:00",
+  "updated": "2026-09-25T07:45:00+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -11,7 +11,7 @@
       "driver": "Meidän",
       "status": "us",
       "ride": "vie",
-      "note": "25.9. meidän vienti (Jussi vahvisti)"
+      "note": "Oletus: pe vienti aina meidän (Jussi 25.9.2026)"
     },
     "samuel-sahly-ma": {
       "driver": "Sini/Topias",
@@ -248,7 +248,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Wilma 25.9 synkattu Fiilikseen. to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK",
+  "note": "Ellen pe-vienti meidän-oletus. Wilma 25.9 synkattu Fiilikseen. to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK",
   "extras": [
     {
       "id": "kyyti-mea-lianna-2026-09-25",

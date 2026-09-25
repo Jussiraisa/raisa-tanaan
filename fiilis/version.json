@@ -1,7 +1,7 @@
 {
-  "schedule": "2026-09-24-welhot-riikka",
-  "updated": "2026-09-24T12:00:00+03:00",
-  "ui": "20260924-v103-welhot-riikka",
-  "poll": "v103",
+  "schedule": "2026-09-25-wilma-sync",
+  "updated": "2026-09-25T07:30:00+03:00",
+  "ui": "20260925-v104-wilma",
+  "poll": "v104",
   "note": "cache-bust sync: tvr/tvl/tv1 + kalenterit → sama BUILD kuin vaaka/tesla/puhelin"
 }

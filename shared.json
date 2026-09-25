@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790310084935,
+  "updated": "2026-09-25T07:30:00+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -247,7 +247,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK",
+  "note": "Wilma 25.9 synkattu Fiilikseen. to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK",
   "extras": [
     {
       "id": "kyyti-mea-lianna-2026-09-25",
@@ -387,15 +387,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-koulukuvaus-ellen-2026-09-30",
-      "who": "ellen",
-      "title": "Koulukuvaus 4C klo 12.30 (lomake opettajalle)",
-      "date": "2026-10-01",
-      "start": "12:30",
-      "kind": "info",
-      "place": "Aurinkorinteen koulu"
     },
     {
       "id": "info-ellen-vanhempainilta-2026-10-01",
@@ -561,6 +552,46 @@
       "end": "20:00",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-koulukuvaus-samuel-2026-10-01",
+      "who": "samuel",
+      "title": "Koulukuvaus (lomake pe 25.9.)",
+      "date": "2026-10-01",
+      "kind": "info",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
+      "id": "info-koulukuvaus-ellen-2026-10-01",
+      "who": "ellen",
+      "title": "Koulukuvaus 4C klo 12.30",
+      "date": "2026-10-01",
+      "start": "12:30",
+      "kind": "info",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
+      "id": "info-mea-ke-koe-2026-10-02",
+      "who": "mea",
+      "title": "KE-koe klo 14.15",
+      "date": "2026-10-02",
+      "start": "14:15",
+      "kind": "info"
+    },
+    {
+      "id": "info-milla-rooma-hakemus-2026-10-02",
+      "who": "milla",
+      "title": "Rooman hakemus klo 22 · 200 €",
+      "date": "2026-10-02",
+      "start": "22:00",
+      "kind": "info"
+    },
+    {
+      "id": "info-poistumisharjoitus-2026-09-28",
+      "who": "ellen+samuel",
+      "title": "Poistumisharjoitus",
+      "date": "2026-09-28",
+      "kind": "info"
     }
   ],
   "schoolLunch": {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260924-v102-koulu-fix">
+  <meta name="fiilis-build" content="20260926-v120-nice-expectations">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#EDE6DB">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -396,7 +396,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
 </div>
 
 <script>
-  var BUILD = "20260925-v104-wilma";
+  var BUILD = "20260926-v120-nice-expectations";
 (function () {
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -1109,10 +1109,17 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     if (!listEl) return;
     var items = [];
     var seen = {};
+    function isNiceExpectation(label3) {
+      var s = String(label3 || "");
+      if (/wilma|poissaolo|koe|koulu|opettaj|hakemus|terapia|huolto|päivätyö|päättöviikko|kirjoitustaito|ruotsi|geometria|yhtälö/i.test(s)) return false;
+      if (/prep|paisto|porkkanakakku|valmistelu/i.test(s)) return false;
+      return /synt|syntymäpäiv|juhla|hääpäiv|loma|matka|lontoo/i.test(s);
+    }
     var exps = (schedule && schedule.expectations) || [];
     for (var xi = 0; xi < exps.length; xi++) {
       var x = exps[xi];
       if (!x || !x.start) continue;
+      if (!isNiceExpectation(x.label)) continue;
       if (now.iso > (x.end || x.start)) continue;
       var duX = daysUntil(x.start, now);
       if (now.iso >= x.start && x.end && now.iso <= x.end) duX = 0;

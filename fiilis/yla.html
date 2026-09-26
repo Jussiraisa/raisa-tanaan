@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260926-v118-tomorrow-events">
+  <meta name="fiilis-build" content="20260926-v119-nice-expectations">
   <meta name="theme-color" content="#F3E6CE">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -473,7 +473,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260926-v118-tomorrow-events";
+  var BUILD = "20260926-v119-nice-expectations";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1299,10 +1299,18 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       }
       items.push({ label: label2, days: du, when: when, iso: iso });
     }
+    function isNiceExpectation(label3) {
+      var s = String(label3 || "");
+      /* Odotukset = vain mukavat asiat. Wilma/koulu/koe/tehtäväjutut eivät kuulu tänne. */
+      if (/wilma|poissaolo|koe|koulu|opettaj|hakemus|terapia|huolto|päivätyö|päättöviikko|kirjoitustaito|ruotsi|geometria|yhtälö/i.test(s)) return false;
+      if (/prep|paisto|porkkanakakku|valmistelu/i.test(s)) return false;
+      return /synt|syntymäpäiv|juhla|hääpäiv|loma|matka|lontoo/i.test(s);
+    }
     var extras = ((schedule && schedule.expectations) || []).concat(EXTRA_EXPECTATIONS || []);
     for (var xi = 0; xi < extras.length; xi++) {
       var x = extras[xi];
       if (!x || !x.start) continue;
+      if (!isNiceExpectation(x.label)) continue;
       if (now.iso > (x.end || x.start)) continue;
       var whenR = (x.end && x.end !== x.start)
         ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
@@ -1329,9 +1337,20 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       }
       pushItem(label2, iso, null);
     }
-    items.sort(function (a, b) { return a.days - b.days; });
+    function nicePriority(it) {
+      var s = String(it.label || "");
+      if (/synt|syntymäpäiv|hääpäiv/i.test(s)) return 0;
+      if (/loma|matka|lontoo/i.test(s)) return 1;
+      if (/juhla/i.test(s)) return 2;
+      return 3;
+    }
+    items.sort(function (a, b) {
+      var pa = nicePriority(a), pb = nicePriority(b);
+      if (pa !== pb) return pa - pb;
+      return a.days - b.days;
+    });
     var html = "";
-    var max = Math.min(items.length, 3);
+    var max = Math.min(items.length, 4);
     for (var j = 0; j < max; j++) {
       var it = items[j];
       var rem = it.days === 0 ? "nyt" : (it.days === 1 ? "huom" : it.days + " pv");

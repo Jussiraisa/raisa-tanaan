@@ -240,6 +240,17 @@
 
   .meal-block { margin-top: .4vmin; }
   .meal-row { margin-bottom: .85vmin; }
+.expect-block {
+  margin-top: 1.1vmin;
+  padding-top: .8vmin;
+  border-top: 1px solid rgba(120,90,40,.14);
+}
+.expect-row {
+  display:flex; justify-content:space-between; gap:.8vmin;
+  font-size:1.45vmin; line-height:1.3; padding:.22vmin 0;
+}
+.expect-row .d { color:#8f6524; font-weight:700; white-space:nowrap; }
+
   .news-block {
     margin-top: 1.1vmin; padding-top: .85vmin;
     border-top: 1px solid rgba(44,36,24,.08);
@@ -314,7 +325,7 @@
 
 <script>
 (function () {
-  var EXPECT = "20260922-tesla-v8-cream";
+  var EXPECT = "20260926-tesla-v120-nice-expectations";
   try {
     var prev = localStorage.getItem("fiilisTeslaBuild");
     if (prev && prev !== EXPECT) {
@@ -375,6 +386,10 @@
         <div class="meal-row"><div class="k">Kouluruoka</div><div class="v muted" id="mealSchool">—</div></div>
         <div class="meal-row"><div class="k">Kotona</div><div class="v muted" id="mealHome">—</div></div>
       </div>
+      <div class="expect-block" id="expectBox">
+        <div class="news-sect">Odotukset</div>
+        <div id="expectList"><div class="news-empty">—</div></div>
+      </div>
       <div class="news-block" id="newsBox">
         <div class="news-sect">Yle</div>
         <div class="news-list" id="newsYle"><div class="news-empty">—</div></div>
@@ -405,7 +420,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260925-v104-wilma";
+  var BUILD = "20260926-v120-nice-expectations";
   var FALLBACK = {
     events: [
       { date: "2026-09-25", time: "15:00", end: "18:00", who: "Mea", title: "Synttärit · prep (keksit, macarons, focaccia-taikina)", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "Samuel keksit · mummi+Mea macarons · Riikka focaccia yön yli · porkkanakakku to–pe" },
@@ -976,6 +991,77 @@
     paintPhotos(helsinkiNow());
   }
 
+  function isNiceExpectation(label3) {
+    var s = String(label3 || "");
+    if (/wilma|poissaolo|koe|koulu|opettaj|hakemus|terapia|huolto|päivätyö|päättöviikko|kirjoitustaito|ruotsi|geometria|yhtälö/i.test(s)) return false;
+    if (/prep|paisto|porkkanakakku|valmistelu/i.test(s)) return false;
+    return /synt|syntymäpäiv|juhla|hääpäiv|loma|matka|lontoo/i.test(s);
+  }
+  function daysUntilIso(iso, now) {
+    if (!iso) return 9999;
+    var a = new Date(now.iso + "T12:00:00");
+    var b = new Date(iso + "T12:00:00");
+    return Math.round((b - a) / 86400000);
+  }
+  function nextAnniversaryIsoTesla(a, now) {
+    var mmdd = a.mmdd;
+    if (!mmdd && a.date) {
+      var p = String(a.date).split("-");
+      if (p.length >= 3) mmdd = p[1] + "-" + p[2];
+    }
+    if (!mmdd) return null;
+    var iso = now.year + "-" + mmdd;
+    if (iso < now.iso) iso = (now.year + 1) + "-" + mmdd;
+    return iso;
+  }
+  function paintExpectations(now) {
+    var el = document.getElementById("expectList");
+    if (!el) return;
+    var items = [], seen = {};
+    var exps = (schedule && schedule.expectations) || [];
+    for (var i = 0; i < exps.length; i++) {
+      var x = exps[i];
+      if (!x || !x.start || !isNiceExpectation(x.label)) continue;
+      if (now.iso > (x.end || x.start)) continue;
+      if (/lontoo/i.test(String(x.label || ""))) continue;
+      var d = daysUntilIso(x.start, now);
+      if (d < 0 || d > 60) continue;
+      var k = String(x.label || "").toLowerCase() + "|" + x.start;
+      if (seen[k]) continue;
+      seen[k] = 1;
+      items.push({label:x.label,days:d});
+    }
+    var anns = (schedule && schedule.anniversaries) || [];
+    for (var j = 0; j < anns.length; j++) {
+      var a = anns[j], iso = nextAnniversaryIsoTesla(a, now);
+      if (!iso) continue;
+      var d2 = daysUntilIso(iso, now);
+      if (d2 < 0 || d2 > 60) continue;
+      var label = a.label || "";
+      if (!label) {
+        if (a.kind === "birthday") label = (a.who || "") + " · syntymäpäivä";
+        else if (a.kind === "wedding") label = "Hääpäivä";
+        else if (a.kind === "party") label = (a.who || "") + " · juhlat";
+        else continue;
+      } else if (a.who && a.who !== "perhe" && label.indexOf(a.who) < 0) {
+        label = a.who + " · " + label;
+      }
+      var k2 = label.toLowerCase() + "|" + iso;
+      if (seen[k2]) continue;
+      seen[k2] = 1;
+      items.push({label:label,days:d2});
+    }
+    items.sort(function(a,b){ return a.days-b.days; });
+    var html = "";
+    var max = Math.min(items.length,3);
+    for (var n=0;n<max;n++) {
+      var it=items[n];
+      var rem = it.days===0 ? "nyt" : (it.days===1 ? "huom" : it.days+" pv");
+      html += "<div class=\"expect-row\"><span>"+esc(it.label)+"</span><span class=\"d\">"+esc(rem)+"</span></div>";
+    }
+    el.innerHTML = html || "<div class=\"news-empty\">Ei odotuksia</div>";
+  }
+
   function paintMeals(now) {
     var schoolEl = document.getElementById("mealSchool");
     var homeEl = document.getElementById("mealHome");
@@ -1039,6 +1125,7 @@
     paintToday(now);
     paintPeople(now);
     paintMeals(now);
+    paintExpectations(now);
     paintNews();
     paintWx();
     paintPhotos(now);

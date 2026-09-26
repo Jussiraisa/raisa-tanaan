@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260926-v113-lg-keepalive">
+  <meta name="fiilis-build" content="20260926-v114-clean-tv">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -433,15 +433,6 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         <div class="today-list" id="todayList"><div class="today-empty">Rauhaa · ei merkintöjä</div></div>
       </div>
 
-      <div class="block soft" id="odotBlock">
-        <div class="lbl">Odotukset</div>
-        <div class="odot-hero" id="countdown">
-          <div class="cd-big">–</div>
-          <div class="cd-label">Lontoo · 13.–17.10.</div>
-        </div>
-        <div class="odot-list" id="odoteList"></div>
-      </div>
-
       <div class="duo">
         <div class="block" id="huomenna">
           <div class="lbl">Huomenna</div>
@@ -456,11 +447,6 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   </div>
 
   <div class="foot-soft">
-    <!-- actionAlerts: schedule.wilmaAlerts + schedule.whatsappAlerts (needAction) -->
-    <div class="action-bar" id="actionBar">
-      <div class="action-lbl">Huomiot</div>
-      <div class="action-list" id="actionList"><span class="action-empty">Ei avoimia Wilma-/WhatsApp-asioita</span></div>
-    </div>
     <div>
       <div class="school-lunch" id="schoolLunch">Kouluruoka · —</div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
@@ -478,7 +464,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260925-v112-photo-video";
+  var BUILD = "20260926-v114-clean-tv";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1537,9 +1523,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     var dateEl = document.getElementById("dateLine");
     if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ". · Kuopio";
     paintNextLine(now);
-    paintWilmaAlerts(now);
     paintTodayList(now);
-    paintOdotukset(now);
     paintTomorrow(now);
     paintMeals(now);
     paintSchoolLunch(now);

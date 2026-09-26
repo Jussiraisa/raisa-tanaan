@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-26T08:45:00+03:00",
+  "updated": "2026-09-26T12:57:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1386,70 +1386,10 @@
   },
   "expectations": [
     {
-      "start": "2026-09-23",
-      "end": "2026-10-01",
-      "label": "Milla · 1. jakson päättöviikko"
-    },
-    {
-      "start": "2026-09-24",
-      "end": "2026-09-25",
-      "label": "Mea synttärit · porkkanakakku (Riikka to–pe)"
-    },
-    {
-      "start": "2026-09-25",
-      "end": "2026-09-25",
-      "label": "Mea synttärit · pe prep (keksit, macarons, focaccia-taikina)"
-    },
-    {
-      "start": "2026-09-25",
-      "end": "2026-09-25",
-      "label": "Milla · KE01 kemia 9–12"
-    },
-    {
-      "start": "2026-09-25",
-      "end": "2026-09-25",
-      "label": "Samuel · koulukuvauslomake tänään Wilmaan"
-    },
-    {
-      "start": "2026-09-25",
-      "end": "2026-10-05",
-      "label": "Wilma-huomio · Ellen 27 poissaolotuntia · Mea 60 · tarvittaessa opettaja"
-    },
-    {
-      "start": "2026-09-25",
-      "end": "2026-10-03",
-      "label": "Wilma-huomio · Milla RUB11/MAY01/KE01 · yhteys aineopettajiin"
-    },
-    {
-      "start": "2026-09-26",
-      "end": "2026-09-26",
-      "label": "Mea synttärit · la aamu sienipiirakka + paistot"
-    },
-    {
       "start": "2026-09-26",
       "end": "2026-09-26",
       "label": "Mea synttärit · sukulaiset · klo 13",
       "menu": "focaccia (Riikka) · sienipiirakka (Jussi pe/la?) · pikkupizzat · cocktail-tikut (mozzarella-tomaatti, kurkku-paprika-viinirypäle) · popparit · sipsit · pannarit (mummo) · macarons (mummi+Mea) · keksit (Samuel) · porkkanakakku (Riikka) · karkkeja · kahvi/tee"
-    },
-    {
-      "start": "2026-09-28",
-      "end": "2026-09-28",
-      "label": "Mea · päivätyöilmoitus Wilmaan (jos tulee 9.10.)"
-    },
-    {
-      "start": "2026-09-28",
-      "end": "2026-09-28",
-      "label": "Milla · ÄI01 kirjoitustaito 10–13"
-    },
-    {
-      "start": "2026-09-29",
-      "end": "2026-09-29",
-      "label": "Milla · MAY01 luvut ja yhtälöt 8.50–12"
-    },
-    {
-      "start": "2026-09-30",
-      "end": "2026-09-30",
-      "label": "Milla · RUB12 ruotsi"
     },
     {
       "start": "2026-10-02",
@@ -1457,49 +1397,9 @@
       "label": "Hääpäivä"
     },
     {
-      "start": "2026-10-02",
-      "end": "2026-10-02",
-      "label": "Mea · KE-koe klo 14.15"
-    },
-    {
-      "start": "2026-10-02",
-      "end": "2026-10-02",
-      "label": "Milla · Rooman hakemus klo 22 (200 €)"
-    },
-    {
       "start": "2026-10-03",
       "end": "2026-10-03",
       "label": "Ainon juhlat"
-    },
-    {
-      "start": "2026-10-05",
-      "end": "2026-10-05",
-      "label": "Tesla · kotihuolto klo 8–12"
-    },
-    {
-      "start": "2026-10-06",
-      "end": "2026-10-06",
-      "label": "Ellen · äidinkielen koe"
-    },
-    {
-      "start": "2026-10-06",
-      "end": "2026-10-06",
-      "label": "Mea · terapia klo 9–10 · Minna"
-    },
-    {
-      "start": "2026-10-06",
-      "end": "2026-10-09",
-      "label": "Riikka Oulussa"
-    },
-    {
-      "start": "2026-10-07",
-      "end": "2026-10-07",
-      "label": "Mea · terapia klo 17–18 · Tarja Pajunen"
-    },
-    {
-      "start": "2026-10-09",
-      "end": "2026-10-09",
-      "label": "Ellen · matematiikan koe"
     },
     {
       "start": "2026-10-10",
@@ -1515,11 +1415,6 @@
       "start": "2026-10-13",
       "end": "2026-10-17",
       "label": "Lontoo · 13.–17.10."
-    },
-    {
-      "start": "2026-10-23",
-      "end": "2026-10-23",
-      "label": "Milla · MAA03 geometria 9.40–10.55"
     },
     {
       "start": "2026-10-24",

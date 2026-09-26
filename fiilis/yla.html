@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260926-v119-nice-expectations">
+  <meta name="fiilis-build" content="20260926-v122-clean-expectations">
   <meta name="theme-color" content="#F3E6CE">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -473,7 +473,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260926-v119-nice-expectations";
+  var BUILD = "20260926-v122-clean-expectations";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1316,8 +1316,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
         : (parseInt(x.start.slice(8), 10) + "." + parseInt(x.start.slice(5, 7), 10) + ".");
       if (now.iso >= x.start && x.end && now.iso <= x.end) {
+        var beforePush = items.length;
         pushItem(x.label, now.iso, whenR);
-        if (items.length) items[items.length - 1].days = 0;
+        if (items.length > beforePush) items[items.length - 1].days = 0;
       } else {
         pushItem(x.label, x.start, whenR);
       }
@@ -1698,6 +1699,27 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   schedulePhotoRotate();
   setInterval(loadWeather, 30 * 60 * 1000);
 
+})();
+</script>
+<script>
+(function(){
+  var THIS_BUILD="122";
+  function checkLatest(){
+    try {
+      fetch("latest.json?t="+Date.now(), {cache:"no-store"})
+        .then(function(r){return r.json();})
+        .then(function(x){
+          if (x && x.tvBuild && String(x.tvBuild)!==THIS_BUILD) {
+            var u=new URL(location.href);
+            u.searchParams.set("v",String(x.tvBuild));
+            u.searchParams.set("_r",String(Date.now()));
+            location.replace(u.toString());
+          }
+        }).catch(function(){});
+    } catch(e){}
+  }
+  checkLatest();
+  setInterval(checkLatest,5*60*1000);
 })();
 </script>
 </body>

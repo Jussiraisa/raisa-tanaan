@@ -1,15 +1,15 @@
-/* Fiilis TV keepalive v113
+/* Fiilis TV keepalive v115
    LG sammuttaa ruudun, jos video on piilossa tai vain nurkassa.
    Muistokuva on iso toistuva video (sama kuva), joten televisio
    näkee toiston eikä nurkkaan tule laatikkoa.
    Jos selaimesta puuttuu canvas-video, sama alue toistaa pienen
    hiekanvärisen videon kuvan päällä, läpikuultavana.
-   Lataa: <script src="lg-keepalive.js?v=112" defer></script> */
+   Lataa: <script src="lg-keepalive.js?v=115" defer></script> */
 (function () {
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "113";
+  var BUILD = "115";
   var RELOAD_MS = 12 * 60 * 1000;
 
   var STYLE = [

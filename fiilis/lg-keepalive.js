@@ -1,4 +1,4 @@
-/* Fiilis TV keepalive v112
+/* Fiilis TV keepalive v113
    LG sammuttaa ruudun, jos video on piilossa tai vain nurkassa.
    Muistokuva on iso toistuva video (sama kuva), joten televisio
    näkee toiston eikä nurkkaan tule laatikkoa.
@@ -9,16 +9,21 @@
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "112";
+  var BUILD = "113";
   var RELOAD_MS = 12 * 60 * 1000;
 
   var STYLE = [
-    ".hero,.photo-wrap{position:relative;}",
     "#fiilisKeepAliveVideo{",
-    "position:absolute;left:0;top:0;width:100%;height:100%;",
-    "object-fit:cover;z-index:2;pointer-events:none;",
-    "background:transparent;opacity:.18;}",
-    ".hero .cap,.photo-wrap .photo-cap{z-index:5;}"
+    "position:fixed!important;left:0!important;top:0!important;",
+    "width:100vw!important;height:100vh!important;",
+    "min-width:100vw!important;min-height:100vh!important;",
+    "max-width:none!important;max-height:none!important;",
+    "margin:0!important;padding:0!important;border:0!important;",
+    "object-fit:cover!important;z-index:0!important;pointer-events:none!important;",
+    "background:#EFD6B0!important;opacity:1!important;visibility:visible!important;",
+    "transform:none!important;filter:none!important;}",
+    ".tv{position:relative!important;z-index:1!important;background:transparent!important;}",
+    ".nav{z-index:30!important;}"
   ].join("");
 
   function injectStyle() {
@@ -38,9 +43,7 @@
   }
 
   function host() {
-    var img = document.getElementById("photo");
-    if (img && img.parentElement) return img.parentElement;
-    return document.querySelector(".hero") || document.body;
+    return document.body;
   }
 
   function makeVideo(parent) {
@@ -61,7 +64,8 @@
     v.setAttribute("preload", "auto");
     v.setAttribute("aria-hidden", "true");
     v.tabIndex = -1;
-    parent.appendChild(v);
+    if (parent.firstChild) parent.insertBefore(v, parent.firstChild);
+    else parent.appendChild(v);
     return v;
   }
 
@@ -184,8 +188,15 @@
     v.src = mp4;
     v.loop = true;
     playHard(v);
-    var canvasOn = attachCanvas(v, parent);
-    if (!canvasOn) v.style.opacity = "0.2";
+    /* LG webOS screensaver only treats a real full-screen video as active media reliably. */
+    var canvasOn = false;
+    v.style.opacity = "1";
+    v.style.position = "fixed";
+    v.style.left = "0";
+    v.style.top = "0";
+    v.style.width = "100vw";
+    v.style.height = "100vh";
+    v.style.transform = "none";
 
     function kick() {
       if (v.ended || v.paused || v.readyState < 2) {

@@ -1,4 +1,4 @@
-/* Fiilis TV keepalive v117
+/* Fiilis TV keepalive v125
    LG sammuttaa ruudun, jos video on piilossa tai vain nurkassa.
    Muistokuva on iso toistuva video (sama kuva), joten televisio
    näkee toiston eikä nurkkaan tule laatikkoa.
@@ -9,10 +9,8 @@
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "117";
-  var RELOAD_MS = 12 * 60 * 1000;
-
-  var STYLE = [
+  var BUILD = "125";
+var STYLE = [
     "#fiilisKeepAliveVideo{",
     "position:fixed!important;left:0!important;top:0!important;",
     "width:100vw!important;height:100vh!important;",
@@ -168,17 +166,6 @@
     } catch (e) {}
   }
 
-  function softReload() {
-    try {
-      var u = new URL(window.location.href);
-      u.searchParams.set("ka", String(Date.now()));
-      u.searchParams.set("v", BUILD);
-      window.location.replace(u.toString());
-    } catch (e) {
-      window.location.reload();
-    }
-  }
-
   function boot() {
     injectStyle();
     removeOld();
@@ -187,7 +174,11 @@
     var mp4 = "keepalive.mp4?v=" + BUILD;
     v.src = mp4;
     v.loop = true;
+    try { v.load(); } catch (e) {}
     playHard(v);
+    v.addEventListener("loadeddata", function () { playHard(v); });
+    v.addEventListener("canplay", function () { playHard(v); });
+    v.addEventListener("playing", function () { requestWake(); webosHold(); });
     /* LG webOS screensaver only treats a real full-screen video as active media reliably. */
     var canvasOn = false;
     v.style.opacity = "1";
@@ -228,7 +219,6 @@
     setInterval(kick, 5000);
     setInterval(requestWake, 25000);
     setInterval(webosHold, 90000);
-    setTimeout(softReload, RELOAD_MS);
   }
 
   if (document.body) boot();

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-27T11:00:00+03:00",
+  "updated": "2026-09-27T11:10:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1532,6 +1532,36 @@
       "who": "Milla",
       "title": "Valmennus",
       "kind": "treeni",
+      "source": "gcal:perhe"
+    },
+    {
+      "start": "2026-09-28",
+      "weekday": 1,
+      "time": "18:30",
+      "end": "20:00",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
+    },
+    {
+      "start": "2026-10-02",
+      "weekday": 5,
+      "time": "18:00",
+      "end": "19:30",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
+    },
+    {
+      "start": "2026-10-03",
+      "weekday": 6,
+      "time": "10:30",
+      "end": "12:00",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
       "source": "gcal:perhe"
     }
   ]

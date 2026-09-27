@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260923-v97-mea-26">
+  <meta name="fiilis-build" content="20260927-v126-weekly-calendar">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,7 +158,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260924-v103-welhot-riikka";
+  var BUILD = "20260927-v126-weekly-calendar";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -248,9 +248,30 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   }
   function eventsOn(iso) {
     var out = [];
-    if (!schedule || !schedule.events) return out;
-    for (var i = 0; i < schedule.events.length; i++) {
-      if (schedule.events[i].date === iso) out.push(schedule.events[i]);
+    var list = (schedule && schedule.events) ? schedule.events : [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].date === iso) out.push(list[i]);
+    }
+    var weekly = (schedule && schedule.weeklyEvents) ? schedule.weeklyEvents : [];
+    var wd = null;
+    try { wd = new Date(iso + "T12:00:00").getDay(); } catch (e) {}
+    for (var w = 0; w < weekly.length; w++) {
+      var r = weekly[w];
+      if (!r || wd == null || r.weekday !== wd) continue;
+      if (r.start && iso < r.start) continue;
+      if (r.endDate && iso > r.endDate) continue;
+      out.push({
+        date: iso,
+        time: r.time || "",
+        end: r.end || "",
+        who: r.who || "",
+        title: r.title || "",
+        place: r.place || "",
+        kind: r.kind || "muu",
+        source: r.source || "weekly",
+        driver: r.driver || "",
+        pickup: r.pickup || ""
+      });
     }
     out.sort(function (a, b) {
       var ta = parseMin(a.time); if (ta == null) ta = 9800;

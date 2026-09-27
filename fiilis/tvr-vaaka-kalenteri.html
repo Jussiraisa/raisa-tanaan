@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260927-v127-calendar-nav">
+  <meta name="fiilis-build" content="20260927-v128-calendar-keepalive">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; color: #2c2418;
+html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; background: #F3E6CE; color: #2c2418;
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
 .app {
   height: 100%; padding: 1.6vmin 2vmin 8vmin;
   display: flex; flex-direction: column;
+  position: relative; z-index: 1;
+  background: #F3E6CE;
 }
 .head {
   flex: 0 0 auto; display: flex; align-items: baseline; justify-content: space-between;
@@ -102,7 +104,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: #EFD6B0; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
+  background: #F3E6CE; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
 }
@@ -136,6 +138,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   .day .dn { font-size: 1.7vmin; }
 }
   </style>
+  <script src="lg-keepalive.js?v=128" defer></script>
 </head>
 <body>
 <div class="app">
@@ -151,14 +154,14 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   </div>
 </div>
 <nav class="nav">
-  <a href="tvr-vaaka.html?v=127"><span class="ic">◎</span>Tänään</a>
-  <a class="on" href="tvr-vaaka-kalenteri.html?v=127"><span class="ic">▦</span>Kalenteri</a>
-  <a href="tvr-vaaka-muistot.html?v=127"><span class="ic">♡</span>Muistot</a>
+  <a href="tvr-vaaka.html?v=128"><span class="ic">◎</span>Tänään</a>
+  <a class="on" href="tvr-vaaka-kalenteri.html?v=128"><span class="ic">▦</span>Kalenteri</a>
+  <a href="tvr-vaaka-muistot.html?v=128"><span class="ic">♡</span>Muistot</a>
   <span class="nav-tsla" id="navTsla" title="Tesla"></span>
 </nav>
 <script>
 (function () {
-  var BUILD = "20260927-v127-calendar-nav";
+  var BUILD = "20260927-v128-calendar-keepalive";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {

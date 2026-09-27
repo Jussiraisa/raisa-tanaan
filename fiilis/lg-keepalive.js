@@ -1,4 +1,4 @@
-/* Fiilis TV keepalive v125
+/* Fiilis TV keepalive v128
    LG sammuttaa ruudun, jos video on piilossa tai vain nurkassa.
    Muistokuva on iso toistuva video (sama kuva), joten televisio
    näkee toiston eikä nurkkaan tule laatikkoa.
@@ -9,7 +9,7 @@
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "125";
+  var BUILD = "128";
 var STYLE = [
     "#fiilisKeepAliveVideo{",
     "position:fixed!important;left:0!important;top:0!important;",
@@ -20,7 +20,7 @@ var STYLE = [
     "object-fit:cover!important;z-index:0!important;pointer-events:none!important;",
     "background:#F3E6CE!important;opacity:1!important;visibility:visible!important;",
     "transform:none!important;filter:none!important;}",
-    ".tv{position:relative!important;z-index:1!important;background:#F3E6CE!important;}",
+    ".tv,.app{position:relative!important;z-index:1!important;background:#F3E6CE!important;}",
     ".nav{z-index:30!important;}"
   ].join("");
 

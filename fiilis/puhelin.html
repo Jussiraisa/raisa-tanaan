@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260926-v120-nice-expectations">
+  <meta name="fiilis-build" content="20260926-v123-weekly-events">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#EDE6DB">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -396,7 +396,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
 </div>
 
 <script>
-  var BUILD = "20260926-v120-nice-expectations";
+  var BUILD = "20260926-v123-weekly-events";
 (function () {
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -882,10 +882,28 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
 
   function eventsOn(iso) {
     var out = [];
-    if (!schedule || !schedule.events) return out;
-    var list = schedule.events;
+    var list = (schedule && schedule.events) ? schedule.events : [];
     for (var i = 0; i < list.length; i++) {
       if (list[i].date === iso) out.push(list[i]);
+    }
+    var weekly = (schedule && schedule.weeklyEvents) ? schedule.weeklyEvents : [];
+    var wd = null;
+    try { wd = new Date(iso + "T12:00:00").getDay(); } catch (e) {}
+    for (var w = 0; w < weekly.length; w++) {
+      var r = weekly[w];
+      if (!r || wd == null || r.weekday !== wd) continue;
+      if (r.start && iso < r.start) continue;
+      if (r.endDate && iso > r.endDate) continue;
+      out.push({
+        date: iso,
+        time: r.time || "",
+        end: r.end || "",
+        who: r.who || "",
+        title: r.title || "",
+        place: r.place || "",
+        kind: r.kind || "muu",
+        source: r.source || "weekly"
+      });
     }
     out.sort(function (a, b) {
       return (parseMin(a.time) || 0) - (parseMin(b.time) || 0);

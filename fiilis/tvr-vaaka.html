@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260925-v112-photo-video">
-  <meta name="theme-color" content="#EFD6B0">
+  <meta name="fiilis-build" content="20260927-v127-tv-today">
+  <meta name="theme-color" content="#F3E6CE">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
   <style>
-html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; color: #2c2418;
+html, body { height: 100%; margin: 0; overflow: hidden; background: #F3E6CE; color: #2c2418;
   font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 * { box-sizing: border-box; }
 .muted { color: #6c5c44; }
@@ -22,7 +22,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
   height: 100%; width: 100%;
   padding: 2.2vmin 2.8vmin 8.2vmin;
   display: flex; flex-direction: column;
-  background: #EFD6B0;
+  background: #F3E6CE;
 }
 
 /* —— Header —— */
@@ -74,7 +74,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .hero {
   flex: 1.85 1 0; min-width: 0; min-height: 0;
   position: relative; border-radius: 1.8vmin; overflow: hidden;
-  background: #e2c9a4;
+  background: #E8D6B8;
   box-shadow: 0 .6vmin 2.2vmin rgba(60,40,18,.1);
 }
 .hero img { width: 100%; height: 100%; object-fit: cover; display: block; image-orientation: from-image; }
@@ -100,7 +100,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .side > * + * { margin-top: 1.4vmin; }
 
 .block {
-  background: rgba(255,246,228,.72);
+  background: #F7ECD9;
   border-radius: 1.4vmin;
   padding: 1.3vmin 1.6vmin 1.4vmin;
   min-height: 0;
@@ -261,10 +261,10 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 /* Bottom nav — Tesla-like, TV-friendly */
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; height: 6.6vmin;
-  background: #EFD6B0; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
+  background: #F3E6CE; color: #5a4a34; border-top: 1px solid rgba(120,90,40,.16);
   display: flex; align-items: center; justify-content: space-around;
   padding: 0 4vmin; z-index: 30;
-  backdrop-filter: blur(8px);
+  backdrop-filter: none;
 }
 .nav a {
   color: inherit; text-decoration: none; text-align: center;
@@ -288,10 +288,10 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #EFD6B0; col
 .nav a.on { opacity: 1; color: #3a2c18; background: rgba(201,148,58,.22);
   box-shadow: inset 0 -.28vmin 0 #c9943a; }
 
-body.evening, body.evening .tv { background: #E8CFA0; }
+body.evening, body.evening .tv { background: #F0DFC2; }
 body.evening .clock { color: #120c06; }
 body.evening .greet { color: #7d5619; }
-body.evening .block { background: rgba(255,247,230,.5); }
+body.evening .block { background: #F5E8D2; }
 body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 @media (max-width: 900px) {
@@ -402,7 +402,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 }
 
 </style>
-<script src="lg-keepalive.js?v=112" defer></script>
+<script src="lg-keepalive.js?v=125" defer></script>
 </head>
 <body class="morning">
 
@@ -456,11 +456,6 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   </div>
 
   <div class="foot-soft">
-    <!-- actionAlerts: schedule.wilmaAlerts + schedule.whatsappAlerts (needAction) -->
-    <div class="action-bar" id="actionBar">
-      <div class="action-lbl">Huomiot</div>
-      <div class="action-list" id="actionList"><span class="action-empty">Ei avoimia Wilma-/WhatsApp-asioita</span></div>
-    </div>
     <div>
       <div class="school-lunch" id="schoolLunch">Kouluruoka · —</div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
@@ -470,15 +465,15 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 </div>
 
 <nav class="nav">
-  <a class="on" href="tvr-vaaka.html"><span class="ic">◎</span>Tänään</a>
-  <a href="tvr-vaaka-kalenteri.html"><span class="ic">▦</span>Kalenteri</a>
-  <a href="tvr-vaaka-muistot.html"><span class="ic">♡</span>Muistot</a>
+  <a class="on" href="tvr-vaaka.html?v=127"><span class="ic">◎</span>Tänään</a>
+  <a href="tvr-vaaka-kalenteri.html?v=127"><span class="ic">▦</span>Kalenteri</a>
+  <a href="tvr-vaaka-muistot.html?v=127"><span class="ic">♡</span>Muistot</a>
   <span class="nav-tsla" id="navTsla" title="Tesla"></span>
 </nav>
 
 <script>
 (function () {
-  var BUILD = "20260925-v112-photo-video";
+  var BUILD = "20260927-v127-tv-today";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1021,10 +1016,28 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   }
   function eventsOn(iso) {
     var out = [];
-    if (!schedule || !schedule.events) return out;
-    var list = schedule.events;
+    var list = (schedule && schedule.events) ? schedule.events : [];
     for (var i = 0; i < list.length; i++) {
       if (list[i].date === iso) out.push(list[i]);
+    }
+    var weekly = (schedule && schedule.weeklyEvents) ? schedule.weeklyEvents : [];
+    var wd = null;
+    try { wd = new Date(iso + "T12:00:00").getDay(); } catch (e) {}
+    for (var w = 0; w < weekly.length; w++) {
+      var r = weekly[w];
+      if (!r || wd == null || r.weekday !== wd) continue;
+      if (r.start && iso < r.start) continue;
+      if (r.endDate && iso > r.endDate) continue;
+      out.push({
+        date: iso,
+        time: r.time || "",
+        end: r.end || "",
+        who: r.who || "",
+        title: r.title || "",
+        place: r.place || "",
+        kind: r.kind || "muu",
+        source: r.source || "weekly"
+      });
     }
     out.sort(function (a, b) {
       return (parseMin(a.time) || 0) - (parseMin(b.time) || 0);
@@ -1304,17 +1317,26 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       }
       items.push({ label: label2, days: du, when: when, iso: iso });
     }
+    function isNiceExpectation(label3) {
+      var s = String(label3 || "");
+      /* Odotukset = vain mukavat asiat. Wilma/koulu/koe/tehtäväjutut eivät kuulu tänne. */
+      if (/wilma|poissaolo|koe|koulu|opettaj|hakemus|terapia|huolto|päivätyö|päättöviikko|kirjoitustaito|ruotsi|geometria|yhtälö/i.test(s)) return false;
+      if (/prep|paisto|porkkanakakku|valmistelu/i.test(s)) return false;
+      return /synt|syntymäpäiv|juhla|hääpäiv|loma|matka|lontoo/i.test(s);
+    }
     var extras = ((schedule && schedule.expectations) || []).concat(EXTRA_EXPECTATIONS || []);
     for (var xi = 0; xi < extras.length; xi++) {
       var x = extras[xi];
       if (!x || !x.start) continue;
+      if (!isNiceExpectation(x.label)) continue;
       if (now.iso > (x.end || x.start)) continue;
       var whenR = (x.end && x.end !== x.start)
         ? (parseInt(x.start.slice(8), 10) + ".–" + parseInt(x.end.slice(8), 10) + "." + parseInt(x.end.slice(5, 7), 10) + ".")
         : (parseInt(x.start.slice(8), 10) + "." + parseInt(x.start.slice(5, 7), 10) + ".");
       if (now.iso >= x.start && x.end && now.iso <= x.end) {
+        var beforePush = items.length;
         pushItem(x.label, now.iso, whenR);
-        if (items.length) items[items.length - 1].days = 0;
+        if (items.length > beforePush) items[items.length - 1].days = 0;
       } else {
         pushItem(x.label, x.start, whenR);
       }
@@ -1334,9 +1356,20 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       }
       pushItem(label2, iso, null);
     }
-    items.sort(function (a, b) { return a.days - b.days; });
+    function nicePriority(it) {
+      var s = String(it.label || "");
+      if (/synt|syntymäpäiv|hääpäiv/i.test(s)) return 0;
+      if (/loma|matka|lontoo/i.test(s)) return 1;
+      if (/juhla/i.test(s)) return 2;
+      return 3;
+    }
+    items.sort(function (a, b) {
+      var pa = nicePriority(a), pb = nicePriority(b);
+      if (pa !== pb) return pa - pb;
+      return a.days - b.days;
+    });
     var html = "";
-    var max = Math.min(items.length, 3);
+    var max = Math.min(items.length, 4);
     for (var j = 0; j < max; j++) {
       var it = items[j];
       var rem = it.days === 0 ? "nyt" : (it.days === 1 ? "huom" : it.days + " pv");
@@ -1398,9 +1431,9 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     if (now.wd === 6) schoolIso = addDaysIso(now.iso, 2);
     if (now.wd === 0) schoolIso = addDaysIso(now.iso, 1);
     var schools = schoolStartsForWd(schoolWd, schoolIso);
-    /* Aamulla vain tämän päivän koulu. Huomisen treenit vain kun koulu-osio on jo huomisessa (klo 16+). */
-    var hobbyIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : null;
-    var out = hobbyIso ? dayEventsClean(hobbyIso) : [];
+    /* Huomisen muut menot näkyvät aina; koulu vaihtuu huomiseen vasta klo 16 jälkeen. */
+    var hobbyIso = addDaysIso(now.iso, 1);
+    var out = dayEventsClean(hobbyIso);
     var lbl = document.querySelector("#huomenna .lbl") || document.querySelector(".duo .lbl");
     /* Prefer the Huomenna label next to tomorrowBox */
     var duo = el.parentElement;
@@ -1435,7 +1468,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         shown++;
       }
     }
-    if (showTomorrowSchool && out.length) {
+    if (out.length) {
       for (i = 0; i < out.length && i < MAX_HOBBY; i++) {
         var e = out[i];
         var who = shortWho(e.who || "");
@@ -1537,7 +1570,6 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     var dateEl = document.getElementById("dateLine");
     if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ". · Kuopio";
     paintNextLine(now);
-    paintWilmaAlerts(now);
     paintTodayList(now);
     paintOdotukset(now);
     paintTomorrow(now);

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-27T11:10:00+03:00",
+  "updated": "2026-09-27T11:15:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1562,6 +1562,16 @@
       "who": "Riikka",
       "title": "Padel",
       "kind": "harrastus",
+      "source": "gcal:perhe"
+    },
+    {
+      "start": "2026-09-29",
+      "weekday": 2,
+      "time": "09:00",
+      "end": "16:45",
+      "who": "Riikka",
+      "title": "Kuuleva työ",
+      "kind": "työ",
       "source": "gcal:perhe"
     }
   ]

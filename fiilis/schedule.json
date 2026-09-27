@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-27T11:15:00+03:00",
+  "updated": "2026-09-27T11:25:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1263,6 +1263,66 @@
       "title": "Koulukuvausvaatteet valmiiksi",
       "kind": "muu",
       "source": "fiilis"
+    },
+    {
+      "date": "2026-09-28",
+      "time": "18:30",
+      "end": "20:00",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "09:00",
+      "end": "16:45",
+      "who": "Riikka",
+      "title": "Kuuleva työ",
+      "kind": "työ",
+      "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "18:00",
+      "end": "19:30",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-10-03",
+      "time": "10:30",
+      "end": "12:00",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-10-01",
+      "who": "Milla",
+      "title": "Ainon kakku · aineksien osto",
+      "kind": "muu",
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-10-01",
+      "who": "Milla",
+      "title": "Ainon kakku · kakkupohja",
+      "kind": "muu",
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-10-02",
+      "who": "Milla",
+      "title": "Ainon kakku · täyttö",
+      "kind": "muu",
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
     }
   ],
   "schoolLunch": {
@@ -1532,46 +1592,6 @@
       "who": "Milla",
       "title": "Valmennus",
       "kind": "treeni",
-      "source": "gcal:perhe"
-    },
-    {
-      "start": "2026-09-28",
-      "weekday": 1,
-      "time": "18:30",
-      "end": "20:00",
-      "who": "Riikka",
-      "title": "Padel",
-      "kind": "harrastus",
-      "source": "gcal:perhe"
-    },
-    {
-      "start": "2026-10-02",
-      "weekday": 5,
-      "time": "18:00",
-      "end": "19:30",
-      "who": "Riikka",
-      "title": "Padel",
-      "kind": "harrastus",
-      "source": "gcal:perhe"
-    },
-    {
-      "start": "2026-10-03",
-      "weekday": 6,
-      "time": "10:30",
-      "end": "12:00",
-      "who": "Riikka",
-      "title": "Padel",
-      "kind": "harrastus",
-      "source": "gcal:perhe"
-    },
-    {
-      "start": "2026-09-29",
-      "weekday": 2,
-      "time": "09:00",
-      "end": "16:45",
-      "who": "Riikka",
-      "title": "Kuuleva työ",
-      "kind": "työ",
       "source": "gcal:perhe"
     }
   ]

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Räisä · Mökki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; overflow: hidden; background: #08090c; color: #f3efe6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    * { box-sizing: border-box }
+    .tv { height: 100vh; width: 100vw; padding: 1.5vh 2.2vw 1.4vh; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+    .head { display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: start; align-items: flex-start; margin-bottom: 1.2vh; }
+    .kicker { font-size: 1.7vmin; font-weight: 800; letter-spacing: .34em; text-transform: uppercase; color: #c6a15a; }
+    .date { font-size: 3.4vmin; margin-top: .3vh; font-weight: 650; }
+    .chip { margin-top: .45vh; font-size: 2.1vmin; font-weight: 800; color: #3ec4b2; }
+    .right { text-align: right; }
+    .clock { font-size: 8.6vmin; font-weight: 700; letter-spacing: -.08em; line-height: .8; font-variant-numeric: tabular-nums; color: #fff; }
+    .wx { margin-top: .6vh; font-size: 2.5vmin; font-weight: 700; color: #d9d3c6; }
+    .wx b { font-size: 3.2vmin; }
+    .hero {
+      -ms-flex: 0 0 auto; flex: 0 0 auto;
+      background: radial-gradient(120% 140% at 0% 0%, #16352f 0%, #101318 55%);
+      border: 1px solid #1e2a28; border-radius: 1.6vmin;
+      padding: 1.7vh 2.3vw 1.6vh; position: relative; overflow: hidden;
+    }
+    .hero.hot { background: radial-gradient(120% 140% at 0% 0%, #3a2e12 0%, #101318 58%); border-color: #4a3a18; }
+    .hero.ev { background: radial-gradient(120% 140% at 0% 0%, #12283a 0%, #101318 58%); border-color: #1e3a52; }
+    .hero .lbl { font-size: 1.8vmin; font-weight: 800; letter-spacing: .3em; text-transform: uppercase; color: #3ec4b2; }
+    .hero.hot .lbl { color: #e3c36a; }
+    .hero.ev .lbl { color: #7eb8e0; }
+    .hero .w { font-family: "Instrument Serif", Georgia, serif; font-size: 12.2vmin; font-weight: 400; letter-spacing: -.05em; line-height: .88; margin-top: .15vh; }
+    .hero .say { font-size: 2.8vmin; font-weight: 700; color: #c9c3b5; margin-top: .5vh; }
+    .badge { position: absolute; top: 1.8vh; right: 2.2vw; padding: .65vh 1.3vw; border-radius: 999px; font-size: 2.2vmin; font-weight: 800; }
+    .badge.ok { background: #123028; color: #7ee0d0; }
+    .badge.hot { background: #3a2e12; color: #e3c36a; }
+    .badge.ev { background: #12283a; color: #7eb8e0; }
+    .grid { display: -ms-flexbox; display: flex; gap: 1.1vw; margin-top: 1.2vh; }
+    .stat {
+      -ms-flex: 1; flex: 1; min-width: 0;
+      background: #12141a; border: 1px solid #22252e; border-radius: 1.3vmin;
+      padding: 1.4vh 1.4vw 1.3vh;
+    }
+    .stat .lbl { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; }
+    .stat .v { font-family: "Instrument Serif", Georgia, serif; font-size: 5.6vmin; line-height: .95; margin-top: .3vh; }
+    .stat .s { font-size: 2vmin; color: #9a9486; font-weight: 650; margin-top: .25vh; }
+    .bar {
+      margin-top: 1.2vh; background: #12141a; border: 1px solid #22252e; border-radius: 1.3vmin;
+      padding: 1.2vh 1.6vw; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; gap: 1.4vw;
+    }
+    .bar .lbl { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; margin-right: .4vw; white-space: nowrap; }
+    .pills { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; gap: .6vh .7vw; -ms-flex: 1; flex: 1; }
+    .pill { font-size: 2.4vmin; font-weight: 800; color: #7ee0d0; background: #123028; border-radius: 999px; padding: .5vh 1.1vw; }
+    .pill.warn { color: #e3c36a; background: #3a2e12; }
+    .pill.ev { color: #7eb8e0; background: #12283a; }
+    .pill.off { color: #6d685c; background: #1a1c22; }
+    .empty { color: #6d685c; font-size: 2.3vmin; font-weight: 650; }
+    .flags {
+      margin-top: 1.2vh; display: -ms-flexbox; display: flex; gap: 1.1vw;
+    }
+    .flag {
+      -ms-flex: 1; flex: 1; min-width: 0;
+      background: #12141a; border: 1px solid #22252e; border-radius: 1.3vmin;
+      padding: 1.3vh 1.4vw 1.2vh; text-align: center;
+    }
+    .flag.on { border-color: #1e3a52; background: #0e1a24; }
+    .flag.hot.on { border-color: #4a3a18; background: #1a1508; }
+    .flag .name { font-size: 1.5vmin; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #9a9486; }
+    .flag.on .name { color: #7eb8e0; }
+    .flag.hot.on .name { color: #e3c36a; }
+    .flag .state { font-family: "Instrument Serif", Georgia, serif; font-size: 4.2vmin; line-height: 1; margin-top: .35vh; }
+    .flag .sub { font-size: 1.9vmin; color: #6d685c; font-weight: 650; margin-top: .25vh; }
+    .foot { margin-top: auto; padding-top: 1.1vh; font-size: 2vmin; font-weight: 650; color: #6d685c; display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; }
+    .stale { color: #ff8a80; }
+  </style>
+</head>
+<body>
+  <div class="tv" id="app">Räisä · Mökki</div>
+  <script>
+(function () {
+  var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
+  var DATA = null;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function helsinkiNow() {
+    var d = new Date(new Date().getTime() + 3 * 3600 * 1000);
+    return { wd: d.getUTCDay(), day: d.getUTCDate(), month: d.getUTCMonth() + 1, hour: d.getUTCHours(), minute: d.getUTCMinutes() };
+  }
+  function num(n, d) {
+    if (n == null || isNaN(Number(n))) return "—";
+    return Number(n).toFixed(d == null ? 0 : d).replace(".", ",");
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c];
+    });
+  }
+  function getJSON(url, cb) {
+    var x = new XMLHttpRequest();
+    x.open("GET", url, true);
+    x.onreadystatechange = function () {
+      if (x.readyState !== 4) return;
+      if (x.status >= 200 && x.status < 300) {
+        try { cb(JSON.parse(x.responseText)); } catch (e) {}
+      }
+    };
+    x.send();
+  }
+  function ageLabel(updated) {
+    if (!updated) return "ei päivitystä";
+    var mins = Math.round((Date.now() - Number(updated)) / 60000);
+    if (mins < 1) return "juuri nyt";
+    if (mins < 60) return mins + " min sitten";
+    var h = Math.round(mins / 60);
+    if (h < 48) return h + " h sitten";
+    return Math.round(h / 24) + " pv sitten";
+  }
+  function heatersOn(h) {
+    if (!h) return [];
+    var out = [];
+    if (h.patteritPudotus) out.push("Patterit pudotus");
+    if (h.saattolammitys) out.push("Saattolämmitys");
+    if (h.lattialammitysPudotus) out.push("Lattialämmitys pudotus");
+    return out;
+  }
+
+  function paint() {
+    var now = helsinkiNow();
+    var d = DATA || {};
+    var power = Number(d.powerW) || 0;
+    var kw = power / 1000;
+    var ev = !!d.evCharge;
+    var sauna = !!d.sauna;
+    var heroClass = sauna ? "hot" : (ev ? "ev" : "");
+    var heroLbl = sauna ? "Sauna päällä" : (ev ? "Lataus + kulutus" : "Sähköä nyt");
+    var heroVal = (kw >= 1 ? num(kw, 2) + " kW" : Math.round(power) + " W");
+    var lightNames = d.lightsOn || [];
+    var watts = d.lightWatts || {};
+    var lightSay = lightNames.length
+      ? (lightNames.length + " valo" + (lightNames.length === 1 ? "" : "a") + " päällä")
+      : "Ei valoja päällä";
+    var badgeClass = sauna ? "hot" : (ev ? "ev" : "ok");
+    var badgeTxt = d.online === false ? "Mökki offline" : ((d.deviceCount || "?") + " laitetta verkossa");
+
+    var pills = "";
+    var i;
+    if (!lightNames.length) {
+      pills = "<div class=\"empty\">Ei valoja päällä</div>";
+    } else {
+      for (i = 0; i < lightNames.length; i++) {
+        var n = lightNames[i];
+        var w = watts[n];
+        var label = n + (w != null ? " " + num(w, w < 10 ? 0 : 1) + " W" : "");
+        pills += "<span class=\"pill\">" + esc(label) + "</span>";
+      }
+    }
+
+    var heatOn = heatersOn(d.heaters);
+    var heatPills = "";
+    if (!heatOn.length) {
+      heatPills = "<div class=\"empty\">Lämmitykset pois</div>";
+    } else {
+      for (i = 0; i < heatOn.length; i++) {
+        heatPills += "<span class=\"pill warn\">" + esc(heatOn[i]) + "</span>";
+      }
+    }
+
+    var motion = d.motion || {};
+    var tie = motion.tie || {};
+    var motionBits = [];
+    if (motion.ph) motionBits.push("PH liikettä");
+    if (tie.active) motionBits.push("Tie liikettä");
+    var motionSub = motionBits.length ? motionBits.join(" · ") : "Ei liikettä";
+    if (tie.tempC != null) motionSub += " · tie " + num(tie.tempC, 1) + "°";
+    if (tie.humidityPct != null) motionSub += " / " + num(tie.humidityPct, 0) + " %";
+
+    var scenes = d.scenes || [];
+    var scenePills = "";
+    if (!scenes.length) {
+      scenePills = "<div class=\"empty\">Ei scenejä</div>";
+    } else {
+      for (i = 0; i < scenes.length; i++) {
+        scenePills += "<span class=\"pill off\">" + esc(scenes[i]) + "</span>";
+      }
+    }
+
+    var age = ageLabel(d.updated);
+    var stale = d.updated && (Date.now() - Number(d.updated) > 30 * 60 * 1000);
+
+    document.getElementById("app").innerHTML =
+      "<div class=\"head\"><div><div class=\"kicker\">Räisä · Mökki</div>"
+      + "<div class=\"date\">" + DAYS[now.wd] + " " + now.day + "." + now.month + ".</div>"
+      + "<div class=\"chip\">" + esc(d.room || "Mökki") + (d.online ? " · verkossa" : " · offline") + "</div></div>"
+      + "<div class=\"right\"><div class=\"clock\" id=\"clock\">" + pad(now.hour) + "." + pad(now.minute) + "</div>"
+      + "<div class=\"wx\">ulko <b>" + num(d.outdoorC, 1) + "°</b> · sisä <b>" + num(d.indoorC, 1) + "°</b></div></div></div>"
+      + "<div class=\"hero " + heroClass + "\"><div class=\"lbl\">" + heroLbl + "</div>"
+      + "<div class=\"w\">" + heroVal + "</div>"
+      + "<div class=\"badge " + badgeClass + "\">" + esc(badgeTxt) + "</div>"
+      + "<div class=\"say\">" + esc(lightSay) + (ev ? " · auto lataa" : "") + (sauna ? " · sauna" : "") + "</div></div>"
+      + "<div class=\"grid\">"
+      + "<div class=\"stat\"><div class=\"lbl\">Sisällä</div><div class=\"v\">" + num(d.indoorC, 1) + "°</div><div class=\"s\">ulko " + num(d.outdoorC, 1) + "°</div></div>"
+      + "<div class=\"stat\"><div class=\"lbl\">Teho</div><div class=\"v\">" + (kw >= 1 ? num(kw, 2) + " kW" : Math.round(power) + " W") + "</div><div class=\"s\">" + Math.round(power) + " W</div></div>"
+      + "<div class=\"stat\"><div class=\"lbl\">Liike</div><div class=\"v\">" + (motionBits.length ? "ON" : "—") + "</div><div class=\"s\">" + esc(motionSub) + "</div></div>"
+      + "<div class=\"stat\"><div class=\"lbl\">Laitteet</div><div class=\"v\">" + (d.deviceCount != null ? d.deviceCount : "—") + "</div><div class=\"s\">Shelly Cloud</div></div>"
+      + "</div>"
+      + "<div class=\"flags\">"
+      + "<div class=\"flag" + (ev ? " on" : "") + "\"><div class=\"name\">EV-lataus</div><div class=\"state\">" + (ev ? "Päällä" : "Pois") + "</div><div class=\"sub\">Sähköauton lataus</div></div>"
+      + "<div class=\"flag hot" + (sauna ? " on" : "") + "\"><div class=\"name\">Sauna</div><div class=\"state\">" + (sauna ? "Päällä" : "Pois") + "</div><div class=\"sub\">2) sauna</div></div>"
+      + "<div class=\"flag" + (heatOn.length ? " on" : "") + "\"><div class=\"name\">Lämmitys</div><div class=\"state\">" + (heatOn.length ? heatOn.length + " on" : "Pois") + "</div><div class=\"sub\">" + (heatOn.length ? esc(heatOn.join(", ")) : "pudotus / saatto") + "</div></div>"
+      + "</div>"
+      + "<div class=\"bar\"><div class=\"lbl\">Valot</div><div class=\"pills\">" + pills + "</div></div>"
+      + "<div class=\"bar\"><div class=\"lbl\">Lämmitys</div><div class=\"pills\">" + heatPills + "</div></div>"
+      + "<div class=\"bar\"><div class=\"lbl\">Scenet</div><div class=\"pills\">" + scenePills + "</div></div>"
+      + "<div class=\"foot\"><span class=\"" + (stale ? "stale" : "") + "\">Päivitetty " + esc(age)
+      + (d.capturedAt ? " · " + esc(String(d.capturedAt).replace("T", " ").substr(0, 16)) : "")
+      + "</span><span>" + esc(d.account || "") + "</span></div>";
+  }
+
+  function tickClock() {
+    var el = document.getElementById("clock");
+    if (!el) return;
+    var now = helsinkiNow();
+    el.innerHTML = pad(now.hour) + "." + pad(now.minute);
+  }
+  function pull() {
+    getJSON("https://raw.githubusercontent.com/Jussiraisa/raisa-tanaan/main/mokki.json?t=" + new Date().getTime(), function (data) {
+      DATA = data;
+      paint();
+    });
+  }
+  paint();
+  pull();
+  setInterval(tickClock, 1000);
+  setInterval(pull, 5000);
+})();
+  </script>
+</body>
+</html>

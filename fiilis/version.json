@@ -2,6 +2,6 @@
   "schedule": "2026-09-28-wa-rides",
   "updated": "2026-09-28T19:36:14+03:00",
   "ui": "20260928-v130-wilma-huomiot",
-  "poll": "v130",
+  "poll": "v131",
   "note": "Huomiot (Wilma needAction) back on yla + tvr-vaaka foot bar. Stable bookmark; soft reload via version.json."
 }

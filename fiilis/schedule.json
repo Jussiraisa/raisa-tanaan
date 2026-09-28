@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-28T16:57:32+03:00",
+  "updated": "2026-09-28T20:42:51+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -529,7 +529,10 @@
       "title": "Lianna laji",
       "place": "Hatsala",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Julia",
+      "pickup": "Mea",
+      "note": "WA Lianna · lähtö 15:30 · Mea+Amanda · Enni koululta"
     },
     {
       "date": "2026-09-28",
@@ -540,7 +543,8 @@
       "place": "Ylä-Pyörö",
       "kind": "treeni",
       "source": "nimenhuuto:welhot2018",
-      "driver": "Sini/Topias"
+      "driver": "Topias",
+      "note": "WA Säbä kyydit · Topias vie pojat"
     },
     {
       "date": "2026-09-28",
@@ -635,8 +639,8 @@
       "place": "Lippumäki",
       "kind": "treeni",
       "source": "nimenhuuto:welhot2018",
-      "driver": "Jussi",
-      "note": "lähtö ~16.15"
+      "driver": "Sanna/Mane",
+      "note": "WA Säbä kyydit · tiistai Sannan perhe"
     },
     {
       "date": "2026-09-29",
@@ -686,7 +690,10 @@
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Julia",
+      "pickup": "Enni",
+      "note": "WA Lianna · lähtö 17:30 · Enni+Mea+Amanda"
     },
     {
       "date": "2026-09-30",
@@ -781,7 +788,7 @@
       "source": "nimenhuuto:welhot2018",
       "driver": "Meidän",
       "pickup": "Meidän",
-      "note": "WA Welhot · 28.9. · torstai-oletus meidän"
+      "note": "torstai-oletus meidän · WA: Jussi tarjosi, ei vahvistusta"
     },
     {
       "date": "2026-10-01",
@@ -900,7 +907,10 @@
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Amanda",
+      "pickup": "Amanda",
+      "note": "WA Lianna · Amanda (molemmat)"
     },
     {
       "date": "2026-10-03",
@@ -958,7 +968,7 @@
       "driver": "Riikka",
       "pickup": "Riikka",
       "source": "gcal:voimistelu",
-      "note": "su-vuoro Riikka (ennen Oulua)"
+      "note": "WA Lianna · Mea molemmat (Räisä)"
     },
     {
       "date": "2026-10-05",
@@ -997,7 +1007,7 @@
       "end": "19:30",
       "who": "Mea",
       "title": "Liannan voimat",
-      "place": "Luola",
+      "place": "Kuoppari",
       "kind": "treeni",
       "source": "gcal:voimistelu"
     },
@@ -1675,7 +1685,15 @@
       "source": "wilma:perhe"
     }
   ],
-  "whatsappAlerts": [],
+  "whatsappAlerts": [
+    {
+      "due": "2026-09-28",
+      "title": "Lianna-viikko synkattu: Julia ma/ke, Amanda la, Riikka su; lähtöajat ja Mea/Enni-pickupit päivitetty.",
+      "who": "Mea",
+      "needAction": false,
+      "source": "wa:perhe"
+    }
+  ],
   "weeklyEvents": [
     {
       "start": "2026-09-27",

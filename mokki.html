@@ -124,6 +124,21 @@
     if (h.lattialammitysPudotus) out.push("Lattialämmitys pudotus");
     return out;
   }
+  function ilpLine(ilp) {
+    if (!ilp) return null;
+    var on = !!ilp.on;
+    var mode = ilp.mode || "—";
+    var setC = ilp.setC;
+    var indoor = ilp.indoorC;
+    return {
+      on: on,
+      state: on ? "Päällä" : "Pois",
+      mode: mode,
+      setC: setC,
+      indoorC: indoor,
+      sub: mode + (setC != null ? " · tavoite " + num(setC, 0) + "°" : "") + (indoor != null ? " · sisä " + num(indoor, 0) + "°" : "")
+    };
+  }
 
   function paint() {
     var now = helsinkiNow();
@@ -166,6 +181,7 @@
       }
     }
 
+    var ilp = ilpLine(d.ilp);
     var motion = d.motion || {};
     var tie = motion.tie || {};
     var motionBits = [];
@@ -202,12 +218,13 @@
       + "<div class=\"stat\"><div class=\"lbl\">Sisällä</div><div class=\"v\">" + num(d.indoorC, 1) + "°</div><div class=\"s\">ulko " + num(d.outdoorC, 1) + "°</div></div>"
       + "<div class=\"stat\"><div class=\"lbl\">Teho</div><div class=\"v\">" + (kw >= 1 ? num(kw, 2) + " kW" : Math.round(power) + " W") + "</div><div class=\"s\">" + Math.round(power) + " W</div></div>"
       + "<div class=\"stat\"><div class=\"lbl\">Liike</div><div class=\"v\">" + (motionBits.length ? "ON" : "—") + "</div><div class=\"s\">" + esc(motionSub) + "</div></div>"
-      + "<div class=\"stat\"><div class=\"lbl\">Laitteet</div><div class=\"v\">" + (d.deviceCount != null ? d.deviceCount : "—") + "</div><div class=\"s\">Shelly Cloud</div></div>"
+      + "<div class=\"stat\"><div class=\"lbl\">ILP</div><div class=\"v\">" + (ilp ? (ilp.on ? esc(ilp.mode) : "Pois") : "—") + "</div><div class=\"s\">" + (ilp ? ("tavoite " + num(ilp.setC, 0) + "° · sisä " + num(ilp.indoorC, 0) + "°") : "ei dataa") + "</div></div>"
       + "</div>"
       + "<div class=\"flags\">"
       + "<div class=\"flag" + (ev ? " on" : "") + "\"><div class=\"name\">EV-lataus</div><div class=\"state\">" + (ev ? "Päällä" : "Pois") + "</div><div class=\"sub\">Sähköauton lataus</div></div>"
       + "<div class=\"flag hot" + (sauna ? " on" : "") + "\"><div class=\"name\">Sauna</div><div class=\"state\">" + (sauna ? "Päällä" : "Pois") + "</div><div class=\"sub\">2) sauna</div></div>"
       + "<div class=\"flag" + (heatOn.length ? " on" : "") + "\"><div class=\"name\">Lämmitys</div><div class=\"state\">" + (heatOn.length ? heatOn.length + " on" : "Pois") + "</div><div class=\"sub\">" + (heatOn.length ? esc(heatOn.join(", ")) : "pudotus / saatto") + "</div></div>"
+      + "<div class=\"flag hot" + (ilp && ilp.on ? " on" : "") + "\"><div class=\"name\">ILP</div><div class=\"state\">" + (ilp ? esc(ilp.state) : "—") + "</div><div class=\"sub\">" + (ilp ? esc(ilp.sub) : "ilmalämpöpumppu") + "</div></div>"
       + "</div>"
       + "<div class=\"bar\"><div class=\"lbl\">Valot</div><div class=\"pills\">" + pills + "</div></div>"
       + "<div class=\"bar\"><div class=\"lbl\">Lämmitys</div><div class=\"pills\">" + heatPills + "</div></div>"

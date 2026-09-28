@@ -363,9 +363,9 @@
 
   <div class="status" id="statusPills" aria-live="polite"></div>
 
-  <div class="note" id="noWebhookNote" hidden>
-    <span aria-hidden="true">💬</span>
-    <div><strong>Ilman webhookia ohjaa Mökki-chatissa.</strong> Webhookin voit lisätä Asetuksista — ei pakollinen puhelimessa.</div>
+  <div class="note" id="noShellyNote" hidden>
+    <span aria-hidden="true">🔑</span>
+    <div><strong>Lisää Shelly-pilviavain Asetuksista</strong>, niin valonapit toimivat. ILP: kirjoita Mökki-chattiin.</div>
   </div>
 
   <section class="card ilp" aria-label="ILP">
@@ -413,14 +413,21 @@
     <span class="chev" aria-hidden="true">▼</span>
   </button>
   <div class="settings-panel" id="settingsPanel" hidden>
-    <div class="lbl" style="margin-top:8px">Webhook URL</div>
-    <input type="url" id="webhookUrl" placeholder="Liitä webhook-osoite tähän" autocomplete="off" spellcheck="false">
-    <div class="lbl" style="margin-top:14px">Authorization (webhook-avain)</div>
-    <input type="password" id="webhookAuth" placeholder="Liitä Authorization-headerin arvo" autocomplete="off" spellcheck="false">
+    <div class="lbl" style="margin-top:8px">Shelly Cloud · server</div>
+    <input type="url" id="shellyServer" placeholder="https://shelly-273-eu.shelly.cloud" autocomplete="off" spellcheck="false">
+    <div class="lbl" style="margin-top:14px">Shelly Cloud · auth_key (Pilviavain)</div>
+    <input type="password" id="shellyAuth" placeholder="Liitä mökin Shelly-pilviavain" autocomplete="off" spellcheck="false">
     <div class="row" style="margin-top:10px">
-      <button class="btn primary" type="button" id="saveWebhook">Tallenna</button>
+      <button class="btn primary" type="button" id="saveShelly">Tallenna Shelly</button>
     </div>
-    <div class="hint">Molemmat tallennetaan vain tähän laitteeseen (localStorage). Työpöydällä: Mökki → rutiini Mökki ohjaus → Webhook URL ja Authorization header. Ilman näitä ohjaa Mökki-chatissa.</div>
+    <div class="hint">Valot ohjataan suoraan Shelly Cloudista (toimii selaimessa). Avain: Shelly → Asetukset → Kotiin → Pilviavain. Tallennus vain tähän laitteeseen.</div>
+    <div class="lbl" style="margin-top:18px">ILP (valinnainen webhook)</div>
+    <input type="url" id="webhookUrl" placeholder="Webhook URL ILP-napeille" autocomplete="off" spellcheck="false">
+    <input type="password" id="webhookAuth" placeholder="Authorization (Bearer …)" autocomplete="off" spellcheck="false" style="margin-top:8px">
+    <div class="row" style="margin-top:10px">
+      <button class="btn" type="button" id="saveWebhook">Tallenna webhook</button>
+    </div>
+    <div class="hint">Cursor-webhook ei yleensä toimi GitHub Pagesista (CORS). ILP: ohjaa Mökki-chatissa (“lämmöt 21”).</div>
   </div>
 
   <footer class="foot">
@@ -431,8 +438,12 @@
 
   <script>
 (function () {
-  var LS_KEY = "mokkiWebhookUrl";
+  var LS_HOOK = "mokkiWebhookUrl";
   var LS_AUTH = "mokkiWebhookAuth";
+  var LS_SHELLY_SERVER = "mokkiShellyServer";
+  var LS_SHELLY_AUTH = "mokkiShellyAuth";
+  var DEFAULT_SERVER = "https://shelly-273-eu.shelly.cloud";
+  var DEVICES = [{"name": "Ulkovalot", "id": "34987a496fc8", "channel": 0, "kind": "light"}, {"name": "Pihavalot", "id": "841fe898cd14", "channel": 2, "kind": "switch"}, {"name": "WC peili", "id": "2cbcbba77ee0", "channel": 0, "kind": "light"}, {"name": "Ruokapöytä", "id": "fce8c0cc4010", "channel": 1, "kind": "light"}, {"name": "Eteinen", "id": "fce8c0cc4010", "channel": 0, "kind": "light"}, {"name": "Keittiö", "id": "08f9e0e4be14", "channel": 0, "kind": "light"}, {"name": "Makuusoppi", "id": "08f9e0e4b558", "channel": 0, "kind": "light"}, {"name": "Varastosoppi", "id": "08f9e0e4b558", "channel": 1, "kind": "light"}, {"name": "Parvi valot", "id": "08f9e0e4c028", "channel": 0, "kind": "light"}, {"name": "Parvi oikea", "id": "08f9e0e4c028", "channel": 1, "kind": "light"}, {"name": "Seinävalot", "id": "2cbcbb9f3f6c", "channel": 0, "kind": "light"}, {"name": "Olohuone valo", "id": "2cbcbb9f3f6c", "channel": 1, "kind": "light"}, {"name": "2) sauna", "id": "2cbcbba77ee0", "channel": 1, "kind": "light"}, {"name": "2)pukuhuone", "id": "08f9e0e4be14", "channel": 1, "kind": "light"}, {"name": "Iltavalot", "id": "441793a9c664", "channel": 0, "kind": "switch"}];
   var DATA = null;
   var setC = 21;
   var MAIN_LIGHTS = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä"];
@@ -452,14 +463,14 @@
     x.onreadystatechange = function () {
       if (x.readyState !== 4) return;
       if (x.status >= 200 && x.status < 300) {
-        try { cb(JSON.parse(x.responseText)); } catch (e) {}
-      }
+        try { cb(JSON.parse(x.responseText)); } catch (e) { cb(null); }
+      } else cb(null);
     };
     x.send();
   }
-  function ageLabel(updated) {
-    if (!updated) return "ei päivitystä";
-    var mins = Math.round((Date.now() - Number(updated)) / 60000);
+  function ageLabel(ts) {
+    if (!ts) return "—";
+    var mins = Math.round((Date.now() - Number(ts)) / 60000);
     if (mins < 1) return "juuri nyt";
     if (mins < 60) return mins + " min sitten";
     var h = Math.round(mins / 60);
@@ -473,45 +484,143 @@
     clearTimeout(toast._t);
     toast._t = setTimeout(function () { el.className = "toast"; }, 2200);
   }
+  function shellyServer() {
+    return (localStorage.getItem(LS_SHELLY_SERVER) || DEFAULT_SERVER).trim().replace(/\/$/, "");
+  }
+  function shellyAuth() {
+    return (localStorage.getItem(LS_SHELLY_AUTH) || "").trim();
+  }
   function webhook() {
-    return (localStorage.getItem(LS_KEY) || "").trim();
+    return (localStorage.getItem(LS_HOOK) || "").trim();
   }
   function authHeader() {
     return (localStorage.getItem(LS_AUTH) || "").trim();
   }
-  function refreshHookHint() {
-    var w = webhook();
-    var a = authHeader();
-    document.getElementById("hookHint").textContent = w
-      ? (a ? "Webhook + avain tallennettu" : "Webhook tallennettu (avain puuttuu)")
-      : "Webhook ei asetettu";
-    document.getElementById("webhookUrl").value = w;
-    document.getElementById("webhookAuth").value = a;
-    document.getElementById("noWebhookNote").hidden = !!w;
+  function findDev(name) {
+    var n = String(name || "").toLowerCase();
+    for (var i = 0; i < DEVICES.length; i++) {
+      if (DEVICES[i].name.toLowerCase() === n) return DEVICES[i];
+    }
+    return null;
   }
-  function postAction(body, label) {
+  function refreshHookHint() {
+    var s = shellyAuth();
+    var w = webhook();
+    document.getElementById("hookHint").textContent = s
+      ? (w ? "Shelly + webhook" : "Shelly tallennettu")
+      : "Shelly-avain puuttuu";
+    document.getElementById("shellyServer").value = shellyServer();
+    document.getElementById("shellyAuth").value = s;
+    document.getElementById("webhookUrl").value = w;
+    document.getElementById("webhookAuth").value = authHeader();
+    document.getElementById("noShellyNote").hidden = !!s;
+  }
+  function shellySet(dev, on) {
+    var auth = shellyAuth();
+    if (!auth) {
+      toast("Lisää Shelly-avain Asetuksiin", "err");
+      return Promise.reject(new Error("no auth"));
+    }
+    var kind = dev.kind || "light";
+    var url = shellyServer() + "/v2/devices/api/set/" + kind + "?auth_key=" + encodeURIComponent(auth);
+    var body = JSON.stringify({ id: dev.id, channel: Number(dev.channel) || 0, on: !!on });
+    return fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: body
+    }).then(function (r) {
+      if (r.ok) return r;
+      // retry alternate kind
+      var alt = kind === "light" ? "switch" : "light";
+      var url2 = shellyServer() + "/v2/devices/api/set/" + alt + "?auth_key=" + encodeURIComponent(auth);
+      return fetch(url2, { method: "POST", headers: { "Content-Type": "application/json" }, body: body });
+    }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r;
+    });
+  }
+  function setLightByName(name, on, label) {
+    var dev = findDev(name);
+    if (!dev) {
+      toast("Tuntematon: " + name, "err");
+      return;
+    }
+    toast("Lähetetään…");
+    shellySet(dev, on).then(function () {
+      toast((label || name) + (on ? " päälle" : " pois"), "ok");
+      setTimeout(pull, 1200);
+      setTimeout(pull, 3500);
+    }).catch(function (e) {
+      toast("Virhe: " + (e && e.message ? e.message : "Shelly"), "err");
+    });
+  }
+  function runScene(name) {
+    if (name === "Iltavalot") {
+      setLightByName("Iltavalot", true, "Iltavalot");
+      return;
+    }
+    if (name === "Valot pois" || name === "Mökki pois") {
+      var list = MAIN_LIGHTS.concat(["Eteinen", "Keittiö", "Seinävalot", "Olohuone valo", "Parvi valot", "Iltavalot"]);
+      toast("Sammutetaan…");
+      var chain = Promise.resolve();
+      list.forEach(function (n) {
+        var d = findDev(n);
+        if (!d) return;
+        chain = chain.then(function () { return shellySet(d, false).catch(function () {}); });
+      });
+      chain.then(function () {
+        toast(name === "Mökki pois" ? "Valot pois (ILP: chat)" : "Valot pois", "ok");
+        setTimeout(pull, 1500);
+      });
+      return;
+    }
+    if (name === "Valot päälle") {
+      toast("Valot päälle…");
+      var ups = ["Ruokapöytä", "Eteinen", "Keittiö"];
+      var chain2 = Promise.resolve();
+      ups.forEach(function (n) {
+        var d = findDev(n);
+        if (!d) return;
+        chain2 = chain2.then(function () { return shellySet(d, true).catch(function () {}); });
+      });
+      chain2.then(function () {
+        toast("Valot päälle", "ok");
+        setTimeout(pull, 1500);
+      });
+      return;
+    }
+    toast("Tuntematon scene", "err");
+  }
+  function postWebhook(body, label) {
     var url = webhook();
     if (!url) {
-      toast("Ilman webhookia ohjaa Mökki-chatissa", "err");
+      toast("ILP: kirjoita Mökki-chattiin (webhook CORS)", "err");
       return;
     }
     toast("Lähetetään…");
     var headers = { "Content-Type": "application/json" };
     var auth = authHeader();
     if (auth) headers["Authorization"] = auth.indexOf(" ") >= 0 ? auth : ("Bearer " + auth);
-    fetch(url, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(body),
-      mode: "cors"
-    }).then(function (r) {
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      toast((label || "OK") + " · lähetetty", "ok");
-      setTimeout(pull, 1500);
-      setTimeout(pull, 4000);
-    }).catch(function (e) {
-      toast("Virhe: " + (e && e.message ? e.message : "lähetys epäonnistui"), "err");
-    });
+    fetch(url, { method: "POST", headers: headers, body: JSON.stringify(body), mode: "cors" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        toast((label || "OK") + " · lähetetty", "ok");
+        setTimeout(pull, 2000);
+      })
+      .catch(function () {
+        toast("ILP webhook estetty (CORS) — käytä chattia", "err");
+      });
+  }
+  function postAction(body, label) {
+    var a = body && body.action;
+    if (a === "shelly_on") return setLightByName(body.target, true, body.target);
+    if (a === "shelly_off") return setLightByName(body.target, false, body.target);
+    if (a === "scene") return runScene(body.target);
+    if (a === "mokki_pois") return runScene("Mökki pois");
+    if (a === "ilp_on" || a === "ilp_off" || a === "ilp_set" || a === "ilp_mode") {
+      return postWebhook(body, label);
+    }
+    toast("Tuntematon komento", "err");
   }
 
   function paintStatus() {
@@ -602,18 +711,31 @@
     this.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
+  document.getElementById("saveShelly").addEventListener("click", function () {
+    var srv = document.getElementById("shellyServer").value.trim() || DEFAULT_SERVER;
+    var key = document.getElementById("shellyAuth").value.trim();
+    localStorage.setItem(LS_SHELLY_SERVER, srv.replace(/\/$/, ""));
+    if (!key) {
+      localStorage.removeItem(LS_SHELLY_AUTH);
+      toast("Shelly-avain poistettu", "ok");
+    } else {
+      localStorage.setItem(LS_SHELLY_AUTH, key);
+      toast("Shelly tallennettu", "ok");
+    }
+    refreshHookHint();
+  });
   document.getElementById("saveWebhook").addEventListener("click", function () {
     var v = document.getElementById("webhookUrl").value.trim();
     var a = document.getElementById("webhookAuth").value.trim();
     if (!v) {
-      localStorage.removeItem(LS_KEY);
+      localStorage.removeItem(LS_HOOK);
       localStorage.removeItem(LS_AUTH);
       toast("Webhook poistettu", "ok");
     } else {
-      localStorage.setItem(LS_KEY, v);
+      localStorage.setItem(LS_HOOK, v);
       if (a) localStorage.setItem(LS_AUTH, a);
       else localStorage.removeItem(LS_AUTH);
-      toast(a ? "Webhook + avain tallennettu" : "Webhook tallennettu (lisää vielä avain)", "ok");
+      toast("Webhook tallennettu (ILP voi silti kaatua CORSiin)", "ok");
     }
     refreshHookHint();
   });

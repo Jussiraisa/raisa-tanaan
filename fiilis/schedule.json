@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-28T16:50:00+03:00",
+  "updated": "2026-09-28T16:57:32+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -781,7 +781,7 @@
       "source": "nimenhuuto:welhot2018",
       "driver": "Meidän",
       "pickup": "Meidän",
-      "note": "torstai-oletus meidän"
+      "note": "WA Welhot · 28.9. · torstai-oletus meidän"
     },
     {
       "date": "2026-10-01",
@@ -832,7 +832,7 @@
       "end": "18:30",
       "place": "Luola",
       "title": "Ambrosia treeni",
-      "note": "meidän vienti",
+      "note": "WA Ambrosia oletus / pe-vienti",
       "who": "Ellen",
       "kind": "treeni",
       "source": "gcal:voimistelu",
@@ -913,13 +913,13 @@
     },
     {
       "date": "2026-10-03",
-      "time": "17:00",
-      "end": "20:00",
+      "time": "11:00",
       "who": "Samuel",
-      "title": "Welhot turnaus",
+      "title": "Welhot Joensuu ottelut",
       "place": "Joensuu, Nepenmäki",
       "kind": "kisa",
-      "source": "nimenhuuto:welhot2018"
+      "source": "nimenhuuto:welhot2018",
+      "note": "kokoontuminen ~10:15 · ensimmäinen peli 11:00 · viimeinen peli päättyy 14 jälkeen"
     },
     {
       "date": "2026-10-03",

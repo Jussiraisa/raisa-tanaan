@@ -1,17 +1,15 @@
 {
   "v": 1,
-  "updated": 1790606897262,
-  "capturedAt": "2026-09-28T17:48+03:00",
-  "powerW": 3370,
-  "indoorC": 21.1,
-  "outdoorC": 11.9,
+  "updated": 1790608310784,
+  "capturedAt": "2026-09-28T18:11+03:00",
+  "powerW": 2890,
+  "indoorC": 20.4,
+  "outdoorC": 14.1,
   "lightsOn": [
-    "WC peili",
     "Ruokapöytä"
   ],
   "lightWatts": {
-    "WC peili": 33.8,
-    "Ruokapöytä": 0
+    "Ruokapöytä": 2.2
   },
   "heaters": {
     "patteritPudotus": false,
@@ -23,7 +21,7 @@
   "motion": {
     "ph": true,
     "tie": {
-      "tempC": 17.8,
+      "tempC": 18.3,
       "humidityPct": 50.3,
       "active": false
     }
@@ -31,9 +29,9 @@
   "scenes": [
     "Iltavalot",
     "Liiketunnistin ulkovalot",
+    "Testi",
     "Valot päälle",
-    "Valot pois",
-    "Testi"
+    "Valot pois"
   ],
   "sceneHelpers": [
     "Iltavalot",
@@ -47,7 +45,7 @@
   "deviceCount": 33,
   "account": "mokki.raisa@gmail.com",
   "source": "shelly-cloud",
-  "notes": "Seeded from Shelly Cloud room Mökki snapshot ~2026-09-28 17:28 EEST. 33 devices online. Power from Mökki sähkönkulutus 3.37 kW. Temps from Sisä-/Ulkolämpötila add-on. Lights on: WC peili 33.8 W, Ruokapöytä dimmer 0 W. EV charge on. Heating pudotus/saattolämmitys off. Sauna off. ILP ACa795 online · off · Heat set 21° indoor 19° (TemSen−40).",
+  "notes": "Shelly Cloud room Mökki 2026-09-28 18:11 EEST. 33 devices online. Power 2890 W. Indoor 20.4° outdoor 14.1°. Lights on: Ruokapöytä. EV charge on. Sauna off. ILP ACa795 online · off · Heat set 21° indoor 19°.",
   "ilp": {
     "on": false,
     "mode": "Heat",

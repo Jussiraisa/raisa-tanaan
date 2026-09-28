@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790606041147,
+  "updated": 1790611599251,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -259,27 +259,6 @@
       "kind": "info"
     },
     {
-      "id": "cal-3nau37ev0vumnvqlriug794uu0",
-      "title": "Mea · Liannan voimat",
-      "date": "2026-09-28",
-      "start": "18:00",
-      "end": "19:00",
-      "kind": "cal",
-      "place": "Kuoppari"
-    },
-    {
-      "id": "info-mea-voimat-2026-09-28",
-      "who": "mea",
-      "title": "Liannan voimat",
-      "date": "2026-09-28",
-      "start": "18:00",
-      "end": "19:00",
-      "place": "Kuoppari",
-      "kind": "treeni",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "cal-37lp9uu3pkacqdgh4sqr6pu4uc",
       "title": "Riikka · Padel",
       "date": "2026-09-28",
@@ -399,6 +378,19 @@
       "date": "2026-10-02",
       "start": "22:00",
       "kind": "info"
+    },
+    {
+      "id": "info-samuel-turnaus-2026-10-03",
+      "who": "samuel",
+      "title": "Welhot Joensuu (peli 11 · kokoontuminen ~10.15 · loppu joskus 14 jälkeen)",
+      "date": "2026-10-03",
+      "start": "10:15",
+      "end": "14:30",
+      "kind": "info",
+      "place": "Joensuu",
+      "driver": "",
+      "status": "",
+      "note": "WA Fiilis 28.9.2026; kuski AUKI"
     },
     {
       "id": "info-milla-hionta-2026-10-03",
@@ -522,19 +514,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-samuel-turnaus-2026-10-03",
-      "who": "samuel",
-      "title": "Welhot Joensuu (peli 11 · kokoontuminen ~10.15 · loppu joskus 14 jälkeen)",
-      "date": "2026-10-03",
-      "start": "10:15",
-      "end": "14:30",
-      "kind": "info",
-      "place": "Joensuu",
-      "driver": "",
-      "status": "",
-      "note": "WA Fiilis 28.9.2026; kuski AUKI"
     }
   ],
   "schoolLunch": {

@@ -1,10 +1,10 @@
 {
   "v": 1,
-  "updated": 1790609964672,
-  "capturedAt": "2026-09-28T18:39+03:00",
-  "powerW": 4169,
-  "indoorC": 22.9,
-  "outdoorC": 14.4,
+  "updated": 1790611200947,
+  "capturedAt": "2026-09-28T19:00+03:00",
+  "powerW": 3376,
+  "indoorC": 24.6,
+  "outdoorC": 14.8,
   "lightsOn": [
     "Ruokapöytä"
   ],
@@ -33,38 +33,35 @@
   "motion": {
     "ph": true,
     "tie": {
-      "tempC": 18.2,
+      "tempC": 18.6,
       "humidityPct": 50.3,
       "active": false
     }
   },
   "scenes": [
     "Iltavalot",
-    "Liiketunnistin ulkovalot",
-    "Testi",
-    "Valot päälle",
-    "Iltavalot",
-    "Valot pois",
-    "Testi"
+    "3)valot pois",
+    "2)valot päälle"
   ],
   "sceneHelpers": [
     "Iltavalot",
     "3)valot pois",
+    "Tilanne 2",
+    "Varalla",
     "2)valot päälle",
-    "Tilanne 1",
-    "Tilanne 2"
+    "Tilanne 1"
   ],
   "online": true,
   "room": "Mökki",
   "deviceCount": 33,
   "account": "mokki.raisa@gmail.com",
   "source": "shelly-cloud",
-  "notes": "Shelly Cloud API 2026-09-28T18:39:00+03:00. 33 devices. Power 4169 W. Indoor 22.94 outdoor 14.44. Lights on: Ruokapöytä. EV=True sauna=False.",
+  "notes": "Shelly Cloud API 2026-09-28T18:59:00+03:00. 33 devices. Power 3376 W. Indoor 24.6 outdoor 14.8. Lights on: Ruokapöytä. EV=True sauna=False.",
   "ilp": {
     "on": true,
     "mode": "Heat",
     "setC": 21,
-    "indoorC": 20.0
+    "indoorC": 21.0
   },
   "ilpDevice": "ACa795",
   "ilpOnline": true,

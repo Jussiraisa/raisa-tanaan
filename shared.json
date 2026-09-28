@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790601554690,
+  "updated": 1790603812113,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -11,7 +11,7 @@
       "driver": "Meidän",
       "status": "us",
       "ride": "vie",
-      "note": "Oletus: pe vienti aina meidän (Jussi 25.9.2026)"
+      "note": "Oletus pe-vienti; WA 28.9. ei sanonut muuta (Fiilis)"
     },
     "samuel-sahly-ma": {
       "driver": "Sini/Topias",
@@ -145,7 +145,8 @@
     "info-samuel-turnaus-2026-10-03": {
       "driver": "",
       "status": "",
-      "ride": ""
+      "ride": "",
+      "note": "Kuski auki — WA Fiilis 28.9."
     },
     "info-mea-voimat-2026-10-05": {
       "driver": "",
@@ -227,7 +228,7 @@
       "driver": "Meidän",
       "status": "us",
       "ride": "vie+hakee",
-      "note": "Oletus: torstai aina meidän, ellei WA/Fiilis sano muuta (Jussi 24.9.2026)"
+      "note": "WA+oletus 28.9.2026 Fiilis: kyyti meille torstai"
     }
   },
   "cooks": {
@@ -248,7 +249,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Ellen pe-vienti meidän-oletus. Wilma 25.9 synkattu Fiilikseen. to Welhot-oletus: meidän (poikkeus vain WA/Fiilis); 24.9 Riikka. Ellen ei treeniä to; pe Ambrosia Luola OK Vivida hionta 26.9. & 3.10. klo 16–20 (sheet).",
+  "note": "WA 28.9. Fiilis: to Welhot meidän; pe Ambrosia-vienti meidän. la 3.10. Joensuu kuski auki. Wilma kokeet synkattu.",
   "extras": [
     {
       "id": "info-poistumisharjoitus-2026-09-28",
@@ -400,16 +401,6 @@
       "kind": "info"
     },
     {
-      "id": "info-samuel-turnaus-2026-10-03",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Joensuu (kauden alku)",
-      "date": "2026-10-03",
-      "place": "Joensuu",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-milla-hionta-2026-10-03",
       "who": "milla",
       "title": "Vivida hiontaleiri",
@@ -531,6 +522,19 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "info-samuel-turnaus-2026-10-03",
+      "who": "samuel",
+      "title": "Welhot Joensuu (peli 11 · kokoontuminen ~10.15 · loppu joskus 14 jälkeen)",
+      "date": "2026-10-03",
+      "start": "10:15",
+      "end": "14:30",
+      "kind": "info",
+      "place": "Joensuu",
+      "driver": "",
+      "status": "",
+      "note": "WA Fiilis 28.9.2026; kuski AUKI"
     }
   ],
   "schoolLunch": {

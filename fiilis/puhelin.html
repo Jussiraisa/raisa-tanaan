@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260926-v123-weekly-events">
+  <meta name="fiilis-build" content="20260928-v128-weekend-school">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#EDE6DB">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -396,7 +396,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
 </div>
 
 <script>
-  var BUILD = "20260926-v123-weekly-events";
+  var BUILD = "20260928-v128-weekend-school";
 (function () {
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
@@ -813,8 +813,14 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     return d || p || "";
   }
 
+  /** Sat all day + Sun before 15:00 Helsinki: hide Monday school preview (treenit OK). */
+  function suppressMondaySchoolPreview(now) {
+    return now.wd === 6 || (now.wd === 0 && now.hour < 15);
+  }
+
   function schoolTarget(now) {
-    /* Illalla (klo 17+) näytä seuraava koulupäivä: koulu + treenit + kouluruoka. */
+    /* Illalla (klo 17+) näytä seuraava koulupäivä: koulu + treenit + kouluruoka.
+       Weekend stress: Sat all day + Sun before 15:00 = no Monday school (treenit OK). */
     var wd = now.wd;
     var hour = now.hour;
     var evening = hour >= 17;
@@ -823,13 +829,12 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
     var lunchIso = now.iso;
     var focusIso = now.iso;
     var label = "Koulu";
-    if (wd === 0) {
+    if (suppressMondaySchoolPreview(now)) {
+      /* Keep focus on today; paintKidsDay will show empty school, hobbies still render. */
+      return { wd: wd, tomorrow: false, lunchIso: lunchIso, focusIso: focusIso, label: label, hideSchool: true };
+    } else if (wd === 0) {
       dayIdx = 1; tomorrow = true;
       lunchIso = focusIso = addDaysIso(now.iso, 1);
-      label = "Koulu · maanantai";
-    } else if (wd === 6) {
-      dayIdx = 1; tomorrow = true;
-      lunchIso = focusIso = addDaysIso(now.iso, 2);
       label = "Koulu · maanantai";
     } else if (evening && wd === 5) {
       dayIdx = 1; tomorrow = true;
@@ -859,6 +864,7 @@ body.evening .photo-cap, body.night .photo-cap { background: -webkit-linear-grad
   }
   function schoolForTarget(tgt) {
     var out = [];
+    if (!tgt || tgt.hideSchool) return out;
     if (!schedule || !schedule.schoolStarts) return out;
     var list = schedule.schoolStarts;
     var iso = tgt.focusIso || tgt.lunchIso || "";

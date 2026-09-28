@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-27T11:25:00+03:00",
+  "updated": "2026-09-28T16:36:17+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "26.9. Jussi kauppa klo 9: pillimehu + pikkupitsat. Sääntö 25.9.: Ellen Ambrosia pe-vienti = aina meidän, ellei WhatsAppissa sovita tai Jussi kirjoita Fiilikseen. Synkka 25.9.: Ellen Ambrosia pe — meidän vienti. Wilma 25.9. (Perhe→Fiilis): koulukuvaukset, poistumisharjoitus 28.9., kokeet, Mea päivätyö, Milla Rooma-hakemus 2.10.; kodin ja koulun pe 25.9. ei (perhe ei mene). Synkka 25.9.2026 aamu: Lisätty Mea Valmennus ti 6.10 klo 17:00–17:45; Voimistelu-aukot syysloman alkuun: Vivida la 10.10 + su 11.10, Lianna su 11.10, Lianna laji+voimat ma 12.10. Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. SendToAgent ei saatavilla — WA-kyydit ennallaan. · Sääntö 24.9.: Samuel Welhot torstai = aina meidän kyydit, ellei WhatsAppissa sovita tai Jussi kirjoita Fiilikseen. Synkka 24.9. klo 12: Samuel Welhot to — kyydit Riikka (ei meidän). Synkka 24.9.: to Welhot Riikka; Ellen ei treenaa to; pe Ambrosia Luola säilyy. Synkka 24.9.2026 aamu: Lisätty Mea Valmennus ti 29.9. klo 17:00–17:45 (jussi.raisa-kalenteri). Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu 24.9. aamu. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. SendToAgent ei saatavilla — WA-kyydit ennallaan. Mea synttärit menu päivitetty 23.9.18:00: focaccia/sienipiirakka/pikkupizzat/cocktail/popparit/sipsit/pannarit/macarons/keksit/porkkanakakku/karkit; ei lohipiirakkaa/Millan kakkua. · 24.9 Welhot Meidän; NTV-kisat poistettu · Kodin ja koulun pe 25.9 pois (ei osallistuta); to Welhot-oletus Meidän; Vivida hiontaleiri 26.9. ja 3.10. klo 16–20. · Milla kokeet 25.–30.9. + MAA03 23.10. (Perhe/Wilma).",
+  "note": "Synkka 28.9.2026 ilta: Google-kalenterit (Perhe, Voimistelu, jussi.raisa) tarkistettu. Lisätty Mea kemian opetus ti 29.9 + to 1.10 klo 18:30–19:30 (Perhe). Ellen Ambrosia ti/pe kyydit Meidän (gcal + standing pe-vienti). Ambrosia vanhempainilta to 1.10 paikka Kuopiohalli. Wilma/WA: ei tuoretta connector-synkkaa tällä kierroksella (ks. blockers). 26.9. Jussi kauppa klo 9: pillimehu + pikkupitsat. Sääntö 25.9.: Ellen Ambrosia pe-vienti = aina meidän, ellei WhatsAppissa sovita tai Jussi kirjoita Fiilikseen. Synkka 25.9.: Ellen Ambrosia pe — meidän vienti. Wilma 25.9. (Perhe→Fiilis): koulukuvaukset, poistumisharjoitus 28.9., kokeet, Mea päivätyö, Milla Rooma-hakemus 2.10.; kodin ja koulun pe 25.9. ei (perhe ei mene). Synkka 25.9.2026 aamu: Lisätty Mea Valmennus ti 6.10 klo 17:00–17:45; Voimistelu-aukot syysloman alkuun: Vivida la 10.10 + su 11.10, Lianna su 11.10, Lianna laji+voimat ma 12.10. Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Riikka Oulu 6.–9.10 ennallaan; ei Jussin työreissua. SendToAgent ei saatavilla — WA-kyydit ennallaan. · Sääntö 24.9.: Samuel Welhot torstai = aina meidän kyydit, ellei WhatsAppissa sovita tai Jussi kirjoita Fiilikseen. Synkka 24.9. klo 12: Samuel Welhot to — kyydit Riikka (ei meidän). Synkka 24.9.: to Welhot Riikka; Ellen ei treenaa to; pe Ambrosia Luola säilyy. Synkka 24.9.2026 aamu: Lisätty Mea Valmennus ti 29.9. klo 17:00–17:45 (jussi.raisa-kalenteri). Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu 24.9. aamu. Riikka Oulu 6.–9.10",
   "events": [
     {
       "date": "2026-09-20",
@@ -258,6 +258,14 @@
     },
     {
       "date": "2026-09-22",
+      "time": "",
+      "who": "perhe",
+      "title": "Pentutreffit Ella kotona",
+      "kind": "muu",
+      "place": "Koti"
+    },
+    {
+      "date": "2026-09-22",
       "time": "14:00",
       "end": "15:00",
       "who": "Mea",
@@ -305,12 +313,11 @@
       "source": "manual:jussi"
     },
     {
-      "date": "2026-09-22",
-      "time": "",
-      "who": "perhe",
-      "title": "Pentutreffit Ella kotona",
+      "date": "2026-09-23",
+      "who": "Milla",
+      "title": "Vapaapäivä koulusta",
       "kind": "muu",
-      "place": "Koti"
+      "source": "perhe"
     },
     {
       "date": "2026-09-23",
@@ -347,11 +354,13 @@
       "kind": "treeni"
     },
     {
-      "date": "2026-09-23",
-      "who": "Milla",
-      "title": "Vapaapäivä koulusta",
+      "date": "2026-09-24",
+      "who": "Riikka",
+      "title": "Synttärit · porkkanakakku (to–pe)",
+      "place": "Koti",
       "kind": "muu",
-      "source": "perhe"
+      "source": "perhe",
+      "note": "Porkkanakakku Mea synttäreihin · jatkuu pe"
     },
     {
       "date": "2026-09-24",
@@ -376,15 +385,6 @@
       "place": "",
       "note": "Paikka auki (WA)",
       "source": "perhe:wa"
-    },
-    {
-      "date": "2026-09-24",
-      "who": "Riikka",
-      "title": "Synttärit · porkkanakakku (to–pe)",
-      "place": "Koti",
-      "kind": "muu",
-      "source": "perhe",
-      "note": "Porkkanakakku Mea synttäreihin · jatkuu pe"
     },
     {
       "date": "2026-09-25",
@@ -513,6 +513,34 @@
     },
     {
       "date": "2026-09-28",
+      "who": "Ellen",
+      "title": "Koulukuvausvaatteet valmiiksi",
+      "kind": "muu",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-09-28",
+      "who": "Ellen",
+      "title": "Poistumisharjoitus",
+      "kind": "muu",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-09-28",
+      "who": "Samuel",
+      "title": "Koulukuvausvaatteet valmiiksi",
+      "kind": "muu",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-09-28",
+      "who": "Samuel",
+      "title": "Poistumisharjoitus",
+      "kind": "muu",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-09-28",
       "time": "10:00",
       "end": "13:00",
       "who": "Milla",
@@ -562,17 +590,12 @@
     },
     {
       "date": "2026-09-28",
-      "who": "Ellen",
-      "title": "Poistumisharjoitus",
-      "kind": "muu",
-      "source": "wilma:perhe"
-    },
-    {
-      "date": "2026-09-28",
-      "who": "Samuel",
-      "title": "Poistumisharjoitus",
-      "kind": "muu",
-      "source": "wilma:perhe"
+      "time": "18:30",
+      "end": "20:00",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
     },
     {
       "date": "2026-09-29",
@@ -583,6 +606,15 @@
       "kind": "muu",
       "source": "wilma:perhe",
       "note": "koe"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "09:00",
+      "end": "16:45",
+      "who": "Riikka",
+      "title": "Kuuleva työ",
+      "kind": "työ",
+      "source": "gcal:perhe"
     },
     {
       "date": "2026-09-29",
@@ -615,7 +647,8 @@
       "note": "meidän kyydit",
       "who": "Ellen",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Meidän"
     },
     {
       "date": "2026-09-29",
@@ -625,6 +658,30 @@
       "title": "Valmennus",
       "kind": "treeni",
       "source": "gcal:jussi"
+    },
+    {
+      "date": "2026-09-29",
+      "time": "18:30",
+      "end": "19:30",
+      "who": "Mea",
+      "title": "Kemian opetus · Jussi + Mea",
+      "kind": "muu",
+      "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-09-30",
+      "who": "Mea",
+      "title": "BI-tehtävä",
+      "kind": "muu",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-09-30",
+      "who": "Milla",
+      "title": "RUB12 ruotsi",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koe (ei kellonaikaa)"
     },
     {
       "date": "2026-09-30",
@@ -657,19 +714,36 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-09-30",
-      "who": "Mea",
-      "title": "BI-tehtävä",
+      "date": "2026-10-01",
+      "who": "Milla",
+      "title": "Ainon kakku · aineksien osto",
       "kind": "muu",
-      "source": "wilma:perhe"
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
     },
     {
-      "date": "2026-09-30",
+      "date": "2026-10-01",
       "who": "Milla",
-      "title": "RUB12 ruotsi",
+      "title": "Ainon kakku · kakkupohja",
+      "kind": "muu",
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-10-01",
+      "who": "Samuel",
+      "title": "Koulukuvaus",
       "kind": "muu",
       "source": "wilma:perhe",
-      "note": "koe (ei kellonaikaa)"
+      "place": "Aurinkorinteen koulu",
+      "note": "lomake opettajalle"
+    },
+    {
+      "date": "2026-10-01",
+      "time": "",
+      "who": "Samuel",
+      "title": "Pelipassi hankittava",
+      "kind": "muu"
     },
     {
       "date": "2026-10-01",
@@ -696,7 +770,7 @@
       "end": "18:00",
       "who": "Ellen",
       "title": "Ambrosia vanhempainilta",
-      "place": "Bella Center",
+      "place": "Kuopiohalli",
       "kind": "muu"
     },
     {
@@ -705,7 +779,7 @@
       "end": "18:30",
       "who": "Perhe",
       "title": "Ambrosia vanhempainilta",
-      "place": "Bella Center parvi",
+      "place": "Kuopiohalli",
       "kind": "muu"
     },
     {
@@ -723,19 +797,20 @@
     },
     {
       "date": "2026-10-01",
-      "who": "Samuel",
-      "title": "Koulukuvaus",
+      "time": "18:30",
+      "end": "19:30",
+      "who": "Mea",
+      "title": "Kemian opetus · Jussi + Mea",
       "kind": "muu",
-      "source": "wilma:perhe",
-      "place": "Aurinkorinteen koulu",
-      "note": "lomake opettajalle"
+      "source": "gcal:perhe"
     },
     {
-      "date": "2026-10-01",
-      "time": "",
-      "who": "Samuel",
-      "title": "Pelipassi hankittava",
-      "kind": "muu"
+      "date": "2026-10-02",
+      "who": "Milla",
+      "title": "Ainon kakku · täyttö",
+      "kind": "muu",
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
     },
     {
       "date": "2026-10-02",
@@ -754,7 +829,8 @@
       "note": "meidän vienti",
       "who": "Ellen",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Meidän"
     },
     {
       "date": "2026-10-02",
@@ -768,12 +844,36 @@
     },
     {
       "date": "2026-10-02",
+      "time": "18:00",
+      "end": "19:30",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-10-02",
       "who": "Milla",
       "title": "Rooman opintomatka · hakemus",
       "kind": "muu",
       "source": "wilma:perhe",
       "time": "22:00",
       "note": "deadline · omavastuu 200 €"
+    },
+    {
+      "date": "2026-10-03",
+      "who": "Aino",
+      "title": "Ainon juhlat",
+      "kind": "juhla"
+    },
+    {
+      "date": "2026-10-03",
+      "time": "10:30",
+      "end": "12:00",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "harrastus",
+      "source": "gcal:perhe"
     },
     {
       "date": "2026-10-03",
@@ -803,12 +903,6 @@
       "place": "Joensuu, Nepenmäki",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
-    },
-    {
-      "date": "2026-10-03",
-      "who": "Aino",
-      "title": "Ainon juhlat",
-      "kind": "juhla"
     },
     {
       "date": "2026-10-04",
@@ -886,6 +980,20 @@
     },
     {
       "date": "2026-10-06",
+      "who": "Ellen",
+      "title": "Äidinkielen koe",
+      "kind": "muu",
+      "place": "Aurinkorinteen koulu",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-10-06",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
+    },
+    {
+      "date": "2026-10-06",
       "time": "09:00",
       "end": "10:00",
       "who": "Mea",
@@ -936,15 +1044,7 @@
       "note": "Riikka Oulussa — ei kusiksi"
     },
     {
-      "date": "2026-10-06",
-      "who": "Ellen",
-      "title": "Äidinkielen koe",
-      "kind": "muu",
-      "place": "Aurinkorinteen koulu",
-      "source": "wilma:perhe"
-    },
-    {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
@@ -991,7 +1091,7 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-08",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
@@ -1009,7 +1109,24 @@
       "note": "torstai-oletus meidän"
     },
     {
-      "date": "2026-10-08",
+      "date": "2026-10-09",
+      "who": "Ellen",
+      "title": "Matematiikan koe",
+      "kind": "muu",
+      "place": "Aurinkorinteen koulu",
+      "source": "wilma:perhe",
+      "note": "kertolaskuja"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Mea",
+      "title": "Päivätyökeräys",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "jos tulee kouluun, ilmoitus Wilmaan ma 28.9. mennessä"
+    },
+    {
+      "date": "2026-10-09",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
@@ -1047,27 +1164,11 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-09",
-      "who": "Ellen",
-      "title": "Matematiikan koe",
-      "kind": "muu",
-      "place": "Aurinkorinteen koulu",
-      "source": "wilma:perhe",
-      "note": "kertolaskuja"
-    },
-    {
-      "date": "2026-10-09",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu"
-    },
-    {
-      "date": "2026-10-09",
-      "who": "Mea",
-      "title": "Päivätyökeräys",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "jos tulee kouluun, ilmoitus Wilmaan ma 28.9. mennessä"
+      "date": "2026-10-10",
+      "who": "perhe",
+      "title": "Syysloma alkaa",
+      "kind": "loma",
+      "endDate": "2026-10-18"
     },
     {
       "date": "2026-10-10",
@@ -1078,13 +1179,6 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-10-10",
-      "who": "perhe",
-      "title": "Syysloma alkaa",
-      "kind": "loma",
-      "endDate": "2026-10-18"
     },
     {
       "date": "2026-10-11",
@@ -1249,80 +1343,6 @@
       "place": "Luola, Savilahti",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018"
-    },
-    {
-      "date": "2026-09-28",
-      "who": "Ellen",
-      "title": "Koulukuvausvaatteet valmiiksi",
-      "kind": "muu",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-09-28",
-      "who": "Samuel",
-      "title": "Koulukuvausvaatteet valmiiksi",
-      "kind": "muu",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-09-28",
-      "time": "18:30",
-      "end": "20:00",
-      "who": "Riikka",
-      "title": "Padel",
-      "kind": "harrastus",
-      "source": "gcal:perhe"
-    },
-    {
-      "date": "2026-09-29",
-      "time": "09:00",
-      "end": "16:45",
-      "who": "Riikka",
-      "title": "Kuuleva työ",
-      "kind": "työ",
-      "source": "gcal:perhe"
-    },
-    {
-      "date": "2026-10-02",
-      "time": "18:00",
-      "end": "19:30",
-      "who": "Riikka",
-      "title": "Padel",
-      "kind": "harrastus",
-      "source": "gcal:perhe"
-    },
-    {
-      "date": "2026-10-03",
-      "time": "10:30",
-      "end": "12:00",
-      "who": "Riikka",
-      "title": "Padel",
-      "kind": "harrastus",
-      "source": "gcal:perhe"
-    },
-    {
-      "date": "2026-10-01",
-      "who": "Milla",
-      "title": "Ainon kakku · aineksien osto",
-      "kind": "muu",
-      "note": "Valkosuklaa-suklaakakku",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-10-01",
-      "who": "Milla",
-      "title": "Ainon kakku · kakkupohja",
-      "kind": "muu",
-      "note": "Valkosuklaa-suklaakakku",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-10-02",
-      "who": "Milla",
-      "title": "Ainon kakku · täyttö",
-      "kind": "muu",
-      "note": "Valkosuklaa-suklaakakku",
-      "source": "fiilis"
     }
   ],
   "schoolLunch": {
@@ -1497,13 +1517,6 @@
     }
   ],
   "wilmaAlerts": [
-    {
-      "who": "Samuel",
-      "title": "Koulukuvauslomake palautettava tänään",
-      "due": "2026-09-25",
-      "needAction": true,
-      "source": "wilma:perhe"
-    },
     {
       "who": "Mea",
       "title": "Päivätyöilmoitus Wilmaan ma 28.9. mennessä (jos tulee 9.10.)",

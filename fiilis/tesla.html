@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="fiilis-build" content="20260926-v123-weekly-events">
+<meta name="fiilis-build" content="20260928-v128-weekend-school">
 <title>Fiilis · Tesla</title>
 <style>
 
@@ -420,7 +420,7 @@
 
 <script>
 (function () {
-  var BUILD = "20260926-v123-weekly-events";
+  var BUILD = "20260928-v128-weekend-school";
   var FALLBACK = {
     events: [
       { date: "2026-09-25", time: "15:00", end: "18:00", who: "Mea", title: "Synttärit · prep (keksit, macarons, focaccia-taikina)", place: "Koti", kind: "muu", source: "perhe:kalenteri", note: "Samuel keksit · mummi+Mea macarons · Riikka focaccia yön yli · porkkanakakku to–pe" },
@@ -715,23 +715,25 @@
     }
     if ((who === "Ellen" || who === "Samuel" || who === "Milla" || who === "Mea")) {
       var sf = schoolFocus(now);
-      if (!sf.tomorrow && isSchoolOff(who, now.iso)) {
-        return { text: "Vapaapäivä koulusta", live: false, color: colorWho(who) };
-      }
-      if (sf.tomorrow && isSchoolOff(who, sf.iso)) {
-        return { text: "huom vapaapäivä", live: false, color: colorWho(who) };
-      }
-      var ss = schoolStartForWho(who, sf.wd, sf.iso);
-      if (ss && ss.time) {
-        var stxt = "Koulu " + (fmtRange(ss.time, ss.end) || fmtHm(ss.time));
-        if (sf.tomorrow) stxt = (sf.label.indexOf("ma") >= 0 ? "ma " : "huom ") + stxt;
-        var examN2 = (who === "Ellen") ? ellenExamNote(sf.iso) : "";
-        if (examN2) stxt += " · " + examN2;
-        var liveSchool = !sf.tomorrow && now.minutes < (parseMin(ss.end) != null ? parseMin(ss.end) : 14 * 60);
-        return { text: stxt, live: liveSchool, color: colorWho(who) };
-      }
-      if (!sf.tomorrow && now.wd >= 1 && now.wd <= 5 && now.minutes < 14 * 60) {
-        return { text: "Koulupäivä", live: true, color: colorWho(who) };
+      if (!sf.hideSchool) {
+        if (!sf.tomorrow && isSchoolOff(who, now.iso)) {
+          return { text: "Vapaapäivä koulusta", live: false, color: colorWho(who) };
+        }
+        if (sf.tomorrow && isSchoolOff(who, sf.iso)) {
+          return { text: "huom vapaapäivä", live: false, color: colorWho(who) };
+        }
+        var ss = schoolStartForWho(who, sf.wd, sf.iso);
+        if (ss && ss.time) {
+          var stxt = "Koulu " + (fmtRange(ss.time, ss.end) || fmtHm(ss.time));
+          if (sf.tomorrow) stxt = (sf.label.indexOf("ma") >= 0 ? "ma " : "huom ") + stxt;
+          var examN2 = (who === "Ellen") ? ellenExamNote(sf.iso) : "";
+          if (examN2) stxt += " · " + examN2;
+          var liveSchool = !sf.tomorrow && now.minutes < (parseMin(ss.end) != null ? parseMin(ss.end) : 14 * 60);
+          return { text: stxt, live: liveSchool, color: colorWho(who) };
+        }
+        if (!sf.tomorrow && now.wd >= 1 && now.wd <= 5 && now.minutes < 14 * 60) {
+          return { text: "Koulupäivä", live: true, color: colorWho(who) };
+        }
       }
     }
     return { text: "Vapaata", live: false, color: "#a09080" };
@@ -779,11 +781,19 @@
     });
     return out;
   }
-  /** Same-day school until 16:00 Helsinki; from 16:00 / weekend → next school day. */
+  /** Same-day school until 16:00 Helsinki; from 16:00 → next school day.
+      Weekend stress: Sat all day + Sun before 15:00 = hide Monday school. */
+  /** Sat all day + Sun before 15:00 Helsinki: hide Monday school preview (treenit OK). */
+  function suppressMondaySchoolPreview(now) {
+    return now.wd === 6 || (now.wd === 0 && now.hour < 15);
+  }
+
   function schoolFocus(now) {
     var wd = now.wd;
+    if (suppressMondaySchoolPreview(now)) {
+      return { wd: wd, iso: now.iso, label: "Koulu", tomorrow: false, hideSchool: true };
+    }
     if (wd === 0) return { wd: 1, iso: addDaysIso(now.iso, 1), label: "Koulu · ma", tomorrow: true };
-    if (wd === 6) return { wd: 1, iso: addDaysIso(now.iso, 2), label: "Koulu · ma", tomorrow: true };
     if (now.hour >= 16) {
       if (wd === 5) return { wd: 1, iso: addDaysIso(now.iso, 3), label: "Koulu · ma", tomorrow: true };
       return { wd: wd + 1, iso: addDaysIso(now.iso, 1), label: "Koulu · huom", tomorrow: true };
@@ -868,7 +878,7 @@
     var lastGroup = null;
     var html = "";
     var schFocus = schoolFocus(now);
-    var schools = schoolStartsForWd(schFocus.wd, schFocus.iso);
+    var schools = schFocus.hideSchool ? [] : schoolStartsForWd(schFocus.wd, schFocus.iso);
     if (schools.length) {
       html += "<div class=\"today-group-lbl\">" + esc(schFocus.label) + "</div>";
       html += "<div class=\"school-strip\">";

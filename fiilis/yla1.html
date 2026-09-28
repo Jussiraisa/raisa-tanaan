@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260925-v112-photo-video">
+  <meta name="fiilis-build" content="20260928-v128-weekend-school">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Tänään</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -402,7 +402,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 }
 
 </style>
-<script src="lg-keepalive.js?v=112" defer></script>
+<script src="lg-keepalive.js?v=128" defer></script>
 </head>
 <body class="morning">
 
@@ -478,7 +478,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 
 <script>
 (function () {
-  var BUILD = "20260925-v112-photo-video";
+  var BUILD = "20260928-v128-weekend-school";
   var DAYS = [
     { key: "su", short: "su", full: "Sunnuntai" },
     { key: "ma", short: "ma", full: "Maanantai" },
@@ -1367,6 +1367,11 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     }
     return false;
   }
+  /** Sat all day + Sun before 15:00 Helsinki: hide Monday school preview (treenit OK). */
+  function suppressMondaySchoolPreview(now) {
+    return now.wd === 6 || (now.wd === 0 && now.hour < 15);
+  }
+
   function schoolStartsForWd(wd, iso) {
     var list = (schedule && schedule.schoolStarts) || (FALLBACK && FALLBACK.schoolStarts) || [];
     var out = [];
@@ -1390,14 +1395,17 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
   function paintTomorrow(now) {
     var el = document.getElementById("tomorrowBox");
     if (!el) return;
-    /* Same-day school until 16:00 Helsinki; from 16:00 show tomorrow's school. */
+    /* Same-day school until 16:00 Helsinki; from 16:00 show tomorrow's school.
+       Weekend stress rule: Sat all day + Sun before 15:00 = hide Monday school. */
     var showTomorrowSchool = (now.hour >= 16);
+    if (now.wd === 0 && now.hour >= 15) showTomorrowSchool = true; /* Sun 15+ → Monday school */
     var schoolWd = showTomorrowSchool ? ((now.wd + 1) % 7) : now.wd;
     var schoolIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : now.iso;
     if (now.wd === 5 && showTomorrowSchool) schoolIso = addDaysIso(now.iso, 3);
-    if (now.wd === 6) schoolIso = addDaysIso(now.iso, 2);
-    if (now.wd === 0) schoolIso = addDaysIso(now.iso, 1);
+    if (now.wd === 6) { schoolWd = 1; schoolIso = addDaysIso(now.iso, 2); }
+    if (now.wd === 0) { schoolWd = 1; schoolIso = addDaysIso(now.iso, 1); }
     var schools = schoolStartsForWd(schoolWd, schoolIso);
+    if (suppressMondaySchoolPreview(now)) schools = [];
     /* Aamulla vain tämän päivän koulu. Huomisen treenit vain kun koulu-osio on jo huomisessa (klo 16+). */
     var hobbyIso = showTomorrowSchool ? addDaysIso(now.iso, 1) : null;
     var out = hobbyIso ? dayEventsClean(hobbyIso) : [];

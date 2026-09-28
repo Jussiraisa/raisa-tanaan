@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790611599251,
+  "updated": 1790615446788,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -259,38 +259,6 @@
       "kind": "info"
     },
     {
-      "id": "cal-37lp9uu3pkacqdgh4sqr6pu4uc",
-      "title": "Riikka · Padel",
-      "date": "2026-09-28",
-      "start": "18:30",
-      "end": "20:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-qmlmr87iqul59h5le5nhuvseg0",
-      "title": "Milla · MAY01 koe (luvut ja yhtälöt)",
-      "date": "2026-09-29",
-      "start": "08:50",
-      "end": "12:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-io8iqb1g0jmujbb6602pq3qtmk",
-      "title": "Riikka · Kuuleva työ",
-      "date": "2026-09-29",
-      "start": "09:00",
-      "end": "16:45",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-60o32d1n8924cba26sokcb9k6gp3ab9o68sjgba375232ga2752jcd1j6g",
-      "title": "Valokuvaus Mea",
-      "date": "2026-09-29",
-      "start": "12:45",
-      "end": "13:45",
-      "kind": "cal"
-    },
-    {
       "id": "info-koulukuvaus-mea-2026-09-29",
       "who": "mea",
       "title": "Koulukuvaus 8F 12.45–13.15",
@@ -299,22 +267,6 @@
       "end": "13:15",
       "kind": "info",
       "place": "Jynkänlahden koulu"
-    },
-    {
-      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260929T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-29",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-6j92c2gint0dud3habd16ct4t8",
-      "title": "Mea · kemian opetus · Jussi + Mea",
-      "date": "2026-09-29",
-      "start": "18:30",
-      "end": "19:30",
-      "kind": "cal"
     },
     {
       "id": "info-koulukuvaus-samuel-2026-09-30",
@@ -514,6 +466,46 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "cal-qmlmr87iqul59h5le5nhuvseg0",
+      "title": "Milla · MAY01 koe (luvut ja yhtälöt)",
+      "date": "2026-09-29",
+      "start": "08:50",
+      "end": "12:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-io8iqb1g0jmujbb6602pq3qtmk",
+      "title": "Riikka · Kuuleva työ",
+      "date": "2026-09-29",
+      "start": "09:00",
+      "end": "16:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-60o32d1n8924cba26sokcb9k6gp3ab9o68sjgba375232ga2752jcd1j6g",
+      "title": "Valokuvaus Mea",
+      "date": "2026-09-29",
+      "start": "12:45",
+      "end": "13:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260929T140000Z",
+      "title": "Mea valmennus",
+      "date": "2026-09-29",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-6j92c2gint0dud3habd16ct4t8",
+      "title": "Mea · kemian opetus · Jussi + Mea",
+      "date": "2026-09-29",
+      "start": "18:30",
+      "end": "19:30",
+      "kind": "cal"
     }
   ],
   "schoolLunch": {

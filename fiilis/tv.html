@@ -2,7 +2,7 @@
 <html lang="fi" data-tv-kiosk>
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260928-v128-weekend-school" />
+<meta name="fiilis-build" content="20260928-v129-stable-url" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1634,7 +1634,7 @@
 
     async function loadSchedule() {
     try {
-      const res = await fetch("schedule.json?v=20260920v29", { cache: "no-store" });
+      const res = await fetch("schedule.json?t=" + Date.now(), { cache: "no-store" });
       if (res.ok) {
         CONFIG.schedule = await res.json();
         renderToday(CONFIG.schedule);

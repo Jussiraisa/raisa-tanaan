@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260928-v128-weekend-school">
+  <meta name="fiilis-build" content="20260928-v129-stable-url">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -638,7 +638,7 @@
     .tmw-empty { font-size: 1.5vmin; opacity: .55; padding: .5vh 0; }
 
   </style>
-<script src="lg-keepalive.js?v=128" defer></script>
+<script src="lg-keepalive.js?v=129" defer></script>
 </head>
 <body class="morning">
   <div class="tv" id="app">
@@ -1031,7 +1031,7 @@
     return { icon: "🌡️", phrase: "vaihtelevaa" };
   }
 
-    var BUILD = "20260928-v128-weekend-school";
+    var BUILD = "20260928-v129-stable-url";
   function getJSON(url, cb) {
     try {
       var x = new XMLHttpRequest();
@@ -1753,14 +1753,14 @@
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=" + BUILD + "", function (data) {
+    getJSON("schedule.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=" + BUILD + "", function (data) {
+    getJSON("photos-from-matkat.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

@@ -227,7 +227,7 @@ body.evening .day .ev, body.night .day .ev {
   }
   applyTheme();
   setInterval(applyTheme, 60000);
-  var BUILD = "20260927-v126-weekly-calendar";
+  var BUILD = "20260928-v129-stable-url";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -499,7 +499,7 @@ body.evening .day .ev, body.night .day .ev {
     }
   }
 
-  getJSON("schedule.json?v=" + BUILD, function (data) {
+  getJSON("schedule.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
     if (data) schedule = data;
     paint();
   });

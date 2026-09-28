@@ -1289,14 +1289,14 @@ body.evening .photo-cap, body.night .photo-cap {
   }
 
   function loadSchedule() {
-    getJSON("schedule.json?v=20260921v59c", function (data) {
+    getJSON("schedule.json?t=" + Date.now(), function (data) {
       if (data) schedule = data;
       paint();
     });
   }
 
   function loadPhotos() {
-    getJSON("photos-from-matkat.json?v=20260921v59c", function (data) {
+    getJSON("photos-from-matkat.json?t=" + Date.now(), function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {

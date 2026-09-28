@@ -99,7 +99,7 @@ body {
 
 <script>
 (function () {
-  var BUILD = "20260927-v126-weekly-calendar";
+  var BUILD = "20260928-v129-stable-url";
   var DAYS = ["Sunnuntai","Maanantai","Tiistai","Keskiviikko","Torstai","Perjantai","Lauantai"];
   var WHO_COLOR = {
     Ellen:"#D48AA8", Samuel:"#5B8FD4", Milla:"#C9A227", Mea:"#E08A3C",
@@ -196,7 +196,7 @@ body {
     }
     el.innerHTML=html;
   }
-  getJSON("schedule.json?v="+BUILD, function(data){ if(data) schedule=data; paint(); });
+  getJSON("schedule.json?v="+BUILD+"&t="+Math.floor(Date.now()/60000), function(data){ if(data) schedule=data; paint(); });
 })();
 </script>
 

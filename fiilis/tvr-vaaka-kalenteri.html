@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260927-v128-calendar-keepalive">
+  <meta name="fiilis-build" content="20260928-v129-stable-url">
   <meta name="theme-color" content="#EFD6B0">
   <title>Räisä · Fiilis · Kalenteri</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -138,7 +138,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
   .day .dn { font-size: 1.7vmin; }
 }
   </style>
-  <script src="lg-keepalive.js?v=128" defer></script>
+  <script src="lg-keepalive.js?v=129" defer></script>
 </head>
 <body>
 <div class="app">
@@ -161,7 +161,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
 </nav>
 <script>
 (function () {
-  var BUILD = "20260927-v128-calendar-keepalive";
+  var BUILD = "20260928-v129-stable-url";
   var MONTHS = ["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu",
     "heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"];
   var WHO_COLOR = {
@@ -433,7 +433,7 @@ html, body { overflow: hidden;  height: 100%; margin: 0; overflow: hidden; backg
     }
   }
 
-  getJSON("schedule.json?v=" + BUILD, function (data) {
+  getJSON("schedule.json?v=" + BUILD + "&t=" + Math.floor(Date.now()/60000), function (data) {
     if (data) schedule = data;
     paint();
   });

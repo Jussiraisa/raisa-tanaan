@@ -1,15 +1,50 @@
-/* Fiilis TV keepalive v128
+/* Fiilis TV keepalive v129
    LG sammuttaa ruudun, jos video on piilossa tai vain nurkassa.
    Muistokuva on iso toistuva video (sama kuva), joten televisio
    näkee toiston eikä nurkkaan tule laatikkoa.
    Jos selaimesta puuttuu canvas-video, sama alue toistaa pienen
    hiekanvärisen videon kuvan päällä, läpikuultavana.
-   Lataa: <script src="lg-keepalive.js?v=117" defer></script> */
+   Lataa: <script src="lg-keepalive.js?v=129" defer></script>
+   Soft reload: polled via version.json; URL keeps path/rotate,
+   sets ?ka=timestamp only (never pins ?v=BUILD). */
 (function () {
   if (window.__fiilisKeepAlive) return;
   window.__fiilisKeepAlive = true;
 
-  var BUILD = "128";
+  var BUILD = "129";
+  var VERSION_POLL_MS = 5 * 60 * 1000;
+  var seenPoll = null;
+
+  function softReload() {
+    try {
+      var u = new URL(window.location.href);
+      u.searchParams.delete("v");
+      u.searchParams.set("ka", String(Date.now()));
+      window.location.replace(u.toString());
+    } catch (e) {
+      window.location.reload();
+    }
+  }
+
+  function checkVersion() {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", "version.json?t=" + Date.now(), true);
+      x.onreadystatechange = function () {
+        if (x.readyState !== 4) return;
+        if (x.status < 200 || x.status >= 300) return;
+        try {
+          var j = JSON.parse(x.responseText);
+          var key = String((j && (j.poll || j.ui)) || "");
+          if (!key) return;
+          if (seenPoll === null) { seenPoll = key; return; }
+          if (key !== seenPoll) softReload();
+        } catch (e2) {}
+      };
+      x.send();
+    } catch (e) {}
+  }
+
 var STYLE = [
     "#fiilisKeepAliveVideo{",
     "position:fixed!important;left:0!important;top:0!important;",
@@ -219,6 +254,8 @@ var STYLE = [
     setInterval(kick, 5000);
     setInterval(requestWake, 25000);
     setInterval(webosHold, 90000);
+    checkVersion();
+    setInterval(checkVersion, VERSION_POLL_MS);
   }
 
   if (document.body) boot();

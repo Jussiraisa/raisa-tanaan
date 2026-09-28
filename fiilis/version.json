@@ -1,7 +1,7 @@
 {
   "schedule": "2026-09-28-wilma-exams",
-  "updated": "2026-09-28T16:50:00+03:00",
-  "ui": "20260928-v128-weekend-school",
-  "poll": "v128",
-  "note": "Wilma: kokeet/deadlinet lokakuulle; MAA03→28.10 9.35; ui v128 weekend-school ennallaan"
+  "updated": "2026-09-28T16:56:00+03:00",
+  "ui": "20260928-v129-stable-url",
+  "poll": "v129",
+  "note": "Stable URL: bookmark yla.html (no new ?v= each update). Soft reload uses ?ka= only; schedule/data polls cache-bust by time. Auto refresh via version.json."
 }

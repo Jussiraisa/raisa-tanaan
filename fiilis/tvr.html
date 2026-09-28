@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="fiilis-build" content="20260928-v129-stable-url">
+  <meta name="fiilis-build" content="20260928-v130-wilma-huomiot">
   <meta name="theme-color" content="#f5f1e8">
   <title>Räisä · Fiilis TV</title>
   <style>
@@ -533,15 +533,57 @@
     body.night .wxday .tm { color: #f5efe6; }
     body.night .wxday.is-today .tm { color: #fff8ee; }
 
+    .action-bar {
+      flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start;
+      gap: .45vmin .7vmin; max-height: 6.2vmin; overflow: hidden;
+      padding: .22vmin .55vmin; border-radius: .85vmin;
+      background: rgba(201,148,58,.12); border: 1px solid rgba(163,113,42,.22);
+    }
+    .action-bar.has-items { background: rgba(201,148,58,.18); border-color: rgba(163,113,42,.35); }
+    .action-lbl {
+      flex: 0 0 auto; font-size: .92vmin; font-weight: 700; letter-spacing: .05em;
+      text-transform: uppercase; color: #8f6524; white-space: nowrap;
+      padding-top: .28vmin; line-height: 1.1;
+    }
+    .action-list {
+      flex: 1 1 auto; min-width: 0; display: flex; align-items: center; align-content: flex-start;
+      gap: .28vmin .4vmin; overflow: hidden; flex-wrap: wrap;
+      max-height: 5.6vmin;
+    }
+    .action-empty { font-size: 1.05vmin; color: #9a8b74; font-weight: 500; }
+    .action-pill {
+      flex: 0 1 auto; max-width: 34vmin;
+      display: inline-flex; align-items: center; gap: .3vmin;
+      padding: .15vmin .45vmin; border-radius: 999px;
+      background: #FFF3DC; border: 1px solid rgba(143,101,36,.28);
+      font-size: 1.05vmin; font-weight: 600; color: #2c2418;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.15;
+    }
+    .action-pill .src {
+      font-size: .78vmin; font-weight: 700; letter-spacing: .03em;
+      text-transform: uppercase; color: #fff8ea;
+      background: #8f6524; border-radius: .28vmin; padding: .04vmin .28vmin;
+    }
+    .action-pill.wa .src { background: #3d7a4a; }
+    .action-pill.abs .src { background: #6c5c44; }
+
     .foot {
       -ms-flex: 0 0 auto; flex: 0 0 auto;
       margin-top: .15%;
       display: -ms-flexbox; display: flex;
       -ms-flex-pack: justify; justify-content: space-between;
       -ms-flex-align: center; align-items: center;
+      -ms-flex-wrap: wrap; flex-wrap: wrap;
       font-size: 1.5vmin; font-weight: 500;
       color: rgba(44,36,24,0.42);
       gap: 1%;
+    }
+    .foot .action-bar {
+      -ms-flex: 1 1 55%; flex: 1 1 55%;
+      max-height: 7vmin;
+      order: -1;
+      width: 100%;
     }
     .chips {
       display: -ms-flexbox; display: flex;
@@ -719,6 +761,10 @@
     </div>
 
     <div class="foot">
+      <div class="action-bar" id="actionBar">
+        <div class="action-lbl">Huomiot</div>
+        <div class="action-list" id="actionList"><span class="action-empty">Ei avoimia Wilma-/WhatsApp-asioita</span></div>
+      </div>
       <div class="chips" id="chips"></div>
       <span class="tagline">Pieniä hetkiä, isoja muistoja</span>
       <span class="brand">v59c</span>
@@ -1040,7 +1086,7 @@
     return { icon: "🌡️", phrase: "vaihtelevaa" };
   }
 
-    var BUILD = "20260928-v129-stable-url";
+    var BUILD = "20260928-v130-wilma-huomiot";
   function getJSON(url, cb) {
     try {
       var x = new XMLHttpRequest();
@@ -1733,6 +1779,73 @@
     el.innerHTML = html;
   }
 
+  function paintWilmaAlerts(now) {
+    var bar = document.getElementById("actionBar");
+    var listEl = document.getElementById("actionList");
+    if (!listEl) return;
+    var items = [];
+    var alerts = (schedule && schedule.wilmaAlerts) ? schedule.wilmaAlerts : [];
+    for (var i = 0; i < alerts.length; i++) {
+      var a = alerts[i];
+      if (!a) continue;
+      if (a.needAction === false) continue;
+      items.push({
+        src: "Wilma",
+        cls: "",
+        who: a.who || "",
+        title: a.title || a.note || "Wilma-viesti",
+        due: a.due || ""
+      });
+    }
+    var wa = (schedule && schedule.whatsappAlerts) ? schedule.whatsappAlerts : [];
+    for (var w = 0; w < wa.length; w++) {
+      var x = wa[w];
+      if (!x) continue;
+      if (x.needAction === false) continue;
+      items.push({
+        src: "WhatsApp",
+        cls: "wa",
+        who: x.who || x.group || "",
+        title: x.title || x.note || "Viesti",
+        due: x.due || ""
+      });
+    }
+    var abs = (schedule && schedule.absences) ? schedule.absences : [];
+    for (var j = 0; j < abs.length; j++) {
+      var ab = abs[j];
+      if (!ab || !ab.from || !ab.to) continue;
+      if (ab.from <= now.iso && now.iso <= ab.to) {
+        items.push({
+          src: "Poissa",
+          cls: "abs",
+          who: ab.who || "",
+          title: (ab.where || "poissa") + (ab.note ? " · " + ab.note : ""),
+          due: ""
+        });
+      }
+    }
+    if (!items.length) {
+      if (bar) bar.className = "action-bar";
+      listEl.innerHTML = "<span class=\"action-empty\">Ei avoimia Wilma-/WhatsApp-asioita</span>";
+      return;
+    }
+    if (bar) bar.className = "action-bar has-items";
+    var html = "";
+    var max = Math.min(items.length, 6);
+    for (var k = 0; k < max; k++) {
+      var it = items[k];
+      var label = (it.who ? it.who + " · " : "") + it.title;
+      if (it.due) label += " · " + it.due;
+      html += "<div class=\"action-pill " + it.cls + "\"><span class=\"src\">" + esc(it.src)
+        + "</span>" + esc(label) + "</div>";
+    }
+    if (items.length > max) {
+      html += "<div class=\"action-pill\"><span class=\"src\">+</span>" + (items.length - max) + " muuta</div>";
+    }
+    listEl.innerHTML = html;
+  }
+
+
   function paint() {
     var now = helsinkiNow();
     applyTheme(now.hour);
@@ -1743,6 +1856,7 @@
     var dateEl = document.getElementById("dateLine");
     if (dateEl) dateEl.textContent = DAYS[now.wd].full + " " + now.day + "." + now.month + ".";
     paintKidsDay(now);
+    paintWilmaAlerts(now);
     paintParents(now);
     paintOdotukset(now);
     paintTomorrow(now);

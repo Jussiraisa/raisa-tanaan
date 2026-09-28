@@ -1,7 +1,7 @@
 {
   "schedule": "2026-09-28-wa-rides",
-  "updated": "2026-09-28T16:56:00+03:00",
-  "ui": "20260928-v129-stable-url",
-  "poll": "v129",
-  "note": "Stable URL: bookmark yla.html (no new ?v= each update). Soft reload uses ?ka= only; schedule/data polls cache-bust by time. Auto refresh via version.json."
+  "updated": "2026-09-28T19:36:14+03:00",
+  "ui": "20260928-v130-wilma-huomiot",
+  "poll": "v130",
+  "note": "Huomiot (Wilma needAction) back on yla + tvr-vaaka foot bar. Stable bookmark; soft reload via version.json."
 }

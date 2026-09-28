@@ -1,15 +1,27 @@
 {
   "v": 1,
-  "updated": 1790608310784,
-  "capturedAt": "2026-09-28T18:11+03:00",
-  "powerW": 2890,
-  "indoorC": 20.4,
-  "outdoorC": 14.1,
+  "updated": 1790609964672,
+  "capturedAt": "2026-09-28T18:39+03:00",
+  "powerW": 4169,
+  "indoorC": 22.9,
+  "outdoorC": 14.4,
   "lightsOn": [
     "Ruokapöytä"
   ],
   "lightWatts": {
-    "Ruokapöytä": 2.2
+    "2)pukuhuone": 0.0,
+    "Eteinen": 0.0,
+    "Keittiö": 0.0,
+    "Makuusoppi": 0.0,
+    "Olohuone valo": 0.0,
+    "Parvi oikea": 0.0,
+    "Parvi valot": 0.0,
+    "Pihavalot": null,
+    "Ruokapöytä": 2.2,
+    "Seinävalot": 0.0,
+    "Ulkovalot": 0.0,
+    "Varastosoppi": 0.0,
+    "WC peili": 0.0
   },
   "heaters": {
     "patteritPudotus": false,
@@ -21,7 +33,7 @@
   "motion": {
     "ph": true,
     "tie": {
-      "tempC": 18.3,
+      "tempC": 18.2,
       "humidityPct": 50.3,
       "active": false
     }
@@ -31,7 +43,9 @@
     "Liiketunnistin ulkovalot",
     "Testi",
     "Valot päälle",
-    "Valot pois"
+    "Iltavalot",
+    "Valot pois",
+    "Testi"
   ],
   "sceneHelpers": [
     "Iltavalot",
@@ -45,12 +59,12 @@
   "deviceCount": 33,
   "account": "mokki.raisa@gmail.com",
   "source": "shelly-cloud",
-  "notes": "Shelly Cloud room Mökki 2026-09-28 18:11 EEST. 33 devices online. Power 2890 W. Indoor 20.4° outdoor 14.1°. Lights on: Ruokapöytä. EV charge on. Sauna off. ILP ACa795 online · off · Heat set 21° indoor 19°.",
+  "notes": "Shelly Cloud API 2026-09-28T18:39:00+03:00. 33 devices. Power 4169 W. Indoor 22.94 outdoor 14.44. Lights on: Ruokapöytä. EV=True sauna=False.",
   "ilp": {
-    "on": false,
+    "on": true,
     "mode": "Heat",
     "setC": 21,
-    "indoorC": 19
+    "indoorC": 20.0
   },
   "ilpDevice": "ACa795",
   "ilpOnline": true,

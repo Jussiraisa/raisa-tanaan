@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#08090c">
+  <title>Räisä · Mökki ohjaus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; background: #08090c; color: #f3efe6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { min-height: 100vh; padding: 16px 16px calc(24px + env(safe-area-inset-bottom)); max-width: 560px; margin: 0 auto; }
+    .kicker { font-size: 11px; font-weight: 800; letter-spacing: .34em; text-transform: uppercase; color: #c6a15a; }
+    .title { font-family: "Instrument Serif", Georgia, serif; font-size: 36px; line-height: 1; margin: 4px 0 2px; letter-spacing: -.03em; }
+    .sub { font-size: 14px; font-weight: 650; color: #9a9486; margin-bottom: 16px; }
+    .sub a { color: #3ec4b2; text-decoration: none; font-weight: 800; }
+    .card {
+      background: #12141a; border: 1px solid #22252e; border-radius: 16px;
+      padding: 14px 14px 12px; margin-bottom: 12px;
+    }
+    .card.ilp { background: radial-gradient(140% 160% at 0% 0%, #16352f 0%, #12141a 55%); border-color: #1e2a28; }
+    .lbl { font-size: 11px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: #3ec4b2; margin-bottom: 10px; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .row + .row { margin-top: 10px; }
+    .btn {
+      appearance: none; border: 1px solid #2a2e38; background: #1a1c22; color: #f3efe6;
+      font-size: 16px; font-weight: 800; border-radius: 999px;
+      padding: 14px 18px; min-height: 52px; cursor: pointer;
+      flex: 1 1 auto; text-align: center;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn.on { background: #123028; border-color: #1e4a40; color: #7ee0d0; }
+    .btn.warn { background: #3a2e12; border-color: #4a3a18; color: #e3c36a; }
+    .btn.danger { background: #2a1212; border-color: #4a1e1e; color: #ff8a80; }
+    .btn.ghost { background: transparent; border-color: #2a2e38; color: #9a9486; flex: 0 0 auto; }
+    .btn.mode { flex: 1 1 28%; min-width: 90px; }
+    .btn.chip { flex: 0 1 auto; min-width: 0; padding: 12px 16px; font-size: 15px; }
+    .btn.chip.on { background: #123028; border-color: #1e4a40; color: #7ee0d0; }
+    .btn:disabled { opacity: .45; cursor: not-allowed; }
+    .set { display: flex; align-items: center; gap: 10px; width: 100%; }
+    .set .val {
+      font-family: "Instrument Serif", Georgia, serif; font-size: 42px; line-height: 1;
+      min-width: 72px; text-align: center; flex: 1;
+    }
+    .set .pm {
+      width: 56px; height: 56px; flex: 0 0 56px; border-radius: 50%;
+      font-size: 28px; padding: 0; display: flex; align-items: center; justify-content: center;
+    }
+    input[type="url"], input[type="text"] {
+      width: 100%; background: #0c0e12; border: 1px solid #2a2e38; border-radius: 12px;
+      color: #f3efe6; font-size: 15px; padding: 14px 12px; outline: none;
+    }
+    input:focus { border-color: #3ec4b2; }
+    .status {
+      display: flex; flex-wrap: wrap; gap: 6px 8px; margin-bottom: 12px;
+    }
+    .pill { font-size: 13px; font-weight: 800; color: #7ee0d0; background: #123028; border-radius: 999px; padding: 6px 12px; }
+    .pill.off { color: #6d685c; background: #1a1c22; }
+    .pill.warn { color: #e3c36a; background: #3a2e12; }
+    .toast {
+      position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      background: #1a1c22; border: 1px solid #2a2e38; color: #f3efe6;
+      padding: 12px 18px; border-radius: 999px; font-size: 14px; font-weight: 700;
+      opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 20;
+      max-width: calc(100% - 32px); text-align: center;
+    }
+    .toast.show { opacity: 1; }
+    .toast.err { border-color: #4a1e1e; color: #ff8a80; }
+    .toast.ok { border-color: #1e4a40; color: #7ee0d0; }
+    .hint { font-size: 12px; color: #6d685c; font-weight: 650; margin-top: 8px; line-height: 1.4; }
+    .foot { margin-top: 8px; font-size: 12px; font-weight: 650; color: #6d685c; display: flex; justify-content: space-between; gap: 8px; }
+    .stale { color: #ff8a80; }
+    .ilp-state { font-size: 15px; font-weight: 700; color: #c9c3b5; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="kicker">Räisä · Mökki</div>
+  <div class="title">Ohjaus</div>
+  <div class="sub"><a href="mokki.html">← Dashboard</a> · tila päivittyy mokki.jsonista</div>
+
+  <div class="card" id="settingsCard">
+    <div class="lbl">Webhook URL</div>
+    <div class="row">
+      <input type="url" id="webhookUrl" placeholder="Liitä webhook-osoite tähän" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn on" type="button" id="saveWebhook">Tallenna</button>
+    </div>
+    <div class="hint">Tallennetaan vain tähän laitteeseen (localStorage). Ei jaeta verkkoon.</div>
+  </div>
+
+  <div class="status" id="statusPills"></div>
+
+  <div class="card ilp">
+    <div class="lbl">ILP · ilmalämpöpumppu</div>
+    <div class="ilp-state" id="ilpState">—</div>
+    <div class="row">
+      <button class="btn" type="button" data-action="ilp_on" id="btnIlpOn">Päälle</button>
+      <button class="btn" type="button" data-action="ilp_off" id="btnIlpOff">Pois</button>
+    </div>
+    <div class="row">
+      <button class="btn mode" type="button" data-action="ilp_mode" data-value="Heat">Heat</button>
+      <button class="btn mode" type="button" data-action="ilp_mode" data-value="Cool">Cool</button>
+      <button class="btn mode" type="button" data-action="ilp_mode" data-value="Auto">Auto</button>
+    </div>
+    <div class="row">
+      <div class="set">
+        <button class="btn pm" type="button" id="setMinus">−</button>
+        <div class="val" id="setVal">21</div>
+        <button class="btn pm" type="button" id="setPlus">+</button>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn on" type="button" id="setSend">Aseta lämpötila</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lbl">Pikavalinnat</div>
+    <div class="row">
+      <button class="btn" type="button" data-action="shelly_on" data-target="Ulkovalot">Ulkovalot</button>
+      <button class="btn" type="button" data-action="shelly_on" data-target="Pihavalot">Pihavalot</button>
+    </div>
+    <div class="row">
+      <button class="btn" type="button" data-action="scene" data-target="Iltavalot">Iltavalot</button>
+      <button class="btn" type="button" data-action="scene" data-target="Valot päälle">Valot päälle</button>
+    </div>
+    <div class="row">
+      <button class="btn" type="button" data-action="scene" data-target="Valot pois">Valot pois</button>
+      <button class="btn danger" type="button" data-action="mokki_pois">Mökki pois</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lbl">Valot</div>
+    <div class="row" id="lightChips"><span class="hint" style="margin:0">Ei valoja listalla vielä — odota tilaa.</span></div>
+  </div>
+
+  <div class="foot">
+    <span id="age">Päivitetty —</span>
+    <span id="hookHint">Webhook ei asetettu</span>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+(function () {
+  var LS_KEY = "mokkiWebhookUrl";
+  var DATA = null;
+  var setC = 21;
+  var MAIN_LIGHTS = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä"];
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c];
+    });
+  }
+  function num(n, d) {
+    if (n == null || isNaN(Number(n))) return "—";
+    return Number(n).toFixed(d == null ? 0 : d).replace(".", ",");
+  }
+  function getJSON(url, cb) {
+    var x = new XMLHttpRequest();
+    x.open("GET", url, true);
+    x.onreadystatechange = function () {
+      if (x.readyState !== 4) return;
+      if (x.status >= 200 && x.status < 300) {
+        try { cb(JSON.parse(x.responseText)); } catch (e) {}
+      }
+    };
+    x.send();
+  }
+  function ageLabel(updated) {
+    if (!updated) return "ei päivitystä";
+    var mins = Math.round((Date.now() - Number(updated)) / 60000);
+    if (mins < 1) return "juuri nyt";
+    if (mins < 60) return mins + " min sitten";
+    var h = Math.round(mins / 60);
+    if (h < 48) return h + " h sitten";
+    return Math.round(h / 24) + " pv sitten";
+  }
+  function toast(msg, kind) {
+    var el = document.getElementById("toast");
+    el.textContent = msg;
+    el.className = "toast show" + (kind ? " " + kind : "");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { el.className = "toast"; }, 2200);
+  }
+  function webhook() {
+    return (localStorage.getItem(LS_KEY) || "").trim();
+  }
+  function refreshHookHint() {
+    var w = webhook();
+    document.getElementById("hookHint").textContent = w ? "Webhook tallennettu" : "Webhook ei asetettu";
+    document.getElementById("webhookUrl").value = w;
+  }
+  function postAction(body, label) {
+    var url = webhook();
+    if (!url) {
+      toast("Aseta webhook URL ensin", "err");
+      document.getElementById("webhookUrl").focus();
+      return;
+    }
+    toast("Lähetetään…");
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      mode: "cors"
+    }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      toast((label || "OK") + " · lähetetty", "ok");
+      setTimeout(pull, 1500);
+      setTimeout(pull, 4000);
+    }).catch(function (e) {
+      toast("Virhe: " + (e && e.message ? e.message : "lähetys epäonnistui"), "err");
+    });
+  }
+
+  function paintStatus() {
+    var d = DATA || {};
+    var ilp = d.ilp || {};
+    var lightsOn = d.lightsOn || [];
+    var onSet = {};
+    var i;
+    for (i = 0; i < lightsOn.length; i++) onSet[lightsOn[i]] = true;
+
+    var pills = "";
+    pills += "<span class=\"pill" + (d.online ? "" : " warn") + "\">" + (d.online ? "Verkossa" : "Offline") + "</span>";
+    pills += "<span class=\"pill\">Sisä " + num(d.indoorC, 1) + "°</span>";
+    pills += "<span class=\"pill\">Ulko " + num(d.outdoorC, 1) + "°</span>";
+    if (d.powerW != null) {
+      var kw = Number(d.powerW) / 1000;
+      pills += "<span class=\"pill\">" + (kw >= 1 ? num(kw, 2) + " kW" : Math.round(d.powerW) + " W") + "</span>";
+    }
+    pills += "<span class=\"pill" + (ilp.on ? "" : " off") + "\">ILP " + (ilp.on ? (ilp.mode || "ON") : "pois") + "</span>";
+    if (lightsOn.length) {
+      pills += "<span class=\"pill\">" + lightsOn.length + " valo" + (lightsOn.length === 1 ? "" : "a") + "</span>";
+    } else {
+      pills += "<span class=\"pill off\">Ei valoja</span>";
+    }
+    document.getElementById("statusPills").innerHTML = pills;
+
+    var ilpLine = (ilp.on ? "Päällä" : "Pois")
+      + (ilp.mode ? " · " + ilp.mode : "")
+      + (ilp.setC != null ? " · tavoite " + num(ilp.setC, 0) + "°" : "")
+      + (ilp.indoorC != null ? " · sisä " + num(ilp.indoorC, 0) + "°" : "");
+    document.getElementById("ilpState").textContent = ilpLine;
+
+    if (ilp.setC != null && !paintStatus._touched) setC = Number(ilp.setC);
+    document.getElementById("setVal").textContent = String(setC);
+
+    document.getElementById("btnIlpOn").className = "btn" + (ilp.on ? " on" : "");
+    document.getElementById("btnIlpOff").className = "btn" + (!ilp.on ? " on" : "");
+    var modes = document.querySelectorAll(".btn.mode");
+    for (i = 0; i < modes.length; i++) {
+      var m = modes[i].getAttribute("data-value");
+      modes[i].className = "btn mode" + (ilp.mode === m ? " on" : "");
+    }
+
+    // Light chips: union of MAIN_LIGHTS + lightsOn + lightWatts keys
+    var names = [];
+    var seen = {};
+    function addName(n) {
+      if (!n || seen[n]) return;
+      seen[n] = true;
+      names.push(n);
+    }
+    for (i = 0; i < MAIN_LIGHTS.length; i++) addName(MAIN_LIGHTS[i]);
+    for (i = 0; i < lightsOn.length; i++) addName(lightsOn[i]);
+    var watts = d.lightWatts || {};
+    Object.keys(watts).forEach(addName);
+
+    var html = "";
+    if (!names.length) {
+      html = "<span class=\"hint\" style=\"margin:0\">Ei valoja listalla.</span>";
+    } else {
+      for (i = 0; i < names.length; i++) {
+        var n = names[i];
+        var isOn = !!onSet[n];
+        html += "<button class=\"btn chip" + (isOn ? " on" : "") + "\" type=\"button\" data-light=\"" + esc(n) + "\" data-on=\"" + (isOn ? "1" : "0") + "\">" + esc(n) + (isOn ? " · on" : "") + "</button>";
+      }
+    }
+    document.getElementById("lightChips").innerHTML = html;
+
+    var age = ageLabel(d.updated);
+    var stale = d.updated && (Date.now() - Number(d.updated) > 30 * 60 * 1000);
+    document.getElementById("age").className = stale ? "stale" : "";
+    document.getElementById("age").textContent = "Päivitetty " + age
+      + (d.capturedAt ? " · " + String(d.capturedAt).replace("T", " ").substr(0, 16) : "");
+  }
+
+  function pull() {
+    getJSON("https://raw.githubusercontent.com/Jussiraisa/raisa-tanaan/main/mokki.json?t=" + new Date().getTime(), function (data) {
+      DATA = data;
+      paintStatus();
+    });
+  }
+
+  document.getElementById("saveWebhook").addEventListener("click", function () {
+    var v = document.getElementById("webhookUrl").value.trim();
+    if (!v) {
+      localStorage.removeItem(LS_KEY);
+      toast("Webhook poistettu", "ok");
+    } else {
+      localStorage.setItem(LS_KEY, v);
+      toast("Webhook tallennettu", "ok");
+    }
+    refreshHookHint();
+  });
+
+  document.getElementById("setMinus").addEventListener("click", function () {
+    paintStatus._touched = true;
+    setC = Math.max(16, setC - 1);
+    document.getElementById("setVal").textContent = String(setC);
+  });
+  document.getElementById("setPlus").addEventListener("click", function () {
+    paintStatus._touched = true;
+    setC = Math.min(30, setC + 1);
+    document.getElementById("setVal").textContent = String(setC);
+  });
+  document.getElementById("setSend").addEventListener("click", function () {
+    postAction({ action: "ilp_set", value: setC }, "ILP " + setC + "°");
+  });
+
+  document.body.addEventListener("click", function (ev) {
+    var t = ev.target;
+    if (!t || !t.getAttribute) return;
+    if (t.getAttribute("data-light")) {
+      var name = t.getAttribute("data-light");
+      var isOn = t.getAttribute("data-on") === "1";
+      if (isOn) postAction({ action: "shelly_off", target: name }, name + " pois");
+      else postAction({ action: "shelly_on", target: name }, name + " päälle");
+      return;
+    }
+    var action = t.getAttribute("data-action");
+    if (!action) return;
+    var body = { action: action };
+    var target = t.getAttribute("data-target");
+    var value = t.getAttribute("data-value");
+    if (target) body.target = target;
+    if (value) body.value = value;
+    var label = t.textContent.trim();
+    postAction(body, label);
+  });
+
+  refreshHookHint();
+  paintStatus();
+  pull();
+  setInterval(pull, 5000);
+})();
+  </script>
+</body>
+</html>

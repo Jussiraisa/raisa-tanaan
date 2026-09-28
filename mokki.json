@@ -1,27 +1,31 @@
 {
   "v": 1,
-  "updated": 1790611200947,
-  "capturedAt": "2026-09-28T19:00+03:00",
-  "powerW": 3376,
-  "indoorC": 24.6,
-  "outdoorC": 14.8,
+  "updated": 1790612174424,
+  "capturedAt": "2026-09-28T19:16+03:00",
+  "powerW": 3981,
+  "indoorC": 23.8,
+  "outdoorC": 14.6,
   "lightsOn": [
     "Ruokapöytä"
   ],
   "lightWatts": {
-    "2)pukuhuone": 0.0,
     "Eteinen": 0.0,
-    "Keittiö": 0.0,
-    "Makuusoppi": 0.0,
-    "Olohuone valo": 0.0,
-    "Parvi oikea": 0.0,
-    "Parvi valot": 0.0,
-    "Pihavalot": null,
-    "Ruokapöytä": 2.2,
-    "Seinävalot": 0.0,
-    "Ulkovalot": 0.0,
+    "WC peili": 0.0,
     "Varastosoppi": 0.0,
-    "WC peili": 0.0
+    "Ulkovalot": 0.0,
+    "2) sauna": 0.0,
+    "Iltavalot": null,
+    "3)valot pois": null,
+    "2)pukuhuone": 0.0,
+    "Seinävalot": 0.0,
+    "Parvi valot": 0.0,
+    "2)valot päälle": null,
+    "Olohuone valo": 0.0,
+    "Pihavalot": null,
+    "Makuusoppi": 0.0,
+    "Keittiö": 0.0,
+    "Parvi oikea": 0.0,
+    "Ruokapöytä": 2.2
   },
   "heaters": {
     "patteritPudotus": false,
@@ -33,7 +37,7 @@
   "motion": {
     "ph": true,
     "tie": {
-      "tempC": 18.6,
+      "tempC": 18.8,
       "humidityPct": 50.3,
       "active": false
     }
@@ -56,7 +60,7 @@
   "deviceCount": 33,
   "account": "mokki.raisa@gmail.com",
   "source": "shelly-cloud",
-  "notes": "Shelly Cloud API 2026-09-28T18:59:00+03:00. 33 devices. Power 3376 W. Indoor 24.6 outdoor 14.8. Lights on: Ruokapöytä. EV=True sauna=False.",
+  "notes": "Shelly Cloud API 2026-09-28T19:15+03:00. 33 devices. Power 3981 W. Indoor 23.8 outdoor 14.6. Lights on: Ruokapöytä. EV=True sauna=False.",
   "ilp": {
     "on": true,
     "mode": "Heat",

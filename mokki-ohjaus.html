@@ -515,29 +515,45 @@
     document.getElementById("webhookAuth").value = authHeader();
     document.getElementById("noShellyNote").hidden = !!s;
   }
+  var _shellyQ = Promise.resolve();
+  var _shellyLast = 0;
+  function shellyPace() {
+    return new Promise(function (resolve) {
+      var wait = Math.max(0, 1100 - (Date.now() - _shellyLast));
+      setTimeout(function () {
+        _shellyLast = Date.now();
+        resolve();
+      }, wait);
+    });
+  }
   function shellySet(dev, on) {
     var auth = shellyAuth();
     if (!auth) {
       toast("Lisää Shelly-avain Asetuksiin", "err");
       return Promise.reject(new Error("no auth"));
     }
-    var kind = dev.kind || "light";
-    var url = shellyServer() + "/v2/devices/api/set/" + kind + "?auth_key=" + encodeURIComponent(auth);
-    var body = JSON.stringify({ id: dev.id, channel: Number(dev.channel) || 0, on: !!on });
-    return fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: body
-    }).then(function (r) {
-      if (r.ok) return r;
-      // retry alternate kind
-      var alt = kind === "light" ? "switch" : "light";
-      var url2 = shellyServer() + "/v2/devices/api/set/" + alt + "?auth_key=" + encodeURIComponent(auth);
-      return fetch(url2, { method: "POST", headers: { "Content-Type": "application/json" }, body: body });
-    }).then(function (r) {
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      return r;
+    _shellyQ = _shellyQ.then(function () { return shellyPace(); }).then(function () {
+      var kind = dev.kind || "light";
+      var url = shellyServer() + "/v2/devices/api/set/" + kind + "?auth_key=" + encodeURIComponent(auth);
+      var body = JSON.stringify({ id: dev.id, channel: Number(dev.channel) || 0, on: !!on });
+      return fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: body
+      }).then(function (r) {
+        if (r.ok) return r;
+        if (r.status === 429) throw new Error("429 rate limit — odota hetki");
+        var alt = kind === "light" ? "switch" : "light";
+        var url2 = shellyServer() + "/v2/devices/api/set/" + alt + "?auth_key=" + encodeURIComponent(auth);
+        return shellyPace().then(function () {
+          return fetch(url2, { method: "POST", headers: { "Content-Type": "application/json" }, body: body });
+        });
+      }).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r;
+      });
     });
+    return _shellyQ;
   }
   function setLightByName(name, on, label) {
     var dev = findDev(name);

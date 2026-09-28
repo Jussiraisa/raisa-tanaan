@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8" />
-<meta name="fiilis-build" content="20260920-v29" />
+<meta name="fiilis-build" content="20260928-v128-weekend-school" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1268,6 +1268,13 @@
     return "who-other";
   }
 
+  /** Sat all day + Sun before 15:00 Helsinki: hide Monday school preview (treenit OK). */
+  function suppressMondaySchoolPreview(n) {
+    const wd = new Date(n.y, n.m - 1, n.d).getDay();
+    const hour = n.h != null ? n.h : 0;
+    return wd === 6 || (wd === 0 && hour < 15);
+  }
+
   function collectSchool(schedule, n) {
     const wd = new Date(n.y, n.m - 1, n.d).getDay();
     const schools = (schedule && schedule.schoolStarts) || [];
@@ -1275,7 +1282,9 @@
     let dayIdx = wd;
     let tomorrow = false;
     let lunchDate = isoDate(n);
-    if (wd === 0 || wd === 6) {
+    if (suppressMondaySchoolPreview(n)) {
+      /* weekend stress: no Monday school cards */
+    } else if (wd === 0 || wd === 6) {
       dayIdx = 1;
       tomorrow = true;
       lunchDate = addDaysIso(n, wd === 0 ? 1 : 2);

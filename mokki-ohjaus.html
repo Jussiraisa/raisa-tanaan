@@ -415,10 +415,12 @@
   <div class="settings-panel" id="settingsPanel" hidden>
     <div class="lbl" style="margin-top:8px">Webhook URL</div>
     <input type="url" id="webhookUrl" placeholder="Liitä webhook-osoite tähän" autocomplete="off" spellcheck="false">
+    <div class="lbl" style="margin-top:14px">Authorization (webhook-avain)</div>
+    <input type="password" id="webhookAuth" placeholder="Liitä Authorization-headerin arvo" autocomplete="off" spellcheck="false">
     <div class="row" style="margin-top:10px">
       <button class="btn primary" type="button" id="saveWebhook">Tallenna</button>
     </div>
-    <div class="hint">Tallennetaan vain tähän laitteeseen (localStorage). Ei jaeta verkkoon. Ilman webhookia ohjaa Mökki-chatissa.</div>
+    <div class="hint">Molemmat tallennetaan vain tähän laitteeseen (localStorage). Työpöydällä: Mökki → rutiini Mökki ohjaus → Webhook URL ja Authorization header. Ilman näitä ohjaa Mökki-chatissa.</div>
   </div>
 
   <footer class="foot">
@@ -430,6 +432,7 @@
   <script>
 (function () {
   var LS_KEY = "mokkiWebhookUrl";
+  var LS_AUTH = "mokkiWebhookAuth";
   var DATA = null;
   var setC = 21;
   var MAIN_LIGHTS = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä"];
@@ -473,10 +476,17 @@
   function webhook() {
     return (localStorage.getItem(LS_KEY) || "").trim();
   }
+  function authHeader() {
+    return (localStorage.getItem(LS_AUTH) || "").trim();
+  }
   function refreshHookHint() {
     var w = webhook();
-    document.getElementById("hookHint").textContent = w ? "Webhook tallennettu" : "Webhook ei asetettu";
+    var a = authHeader();
+    document.getElementById("hookHint").textContent = w
+      ? (a ? "Webhook + avain tallennettu" : "Webhook tallennettu (avain puuttuu)")
+      : "Webhook ei asetettu";
     document.getElementById("webhookUrl").value = w;
+    document.getElementById("webhookAuth").value = a;
     document.getElementById("noWebhookNote").hidden = !!w;
   }
   function postAction(body, label) {
@@ -486,9 +496,12 @@
       return;
     }
     toast("Lähetetään…");
+    var headers = { "Content-Type": "application/json" };
+    var auth = authHeader();
+    if (auth) headers["Authorization"] = auth.indexOf(" ") >= 0 ? auth : ("Bearer " + auth);
     fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: headers,
       body: JSON.stringify(body),
       mode: "cors"
     }).then(function (r) {
@@ -591,12 +604,16 @@
 
   document.getElementById("saveWebhook").addEventListener("click", function () {
     var v = document.getElementById("webhookUrl").value.trim();
+    var a = document.getElementById("webhookAuth").value.trim();
     if (!v) {
       localStorage.removeItem(LS_KEY);
+      localStorage.removeItem(LS_AUTH);
       toast("Webhook poistettu", "ok");
     } else {
       localStorage.setItem(LS_KEY, v);
-      toast("Webhook tallennettu", "ok");
+      if (a) localStorage.setItem(LS_AUTH, a);
+      else localStorage.removeItem(LS_AUTH);
+      toast(a ? "Webhook + avain tallennettu" : "Webhook tallennettu (lisää vielä avain)", "ok");
     }
     refreshHookHint();
   });

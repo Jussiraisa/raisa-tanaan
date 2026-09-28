@@ -1,12 +1,13 @@
 {
   "v": 1,
-  "updated": 1790615692000,
-  "capturedAt": "2026-09-28T20:14+03:00",
-  "powerW": 3985,
-  "indoorC": 24.6,
-  "outdoorC": 13.9,
+  "updated": 1790616736445,
+  "capturedAt": "2026-09-28T20:32+03:00",
+  "powerW": 3438,
+  "indoorC": 24.7,
+  "outdoorC": 13.7,
   "lightsOn": [
     "WC peili",
+    "Ulkovalot",
     "Keittiö",
     "Ruokapöytä"
   ],
@@ -14,7 +15,7 @@
     "Eteinen": 0.0,
     "WC peili": 32.4,
     "Varastosoppi": 0.0,
-    "Ulkovalot": 0.0,
+    "Ulkovalot": 18.9,
     "2) sauna": 0.0,
     "Iltavalot": 0.0,
     "2)pukuhuone": 0.0,
@@ -36,7 +37,7 @@
   "evCharge": true,
   "motion": {
     "tie": {
-      "tempC": 19.4,
+      "tempC": 19.6,
       "humidityPct": 50.3,
       "active": false
     },
@@ -60,7 +61,7 @@
   "deviceCount": 33,
   "account": "mokki.raisa@gmail.com",
   "source": "shelly-cloud",
-  "notes": "Shelly Cloud API 2026-09-28T20:14+03:00. 33 devices. Power 3985 W. Indoor 24.6 outdoor 13.9. Lights on: WC peili, Keittiö, Ruokapöytä. EV=True sauna=False.",
+  "notes": "Shelly Cloud API 2026-09-28T20:32+03:00. 33 devices. Power 3438 W. Indoor 24.7 outdoor 13.7. Lights on: WC peili, Ulkovalot, Keittiö, Ruokapöytä. EV=True sauna=False.",
   "ilp": {
     "on": true,
     "mode": "Heat",

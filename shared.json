@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790675123227,
+  "updated": 1790677423494,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -252,16 +252,6 @@
   "note": "WA 28.9. Fiilis: to Welhot meidän; pe Ambrosia-vienti meidän. la 3.10. Joensuu kuski auki. Wilma kokeet synkattu.",
   "extras": [
     {
-      "id": "info-koulukuvaus-mea-2026-09-29",
-      "who": "mea",
-      "title": "Koulukuvaus 8F 12.45–13.15",
-      "date": "2026-09-29",
-      "start": "12:45",
-      "end": "13:15",
-      "kind": "info",
-      "place": "Jynkänlahden koulu"
-    },
-    {
       "id": "info-koulukuvaus-samuel-2026-09-30",
       "who": "samuel",
       "title": "Koulukuvaus (lomake opettajalle; aika opettajalta)",
@@ -484,25 +474,25 @@
       "id": "cal-io8iqb1g0jmujbb6602pq3qtmk",
       "title": "Riikka · Kuuleva työ",
       "date": "2026-09-29",
-      "kind": "cal",
       "start": "09:00",
-      "end": "16:45"
+      "end": "16:45",
+      "kind": "cal"
     },
     {
       "id": "cal-60o32d1n8924cba26sokcb9k6gp3ab9o68sjgba375232ga2752jcd1j6g",
       "title": "Valokuvaus Mea",
       "date": "2026-09-29",
-      "kind": "cal",
       "start": "12:45",
-      "end": "13:45"
+      "end": "13:45",
+      "kind": "cal"
     },
     {
       "id": "cal-6j92c2gint0dud3habd16ct4t8",
       "title": "Mea · kemian opetus · Jussi + Mea",
       "date": "2026-09-29",
-      "kind": "cal",
       "start": "18:30",
-      "end": "19:30"
+      "end": "19:30",
+      "kind": "cal"
     },
     {
       "id": "cal-md115enjo3omkea15kqlvlrqsg",
@@ -514,9 +504,9 @@
       "id": "cal-djghfi05ojtjvris1a9jorkv4g",
       "title": "Ellen · EN sanakoe",
       "date": "2026-09-30",
-      "kind": "cal",
       "start": "08:00",
-      "end": "16:00"
+      "end": "16:00",
+      "kind": "cal"
     }
   ],
   "schoolLunch": {

@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "updated": 1790622040973,
-  "capturedAt": "2026-09-28T22:00+03:00",
+  "updated": 1790653413859,
+  "capturedAt": "2026-09-29T06:43+03:00",
   "powerW": 4043,
   "indoorC": 24.8,
   "outdoorC": 15.5,
@@ -60,7 +60,7 @@
   "deviceCount": 33,
   "account": "mokki.raisa@gmail.com",
   "source": "shelly-cloud",
-  "notes": "Shelly Cloud API 2026-09-28T22:00+03:00. 33 devices. Power 4043 W. Indoor 24.8 outdoor 15.5. Lights on: Eteinen, WC peili, Ulkovalot. EV=True sauna=False.",
+  "notes": "Shelly Cloud API 2026-09-28T22:00+03:00. 33 devices. Power 4043 W. Indoor 24.8 outdoor 15.5. Lights on: Eteinen, WC peili, Ulkovalot. EV=True sauna=False. Vallox Vallox 096 MV · Home 30% · RH 47%.",
   "ilp": {
     "on": true,
     "mode": "Heat",
@@ -69,5 +69,24 @@
   },
   "ilpDevice": "ACa795",
   "ilpOnline": true,
-  "ilpSource": "ewpe-gree-europe"
+  "ilpSource": "ewpe-gree-europe",
+  "vallox": {
+    "profile": "Home",
+    "fanPct": 30,
+    "outdoorC": 11,
+    "extractC": 24,
+    "exhaustC": 15,
+    "supplyC": 22,
+    "supplyCellC": 22,
+    "rhPct": 47,
+    "co2": 754,
+    "homeFanPct": 30,
+    "awayFanPct": 20,
+    "boostFanPct": 70,
+    "model": "Vallox 096 MV",
+    "name": "Mökki Räisä"
+  },
+  "valloxDevice": "0F9B33D4-2F96-4949-8380-B6598E5534C1",
+  "valloxOnline": true,
+  "valloxSource": "myvallox-cloud"
 }

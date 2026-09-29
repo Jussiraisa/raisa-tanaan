@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-29T07:18:34+03:00",
+  "updated": "2026-09-29T07:21:52+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -640,7 +640,7 @@
       "kind": "treeni",
       "source": "nimenhuuto:welhot2018",
       "driver": "Sanna/Mane",
-      "note": "WA Säbä kyydit · tiistai Sannan perhe"
+      "note": "WA Säbä kyydit · tiistai Manen perhe (ei meidän)"
     },
     {
       "date": "2026-09-29",
@@ -648,11 +648,12 @@
       "end": "18:30",
       "place": "Kuopiohalli",
       "title": "Ambrosia treeni",
-      "note": "meidän kyydit",
+      "note": "meidän kyydit tänään (Jussi 29.9.)",
       "who": "Ellen",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "driver": "Meidän"
+      "driver": "Meidän",
+      "pickup": "Meidän"
     },
     {
       "date": "2026-09-29",

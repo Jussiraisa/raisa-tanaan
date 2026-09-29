@@ -277,6 +277,65 @@
       color: var(--muted); font-size: 14px; font-weight: 550; line-height: 1.4;
     }
     .ilp-note strong { color: var(--text); font-weight: 750; }
+    .ilp-note[hidden], .clim-body[hidden] { display: none !important; }
+
+    .card-head {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; margin-bottom: 12px;
+    }
+    .card-head .lbl { margin-bottom: 0; }
+    .card-head .chip { font-size: 12px; padding: 6px 10px; }
+    .card-head .chip[hidden] { display: none; }
+    .clim {
+      display: grid; grid-template-columns: 1fr 1.25fr; gap: var(--gap);
+      margin-bottom: 12px;
+    }
+    .clim-box {
+      border-radius: var(--r2); padding: 14px 14px 12px;
+      background: rgba(255,255,255,.03); border: 1px solid var(--line);
+      min-width: 0;
+    }
+    .clim-box .cl-lbl {
+      font-size: 11px; font-weight: 750; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--dim);
+    }
+    .clim-box .cl-val {
+      margin-top: 6px; font-family: var(--serif); font-weight: 650;
+      font-size: clamp(34px, 9vw, 46px); letter-spacing: -.03em; line-height: 1;
+    }
+    .clim-box .cl-val.pending { color: var(--warm); }
+    .stepper { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .stepper .mid { text-align: center; flex: 1 1 auto; min-width: 0; }
+    .step-btn {
+      flex: 0 0 auto; width: 48px; height: 48px; border-radius: 14px;
+      background: var(--surface2); border: 1px solid var(--line);
+      font-size: 24px; font-weight: 650; color: var(--text);
+      transition: background .15s, border-color .15s, transform .12s;
+    }
+    .step-btn:active { transform: scale(.95); }
+    .btn[disabled], .step-btn[disabled] { opacity: .45; pointer-events: none; }
+    .row + .row { margin-top: 8px; }
+    .btn.mode, .btn.prof { flex: 1 1 calc(33.333% - 8px); padding: 12px 10px; font-size: 14px; }
+    .btn.prof { flex-basis: calc(50% - 8px); }
+    .btn.power-on { background: var(--teal-dim); border-color: var(--teal-line); color: var(--teal); }
+    .btn.warm-on { background: var(--warm-dim); border-color: rgba(227,195,106,.35); color: var(--warm); }
+    .mini-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+      margin-bottom: 10px;
+    }
+    .mini {
+      border-radius: 14px; padding: 12px 10px 10px;
+      background: rgba(255,255,255,.03); border: 1px solid var(--line); min-width: 0;
+    }
+    .mini .m-lbl { font-size: 10px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
+    .mini .m-val { margin-top: 6px; font-family: var(--serif); font-size: 26px; font-weight: 650; letter-spacing: -.02em; line-height: 1; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .chips .chip { font-size: 12px; padding: 6px 10px; }
+    .clim-hint { margin-top: 10px; }
+    @media (max-width: 420px) {
+      .mini-grid { grid-template-columns: repeat(2, 1fr); }
+      .clim { grid-template-columns: 1fr; }
+    }
 
     .settings-toggle {
       width: 100%; display: flex; justify-content: space-between; align-items: center;
@@ -408,11 +467,68 @@
     <div class="row" id="lightGrid"><div class="empty">Odottaa Shelly-liveä…</div></div>
   </section>
 
-  <section class="card" aria-label="ILP">
-    <div class="lbl">ILP</div>
-    <div class="ilp-note">
-      <div>💬</div>
-      <div><strong>Ohjaa chatissa</strong> — esim. “lämmöt 21” tai “ILP pois”. Ilmalämpöpumppu ei ole Shellyssä, joten sivu ei polta tokeneita turhaan.</div>
+  <section class="card" aria-label="ILP" id="ilpCard">
+    <div class="card-head">
+      <div class="lbl">ILP · Ilmalämpöpumppu</div>
+      <span class="chip" id="ilpChip">—</span>
+    </div>
+    <div class="ilp-note" data-clim-note hidden>
+      <div>🔌</div>
+      <div data-clim-note-text></div>
+    </div>
+    <div class="clim-body" data-clim-body hidden>
+      <div class="clim">
+        <div class="clim-box">
+          <div class="cl-lbl">Sisällä</div>
+          <div class="cl-val" id="ilpIndoor">—°</div>
+        </div>
+        <div class="clim-box">
+          <div class="stepper">
+            <button class="step-btn" type="button" data-ilp="down" aria-label="Laske asetusta">−</button>
+            <div class="mid">
+              <div class="cl-lbl">Asetus</div>
+              <div class="cl-val" id="ilpSet">—°</div>
+            </div>
+            <button class="step-btn" type="button" data-ilp="up" aria-label="Nosta asetusta">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" data-ilp="power" id="ilpPower">—</button>
+      </div>
+      <div class="row">
+        <button class="btn mode" type="button" data-ilp-mode="heat">Lämmitys</button>
+        <button class="btn mode" type="button" data-ilp-mode="cool">Jäähdytys</button>
+        <button class="btn mode" type="button" data-ilp-mode="auto">Auto</button>
+      </div>
+      <div class="hint clim-hint" id="ilpHint">—</div>
+    </div>
+  </section>
+
+  <section class="card" aria-label="Ilmanvaihto" id="valloxCard">
+    <div class="card-head">
+      <div class="lbl">Ilmanvaihto · Vallox</div>
+      <span class="chip" id="vxChip">—</span>
+    </div>
+    <div class="ilp-note" data-clim-note hidden>
+      <div>🔌</div>
+      <div data-clim-note-text></div>
+    </div>
+    <div class="clim-body" data-clim-body hidden>
+      <div class="mini-grid">
+        <div class="mini"><div class="m-lbl">Tulo</div><div class="m-val" id="vxSupply">—°</div></div>
+        <div class="mini"><div class="m-lbl">Poisto</div><div class="m-val" id="vxExtract">—°</div></div>
+        <div class="mini"><div class="m-lbl">Ulko</div><div class="m-val" id="vxOutdoor">—°</div></div>
+        <div class="mini"><div class="m-lbl">Jäte</div><div class="m-val" id="vxExhaust">—°</div></div>
+      </div>
+      <div class="chips" id="vxChips"></div>
+      <div class="row">
+        <button class="btn prof" type="button" data-vx="home">Kotona</button>
+        <button class="btn prof" type="button" data-vx="away">Poissa</button>
+        <button class="btn prof" type="button" data-vx="boost">Tehostus</button>
+        <button class="btn prof" type="button" data-vx="fireplace">Takka</button>
+      </div>
+      <div class="hint clim-hint" id="vxHint">—</div>
     </div>
   </section>
 
@@ -421,6 +537,8 @@
     <input type="url" id="shellyServer" placeholder="https://shelly-273-eu.shelly.cloud" autocomplete="off" spellcheck="false">
     <div class="lbl" style="margin-top:14px">Pilviavain (auth_key)</div>
     <input type="password" id="shellyAuth" placeholder="Liitä mökin Shelly-pilviavain" autocomplete="off" spellcheck="false">
+    <div class="lbl" style="margin-top:14px">ILP + Vallox · ohjausavain</div>
+    <input type="password" id="mokkiToken" placeholder="Välityspalvelimen avain (linkistä #t=…)" autocomplete="off" spellcheck="false">
     <div class="row" style="margin-top:12px">
       <button class="btn primary" type="button" id="saveShelly">Tallenna &amp; yhdistä</button>
     </div>
@@ -438,6 +556,11 @@
   var LS_SHELLY_SERVER = "mokkiShellyServer";
   var LS_SHELLY_AUTH = "mokkiShellyAuth";
   var DEFAULT_SERVER = "https://shelly-273-eu.shelly.cloud";
+  // ILP (Gree/EWPE) + Vallox kulkevat oman Cloudflare Worker -välityspalvelimen kautta
+  // (valmistajien pilvet estävät selaimen CORSin). Avain: linkin #t=… → localStorage + eväste.
+  var WORKER_URL = "https://mokki-proxy.jussi-raisa.workers.dev";
+  var LS_MOKKI_TOKEN = "mokkiProxyToken";
+  var CLIM_POLL_MS = 60000;
   var DEVICES = [{"name": "Ulkovalot", "id": "34987a496fc8", "channel": 0, "kind": "light"}, {"name": "Pihavalot", "id": "841fe898cd14", "channel": 2, "kind": "switch"}, {"name": "WC peili", "id": "2cbcbba77ee0", "channel": 0, "kind": "light"}, {"name": "Ruokapöytä", "id": "fce8c0cc4010", "channel": 1, "kind": "light"}, {"name": "Eteinen", "id": "fce8c0cc4010", "channel": 0, "kind": "light"}, {"name": "Keittiö", "id": "08f9e0e4be14", "channel": 0, "kind": "light"}, {"name": "Makuusoppi", "id": "08f9e0e4b558", "channel": 0, "kind": "light"}, {"name": "Varastosoppi", "id": "08f9e0e4b558", "channel": 1, "kind": "light"}, {"name": "Parvi valot", "id": "08f9e0e4c028", "channel": 0, "kind": "light"}, {"name": "Parvi oikea", "id": "08f9e0e4c028", "channel": 1, "kind": "light"}, {"name": "Seinävalot", "id": "2cbcbb9f3f6c", "channel": 0, "kind": "light"}, {"name": "Olohuone valo", "id": "2cbcbb9f3f6c", "channel": 1, "kind": "light"}, {"name": "2) sauna", "id": "2cbcbba77ee0", "channel": 1, "kind": "light"}, {"name": "2)pukuhuone", "id": "08f9e0e4be14", "channel": 1, "kind": "light"}, {"name": "Iltavalot", "id": "441793a9c664", "channel": 0, "kind": "switch"}];
   var MAIN_LIGHTS = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä", "Eteinen", "Keittiö", "Seinävalot", "Olohuone valo", "Parvi valot", "Parvi oikea", "Makuusoppi", "Varastosoppi", "2)pukuhuone", "2) sauna", "Iltavalot"];
   var SENSOR = {
@@ -497,13 +620,16 @@
   (function persistKey(){
     try{
       var h=new URLSearchParams((location.hash||"").replace(/^#/,""));
-      var k=h.get("k"), sv=h.get("s");
+      var k=h.get("k"), sv=h.get("s"), tk=h.get("t");
       if(k){localStorage.setItem(LS_SHELLY_AUTH,k.trim());_setCk("mk_a",k.trim());}
       if(sv){localStorage.setItem(LS_SHELLY_SERVER,sv.trim().replace(/\/$/,""));_setCk("mk_s",sv.trim());}
-      if(k||sv) history.replaceState(null,"",location.pathname+location.search);
+      if(tk){localStorage.setItem(LS_MOKKI_TOKEN,tk.trim());_setCk("mk_t",tk.trim());}
+      if(k||sv||tk) history.replaceState(null,"",location.pathname+location.search);
       if(!localStorage.getItem(LS_SHELLY_AUTH)&&_ck("mk_a")) localStorage.setItem(LS_SHELLY_AUTH,_ck("mk_a"));
       if(!localStorage.getItem(LS_SHELLY_SERVER)&&_ck("mk_s")) localStorage.setItem(LS_SHELLY_SERVER,_ck("mk_s"));
+      if(!localStorage.getItem(LS_MOKKI_TOKEN)&&_ck("mk_t")) localStorage.setItem(LS_MOKKI_TOKEN,_ck("mk_t"));
       if(localStorage.getItem(LS_SHELLY_AUTH)&&!_ck("mk_a")) _setCk("mk_a",localStorage.getItem(LS_SHELLY_AUTH));
+      if(localStorage.getItem(LS_MOKKI_TOKEN)&&!_ck("mk_t")) _setCk("mk_t",localStorage.getItem(LS_MOKKI_TOKEN));
       if(navigator.storage&&navigator.storage.persist) navigator.storage.persist();
     }catch(e){}
   })();
@@ -525,6 +651,7 @@
     document.getElementById("hookHint").textContent = s ? "Shelly avain OK" : "Shelly-avain puuttuu";
     document.getElementById("shellyServer").value = shellyServer();
     document.getElementById("shellyAuth").value = s;
+    document.getElementById("mokkiToken").value = mokkiToken();
     if (!s) {
       setLive(false, "Lisää avain");
       document.getElementById("settingsPanel").hidden = false;
@@ -1038,6 +1165,214 @@
       .finally(function () { _pullBusy = false; });
   }
 
+
+  // ---------- ILP + Vallox (Cloudflare Worker -välityspalvelin) ----------
+  var CLIM = null;           // viimeisin /status
+  var _climBusy = false;
+  var _climLast = 0;
+  var _climErr = "";
+  var _ilpPendingSet = null; // +/- painettu, lähetetään viiveellä
+  var _ilpSetTimer = null;
+  var _ilpSending = false;
+  var _vxPending = null;     // { profile, until }
+  var ILP_MODE_FI = { heat: "Lämmitys", cool: "Jäähdytys", auto: "Auto", dry: "Kuivaus", fan: "Puhallus" };
+  var ILP_FAN_FI = { auto: "auto", low: "hiljainen", "medium-low": "pieni", medium: "keski", "medium-high": "suuri", high: "täysi" };
+  var VX_FI = { home: "Kotona", away: "Poissa", boost: "Tehostus", fireplace: "Takka", adaptive: "Adaptiivinen" };
+
+  function workerUrl() {
+    var u = String(WORKER_URL || "").trim().replace(/\/$/, "");
+    return (!u || /REPLACE/.test(u)) ? "" : u;
+  }
+  function mokkiToken() {
+    return (localStorage.getItem(LS_MOKKI_TOKEN) || "").trim();
+  }
+  function climNote() {
+    if (!workerUrl()) return "<strong>Ei vielä käytössä</strong> — välityspalvelinta (Worker) ei ole vielä otettu käyttöön. Ohjaa toistaiseksi chatissa.";
+    if (!mokkiToken()) return "<strong>Ohjausavain puuttuu</strong> — avaa sivu linkillä, jossa on <code>#t=…</code>, tai lisää avain asetuksista (⚙).";
+    return "";
+  }
+  function paintClimShell() {
+    var note = climNote();
+    ["ilpCard", "valloxCard"].forEach(function (id) {
+      var card = document.getElementById(id);
+      var n = card.querySelector("[data-clim-note]");
+      var body = card.querySelector("[data-clim-body]");
+      n.hidden = !note;
+      if (note) n.querySelector("[data-clim-note-text]").innerHTML = note;
+      body.hidden = !!note;
+    });
+    document.getElementById("ilpChip").hidden = !!note;
+    document.getElementById("vxChip").hidden = !!note;
+    return !note;
+  }
+  function mokkiApi(path, body) {
+    var opts = { method: body ? "POST" : "GET", mode: "cors", cache: "no-store", headers: { "X-Mokki-Token": mokkiToken() } };
+    if (body) { opts.headers["Content-Type"] = "application/json"; opts.body = JSON.stringify(body); }
+    return fetch(workerUrl() + path, opts).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (r.status === 401) throw new Error("ohjausavain ei kelpaa");
+        if (!r.ok) throw new Error((j && j.error) || ("HTTP " + r.status));
+        return j;
+      });
+    });
+  }
+  function climPull(force) {
+    if (!paintClimShell()) return;
+    if (_climBusy) return;
+    if (!force && _climLast && Date.now() - _climLast < CLIM_POLL_MS - 2000) return; // ei tiheämmin kuin ~60 s
+    _climBusy = true;
+    _climLast = Date.now();
+    mokkiApi("/status").then(function (j) {
+      CLIM = j; CLIM._at = Date.now(); _climErr = "";
+    }).catch(function (e) {
+      _climErr = e && e.message ? e.message : "yhteysvirhe";
+    }).finally(function () {
+      _climBusy = false;
+      paintClim();
+    });
+  }
+  function ilpState() { return CLIM && CLIM.ilp && !CLIM.ilp.error ? CLIM.ilp : null; }
+  function vxState() { return CLIM && CLIM.vallox && !CLIM.vallox.error ? CLIM.vallox : null; }
+  function degC(v, d) { return v == null ? "—°" : num(v, d == null ? (Number(v) % 1 ? 1 : 0) : d) + "°"; }
+
+  function paintClim() {
+    if (!paintClimShell()) return;
+    var ilp = ilpState();
+    var ilpErr = _climErr || (CLIM && CLIM.ilp && CLIM.ilp.error) || "";
+    var chip = document.getElementById("ilpChip");
+    var pw = document.getElementById("ilpPower");
+    var setEl = document.getElementById("ilpSet");
+    document.querySelectorAll("#ilpCard [data-ilp], #ilpCard [data-ilp-mode]").forEach(function (b) {
+      b.disabled = !ilp || _ilpSending;
+    });
+    if (ilp) {
+      chip.textContent = ilp.on ? "Päällä" : "Pois";
+      chip.className = "chip" + (ilp.on ? " on" : "");
+      document.getElementById("ilpIndoor").textContent = degC(ilp.indoorC);
+      var shown = _ilpPendingSet != null ? _ilpPendingSet : ilp.setC;
+      setEl.textContent = degC(shown, ilp.step === 0.5 ? 1 : 0);
+      setEl.className = "cl-val" + (_ilpPendingSet != null ? " pending" : "");
+      pw.textContent = ilp.on ? "Sammuta ILP" : "Käynnistä ILP";
+      pw.className = "btn" + (ilp.on ? " power-on" : "");
+      document.querySelectorAll("#ilpCard [data-ilp-mode]").forEach(function (b) {
+        var on = b.getAttribute("data-ilp-mode") === ilp.mode;
+        b.className = "btn mode" + (on ? (ilp.mode === "heat" ? " warm-on" : " on") : "");
+      });
+      var hint = (ILP_MODE_FI[ilp.mode] || ilp.mode || "—") +
+        (ilp.fan ? " · puhallin " + (ILP_FAN_FI[ilp.fan] || ilp.fan) : "") +
+        " · " + ageLabel(CLIM._at);
+      if (_ilpPendingSet != null) hint = "Asetetaan " + degC(_ilpPendingSet, ilp.step === 0.5 ? 1 : 0) + "…";
+      if (_ilpSending) hint = "Lähetetään…";
+      if (_climErr) hint = "Päivitys epäonnistui (" + _climErr + ") · näytetään " + ageLabel(CLIM._at);
+      document.getElementById("ilpHint").textContent = hint;
+    } else {
+      chip.textContent = ilpErr ? "Ei yhteyttä" : "Haetaan…";
+      chip.className = "chip";
+      document.getElementById("ilpIndoor").textContent = "—°";
+      setEl.textContent = "—°"; setEl.className = "cl-val";
+      pw.textContent = "—"; pw.className = "btn";
+      document.getElementById("ilpHint").textContent = ilpErr ? ("ILP ei vastaa: " + ilpErr) : "Haetaan tilaa…";
+    }
+
+    var vx = vxState();
+    var vxErr = _climErr || (CLIM && CLIM.vallox && CLIM.vallox.error) || "";
+    var vchip = document.getElementById("vxChip");
+    document.querySelectorAll("#valloxCard [data-vx]").forEach(function (b) { b.disabled = !vx || !!_vxPending; });
+    if (vx) {
+      if (_vxPending && (vx.profile === _vxPending.profile || Date.now() > _vxPending.until)) _vxPending = null;
+      var prof = _vxPending ? _vxPending.profile : vx.profile;
+      vchip.textContent = (VX_FI[prof] || prof || "—") + (_vxPending ? " · vaihtuu…" : "");
+      vchip.className = "chip" + (prof === "home" ? " on" : (prof === "boost" || prof === "fireplace") ? " hot" : prof === "away" ? " ev" : "");
+      document.getElementById("vxSupply").textContent = degC(vx.supplyC);
+      document.getElementById("vxExtract").textContent = degC(vx.extractC);
+      document.getElementById("vxOutdoor").textContent = degC(vx.outdoorC);
+      document.getElementById("vxExhaust").textContent = degC(vx.exhaustC);
+      var chips = "";
+      if (vx.fanSpeed != null) chips += "<span class=\"chip\">Puhallus " + esc(num(vx.fanSpeed)) + " %</span>";
+      if (vx.rh != null) chips += "<span class=\"chip\">Kosteus " + esc(num(vx.rh)) + " %</span>";
+      if (vx.co2 != null) chips += "<span class=\"chip\">CO₂ " + esc(num(vx.co2)) + " ppm</span>";
+      if (vx.profile === "boost" && vx.boostMinLeft > 0) chips += "<span class=\"chip hot\">Tehostus " + esc(num(vx.boostMinLeft)) + " min</span>";
+      if (vx.profile === "fireplace" && vx.fireplaceMinLeft > 0) chips += "<span class=\"chip hot\">Takka " + esc(num(vx.fireplaceMinLeft)) + " min</span>";
+      if (vx.online === false) chips += "<span class=\"chip\">Offline</span>";
+      document.getElementById("vxChips").innerHTML = chips;
+      document.querySelectorAll("#valloxCard [data-vx]").forEach(function (b) {
+        var p = b.getAttribute("data-vx");
+        b.className = "btn prof" + (p === prof ? ((p === "boost" || p === "fireplace") ? " warm-on" : " on") : "");
+      });
+      document.getElementById("vxHint").textContent = _climErr
+        ? "Päivitys epäonnistui (" + _climErr + ") · näytetään " + ageLabel(CLIM._at)
+        : (_vxPending ? "Profiili vaihtuu — Vallox-pilvi päivittyy viiveellä." : "Päivitetty " + ageLabel(CLIM._at));
+    } else {
+      vchip.textContent = vxErr ? "Ei yhteyttä" : "Haetaan…";
+      vchip.className = "chip";
+      ["vxSupply", "vxExtract", "vxOutdoor", "vxExhaust"].forEach(function (id) { document.getElementById(id).textContent = "—°"; });
+      document.getElementById("vxChips").innerHTML = "";
+      document.getElementById("vxHint").textContent = vxErr ? ("Vallox ei vastaa: " + vxErr) : "Haetaan tilaa…";
+    }
+  }
+
+  function ilpSend(body, okMsg) {
+    _ilpSending = true;
+    paintClim();
+    toast("Lähetetään ILP:lle…");
+    return mokkiApi("/ilp", body).then(function (j) {
+      if (j && j.ilp && CLIM) { CLIM.ilp = j.ilp; CLIM._at = Date.now(); }
+      toast(okMsg || "ILP päivitetty", "ok");
+    }).catch(function (e) {
+      toast("ILP: " + (e && e.message ? e.message : "virhe"), "err");
+    }).finally(function () {
+      _ilpSending = false;
+      _ilpPendingSet = null;
+      paintClim();
+      climPull(true); // päivitä heti komennon jälkeen
+    });
+  }
+  function ilpStep(dir) {
+    var ilp = ilpState();
+    if (!ilp || _ilpSending) return;
+    var step = ilp.step || 1;
+    var base = _ilpPendingSet != null ? _ilpPendingSet : Number(ilp.setC);
+    var next = Math.round((base + dir * step) / step) * step;
+    next = Math.max(ilp.minC || 16, Math.min(ilp.maxC || 30, next));
+    _ilpPendingSet = next;
+    paintClim();
+    clearTimeout(_ilpSetTimer);
+    _ilpSetTimer = setTimeout(function () {
+      var target = _ilpPendingSet;
+      var cur = ilpState();
+      if (target == null || !cur) return;
+      if (target === Number(cur.setC)) { _ilpPendingSet = null; paintClim(); return; }
+      ilpSend({ setC: target }, "Asetus " + degC(target, step === 0.5 ? 1 : 0));
+    }, 1200);
+  }
+  function ilpPower() {
+    var ilp = ilpState();
+    if (!ilp || _ilpSending) return;
+    if (ilp.on && !confirm("Sammutetaanko ilmalämpöpumppu?")) return;
+    ilpSend({ on: !ilp.on }, ilp.on ? "ILP sammutettu" : "ILP käynnistetty");
+  }
+  function ilpMode(mode) {
+    var ilp = ilpState();
+    if (!ilp || _ilpSending || ilp.mode === mode) return;
+    ilpSend({ mode: mode }, "Tila: " + (ILP_MODE_FI[mode] || mode));
+  }
+  function vxSet(profile) {
+    var vx = vxState();
+    if (!vx || _vxPending || vx.profile === profile) return;
+    _vxPending = { profile: profile, until: Date.now() + 90000 };
+    paintClim();
+    toast("Vaihdetaan: " + (VX_FI[profile] || profile) + "…");
+    mokkiApi("/vallox", { profile: profile }).then(function () {
+      toast("Vallox: " + (VX_FI[profile] || profile), "ok");
+    }).catch(function (e) {
+      _vxPending = null;
+      toast("Vallox: " + (e && e.message ? e.message : "virhe"), "err");
+    }).finally(function () {
+      paintClim();
+      climPull(true); // päivitä heti komennon jälkeen
+    });
+  }
+
   document.getElementById("settingsToggle").addEventListener("click", function () {
     var panel = document.getElementById("settingsPanel");
     var open = panel.hidden;
@@ -1047,6 +1382,12 @@
   document.getElementById("saveShelly").addEventListener("click", function () {
     var srv = document.getElementById("shellyServer").value.trim() || DEFAULT_SERVER;
     var key = document.getElementById("shellyAuth").value.trim();
+    var mtok = document.getElementById("mokkiToken").value.trim();
+    if (mtok) {
+      if (mtok !== mokkiToken()) { localStorage.setItem(LS_MOKKI_TOKEN, mtok); _setCk("mk_t", mtok); climPull(true); }
+    } else if (mokkiToken()) {
+      localStorage.removeItem(LS_MOKKI_TOKEN); _setCk("mk_t", ""); paintClimShell();
+    }
     localStorage.setItem(LS_SHELLY_SERVER, srv.replace(/\/$/, ""));
     if (!key) {
       localStorage.removeItem(LS_SHELLY_AUTH);
@@ -1063,12 +1404,21 @@
   });
   document.getElementById("refreshNow").addEventListener("click", function () {
     pull();
+    if (!_climLast || Date.now() - _climLast > 15000) climPull(true);
     toast("Päivitetään…");
   });
 
   document.body.addEventListener("click", function (ev) {
-    var t = ev.target.closest ? ev.target.closest("[data-light],[data-action]") : null;
+    var t = ev.target.closest ? ev.target.closest("[data-light],[data-action],[data-ilp],[data-ilp-mode],[data-vx]") : null;
     if (!t) return;
+    if (t.disabled) return;
+    if (t.getAttribute("data-ilp")) {
+      var ia = t.getAttribute("data-ilp");
+      if (ia === "up") ilpStep(1); else if (ia === "down") ilpStep(-1); else if (ia === "power") ilpPower();
+      return;
+    }
+    if (t.getAttribute("data-ilp-mode")) { ilpMode(t.getAttribute("data-ilp-mode")); return; }
+    if (t.getAttribute("data-vx")) { vxSet(t.getAttribute("data-vx")); return; }
     if (t.getAttribute("data-light")) {
       var name = t.getAttribute("data-light");
       var isOn = t.getAttribute("data-on") === "1";
@@ -1088,8 +1438,12 @@
   setInterval(pull, 15000);
   setInterval(function () { refreshCosts(false); }, 5 * 60 * 1000);
   setInterval(function () { if (DATA && DATA.updated) paint(); }, 5000);
+  paintClim();
+  climPull(true);
+  setInterval(function () { if (!document.hidden) climPull(false); }, CLIM_POLL_MS);
+  setInterval(function () { if (CLIM && !_climBusy) paintClim(); }, 15000);
   document.addEventListener("visibilitychange", function () {
-    if (!document.hidden) pull();
+    if (!document.hidden) { pull(); climPull(false); }
   });
 })();
 </script>

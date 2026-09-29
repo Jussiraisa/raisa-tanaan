@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#0a0b0e">
-  <title>Räisä · Mökki ohjaus</title>
+  <title>Mökki · Live</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
@@ -356,21 +356,22 @@
   <header class="top">
     <div>
       <div class="brand">Räisä · Mökki</div>
-      <h1 class="title">Ohjaus</h1>
+      <h1 class="title">Live</h1>
     </div>
-    <a class="back" href="mokki.html">← Tila</a>
+    <button class="back" type="button" id="refreshNow" title="Päivitä">↻</button>
   </header>
 
   <div class="status" id="statusPills" aria-live="polite"></div>
 
   <div class="note" id="noShellyNote" hidden>
     <span aria-hidden="true">🔑</span>
-    <div><strong>Lisää Shelly-pilviavain Asetuksista</strong>, niin valonapit toimivat. ILP: kirjoita Mökki-chattiin.</div>
+    <div><strong>Lisää Shelly-pilviavain Asetuksista</strong> — sitten teho, lämpötilat ja valot päivittyvät live suoraan Shellystä (ei bot-tokeneita).</div>
   </div>
 
   <section class="card ilp" aria-label="ILP">
     <div class="lbl">ILP · ilmalämpöpumppu</div>
-    <div class="ilp-state" id="ilpState">—</div>
+    <div class="ilp-state" id="ilpState">Ohjaa chatissa (ei Shellyssä)</div>
+    <div class="hint" style="margin:8px 0 0">Esim. “lämmöt 21” tai “ILP pois” Mökki-agentille. Napit tarvitsevat webhookin (CORS yleensä estää).</div>
     <div class="row power-row">
       <button class="btn" type="button" data-action="ilp_on" id="btnIlpOn">Päälle</button>
       <button class="btn" type="button" data-action="ilp_off" id="btnIlpOff">Pois</button>
@@ -420,7 +421,7 @@
     <div class="row" style="margin-top:10px">
       <button class="btn primary" type="button" id="saveShelly">Tallenna Shelly</button>
     </div>
-    <div class="hint">Valot ohjataan suoraan Shelly Cloudista (toimii selaimessa). Avain: Shelly → Asetukset → Kotiin → Pilviavain. Tallennus vain tähän laitteeseen.</div>
+    <div class="hint">Tila + valot tulevat suoraan Shelly Cloudista selaimessa (live, ei bot-rutiinia). Avain: Shelly → Asetukset → Kotiin → Pilviavain. Tallennus vain tähän laitteeseen.</div>
     <div class="lbl" style="margin-top:18px">ILP (valinnainen webhook)</div>
     <input type="url" id="webhookUrl" placeholder="Webhook URL ILP-napeille" autocomplete="off" spellcheck="false">
     <input type="password" id="webhookAuth" placeholder="Authorization (Bearer …)" autocomplete="off" spellcheck="false" style="margin-top:8px">
@@ -657,7 +658,11 @@
       var kw = Number(d.powerW) / 1000;
       pills += "<span class=\"pill\">" + (kw >= 1 ? num(kw, 2) + " kW" : Math.round(d.powerW) + " W") + "</span>";
     }
-    pills += "<span class=\"pill" + (ilp.on ? "" : " off") + "\">ILP " + (ilp.on ? (modeFi || "ON") : "pois") + "</span>";
+    if (ilp && (ilp.on != null || ilp.mode)) {
+      pills += "<span class=\"pill" + (ilp.on ? "" : " off") + "\">ILP " + (ilp.on ? (modeFi || "ON") : "pois") + "</span>";
+    }
+    if (d.evCharge) pills += "<span class=\"pill\">EV lataa</span>";
+    if (d.sauna) pills += "<span class=\"pill\">Sauna</span>";
     if (lightsOn.length) {
       pills += "<span class=\"pill\">" + lightsOn.length + " valo" + (lightsOn.length === 1 ? "" : "a") + "</span>";
     } else {
@@ -707,17 +712,128 @@
     document.getElementById("lightChips").innerHTML = html;
 
     var age = ageLabel(d.updated);
-    var stale = d.updated && (Date.now() - Number(d.updated) > 30 * 60 * 1000);
+    var stale = d.updated && (Date.now() - Number(d.updated) > 2 * 60 * 1000);
     document.getElementById("age").className = stale ? "stale" : "";
-    document.getElementById("age").textContent = "Päivitetty " + age
-      + (d.capturedAt ? " · " + String(d.capturedAt).replace("T", " ").substr(0, 16) : "");
+    document.getElementById("age").textContent = (_liveSource || "—") + " · " + age;
+  }
+
+  var SENSOR = {
+    em: "a4f00fcc6468",
+    tempHost: "441793a9c664",
+    indoorCh: 101,
+    outdoorCh: 100,
+    ev: "841fe8817aac",
+    evCh: 0
+  };
+  var _pullBusy = false;
+  var _liveSource = "—";
+
+  function component(st, kind, ch) {
+    if (!st) return null;
+    var b = st[kind + ":" + ch];
+    return b && typeof b === "object" ? b : null;
+  }
+
+  function parseShellyAllStatus(payload) {
+    var root = payload && payload.data ? payload.data : payload;
+    var map = (root && root.devices_status) || {};
+    var lightsOn = [];
+    var lightWatts = {};
+    var online = false;
+    var i;
+    for (i = 0; i < DEVICES.length; i++) {
+      var d = DEVICES[i];
+      var st = map[d.id];
+      if (!st) continue;
+      if (st.online != null) online = online || !!st.online;
+      if (st.cloud && st.cloud.connected) online = true;
+      var kind = d.kind === "switch" ? "switch" : "light";
+      var block = component(st, kind, d.channel) || component(st, kind === "light" ? "switch" : "light", d.channel);
+      var on = null;
+      var ap = null;
+      if (block) {
+        if (block.output != null) on = !!block.output;
+        if (block.apower != null) ap = Number(block.apower);
+      }
+      if (ap != null && !isNaN(ap)) lightWatts[d.name] = ap;
+      if (on === true) lightsOn.push(d.name);
+    }
+    var emSt = map[SENSOR.em] || {};
+    var em = emSt["em:0"] || {};
+    var powerW = null;
+    if (em.total_act_power != null) powerW = Math.round(Number(em.total_act_power));
+    else {
+      var parts = [em.a_act_power, em.b_act_power, em.c_act_power];
+      if (parts.some(function (x) { return x != null; })) {
+        powerW = Math.round(parts.reduce(function (a, b) { return a + Number(b || 0); }, 0));
+      }
+    }
+    var tempHost = map[SENSOR.tempHost] || {};
+    var indoor = component(tempHost, "temperature", SENSOR.indoorCh);
+    var outdoor = component(tempHost, "temperature", SENSOR.outdoorCh);
+    var indoorC = indoor && indoor.tC != null ? Math.round(Number(indoor.tC) * 10) / 10 : null;
+    var outdoorC = outdoor && outdoor.tC != null ? Math.round(Number(outdoor.tC) * 10) / 10 : null;
+    var evSt = map[SENSOR.ev] || {};
+    var evSw = component(evSt, "switch", SENSOR.evCh);
+    var evCharge = !!(evSw && evSw.output);
+    var saunaDev = findDev("2) sauna");
+    var sauna = false;
+    if (saunaDev) {
+      var sst = map[saunaDev.id] || {};
+      var sb = component(sst, "light", saunaDev.channel) || component(sst, "switch", saunaDev.channel);
+      sauna = !!(sb && sb.output);
+    }
+    if (!online) {
+      // if we got any device status, treat as online
+      online = Object.keys(map).length > 0;
+    }
+    return {
+      online: online,
+      powerW: powerW,
+      indoorC: indoorC,
+      outdoorC: outdoorC,
+      lightsOn: lightsOn,
+      lightWatts: lightWatts,
+      evCharge: evCharge,
+      sauna: sauna,
+      updated: Date.now(),
+      capturedAt: new Date().toISOString(),
+      source: "shelly-live",
+      ilp: (DATA && DATA.ilp) || null
+    };
   }
 
   function pull() {
-    getJSON("https://raw.githubusercontent.com/Jussiraisa/raisa-tanaan/main/mokki.json?t=" + new Date().getTime(), function (data) {
-      DATA = data;
+    if (_pullBusy) return;
+    var auth = shellyAuth();
+    if (!auth) {
+      _liveSource = "ei avainta";
+      document.getElementById("age").textContent = "Lisää Shelly-avain Asetuksista (live)";
+      document.getElementById("age").className = "stale";
       paintStatus();
-    });
+      return;
+    }
+    _pullBusy = true;
+    var url = shellyServer() + "/device/all_status?auth_key=" + encodeURIComponent(auth) + "&_=" + Date.now();
+    fetch(url, { method: "GET", mode: "cors", cache: "no-store" })
+      .then(function (r) {
+        if (r.status === 429) throw new Error("429");
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (payload) {
+        if (payload && payload.isok === false) throw new Error("Shelly isok=false");
+        DATA = parseShellyAllStatus(payload);
+        _liveSource = "Shelly live";
+        paintStatus();
+      })
+      .catch(function (e) {
+        var msg = e && e.message ? e.message : "virhe";
+        document.getElementById("age").textContent = "Live-päivitys epäonnistui · " + msg;
+        document.getElementById("age").className = "stale";
+        toast(msg === "429" ? "Shelly rate limit — odota" : ("Live: " + msg), "err");
+      })
+      .finally(function () { _pullBusy = false; });
   }
 
   document.getElementById("settingsToggle").addEventListener("click", function () {
@@ -737,6 +853,7 @@
     } else {
       localStorage.setItem(LS_SHELLY_AUTH, key);
       toast("Shelly tallennettu", "ok");
+      pull();
     }
     refreshHookHint();
   });
@@ -791,10 +908,16 @@
     postAction(body, label);
   });
 
+  var btnRef = document.getElementById("refreshNow");
+  if (btnRef) btnRef.addEventListener("click", function () { pull(); toast("Päivitetään…"); });
+
   refreshHookHint();
   paintStatus();
   pull();
-  setInterval(pull, 5000);
+  setInterval(pull, 15000);
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) pull();
+  });
 })();
   </script>
 </body>

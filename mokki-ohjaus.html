@@ -380,6 +380,78 @@
       color: var(--dim); font-size: 14px; font-weight: 550; padding: 4px 0;
     }
 
+
+    /* ---- ILP tila-banneri ---- */
+    #ilpCard { transition: border-color .25s, box-shadow .25s, background .25s; }
+    #ilpCard.ilp-on { border-color: var(--ilp-accent-line); box-shadow: 0 0 0 1px var(--ilp-accent-line) inset, 0 12px 40px var(--ilp-accent-dim); background: linear-gradient(180deg, var(--ilp-accent-dim), var(--surface) 55%); }
+    #ilpCard { --ilp-accent: var(--warm); --ilp-accent-dim: rgba(227,195,106,.10); --ilp-accent-line: rgba(227,195,106,.45); }
+    #ilpCard.ilp-cool { --ilp-accent: var(--teal); --ilp-accent-dim: rgba(78,205,196,.10); --ilp-accent-line: rgba(78,205,196,.45); }
+    .ilp-banner {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 18px; border-radius: var(--r2); margin-bottom: 12px;
+      background: rgba(255,255,255,.03); border: 1px solid var(--line);
+    }
+    .ilp-banner .b-dot {
+      flex: 0 0 auto; width: 16px; height: 16px; border-radius: 50%;
+      background: #4a525e; border: 2px solid #5b6472;
+    }
+    .ilp-banner .b-big {
+      font-family: var(--serif); font-weight: 650; letter-spacing: -.02em; line-height: 1.05;
+      font-size: clamp(26px, 7.5vw, 34px); color: var(--muted);
+    }
+    .ilp-banner .b-sub { margin-top: 4px; font-size: 15px; font-weight: 650; color: var(--dim); }
+    #ilpCard.ilp-on .ilp-banner { background: var(--ilp-accent-dim); border-color: var(--ilp-accent-line); }
+    #ilpCard.ilp-on .ilp-banner .b-big { color: var(--ilp-accent); }
+    #ilpCard.ilp-on .ilp-banner .b-sub { color: var(--text); }
+    #ilpCard.ilp-on .ilp-banner .b-dot {
+      background: var(--ilp-accent); border-color: var(--ilp-accent);
+      box-shadow: 0 0 12px 3px var(--ilp-accent-line); animation: ilpGlow 2.2s ease-in-out infinite;
+    }
+    @keyframes ilpGlow { 0%,100% { box-shadow: 0 0 8px 2px var(--ilp-accent-line); } 50% { box-shadow: 0 0 18px 6px var(--ilp-accent-line); } }
+    #ilpCard.ilp-off .ilp-banner .b-big { color: #8a929e; }
+    #ilpCard.ilp-off .ilp-dimmable { opacity: .45; filter: saturate(.3); transition: opacity .2s; }
+    #ilpCard.ilp-off .ilp-dimmable:hover, #ilpCard.ilp-off .ilp-dimmable:focus-within { opacity: .8; }
+    #ilpCard.ilp-on #ilpPower { background: var(--surface2); border-color: var(--line2); color: var(--text); }
+    #ilpCard.ilp-off #ilpPower { background: var(--teal-dim); border-color: var(--teal-line); color: var(--teal); }
+
+    /* ---- Historiakäyrät (avautuvat napauttamalla) ---- */
+    [data-chart] { cursor: pointer; position: relative; -webkit-tap-highlight-color: transparent; }
+    [data-chart]:not(.hero):not(.chip)::after {
+      content: "▾"; position: absolute; top: 8px; right: 10px;
+      font-size: 11px; color: var(--dim); opacity: .7; transition: transform .2s, color .2s;
+    }
+    .chip[data-chart] { padding-right: 12px; }
+    .chip[data-chart]::before { content: "〽"; font-size: 11px; opacity: .6; order: 2; }
+    [data-chart].chart-open { border-color: var(--teal-line) !important; }
+    [data-chart]:not(.hero):not(.chip).chart-open::after { transform: rotate(180deg); color: var(--teal); opacity: 1; }
+    [data-chart]:hover { border-color: var(--line2); }
+    .hero .hero-hint { position: absolute; top: 18px; right: 20px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+    .hero.chart-open .hero-hint { color: var(--teal); }
+    .chart-panel {
+      border-radius: var(--r); padding: 14px 14px 10px; margin-bottom: var(--gap);
+      background: linear-gradient(180deg, rgba(78,205,196,.05), rgba(255,255,255,.02));
+      border: 1px solid var(--teal-line);
+      animation: chartIn .18s ease-out;
+    }
+    .card .chart-panel { margin: 12px 0 0; }
+    .chart-panel[hidden] { display: none !important; }
+    @keyframes chartIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+    .ch-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+    .ch-title { font-size: 11px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .ch-range { display: inline-flex; gap: 4px; background: rgba(0,0,0,.25); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+    .ch-range button { padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--dim); }
+    .ch-range button.on { background: var(--teal-dim); color: var(--teal); }
+    .ch-legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; font-weight: 650; color: var(--muted); margin: 2px 0 4px; }
+    .ch-legend i { display: inline-block; width: 10px; height: 3px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+    .ch-svg { display: block; width: 100%; height: 190px; touch-action: pan-y; }
+    .ch-svg text { font-family: var(--sans); font-size: 10.5px; font-weight: 650; fill: var(--dim); }
+    .ch-svg .cur { font-size: 12px; font-weight: 750; }
+    .ch-foot { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 11.5px; font-weight: 650; color: var(--dim); margin-top: 2px; }
+    .vx-big { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+    .vx-big .mini .m-val { font-size: 30px; }
+    .vx-big .mini .m-val small { font-family: var(--sans); font-size: 13px; font-weight: 650; color: var(--muted); margin-left: 4px; letter-spacing: 0; }
+    .m-val.co2-ok { color: var(--ok); } .m-val.co2-mid { color: var(--warm); } .m-val.co2-hi { color: var(--danger); }
+
     @media (min-width: 720px) {
       body { padding-top: 28px; }
       .btn.light, .btn.scene { flex: 1 1 calc(33.333% - 8px); }
@@ -399,16 +471,19 @@
     </div>
   </header>
 
-  <section class="hero" id="hero" aria-label="Teho">
+  <section class="hero" id="hero" aria-label="Teho" data-chart="power" role="button" tabindex="0">
+    <div class="hero-hint">〽 Käyrä</div>
     <div class="hero-lbl" id="heroLbl">Sähköä nyt</div>
     <div class="hero-kw" id="heroKw">—<span>kW</span></div>
     <div class="hero-meta" id="heroMeta"></div>
   </section>
+  <div class="chart-panel" data-chart-panel="power" hidden></div>
 
   <div class="spot-bar" aria-label="Pörssisähkö">
-    <span class="chip" id="spotNowChip">Pörssi —</span>
+    <span class="chip" id="spotNowChip" data-chart="spot" role="button" tabindex="0">Pörssi —</span>
     <span class="hint-inline" id="costHint">Pörssi + Savon Voima siirto+vero 8,12 snt/kWh · ei perusmaksua</span>
   </div>
+  <div class="chart-panel" data-chart-panel="spot" hidden></div>
 
   <section class="costs" aria-label="Sähkökustannus">
     <article class="cost">
@@ -429,17 +504,19 @@
   </section>
 
   <section class="metrics" aria-label="Lämpötilat">
-    <article class="metric">
+    <article class="metric" data-chart="indoor" role="button" tabindex="0">
       <div class="lbl">Sisällä</div>
       <div class="val" id="indoorVal">—°</div>
       <div class="sub" id="indoorSub">Shelly live</div>
     </article>
-    <article class="metric">
+    <article class="metric" data-chart="outdoor" role="button" tabindex="0">
       <div class="lbl">Ulkona</div>
       <div class="val" id="outdoorVal">—°</div>
       <div class="sub" id="outdoorSub">—</div>
     </article>
   </section>
+  <div class="chart-panel" data-chart-panel="indoor" hidden></div>
+  <div class="chart-panel" data-chart-panel="outdoor" hidden></div>
 
   <section class="flags" aria-label="EV ja sauna">
     <div class="flag" id="flagEv">
@@ -477,12 +554,19 @@
       <div data-clim-note-text></div>
     </div>
     <div class="clim-body" data-clim-body hidden>
+      <div class="ilp-banner" id="ilpBanner" role="status" aria-live="polite">
+        <span class="b-dot" aria-hidden="true"></span>
+        <div>
+          <div class="b-big" id="ilpBannerBig">ILP —</div>
+          <div class="b-sub" id="ilpBannerSub">Haetaan tilaa…</div>
+        </div>
+      </div>
       <div class="clim">
-        <div class="clim-box">
+        <div class="clim-box" data-chart="ilp" role="button" tabindex="0">
           <div class="cl-lbl">Sisällä</div>
           <div class="cl-val" id="ilpIndoor">—°</div>
         </div>
-        <div class="clim-box">
+        <div class="clim-box ilp-dimmable">
           <div class="stepper">
             <button class="step-btn" type="button" data-ilp="down" aria-label="Laske asetusta">−</button>
             <div class="mid">
@@ -496,11 +580,12 @@
       <div class="row">
         <button class="btn" type="button" data-ilp="power" id="ilpPower">—</button>
       </div>
-      <div class="row">
+      <div class="row ilp-dimmable">
         <button class="btn mode" type="button" data-ilp-mode="heat">Lämmitys</button>
         <button class="btn mode" type="button" data-ilp-mode="cool">Jäähdytys</button>
         <button class="btn mode" type="button" data-ilp-mode="auto">Auto</button>
       </div>
+      <div class="chart-panel" data-chart-panel="ilp" hidden></div>
       <div class="hint clim-hint" id="ilpHint">—</div>
     </div>
   </section>
@@ -515,12 +600,19 @@
       <div data-clim-note-text></div>
     </div>
     <div class="clim-body" data-clim-body hidden>
-      <div class="mini-grid">
+      <div class="vx-big">
+        <div class="mini" data-chart="co2" role="button" tabindex="0"><div class="m-lbl">CO₂</div><div class="m-val" id="vxCo2">—</div></div>
+        <div class="mini" data-chart="rh" role="button" tabindex="0"><div class="m-lbl">Kosteus</div><div class="m-val" id="vxRh">—</div></div>
+      </div>
+      <div class="chart-panel" data-chart-panel="co2" hidden></div>
+      <div class="chart-panel" data-chart-panel="rh" hidden></div>
+      <div class="mini-grid" data-chart="vallox" role="button" tabindex="0" style="border-radius:14px">
         <div class="mini"><div class="m-lbl">Tulo</div><div class="m-val" id="vxSupply">—°</div></div>
         <div class="mini"><div class="m-lbl">Poisto</div><div class="m-val" id="vxExtract">—°</div></div>
         <div class="mini"><div class="m-lbl">Ulko</div><div class="m-val" id="vxOutdoor">—°</div></div>
         <div class="mini"><div class="m-lbl">Jäte</div><div class="m-val" id="vxExhaust">—°</div></div>
       </div>
+      <div class="chart-panel" data-chart-panel="vallox" hidden></div>
       <div class="chips" id="vxChips"></div>
       <div class="row">
         <button class="btn prof" type="button" data-vx="home">Kotona</button>
@@ -1152,6 +1244,7 @@
         if (payload && payload.isok === false) throw new Error("Shelly hylkäsi");
         DATA = parseShellyAllStatus(payload);
         setLive(!!DATA.online, "Live");
+        liveAppend({ ti: DATA.indoorC, to: DATA.outdoorC, p: DATA.powerW });
         paint();
         refreshCosts(false);
       })
@@ -1224,6 +1317,10 @@
     _climLast = Date.now();
     mokkiApi("/status").then(function (j) {
       CLIM = j; CLIM._at = Date.now(); _climErr = "";
+      var lv = {}, v = j.vallox, il = j.ilp;
+      if (v && !v.error) { lv.vs = v.supplyC; lv.ve = v.extractC; lv.vo = v.outdoorC; lv.vx = v.exhaustC; lv.rh = v.rh; lv.co2 = v.co2; }
+      if (il && !il.error) { lv.ii = il.indoorC; lv.is = il.setC; lv.io = il.on == null ? null : (il.on ? 1 : 0); }
+      liveAppend(lv);
     }).catch(function (e) {
       _climErr = e && e.message ? e.message : "yhteysvirhe";
     }).finally(function () {
@@ -1245,9 +1342,22 @@
     document.querySelectorAll("#ilpCard [data-ilp], #ilpCard [data-ilp-mode]").forEach(function (b) {
       b.disabled = !ilp || _ilpSending;
     });
+    var card = document.getElementById("ilpCard");
+    var bBig = document.getElementById("ilpBannerBig"), bSub = document.getElementById("ilpBannerSub");
     if (ilp) {
+      var cool = ilp.mode === "cool" || ilp.mode === "dry" || ilp.mode === "fan";
+      card.className = "card " + (ilp.on ? "ilp-on" : "ilp-off") + (cool ? " ilp-cool" : "");
+      var verb = { heat: "Lämmittää", cool: "Jäähdyttää", auto: "Auto", dry: "Kuivaa", fan: "Puhaltaa" }[ilp.mode] || (ILP_MODE_FI[ilp.mode] || ilp.mode || "—");
+      var setTxt = degC(ilp.setC, ilp.step === 0.5 ? 1 : 0);
+      if (ilp.on) {
+        bBig.textContent = "ILP PÄÄLLÄ";
+        bSub.textContent = verb + " · " + setTxt + (ilp.indoorC != null ? " · sisällä " + degC(ilp.indoorC) : "");
+      } else {
+        bBig.textContent = "ILP POIS PÄÄLTÄ";
+        bSub.textContent = "Sammutettu · viimeisin asetus " + (ILP_MODE_FI[ilp.mode] || ilp.mode || "—").toLowerCase() + " " + setTxt;
+      }
       chip.textContent = ilp.on ? "Päällä" : "Pois";
-      chip.className = "chip" + (ilp.on ? " on" : "");
+      chip.className = "chip" + (ilp.on ? (cool ? " on" : " hot") : "");
       document.getElementById("ilpIndoor").textContent = degC(ilp.indoorC);
       var shown = _ilpPendingSet != null ? _ilpPendingSet : ilp.setC;
       setEl.textContent = degC(shown, ilp.step === 0.5 ? 1 : 0);
@@ -1268,6 +1378,9 @@
     } else {
       chip.textContent = ilpErr ? "Ei yhteyttä" : "Haetaan…";
       chip.className = "chip";
+      card.className = "card";
+      bBig.textContent = ilpErr ? "ILP — ei yhteyttä" : "ILP —";
+      bSub.textContent = ilpErr ? "Tilaa ei saatu" : "Haetaan tilaa…";
       document.getElementById("ilpIndoor").textContent = "—°";
       setEl.textContent = "—°"; setEl.className = "cl-val";
       pw.textContent = "—"; pw.className = "btn";
@@ -1289,8 +1402,10 @@
       document.getElementById("vxExhaust").textContent = degC(vx.exhaustC);
       var chips = "";
       if (vx.fanSpeed != null) chips += "<span class=\"chip\">Puhallus " + esc(num(vx.fanSpeed)) + " %</span>";
-      if (vx.rh != null) chips += "<span class=\"chip\">Kosteus " + esc(num(vx.rh)) + " %</span>";
-      if (vx.co2 != null) chips += "<span class=\"chip\">CO₂ " + esc(num(vx.co2)) + " ppm</span>";
+      var co2El = document.getElementById("vxCo2");
+      co2El.innerHTML = vx.co2 != null ? esc(num(vx.co2)) + "<small>ppm</small>" : "—";
+      co2El.className = "m-val" + (vx.co2 == null ? "" : vx.co2 < 800 ? " co2-ok" : vx.co2 < 1000 ? " co2-mid" : " co2-hi");
+      document.getElementById("vxRh").innerHTML = vx.rh != null ? esc(num(vx.rh)) + "<small>%</small>" : "—";
       if (vx.profile === "boost" && vx.boostMinLeft > 0) chips += "<span class=\"chip hot\">Tehostus " + esc(num(vx.boostMinLeft)) + " min</span>";
       if (vx.profile === "fireplace" && vx.fireplaceMinLeft > 0) chips += "<span class=\"chip hot\">Takka " + esc(num(vx.fireplaceMinLeft)) + " min</span>";
       if (vx.online === false) chips += "<span class=\"chip\">Offline</span>";
@@ -1306,6 +1421,8 @@
       vchip.textContent = vxErr ? "Ei yhteyttä" : "Haetaan…";
       vchip.className = "chip";
       ["vxSupply", "vxExtract", "vxOutdoor", "vxExhaust"].forEach(function (id) { document.getElementById(id).textContent = "—°"; });
+      document.getElementById("vxCo2").textContent = "—"; document.getElementById("vxCo2").className = "m-val";
+      document.getElementById("vxRh").textContent = "—";
       document.getElementById("vxChips").innerHTML = "";
       document.getElementById("vxHint").textContent = vxErr ? ("Vallox ei vastaa: " + vxErr) : "Haetaan tilaa…";
     }
@@ -1372,6 +1489,323 @@
       climPull(true); // päivitä heti komennon jälkeen
     });
   }
+
+
+  // ---------- Historiakäyrät (Worker /history, 5 min cron + live-arvot välissä) ----------
+  var HIST = {};            // hours -> { at, samples, backfill }
+  var HIST_BUSY = {};
+  var LIVE = [];            // live-näytteet (Shelly 15 s / status 60 s) viimeisimmän historianäytteen jälkeen
+  var SPOT_RAW = null;      // { at, from, rows:[{t,v}] }
+  var CH_OPEN = {};         // key -> hours
+  var HIST_REFRESH_MS = 5 * 60 * 1000;
+  var CHARTS = {
+    power:   { title: "Sähköteho", unit: "W", dec: 0, series: [{ k: "p", label: "Kokonaisteho", color: "#4ecdc4", area: true, backfill: true }] },
+    spot:    { title: "Pörssisähkö (sis. ALV)", unit: "snt", dec: 1, spot: true, series: [{ k: "sp", label: "snt/kWh", color: "#e3c36a", step: true, area: true }] },
+    indoor:  { title: "Sisälämpötila", unit: "°", dec: 1, series: [{ k: "ti", label: "Sisä · Shelly", color: "#e3c36a" }, { k: "ii", label: "ILP-anturi", color: "#7eb8e0", thin: true }, { k: "ve", label: "Vallox poisto", color: "#a8b0bc", thin: true }] },
+    outdoor: { title: "Ulkolämpötila", unit: "°", dec: 1, series: [{ k: "to", label: "Ulko · Shelly", color: "#7eb8e0" }, { k: "vo", label: "Vallox ulko", color: "#a8b0bc", thin: true }] },
+    ilp:     { title: "ILP · sisä ja asetus", unit: "°", dec: 1, onBand: "io", series: [{ k: "ii", label: "Sisä (ILP)", color: "#e3c36a" }, { k: "is", label: "Asetus", color: "#4ecdc4", step: true, thin: true }] },
+    co2:     { title: "Hiilidioksidi CO₂", unit: "ppm", dec: 0, refs: [{ v: 800, label: "800", color: "rgba(227,195,106,.55)" }, { v: 1000, label: "1000", color: "rgba(255,122,122,.6)" }], minSpan: 300, series: [{ k: "co2", label: "CO₂ · Vallox", color: "#7ddea0", area: true }] },
+    rh:      { title: "Suhteellinen kosteus", unit: "%", dec: 0, minSpan: 10, series: [{ k: "rh", label: "RH · Vallox", color: "#7eb8e0", area: true }] },
+    vallox:  { title: "Vallox · lämpötilat", unit: "°", dec: 1, series: [{ k: "vs", label: "Tulo", color: "#4ecdc4" }, { k: "ve", label: "Poisto", color: "#e3c36a" }, { k: "vo", label: "Ulko", color: "#7eb8e0" }, { k: "vx", label: "Jäte", color: "#a8b0bc" }] }
+  };
+
+  function liveAppend(o) {
+    var s = { t: Date.now() };
+    Object.keys(o).forEach(function (k) { if (o[k] != null && !isNaN(Number(o[k]))) s[k] = Number(o[k]); });
+    if (Object.keys(s).length < 2) return;
+    LIVE.push(s);
+    var cut = Date.now() - 8 * 86400000;
+    while (LIVE.length && (LIVE[0].t < cut || LIVE.length > 4000)) LIVE.shift();
+    Object.keys(CH_OPEN).forEach(function (key) { renderChart(key, true); });
+  }
+  function histLoad(hours, force) {
+    var c = HIST[hours];
+    if (!force && c && Date.now() - c.at < HIST_REFRESH_MS - 5000) return Promise.resolve(c);
+    if (HIST_BUSY[hours]) return HIST_BUSY[hours];
+    HIST_BUSY[hours] = mokkiApi("/history?h=" + hours).then(function (j) {
+      HIST[hours] = { at: Date.now(), samples: j.samples || [], backfill: (j.backfill && j.backfill.power) || [], count: j.count || 0 };
+      return HIST[hours];
+    }).finally(function () { HIST_BUSY[hours] = null; });
+    return HIST_BUSY[hours];
+  }
+  function spotLoad(hours) {
+    var from = Date.now() - hours * 3600000;
+    if (SPOT_RAW && Date.now() - SPOT_RAW.at < 30 * 60000 && SPOT_RAW.from <= from) return Promise.resolve(SPOT_RAW);
+    var start = new Date(Math.floor(from / 3600000) * 3600000 - 3600000);
+    var end = new Date(Date.now() + 40 * 3600000);
+    var url = "https://sahkotin.fi/prices?tax=0&start=" + encodeURIComponent(start.toISOString()) + "&end=" + encodeURIComponent(end.toISOString());
+    return fetch(url, { mode: "cors", cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("spot HTTP " + r.status);
+      return r.json();
+    }).then(function (j) {
+      var rows = (j.prices || []).map(function (p) { return { t: Date.parse(p.date), sp: Math.round(Number(p.value) / 10 * COST_CFG.vat * 100) / 100 }; })
+        .filter(function (r) { return isFinite(r.t) && !isNaN(r.sp); }).sort(function (a, b) { return a.t - b.t; });
+      SPOT_RAW = { at: Date.now(), from: start.getTime(), rows: rows };
+      return SPOT_RAW;
+    });
+  }
+  function hkiLabel(t, withDay) {
+    var p = new Intl.DateTimeFormat("fi-FI", { timeZone: "Europe/Helsinki", weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date(t));
+    var o = {}; p.forEach(function (x) { o[x.type] = x.value; });
+    var hm = o.hour + ":" + o.minute;
+    return withDay === "day" ? (o.weekday + " " + o.day + "." + o.month + ".") : withDay ? (o.weekday + " " + hm) : hm;
+  }
+  function hkiOffsetMs(t) {
+    var hp = helsinkiParts(new Date(t));
+    var min = new Date(t).getUTCMinutes();
+    return Date.UTC(Number(hp.y), Number(hp.m) - 1, Number(hp.day), Number(hp.hour), min) - Math.floor(t / 60000) * 60000;
+  }
+  function niceStep(span, n) {
+    var raw = span / Math.max(1, n), mag = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / mag;
+    return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * mag;
+  }
+  function panelShell(key) {
+    var el = document.querySelector('[data-chart-panel="' + key + '"]');
+    var cfg = CHARTS[key];
+    var h = CH_OPEN[key] || 24;
+    if (!el.getAttribute("data-built")) {
+      el.innerHTML = '<div class="ch-head"><div class="ch-title">' + esc(cfg.title) + '</div>' +
+        '<div class="ch-range" role="group" aria-label="Aikaväli">' +
+        [[6, "6 h"], [24, "24 h"], [168, "7 vrk"]].map(function (r) { return '<button type="button" data-ch-range="' + r[0] + '" data-ch-key="' + key + '">' + r[1] + '</button>'; }).join("") +
+        '</div></div><div class="ch-legend"></div><div class="ch-plot"></div><div class="ch-foot"><span class="ch-stats">—</span><span class="ch-src">—</span></div>';
+      el.setAttribute("data-built", "1");
+    }
+    el.querySelectorAll("[data-ch-range]").forEach(function (b) { b.className = Number(b.getAttribute("data-ch-range")) === h ? "on" : ""; });
+    return el;
+  }
+  function seriesPoints(key, hours, cache, spot) {
+    var cfg = CHARTS[key], now = Date.now(), from = now - hours * 3600000;
+    var hist = (cache && cache.samples) || [];
+    var lastT = hist.length ? hist[hist.length - 1].t : 0;
+    var rows = hist.concat(LIVE.filter(function (s) { return s.t > lastT && s.t >= from; }));
+    var out = {};
+    cfg.series.forEach(function (sd) {
+      var pts = [];
+      if (cfg.spot && spot) {
+        spot.rows.forEach(function (r) { if (r.t >= from - 3600000) pts.push({ t: r.t, v: r.sp }); });
+      } else {
+        if (sd.backfill && cache && cache.backfill) cache.backfill.forEach(function (b) { if (b.t >= from && (!hist.length || b.t < hist[0].t)) pts.push({ t: b.t, v: b.p, bf: true }); });
+        rows.forEach(function (r) { if (r[sd.k] != null && r.t >= from) pts.push({ t: r.t, v: Number(r[sd.k]) }); });
+      }
+      out[sd.k] = pts;
+    });
+    var band = [];
+    if (cfg.onBand) rows.forEach(function (r) { if (r[cfg.onBand] != null && r.t >= from) band.push({ t: r.t, on: Number(r[cfg.onBand]) >= 0.5 }); });
+    return { from: from, now: now, pts: out, band: band, nHist: cache ? cache.count : 0 };
+  }
+  function renderChart(key, quiet) {
+    if (!CH_OPEN[key]) return;
+    var cfg = CHARTS[key], hours = CH_OPEN[key];
+    var el = panelShell(key);
+    var plot = el.querySelector(".ch-plot");
+    var cache = HIST[hours], spot = cfg.spot ? SPOT_RAW : null;
+    if (!cfg.spot && !cache) { if (!quiet) plot.innerHTML = '<div class="empty" style="padding:30px 4px">Ladataan historiaa…</div>'; return; }
+    if (cfg.spot && !spot) { if (!quiet) plot.innerHTML = '<div class="empty" style="padding:30px 4px">Ladataan hintoja…</div>'; return; }
+    var d = seriesPoints(key, hours, cache, spot);
+    var W = Math.max(260, Math.round(plot.clientWidth || el.clientWidth - 28 || 600)), H = 190;
+    var padL = 36, padR = 58, padT = 10, padB = 22;
+    var x0 = d.from, x1 = d.now;
+    if (cfg.spot) { var last = spot.rows.length ? spot.rows[spot.rows.length - 1].t + 3600000 : x1; x1 = Math.max(x1, Math.min(last, d.now + 36 * 3600000)); }
+    var all = [];
+    cfg.series.forEach(function (sd) { d.pts[sd.k].forEach(function (p) { if (p.t >= x0 - 3600000 && p.t <= x1) all.push(p.v); }); });
+    (cfg.refs || []).forEach(function (r) { all.push(r.v); });
+    var legend = cfg.series.map(function (sd) { return '<span><i style="background:' + sd.color + '"></i>' + esc(sd.label) + '</span>'; }).join("");
+    if (cfg.onBand) legend += '<span><i style="background:rgba(227,195,106,.35);height:8px"></i>ILP päällä</span>';
+    el.querySelector(".ch-legend").innerHTML = legend;
+    var hasData = cfg.series.some(function (sd) { return d.pts[sd.k].length; });
+    if (!hasData) {
+      plot.innerHTML = '<div class="empty" style="padding:30px 4px">Ei vielä dataa tältä ajalta — näytteitä kertyy 5 min välein.</div>';
+      el.querySelector(".ch-stats").textContent = "—";
+      el.querySelector(".ch-src").textContent = d.nHist + " näytettä";
+      return;
+    }
+    var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all);
+    var span = hi - lo, minSpan = cfg.minSpan || (cfg.unit === "°" ? 2 : cfg.unit === "W" ? 200 : 2);
+    if (span < minSpan) { var mid = (hi + lo) / 2; lo = mid - minSpan / 2; hi = mid + minSpan / 2; }
+    else { lo -= span * 0.08; hi += span * 0.08; }
+    if ((cfg.unit === "W" || cfg.unit === "ppm" || cfg.unit === "%" || (cfg.spot && Math.min.apply(null, all) >= 0)) && lo < 0) lo = 0;
+    if (cfg.unit === "ppm" && lo > 400) lo = Math.min(lo, 400);
+    var yStep = niceStep(hi - lo, 4);
+    lo = Math.floor(lo / yStep) * yStep; hi = Math.ceil(hi / yStep) * yStep;
+    var X = function (t) { return padL + (t - x0) / (x1 - x0) * (W - padL - padR); };
+    var Y = function (v) { return padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB); };
+    var svg = '<svg class="ch-svg" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="' + esc(cfg.title) + '">';
+    svg += '<defs>' + cfg.series.map(function (sd, i) { return '<linearGradient id="g_' + key + i + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + sd.color + '" stop-opacity=".28"/><stop offset="1" stop-color="' + sd.color + '" stop-opacity="0"/></linearGradient>'; }).join("") + '</defs>';
+    // ILP päällä -vyöhykkeet
+    if (cfg.onBand && d.band.length) {
+      for (var bi = 0; bi < d.band.length; bi++) {
+        var b = d.band[bi]; if (!b.on) continue;
+        var bt1 = bi + 1 < d.band.length ? d.band[bi + 1].t : d.now;
+        if (bt1 - b.t > 40 * 60000) bt1 = b.t + 10 * 60000;
+        svg += '<rect x="' + X(Math.max(x0, b.t)).toFixed(1) + '" y="' + padT + '" width="' + Math.max(1, X(Math.min(x1, bt1)) - X(Math.max(x0, b.t))).toFixed(1) + '" height="' + (H - padT - padB) + '" fill="rgba(227,195,106,.10)"/>';
+      }
+    }
+    // y-ruudukko
+    for (var yv = lo; yv <= hi + 1e-9; yv += yStep) {
+      var yy = Y(yv).toFixed(1);
+      svg += '<line x1="' + padL + '" x2="' + (W - padR) + '" y1="' + yy + '" y2="' + yy + '" stroke="rgba(255,255,255,.06)"/>';
+      svg += '<text x="' + (padL - 6) + '" y="' + (Number(yy) + 3.5) + '" text-anchor="end">' + esc(num(yv, yStep < 1 ? 1 : 0)) + '</text>';
+    }
+    // x-akseli Helsingin ajassa
+    var plotW = W - padL - padR, spanH = (x1 - x0) / 3600000;
+    var tickH = [1, 2, 3, 4, 6, 12, 24, 48].filter(function (c) { return plotW / (spanH / c) >= (c >= 24 ? 58 : 40); })[0] || 48;
+    var off = hkiOffsetMs(x0), stepMs = tickH * 3600000;
+    var first = Math.ceil((x0 + off) / stepMs) * stepMs - off;
+    for (var tt = first; tt <= x1; tt += stepMs) {
+      var xx = X(tt);
+      if (xx < padL + 8 || xx > W - padR - 4) continue;
+      svg += '<line x1="' + xx.toFixed(1) + '" x2="' + xx.toFixed(1) + '" y1="' + padT + '" y2="' + (H - padB) + '" stroke="rgba(255,255,255,.045)"/>';
+      svg += '<text x="' + xx.toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle">' + esc(hkiLabel(tt, tickH >= 24 ? "day" : false)) + '</text>';
+    }
+    // viitearvot
+    (cfg.refs || []).forEach(function (r) {
+      if (r.v < lo || r.v > hi) return;
+      var ry = Y(r.v).toFixed(1);
+      svg += '<line x1="' + padL + '" x2="' + (W - padR) + '" y1="' + ry + '" y2="' + ry + '" stroke="' + r.color + '" stroke-dasharray="5 4" stroke-width="1.2"/>';
+      svg += '<text x="' + (padL + 4) + '" y="' + (Number(ry) - 3) + '" style="fill:' + r.color + '">' + esc(r.label) + '</text>';
+    });
+    if (cfg.spot) {
+      var nx = X(d.now).toFixed(1);
+      svg += '<line x1="' + nx + '" x2="' + nx + '" y1="' + padT + '" y2="' + (H - padB) + '" stroke="rgba(244,241,234,.35)" stroke-dasharray="2 3"/>';
+      svg += '<text x="' + nx + '" y="' + (padT + 9) + '" text-anchor="middle" style="fill:#f4f1ea">nyt</text>';
+    }
+    // sarjat
+    var curLabels = [];
+    cfg.series.forEach(function (sd, si) {
+      var pts = d.pts[sd.k].filter(function (p) { return p.t >= x0 - 3600000 && p.t <= x1 + 3600000; });
+      if (!pts.length) return;
+      var gapMs = hours > 48 ? 50 * 60000 : 25 * 60000;
+      var segs = [], seg = [];
+      pts.forEach(function (p, i) {
+        var prev = pts[i - 1];
+        var g = prev && (prev.bf || p.bf) ? 100 * 60000 : cfg.spot ? 3 * 3600000 : gapMs;
+        if (prev && p.t - prev.t > g) { segs.push(seg); seg = []; }
+        seg.push(p);
+      });
+      segs.push(seg);
+      segs.forEach(function (sg) {
+        if (!sg.length) return;
+        var dstr = "";
+        sg.forEach(function (p, i) {
+          var px = X(Math.max(x0, Math.min(x1, p.t))), py = Y(p.v);
+          if (i === 0) dstr += "M" + px.toFixed(1) + " " + py.toFixed(1);
+          else if (sd.step) dstr += "H" + px.toFixed(1) + "V" + py.toFixed(1);
+          else dstr += "L" + px.toFixed(1) + " " + py.toFixed(1);
+        });
+        var lastP = sg[sg.length - 1];
+        if (sd.step || cfg.spot) {
+          var endT = cfg.spot ? Math.min(x1, lastP.t + 3600000) : lastP.t;
+          dstr += "H" + X(endT).toFixed(1);
+        } else if (sg.length === 1) {
+          dstr += "h2";
+        }
+        if (sd.area) {
+          var xa = X(Math.max(x0, sg[0].t)).toFixed(1), xb = dstr.match(/([\d.]+)(?:\s[\d.]+)?$/);
+          var endX = sd.step || cfg.spot ? X(cfg.spot ? Math.min(x1, lastP.t + 3600000) : lastP.t) : X(Math.min(x1, lastP.t));
+          svg += '<path d="' + dstr + 'L' + endX.toFixed(1) + ' ' + (H - padB) + 'L' + xa + ' ' + (H - padB) + 'Z" fill="url(#g_' + key + si + ')" stroke="none"/>';
+        }
+        var bf = sg[0].bf;
+        svg += '<path d="' + dstr + '" fill="none" stroke="' + sd.color + '" stroke-width="' + (sd.thin ? 1.4 : 2.2) + '" stroke-linejoin="round" stroke-linecap="round"' + (bf ? ' stroke-dasharray="4 3" opacity=".75"' : '') + (sd.thin ? ' opacity=".85"' : '') + '/>';
+      });
+      // nykyarvo
+      var cur = null;
+      if (cfg.spot) { for (var ci = pts.length - 1; ci >= 0; ci--) if (pts[ci].t <= d.now) { cur = { t: d.now, v: pts[ci].v }; break; } }
+      else cur = pts[pts.length - 1];
+      if (cur) {
+        var cx = X(Math.min(x1, cur.t)), cy = Y(cur.v);
+        svg += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + (sd.thin ? 3 : 4.2) + '" fill="' + sd.color + '" stroke="#0b0f14" stroke-width="1.5"/>';
+        curLabels.push({ y: cy, txt: num(cur.v, cfg.dec) + (cfg.unit === "°" ? "°" : ""), color: sd.color, main: si === 0 });
+      }
+    });
+    // arvolaput oikeaan reunaan, ei päällekkäin
+    curLabels.sort(function (a, b) { return a.y - b.y; });
+    for (var li = 1; li < curLabels.length; li++) if (curLabels[li].y - curLabels[li - 1].y < 13) curLabels[li].y = curLabels[li - 1].y + 13;
+    curLabels.forEach(function (l) {
+      svg += '<text class="cur" x="' + (W - padR + 8) + '" y="' + (Math.max(padT + 8, Math.min(H - padB, l.y)) + 4).toFixed(1) + '" style="fill:' + l.color + (l.main ? "" : ";font-size:10.5px") + '">' + esc(l.txt) + '</text>';
+    });
+    svg += '<line class="ch-cursor" x1="0" x2="0" y1="' + padT + '" y2="' + (H - padB) + '" stroke="rgba(244,241,234,.4)" visibility="hidden"/>';
+    svg += '</svg>';
+    plot.innerHTML = svg;
+    plot._geo = { X: X, x0: x0, x1: x1, padL: padL, padR: padR, W: W, d: d, cfg: cfg };
+    // tilastot (pääsarja)
+    var main = d.pts[cfg.series[0].k].filter(function (p) { return p.t >= x0 && p.t <= d.now; });
+    if (main.length) {
+      var vs = main.map(function (p) { return p.v; });
+      var mn = Math.min.apply(null, vs), mx = Math.max.apply(null, vs), avg = vs.reduce(function (a, b) { return a + b; }, 0) / vs.length;
+      var u = cfg.unit === "°" ? "°" : " " + cfg.unit;
+      el.querySelector(".ch-stats").textContent = "min " + num(mn, cfg.dec) + u + " · max " + num(mx, cfg.dec) + u + " · ka " + num(avg, cfg.dec) + u;
+    }
+    var src = cfg.spot ? "sahkotin.fi · Helsingin aika" : (d.nHist + " näytettä · 5 min" + (cache && cache.backfill && cache.backfill.length && cfg.series[0].backfill ? " + Shelly-tuntihistoria (katko)" : "") + " · Helsingin aika");
+    el.querySelector(".ch-src").textContent = src;
+  }
+  function chartTip(plot, clientX) {
+    var g = plot._geo; if (!g) return;
+    var svgEl = plot.querySelector("svg"); if (!svgEl) return;
+    var rect = svgEl.getBoundingClientRect();
+    var px = (clientX - rect.left) * (g.W / rect.width);
+    if (px < g.padL || px > g.W - g.padR) return;
+    var t = g.x0 + (px - g.padL) / (g.W - g.padL - g.padR) * (g.x1 - g.x0);
+    var parts = [];
+    g.cfg.series.forEach(function (sd) {
+      var best = null;
+      g.d.pts[sd.k].forEach(function (p) { if (!best || Math.abs(p.t - t) < Math.abs(best.t - t)) best = p; });
+      if (best && Math.abs(best.t - t) < (g.cfg.spot ? 3600000 : 45 * 60000)) parts.push(sd.label + " " + num(best.v, g.cfg.dec) + (g.cfg.unit === "°" ? "°" : " " + g.cfg.unit));
+    });
+    var cur = svgEl.querySelector(".ch-cursor");
+    cur.setAttribute("x1", px.toFixed(1)); cur.setAttribute("x2", px.toFixed(1)); cur.setAttribute("visibility", "visible");
+    var panel = plot.closest(".chart-panel");
+    panel.querySelector(".ch-stats").textContent = hkiLabel(t, (g.x1 - g.x0) > 30 * 3600000) + " · " + (parts.join(" · ") || "ei dataa");
+  }
+  function openChart(key, hours) {
+    CH_OPEN[key] = hours || CH_OPEN[key] || 24;
+    var el = panelShell(key);
+    el.hidden = false;
+    document.querySelectorAll('[data-chart="' + key + '"]').forEach(function (t) { t.classList.add("chart-open"); t.setAttribute("aria-expanded", "true"); });
+    renderChart(key);
+    var h = CH_OPEN[key];
+    var p = CHARTS[key].spot ? spotLoad(h) : (!mokkiToken() || !workerUrl() ? Promise.reject(new Error("ohjausavain puuttuu (#t=…)")) : histLoad(h));
+    p.then(function () { renderChart(key); }).catch(function (e) {
+      el.querySelector(".ch-plot").innerHTML = '<div class="empty" style="padding:30px 4px">Historia ei latautunut: ' + esc(e && e.message ? e.message : "virhe") + '</div>';
+    });
+  }
+  function closeChart(key) {
+    delete CH_OPEN[key];
+    var el = document.querySelector('[data-chart-panel="' + key + '"]');
+    if (el) el.hidden = true;
+    document.querySelectorAll('[data-chart="' + key + '"]').forEach(function (t) { t.classList.remove("chart-open"); t.setAttribute("aria-expanded", "false"); });
+  }
+  function toggleChart(key) { if (CH_OPEN[key]) closeChart(key); else openChart(key); }
+  document.addEventListener("click", function (ev) {
+    var rb = ev.target.closest && ev.target.closest("[data-ch-range]");
+    if (rb) { ev.stopPropagation(); openChart(rb.getAttribute("data-ch-key"), Number(rb.getAttribute("data-ch-range"))); return; }
+    if (ev.target.closest && ev.target.closest("button, .ch-plot, .chart-panel")) return;
+    var t = ev.target.closest && ev.target.closest("[data-chart]");
+    if (t) toggleChart(t.getAttribute("data-chart"));
+  });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key !== "Enter" && ev.key !== " ") return;
+    var t = ev.target.closest && ev.target.closest("[data-chart]");
+    if (t && t === ev.target) { ev.preventDefault(); toggleChart(t.getAttribute("data-chart")); }
+  });
+  ["pointermove", "pointerdown"].forEach(function (type) {
+    document.addEventListener(type, function (ev) {
+      var plot = ev.target.closest && ev.target.closest(".ch-plot");
+      if (plot) chartTip(plot, ev.clientX);
+    });
+  });
+  var _rsz = null;
+  window.addEventListener("resize", function () { clearTimeout(_rsz); _rsz = setTimeout(function () { Object.keys(CH_OPEN).forEach(function (k) { renderChart(k); }); }, 150); });
+  setInterval(function () {
+    if (document.hidden) return;
+    var hs = {};
+    Object.keys(CH_OPEN).forEach(function (k) { if (!CHARTS[k].spot) hs[CH_OPEN[k]] = true; });
+    Object.keys(hs).forEach(function (h) {
+      histLoad(Number(h), true).then(function () { Object.keys(CH_OPEN).forEach(function (k) { renderChart(k, true); }); }).catch(function () {});
+    });
+    if (Object.keys(CH_OPEN).some(function (k) { return CHARTS[k].spot; })) {
+      spotLoad(168).then(function () { renderChart("spot", true); }).catch(function () {});
+    }
+  }, HIST_REFRESH_MS);
 
   document.getElementById("settingsToggle").addEventListener("click", function () {
     var panel = document.getElementById("settingsPanel");

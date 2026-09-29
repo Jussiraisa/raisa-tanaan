@@ -491,6 +491,22 @@
     clearTimeout(toast._t);
     toast._t = setTimeout(function () { el.className = "toast"; }, 2200);
   }
+  // Pysyvä avain: #k=AVAIN linkistä → localStorage + 10v eväste (hash ei lähde palvelimelle)
+  function _ck(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):"";}
+  function _setCk(n,v){document.cookie=n+"="+encodeURIComponent(v)+"; max-age=315360000; path=/; SameSite=Lax; Secure";}
+  (function persistKey(){
+    try{
+      var h=new URLSearchParams((location.hash||"").replace(/^#/,""));
+      var k=h.get("k"), sv=h.get("s");
+      if(k){localStorage.setItem(LS_SHELLY_AUTH,k.trim());_setCk("mk_a",k.trim());}
+      if(sv){localStorage.setItem(LS_SHELLY_SERVER,sv.trim().replace(/\/$/,""));_setCk("mk_s",sv.trim());}
+      if(k||sv) history.replaceState(null,"",location.pathname+location.search);
+      if(!localStorage.getItem(LS_SHELLY_AUTH)&&_ck("mk_a")) localStorage.setItem(LS_SHELLY_AUTH,_ck("mk_a"));
+      if(!localStorage.getItem(LS_SHELLY_SERVER)&&_ck("mk_s")) localStorage.setItem(LS_SHELLY_SERVER,_ck("mk_s"));
+      if(localStorage.getItem(LS_SHELLY_AUTH)&&!_ck("mk_a")) _setCk("mk_a",localStorage.getItem(LS_SHELLY_AUTH));
+      if(navigator.storage&&navigator.storage.persist) navigator.storage.persist();
+    }catch(e){}
+  })();
   function shellyServer() {
     return (localStorage.getItem(LS_SHELLY_SERVER) || DEFAULT_SERVER).trim().replace(/\/$/, "");
   }
@@ -1037,6 +1053,7 @@
       toast("Avain poistettu", "ok");
     } else {
       localStorage.setItem(LS_SHELLY_AUTH, key);
+      _setCk("mk_a", key);
       toast("Yhdistetään…", "ok");
       document.getElementById("settingsPanel").hidden = true;
       document.getElementById("settingsToggle").setAttribute("aria-expanded", "false");

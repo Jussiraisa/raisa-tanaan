@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790690359424,
+  "updated": 1790692312884,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -451,26 +451,6 @@
       "status": ""
     },
     {
-      "id": "sheet-mea-2026-09-30",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-30",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-30",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-30",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260929T140000Z",
       "title": "Mea valmennus",
       "date": "2026-09-29",
@@ -499,6 +479,26 @@
       "kind": "cal",
       "start": "08:00",
       "end": "16:00"
+    },
+    {
+      "id": "sheet-mea-2026-09-30",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-30",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-30",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-30",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

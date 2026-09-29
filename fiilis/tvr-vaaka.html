@@ -105,7 +105,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F3E6CE; col
   padding: 1.3vmin 1.6vmin 1.4vmin;
   min-height: 0;
 }
-.block.grow { flex: 2.4 1 auto; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
+.block.grow { flex: 3.2 1 auto; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
 .block.soft { flex: 0 0 auto; background: transparent; padding-left: .2vmin; padding-right: .2vmin; }
 .lbl {
   font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em;
@@ -113,7 +113,13 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F3E6CE; col
 }
 
 /* Tänään list — crystal clear */
-.today-list { flex: 1; min-height: 0; overflow-x: hidden; overflow-y: auto; display: flex; flex-direction: column; justify-content: flex-start; }
+.today-list {
+  flex: 1; min-height: 0;
+  overflow-x: hidden; overflow-y: auto;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.today-list::-webkit-scrollbar { width: 0; height: 0; display: none; }
 .ev-row {
   display: flex; align-items: flex-start;
   padding: .38vmin 0;
@@ -312,6 +318,10 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .today-list.d10 .ev-row .meta { display: none; }
 .today-list.d12 .ev-row { padding: .24vmin 0; font-size: 1.35vmin; }
 .today-list.d12 .ev-row .meta { display: none; }
+.today-list.fit-tight .ev-row { padding: .16vmin 0; font-size: 1.25vmin; line-height: 1.15; }
+.today-list.fit-tight .ev-row .meta { display: none; }
+.today-list.fit-tight .today-group-lbl { margin: .25vmin 0 .05vmin; font-size: .95vmin; }
+.today-list.fit-tight .ev-row .when { font-size: 1.1vmin; }
 .today-list .ev-row .txt { overflow: hidden; min-width: 0; }
 .today-list .ev-row .line {
   display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -320,7 +330,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .today-group-lbl { flex: 0 0 auto; }
 .wilma-strip { flex: 0 0 auto; max-height: 10vmin; overflow: hidden; }
 .side { overflow: hidden; }
-.block.grow { overflow: hidden; }
+.block.grow { overflow: hidden; flex: 3.2 1 auto; }
 .tv, .main, .hero { overflow: hidden; }
 
 .chips { display: none !important; }
@@ -1214,12 +1224,32 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         + "</div></div>";
     }
     var dens = "";
-    if (out.length >= 12) dens = " d12";
-    else if (out.length >= 10) dens = " d10";
-    else if (out.length >= 8) dens = " d8";
-    else if (out.length >= 6) dens = " d6";
+    if (out.length >= 9) dens = " d12";
+    else if (out.length >= 7) dens = " d10";
+    else if (out.length >= 5) dens = " d8";
+    else if (out.length >= 4) dens = " d6";
     el.className = "today-list" + dens;
     el.innerHTML = html;
+    fitTodayList(el);
+  }
+
+  function fitTodayList(el) {
+    if (!el) return;
+    var steps = ["", " d6", " d8", " d10", " d12"];
+    var i = 0;
+    var cur = el.className.replace(/\s*d\d+/g, "").trim();
+    for (var s = 0; s < steps.length; s++) {
+      if (el.className.indexOf(steps[s].trim()) >= 0 && steps[s]) { i = s; break; }
+    }
+    // escalate density until no vertical overflow
+    while (el.scrollHeight > el.clientHeight + 2 && i < steps.length - 1) {
+      i++;
+      el.className = "today-list" + steps[i];
+    }
+    // last resort: hide meta lines if still overflowing
+    if (el.scrollHeight > el.clientHeight + 2) {
+      el.className = "today-list d12 fit-tight";
+    }
   }
 
   function paintWilmaAlerts(now) {

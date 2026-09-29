@@ -1477,13 +1477,17 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     /* Huomisen muut menot näkyvät aina; koulu vaihtuu huomiseen vasta klo 16 jälkeen. */
     var hobbyIso = addDaysIso(now.iso, 1);
     var out = dayEventsClean(hobbyIso);
-    var lbl = document.querySelector("#huomenna .lbl") || document.querySelector(".duo .lbl");
-    /* Prefer the Huomenna label next to tomorrowBox */
+    /* Before 16:00 do NOT mix tomorrow's hobbies into "Tänään · koulu"
+       — that made Mea Lianna look like today's. Show hobbies only when
+       the block is already about tomorrow, or when there is no school list. */
+    var showHobbyPreview = showTomorrowSchool || !schools.length;
+    if (!showHobbyPreview) out = [];
     var duo = el.parentElement;
     if (duo) {
       var lb = duo.querySelector(".lbl");
       if (lb) {
-        if (schools.length) lb.textContent = showTomorrowSchool ? "Huomenna · koulu" : "Tänään · koulu";
+        if (schools.length && showTomorrowSchool) lb.textContent = "Huomenna · koulu";
+        else if (schools.length) lb.textContent = "Tänään · koulu";
         else lb.textContent = "Huomenna";
       }
     }
@@ -1495,7 +1499,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     var html = "";
     var i;
     var MAX_SCHOOL = 4;
-    var MAX_HOBBY = 2;
+    var MAX_HOBBY = 3;
     var shown = 0;
     if (schools.length) {
       for (i = 0; i < schools.length && shown < MAX_SCHOOL; i++) {
@@ -1517,7 +1521,8 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
         var who = shortWho(e.who || "");
         var time = fmtRange(e.time, e.end) || "";
         var bits = [];
-        if (e.driver) bits.push(e.driver);
+        var drv = driverOf(e, hobbyIso);
+        if (drv) bits.push(drv);
         if (e.place) bits.push(e.place);
         html += "<div class=\"tmw-line\">"
           + (who ? "<span class=\"who\">" + esc(who) + "</span>" : "")

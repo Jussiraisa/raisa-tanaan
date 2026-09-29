@@ -1,7 +1,7 @@
 {
   "schedule": "2026-09-28-wa-rides",
-  "updated": "2026-09-29T07:21:52+03:00",
-  "ui": "20260929-v133-today-fit",
-  "poll": "v136",
-  "note": "Tänään-lista tiivistyy automaattisesti jotta kaikki rivit näkyvät (ei scrollbar-leikkausta)."
+  "updated": "2026-09-29T07:22:22+03:00",
+  "ui": "20260929-v137-koulu-no-mix",
+  "poll": "v137",
+  "note": "Tänään·koulu = vain tämän päivän koulu (ei huomisen treenejä sekaan). Kyydit: Samuel Mane, Ellen meidän."
 }

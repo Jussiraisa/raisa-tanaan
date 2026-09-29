@@ -178,12 +178,12 @@
 
     .grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: var(--gap);
     }
     @media (max-width: 720px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-      .ilp-card { grid-column: 1 / -1; }
+      .grid { grid-template-columns: 1fr; }
+      .ilp-card { grid-column: auto; }
     }
     .card {
       background: var(--surface);
@@ -467,6 +467,11 @@
     var ilpMode = ilp && ilp.mode ? ilp.mode : "—";
     var modeFi = ({ Heat: "Lämmitys", Cool: "Jäähdytys", Auto: "Auto", Fan: "Puhallus", Dry: "Kuivaus" })[ilpMode] || ilpMode;
 
+    var vx = d.vallox || null;
+    var vxOn = d.valloxOnline !== false && !!vx;
+    var vxProfile = vx && vx.profile ? vx.profile : "—";
+    var vxProfileFi = ({ Home: "Kotona", Away: "Poissa", Boost: "Tehostus", Fireplace: "Takka", Extra: "Extra", Custom: "Oma", "—": "—" })[vxProfile] || vxProfile;
+
     var age = ageLabel(d.updated);
     var stale = d.updated && (Date.now() - Number(d.updated) > 30 * 60 * 1000);
 
@@ -498,6 +503,16 @@
       + "<div class=\"metric\"><div class=\"m-lbl\">Tila</div><div class=\"m-val\">" + esc(modeFi) + "</div></div>"
       + "<div class=\"metric\"><div class=\"m-lbl\">Tavoite</div><div class=\"m-val\">" + (ilp && ilp.setC != null ? num(ilp.setC, 0) + "°" : "—") + "</div></div>"
       + "<div class=\"metric\"><div class=\"m-lbl\">Sisä</div><div class=\"m-val\">" + (ilp && ilp.indoorC != null ? num(ilp.indoorC, 0) + "°" : "—") + "</div></div>"
+      + "</div></article>"
+
+      + "<article class=\"card ilp-card" + (vxOn ? " on" : "") + "\">"
+      + "<div class=\"ilp-head\"><div class=\"card-lbl\">Vallox</div>"
+      + "<div class=\"ilp-state\">" + (vx ? (vxOn ? "Online" : "Offline") : "—") + "</div></div>"
+      + "<div class=\"card-val\">" + esc(vxProfileFi) + "</div>"
+      + "<div class=\"ilp-metrics\">"
+      + "<div class=\"metric\"><div class=\"m-lbl\">Puhallin</div><div class=\"m-val\">" + (vx && vx.fanPct != null ? num(vx.fanPct, 0) + "%" : "—") + "</div></div>"
+      + "<div class=\"metric\"><div class=\"m-lbl\">RH</div><div class=\"m-val\">" + (vx && vx.rhPct != null ? num(vx.rhPct, 0) + "%" : "—") + "</div></div>"
+      + "<div class=\"metric\"><div class=\"m-lbl\">Tulo</div><div class=\"m-val\">" + (vx && vx.supplyC != null ? num(vx.supplyC, 0) + "°" : "—") + "</div></div>"
       + "</div></article>"
 
       + "<article class=\"card\"><div class=\"card-lbl\">Sisällä</div>"

@@ -3,352 +3,287 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="theme-color" content="#0b0f14">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#0a0b0e">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Mökki · Live</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@450;550;650;750&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0b0e;
-      --surface: #12141a;
-      --line: rgba(255,255,255,.07);
-      --text: #f4f0e8;
-      --muted: #8a8478;
-      --dim: #5c574e;
+      --bg: #0b0f14;
+      --bg2: #10161e;
+      --surface: rgba(255,255,255,.035);
+      --surface2: rgba(255,255,255,.055);
+      --line: rgba(255,255,255,.08);
+      --line2: rgba(255,255,255,.14);
+      --text: #f4f1ea;
+      --muted: #a8b0bc;
+      --dim: #6f7886;
       --teal: #4ecdc4;
       --teal-dim: rgba(78,205,196,.14);
       --teal-line: rgba(78,205,196,.28);
-      --gold: #c6a15a;
+      --blue: #7eb8e0;
+      --blue-dim: rgba(126,184,224,.14);
       --warm: #e3c36a;
-      --danger: #ff8a80;
-      --danger-dim: rgba(255,138,128,.12);
-      --danger-line: rgba(255,138,128,.28);
-      --serif: "Instrument Serif", ui-serif, Georgia, serif;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --r: 18px;
-      --tap: 48px;
+      --warm-dim: rgba(227,195,106,.14);
+      --danger: #ff7a7a;
+      --danger-dim: rgba(255,122,122,.12);
+      --danger-line: rgba(255,122,122,.28);
+      --ok: #7ddea0;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "IBM Plex Sans", system-ui, sans-serif;
+      --r: 22px;
+      --r2: 16px;
+      --gap: 12px;
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --safe-b: env(safe-area-inset-bottom, 0px);
     }
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
     body {
       min-height: 100dvh;
-      max-width: 560px;
-      margin: 0 auto;
-      padding: calc(16px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom));
+      font-family: var(--sans);
+      color: var(--text);
       background:
-        radial-gradient(90% 50% at 0% 0%, rgba(30,58,52,.28) 0%, transparent 55%),
-        var(--bg);
+        radial-gradient(1200px 600px at 10% -10%, rgba(78,205,196,.10), transparent 55%),
+        radial-gradient(900px 500px at 110% 0%, rgba(126,184,224,.08), transparent 50%),
+        linear-gradient(180deg, #0c1219 0%, var(--bg) 40%, #090d11 100%);
+      padding: 18px 16px calc(28px + var(--safe-b));
+      -webkit-font-smoothing: antialiased;
+      max-width: 720px;
+      margin: 0 auto;
     }
+    button, input { font: inherit; color: inherit; }
+    button {
+      appearance: none; border: 0; background: none; cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 18px;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; margin-bottom: 18px;
     }
     .brand {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--gold);
+      font-size: 11px; font-weight: 750; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--dim);
     }
     .title {
-      font-family: var(--serif);
-      font-size: clamp(36px, 10vw, 44px);
-      line-height: .95;
-      margin: 4px 0 0;
-      letter-spacing: -.03em;
+      margin: 4px 0 0; font-family: var(--serif);
+      font-size: clamp(34px, 8vw, 48px); font-weight: 650;
+      letter-spacing: -.03em; line-height: 1;
     }
-    .back {
-      color: var(--teal);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--teal-line);
-      background: var(--teal-dim);
-      white-space: nowrap;
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 10px; padding: 7px 12px; border-radius: 999px;
+      background: rgba(125,222,160,.08); border: 1px solid rgba(125,222,160,.22);
+      color: var(--ok); font-size: 12px; font-weight: 700;
     }
-    .back:focus-visible, .btn:focus-visible, .settings-toggle:focus-visible, input:focus-visible {
-      outline: 2px solid var(--teal);
-      outline-offset: 3px;
+    .live-badge.off {
+      background: var(--danger-dim); border-color: var(--danger-line); color: var(--danger);
     }
+    .live-badge .dot {
+      width: 7px; height: 7px; border-radius: 50%; background: currentColor;
+      box-shadow: 0 0 0 0 currentColor; animation: pulse 1.8s ease-out infinite;
+    }
+    .live-badge.off .dot { animation: none; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(125,222,160,.55); }
+      70% { box-shadow: 0 0 0 10px rgba(125,222,160,0); }
+      100% { box-shadow: 0 0 0 0 rgba(125,222,160,0); }
+    }
+    .icon-btn {
+      width: 44px; height: 44px; border-radius: 14px;
+      background: var(--surface); border: 1px solid var(--line);
+      display: grid; place-items: center; color: var(--muted);
+      transition: background .15s, border-color .15s, transform .12s;
+    }
+    .icon-btn:active { transform: scale(.96); }
+    .icon-btn:hover { border-color: var(--line2); color: var(--text); }
 
-    .status {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-    .pill {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--teal);
-      background: var(--teal-dim);
-      border: 1px solid var(--teal-line);
-      border-radius: 999px;
-      padding: 8px 12px;
-    }
-    .pill.off { color: var(--dim); background: rgba(255,255,255,.04); border-color: var(--line); }
-    .pill.warn { color: var(--warm); background: rgba(227,195,106,.12); border-color: rgba(227,195,106,.28); }
-
-    .note {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      background: rgba(255,255,255,.03);
+    .hero {
+      position: relative; overflow: hidden;
+      border-radius: calc(var(--r) + 4px);
+      padding: 22px 22px 20px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.05), transparent 40%),
+        linear-gradient(180deg, #141c26, #0e141c);
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
-      margin-bottom: 14px;
-      font-size: 14px;
-      font-weight: 650;
-      color: var(--muted);
-      line-height: 1.4;
+      box-shadow: var(--shadow);
+      margin-bottom: var(--gap);
     }
-    .note strong { color: var(--text); font-weight: 800; }
+    .hero::after {
+      content: ""; position: absolute; inset: auto -20% -40% auto;
+      width: 280px; height: 280px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(78,205,196,.18), transparent 65%);
+      pointer-events: none;
+    }
+    .hero.ev::after { background: radial-gradient(circle, rgba(126,184,224,.22), transparent 65%); }
+    .hero.hot::after { background: radial-gradient(circle, rgba(227,195,106,.22), transparent 65%); }
+    .hero-lbl {
+      font-size: 12px; font-weight: 750; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--dim); position: relative; z-index: 1;
+    }
+    .hero.ev .hero-lbl { color: var(--blue); }
+    .hero.hot .hero-lbl { color: var(--warm); }
+    .hero-kw {
+      font-family: var(--serif); font-weight: 650;
+      font-size: clamp(64px, 18vw, 96px); line-height: .92;
+      letter-spacing: -.04em; margin-top: 6px; position: relative; z-index: 1;
+    }
+    .hero-kw span {
+      font-size: .34em; letter-spacing: 0; margin-left: .12em;
+      color: var(--muted); font-weight: 500;
+    }
+    .hero-meta {
+      margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px;
+      position: relative; z-index: 1;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.04); border: 1px solid var(--line);
+      font-size: 13px; font-weight: 650; color: var(--muted);
+    }
+    .chip.on { background: var(--teal-dim); border-color: var(--teal-line); color: var(--teal); }
+    .chip.ev { background: var(--blue-dim); border-color: rgba(126,184,224,.28); color: var(--blue); }
+    .chip.hot { background: var(--warm-dim); border-color: rgba(227,195,106,.28); color: var(--warm); }
+
+    .metrics {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap);
+      margin-bottom: var(--gap);
+    }
+    .metric {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 18px 18px 16px;
+      min-height: 110px;
+    }
+    .metric .lbl {
+      font-size: 11px; font-weight: 750; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--dim);
+    }
+    .metric .val {
+      margin-top: 8px; font-family: var(--serif);
+      font-size: clamp(36px, 9vw, 48px); font-weight: 650;
+      letter-spacing: -.03em; line-height: 1;
+    }
+    .metric .sub {
+      margin-top: 8px; font-size: 13px; font-weight: 650; color: var(--muted);
+    }
 
     .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 16px;
-      margin-bottom: 12px;
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 18px; margin-bottom: var(--gap);
     }
-    .card.ilp {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), transparent 40%),
-        radial-gradient(140% 160% at 0% 0%, #16352f 0%, var(--surface) 55%);
-      border-color: var(--teal-line);
-      padding: 18px 16px 16px;
+    .card .lbl {
+      font-size: 11px; font-weight: 750; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--dim); margin-bottom: 12px;
     }
-    .lbl {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      color: var(--dim);
-      margin-bottom: 12px;
-    }
-    .ilp-state {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--muted);
-      margin: -4px 0 14px;
-      line-height: 1.35;
+    .hint {
+      font-size: 13px; font-weight: 550; color: var(--dim); line-height: 1.45;
     }
 
-    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch; }
-    .row + .row { margin-top: 12px; }
-
+    .row {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
     .btn {
-      appearance: none;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      font-size: 17px;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 14px 18px;
-      min-height: var(--tap);
-      cursor: pointer;
-      flex: 1 1 auto;
-      text-align: center;
-      transition: background .15s, border-color .15s, color .15s, transform .08s;
+      flex: 1 1 auto; min-width: 0;
+      padding: 14px 16px; border-radius: 14px;
+      background: var(--surface2); border: 1px solid var(--line);
+      font-weight: 700; font-size: 15px; color: var(--text);
+      transition: background .15s, border-color .15s, transform .12s, color .15s;
     }
-    .btn:active { transform: scale(.97); }
-    .btn.on {
-      background: var(--teal-dim);
-      border-color: var(--teal-line);
-      color: var(--teal);
+    .btn:active { transform: scale(.98); }
+    .btn.primary {
+      background: linear-gradient(180deg, rgba(78,205,196,.22), rgba(78,205,196,.10));
+      border-color: var(--teal-line); color: var(--teal);
     }
     .btn.danger {
-      background: var(--danger-dim);
-      border-color: var(--danger-line);
-      color: var(--danger);
+      background: var(--danger-dim); border-color: var(--danger-line); color: var(--danger);
     }
-    .btn.mode { flex: 1 1 40%; min-width: 120px; font-size: 18px; }
-    .btn.scene {
-      flex: 1 1 42%;
-      min-width: 130px;
-      min-height: 56px;
-      font-size: 16px;
+    .btn.scene { flex: 1 1 calc(50% - 8px); }
+    .btn.on {
+      background: var(--teal-dim); border-color: var(--teal-line); color: var(--teal);
     }
-    .btn.chip {
-      flex: 0 1 auto;
-      min-width: 0;
-      min-height: 48px;
-      padding: 12px 16px;
-      font-size: 15px;
+    .btn.light {
+      flex: 1 1 calc(50% - 8px);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; text-align: left;
     }
-    .btn.chip.on {
-      background: var(--teal-dim);
-      border-color: var(--teal-line);
-      color: var(--teal);
-    }
-    .btn.primary {
-      background: var(--teal-dim);
-      border-color: var(--teal-line);
-      color: var(--teal);
-      min-height: 56px;
-      font-size: 18px;
-    }
-    .btn:disabled { opacity: .4; cursor: not-allowed; }
+    .btn.light .name { font-weight: 700; }
+    .btn.light .w { font-size: 12px; font-weight: 650; color: var(--dim); }
+    .btn.light.on .w { color: rgba(78,205,196,.85); }
 
-    .power-row .btn {
-      min-height: 64px;
-      font-size: 20px;
+    .flags {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap);
+      margin-bottom: var(--gap);
     }
+    .flag {
+      border-radius: var(--r); padding: 16px 18px;
+      background: var(--surface); border: 1px solid var(--line);
+    }
+    .flag .name { font-size: 12px; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; color: var(--dim); }
+    .flag .state { margin-top: 8px; font-family: var(--serif); font-size: 28px; font-weight: 650; letter-spacing: -.02em; color: var(--muted); }
+    .flag.on { border-color: rgba(126,184,224,.35); background: linear-gradient(180deg, rgba(126,184,224,.10), transparent); }
+    .flag.on .state { color: var(--blue); }
+    .flag.hot.on { border-color: rgba(227,195,106,.35); background: linear-gradient(180deg, rgba(227,195,106,.10), transparent); }
+    .flag.hot.on .state { color: var(--warm); }
 
-    .set {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      width: 100%;
-      margin-top: 4px;
+    .ilp-note {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 14px 16px; border-radius: 16px;
+      background: rgba(255,255,255,.03); border: 1px dashed var(--line2);
+      color: var(--muted); font-size: 14px; font-weight: 550; line-height: 1.4;
     }
-    .set .val {
-      font-family: var(--serif);
-      font-size: clamp(52px, 16vw, 72px);
-      line-height: 1;
-      min-width: 90px;
-      text-align: center;
-      flex: 1;
-      letter-spacing: -.04em;
-    }
-    .set .val small {
-      display: block;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--dim);
-      margin-top: 4px;
-    }
-    .set .pm {
-      width: 64px;
-      height: 64px;
-      flex: 0 0 64px;
-      border-radius: 50%;
-      font-size: 32px;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 64px;
-    }
+    .ilp-note strong { color: var(--text); font-weight: 750; }
 
     .settings-toggle {
-      appearance: none;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      background: transparent;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      color: var(--muted);
-      font-size: 15px;
-      font-weight: 800;
-      padding: 14px 16px;
-      min-height: 48px;
-      cursor: pointer;
-      margin-bottom: 12px;
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 16px; border-radius: 16px; margin-top: 4px;
+      background: transparent; border: 1px solid transparent; color: var(--dim);
+      font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase;
     }
-    .settings-toggle[aria-expanded="true"] {
-      border-color: var(--teal-line);
-      color: var(--teal);
-      margin-bottom: 0;
-      border-radius: 14px 14px 0 0;
-      border-bottom-color: transparent;
-    }
-    .settings-toggle .chev {
-      font-size: 12px;
-      transition: transform .15s;
-    }
-    .settings-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+    .settings-toggle[aria-expanded="true"] { color: var(--muted); }
     .settings-panel {
-      display: none;
-      background: var(--surface);
-      border: 1px solid var(--teal-line);
-      border-top: none;
-      border-radius: 0 0 14px 14px;
-      padding: 4px 16px 16px;
-      margin-bottom: 12px;
+      border: 1px solid var(--line); border-radius: var(--r);
+      background: var(--surface); padding: 16px; margin-top: 4px;
     }
-    .settings-panel.open { display: block; }
-    input[type="url"] {
-      width: 100%;
-      background: #0c0e12;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      color: var(--text);
-      font-size: 16px;
-      padding: 14px 12px;
+    .settings-panel[hidden] { display: none !important; }
+    input[type="url"], input[type="password"], input[type="text"] {
+      width: 100%; padding: 14px 14px; border-radius: 14px;
+      background: rgba(0,0,0,.28); border: 1px solid var(--line);
       outline: none;
-      min-height: 48px;
     }
-    input:focus { border-color: var(--teal); }
-    .hint {
-      font-size: 13px;
-      color: var(--dim);
-      font-weight: 650;
-      margin-top: 10px;
-      line-height: 1.4;
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: calc(20px + env(safe-area-inset-bottom));
-      transform: translateX(-50%);
-      background: #1a1c22;
-      border: 1px solid var(--line);
-      color: var(--text);
-      padding: 14px 20px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .2s;
-      z-index: 20;
-      max-width: calc(100% - 32px);
-      text-align: center;
-    }
-    .toast.show { opacity: 1; }
-    .toast.err { border-color: var(--danger-line); color: var(--danger); }
-    .toast.ok { border-color: var(--teal-line); color: var(--teal); }
+    input:focus { border-color: var(--teal-line); }
 
     .foot {
-      margin-top: 8px;
-      font-size: 12px;
-      font-weight: 650;
-      color: var(--dim);
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
+      margin-top: 16px; display: flex; justify-content: space-between; gap: 10px;
+      flex-wrap: wrap; font-size: 12px; font-weight: 650; color: var(--dim);
     }
-    .stale { color: var(--danger); }
+    .foot .stale { color: var(--danger); }
 
-    @media (min-width: 900px) {
-      body { max-width: 640px; padding-top: 28px; }
+    .toast {
+      position: fixed; left: 50%; bottom: calc(24px + var(--safe-b));
+      transform: translateX(-50%) translateY(12px);
+      opacity: 0; pointer-events: none;
+      padding: 12px 18px; border-radius: 999px;
+      background: #121820; border: 1px solid var(--line2);
+      box-shadow: var(--shadow); font-weight: 700; font-size: 14px;
+      transition: opacity .2s, transform .2s; z-index: 40;
+      max-width: calc(100% - 32px); text-align: center;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.ok { border-color: var(--teal-line); color: var(--teal); }
+    .toast.err { border-color: var(--danger-line); color: var(--danger); }
+
+    .empty {
+      color: var(--dim); font-size: 14px; font-weight: 550; padding: 4px 0;
+    }
+
+    @media (min-width: 720px) {
+      body { padding-top: 28px; }
+      .btn.light, .btn.scene { flex: 1 1 calc(33.333% - 8px); }
     }
   </style>
 </head>
@@ -357,38 +292,41 @@
     <div>
       <div class="brand">Räisä · Mökki</div>
       <h1 class="title">Live</h1>
+      <div class="live-badge off" id="liveBadge"><span class="dot" aria-hidden="true"></span><span id="liveText">Yhdistetään…</span></div>
     </div>
-    <button class="back" type="button" id="refreshNow" title="Päivitä">↻</button>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" type="button" id="refreshNow" aria-label="Päivitä" title="Päivitä">↻</button>
+      <button class="icon-btn" type="button" id="settingsToggle" aria-label="Asetukset" aria-expanded="false" aria-controls="settingsPanel">⚙</button>
+    </div>
   </header>
 
-  <div class="status" id="statusPills" aria-live="polite"></div>
+  <section class="hero" id="hero" aria-label="Teho">
+    <div class="hero-lbl" id="heroLbl">Sähköä nyt</div>
+    <div class="hero-kw" id="heroKw">—<span>kW</span></div>
+    <div class="hero-meta" id="heroMeta"></div>
+  </section>
 
-  <div class="note" id="noShellyNote" hidden>
-    <span aria-hidden="true">🔑</span>
-    <div><strong>Lisää Shelly-pilviavain Asetuksista</strong> — sitten teho, lämpötilat ja valot päivittyvät live suoraan Shellystä (ei bot-tokeneita).</div>
-  </div>
+  <section class="metrics" aria-label="Lämpötilat">
+    <article class="metric">
+      <div class="lbl">Sisällä</div>
+      <div class="val" id="indoorVal">—°</div>
+      <div class="sub" id="indoorSub">Shelly live</div>
+    </article>
+    <article class="metric">
+      <div class="lbl">Ulkona</div>
+      <div class="val" id="outdoorVal">—°</div>
+      <div class="sub" id="outdoorSub">—</div>
+    </article>
+  </section>
 
-  <section class="card ilp" aria-label="ILP">
-    <div class="lbl">ILP · ilmalämpöpumppu</div>
-    <div class="ilp-state" id="ilpState">Ohjaa chatissa (ei Shellyssä)</div>
-    <div class="hint" style="margin:8px 0 0">Esim. “lämmöt 21” tai “ILP pois” Mökki-agentille. Napit tarvitsevat webhookin (CORS yleensä estää).</div>
-    <div class="row power-row">
-      <button class="btn" type="button" data-action="ilp_on" id="btnIlpOn">Päälle</button>
-      <button class="btn" type="button" data-action="ilp_off" id="btnIlpOff">Pois</button>
+  <section class="flags" aria-label="EV ja sauna">
+    <div class="flag" id="flagEv">
+      <div class="name">EV-lataus</div>
+      <div class="state" id="evState">—</div>
     </div>
-    <div class="row">
-      <button class="btn mode" type="button" data-action="ilp_mode" data-value="Heat">Lämmitys</button>
-      <button class="btn mode" type="button" data-action="ilp_mode" data-value="Cool">Jäähdytys</button>
-    </div>
-    <div class="row">
-      <div class="set">
-        <button class="btn pm" type="button" id="setMinus" aria-label="Laske lämpötilaa">−</button>
-        <div class="val" id="setVal" aria-live="polite">21<small>tavoite °C</small></div>
-        <button class="btn pm" type="button" id="setPlus" aria-label="Nosta lämpötilaa">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <button class="btn primary" type="button" id="setSend">Aseta lämpötila</button>
+    <div class="flag hot" id="flagSauna">
+      <div class="name">Sauna</div>
+      <div class="state" id="saunaState">—</div>
     </div>
   </section>
 
@@ -397,8 +335,6 @@
     <div class="row">
       <button class="btn scene" type="button" data-action="scene" data-target="Valot pois">Valot pois</button>
       <button class="btn scene" type="button" data-action="scene" data-target="Valot päälle">Valot päälle</button>
-    </div>
-    <div class="row">
       <button class="btn scene" type="button" data-action="scene" data-target="Iltavalot">Iltavalot</button>
       <button class="btn scene danger" type="button" data-action="mokki_pois">Mökki pois</button>
     </div>
@@ -406,48 +342,52 @@
 
   <section class="card" aria-label="Valot">
     <div class="lbl">Valot</div>
-    <div class="row" id="lightChips"><span class="hint" style="margin:0">Ei valoja listalla vielä — odota tilaa.</span></div>
+    <div class="row" id="lightGrid"><div class="empty">Odottaa Shelly-liveä…</div></div>
   </section>
 
-  <button class="settings-toggle" type="button" id="settingsToggle" aria-expanded="false" aria-controls="settingsPanel">
-    <span>Asetukset</span>
-    <span class="chev" aria-hidden="true">▼</span>
-  </button>
+  <section class="card" aria-label="ILP">
+    <div class="lbl">ILP</div>
+    <div class="ilp-note">
+      <div>💬</div>
+      <div><strong>Ohjaa chatissa</strong> — esim. “lämmöt 21” tai “ILP pois”. Ilmalämpöpumppu ei ole Shellyssä, joten sivu ei polta tokeneita turhaan.</div>
+    </div>
+  </section>
+
   <div class="settings-panel" id="settingsPanel" hidden>
-    <div class="lbl" style="margin-top:8px">Shelly Cloud · server</div>
+    <div class="lbl">Shelly Cloud · server</div>
     <input type="url" id="shellyServer" placeholder="https://shelly-273-eu.shelly.cloud" autocomplete="off" spellcheck="false">
-    <div class="lbl" style="margin-top:14px">Shelly Cloud · auth_key (Pilviavain)</div>
+    <div class="lbl" style="margin-top:14px">Pilviavain (auth_key)</div>
     <input type="password" id="shellyAuth" placeholder="Liitä mökin Shelly-pilviavain" autocomplete="off" spellcheck="false">
-    <div class="row" style="margin-top:10px">
-      <button class="btn primary" type="button" id="saveShelly">Tallenna Shelly</button>
+    <div class="row" style="margin-top:12px">
+      <button class="btn primary" type="button" id="saveShelly">Tallenna &amp; yhdistä</button>
     </div>
-    <div class="hint">Tila + valot tulevat suoraan Shelly Cloudista selaimessa (live, ei bot-rutiinia). Avain: Shelly → Asetukset → Kotiin → Pilviavain. Tallennus vain tähän laitteeseen.</div>
-    <div class="lbl" style="margin-top:18px">ILP (valinnainen webhook)</div>
-    <input type="url" id="webhookUrl" placeholder="Webhook URL ILP-napeille" autocomplete="off" spellcheck="false">
-    <input type="password" id="webhookAuth" placeholder="Authorization (Bearer …)" autocomplete="off" spellcheck="false" style="margin-top:8px">
-    <div class="row" style="margin-top:10px">
-      <button class="btn" type="button" id="saveWebhook">Tallenna webhook</button>
-    </div>
-    <div class="hint">Cursor-webhook ei yleensä toimi GitHub Pagesista (CORS). ILP: ohjaa Mökki-chatissa (“lämmöt 21”).</div>
+    <p class="hint" style="margin:12px 0 0">Avain: Shelly-sovellus → Asetukset → Kotiin → Pääsy ja käyttöoikeudet → Pilviavain. Tallennus vain tähän selaimeen. Tila päivittyy suoraan Shellystä (~15 s) — ei bot-rutiinia.</p>
   </div>
 
   <footer class="foot">
-    <span id="age">Päivitetty —</span>
-    <span id="hookHint">Webhook ei asetettu</span>
+    <span id="age">—</span>
+    <span id="hookHint">—</span>
   </footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script>
+<script>
 (function () {
-  var LS_HOOK = "mokkiWebhookUrl";
-  var LS_AUTH = "mokkiWebhookAuth";
   var LS_SHELLY_SERVER = "mokkiShellyServer";
   var LS_SHELLY_AUTH = "mokkiShellyAuth";
   var DEFAULT_SERVER = "https://shelly-273-eu.shelly.cloud";
   var DEVICES = [{"name": "Ulkovalot", "id": "34987a496fc8", "channel": 0, "kind": "light"}, {"name": "Pihavalot", "id": "841fe898cd14", "channel": 2, "kind": "switch"}, {"name": "WC peili", "id": "2cbcbba77ee0", "channel": 0, "kind": "light"}, {"name": "Ruokapöytä", "id": "fce8c0cc4010", "channel": 1, "kind": "light"}, {"name": "Eteinen", "id": "fce8c0cc4010", "channel": 0, "kind": "light"}, {"name": "Keittiö", "id": "08f9e0e4be14", "channel": 0, "kind": "light"}, {"name": "Makuusoppi", "id": "08f9e0e4b558", "channel": 0, "kind": "light"}, {"name": "Varastosoppi", "id": "08f9e0e4b558", "channel": 1, "kind": "light"}, {"name": "Parvi valot", "id": "08f9e0e4c028", "channel": 0, "kind": "light"}, {"name": "Parvi oikea", "id": "08f9e0e4c028", "channel": 1, "kind": "light"}, {"name": "Seinävalot", "id": "2cbcbb9f3f6c", "channel": 0, "kind": "light"}, {"name": "Olohuone valo", "id": "2cbcbb9f3f6c", "channel": 1, "kind": "light"}, {"name": "2) sauna", "id": "2cbcbba77ee0", "channel": 1, "kind": "light"}, {"name": "2)pukuhuone", "id": "08f9e0e4be14", "channel": 1, "kind": "light"}, {"name": "Iltavalot", "id": "441793a9c664", "channel": 0, "kind": "switch"}];
+  var MAIN_LIGHTS = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä", "Eteinen", "Keittiö", "Seinävalot", "Olohuone valo", "Parvi valot", "Parvi oikea", "Makuusoppi", "Varastosoppi", "2)pukuhuone", "2) sauna", "Iltavalot"];
+  var SENSOR = {
+    em: "a4f00fcc6468",
+    tempHost: "441793a9c664",
+    indoorCh: 101,
+    outdoorCh: 100,
+    ev: "841fe8817aac",
+    evCh: 0
+  };
   var DATA = null;
-  var setC = 21;
-  var MAIN_LIGHTS = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä"];
+  var _pullBusy = false;
+  var _liveOk = false;
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
@@ -458,25 +398,14 @@
     if (n == null || isNaN(Number(n))) return "—";
     return Number(n).toFixed(d == null ? 0 : d).replace(".", ",");
   }
-  function getJSON(url, cb) {
-    var x = new XMLHttpRequest();
-    x.open("GET", url, true);
-    x.onreadystatechange = function () {
-      if (x.readyState !== 4) return;
-      if (x.status >= 200 && x.status < 300) {
-        try { cb(JSON.parse(x.responseText)); } catch (e) { cb(null); }
-      } else cb(null);
-    };
-    x.send();
-  }
   function ageLabel(ts) {
     if (!ts) return "—";
-    var mins = Math.round((Date.now() - Number(ts)) / 60000);
-    if (mins < 1) return "juuri nyt";
+    var secs = Math.round((Date.now() - Number(ts)) / 1000);
+    if (secs < 5) return "juuri nyt";
+    if (secs < 60) return secs + " s sitten";
+    var mins = Math.round(secs / 60);
     if (mins < 60) return mins + " min sitten";
-    var h = Math.round(mins / 60);
-    if (h < 48) return h + " h sitten";
-    return Math.round(h / 24) + " pv sitten";
+    return Math.round(mins / 60) + " h sitten";
   }
   function toast(msg, kind) {
     var el = document.getElementById("toast");
@@ -491,12 +420,6 @@
   function shellyAuth() {
     return (localStorage.getItem(LS_SHELLY_AUTH) || "").trim();
   }
-  function webhook() {
-    return (localStorage.getItem(LS_HOOK) || "").trim();
-  }
-  function authHeader() {
-    return (localStorage.getItem(LS_AUTH) || "").trim();
-  }
   function findDev(name) {
     var n = String(name || "").toLowerCase();
     for (var i = 0; i < DEVICES.length; i++) {
@@ -504,80 +427,81 @@
     }
     return null;
   }
-  function refreshHookHint() {
+  function refreshHint() {
     var s = shellyAuth();
-    var w = webhook();
-    document.getElementById("hookHint").textContent = s
-      ? (w ? "Shelly + webhook" : "Shelly tallennettu")
-      : "Shelly-avain puuttuu";
+    document.getElementById("hookHint").textContent = s ? "Shelly avain OK" : "Shelly-avain puuttuu";
     document.getElementById("shellyServer").value = shellyServer();
     document.getElementById("shellyAuth").value = s;
-    document.getElementById("webhookUrl").value = w;
-    document.getElementById("webhookAuth").value = authHeader();
-    document.getElementById("noShellyNote").hidden = !!s;
+    if (!s) {
+      setLive(false, "Lisää avain");
+      document.getElementById("settingsPanel").hidden = false;
+      document.getElementById("settingsToggle").setAttribute("aria-expanded", "true");
+    }
   }
+  function setLive(ok, text) {
+    _liveOk = !!ok;
+    var b = document.getElementById("liveBadge");
+    b.className = "live-badge" + (ok ? "" : " off");
+    document.getElementById("liveText").textContent = text || (ok ? "Live" : "Offline");
+  }
+
   var _shellyQ = Promise.resolve();
   var _shellyLast = 0;
   function shellyPace() {
     return new Promise(function (resolve) {
       var wait = Math.max(0, 1100 - (Date.now() - _shellyLast));
-      setTimeout(function () {
-        _shellyLast = Date.now();
-        resolve();
-      }, wait);
+      setTimeout(function () { _shellyLast = Date.now(); resolve(); }, wait);
     });
   }
   function shellySet(dev, on) {
     var auth = shellyAuth();
     if (!auth) {
-      toast("Lisää Shelly-avain Asetuksiin", "err");
+      toast("Lisää Shelly-avain", "err");
       return Promise.reject(new Error("no auth"));
     }
     _shellyQ = _shellyQ.then(function () { return shellyPace(); }).then(function () {
       var kind = dev.kind || "light";
       var url = shellyServer() + "/v2/devices/api/set/" + kind + "?auth_key=" + encodeURIComponent(auth);
       var body = JSON.stringify({ id: dev.id, channel: Number(dev.channel) || 0, on: !!on });
-      return fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: body
-      }).then(function (r) {
-        if (r.ok) return r;
-        if (r.status === 429) throw new Error("429 rate limit — odota hetki");
-        var alt = kind === "light" ? "switch" : "light";
-        var url2 = shellyServer() + "/v2/devices/api/set/" + alt + "?auth_key=" + encodeURIComponent(auth);
-        return shellyPace().then(function () {
-          return fetch(url2, { method: "POST", headers: { "Content-Type": "application/json" }, body: body });
+      return fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: body })
+        .then(function (r) {
+          if (r.ok) return r;
+          if (r.status === 429) throw new Error("429 rate limit — odota hetki");
+          var alt = kind === "light" ? "switch" : "light";
+          var url2 = shellyServer() + "/v2/devices/api/set/" + alt + "?auth_key=" + encodeURIComponent(auth);
+          return shellyPace().then(function () {
+            return fetch(url2, { method: "POST", headers: { "Content-Type": "application/json" }, body: body });
+          });
+        }).then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r;
         });
-      }).then(function (r) {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r;
-      });
     });
     return _shellyQ;
   }
   function setLightByName(name, on, label) {
     var dev = findDev(name);
-    if (!dev) {
-      toast("Tuntematon: " + name, "err");
-      return;
-    }
+    if (!dev) { toast("Tuntematon: " + name, "err"); return; }
     toast("Lähetetään…");
     shellySet(dev, on).then(function () {
       toast((label || name) + (on ? " päälle" : " pois"), "ok");
-      setTimeout(pull, 1200);
-      setTimeout(pull, 3500);
+      // optimistic
+      if (DATA) {
+        var set = {};
+        (DATA.lightsOn || []).forEach(function (n) { set[n] = true; });
+        if (on) set[name] = true; else delete set[name];
+        DATA.lightsOn = Object.keys(set);
+        paint();
+      }
+      setTimeout(pull, 1400);
     }).catch(function (e) {
       toast("Virhe: " + (e && e.message ? e.message : "Shelly"), "err");
     });
   }
   function runScene(name) {
-    if (name === "Iltavalot") {
-      setLightByName("Iltavalot", true, "Iltavalot");
-      return;
-    }
+    if (name === "Iltavalot") return setLightByName("Iltavalot", true, "Iltavalot");
     if (name === "Valot pois" || name === "Mökki pois") {
-      var list = MAIN_LIGHTS.concat(["Eteinen", "Keittiö", "Seinävalot", "Olohuone valo", "Parvi valot", "Iltavalot"]);
+      var list = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä", "Eteinen", "Keittiö", "Seinävalot", "Olohuone valo", "Parvi valot", "Parvi oikea", "Makuusoppi", "Varastosoppi", "2)pukuhuone", "Iltavalot"];
       toast("Sammutetaan…");
       var chain = Promise.resolve();
       list.forEach(function (n) {
@@ -586,8 +510,8 @@
         chain = chain.then(function () { return shellySet(d, false).catch(function () {}); });
       });
       chain.then(function () {
-        toast(name === "Mökki pois" ? "Valot pois (ILP: chat)" : "Valot pois", "ok");
-        setTimeout(pull, 1500);
+        toast(name === "Mökki pois" ? "Valot pois" : "Valot pois", "ok");
+        setTimeout(pull, 1600);
       });
       return;
     }
@@ -602,155 +526,31 @@
       });
       chain2.then(function () {
         toast("Valot päälle", "ok");
-        setTimeout(pull, 1500);
+        setTimeout(pull, 1600);
       });
       return;
     }
     toast("Tuntematon scene", "err");
   }
-  function postWebhook(body, label) {
-    var url = webhook();
-    if (!url) {
-      toast("ILP: kirjoita Mökki-chattiin (webhook CORS)", "err");
-      return;
-    }
-    toast("Lähetetään…");
-    var headers = { "Content-Type": "application/json" };
-    var auth = authHeader();
-    if (auth) headers["Authorization"] = auth.indexOf(" ") >= 0 ? auth : ("Bearer " + auth);
-    fetch(url, { method: "POST", headers: headers, body: JSON.stringify(body), mode: "cors" })
-      .then(function (r) {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        toast((label || "OK") + " · lähetetty", "ok");
-        setTimeout(pull, 2000);
-      })
-      .catch(function () {
-        toast("ILP webhook estetty (CORS) — käytä chattia", "err");
-      });
-  }
-  function postAction(body, label) {
-    var a = body && body.action;
-    if (a === "shelly_on") return setLightByName(body.target, true, body.target);
-    if (a === "shelly_off") return setLightByName(body.target, false, body.target);
-    if (a === "scene") return runScene(body.target);
-    if (a === "mokki_pois") return runScene("Mökki pois");
-    if (a === "ilp_on" || a === "ilp_off" || a === "ilp_set" || a === "ilp_mode") {
-      return postWebhook(body, label);
-    }
-    toast("Tuntematon komento", "err");
-  }
-
-  function paintStatus() {
-    var d = DATA || {};
-    var ilp = d.ilp || {};
-    var lightsOn = d.lightsOn || [];
-    var onSet = {};
-    var i;
-    for (i = 0; i < lightsOn.length; i++) onSet[lightsOn[i]] = true;
-
-    var modeFi = ({ Heat: "Lämmitys", Cool: "Jäähdytys", Auto: "Auto", Fan: "Puhallus", Dry: "Kuivaus" })[ilp.mode] || (ilp.mode || "");
-
-    var pills = "";
-    pills += "<span class=\"pill" + (d.online ? "" : " warn") + "\">" + (d.online ? "Verkossa" : "Offline") + "</span>";
-    pills += "<span class=\"pill\">Sisä " + num(d.indoorC, 1) + "°</span>";
-    pills += "<span class=\"pill\">Ulko " + num(d.outdoorC, 1) + "°</span>";
-    if (d.powerW != null) {
-      var kw = Number(d.powerW) / 1000;
-      pills += "<span class=\"pill\">" + (kw >= 1 ? num(kw, 2) + " kW" : Math.round(d.powerW) + " W") + "</span>";
-    }
-    if (ilp && (ilp.on != null || ilp.mode)) {
-      pills += "<span class=\"pill" + (ilp.on ? "" : " off") + "\">ILP " + (ilp.on ? (modeFi || "ON") : "pois") + "</span>";
-    }
-    if (d.evCharge) pills += "<span class=\"pill\">EV lataa</span>";
-    if (d.sauna) pills += "<span class=\"pill\">Sauna</span>";
-    if (lightsOn.length) {
-      pills += "<span class=\"pill\">" + lightsOn.length + " valo" + (lightsOn.length === 1 ? "" : "a") + "</span>";
-    } else {
-      pills += "<span class=\"pill off\">Ei valoja</span>";
-    }
-    document.getElementById("statusPills").innerHTML = pills;
-
-    var ilpLine = (ilp.on ? "Päällä" : "Pois")
-      + (modeFi ? " · " + modeFi : "")
-      + (ilp.setC != null ? " · tavoite " + num(ilp.setC, 0) + "°" : "")
-      + (ilp.indoorC != null ? " · sisä " + num(ilp.indoorC, 0) + "°" : "");
-    document.getElementById("ilpState").textContent = ilpLine;
-
-    if (ilp.setC != null && !paintStatus._touched) setC = Number(ilp.setC);
-    document.getElementById("setVal").innerHTML = String(setC) + "<small>tavoite °C</small>";
-
-    document.getElementById("btnIlpOn").className = "btn" + (ilp.on ? " on" : "");
-    document.getElementById("btnIlpOff").className = "btn" + (!ilp.on ? " on" : "");
-    var modes = document.querySelectorAll(".btn.mode");
-    for (i = 0; i < modes.length; i++) {
-      var m = modes[i].getAttribute("data-value");
-      modes[i].className = "btn mode" + (ilp.mode === m ? " on" : "");
-    }
-
-    var names = [];
-    var seen = {};
-    function addName(n) {
-      if (!n || seen[n]) return;
-      seen[n] = true;
-      names.push(n);
-    }
-    for (i = 0; i < MAIN_LIGHTS.length; i++) addName(MAIN_LIGHTS[i]);
-    for (i = 0; i < lightsOn.length; i++) addName(lightsOn[i]);
-    var watts = d.lightWatts || {};
-    Object.keys(watts).forEach(addName);
-
-    var html = "";
-    if (!names.length) {
-      html = "<span class=\"hint\" style=\"margin:0\">Ei valoja listalla.</span>";
-    } else {
-      for (i = 0; i < names.length; i++) {
-        var nm = names[i];
-        var isOn = !!onSet[nm];
-        html += "<button class=\"btn chip" + (isOn ? " on" : "") + "\" type=\"button\" data-light=\"" + esc(nm) + "\" data-on=\"" + (isOn ? "1" : "0") + "\">" + esc(nm) + (isOn ? " · on" : "") + "</button>";
-      }
-    }
-    document.getElementById("lightChips").innerHTML = html;
-
-    var age = ageLabel(d.updated);
-    var stale = d.updated && (Date.now() - Number(d.updated) > 2 * 60 * 1000);
-    document.getElementById("age").className = stale ? "stale" : "";
-    document.getElementById("age").textContent = (_liveSource || "—") + " · " + age;
-  }
-
-  var SENSOR = {
-    em: "a4f00fcc6468",
-    tempHost: "441793a9c664",
-    indoorCh: 101,
-    outdoorCh: 100,
-    ev: "841fe8817aac",
-    evCh: 0
-  };
-  var _pullBusy = false;
-  var _liveSource = "—";
 
   function component(st, kind, ch) {
     if (!st) return null;
     var b = st[kind + ":" + ch];
     return b && typeof b === "object" ? b : null;
   }
-
   function parseShellyAllStatus(payload) {
     var root = payload && payload.data ? payload.data : payload;
     var map = (root && root.devices_status) || {};
     var lightsOn = [];
     var lightWatts = {};
-    var online = false;
-    var i;
-    for (i = 0; i < DEVICES.length; i++) {
+    var online = Object.keys(map).length > 0;
+    for (var i = 0; i < DEVICES.length; i++) {
       var d = DEVICES[i];
       var st = map[d.id];
       if (!st) continue;
-      if (st.online != null) online = online || !!st.online;
-      if (st.cloud && st.cloud.connected) online = true;
       var kind = d.kind === "switch" ? "switch" : "light";
       var block = component(st, kind, d.channel) || component(st, kind === "light" ? "switch" : "light", d.channel);
-      var on = null;
-      var ap = null;
+      var on = null, ap = null;
       if (block) {
         if (block.output != null) on = !!block.output;
         if (block.apower != null) ap = Number(block.apower);
@@ -758,8 +558,7 @@
       if (ap != null && !isNaN(ap)) lightWatts[d.name] = ap;
       if (on === true) lightsOn.push(d.name);
     }
-    var emSt = map[SENSOR.em] || {};
-    var em = emSt["em:0"] || {};
+    var em = (map[SENSOR.em] || {})["em:0"] || {};
     var powerW = null;
     if (em.total_act_power != null) powerW = Math.round(Number(em.total_act_power));
     else {
@@ -773,8 +572,7 @@
     var outdoor = component(tempHost, "temperature", SENSOR.outdoorCh);
     var indoorC = indoor && indoor.tC != null ? Math.round(Number(indoor.tC) * 10) / 10 : null;
     var outdoorC = outdoor && outdoor.tC != null ? Math.round(Number(outdoor.tC) * 10) / 10 : null;
-    var evSt = map[SENSOR.ev] || {};
-    var evSw = component(evSt, "switch", SENSOR.evCh);
+    var evSw = component(map[SENSOR.ev] || {}, "switch", SENSOR.evCh);
     var evCharge = !!(evSw && evSw.output);
     var saunaDev = findDev("2) sauna");
     var sauna = false;
@@ -782,10 +580,6 @@
       var sst = map[saunaDev.id] || {};
       var sb = component(sst, "light", saunaDev.channel) || component(sst, "switch", saunaDev.channel);
       sauna = !!(sb && sb.output);
-    }
-    if (!online) {
-      // if we got any device status, treat as online
-      online = Object.keys(map).length > 0;
     }
     return {
       online: online,
@@ -797,20 +591,86 @@
       evCharge: evCharge,
       sauna: sauna,
       updated: Date.now(),
-      capturedAt: new Date().toISOString(),
-      source: "shelly-live",
-      ilp: (DATA && DATA.ilp) || null
+      source: "shelly-live"
     };
+  }
+
+  function paint() {
+    var d = DATA || {};
+    var power = Number(d.powerW);
+    var kw = isNaN(power) ? null : power / 1000;
+    var ev = !!d.evCharge;
+    var sauna = !!d.sauna;
+    var lightsOn = d.lightsOn || [];
+    var watts = d.lightWatts || {};
+
+    var hero = document.getElementById("hero");
+    hero.className = "hero" + (sauna ? " hot" : (ev ? " ev" : ""));
+    document.getElementById("heroLbl").textContent = sauna ? "Sauna päällä" : (ev ? "Lataus + kulutus" : "Sähköä nyt");
+    if (kw == null) {
+      document.getElementById("heroKw").innerHTML = "—<span>kW</span>";
+    } else if (kw >= 0.1) {
+      document.getElementById("heroKw").innerHTML = num(kw, kw >= 10 ? 1 : 2) + "<span>kW</span>";
+    } else {
+      document.getElementById("heroKw").innerHTML = Math.round(power) + "<span>W</span>";
+    }
+
+    var meta = "";
+    if (lightsOn.length) meta += "<span class=\"chip on\">" + lightsOn.length + " valo" + (lightsOn.length === 1 ? "" : "a") + "</span>";
+    else meta += "<span class=\"chip\">Ei valoja</span>";
+    if (ev) meta += "<span class=\"chip ev\">EV lataa</span>";
+    if (sauna) meta += "<span class=\"chip hot\">Sauna</span>";
+    if (d.online === false) meta += "<span class=\"chip\">Offline</span>";
+    document.getElementById("heroMeta").innerHTML = meta;
+
+    document.getElementById("indoorVal").textContent = d.indoorC != null ? num(d.indoorC, 1) + "°" : "—°";
+    document.getElementById("outdoorVal").textContent = d.outdoorC != null ? num(d.outdoorC, 1) + "°" : "—°";
+    document.getElementById("indoorSub").textContent = "sisä · Shelly";
+    document.getElementById("outdoorSub").textContent = power != null && !isNaN(power) ? (Math.round(power) + " W nyt") : "ulko · Shelly";
+
+    var fe = document.getElementById("flagEv");
+    fe.className = "flag" + (ev ? " on" : "");
+    document.getElementById("evState").textContent = ev ? "Päällä" : "Pois";
+    var fs = document.getElementById("flagSauna");
+    fs.className = "flag hot" + (sauna ? " on" : "");
+    document.getElementById("saunaState").textContent = sauna ? "Päällä" : "Pois";
+
+    var onSet = {};
+    lightsOn.forEach(function (n) { onSet[n] = true; });
+    var names = [];
+    var seen = {};
+    function add(n) { if (!n || seen[n]) return; seen[n] = true; names.push(n); }
+    MAIN_LIGHTS.forEach(add);
+    lightsOn.forEach(add);
+
+    var html = "";
+    if (!names.length) {
+      html = "<div class=\"empty\">Ei valoja listalla.</div>";
+    } else {
+      names.forEach(function (nm) {
+        var isOn = !!onSet[nm];
+        var w = watts[nm];
+        var wTxt = (w != null && Number(w) > 0) ? (num(w, Number(w) < 10 ? 0 : 0) + " W") : (isOn ? "on" : "pois");
+        html += "<button class=\"btn light" + (isOn ? " on" : "") + "\" type=\"button\" data-light=\"" + esc(nm) + "\" data-on=\"" + (isOn ? "1" : "0") + "\">"
+          + "<span class=\"name\">" + esc(nm) + "</span><span class=\"w\">" + esc(wTxt) + "</span></button>";
+      });
+    }
+    document.getElementById("lightGrid").innerHTML = html;
+
+    var age = ageLabel(d.updated);
+    var stale = d.updated && (Date.now() - Number(d.updated) > 45000);
+    var ageEl = document.getElementById("age");
+    ageEl.className = stale ? "stale" : "";
+    ageEl.textContent = (_liveOk ? "Shelly live" : "Ei yhteyttä") + " · " + age;
   }
 
   function pull() {
     if (_pullBusy) return;
     var auth = shellyAuth();
     if (!auth) {
-      _liveSource = "ei avainta";
-      document.getElementById("age").textContent = "Lisää Shelly-avain Asetuksista (live)";
+      setLive(false, "Lisää avain");
+      document.getElementById("age").textContent = "Lisää Shelly-avain asetuksista";
       document.getElementById("age").className = "stale";
-      paintStatus();
       return;
     }
     _pullBusy = true;
@@ -822,103 +682,72 @@
         return r.json();
       })
       .then(function (payload) {
-        if (payload && payload.isok === false) throw new Error("Shelly isok=false");
+        if (payload && payload.isok === false) throw new Error("Shelly hylkäsi");
         DATA = parseShellyAllStatus(payload);
-        _liveSource = "Shelly live";
-        paintStatus();
+        setLive(!!DATA.online, "Live");
+        paint();
       })
       .catch(function (e) {
         var msg = e && e.message ? e.message : "virhe";
-        document.getElementById("age").textContent = "Live-päivitys epäonnistui · " + msg;
+        setLive(false, msg === "429" ? "Rate limit" : "Virhe");
+        document.getElementById("age").textContent = "Live epäonnistui · " + msg;
         document.getElementById("age").className = "stale";
-        toast(msg === "429" ? "Shelly rate limit — odota" : ("Live: " + msg), "err");
+        if (msg === "429") toast("Shelly rate limit — odota", "err");
       })
       .finally(function () { _pullBusy = false; });
   }
 
   document.getElementById("settingsToggle").addEventListener("click", function () {
     var panel = document.getElementById("settingsPanel");
-    var open = panel.classList.toggle("open");
+    var open = panel.hidden;
     panel.hidden = !open;
     this.setAttribute("aria-expanded", open ? "true" : "false");
   });
-
   document.getElementById("saveShelly").addEventListener("click", function () {
     var srv = document.getElementById("shellyServer").value.trim() || DEFAULT_SERVER;
     var key = document.getElementById("shellyAuth").value.trim();
     localStorage.setItem(LS_SHELLY_SERVER, srv.replace(/\/$/, ""));
     if (!key) {
       localStorage.removeItem(LS_SHELLY_AUTH);
-      toast("Shelly-avain poistettu", "ok");
+      toast("Avain poistettu", "ok");
     } else {
       localStorage.setItem(LS_SHELLY_AUTH, key);
-      toast("Shelly tallennettu", "ok");
+      toast("Yhdistetään…", "ok");
+      document.getElementById("settingsPanel").hidden = true;
+      document.getElementById("settingsToggle").setAttribute("aria-expanded", "false");
       pull();
     }
-    refreshHookHint();
+    refreshHint();
   });
-  document.getElementById("saveWebhook").addEventListener("click", function () {
-    var v = document.getElementById("webhookUrl").value.trim();
-    var a = document.getElementById("webhookAuth").value.trim();
-    if (!v) {
-      localStorage.removeItem(LS_HOOK);
-      localStorage.removeItem(LS_AUTH);
-      toast("Webhook poistettu", "ok");
-    } else {
-      localStorage.setItem(LS_HOOK, v);
-      if (a) localStorage.setItem(LS_AUTH, a);
-      else localStorage.removeItem(LS_AUTH);
-      toast("Webhook tallennettu (ILP voi silti kaatua CORSiin)", "ok");
-    }
-    refreshHookHint();
-  });
-
-  document.getElementById("setMinus").addEventListener("click", function () {
-    paintStatus._touched = true;
-    setC = Math.max(16, setC - 1);
-    document.getElementById("setVal").innerHTML = String(setC) + "<small>tavoite °C</small>";
-  });
-  document.getElementById("setPlus").addEventListener("click", function () {
-    paintStatus._touched = true;
-    setC = Math.min(30, setC + 1);
-    document.getElementById("setVal").innerHTML = String(setC) + "<small>tavoite °C</small>";
-  });
-  document.getElementById("setSend").addEventListener("click", function () {
-    postAction({ action: "ilp_set", value: setC }, "ILP " + setC + "°");
+  document.getElementById("refreshNow").addEventListener("click", function () {
+    pull();
+    toast("Päivitetään…");
   });
 
   document.body.addEventListener("click", function (ev) {
-    var t = ev.target;
-    if (!t || !t.getAttribute) return;
+    var t = ev.target.closest ? ev.target.closest("[data-light],[data-action]") : null;
+    if (!t) return;
     if (t.getAttribute("data-light")) {
       var name = t.getAttribute("data-light");
       var isOn = t.getAttribute("data-on") === "1";
-      if (isOn) postAction({ action: "shelly_off", target: name }, name + " pois");
-      else postAction({ action: "shelly_on", target: name }, name + " päälle");
+      setLightByName(name, !isOn, name);
       return;
     }
     var action = t.getAttribute("data-action");
     if (!action) return;
-    var body = { action: action };
-    var target = t.getAttribute("data-target");
-    var value = t.getAttribute("data-value");
-    if (target) body.target = target;
-    if (value) body.value = value;
-    var label = t.textContent.trim();
-    postAction(body, label);
+    if (action === "scene") runScene(t.getAttribute("data-target"));
+    else if (action === "mokki_pois") runScene("Mökki pois");
   });
 
-  var btnRef = document.getElementById("refreshNow");
-  if (btnRef) btnRef.addEventListener("click", function () { pull(); toast("Päivitetään…"); });
-
-  refreshHookHint();
-  paintStatus();
+  refreshHint();
+  paint();
   pull();
   setInterval(pull, 15000);
+  setInterval(function () { if (DATA && DATA.updated) paint(); }, 5000);
   document.addEventListener("visibilitychange", function () {
     if (!document.hidden) pull();
   });
 })();
-  </script>
+</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790677423494,
+  "updated": 1790678870013,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -476,14 +476,6 @@
       "date": "2026-09-29",
       "start": "09:00",
       "end": "16:45",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-60o32d1n8924cba26sokcb9k6gp3ab9o68sjgba375232ga2752jcd1j6g",
-      "title": "Valokuvaus Mea",
-      "date": "2026-09-29",
-      "start": "12:45",
-      "end": "13:45",
       "kind": "cal"
     },
     {

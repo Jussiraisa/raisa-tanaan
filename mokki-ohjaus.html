@@ -348,7 +348,7 @@
 
   <div class="spot-bar" aria-label="Pörssisähkö">
     <span class="chip" id="spotNowChip">Pörssi —</span>
-    <span class="hint-inline" id="costHint">Savon Voima Yleissähkö · siirto+vero 8,12 snt/kWh · ei perusmaksua</span>
+    <span class="hint-inline" id="costHint">Pörssi + Savon Voima siirto+vero 8,12 snt/kWh · ei perusmaksua</span>
   </div>
 
   <section class="costs" aria-label="Sähkökustannus">
@@ -459,8 +459,12 @@
     transferSnt: 8.12,
     vat: 1.255,
     emId: "a4f00fcc6468",
-    emChannel: 0
+    emChannel: 0,
+    // Shelly Cloud statistics/power-consumption returns inflated kWh on this Pro3EM63
+    // Calibrated 2026-09-29 against mittari: 185.67 cloud → 13.3 kWh real (÷14).
+    energyDivisor: 14
   };
+  var LS_EM_DAY = "mokkiEmDayBaseline";
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
@@ -642,6 +646,11 @@
     var p = helsinkiParts(dateObj);
     return p.dateStr + "T" + p.hour;
   }
+  function scaledKwh(raw) {
+    var n = Number(raw);
+    if (!(n > 0)) return 0;
+    return n / (COST_CFG.energyDivisor || 1);
+  }
   function loadSpotPrices() {
     var now = new Date();
     var p = helsinkiParts(now);
@@ -712,7 +721,7 @@
       if (row.missing) return;
       var dt = String(row.datetime || "");
       if (dateStr && dt.slice(0, 10) !== dateStr) return;
-      var c = Number(row.consumption);
+      var c = scaledKwh(row.consumption);
       if (!(c > 0)) return;
       kwh += c;
       var when = parseShellyLocal(dt);
@@ -739,7 +748,7 @@
       var dt = String(row.datetime || "");
       var dateStr = dt.slice(0, 10);
       if (keepFn && !keepFn(dateStr)) return;
-      var c = Number(row.consumption);
+      var c = scaledKwh(row.consumption);
       if (!(c > 0)) return;
       kwh += c;
       var avg = dayAvgSpot(spotMap, dateStr);
@@ -806,6 +815,31 @@
             });
           });
         });
+
+            // Refine "today" with live total_act Wh when possible (more stable than cloud stats)
+            if (DATA && DATA.totalActWh != null && !isNaN(DATA.totalActWh)) {
+              try {
+                var baseRaw = localStorage.getItem(LS_EM_DAY);
+                var base = baseRaw ? JSON.parse(baseRaw) : null;
+                if (!base || base.date !== today || base.totalActWh == null) {
+                  // Seed baseline so that today matches scaled stats right now
+                  var seedWh = DATA.totalActWh - (COST.day && COST.day.kwh ? COST.day.kwh * 1000 : 0);
+                  base = { date: today, totalActWh: seedWh };
+                  localStorage.setItem(LS_EM_DAY, JSON.stringify(base));
+                }
+                var liveKwh = Math.max(0, (DATA.totalActWh - Number(base.totalActWh)) / 1000);
+                if (COST.day) {
+                  // Prefer live counter for kWh; keep € proportional if stats had cost
+                  if (COST.day.kwh > 0.05) {
+                    var ratio = liveKwh / COST.day.kwh;
+                    COST.day = { kwh: liveKwh, eur: COST.day.eur * ratio };
+                  } else {
+                    var spotUse = COST.spotAvg != null ? COST.spotAvg : (COST.spotNow != null ? COST.spotNow : 0);
+                    COST.day = { kwh: liveKwh, eur: liveKwh * (spotUse + COST_CFG.transferSnt) / 100 };
+                  }
+                }
+              } catch (e) {}
+            }
       })
       .then(function () {
         _costLast = Date.now();
@@ -844,7 +878,10 @@
       if (ap != null && !isNaN(ap)) lightWatts[d.name] = ap;
       if (on === true) lightsOn.push(d.name);
     }
-    var em = (map[SENSOR.em] || {})["em:0"] || {};
+    var emRoot = map[SENSOR.em] || {};
+    var em = emRoot["em:0"] || {};
+    var emdata = emRoot["emdata:0"] || {};
+    var totalActWh = emdata.total_act != null ? Number(emdata.total_act) : null;
     var powerW = null;
     if (em.total_act_power != null) powerW = Math.round(Number(em.total_act_power));
     else {
@@ -870,6 +907,7 @@
     return {
       online: online,
       powerW: powerW,
+      totalActWh: totalActWh,
       indoorC: indoorC,
       outdoorC: outdoorC,
       lightsOn: lightsOn,

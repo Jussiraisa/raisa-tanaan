@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-29T06:01:36+03:00",
+  "updated": "2026-09-29T07:03:11+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1600,13 +1600,6 @@
       "title": "KE01 kemia 9–12",
       "who": "Milla",
       "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "who": "Mea",
-      "title": "Päivätyöilmoitus Wilmaan ma 28.9. mennessä (Mieli ry 9.10.)",
-      "due": "2026-09-28",
-      "needAction": true,
       "source": "wilma:perhe"
     },
     {

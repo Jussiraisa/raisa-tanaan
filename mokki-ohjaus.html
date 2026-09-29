@@ -215,6 +215,46 @@
     .btn.light .w { font-size: 12px; font-weight: 650; color: var(--dim); }
     .btn.light.on .w { color: rgba(78,205,196,.85); }
 
+
+    .costs {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap);
+      margin-bottom: var(--gap);
+    }
+    .cost {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--r); padding: 16px 14px 14px;
+      min-height: 108px;
+    }
+    .cost .lbl {
+      font-size: 11px; font-weight: 750; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--dim);
+    }
+    .cost .eur {
+      margin-top: 8px; font-family: var(--serif);
+      font-size: clamp(26px, 7vw, 34px); font-weight: 650;
+      letter-spacing: -.03em; line-height: 1;
+    }
+    .cost .eur span {
+      font-size: .42em; margin-left: .08em; color: var(--muted); font-weight: 500;
+    }
+    .cost .sub {
+      margin-top: 8px; font-size: 12px; font-weight: 650; color: var(--muted);
+      line-height: 1.35;
+    }
+    .spot-bar {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      margin: -2px 0 12px; padding: 0 2px;
+    }
+    .spot-bar .chip { font-size: 12px; }
+    .spot-bar .hint-inline {
+      font-size: 11px; font-weight: 650; color: var(--dim); line-height: 1.35;
+      flex: 1 1 180px;
+    }
+    @media (max-width: 420px) {
+      .costs { grid-template-columns: 1fr; }
+      .cost { min-height: 0; }
+    }
+
     .flags {
       display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap);
       margin-bottom: var(--gap);
@@ -306,6 +346,29 @@
     <div class="hero-meta" id="heroMeta"></div>
   </section>
 
+  <div class="spot-bar" aria-label="Pörssisähkö">
+    <span class="chip" id="spotNowChip">Pörssi —</span>
+    <span class="hint-inline" id="costHint">Savon Voima Yleissähkö · siirto+vero 8,12 snt/kWh · ei perusmaksua</span>
+  </div>
+
+  <section class="costs" aria-label="Sähkökustannus">
+    <article class="cost">
+      <div class="lbl">Tänään</div>
+      <div class="eur" id="costDay">—<span>€</span></div>
+      <div class="sub" id="kwhDay">— kWh</div>
+    </article>
+    <article class="cost">
+      <div class="lbl">Viikko</div>
+      <div class="eur" id="costWeek">—<span>€</span></div>
+      <div class="sub" id="kwhWeek">— kWh</div>
+    </article>
+    <article class="cost">
+      <div class="lbl">Kuukausi</div>
+      <div class="eur" id="costMonth">—<span>€</span></div>
+      <div class="sub" id="kwhMonth">— kWh</div>
+    </article>
+  </section>
+
   <section class="metrics" aria-label="Lämpötilat">
     <article class="metric">
       <div class="lbl">Sisällä</div>
@@ -388,6 +451,16 @@
   var DATA = null;
   var _pullBusy = false;
   var _liveOk = false;
+  var _costBusy = false;
+  var _costLast = 0;
+  var COST = { day: null, week: null, month: null, spotNow: null, spotAvg: null };
+  // Savon Voima Verkko Yleissähkö 1.6.2026–: siirto 5,20 + sähkövero lk1 2,917875 ≈ 8,12 snt/kWh (sis. ALV). Ei perusmaksua.
+  var COST_CFG = {
+    transferSnt: 8.12,
+    vat: 1.255,
+    emId: "a4f00fcc6468",
+    emChannel: 0
+  };
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
@@ -531,6 +604,219 @@
       return;
     }
     toast("Tuntematon scene", "err");
+  }
+
+  function helsinkiParts(d) {
+    var fmt = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Helsinki",
+      year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", hour12: false
+    });
+    var parts = {};
+    fmt.formatToParts(d).forEach(function (p) { if (p.type !== "literal") parts[p.type] = p.value; });
+    return {
+      y: parts.year,
+      m: parts.month,
+      day: parts.day,
+      hour: parts.hour === "24" ? "00" : parts.hour,
+      dateStr: parts.year + "-" + parts.month + "-" + parts.day
+    };
+  }
+  function parseShellyLocal(dt) {
+    // "2026-09-29 07:00:00" Europe/Helsinki wall time → Date
+    if (!dt) return null;
+    var m = String(dt).match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
+    if (!m) return null;
+    var y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]), h = Number(m[4]), mi = Number(m[5]);
+    // Convert Helsinki wall to UTC via known offset for that civil time
+    var guess = Date.UTC(y, mo - 1, d, h, mi, 0);
+    for (var i = 0; i < 3; i++) {
+      var hp = helsinkiParts(new Date(guess));
+      var got = Date.UTC(Number(hp.y), Number(hp.m) - 1, Number(hp.day), Number(hp.hour), Number(hp.minute || 0), 0);
+      var want = Date.UTC(y, mo - 1, d, h, mi, 0);
+      guess += want - got;
+    }
+    return new Date(guess);
+  }
+  function hourKeyHelsinki(dateObj) {
+    var p = helsinkiParts(dateObj);
+    return p.dateStr + "T" + p.hour;
+  }
+  function loadSpotPrices() {
+    var now = new Date();
+    var p = helsinkiParts(now);
+    // month start → tomorrow end, in UTC ISO for sahkotin
+    var monthStart = new Date(Date.UTC(Number(p.y), Number(p.m) - 1, 1, 0, 0, 0));
+    // pad: fetch from day -1 to catch timezone
+    var start = new Date(monthStart.getTime() - 2 * 86400000);
+    var end = new Date(now.getTime() + 2 * 86400000);
+    var url = "https://sahkotin.fi/prices?tax=0&start=" + encodeURIComponent(start.toISOString()) +
+      "&end=" + encodeURIComponent(end.toISOString());
+    return fetch(url, { mode: "cors", cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("spot HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (j) {
+        var map = {}; // Helsinki hour key → snt/kWh sis. ALV
+        (j.prices || []).forEach(function (row) {
+          var t = new Date(row.date);
+          var key = hourKeyHelsinki(t);
+          // value EUR/MWh without VAT → snt/kWh with VAT
+          var snt = (Number(row.value) / 10) * COST_CFG.vat;
+          map[key] = snt;
+        });
+        return map;
+      });
+  }
+  function shellyEnergy(range) {
+    var auth = shellyAuth();
+    if (!auth) return Promise.reject(new Error("no auth"));
+    return shellyPace().then(function () {
+      var qs = "auth_key=" + encodeURIComponent(auth) +
+        "&id=" + encodeURIComponent(COST_CFG.emId) +
+        "&channel=" + COST_CFG.emChannel +
+        "&date_range=" + encodeURIComponent(range);
+      var url = shellyServer() + "/v2/statistics/power-consumption?" + qs;
+      return fetch(url, { method: "GET", mode: "cors", cache: "no-store" })
+        .then(function (r) {
+          if (r.status === 429) throw new Error("429");
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        });
+    });
+  }
+  function priceAt(spotMap, when) {
+    if (!when) return null;
+    var key = hourKeyHelsinki(when);
+    if (spotMap[key] != null) return spotMap[key];
+    // fallback nearest earlier hour within 6h
+    for (var i = 1; i <= 6; i++) {
+      var t = new Date(when.getTime() - i * 3600000);
+      var k = hourKeyHelsinki(t);
+      if (spotMap[k] != null) return spotMap[k];
+    }
+    return null;
+  }
+  function dayAvgSpot(spotMap, dateStr) {
+    var sum = 0, n = 0;
+    for (var h = 0; h < 24; h++) {
+      var key = dateStr + "T" + String(h).padStart(2, "0");
+      if (spotMap[key] != null) { sum += spotMap[key]; n++; }
+    }
+    return n ? sum / n : null;
+  }
+  function sumCostHourly(history, spotMap, dateStr) {
+    var kwh = 0, eur = 0, matched = 0, missingPrice = 0;
+    (history || []).forEach(function (row) {
+      if (row.missing) return;
+      var dt = String(row.datetime || "");
+      if (dateStr && dt.slice(0, 10) !== dateStr) return;
+      var c = Number(row.consumption);
+      if (!(c > 0)) return;
+      kwh += c;
+      var when = parseShellyLocal(dt);
+      var spot = priceAt(spotMap, when);
+      if (spot == null) { missingPrice += c; return; }
+      matched += c;
+      eur += c * (spot + COST_CFG.transferSnt) / 100;
+    });
+    // leftover without spot: use day avg or overall avg
+    if (missingPrice > 0) {
+      var avg = dayAvgSpot(spotMap, dateStr);
+      if (avg == null) {
+        var vals = Object.keys(spotMap).map(function (k) { return spotMap[k]; });
+        avg = vals.length ? vals.reduce(function (a, b) { return a + b; }, 0) / vals.length : null;
+      }
+      if (avg != null) eur += missingPrice * (avg + COST_CFG.transferSnt) / 100;
+    }
+    return { kwh: kwh, eur: eur };
+  }
+  function sumCostDaily(history, spotMap, keepFn) {
+    var kwh = 0, eur = 0;
+    (history || []).forEach(function (row) {
+      if (row.missing) return;
+      var dt = String(row.datetime || "");
+      var dateStr = dt.slice(0, 10);
+      if (keepFn && !keepFn(dateStr)) return;
+      var c = Number(row.consumption);
+      if (!(c > 0)) return;
+      kwh += c;
+      var avg = dayAvgSpot(spotMap, dateStr);
+      if (avg == null) {
+        var vals = Object.keys(spotMap).map(function (k) { return spotMap[k]; });
+        avg = vals.length ? vals.reduce(function (a, b) { return a + b; }, 0) / vals.length : 0;
+      }
+      eur += c * (avg + COST_CFG.transferSnt) / 100;
+    });
+    return { kwh: kwh, eur: eur };
+  }
+  function paintCost() {
+    function set(idEur, idKwh, block) {
+      if (!block) {
+        document.getElementById(idEur).innerHTML = "—<span>€</span>";
+        document.getElementById(idKwh).textContent = "— kWh";
+        return;
+      }
+      document.getElementById(idEur).innerHTML = num(block.eur, 2) + "<span>€</span>";
+      document.getElementById(idKwh).textContent = num(block.kwh, block.kwh >= 100 ? 0 : 1) + " kWh";
+    }
+    set("costDay", "kwhDay", COST.day);
+    set("costWeek", "kwhWeek", COST.week);
+    set("costMonth", "kwhMonth", COST.month);
+    var chip = document.getElementById("spotNowChip");
+    if (COST.spotNow != null) {
+      chip.textContent = "Pörssi " + num(COST.spotNow, 1) + " snt";
+      chip.className = "chip on";
+    } else {
+      chip.textContent = "Pörssi —";
+      chip.className = "chip";
+    }
+  }
+  function refreshCosts(force) {
+    if (_costBusy) return;
+    if (!force && _costLast && (Date.now() - _costLast < 4 * 60 * 1000)) return;
+    if (!shellyAuth()) return;
+    _costBusy = true;
+    var today = helsinkiParts(new Date()).dateStr;
+    var monthPrefix = today.slice(0, 7); // YYYY-MM
+    var weekCut = new Date(Date.now() - 6 * 86400000);
+    var weekStart = helsinkiParts(weekCut).dateStr;
+
+    loadSpotPrices()
+      .then(function (spotMap) {
+        var nowKey = hourKeyHelsinki(new Date());
+        COST.spotNow = spotMap[nowKey] != null ? spotMap[nowKey] : null;
+        var todayVals = [];
+        Object.keys(spotMap).forEach(function (k) {
+          if (k.indexOf(today) === 0) todayVals.push(spotMap[k]);
+        });
+        COST.spotAvg = todayVals.length ? todayVals.reduce(function (a, b) { return a + b; }, 0) / todayVals.length : null;
+
+        return shellyEnergy("day").then(function (dayJ) {
+          COST.day = sumCostHourly(dayJ.history || [], spotMap, today);
+          return shellyEnergy("week").then(function (weekJ) {
+            COST.week = sumCostDaily(weekJ.history || [], spotMap, function (ds) {
+              return ds >= weekStart && ds <= today;
+            });
+            return shellyEnergy("month").then(function (monthJ) {
+              COST.month = sumCostDaily(monthJ.history || [], spotMap, function (ds) {
+                return ds.indexOf(monthPrefix) === 0 && ds <= today;
+              });
+            });
+          });
+        });
+      })
+      .then(function () {
+        _costLast = Date.now();
+        paintCost();
+      })
+      .catch(function (e) {
+        console.warn("cost refresh", e);
+        document.getElementById("costHint").textContent =
+          "Kustannus: " + (e && e.message ? e.message : "haku epäonnistui") + " · Savon Voima siirto+vero 8,12 snt";
+      })
+      .finally(function () { _costBusy = false; });
   }
 
   function component(st, kind, ch) {
@@ -686,6 +972,7 @@
         DATA = parseShellyAllStatus(payload);
         setLive(!!DATA.online, "Live");
         paint();
+        refreshCosts(false);
       })
       .catch(function (e) {
         var msg = e && e.message ? e.message : "virhe";
@@ -742,7 +1029,9 @@
   refreshHint();
   paint();
   pull();
+  refreshCosts(true);
   setInterval(pull, 15000);
+  setInterval(function () { refreshCosts(false); }, 5 * 60 * 1000);
   setInterval(function () { if (DATA && DATA.updated) paint(); }, 5000);
   document.addEventListener("visibilitychange", function () {
     if (!document.hidden) pull();

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-29T07:08:38+03:00",
+  "updated": "2026-09-29T07:18:34+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -687,7 +687,7 @@
       "time": "18:00",
       "end": "20:30",
       "who": "Mea",
-      "title": "Lianna hiontatreeni",
+      "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu",

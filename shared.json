@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790681020972,
+  "updated": 1790690359424,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -471,28 +471,20 @@
       "kind": "treeni"
     },
     {
-      "id": "cal-io8iqb1g0jmujbb6602pq3qtmk",
-      "title": "Riikka · Kuuleva työ",
-      "date": "2026-09-29",
-      "start": "09:00",
-      "end": "16:45",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260929T140000Z",
       "title": "Mea valmennus",
       "date": "2026-09-29",
+      "kind": "cal",
       "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
+      "end": "17:45"
     },
     {
       "id": "cal-6j92c2gint0dud3habd16ct4t8",
       "title": "Mea · kemian opetus · Jussi + Mea",
       "date": "2026-09-29",
+      "kind": "cal",
       "start": "18:30",
-      "end": "19:30",
-      "kind": "cal"
+      "end": "19:30"
     },
     {
       "id": "cal-md115enjo3omkea15kqlvlrqsg",
@@ -504,9 +496,9 @@
       "id": "cal-djghfi05ojtjvris1a9jorkv4g",
       "title": "Ellen · EN sanakoe",
       "date": "2026-09-30",
+      "kind": "cal",
       "start": "08:00",
-      "end": "16:00",
-      "kind": "cal"
+      "end": "16:00"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790673495066,
+  "updated": 1790675123227,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -461,52 +461,6 @@
       "status": ""
     },
     {
-      "id": "cal-io8iqb1g0jmujbb6602pq3qtmk",
-      "title": "Riikka · Kuuleva työ",
-      "kind": "cal",
-      "date": "2026-09-29",
-      "start": "09:00",
-      "end": "16:45"
-    },
-    {
-      "id": "cal-60o32d1n8924cba26sokcb9k6gp3ab9o68sjgba375232ga2752jcd1j6g",
-      "title": "Valokuvaus Mea",
-      "kind": "cal",
-      "date": "2026-09-29",
-      "start": "12:45",
-      "end": "13:45"
-    },
-    {
-      "id": "cal-710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260929T140000Z",
-      "title": "Mea valmennus",
-      "kind": "cal",
-      "date": "2026-09-29",
-      "start": "17:00",
-      "end": "17:45"
-    },
-    {
-      "id": "cal-6j92c2gint0dud3habd16ct4t8",
-      "title": "Mea · kemian opetus · Jussi + Mea",
-      "kind": "cal",
-      "date": "2026-09-29",
-      "start": "18:30",
-      "end": "19:30"
-    },
-    {
-      "id": "cal-md115enjo3omkea15kqlvlrqsg",
-      "title": "Milla · RUB12 koe (ruotsi)",
-      "kind": "cal",
-      "date": "2026-09-30"
-    },
-    {
-      "id": "cal-djghfi05ojtjvris1a9jorkv4g",
-      "title": "Ellen · EN sanakoe",
-      "kind": "cal",
-      "date": "2026-09-30",
-      "start": "08:00",
-      "end": "16:00"
-    },
-    {
       "id": "sheet-mea-2026-09-30",
       "who": "mea",
       "title": "Lianna",
@@ -525,6 +479,44 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "cal-io8iqb1g0jmujbb6602pq3qtmk",
+      "title": "Riikka · Kuuleva työ",
+      "date": "2026-09-29",
+      "kind": "cal",
+      "start": "09:00",
+      "end": "16:45"
+    },
+    {
+      "id": "cal-60o32d1n8924cba26sokcb9k6gp3ab9o68sjgba375232ga2752jcd1j6g",
+      "title": "Valokuvaus Mea",
+      "date": "2026-09-29",
+      "kind": "cal",
+      "start": "12:45",
+      "end": "13:45"
+    },
+    {
+      "id": "cal-6j92c2gint0dud3habd16ct4t8",
+      "title": "Mea · kemian opetus · Jussi + Mea",
+      "date": "2026-09-29",
+      "kind": "cal",
+      "start": "18:30",
+      "end": "19:30"
+    },
+    {
+      "id": "cal-md115enjo3omkea15kqlvlrqsg",
+      "title": "Milla · RUB12 koe (ruotsi)",
+      "date": "2026-09-30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-djghfi05ojtjvris1a9jorkv4g",
+      "title": "Ellen · EN sanakoe",
+      "date": "2026-09-30",
+      "kind": "cal",
+      "start": "08:00",
+      "end": "16:00"
     }
   ],
   "schoolLunch": {

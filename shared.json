@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790692312884,
+  "updated": 1790693529396,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -449,14 +449,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20260929T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-09-29",
-      "kind": "cal",
-      "start": "17:00",
-      "end": "17:45"
     },
     {
       "id": "cal-6j92c2gint0dud3habd16ct4t8",

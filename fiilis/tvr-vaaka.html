@@ -105,8 +105,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F3E6CE; col
   padding: 1.3vmin 1.6vmin 1.4vmin;
   min-height: 0;
 }
-.block.grow { flex: 3.2 1 auto; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
-.block.soft { flex: 0 0 auto; background: transparent; padding-left: .2vmin; padding-right: .2vmin; }
+.block.grow { flex: 4.6 1 auto; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
+.block.soft { flex: 0 0 auto; background: transparent; padding-left: .2vmin; padding-right: .2vmin; max-height: 28vmin; overflow: hidden; }
 .lbl {
   font-size: 1.2vmin; font-weight: 700; letter-spacing: .1em;
   text-transform: uppercase; color: #8f6524; margin-bottom: .7vmin;
@@ -122,8 +122,8 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F3E6CE; col
 .today-list::-webkit-scrollbar { width: 0; height: 0; display: none; }
 .ev-row {
   display: flex; align-items: flex-start;
-  padding: .38vmin 0;
-  font-size: 1.7vmin; line-height: 1.28; font-weight: 500;
+  padding: .48vmin 0;
+  font-size: 1.85vmin; line-height: 1.3; font-weight: 500;
   color: #2c2418;
   border-bottom: 1px solid rgba(44,36,24,.06);
 }
@@ -217,10 +217,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #F3E6CE; col
 .odote .d { font-weight: 650; color: #8f6524; flex: 0 0 auto; margin-left: .8vmin; }
 
 /* Huomenna + Ruoka duo */
-.duo {
-  flex: 0 0 auto;
-  display: flex; min-height: 0;
-}
+.duo { display: flex; align-items: stretch; flex: 0 0 auto; max-height: 22vmin; } /* duo-compact */
 .duo > * + * { margin-left: 1.2vmin; }
 .duo .block { flex: 1; }
 .tmw-line, .meal-line {
@@ -330,7 +327,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
 .today-group-lbl { flex: 0 0 auto; }
 .wilma-strip { flex: 0 0 auto; max-height: 10vmin; overflow: hidden; }
 .side { overflow: hidden; }
-.block.grow { overflow: hidden; flex: 3.2 1 auto; }
+.block.grow { overflow: hidden; flex: 4.6 1 auto; }
 .tv, .main, .hero { overflow: hidden; }
 
 .chips { display: none !important; }

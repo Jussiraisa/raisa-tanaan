@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790672576815,
+  "updated": 1790673495066,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -461,26 +461,6 @@
       "status": ""
     },
     {
-      "id": "sheet-mea-2026-09-30",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-09-30",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-09-30",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-09-30",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
       "id": "cal-io8iqb1g0jmujbb6602pq3qtmk",
       "title": "Riikka · Kuuleva työ",
       "kind": "cal",
@@ -525,6 +505,26 @@
       "date": "2026-09-30",
       "start": "08:00",
       "end": "16:00"
+    },
+    {
+      "id": "sheet-mea-2026-09-30",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-30",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-30",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-30",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

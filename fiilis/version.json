@@ -1,7 +1,7 @@
 {
   "schedule": "2026-09-28-wa-rides",
-  "updated": "2026-09-29T07:04:55+03:00",
+  "updated": "2026-09-29T07:08:38+03:00",
   "ui": "20260929-v133-today-fit",
-  "poll": "v133",
+  "poll": "v134",
   "note": "Tänään-lista tiivistyy automaattisesti jotta kaikki rivit näkyvät (ei scrollbar-leikkausta)."
 }

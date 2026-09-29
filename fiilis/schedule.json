@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-09-29T07:03:11+03:00",
+  "updated": "2026-09-29T07:08:38+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1448,7 +1448,10 @@
     "2026-09-23": "Koulun tonnikalapasta (ei purjoa)",
     "2026-09-24": "Tähteet",
     "2026-09-25": "Katkarapukeitto + patongit",
-    "2026-09-26": "Kauppa 9 · pillimehu + pikkupitsat"
+    "2026-09-26": "Kauppa 9 · pillimehu + pikkupitsat",
+    "2026-09-29": "Pinaattikeitto + hernekeitto",
+    "2026-09-30": "Kalakeitto",
+    "2026-10-01": "Lohipullat ja kasvikset"
   },
   "absences": [
     {

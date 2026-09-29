@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790654823017,
+  "updated": 1790655387550,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -513,6 +513,26 @@
       "kind": "cal",
       "start": "08:00",
       "end": "16:00"
+    },
+    {
+      "id": "sheet-mea-2026-09-30",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-09-30",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-09-30",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-09-30",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

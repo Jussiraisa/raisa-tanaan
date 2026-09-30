@@ -719,14 +719,6 @@
     },
     {
       "date": "2026-09-30",
-      "who": "Mea",
-      "title": "Eliökokoelma palautus",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "deadline"
-    },
-    {
-      "date": "2026-09-30",
       "who": "Milla",
       "title": "RUB12 ruotsi",
       "kind": "muu",
@@ -1627,13 +1619,6 @@
       "title": "EN sanakoe",
       "who": "Ellen",
       "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-09-30",
-      "title": "Eliökokoelma palautus",
-      "who": "Mea",
-      "needAction": true,
       "source": "wilma:perhe"
     },
     {

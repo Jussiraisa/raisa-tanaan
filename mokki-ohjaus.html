@@ -488,10 +488,110 @@
     .ch-sec { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
     .ch-sec .ch-title { margin-bottom: 4px; }
 
+    /* ---- Kotona / Poissa + scenet ---- */
+    .presence { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-bottom: 8px; }
+    .pres-btn {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 6px; text-align: left;
+      padding: 16px 18px; border-radius: var(--r); min-height: 96px;
+      background: var(--surface); border: 1px solid var(--line); color: var(--muted);
+      transition: background .2s, border-color .2s, color .2s, transform .12s;
+    }
+    .pres-btn:active { transform: scale(.98); }
+    .pres-btn .p-top { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+    .pres-btn .p-dot { width: 10px; height: 10px; border-radius: 50%; background: #4a525e; border: 2px solid #5b6472; }
+    .pres-btn .p-big { font-family: var(--serif); font-size: clamp(28px, 8vw, 36px); font-weight: 650; letter-spacing: -.02em; line-height: 1; }
+    .pres-btn .p-sub { font-size: 12.5px; font-weight: 650; color: var(--dim); line-height: 1.35; }
+    .pres-btn.active.home { border-color: var(--teal-line); background: linear-gradient(180deg, rgba(78,205,196,.16), var(--surface) 80%); color: var(--teal); }
+    .pres-btn.active.away { border-color: rgba(126,184,224,.45); background: linear-gradient(180deg, rgba(126,184,224,.14), var(--surface) 80%); color: var(--blue); }
+    .pres-btn.active .p-dot { background: currentColor; border-color: currentColor; box-shadow: 0 0 10px 2px currentColor; }
+    .pres-btn.active .p-top { color: currentColor; }
+    .pres-btn.busy { opacity: .7; pointer-events: none; }
+    .pres-hint { margin: 0 2px var(--gap); font-size: 11.5px; font-weight: 600; color: var(--dim); line-height: 1.4; }
+    .scene-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .btn.scn { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 6px 10px; font-size: 13.5px; position: relative; overflow: hidden; }
+    .btn.scn .ic { font-size: 20px; line-height: 1; }
+    .btn.scn.run { border-color: var(--teal-line); color: var(--teal); }
+    .btn.scn.done { border-color: var(--teal-line); background: var(--teal-dim); color: var(--teal); }
+    .btn.scn.fail { border-color: var(--danger-line); color: var(--danger); }
+    .btn.scn .bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--teal); transition: width .9s linear; }
+    .scene-status { margin-top: 10px; min-height: 18px; font-size: 12.5px; font-weight: 650; color: var(--dim); line-height: 1.4; }
+    .scene-status.ok { color: var(--teal); } .scene-status.err { color: var(--danger); }
+    .toast.long { border-radius: 18px; text-align: left; white-space: pre-line; }
+    @media (max-width: 380px) { .scene-row { grid-template-columns: repeat(3, 1fr); } }
+
     @media (min-width: 720px) {
       body { padding-top: 28px; }
       .btn.light, .btn.scene { flex: 1 1 calc(33.333% - 8px); }
     }
+    /* ==== Helppokäyttöisyys: isot napit, selkeä kontrasti (2026-09-30) ==== */
+    :root { --muted: #c9d0da; --dim: #98a1ae; --line: rgba(255,255,255,.12); --lamp: #ffd84d; --lamp-dim: rgba(255,216,77,.16); --lamp-line: rgba(255,216,77,.6); }
+    .btn { min-height: 56px; font-size: 17px; }
+    .icon-btn { width: 56px; height: 56px; font-size: 22px; }
+    .step-btn { width: 60px; height: 60px; font-size: 30px; }
+    .card .lbl, .metric .lbl { font-size: 13px; letter-spacing: .14em; color: var(--muted); }
+    .hint { font-size: 14px; color: var(--muted); }
+    .presence { margin-bottom: 10px; }
+    .pres-btn { min-height: 120px; padding: 18px; }
+    .presence { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .pres-btn { min-width: 0; }
+    .pres-btn .p-big { display: flex; align-items: center; gap: 8px; font-size: clamp(26px, 7.4vw, 38px); color: var(--text); flex-wrap: wrap; }
+    .pres-btn .p-ic { font-size: .9em; }
+    .pres-btn .p-sub { font-size: 15px; color: var(--muted); }
+    .pres-btn .p-top { font-size: 12px; color: var(--muted); }
+    .pres-btn.active.home .p-big { color: var(--teal); }
+    .pres-btn.active.away .p-big { color: var(--blue); }
+    .pres-btn.active { border-width: 2px; }
+    .pres-hint { font-size: 12.5px; color: var(--dim); }
+    .scene-row { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .btn.scn { min-height: 88px; font-size: 17px; font-weight: 750; gap: 6px; }
+    .btn.scn .ic { font-size: 30px; }
+    .scene-status { font-size: 14px; color: var(--muted); }
+    .metric .val { font-size: clamp(42px, 11vw, 56px); }
+    .btn.big-power { min-height: 72px; font-size: 20px; font-weight: 800; }
+    #ilpCard.ilp-off #ilpPower { background: linear-gradient(180deg, rgba(78,205,196,.28), rgba(78,205,196,.14)); }
+    .btn.mode, .btn.prof { min-height: 56px; font-size: 16px; }
+    .ilp-ev { width: 100%; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; margin-top: 10px; padding: 12px 14px; min-height: 56px; border-radius: 14px; text-align: left;
+      background: rgba(255,255,255,.03); border: 1px solid var(--line); color: var(--muted); font-size: 14.5px; font-weight: 650; line-height: 1.35; }
+    .ilp-ev[hidden], .ilp-ev-list[hidden] { display: none !important; }
+    .ilp-ev .ilp-ev-more { margin-left: auto; color: var(--dim); font-size: 13px; }
+    .ilp-ev b { color: var(--text); }
+    .ilp-ev-list { margin-top: 8px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .ilp-ev-list .ev-row { display: flex; gap: 10px; padding: 10px 14px; font-size: 14px; font-weight: 600; color: var(--muted); border-top: 1px solid var(--line); }
+    .ilp-ev-list .ev-row:first-child { border-top: 0; }
+    .ilp-ev-list .ev-on { color: var(--warm); font-weight: 800; min-width: 92px; }
+    .ilp-ev-list .ev-off { color: var(--muted); font-weight: 800; min-width: 92px; }
+    /* valot: iso laatta per valo, huoneryhmät */
+    .lgroup + .lgroup { margin-top: 16px; }
+    .lgroup-t { font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 2px 8px; }
+    .lgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ltile { border-radius: 18px; border: 2px solid var(--line); background: rgba(255,255,255,.035); overflow: hidden; display: flex; flex-direction: column; }
+    .ltile.on { border-color: var(--lamp-line); background: linear-gradient(180deg, var(--lamp-dim), rgba(255,216,77,.05)); box-shadow: 0 0 22px rgba(255,216,77,.12); }
+    .lt-main { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; width: 100%; min-height: 84px; padding: 12px 14px; text-align: left; color: var(--text); }
+    .lt-main .lt-top { display: flex; align-items: center; gap: 8px; width: 100%; }
+    .lt-main .lt-ic { font-size: 24px; line-height: 1; filter: grayscale(.8); opacity: .8; }
+    .ltile.on .lt-main .lt-ic { filter: none; opacity: 1; }
+    .lt-main .lt-name { font-size: 17px; font-weight: 750; line-height: 1.15; }
+    .lt-main .lt-state { font-size: 14px; font-weight: 800; letter-spacing: .06em; color: var(--dim); }
+    .ltile.on .lt-main .lt-state { color: var(--lamp); }
+    .lt-dim { display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; border-top: 1px solid rgba(255,216,77,.25); }
+    .lt-dim button { height: 56px; font-size: 28px; font-weight: 700; color: var(--lamp); }
+    .lt-dim button:active { background: rgba(255,216,77,.12); }
+    .lt-dim .lt-pct { text-align: center; font-size: 16px; font-weight: 800; color: var(--text); }
+    .lt-dim .lt-pct.pending { color: var(--warm); }
+    /* näytä lisää */
+    .more-toggle { width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 64px; padding: 14px 18px; margin: 4px 0 var(--gap);
+      border-radius: var(--r); border: 1px dashed var(--line2); background: rgba(255,255,255,.02); color: var(--text); font-size: 17px; font-weight: 750; text-align: left; }
+    .more-toggle .more-sub { font-size: 13.5px; font-weight: 600; color: var(--dim); }
+    .more-toggle .more-arrow { margin-left: auto; font-size: 18px; color: var(--muted); transition: transform .2s; }
+    .more-toggle[aria-expanded="true"] .more-arrow { transform: rotate(180deg); }
+    #moreBox[hidden] { display: none !important; }
+    .flags { grid-template-columns: 1fr; }
+    /* pörssihinnan värit */
+    .chip.price-cheap { background: rgba(125,222,160,.14); border-color: rgba(125,222,160,.5); color: var(--ok); }
+    .chip.price-normal { background: var(--warm-dim); border-color: rgba(227,195,106,.45); color: var(--warm); }
+    .chip.price-exp { background: var(--danger-dim); border-color: rgba(255,122,122,.5); color: var(--danger); }
+    .ch-legend .pl { display: inline-flex; align-items: center; gap: 4px; }
+    @media (max-width: 360px) { .lgrid { grid-template-columns: 1fr; } .scene-row { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body class="locked">
@@ -521,6 +621,108 @@
     </div>
   </header>
 
+  <section class="presence" aria-label="Kotona / Poissa" id="presence">
+    <button class="pres-btn home" type="button" data-action="presence" data-target="home" id="presHome" aria-pressed="false">
+      <span class="p-top"><span class="p-dot" aria-hidden="true"></span>Tila</span>
+      <span class="p-big"><span class="p-ic" aria-hidden="true">🏠</span>Kotona</span>
+      <span class="p-sub">Lämmöt normaaliksi (21 °C)</span>
+    </button>
+    <button class="pres-btn away" type="button" data-action="presence" data-target="away" id="presAway" aria-pressed="false">
+      <span class="p-top"><span class="p-dot" aria-hidden="true"></span>Tila</span>
+      <span class="p-big"><span class="p-ic" aria-hidden="true">🚪</span>Poissa</span>
+      <span class="p-sub">Valot pois, lämmöt säästölle</span>
+    </button>
+  </section>
+  <div class="pres-hint" id="presHint">Poissa = valot pois, lattia ja patterit pienemmälle*, lämpöpumppu 16 °C (pienin mahdollinen), ilmanvaihto pienelle. Autolataus ja saattolämmitys pysyvät ennallaan. *oletus: rele päällä = lämmön pudotus.</div>
+
+  <section class="card" aria-label="Valaistustilanteet" id="sceneCard">
+    <div class="lbl">Valot yhdellä napilla</div>
+    <div class="scene-row">
+      <button class="btn scn" type="button" data-action="scene" data-target="Aamu"><span class="ic">☀️</span>Aamu</button>
+      <button class="btn scn" type="button" data-action="scene" data-target="Päivä"><span class="ic">🌤️</span>Päivä</button>
+      <button class="btn scn" type="button" data-action="scene" data-target="Ilta"><span class="ic">🌙</span>Ilta</button>
+      <button class="btn scn" type="button" data-action="scene" data-target="Sauna-ilta"><span class="ic">🧖</span>Sauna</button>
+      <button class="btn scn" type="button" data-action="scene" data-target="Yövalo"><span class="ic">🌛</span>Yövalo</button>
+      <button class="btn scn" type="button" data-action="scene" data-target="Saapuminen"><span class="ic">🚗</span>Tulen</button>
+      <button class="btn scn" type="button" data-action="scene" data-target="Lähtö"><span class="ic">🔒</span>Lähden</button>
+    </div>
+    <div class="scene-status" id="sceneStatus">Napauta kerran. Muut valot sammuvat. Yövalo sammuu itsestään 5 minuutin päästä. Lähden: kaikki valot pois, ulkovalo palaa vielä 3 minuuttia.</div>
+  </section>
+
+  <section class="metrics" aria-label="Lämpötilat">
+    <article class="metric" data-chart="indoor" role="button" tabindex="0">
+      <div class="lbl">Sisällä</div>
+      <div class="val" id="indoorVal">—°</div>
+      <div class="sub" id="indoorSub">Shelly live</div>
+    </article>
+    <article class="metric" data-chart="outdoor" role="button" tabindex="0">
+      <div class="lbl">Ulkona</div>
+      <div class="val" id="outdoorVal">—°</div>
+      <div class="sub" id="outdoorSub">—</div>
+    </article>
+  </section>
+  <div class="chart-panel" data-chart-panel="indoor" hidden></div>
+  <div class="chart-panel" data-chart-panel="outdoor" hidden></div>
+
+  <section class="card" aria-label="ILP" id="ilpCard">
+    <div class="card-head">
+      <div class="lbl">Lämpöpumppu</div>
+      <span class="chip" id="ilpChip">—</span>
+    </div>
+    <div class="ilp-note" data-clim-note hidden>
+      <div>🔌</div>
+      <div data-clim-note-text></div>
+    </div>
+    <div class="clim-body" data-clim-body hidden>
+      <div class="ilp-banner" id="ilpBanner" role="status" aria-live="polite">
+        <span class="b-dot" aria-hidden="true"></span>
+        <div>
+          <div class="b-big" id="ilpBannerBig">ILP —</div>
+          <div class="b-sub" id="ilpBannerSub">Haetaan tilaa…</div>
+        </div>
+      </div>
+      <div class="clim">
+        <div class="clim-box" data-chart="ilp" role="button" tabindex="0">
+          <div class="cl-lbl">Sisällä</div>
+          <div class="cl-val" id="ilpIndoor">—°</div>
+        </div>
+        <div class="clim-box ilp-dimmable">
+          <div class="stepper">
+            <button class="step-btn" type="button" data-ilp="down" aria-label="Laske asetusta">−</button>
+            <div class="mid">
+              <div class="cl-lbl">Asetus</div>
+              <div class="cl-val" id="ilpSet">—°</div>
+            </div>
+            <button class="step-btn" type="button" data-ilp="up" aria-label="Nosta asetusta">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn big-power" type="button" data-ilp="power" id="ilpPower">—</button>
+      </div>
+      <button class="ilp-ev" type="button" id="ilpEv" aria-expanded="false" hidden>
+        <span id="ilpEvOn">—</span><span id="ilpEvOff">—</span><span class="ilp-ev-more">Näytä historia ▾</span>
+      </button>
+      <div class="ilp-ev-list" id="ilpEvList" hidden></div>
+      <div class="row ilp-dimmable">
+        <button class="btn mode" type="button" data-ilp-mode="heat">🔥 Lämmitys</button>
+        <button class="btn mode" type="button" data-ilp-mode="cool">❄️ Jäähdytys</button>
+        <button class="btn mode" type="button" data-ilp-mode="auto">Auto</button>
+      </div>
+      <div class="chart-panel" data-chart-panel="ilp" hidden></div>
+      <div class="hint clim-hint" id="ilpHint">—</div>
+    </div>
+  </section>
+
+  <section class="card" aria-label="Valot">
+    <div class="lbl">Valot yksitellen</div>
+    <div id="lightGrid"><div class="empty">Odottaa Shelly-liveä…</div></div>
+  </section>
+
+  <button class="more-toggle" type="button" id="moreToggle" aria-expanded="false" aria-controls="moreBox">
+    <span>Näytä lisää</span><span class="more-sub">sähkö, hinnat, kulutus, ilmanvaihto</span><span class="more-arrow" aria-hidden="true">▾</span>
+  </button>
+  <div id="moreBox" hidden>
   <section class="hero" id="hero" aria-label="Teho" data-chart="power" role="button" tabindex="0">
     <div class="hero-hint">〽 Käyrä</div>
     <div class="hero-lbl" id="heroLbl">Sähköä nyt</div>
@@ -555,93 +757,6 @@
   <div class="chart-panel" data-chart-panel="ebars7" hidden></div>
   <div class="chart-panel" data-chart-panel="ebarsM" hidden></div>
 
-  <section class="metrics" aria-label="Lämpötilat">
-    <article class="metric" data-chart="indoor" role="button" tabindex="0">
-      <div class="lbl">Sisällä</div>
-      <div class="val" id="indoorVal">—°</div>
-      <div class="sub" id="indoorSub">Shelly live</div>
-    </article>
-    <article class="metric" data-chart="outdoor" role="button" tabindex="0">
-      <div class="lbl">Ulkona</div>
-      <div class="val" id="outdoorVal">—°</div>
-      <div class="sub" id="outdoorSub">—</div>
-    </article>
-  </section>
-  <div class="chart-panel" data-chart-panel="indoor" hidden></div>
-  <div class="chart-panel" data-chart-panel="outdoor" hidden></div>
-
-  <section class="flags" aria-label="EV ja sauna">
-    <div class="flag" id="flagEv">
-      <div class="name">EV-lataus</div>
-      <div class="state" id="evState">—</div>
-    </div>
-    <div class="flag hot" id="flagSauna">
-      <div class="name">Sauna</div>
-      <div class="state" id="saunaState">—</div>
-    </div>
-  </section>
-
-  <section class="card" aria-label="Scenet">
-    <div class="lbl">Scenet</div>
-    <div class="row">
-      <button class="btn scene" type="button" data-action="scene" data-target="Valot pois">Valot pois</button>
-      <button class="btn scene" type="button" data-action="scene" data-target="Valot päälle">Valot päälle</button>
-      <button class="btn scene" type="button" data-action="scene" data-target="Iltavalot">Iltavalot</button>
-      <button class="btn scene danger" type="button" data-action="mokki_pois">Mökki pois</button>
-    </div>
-  </section>
-
-  <section class="card" aria-label="Valot">
-    <div class="lbl">Valot</div>
-    <div class="row" id="lightGrid"><div class="empty">Odottaa Shelly-liveä…</div></div>
-  </section>
-
-  <section class="card" aria-label="ILP" id="ilpCard">
-    <div class="card-head">
-      <div class="lbl">ILP · Ilmalämpöpumppu</div>
-      <span class="chip" id="ilpChip">—</span>
-    </div>
-    <div class="ilp-note" data-clim-note hidden>
-      <div>🔌</div>
-      <div data-clim-note-text></div>
-    </div>
-    <div class="clim-body" data-clim-body hidden>
-      <div class="ilp-banner" id="ilpBanner" role="status" aria-live="polite">
-        <span class="b-dot" aria-hidden="true"></span>
-        <div>
-          <div class="b-big" id="ilpBannerBig">ILP —</div>
-          <div class="b-sub" id="ilpBannerSub">Haetaan tilaa…</div>
-        </div>
-      </div>
-      <div class="clim">
-        <div class="clim-box" data-chart="ilp" role="button" tabindex="0">
-          <div class="cl-lbl">Sisällä</div>
-          <div class="cl-val" id="ilpIndoor">—°</div>
-        </div>
-        <div class="clim-box ilp-dimmable">
-          <div class="stepper">
-            <button class="step-btn" type="button" data-ilp="down" aria-label="Laske asetusta">−</button>
-            <div class="mid">
-              <div class="cl-lbl">Asetus</div>
-              <div class="cl-val" id="ilpSet">—°</div>
-            </div>
-            <button class="step-btn" type="button" data-ilp="up" aria-label="Nosta asetusta">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <button class="btn" type="button" data-ilp="power" id="ilpPower">—</button>
-      </div>
-      <div class="row ilp-dimmable">
-        <button class="btn mode" type="button" data-ilp-mode="heat">Lämmitys</button>
-        <button class="btn mode" type="button" data-ilp-mode="cool">Jäähdytys</button>
-        <button class="btn mode" type="button" data-ilp-mode="auto">Auto</button>
-      </div>
-      <div class="chart-panel" data-chart-panel="ilp" hidden></div>
-      <div class="hint clim-hint" id="ilpHint">—</div>
-    </div>
-  </section>
-
   <section class="card" aria-label="Ilmanvaihto" id="valloxCard">
     <div class="card-head">
       <div class="lbl">Ilmanvaihto · Vallox</div>
@@ -673,6 +788,14 @@
         <button class="btn prof" type="button" data-vx="fireplace">Takka</button>
       </div>
       <div class="hint clim-hint" id="vxHint">—</div>
+    </div>
+  </section>
+  </div>
+
+  <section class="flags" aria-label="Sauna">
+    <div class="flag hot" id="flagSauna">
+      <div class="name">🧖 Saunan valo</div>
+      <div class="state" id="saunaState">—</div>
     </div>
   </section>
 
@@ -743,12 +866,12 @@
     if (mins < 60) return mins + " min sitten";
     return Math.round(mins / 60) + " h sitten";
   }
-  function toast(msg, kind) {
+  function toast(msg, kind, ms) {
     var el = document.getElementById("toast");
     el.textContent = msg;
-    el.className = "toast show" + (kind ? " " + kind : "");
+    el.className = "toast show" + (kind ? " " + kind : "") + (String(msg).indexOf("\n") >= 0 ? " long" : "");
     clearTimeout(toast._t);
-    toast._t = setTimeout(function () { el.className = "toast"; }, 2200);
+    toast._t = setTimeout(function () { el.className = "toast"; }, ms || 2200);
   }
   // ---------- Kirjautuminen / istunto ----------
   // Siivotaan vanhat avaimet: Shelly-pilviavain ja vanha välitysavain (evästeet mk_a/mk_s/mk_t + localStorage).
@@ -845,12 +968,55 @@
     });
     return _shellyQ;
   }
+  var LIGHT_GROUPS = [
+    { fi: "Sisällä", ic: "🏠", lights: ["Eteinen", "Keittiö", "Ruokapöytä", "Olohuone valo", "Seinävalot", "Iltavalot", "WC peili", "Makuusoppi", "Parvi valot", "Parvi oikea", "Varastosoppi"] },
+    { fi: "Sauna", ic: "🧖", lights: ["2) sauna", "2)pukuhuone"] },
+    { fi: "Ulkona", ic: "🌲", lights: ["Ulkovalot", "Pihavalot"] }
+  ];
+  var LIGHT_META = {
+    "Eteinen": { ic: "🚪", fi: "Eteinen" }, "Keittiö": { ic: "🍳", fi: "Keittiö" }, "Ruokapöytä": { ic: "🍽️", fi: "Ruokapöytä" },
+    "Olohuone valo": { ic: "🛋️", fi: "Olohuone" }, "Seinävalot": { ic: "🕯️", fi: "Seinävalot" }, "Iltavalot": { ic: "🌆", fi: "Iltavalot" },
+    "WC peili": { ic: "🪞", fi: "WC:n peili" }, "Makuusoppi": { ic: "🛏️", fi: "Makuusoppi" }, "Parvi valot": { ic: "🪜", fi: "Parvi" },
+    "Parvi oikea": { ic: "🪜", fi: "Parvi oikea" }, "Varastosoppi": { ic: "📦", fi: "Varastosoppi" },
+    "2) sauna": { ic: "🧖", fi: "Sauna" }, "2)pukuhuone": { ic: "👕", fi: "Pukuhuone" },
+    "Ulkovalot": { ic: "🏡", fi: "Ulkovalot" }, "Pihavalot": { ic: "🌳", fi: "Pihavalot" }
+  };
+  var LIGHT_HIDE_UNWIRED = { "Varastosoppi": true };
+  var DIM_STEPS = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  var DIM_PENDING = {};
+  var _dimT = {};
+  function dimStep(name, dir) {
+    var dev = findDev(name);
+    if (!dev || dev.kind !== "light") return;
+    var cur = DIM_PENDING[name] != null ? DIM_PENDING[name] : (DATA && DATA.lightBright && DATA.lightBright[name] != null ? DATA.lightBright[name] : 50);
+    var next = cur;
+    if (dir > 0) { next = DIM_STEPS.filter(function (v) { return v > cur; })[0] || 100; }
+    else { var lower = DIM_STEPS.filter(function (v) { return v < cur; }); next = lower.length ? lower[lower.length - 1] : 5; }
+    DIM_PENDING[name] = next;
+    paint();
+    clearTimeout(_dimT[name]);
+    _dimT[name] = setTimeout(function () {
+      var val = DIM_PENDING[name];
+      _shellyQ = _shellyQ.catch(function () {}).then(function () { return shellyPace(); }).then(function () {
+        return api("/shelly/set", { id: dev.id, channel: Number(dev.channel) || 0, on: true, brightness: val, kind: "light" });
+      });
+      _shellyQ.then(function () {
+        if (DATA) { DATA.lightBright = DATA.lightBright || {}; DATA.lightBright[name] = val; }
+        toast((LIGHT_META[name] || { fi: name }).fi + " " + val + " %", "ok");
+      }).catch(function (e) {
+        toast("Ei onnistunut: " + (e && e.message === "429" ? "odota hetki" : (e && e.message) || "virhe"), "err", 3500);
+      }).finally(function () {
+        if (DIM_PENDING[name] === val) delete DIM_PENDING[name];
+        paint(); setTimeout(pull, 1400);
+      });
+    }, 700);
+  }
   function setLightByName(name, on, label) {
     var dev = findDev(name);
     if (!dev) { toast("Tuntematon: " + name, "err"); return; }
     toast("Lähetetään…");
     shellySet(dev, on).then(function () {
-      toast((label || name) + (on ? " päälle" : " pois"), "ok");
+      toast(((LIGHT_META[name] || {}).fi || label || name) + (on ? " päälle" : " pois"), "ok");
       // optimistic
       if (DATA) {
         var set = {};
@@ -864,39 +1030,116 @@
       toast("Virhe: " + (e && e.message ? e.message : "Shelly"), "err");
     });
   }
+  // ---------- Valaistustilanteet (välityspalvelin POST /scene, tahdistus ~1,1 s/komento palvelimella) ----------
+  var SCENE_COUNT = { "Aamu": 15, "Päivä": 15, "Ilta": 15, "Sauna-ilta": 15, "Yövalo": 15, "Saapuminen": 15, "Lähtö": 15 };
+  var _sceneBusy = false;
+  function sceneButtons() { return Array.prototype.slice.call(document.querySelectorAll('.btn.scn')); }
+  function sceneStatus(txt, kind) {
+    var el = document.getElementById("sceneStatus");
+    el.textContent = txt; el.className = "scene-status" + (kind ? " " + kind : "");
+  }
   function runScene(name) {
-    if (name === "Iltavalot") return setLightByName("Iltavalot", true, "Iltavalot");
-    if (name === "Valot pois" || name === "Mökki pois") {
-      var list = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä", "Eteinen", "Keittiö", "Seinävalot", "Olohuone valo", "Parvi valot", "Parvi oikea", "Makuusoppi", "Varastosoppi", "2)pukuhuone", "Iltavalot"];
-      toast("Sammutetaan…");
-      var chain = Promise.resolve();
-      list.forEach(function (n) {
-        var d = findDev(n);
-        if (!d) return;
-        chain = chain.then(function () { return shellySet(d, false).catch(function () {}); });
-      });
-      chain.then(function () {
-        toast(name === "Mökki pois" ? "Valot pois" : "Valot pois", "ok");
-        setTimeout(pull, 1600);
-      });
-      return;
+    if (_sceneBusy) { toast("Edellinen tilanne on vielä kesken…"); return; }
+    var btn = sceneButtons().filter(function (b) { return b.getAttribute("data-target") === name; })[0];
+    if (!btn) return;
+    _sceneBusy = true;
+    sceneButtons().forEach(function (b) { b.classList.remove("done", "fail"); if (b !== btn) b.disabled = true; });
+    btn.classList.add("run");
+    var bar = document.createElement("span"); bar.className = "bar"; btn.appendChild(bar);
+    var t0 = Date.now(), est = 2500 + 1100 * (SCENE_COUNT[name] || 15) * 0.6;
+    var tick = setInterval(function () {
+      var f = Math.min(0.92, (Date.now() - t0) / est);
+      bar.style.width = Math.round(f * 100) + "%";
+      sceneStatus(name + ": ohjataan valoja… " + Math.round((Date.now() - t0) / 1000) + " s");
+    }, 400);
+    sceneStatus(name + ": ohjataan valoja…");
+    toast(name + "…");
+    api("/scene", { name: name }).then(function (r) {
+      var sent = r.sent || 0, skip = r.skipped || 0, fail = r.failed || 0;
+      var bad = (r.results || []).filter(function (x) { return x.ok === false; }).map(function (x) { return x.name; });
+      bar.style.width = "100%";
+      btn.classList.add(fail ? "fail" : "done");
+      var msg = name + ": " + sent + " muutettu, " + skip + " jo valmiina" + (fail ? ", " + fail + " epäonnistui (" + bad.join(", ") + ")" : "");
+      sceneStatus(msg, fail ? "err" : "ok");
+      toast(fail ? msg : name + " ✓", fail ? "err" : "ok", fail ? 5000 : 2200);
+      if (DATA) setTimeout(pull, 1200);
+    }).catch(function (e) {
+      btn.classList.add("fail");
+      var m = e && e.message ? e.message : "virhe";
+      sceneStatus(name + ": " + (m === "429" ? "Shelly rate limit — odota hetki" : m), "err");
+      toast(name + ": " + (m === "429" ? "rate limit" : m), "err", 4000);
+    }).finally(function () {
+      clearInterval(tick);
+      _sceneBusy = false;
+      btn.classList.remove("run");
+      sceneButtons().forEach(function (b) { b.disabled = false; });
+      setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 1500);
+    });
+  }
+
+  // ---------- Kotona / Poissa (POST /presence, tila tallessa palvelimen KV:ssä) ----------
+  var PRESENCE = { mode: null, at: null };
+  var _presBusy = false;
+  var PRES_TXT = {
+    away: "🚪 Lähdetäänkö mökiltä (Poissa)?\n\n• Kaikki valot sammuvat (ulkovalo palaa vielä 3 min)\n• Lämmitys menee säästölle: lattia ja patterit pienemmälle, lämpöpumppu 16 °C\n• Ilmanvaihto pienelle\n\nAutolatausta ja saattolämmitystä ei muuteta.\nPaina OK, niin tämä tehdään.",
+    home: "🏠 Tullaanko mökille (Kotona)?\n\n• Lämmitys normaaliksi: lattia ja patterit täysille, lämpöpumppu 21 °C\n• Ilmanvaihto normaaliksi\n• Valot pysyvät ennallaan\n\nPaina OK, niin tämä tehdään."
+  };
+  function fmtHm(iso) {
+    if (!iso) return "";
+    try { return new Date(iso).toLocaleString("fi-FI", { timeZone: "Europe/Helsinki", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" }); } catch (e) { return ""; }
+  }
+  function paintPresence() {
+    ["home", "away"].forEach(function (m) {
+      var b = document.getElementById(m === "home" ? "presHome" : "presAway");
+      var on = PRESENCE.mode === m;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.classList.toggle("busy", _presBusy);
+      b.querySelector(".p-top").lastChild.textContent = _presBusy === m ? "Käynnissä…" : on ? "Valittu" + (PRESENCE.at ? " " + fmtHm(PRESENCE.at) : "") : "Tila";
+    });
+  }
+  function loadPresence() {
+    api("/presence").then(function (r) { PRESENCE = r || { mode: null }; paintPresence(); }).catch(function () {});
+  }
+  function presenceSummary(mode, r) {
+    var L = [];
+    var sh = Array.isArray(r.shelly) ? r.shelly : [];
+    var pud = sh.filter(function (x) { return /pudotus/.test(x.name); });
+    var lights = sh.filter(function (x) { return !/pudotus/.test(x.name); });
+    var failN = sh.filter(function (x) { return x.ok === false; });
+    L.push((r.ok ? "✓ Valmis: " : "⚠ Osittain: ") + (mode === "away" ? "Poissa" : "Kotona"));
+    if (pud.length) L.push("Lattia ja patterit: " + (mode === "away" ? "pienemmälle" : "normaaliksi") + (pud.every(function (x) { return x.ok !== false; }) ? " ✓" : " — EI ONNISTUNUT"));
+    if (lights.length) L.push("Valot: " + (mode === "away" ? "sammutettu" : "muutettu") + " (" + lights.filter(function (x) { return x.action === "set" && x.ok !== false; }).length + " kpl, " + lights.filter(function (x) { return x.action === "skip"; }).length + " oli jo valmiina)");
+    if (failN.length) L.push("Ei onnistunut: " + failN.map(function (x) { return (LIGHT_META[x.name] || {}).fi || x.name; }).join(", "));
+    L.push("Lämpöpumppu: " + (r.ilp && r.ilp.ok ? "lämmitys " + (mode === "away" ? 16 : 21) + " °C ✓" : "EI ONNISTUNUT " + ((r.ilp && r.ilp.error) || "")));
+    var vx = r.vallox || {};
+    if (vx.error) L.push("Ilmanvaihto: EI ONNISTUNUT " + vx.error);
+    else {
+      var vt = "Ilmanvaihto: " + (vx.profile && vx.profile.ok ? (mode === "away" ? "poissa-teho" : "kotona-teho") + " ✓" : "?");
+      if (vx.awaySpeed) {
+        var a = vx.awaySpeed;
+        vt += a.ok ? " (" + (a.after != null ? a.after : a.want) + " %)" : " (teho ennallaan " + (a.before != null ? a.before + " %" : "") + (a.error ? ": " + a.error : a.note ? ": " + a.note : "") + ")";
+      }
+      L.push(vt);
     }
-    if (name === "Valot päälle") {
-      toast("Valot päälle…");
-      var ups = ["Ruokapöytä", "Eteinen", "Keittiö"];
-      var chain2 = Promise.resolve();
-      ups.forEach(function (n) {
-        var d = findDev(n);
-        if (!d) return;
-        chain2 = chain2.then(function () { return shellySet(d, true).catch(function () {}); });
-      });
-      chain2.then(function () {
-        toast("Valot päälle", "ok");
-        setTimeout(pull, 1600);
-      });
-      return;
-    }
-    toast("Tuntematon scene", "err");
+    if (!(r.automationMode && r.automationMode.ok)) L.push("Automaation tila: ei päivittynyt");
+    return L.join("\n");
+  }
+  function runPresence(mode) {
+    if (_presBusy) return;
+    if (!window.confirm(PRES_TXT[mode])) return;
+    _presBusy = mode; paintPresence();
+    toast((mode === "away" ? "Poissa" : "Kotona") + ": ohjataan… (n. 20–40 s)", null, 40000);
+    api("/presence", { mode: mode }).then(function (r) {
+      PRESENCE = { mode: mode, at: r.at || new Date().toISOString() };
+      var txt = presenceSummary(mode, r);
+      document.getElementById("presHint").textContent = txt.replace(/\n/g, " · ");
+      toast(txt, r.ok ? "ok" : "err", 9000);
+      setTimeout(pull, 1500);
+      if (typeof climPull === "function") setTimeout(function () { climPull(true); }, 2500);
+    }).catch(function (e) {
+      toast((mode === "away" ? "Poissa" : "Kotona") + ": " + (e && e.message ? e.message : "virhe"), "err", 5000);
+    }).finally(function () { _presBusy = false; paintPresence(); });
   }
 
   function helsinkiParts(d) {
@@ -934,12 +1177,39 @@
     set("costMonth", "kwhMonth", COST.month);
     var chip = document.getElementById("spotNowChip");
     if (COST.spotNow != null) {
-      chip.textContent = "Pörssi " + num(COST.spotNow, 1) + " snt";
-      chip.className = "chip on";
+      var pc = priceClass(COST.spotNow, Date.now());
+      chip.textContent = "Pörssi " + num(COST.spotNow, 1) + " snt · " + PRICE_LBL[pc];
+      chip.className = "chip price-" + pc;
+      chip.title = priceRuleText(Date.now());
     } else {
       chip.textContent = "Pörssi —";
       chip.className = "chip";
     }
+  }
+  // ---- Pörssihinnan värit: suhteessa päivän hintoihin (Helsingin vrk) + absoluuttiset rajat
+  var PRICE_COL = { cheap: "#7ddea0", normal: "#e3c36a", exp: "#ff7a7a" };
+  var PRICE_LBL = { cheap: "halpa", normal: "normaali", exp: "kallis" };
+  var _pthr = {};
+  function priceThr(t) {
+    var day = helsinkiParts(new Date(t)).dateStr;
+    var key = day + "|" + (SPOT_RAW ? SPOT_RAW.at : 0);
+    if (_pthr[key] !== undefined) return _pthr[key];
+    var vals = SPOT_RAW ? SPOT_RAW.rows.filter(function (r) { return helsinkiParts(new Date(r.t)).dateStr === day; }).map(function (r) { return r.sp; }).sort(function (a, b) { return a - b; }) : [];
+    var q = function (f) { var i = (vals.length - 1) * f, lo = Math.floor(i), hi = Math.ceil(i); return vals[lo] + (vals[hi] - vals[lo]) * (i - lo); };
+    _pthr[key] = vals.length >= 6 ? { p33: q(1 / 3), p67: q(2 / 3) } : null;
+    return _pthr[key];
+  }
+  function priceClass(v, t) {
+    if (v == null || isNaN(v)) return "normal";
+    if (v < 5) return "cheap";
+    if (v > 15) return "exp";
+    var th = priceThr(t);
+    if (th) { if (v <= th.p33) return "cheap"; if (v >= th.p67) return "exp"; }
+    return "normal";
+  }
+  function priceRuleText(t) {
+    var th = priceThr(t);
+    return "halpa: alle 5 snt tai päivän halvin kolmannes" + (th ? " (≤ " + num(th.p33, 1) + ")" : "") + " · kallis: yli 15 snt tai päivän kallein kolmannes" + (th ? " (≥ " + num(th.p67, 1) + ")" : "");
   }
   function refreshCosts(force) {
     if (_costBusy) return;
@@ -954,6 +1224,7 @@
         COST.month = j.monthTotal || null;
         COST.spotNow = j.spotNow;
         COST.spotAvg = j.spotTodayAvg;
+        if (typeof spotLoad === "function") spotLoad(24).then(function () { paintCost(); }).catch(function () {});
         _costLast = Date.now();
         document.getElementById("costHint").textContent = "Pörssi + Savon Voima siirto+vero 8,12 snt/kWh · ei perusmaksua · napauta korttia: päiväpylväät";
         paintCost();
@@ -981,6 +1252,8 @@
     var map = (root && root.devices_status) || {};
     var lightsOn = [];
     var lightWatts = {};
+    var lightBright = {};
+    var lightEnergy = {};
     var online = Object.keys(map).length > 0;
     for (var i = 0; i < DEVICES.length; i++) {
       var d = DEVICES[i];
@@ -992,6 +1265,8 @@
       if (block) {
         if (block.output != null) on = !!block.output;
         if (block.apower != null) ap = Number(block.apower);
+        if (block.brightness != null) lightBright[d.name] = Math.round(Number(block.brightness));
+        if (block.aenergy && block.aenergy.total != null) lightEnergy[d.name] = Number(block.aenergy.total);
       }
       if (ap != null && !isNaN(ap)) lightWatts[d.name] = ap;
       if (on === true) lightsOn.push(d.name);
@@ -1014,7 +1289,8 @@
     var indoorC = indoor && indoor.tC != null ? Math.round(Number(indoor.tC) * 10) / 10 : null;
     var outdoorC = outdoor && outdoor.tC != null ? Math.round(Number(outdoor.tC) * 10) / 10 : null;
     var evSw = component(map[SENSOR.ev] || {}, "switch", SENSOR.evCh);
-    var evCharge = !!(evSw && evSw.output);
+    // EV-rele on vain pääsulakkeiden kuormanvartija → "lataa" vain kun rele sallii JA A-vaiheella on iso kuorma
+    var evCharge = !!(evSw && evSw.output && em.a_act_power != null && Number(em.a_act_power) >= 2000);
     var saunaDev = findDev("2) sauna");
     var sauna = false;
     if (saunaDev) {
@@ -1029,6 +1305,8 @@
       indoorC: indoorC,
       outdoorC: outdoorC,
       lightsOn: lightsOn,
+      lightBright: lightBright,
+      lightEnergy: lightEnergy,
       lightWatts: lightWatts,
       evCharge: evCharge,
       sauna: sauna,
@@ -1067,36 +1345,40 @@
 
     document.getElementById("indoorVal").textContent = d.indoorC != null ? num(d.indoorC, 1) + "°" : "—°";
     document.getElementById("outdoorVal").textContent = d.outdoorC != null ? num(d.outdoorC, 1) + "°" : "—°";
-    document.getElementById("indoorSub").textContent = "sisä · Shelly";
-    document.getElementById("outdoorSub").textContent = power != null && !isNaN(power) ? (Math.round(power) + " W nyt") : "ulko · Shelly";
+    document.getElementById("indoorSub").textContent = "lämpötila sisällä";
+    document.getElementById("outdoorSub").textContent = "lämpötila ulkona";
 
-    var fe = document.getElementById("flagEv");
-    fe.className = "flag" + (ev ? " on" : "");
-    document.getElementById("evState").textContent = ev ? "Päällä" : "Pois";
     var fs = document.getElementById("flagSauna");
     fs.className = "flag hot" + (sauna ? " on" : "");
     document.getElementById("saunaState").textContent = sauna ? "Päällä" : "Pois";
 
     var onSet = {};
     lightsOn.forEach(function (n) { onSet[n] = true; });
-    var names = [];
-    var seen = {};
-    function add(n) { if (!n || seen[n]) return; seen[n] = true; names.push(n); }
-    MAIN_LIGHTS.forEach(add);
-    lightsOn.forEach(add);
-
     var html = "";
-    if (!names.length) {
-      html = "<div class=\"empty\">Ei valoja listalla.</div>";
-    } else {
-      names.forEach(function (nm) {
+    LIGHT_GROUPS.forEach(function (g) {
+      var tiles = "";
+      g.lights.forEach(function (nm) {
+        var dev = findDev(nm);
+        if (!dev) return;
         var isOn = !!onSet[nm];
-        var w = watts[nm];
-        var wTxt = (w != null && Number(w) > 0) ? (num(w, Number(w) < 10 ? 0 : 0) + " W") : (isOn ? "on" : "pois");
-        html += "<button class=\"btn light" + (isOn ? " on" : "") + "\" type=\"button\" data-light=\"" + esc(nm) + "\" data-on=\"" + (isOn ? "1" : "0") + "\">"
-          + "<span class=\"name\">" + esc(nm) + "</span><span class=\"w\">" + esc(wTxt) + "</span></button>";
+        // kytkemätön kanava (0 Wh koskaan) piiloon, esim. Varastosoppi
+        if (!isOn && d.lightEnergy && d.lightEnergy[nm] === 0 && LIGHT_HIDE_UNWIRED[nm]) return;
+        var meta = LIGHT_META[nm] || { ic: "💡", fi: nm };
+        var dimmer = dev.kind === "light";
+        var br = DIM_PENDING[nm] != null ? DIM_PENDING[nm] : (d.lightBright ? d.lightBright[nm] : null);
+        var state = isOn ? "PÄÄLLÄ" + (dimmer && br != null ? " · " + br + " %" : "") : "POIS";
+        tiles += '<div class="ltile' + (isOn ? " on" : "") + '">' +
+          '<button class="lt-main" type="button" data-light="' + esc(nm) + '" data-on="' + (isOn ? "1" : "0") + '" aria-pressed="' + (isOn ? "true" : "false") + '" aria-label="' + esc(meta.fi + (isOn ? ", päällä. Napauta sammuttaaksesi" : ", pois. Napauta sytyttääksesi")) + '">' +
+          '<span class="lt-top"><span class="lt-ic" aria-hidden="true">' + meta.ic + '</span><span class="lt-name">' + esc(meta.fi) + '</span></span>' +
+          '<span class="lt-state">' + esc(state) + '</span></button>' +
+          (dimmer && isOn ? '<div class="lt-dim"><button type="button" data-dim="-1" data-dim-name="' + esc(nm) + '" aria-label="' + esc(meta.fi) + ' himmeämmäksi">−</button>' +
+            '<span class="lt-pct' + (DIM_PENDING[nm] != null ? " pending" : "") + '">' + (br != null ? br + " %" : "—") + '</span>' +
+            '<button type="button" data-dim="1" data-dim-name="' + esc(nm) + '" aria-label="' + esc(meta.fi) + ' kirkkaammaksi">+</button></div>' : '') +
+          '</div>';
       });
-    }
+      if (tiles) html += '<div class="lgroup"><div class="lgroup-t">' + g.ic + " " + esc(g.fi) + '</div><div class="lgrid">' + tiles + '</div></div>';
+    });
+    if (!html) html = "<div class=\"empty\">Ei valoja listalla.</div>";
     document.getElementById("lightGrid").innerHTML = html;
 
     var age = ageLabel(d.updated);
@@ -1190,6 +1472,35 @@
   function vxState() { return CLIM && CLIM.vallox && !CLIM.vallox.error ? CLIM.vallox : null; }
   function degC(v, d) { return v == null ? "—°" : num(v, d == null ? (Number(v) % 1 ? 1 : 0) : d) + "°"; }
 
+  var ILP_EV = null;
+  function evWhen(iso) {
+    try {
+      var p = new Intl.DateTimeFormat("fi-FI", { timeZone: "Europe/Helsinki", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date(iso));
+      var o = {}; p.forEach(function (x) { o[x.type] = x.value; });
+      var dd = helsinkiParts(new Date(iso)).dateStr, today = helsinkiParts(new Date()).dateStr;
+      return (dd === today ? "tänään" : o.weekday) + " " + o.hour + ":" + o.minute;
+    } catch (e) { return "—"; }
+  }
+  function evWho(e) {
+    if (!e) return "";
+    if (/^sivu/.test(e.src)) return "tältä sivulta" + (/Poissa|Kotona/.test(e.src) ? " (" + e.src.replace(/^.*\(|\)$/g, "") + ")" : "");
+    if (e.src === "ajastin") return "ajastin";
+    if (e.hist) return "ei tiedossa";
+    return "kaukosäädin, EWPE-sovellus tai ajastin";
+  }
+  function paintIlpEvents() {
+    if (CLIM && CLIM.ilpEvents) ILP_EV = CLIM.ilpEvents;
+    var box = document.getElementById("ilpEv");
+    if (!box) return;
+    if (!ILP_EV || (!ILP_EV.lastOn && !ILP_EV.lastOff)) { box.hidden = true; return; }
+    box.hidden = false;
+    document.getElementById("ilpEvOn").innerHTML = ILP_EV.lastOn ? "Käynnistetty <b>" + esc(evWhen(ILP_EV.lastOn.t)) + "</b> (" + esc(evWho(ILP_EV.lastOn)) + ")" : "Käynnistys: ei tiedossa";
+    document.getElementById("ilpEvOff").innerHTML = ILP_EV.lastOff ? "Sammutettu <b>" + esc(evWhen(ILP_EV.lastOff.t)) + "</b> (" + esc(evWho(ILP_EV.lastOff)) + ")" : "Sammutus: ei tiedossa";
+    var list = document.getElementById("ilpEvList");
+    list.innerHTML = (ILP_EV.events || []).slice(0, 10).map(function (e) {
+      return '<div class="ev-row"><span class="' + (e.on ? "ev-on" : "ev-off") + '">' + (e.on ? "▶ Päälle" : "■ Pois") + '</span><span>' + esc(evWhen(e.t)) + " · " + esc(evWho(e)) + '</span></div>';
+    }).join("") + '<div class="ev-row" style="font-size:12.5px;color:var(--dim)">Aika tarkistetaan 5 min välein. Gree-pilvi ei kerro, oliko kyseessä kaukosäädin, puhelinsovellus vai laitteen oma ajastin.</div>';
+  }
   function paintClim() {
     if (!paintClimShell()) return;
     var ilp = ilpState();
@@ -1208,10 +1519,10 @@
       var verb = { heat: "Lämmittää", cool: "Jäähdyttää", auto: "Auto", dry: "Kuivaa", fan: "Puhaltaa" }[ilp.mode] || (ILP_MODE_FI[ilp.mode] || ilp.mode || "—");
       var setTxt = degC(ilp.setC, ilp.step === 0.5 ? 1 : 0);
       if (ilp.on) {
-        bBig.textContent = "ILP PÄÄLLÄ";
+        bBig.textContent = "Lämpöpumppu päällä";
         bSub.textContent = verb + " · " + setTxt + (ilp.indoorC != null ? " · sisällä " + degC(ilp.indoorC) : "");
       } else {
-        bBig.textContent = "ILP POIS PÄÄLTÄ";
+        bBig.textContent = "Lämpöpumppu pois";
         bSub.textContent = "Sammutettu · viimeisin asetus " + (ILP_MODE_FI[ilp.mode] || ilp.mode || "—").toLowerCase() + " " + setTxt;
       }
       chip.textContent = ilp.on ? "Päällä" : "Pois";
@@ -1220,7 +1531,7 @@
       var shown = _ilpPendingSet != null ? _ilpPendingSet : ilp.setC;
       setEl.textContent = degC(shown, ilp.step === 0.5 ? 1 : 0);
       setEl.className = "cl-val" + (_ilpPendingSet != null ? " pending" : "");
-      pw.textContent = ilp.on ? "Sammuta ILP" : "Käynnistä ILP";
+      pw.textContent = ilp.on ? "⏻ Sammuta lämpöpumppu" : "⏻ Käynnistä lämpöpumppu";
       pw.className = "btn" + (ilp.on ? " power-on" : "");
       document.querySelectorAll("#ilpCard [data-ilp-mode]").forEach(function (b) {
         var on = b.getAttribute("data-ilp-mode") === ilp.mode;
@@ -1244,6 +1555,8 @@
       pw.textContent = "—"; pw.className = "btn";
       document.getElementById("ilpHint").textContent = ilpErr ? ("ILP ei vastaa: " + ilpErr) : "Haetaan tilaa…";
     }
+
+    paintIlpEvents();
 
     var vx = vxState();
     var vxErr = _climErr || (CLIM && CLIM.vallox && CLIM.vallox.error) || "";
@@ -1494,6 +1807,7 @@
       return '<span><i style="background:' + sd.color + '"></i>' + esc(sd.label + extra) + '</span>';
     }).join("");
     if (cfg.onBand) legend += '<span><i style="background:rgba(227,195,106,.35);height:8px"></i>ILP päällä</span>';
+    if (cfg.spot || cfg.spot2) legend += ["cheap", "normal", "exp"].map(function (k) { return '<span class="pl"><i style="background:' + PRICE_COL[k] + ';height:4px"></i>' + PRICE_LBL[k] + '</span>'; }).join("");
     el.querySelector(".ch-legend").innerHTML = legend;
     var hasData = cfg.series.some(function (sd) { return !sd.axis2 && d.pts[sd.k].length; });
     if (!hasData) {
@@ -1605,6 +1919,17 @@
         var bf = sg[0].bf;
         svg += '<path d="' + dstr + '" fill="none" stroke="' + sd.color + '" stroke-width="' + (sd.thin ? 1.4 : 2.2) + '" stroke-linejoin="round" stroke-linecap="round"' + (bf ? ' stroke-dasharray="4 3" opacity=".75"' : '') + (sd.thin ? ' opacity=".85"' : '') + '/>';
       });
+      // pörssihinnan värit tunneittain (halpa / normaali / kallis)
+      if (cfg.spot || (sd.axis2 && cfg.spot2)) {
+        pts.forEach(function (p, i) {
+          var t1 = Math.min(x1, (pts[i + 1] && pts[i + 1].t - p.t <= 3600000 ? pts[i + 1].t : p.t + 3600000));
+          var t0 = Math.max(x0, p.t);
+          if (t1 <= t0) return;
+          var col = PRICE_COL[priceClass(p.v, p.t)];
+          svg += '<line x1="' + X(t0).toFixed(1) + '" x2="' + X(t1).toFixed(1) + '" y1="' + YY(p.v).toFixed(1) + '" y2="' + YY(p.v).toFixed(1) + '" stroke="' + col + '" stroke-width="' + (sd.thin ? 2.2 : 3.2) + '" stroke-linecap="butt"/>';
+          if (cfg.spot) svg += '<rect x="' + X(t0).toFixed(1) + '" y="' + (H - padB - 4) + '" width="' + Math.max(0.5, X(t1) - X(t0) - 0.6).toFixed(1) + '" height="4" fill="' + col + '" opacity=".85"/>';
+        });
+      }
       // nykyarvo
       var cur = null;
       if (cfg.spot) { for (var ci = pts.length - 1; ci >= 0; ci--) if (pts[ci].t <= d.now) { cur = { t: d.now, v: pts[ci].v }; break; } }
@@ -1899,7 +2224,7 @@
   });
 
   document.body.addEventListener("click", function (ev) {
-    var t = ev.target.closest ? ev.target.closest("[data-light],[data-action],[data-ilp],[data-ilp-mode],[data-vx]") : null;
+    var t = ev.target.closest ? ev.target.closest("[data-light],[data-action],[data-ilp],[data-ilp-mode],[data-vx],[data-dim]") : null;
     if (!t) return;
     if (t.disabled) return;
     if (t.getAttribute("data-ilp")) {
@@ -1909,6 +2234,7 @@
     }
     if (t.getAttribute("data-ilp-mode")) { ilpMode(t.getAttribute("data-ilp-mode")); return; }
     if (t.getAttribute("data-vx")) { vxSet(t.getAttribute("data-vx")); return; }
+    if (t.getAttribute("data-dim")) { dimStep(t.getAttribute("data-dim-name"), Number(t.getAttribute("data-dim"))); return; }
     if (t.getAttribute("data-light")) {
       var name = t.getAttribute("data-light");
       var isOn = t.getAttribute("data-on") === "1";
@@ -1918,12 +2244,33 @@
     var action = t.getAttribute("data-action");
     if (!action) return;
     if (action === "scene") runScene(t.getAttribute("data-target"));
-    else if (action === "mokki_pois") runScene("Mökki pois");
+    else if (action === "presence") runPresence(t.getAttribute("data-target"));
   });
+
+  document.getElementById("ilpEv").addEventListener("click", function () {
+    var l = document.getElementById("ilpEvList"), open = l.hidden;
+    l.hidden = !open; this.setAttribute("aria-expanded", open ? "true" : "false");
+    this.querySelector(".ilp-ev-more").textContent = open ? "Piilota historia ▴" : "Näytä historia ▾";
+  });
+  (function () {
+    var btn = document.getElementById("moreToggle"), box = document.getElementById("moreBox");
+    function setMore(open) {
+      box.hidden = !open; btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.querySelector("span").textContent = open ? "Näytä vähemmän" : "Näytä lisää";
+      try { localStorage.setItem("mokkiMore", open ? "1" : "0"); } catch (e) {}
+      if (open) { refreshCosts(false); if (typeof climPull === "function") climPull(false); }
+    }
+    btn.addEventListener("click", function () { setMore(box.hidden); });
+    var saved = null; try { saved = localStorage.getItem("mokkiMore"); } catch (e) {}
+    if (saved === "1") { box.hidden = false; btn.setAttribute("aria-expanded", "true"); btn.querySelector("span").textContent = "Näytä vähemmän"; }
+  })();
 
   function startDashboard() {
     paint();
     pull();
+    paintPresence();
+    loadPresence();
+    setInterval(function () { if (!document.hidden && !_presBusy) loadPresence(); }, 120000);
     refreshCosts(true);
     setInterval(pull, 15000);
     setInterval(function () { refreshCosts(false); }, 5 * 60 * 1000);

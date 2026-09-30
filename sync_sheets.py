@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch Mea Lianna + Milla Vivida schedules from Google Sheets and merge into shared.json."""
+"""Fetch Mea Lianna + Milla Vivida schedules and Ellen Ambrosia leirit/kisat from Google Sheets and merge into shared.json."""
 
 from __future__ import annotations
 
@@ -232,6 +232,92 @@ def drop_expired_extras(extras, now: datetime):
     return [extra for extra in extras if not is_expired_extra(extra, now)]
 
 
+AMBROSIA = {
+    "url": "https://docs.google.com/spreadsheets/d/16me62qlQyhhczEd_9H08DJw_5w4On9uUSIpa-21mEF0/export?format=csv",
+    "fallback": "/workspace/sheet-16me62qlQyhhczEd_9H08DJw_5w4On9uUSIpa-21mEF0.csv",
+}
+AMB_PREFIX = "info-ambrosia-"
+AMB_DATE_RE = re.compile(r"(\d{1,2})\.?(?:(\d{1,2})\.)?\s*[-–—]\s*(\d{1,2})\.(\d{1,2})\.(\d{4})")
+AMB_ONE_RE = re.compile(r"^(\d{1,2})\.(\d{1,2})\.(\d{4})$")
+
+
+def ambrosia_events():
+    """Column-per-event sheet: rows Mikä/Milloin/Paikka/Kulkuväline/Huoltaja/Kuski/Valmentaja."""
+    try:
+        raw = fetch_csv(AMBROSIA["url"], AMBROSIA["fallback"])
+        try:
+            with open(AMBROSIA["fallback"], "w", encoding="utf-8") as f:
+                f.write(raw)
+        except OSError:
+            pass
+    except Exception as exc:  # noqa: BLE001
+        print("ambrosia fetch failed:", exc)
+        return None
+    rows = load_rows(raw)
+    lab = {}
+    kuskit = []
+    for r in rows:
+        if not r:
+            continue
+        k = (r[0] or "").strip().lower()
+        if k.startswith("kuski"):
+            kuskit.append(r)
+        elif k and k not in lab:
+            lab[k] = r
+    what = lab.get("mikä")
+    when = lab.get("milloin")
+    if not what or not when:
+        return []
+    out = []
+    for i in range(1, len(what)):
+        kind = cell(what, i)
+        w = cell(when, i).replace(" ", "")
+        if not kind or not w:
+            continue
+        m = AMB_DATE_RE.search(w)
+        if m:
+            d1, m1, d2, m2, y = m.groups()
+            m1 = m1 or m2
+            try:
+                sd = date(int(y), int(m1), int(d1))
+                ed = date(int(y), int(m2), int(d2))
+            except ValueError:
+                continue
+        else:
+            m = AMB_ONE_RE.match(w)
+            if not m:
+                continue  # "Tarkentuu myöh."
+            sd = ed = date(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+        place = cell(lab.get("paikka") or [], i).strip()
+        if place.lower().startswith("tarkentuu"):
+            place = ""
+        notes = []
+        for key, label in (("kulkuväline", "kulku"), ("huoltaja", "huoltaja"), ("yöpaikka", "yö")):
+            v = cell(lab.get(key) or [], i).strip()
+            if v and v != "?":
+                notes.append(f"{label} {v}")
+        ks = [cell(r, i).strip() for r in kuskit if cell(r, i).strip()]
+        if ks:
+            notes.append("kuski " + ", ".join(ks))
+        title = f"Ambrosia {kind.lower()}"
+        if place:
+            title += f" · {place}"
+        ev = {
+            "id": f"{AMB_PREFIX}{sd.isoformat()}",
+            "who": "ellen",
+            "title": title,
+            "date": sd.isoformat(),
+            "kind": "info",
+            "place": place,
+        }
+        if ed != sd:
+            ev["dateEnd"] = ed.isoformat()
+        if notes:
+            ev["note"] = "; ".join(notes)
+        out.append(ev)
+    return out
+
+
 def main():
     today = helsinki_today()
     tomorrow = today + timedelta(days=1)
@@ -255,11 +341,16 @@ def main():
         shared = json.load(f)
 
     old_extras = shared.get("extras") or []
+    amb = ambrosia_events()
+    print(f"ambrosia events: {amb}")
     kept = [
         e
         for e in old_extras
         if not str(e.get("id") or "").startswith("sheet-")
+        and not (amb is not None and str(e.get("id") or "").startswith(AMB_PREFIX))
     ]
+    if amb:
+        kept += amb
     # Preserve order: kept (cal/trip/…) then sheet events by date/who
     sheet_events.sort(key=lambda e: (e["date"], e["who"], e.get("start") or ""))
     merged_extras = kept + sheet_events

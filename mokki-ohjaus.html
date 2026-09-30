@@ -579,6 +579,8 @@
     .set-btns .btn { min-height: 56px; font-size: 16px; }
     .al-list { list-style: none; padding: 0; margin: 8px 0 0; font-size: 13.5px; color: var(--muted); }
     .al-list li { padding: 6px 0; border-top: 1px solid var(--line); }
+    .cool-note { margin-top: 8px; font-size: 14px; font-weight: 700; color: var(--blue); }
+    .btn.mode.blocked { opacity: .35; text-decoration: line-through; }
     .motion-line { width: 100%; display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 12px 16px; margin-bottom: var(--gap);
       border-radius: var(--r2); background: var(--surface); border: 1px solid var(--line); color: var(--text); font-size: 16px; font-weight: 700; text-align: left; }
     .motion-line .m-ic { font-size: 22px; }
@@ -778,6 +780,7 @@
         <button class="btn mode" type="button" data-ilp-mode="cool">❄️ Jäähdytys</button>
         <button class="btn mode" type="button" data-ilp-mode="auto">Auto</button>
       </div>
+      <div class="hint cool-note" id="coolNote" hidden>❄️ Jäähdytys estetty lämmityskaudella</div>
       <div class="chart-panel" data-chart-panel="ilp" hidden></div>
       <div class="hint clim-hint" id="ilpHint">—</div>
     </div>
@@ -900,6 +903,7 @@
         <li>💶 Ilman hintatietoa ei säästetä hinnan perusteella.</li>
         <li>⏱️ Säästö (pudotus) palautuu itsestään normaaliksi: automaatiolla 20 min kuluttua ellei sitä uusita, Poissa-napilla <b data-s="setbackFailsafeH">24</b> h kuluttua. Jos palvelin kaatuu, lämmitys palaa normaaliksi.</li>
         <li>✔️ Jokainen ohjaus tarkistetaan lukemalla laitteen tila, yritetään kerran uudelleen. Jos säästön päälle meno ei varmistu, se käännetään pois.</li>
+        <li>🧊 Jäähdytys (myös auto ja kuivaus) on estetty lämmityskaudella ja aina kun ulkona on alle <b data-s="coolMinOutdoorC">20</b> °C (tai ulkolämpöä ei tiedetä). Jos lämpöpumppu löytyy jäähdytykseltä, siitä tulee hälytys ja se vaihdetaan lämmitykselle samaan lämpötilaan (koeajossa vain kirjataan).</li>
         <li>❄️ Lämpöpumppua ei sammuteta lämmityskaudella (<b data-s="heatSeasonStart">9</b>.–<b data-s="heatSeasonEnd">4</b>. kuukausi) eikä kun ulkona on alle <b data-s="heatOutdoorC">10</b> °C. Muulloin Poissa voi sammuttaa sen. Hälytys vain, jos se on pois ja sisällä on alle <b data-s="ilpAlertIndoorC">18</b> °C tai ulkona alle <b data-s="ilpOffAlarmC">0</b> °C.</li>
         <li>🌡️ Sisälämpömittari on katon rajassa, jossa on lämpimämpää kuin oleskelutasolla. Siksi kylmärajat ovat varovaisia: oikeasti oleskelutasolla on vähän kylmempää kuin näkyy.</li>
         <li>🔥 Takan tunnistus vaatii, että sekä sisälämpö nousee vähintään <b data-s="fireRiseC">4</b> °C että poistoilma vähintään <b data-s="fireExtractRiseC">2</b> °C puolessa tunnissa – ei lasketa, jos lämpöpumppu, sauna, iso sähköteho tai aurinko selittää nousun.</li>
@@ -1646,9 +1650,20 @@
     var chip = document.getElementById("ilpChip");
     var pw = document.getElementById("ilpPower");
     var setEl = document.getElementById("ilpSet");
+    var cg = CLIM && CLIM.coolGuard;
+    var coolBlocked = !cg || cg.allowed === false; // tieto puuttuu → estetty
     document.querySelectorAll("#ilpCard [data-ilp], #ilpCard [data-ilp-mode]").forEach(function (b) {
-      b.disabled = !ilp || _ilpSending;
+      var m = b.getAttribute("data-ilp-mode");
+      var bl = !!m && m !== "heat" && m !== "fan" && coolBlocked;
+      b.disabled = !ilp || _ilpSending || bl;
+      b.classList.toggle("blocked", bl);
+      if (m && m !== "heat") b.hidden = bl && m === "auto"; // auto piiloon, jäähdytys näkyy yliviivattuna
     });
+    var cn = document.getElementById("coolNote");
+    if (cn) {
+      cn.hidden = !coolBlocked;
+      cn.textContent = "❄️ Jäähdytys estetty lämmityskaudella" + (cg && cg.why ? " (" + cg.why.replace(/^Jäähdytys estetty:\s*/, "") + ")" : "");
+    }
     var card = document.getElementById("ilpCard");
     var bBig = document.getElementById("ilpBannerBig"), bSub = document.getElementById("ilpBannerSub");
     if (ilp) {
@@ -1780,6 +1795,8 @@
   function ilpMode(mode) {
     var ilp = ilpState();
     if (!ilp || _ilpSending || ilp.mode === mode) return;
+    var cg = CLIM && CLIM.coolGuard;
+    if (mode !== "heat" && mode !== "fan" && (!cg || cg.allowed === false)) { toast("❄️ Jäähdytys estetty lämmityskaudella", "err", 4000); return; }
     ilpSend({ mode: mode }, "Tila: " + (ILP_MODE_FI[mode] || mode));
   }
   function vxSet(profile) {

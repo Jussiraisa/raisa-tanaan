@@ -682,8 +682,8 @@
       "who": "Ellen",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "driver": "Jussi",
-      "note": "ke-oletus Jussi (weeklyDriverDefaults)"
+      "driver": "Sofian perhe",
+      "note": "ke-oletus Sofian perhe vie (Jussi 30.9.2026)"
     },
     {
       "date": "2026-09-30",
@@ -1524,10 +1524,19 @@
       "driver": "Jussi"
     },
     {
+      "weekday": 2,
+      "who": "Ellen",
+      "titleContains": "Ambrosia",
+      "driver": "Meidän",
+      "pickup": "Meidän",
+      "note": "Oletus: ti vienti+haku meidän, ellei kalenteri sano muuta (Jussi 30.9.2026)"
+    },
+    {
       "weekday": 3,
       "who": "Ellen",
       "titleContains": "Ambrosia",
-      "driver": "Jussi"
+      "driver": "Sofian perhe",
+      "note": "Oletus: ke vienti Sofian perhe, ellei kalenteri sano muuta (Jussi 30.9.2026)"
     },
     {
       "weekday": 4,
@@ -1541,7 +1550,7 @@
       "who": "Ellen",
       "titleContains": "Ambrosia",
       "driver": "Meidän",
-      "note": "Oletus: pe vienti aina meidän, ellei WA/Fiilis sano muuta (Jussi 25.9.2026)"
+      "note": "Oletus: pe vienti aina meidän, ellei kalenteri/WA sano muuta (Jussi 25.9/30.9.2026)"
     },
     {
       "who": "Mea",

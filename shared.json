@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790774941644,
+  "updated": 1790776694926,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -451,47 +451,6 @@
       "status": ""
     },
     {
-      "id": "cal-md115enjo3omkea15kqlvlrqsg",
-      "title": "Milla · RUB12 koe (ruotsi)",
-      "date": "2026-09-30",
-      "start": null,
-      "end": null,
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_6p23echp69232b9n70rk8b9k64r32b9p6srj4b9n8cq3agq564r44ha668",
-      "title": "Mea Arja",
-      "date": "2026-10-01",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-m0uipdpv0rh2dbkc126fhg7il0",
-      "title": "Samuel · Welhot P9 pelipassi deadline",
-      "date": "2026-10-01",
-      "start": "09:00",
-      "end": "18:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-cnid955r5ltkf40mnrsljd76n4",
-      "title": "Ellen · Ambrosia vanhempainilta",
-      "date": "2026-10-01",
-      "start": "17:00",
-      "end": "18:00",
-      "kind": "cal",
-      "place": "Kuopiohalli"
-    },
-    {
-      "id": "cal-u92uio28rfmh1p8ppihvb0qioo",
-      "title": "Mea · kemian opetus · Jussi + Mea",
-      "date": "2026-10-01",
-      "start": "18:30",
-      "end": "19:30",
-      "kind": "cal"
-    },
-    {
       "id": "info-ambrosia-2026-10-31",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",
@@ -558,6 +517,47 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "cal-md115enjo3omkea15kqlvlrqsg",
+      "title": "Milla · RUB12 koe (ruotsi)",
+      "date": "2026-09-30",
+      "start": null,
+      "end": null,
+      "kind": "cal"
+    },
+    {
+      "id": "cal-m0uipdpv0rh2dbkc126fhg7il0",
+      "title": "Samuel · Welhot P9 pelipassi deadline",
+      "date": "2026-10-01",
+      "start": "09:00",
+      "end": "18:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6p23echp69232b9n70rk8b9k64r32b9p6srj4b9n8cq3agq564r44ha668",
+      "title": "Mea Arja",
+      "date": "2026-10-01",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-cnid955r5ltkf40mnrsljd76n4",
+      "title": "Ellen · Ambrosia vanhempainilta",
+      "date": "2026-10-01",
+      "start": "17:00",
+      "end": "18:00",
+      "kind": "cal",
+      "place": "Kuopiohalli"
+    },
+    {
+      "id": "cal-u92uio28rfmh1p8ppihvb0qioo",
+      "title": "Mea · kemian opetus · Jussi + Mea",
+      "date": "2026-10-01",
+      "start": "18:30",
+      "end": "19:30",
+      "kind": "cal"
     }
   ],
   "schoolLunch": {

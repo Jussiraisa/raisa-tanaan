@@ -626,6 +626,7 @@
     .lt-dim button:active { background: rgba(255,216,77,.12); }
     .lt-dim .lt-pct { text-align: center; font-size: 16px; font-weight: 800; color: var(--text); }
     .lt-dim .lt-pct.pending { color: var(--warm); }
+    .lt-nodim { border-top: 1px solid rgba(255,216,77,.25); padding: 8px 10px; font-size: 12px; font-weight: 650; color: var(--muted); line-height: 1.3; }
     /* näytä lisää */
     .more-toggle { width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 64px; padding: 14px 18px; margin: 4px 0 var(--gap);
       border-radius: var(--r); border: 1px dashed var(--line2); background: rgba(255,255,255,.02); color: var(--text); font-size: 17px; font-weight: 750; text-align: left; }
@@ -1370,6 +1371,7 @@
     var lightWatts = {};
     var lightBright = {};
     var lightEnergy = {};
+    var lightUncal = {};
     var online = Object.keys(map).length > 0;
     for (var i = 0; i < DEVICES.length; i++) {
       var d = DEVICES[i];
@@ -1382,6 +1384,8 @@
         if (block.output != null) on = !!block.output;
         if (block.apower != null) ap = Number(block.apower);
         if (block.brightness != null) lightBright[d.name] = Math.round(Number(block.brightness));
+        // Pro Dimmer: kalibroimaton kanava ei hyväksy kirkkautta (Shelly Cloud 400) → ei −/+ -nappeja
+        if (Array.isArray(block.flags) && block.flags.indexOf("uncalibrated") >= 0) lightUncal[d.name] = true;
         if (block.aenergy && block.aenergy.total != null) lightEnergy[d.name] = Number(block.aenergy.total);
       }
       if (ap != null && !isNaN(ap)) lightWatts[d.name] = ap;
@@ -1422,6 +1426,7 @@
       outdoorC: outdoorC,
       lightsOn: lightsOn,
       lightBright: lightBright,
+      lightUncal: lightUncal,
       lightEnergy: lightEnergy,
       lightWatts: lightWatts,
       evCharge: evCharge,
@@ -1480,7 +1485,8 @@
         // kytkemätön kanava (0 Wh koskaan) piiloon, esim. Varastosoppi
         if (!isOn && d.lightEnergy && d.lightEnergy[nm] === 0 && LIGHT_HIDE_UNWIRED[nm]) return;
         var meta = LIGHT_META[nm] || { ic: "💡", fi: nm };
-        var dimmer = dev.kind === "light";
+        var uncal = !!(d.lightUncal && d.lightUncal[nm]);
+        var dimmer = dev.kind === "light" && !uncal;
         var br = DIM_PENDING[nm] != null ? DIM_PENDING[nm] : (d.lightBright ? d.lightBright[nm] : null);
         var state = isOn ? "PÄÄLLÄ" + (dimmer && br != null ? " · " + br + " %" : "") : "POIS";
         tiles += '<div class="ltile' + (isOn ? " on" : "") + '">' +
@@ -1489,7 +1495,8 @@
           '<span class="lt-state">' + esc(state) + '</span></button>' +
           (dimmer && isOn ? '<div class="lt-dim"><button type="button" data-dim="-1" data-dim-name="' + esc(nm) + '" aria-label="' + esc(meta.fi) + ' himmeämmäksi">−</button>' +
             '<span class="lt-pct' + (DIM_PENDING[nm] != null ? " pending" : "") + '">' + (br != null ? br + " %" : "—") + '</span>' +
-            '<button type="button" data-dim="1" data-dim-name="' + esc(nm) + '" aria-label="' + esc(meta.fi) + ' kirkkaammaksi">+</button></div>' : '') +
+            '<button type="button" data-dim="1" data-dim-name="' + esc(nm) + '" aria-label="' + esc(meta.fi) + ' kirkkaammaksi">+</button></div>' :
+            (uncal && isOn ? '<div class="lt-nodim">Himmennys vaatii kalibroinnin Shelly-sovelluksessa</div>' : '')) +
           '</div>';
       });
       if (tiles) html += '<div class="lgroup"><div class="lgroup-t">' + g.ic + " " + esc(g.fi) + '</div><div class="lgrid">' + tiles + '</div></div>';

@@ -585,6 +585,7 @@
     .more-toggle .more-arrow { margin-left: auto; font-size: 18px; color: var(--muted); transition: transform .2s; }
     .more-toggle[aria-expanded="true"] .more-arrow { transform: rotate(180deg); }
     #moreBox[hidden] { display: none !important; }
+    .sec-title { font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 18px 2px 10px; }
     .flags { grid-template-columns: 1fr; }
     /* pörssihinnan värit */
     .chip.price-cheap { background: rgba(125,222,160,.14); border-color: rgba(125,222,160,.5); color: var(--ok); }
@@ -719,10 +720,7 @@
     <div id="lightGrid"><div class="empty">Odottaa Shelly-liveä…</div></div>
   </section>
 
-  <button class="more-toggle" type="button" id="moreToggle" aria-expanded="false" aria-controls="moreBox">
-    <span>Näytä lisää</span><span class="more-sub">sähkö, hinnat, kulutus, ilmanvaihto</span><span class="more-arrow" aria-hidden="true">▾</span>
-  </button>
-  <div id="moreBox" hidden>
+  <div class="sec-title" id="sahko">⚡ Sähkö</div>
   <section class="hero" id="hero" aria-label="Teho" data-chart="power" role="button" tabindex="0">
     <div class="hero-hint">〽 Käyrä</div>
     <div class="hero-lbl" id="heroLbl">Sähköä nyt</div>
@@ -757,6 +755,10 @@
   <div class="chart-panel" data-chart-panel="ebars7" hidden></div>
   <div class="chart-panel" data-chart-panel="ebarsM" hidden></div>
 
+  <button class="more-toggle" type="button" id="moreToggle" aria-expanded="false" aria-controls="moreBox">
+    <span>Näytä lisää</span><span class="more-sub">ilmanvaihdon tarkat tiedot</span><span class="more-arrow" aria-hidden="true">▾</span>
+  </button>
+  <div id="moreBox" hidden>
   <section class="card" aria-label="Ilmanvaihto" id="valloxCard">
     <div class="card-head">
       <div class="lbl">Ilmanvaihto · Vallox</div>

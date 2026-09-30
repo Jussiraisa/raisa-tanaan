@@ -1426,14 +1426,14 @@
     "2026-09-25": "Kalakeitto",
     "2026-09-28": "Nakkikeitto",
     "2026-09-29": "Pasta bolognese",
-    "2026-09-30": "Uunilohi ja peruna",
-    "2026-10-01": "Kanawokki",
-    "2026-10-02": "Hernekeitto",
-    "2026-10-05": "Pinaattiletut",
-    "2026-10-06": "Jauhelihakastike ja peruna",
-    "2026-10-07": "Kalaleike ja peruna",
-    "2026-10-08": "Kasvispasta",
-    "2026-10-09": "Broilerikeitto"
+    "2026-09-30": "Broileri-pastakastiketta + kierrepastaa (kasvis: kasvispastakastiketta)",
+    "2026-10-01": "Tortilloja + meksikolaista kastiketta",
+    "2026-10-02": "Tonnikalalasagnettea (kasvis: pinaattista linssi-pastavuokaa)",
+    "2026-10-05": "Kermaista broilerikastiketta + riisi-kauralisäkettä (kasvis: kermaista quornkastiketta)",
+    "2026-10-06": "Ohrapuuroa + sekamehukeittoa",
+    "2026-10-07": "Kapteenin kalapuikkoja + kermaviilikastiketta + perunaa (kasvis: pinaatti-raejuustonappeja + kermaviilikastiketta)",
+    "2026-10-08": "Broilerikiusausta (kasvis: linssi-kasviskiusausta)",
+    "2026-10-09": "Jauhelihakastiketta + perunaa (kasvis: tomaattista soijakastiketta)"
   },
   "homeMeals": {
     "2026-09-19": "Nacho-pelti",

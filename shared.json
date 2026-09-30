@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790699532634,
+  "updated": 1790740955433,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -245,7 +245,7 @@
     "su": "Hampparit (liha + Beyond)",
     "ma": "Lohikeitto",
     "ti": "Kana + riisi + kermakastike",
-    "ke": "Koulun tonnikalapasta (ei purjoa)",
+    "ke": "Kalakeitto",
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
@@ -486,8 +486,8 @@
     }
   ],
   "schoolLunch": {
-    "date": "2026-09-29",
-    "dish": "Pasta bolognese",
+    "date": "2026-09-30",
+    "dish": "Uunilohi ja peruna",
     "veg": ""
   },
   "vacation": {

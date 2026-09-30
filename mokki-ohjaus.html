@@ -452,13 +452,63 @@
     .vx-big .mini .m-val small { font-family: var(--sans); font-size: 13px; font-weight: 650; color: var(--muted); margin-left: 4px; letter-spacing: 0; }
     .m-val.co2-ok { color: var(--ok); } .m-val.co2-mid { color: var(--warm); } .m-val.co2-hi { color: var(--danger); }
 
+    /* ---- Kirjautuminen ---- */
+    body.locked > :not(#loginScreen):not(script):not(.toast) { display: none !important; }
+    body:not(.locked) #loginScreen { display: none; }
+    #loginScreen {
+      position: fixed; inset: 0; z-index: 50; overflow-y: auto;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 18px calc(24px + var(--safe-b));
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(78,205,196,.10), transparent 55%),
+        radial-gradient(900px 500px at 110% 0%, rgba(126,184,224,.08), transparent 50%),
+        linear-gradient(180deg, #0c1219 0%, var(--bg) 40%, #090d11 100%);
+    }
+    .login-card {
+      width: 100%; max-width: 380px; padding: 26px 22px 22px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+    .login-card .title { font-size: 40px; margin: 6px 0 6px; }
+    .login-card .hint { margin: 0 0 18px; }
+    .login-card label.lbl-in { display: block; font-size: 11px; font-weight: 750; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); margin-bottom: 8px; }
+    .login-card .btn.primary { width: 100%; margin-top: 14px; padding: 15px 16px; font-size: 16px; }
+    .login-card .btn[disabled] { opacity: .55; pointer-events: none; }
+    .remember { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer; user-select: none; }
+    .remember input { width: 20px; height: 20px; accent-color: var(--teal); margin: 0; }
+    .login-err { min-height: 20px; margin-top: 12px; font-size: 13.5px; font-weight: 650; line-height: 1.4; color: var(--danger); }
+    .login-err.info { color: var(--muted); }
+    .login-foot { margin-top: 16px; font-size: 11.5px; font-weight: 600; color: var(--dim); line-height: 1.45; }
+    .link-btn { padding: 4px 0; font-size: 14px; font-weight: 700; color: var(--danger); text-decoration: underline; text-underline-offset: 3px; }
+    .sess-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    /* ---- Sähkönkulutus pylväät ---- */
+    .cost[data-chart]::after { top: 12px; }
+    .ch-svg .bar-lbl { font-size: 10.5px; font-weight: 750; fill: var(--text); }
+    .ch-svg .bar-sub { font-size: 9.5px; font-weight: 650; fill: var(--muted); }
+    .ch-sec { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .ch-sec .ch-title { margin-bottom: 4px; }
+
     @media (min-width: 720px) {
       body { padding-top: 28px; }
       .btn.light, .btn.scene { flex: 1 1 calc(33.333% - 8px); }
     }
   </style>
 </head>
-<body>
+<body class="locked">
+  <div id="loginScreen" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <form class="login-card" id="loginForm" autocomplete="on" novalidate>
+      <div class="brand">Räisä · Mökki</div>
+      <h1 class="title" id="loginTitle">Kirjaudu</h1>
+      <p class="hint">Mökin ohjaus on suojattu salasanalla.</p>
+      <input type="text" name="username" autocomplete="username" value="mokki" hidden readonly>
+      <label class="lbl-in" for="loginPw">Salasana</label>
+      <input type="password" id="loginPw" name="password" autocomplete="current-password" required autofocus enterkeyhint="go" aria-describedby="loginErr">
+      <label class="remember"><input type="checkbox" id="loginRemember" checked> Muista minut tällä laitteella</label>
+      <button class="btn primary" type="submit" id="loginBtn">Kirjaudu</button>
+      <div class="login-err" id="loginErr" role="alert" aria-live="assertive"></div>
+      <div class="login-foot">Muistettu kirjautuminen on voimassa 180 päivää. Viisi väärää yritystä lukitsee kirjautumisen 15 minuutiksi.</div>
+    </form>
+  </div>
   <header class="top">
     <div>
       <div class="brand">Räisä · Mökki</div>
@@ -486,22 +536,24 @@
   <div class="chart-panel" data-chart-panel="spot" hidden></div>
 
   <section class="costs" aria-label="Sähkökustannus">
-    <article class="cost">
+    <article class="cost" data-chart="ebars7" role="button" tabindex="0" aria-expanded="false">
       <div class="lbl">Tänään</div>
       <div class="eur" id="costDay">—<span>€</span></div>
       <div class="sub" id="kwhDay">— kWh</div>
     </article>
-    <article class="cost">
+    <article class="cost" data-chart="ebars7" role="button" tabindex="0" aria-expanded="false">
       <div class="lbl">Viikko</div>
       <div class="eur" id="costWeek">—<span>€</span></div>
       <div class="sub" id="kwhWeek">— kWh</div>
     </article>
-    <article class="cost">
+    <article class="cost" data-chart="ebarsM" role="button" tabindex="0" aria-expanded="false">
       <div class="lbl">Kuukausi</div>
       <div class="eur" id="costMonth">—<span>€</span></div>
       <div class="sub" id="kwhMonth">— kWh</div>
     </article>
   </section>
+  <div class="chart-panel" data-chart-panel="ebars7" hidden></div>
+  <div class="chart-panel" data-chart-panel="ebarsM" hidden></div>
 
   <section class="metrics" aria-label="Lämpötilat">
     <article class="metric" data-chart="indoor" role="button" tabindex="0">
@@ -625,16 +677,12 @@
   </section>
 
   <div class="settings-panel" id="settingsPanel" hidden>
-    <div class="lbl">Shelly Cloud · server</div>
-    <input type="url" id="shellyServer" placeholder="https://shelly-273-eu.shelly.cloud" autocomplete="off" spellcheck="false">
-    <div class="lbl" style="margin-top:14px">Pilviavain (auth_key)</div>
-    <input type="password" id="shellyAuth" placeholder="Liitä mökin Shelly-pilviavain" autocomplete="off" spellcheck="false">
-    <div class="lbl" style="margin-top:14px">ILP + Vallox · ohjausavain</div>
-    <input type="password" id="mokkiToken" placeholder="Välityspalvelimen avain (linkistä #t=…)" autocomplete="off" spellcheck="false">
-    <div class="row" style="margin-top:12px">
-      <button class="btn primary" type="button" id="saveShelly">Tallenna &amp; yhdistä</button>
+    <div class="lbl">Istunto</div>
+    <div class="sess-row">
+      <span class="hint" id="sessInfo">—</span>
+      <button class="link-btn" type="button" id="logoutBtn">Kirjaudu ulos</button>
     </div>
-    <p class="hint" style="margin:12px 0 0">Avain: Shelly-sovellus → Asetukset → Kotiin → Pääsy ja käyttöoikeudet → Pilviavain. Tallennus vain tähän selaimeen. Tila päivittyy suoraan Shellystä (~15 s) — ei bot-rutiinia.</p>
+    <p class="hint" style="margin:12px 0 0">Shelly, ILP ja Vallox kulkevat mökin välityspalvelimen kautta — laiteavaimia ei tallenneta selaimeen. Tila päivittyy ~15 s välein.</p>
   </div>
 
   <footer class="foot">
@@ -645,13 +693,11 @@
 
 <script>
 (function () {
-  var LS_SHELLY_SERVER = "mokkiShellyServer";
-  var LS_SHELLY_AUTH = "mokkiShellyAuth";
-  var DEFAULT_SERVER = "https://shelly-273-eu.shelly.cloud";
-  // ILP (Gree/EWPE) + Vallox kulkevat oman Cloudflare Worker -välityspalvelimen kautta
-  // (valmistajien pilvet estävät selaimen CORSin). Avain: linkin #t=… → localStorage + eväste.
+  // Kaikki (Shelly, ILP/Gree, Vallox, historia, kulutus) kulkee oman Cloudflare Worker -välityspalvelimen
+  // kautta. Kirjautuminen: salasana → allekirjoitettu istuntotunniste (Authorization: Bearer).
+  // Selaimeen ei tallenneta laiteavaimia.
   var WORKER_URL = "https://mokki-proxy.jussi-raisa.workers.dev";
-  var LS_MOKKI_TOKEN = "mokkiProxyToken";
+  var LS_SESSION = "mokkiSession";
   var CLIM_POLL_MS = 60000;
   var DEVICES = [{"name": "Ulkovalot", "id": "34987a496fc8", "channel": 0, "kind": "light"}, {"name": "Pihavalot", "id": "841fe898cd14", "channel": 2, "kind": "switch"}, {"name": "WC peili", "id": "2cbcbba77ee0", "channel": 0, "kind": "light"}, {"name": "Ruokapöytä", "id": "fce8c0cc4010", "channel": 1, "kind": "light"}, {"name": "Eteinen", "id": "fce8c0cc4010", "channel": 0, "kind": "light"}, {"name": "Keittiö", "id": "08f9e0e4be14", "channel": 0, "kind": "light"}, {"name": "Makuusoppi", "id": "08f9e0e4b558", "channel": 0, "kind": "light"}, {"name": "Varastosoppi", "id": "08f9e0e4b558", "channel": 1, "kind": "light"}, {"name": "Parvi valot", "id": "08f9e0e4c028", "channel": 0, "kind": "light"}, {"name": "Parvi oikea", "id": "08f9e0e4c028", "channel": 1, "kind": "light"}, {"name": "Seinävalot", "id": "2cbcbb9f3f6c", "channel": 0, "kind": "light"}, {"name": "Olohuone valo", "id": "2cbcbb9f3f6c", "channel": 1, "kind": "light"}, {"name": "2) sauna", "id": "2cbcbba77ee0", "channel": 1, "kind": "light"}, {"name": "2)pukuhuone", "id": "08f9e0e4be14", "channel": 1, "kind": "light"}, {"name": "Iltavalot", "id": "441793a9c664", "channel": 0, "kind": "switch"}];
   var MAIN_LIGHTS = ["Ulkovalot", "Pihavalot", "WC peili", "Ruokapöytä", "Eteinen", "Keittiö", "Seinävalot", "Olohuone valo", "Parvi valot", "Parvi oikea", "Makuusoppi", "Varastosoppi", "2)pukuhuone", "2) sauna", "Iltavalot"];
@@ -673,13 +719,11 @@
   var COST_CFG = {
     transferSnt: 8.12,
     vat: 1.255,
-    emId: "a4f00fcc6468",
-    emChannel: 0,
-    // Shelly Cloud statistics/power-consumption returns inflated kWh on this Pro3EM63
-    // Calibrated 2026-09-29 against mittari: 185.67 cloud → 13.3 kWh real (÷14).
-    energyDivisor: 14
+    // kWh: Shelly EM-3p -tilasto (3 vaihetta, oikeat Wh) välityspalvelimen /energy/summary -reitiltä.
+    // (Vanha ÷14-kerroin koski toista tilastoreittiä, joka heitteli; em-3p täsmäsi mittariin 29.9.)
+    emId: "a4f00fcc6468"
   };
-  var LS_EM_DAY = "mokkiEmDayBaseline";
+  var ENERGY = null; // viimeisin /energy/summary
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
@@ -706,30 +750,59 @@
     clearTimeout(toast._t);
     toast._t = setTimeout(function () { el.className = "toast"; }, 2200);
   }
-  // Pysyvä avain: #k=AVAIN linkistä → localStorage + 10v eväste (hash ei lähde palvelimelle)
-  function _ck(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):"";}
-  function _setCk(n,v){document.cookie=n+"="+encodeURIComponent(v)+"; max-age=315360000; path=/; SameSite=Lax; Secure";}
-  (function persistKey(){
-    try{
-      var h=new URLSearchParams((location.hash||"").replace(/^#/,""));
-      var k=h.get("k"), sv=h.get("s"), tk=h.get("t");
-      if(k){localStorage.setItem(LS_SHELLY_AUTH,k.trim());_setCk("mk_a",k.trim());}
-      if(sv){localStorage.setItem(LS_SHELLY_SERVER,sv.trim().replace(/\/$/,""));_setCk("mk_s",sv.trim());}
-      if(tk){localStorage.setItem(LS_MOKKI_TOKEN,tk.trim());_setCk("mk_t",tk.trim());}
-      if(k||sv||tk) history.replaceState(null,"",location.pathname+location.search);
-      if(!localStorage.getItem(LS_SHELLY_AUTH)&&_ck("mk_a")) localStorage.setItem(LS_SHELLY_AUTH,_ck("mk_a"));
-      if(!localStorage.getItem(LS_SHELLY_SERVER)&&_ck("mk_s")) localStorage.setItem(LS_SHELLY_SERVER,_ck("mk_s"));
-      if(!localStorage.getItem(LS_MOKKI_TOKEN)&&_ck("mk_t")) localStorage.setItem(LS_MOKKI_TOKEN,_ck("mk_t"));
-      if(localStorage.getItem(LS_SHELLY_AUTH)&&!_ck("mk_a")) _setCk("mk_a",localStorage.getItem(LS_SHELLY_AUTH));
-      if(localStorage.getItem(LS_MOKKI_TOKEN)&&!_ck("mk_t")) _setCk("mk_t",localStorage.getItem(LS_MOKKI_TOKEN));
-      if(navigator.storage&&navigator.storage.persist) navigator.storage.persist();
-    }catch(e){}
+  // ---------- Kirjautuminen / istunto ----------
+  // Siivotaan vanhat avaimet: Shelly-pilviavain ja vanha välitysavain (evästeet mk_a/mk_s/mk_t + localStorage).
+  (function purgeLegacyKeys() {
+    try {
+      ["mk_a", "mk_s", "mk_t"].forEach(function (n) {
+        document.cookie = n + "=; max-age=0; path=/; SameSite=Lax; Secure";
+        document.cookie = n + "=; max-age=0; path=/";
+        document.cookie = n + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=" + location.pathname;
+      });
+      ["mokkiShellyAuth", "mokkiShellyServer", "mokkiProxyToken", "mokkiEmDayBaseline"].forEach(function (k) {
+        localStorage.removeItem(k);
+      });
+      // vanhat linkit (#k=…&s=…&t=…): avaimia ei enää käytetä → poistetaan osoiteriviltä
+      if (/(^#|&)(k|s|t)=/.test(location.hash || "")) history.replaceState(null, "", location.pathname + location.search);
+    } catch (e) {}
   })();
-  function shellyServer() {
-    return (localStorage.getItem(LS_SHELLY_SERVER) || DEFAULT_SERVER).trim().replace(/\/$/, "");
+  function sessRead() {
+    var raw = null;
+    try { raw = localStorage.getItem(LS_SESSION) || sessionStorage.getItem(LS_SESSION); } catch (e) {}
+    if (!raw) return null;
+    try {
+      var o = JSON.parse(raw);
+      if (!o || !o.token || !(Number(o.exp) > Date.now() + 60000)) { sessClear(); return null; }
+      return o;
+    } catch (e) { sessClear(); return null; }
   }
-  function shellyAuth() {
-    return (localStorage.getItem(LS_SHELLY_AUTH) || "").trim();
+  function sessSave(o, remember) {
+    sessClear();
+    try { (remember ? localStorage : sessionStorage).setItem(LS_SESSION, JSON.stringify(o)); } catch (e) {}
+    if (remember && navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {});
+  }
+  function sessClear() {
+    try { localStorage.removeItem(LS_SESSION); sessionStorage.removeItem(LS_SESSION); } catch (e) {}
+  }
+  function hasSession() { return !!sessRead(); }
+  function authFail() {
+    // 401 miltä tahansa reitiltä → istunto ei kelpaa → kirjautuminen
+    if (!hasSession() && document.body.classList.contains("locked")) return;
+    sessClear();
+    showLogin("Istunto on vanhentunut. Kirjaudu uudelleen.", "info");
+  }
+  function api(path, body) {
+    var s0 = sessRead();
+    if (!s0) { authFail(); return Promise.reject(new Error("ei kirjautunut")); }
+    var opts = { method: body ? "POST" : "GET", mode: "cors", cache: "no-store", headers: { "Authorization": "Bearer " + s0.token } };
+    if (body) { opts.headers["Content-Type"] = "application/json"; opts.body = JSON.stringify(body); }
+    return fetch(WORKER_URL + path, opts).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (r.status === 401) { authFail(); var e1 = new Error("kirjautuminen vaaditaan"); e1.status = 401; throw e1; }
+        if (!r.ok) { var e2 = new Error(r.status === 429 ? "429" : ((j && j.error) || ("HTTP " + r.status))); e2.status = r.status; throw e2; }
+        return j;
+      });
+    });
   }
   function findDev(name) {
     var n = String(name || "").toLowerCase();
@@ -739,16 +812,12 @@
     return null;
   }
   function refreshHint() {
-    var s = shellyAuth();
-    document.getElementById("hookHint").textContent = s ? "Shelly avain OK" : "Shelly-avain puuttuu";
-    document.getElementById("shellyServer").value = shellyServer();
-    document.getElementById("shellyAuth").value = s;
-    document.getElementById("mokkiToken").value = mokkiToken();
-    if (!s) {
-      setLive(false, "Lisää avain");
-      document.getElementById("settingsPanel").hidden = false;
-      document.getElementById("settingsToggle").setAttribute("aria-expanded", "true");
-    }
+    var s0 = sessRead();
+    document.getElementById("hookHint").textContent = s0 ? "Kirjautunut" : "Ei kirjautunut";
+    var d = s0 ? new Date(Number(s0.exp)) : null;
+    document.getElementById("sessInfo").textContent = s0
+      ? "Kirjautuneena · voimassa " + d.toLocaleDateString("fi-FI", { timeZone: "Europe/Helsinki" }) + " asti" + (s0.remember === false ? " (vain tämä istunto)" : "")
+      : "Ei kirjautunut";
   }
   function setLive(ok, text) {
     _liveOk = !!ok;
@@ -766,27 +835,12 @@
     });
   }
   function shellySet(dev, on) {
-    var auth = shellyAuth();
-    if (!auth) {
-      toast("Lisää Shelly-avain", "err");
-      return Promise.reject(new Error("no auth"));
-    }
-    _shellyQ = _shellyQ.then(function () { return shellyPace(); }).then(function () {
-      var kind = dev.kind || "light";
-      var url = shellyServer() + "/v2/devices/api/set/" + kind + "?auth_key=" + encodeURIComponent(auth);
-      var body = JSON.stringify({ id: dev.id, channel: Number(dev.channel) || 0, on: !!on });
-      return fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: body })
-        .then(function (r) {
-          if (r.ok) return r;
-          if (r.status === 429) throw new Error("429 rate limit — odota hetki");
-          var alt = kind === "light" ? "switch" : "light";
-          var url2 = shellyServer() + "/v2/devices/api/set/" + alt + "?auth_key=" + encodeURIComponent(auth);
-          return shellyPace().then(function () {
-            return fetch(url2, { method: "POST", headers: { "Content-Type": "application/json" }, body: body });
-          });
-        }).then(function (r) {
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          return r;
+    // Ohjaus kulkee välityspalvelimen kautta (sallittujen laitteiden lista palvelimella), ~1,1 s tahdistus.
+    _shellyQ = _shellyQ.catch(function () {}).then(function () { return shellyPace(); }).then(function () {
+      return api("/shelly/set", { id: dev.id, channel: Number(dev.channel) || 0, on: !!on, kind: dev.kind || "light" })
+        .catch(function (e) {
+          if (e && e.message === "429") throw new Error("429 rate limit — odota hetki");
+          throw e;
         });
     });
     return _shellyQ;
@@ -861,139 +915,9 @@
       dateStr: parts.year + "-" + parts.month + "-" + parts.day
     };
   }
-  function parseShellyLocal(dt) {
-    // "2026-09-29 07:00:00" Europe/Helsinki wall time → Date
-    if (!dt) return null;
-    var m = String(dt).match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
-    if (!m) return null;
-    var y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]), h = Number(m[4]), mi = Number(m[5]);
-    // Convert Helsinki wall to UTC via known offset for that civil time
-    var guess = Date.UTC(y, mo - 1, d, h, mi, 0);
-    for (var i = 0; i < 3; i++) {
-      var hp = helsinkiParts(new Date(guess));
-      var got = Date.UTC(Number(hp.y), Number(hp.m) - 1, Number(hp.day), Number(hp.hour), Number(hp.minute || 0), 0);
-      var want = Date.UTC(y, mo - 1, d, h, mi, 0);
-      guess += want - got;
-    }
-    return new Date(guess);
-  }
   function hourKeyHelsinki(dateObj) {
     var p = helsinkiParts(dateObj);
     return p.dateStr + "T" + p.hour;
-  }
-  function scaledKwh(raw) {
-    var n = Number(raw);
-    if (!(n > 0)) return 0;
-    return n / (COST_CFG.energyDivisor || 1);
-  }
-  function loadSpotPrices() {
-    var now = new Date();
-    var p = helsinkiParts(now);
-    // month start → tomorrow end, in UTC ISO for sahkotin
-    var monthStart = new Date(Date.UTC(Number(p.y), Number(p.m) - 1, 1, 0, 0, 0));
-    // pad: fetch from day -1 to catch timezone
-    var start = new Date(monthStart.getTime() - 2 * 86400000);
-    var end = new Date(now.getTime() + 2 * 86400000);
-    var url = "https://sahkotin.fi/prices?tax=0&start=" + encodeURIComponent(start.toISOString()) +
-      "&end=" + encodeURIComponent(end.toISOString());
-    return fetch(url, { mode: "cors", cache: "no-store" })
-      .then(function (r) {
-        if (!r.ok) throw new Error("spot HTTP " + r.status);
-        return r.json();
-      })
-      .then(function (j) {
-        var map = {}; // Helsinki hour key → snt/kWh sis. ALV
-        (j.prices || []).forEach(function (row) {
-          var t = new Date(row.date);
-          var key = hourKeyHelsinki(t);
-          // value EUR/MWh without VAT → snt/kWh with VAT
-          var snt = (Number(row.value) / 10) * COST_CFG.vat;
-          map[key] = snt;
-        });
-        return map;
-      });
-  }
-  function shellyEnergy(range) {
-    var auth = shellyAuth();
-    if (!auth) return Promise.reject(new Error("no auth"));
-    return shellyPace().then(function () {
-      var qs = "auth_key=" + encodeURIComponent(auth) +
-        "&id=" + encodeURIComponent(COST_CFG.emId) +
-        "&channel=" + COST_CFG.emChannel +
-        "&date_range=" + encodeURIComponent(range);
-      var url = shellyServer() + "/v2/statistics/power-consumption?" + qs;
-      return fetch(url, { method: "GET", mode: "cors", cache: "no-store" })
-        .then(function (r) {
-          if (r.status === 429) throw new Error("429");
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          return r.json();
-        });
-    });
-  }
-  function priceAt(spotMap, when) {
-    if (!when) return null;
-    var key = hourKeyHelsinki(when);
-    if (spotMap[key] != null) return spotMap[key];
-    // fallback nearest earlier hour within 6h
-    for (var i = 1; i <= 6; i++) {
-      var t = new Date(when.getTime() - i * 3600000);
-      var k = hourKeyHelsinki(t);
-      if (spotMap[k] != null) return spotMap[k];
-    }
-    return null;
-  }
-  function dayAvgSpot(spotMap, dateStr) {
-    var sum = 0, n = 0;
-    for (var h = 0; h < 24; h++) {
-      var key = dateStr + "T" + String(h).padStart(2, "0");
-      if (spotMap[key] != null) { sum += spotMap[key]; n++; }
-    }
-    return n ? sum / n : null;
-  }
-  function sumCostHourly(history, spotMap, dateStr) {
-    var kwh = 0, eur = 0, matched = 0, missingPrice = 0;
-    (history || []).forEach(function (row) {
-      if (row.missing) return;
-      var dt = String(row.datetime || "");
-      if (dateStr && dt.slice(0, 10) !== dateStr) return;
-      var c = scaledKwh(row.consumption);
-      if (!(c > 0)) return;
-      kwh += c;
-      var when = parseShellyLocal(dt);
-      var spot = priceAt(spotMap, when);
-      if (spot == null) { missingPrice += c; return; }
-      matched += c;
-      eur += c * (spot + COST_CFG.transferSnt) / 100;
-    });
-    // leftover without spot: use day avg or overall avg
-    if (missingPrice > 0) {
-      var avg = dayAvgSpot(spotMap, dateStr);
-      if (avg == null) {
-        var vals = Object.keys(spotMap).map(function (k) { return spotMap[k]; });
-        avg = vals.length ? vals.reduce(function (a, b) { return a + b; }, 0) / vals.length : null;
-      }
-      if (avg != null) eur += missingPrice * (avg + COST_CFG.transferSnt) / 100;
-    }
-    return { kwh: kwh, eur: eur };
-  }
-  function sumCostDaily(history, spotMap, keepFn) {
-    var kwh = 0, eur = 0;
-    (history || []).forEach(function (row) {
-      if (row.missing) return;
-      var dt = String(row.datetime || "");
-      var dateStr = dt.slice(0, 10);
-      if (keepFn && !keepFn(dateStr)) return;
-      var c = scaledKwh(row.consumption);
-      if (!(c > 0)) return;
-      kwh += c;
-      var avg = dayAvgSpot(spotMap, dateStr);
-      if (avg == null) {
-        var vals = Object.keys(spotMap).map(function (k) { return spotMap[k]; });
-        avg = vals.length ? vals.reduce(function (a, b) { return a + b; }, 0) / vals.length : 0;
-      }
-      eur += c * (avg + COST_CFG.transferSnt) / 100;
-    });
-    return { kwh: kwh, eur: eur };
   }
   function paintCost() {
     function set(idEur, idKwh, block) {
@@ -1020,65 +944,24 @@
   function refreshCosts(force) {
     if (_costBusy) return;
     if (!force && _costLast && (Date.now() - _costLast < 4 * 60 * 1000)) return;
-    if (!shellyAuth()) return;
+    if (!hasSession()) return;
     _costBusy = true;
-    var today = helsinkiParts(new Date()).dateStr;
-    var monthPrefix = today.slice(0, 7); // YYYY-MM
-    var weekCut = new Date(Date.now() - 6 * 86400000);
-    var weekStart = helsinkiParts(weekCut).dateStr;
-
-    loadSpotPrices()
-      .then(function (spotMap) {
-        var nowKey = hourKeyHelsinki(new Date());
-        COST.spotNow = spotMap[nowKey] != null ? spotMap[nowKey] : null;
-        var todayVals = [];
-        Object.keys(spotMap).forEach(function (k) {
-          if (k.indexOf(today) === 0) todayVals.push(spotMap[k]);
-        });
-        COST.spotAvg = todayVals.length ? todayVals.reduce(function (a, b) { return a + b; }, 0) / todayVals.length : null;
-
-        return shellyEnergy("day").then(function (dayJ) {
-          COST.day = sumCostHourly(dayJ.history || [], spotMap, today);
-          return shellyEnergy("week").then(function (weekJ) {
-            COST.week = sumCostDaily(weekJ.history || [], spotMap, function (ds) {
-              return ds >= weekStart && ds <= today;
-            });
-            return shellyEnergy("month").then(function (monthJ) {
-              COST.month = sumCostDaily(monthJ.history || [], spotMap, function (ds) {
-                return ds.indexOf(monthPrefix) === 0 && ds <= today;
-              });
-            });
-          });
-        });
-
-            // Refine "today" with live total_act Wh when possible (more stable than cloud stats)
-            if (DATA && DATA.totalActWh != null && !isNaN(DATA.totalActWh)) {
-              try {
-                var baseRaw = localStorage.getItem(LS_EM_DAY);
-                var base = baseRaw ? JSON.parse(baseRaw) : null;
-                if (!base || base.date !== today || base.totalActWh == null) {
-                  // Seed baseline so that today matches scaled stats right now
-                  var seedWh = DATA.totalActWh - (COST.day && COST.day.kwh ? COST.day.kwh * 1000 : 0);
-                  base = { date: today, totalActWh: seedWh };
-                  localStorage.setItem(LS_EM_DAY, JSON.stringify(base));
-                }
-                var liveKwh = Math.max(0, (DATA.totalActWh - Number(base.totalActWh)) / 1000);
-                if (COST.day) {
-                  // Prefer live counter for kWh; keep € proportional if stats had cost
-                  if (COST.day.kwh > 0.05) {
-                    var ratio = liveKwh / COST.day.kwh;
-                    COST.day = { kwh: liveKwh, eur: COST.day.eur * ratio };
-                  } else {
-                    var spotUse = COST.spotAvg != null ? COST.spotAvg : (COST.spotNow != null ? COST.spotNow : 0);
-                    COST.day = { kwh: liveKwh, eur: liveKwh * (spotUse + COST_CFG.transferSnt) / 100 };
-                  }
-                }
-              } catch (e) {}
-            }
-      })
-      .then(function () {
+    api("/energy/summary")
+      .then(function (j) {
+        ENERGY = j; ENERGY._at = Date.now();
+        COST.day = j.today && j.today.kwh != null ? { kwh: j.today.kwh, eur: j.today.eur || 0 } : null;
+        COST.week = j.weekTotal || null;
+        COST.month = j.monthTotal || null;
+        COST.spotNow = j.spotNow;
+        COST.spotAvg = j.spotTodayAvg;
         _costLast = Date.now();
+        document.getElementById("costHint").textContent = "Pörssi + Savon Voima siirto+vero 8,12 snt/kWh · ei perusmaksua · napauta korttia: päiväpylväät";
         paintCost();
+        ["ebars7", "ebarsM"].forEach(function (k) { if (CH_OPEN[k]) renderChart(k); });
+        if (j.pendingHourly > 0 && !refreshCosts._retry) {
+          // palvelin täydentää tuntitarkkuutta taustalla → haetaan kerran uudelleen
+          refreshCosts._retry = setTimeout(function () { refreshCosts._retry = null; _costLast = 0; refreshCosts(true); }, 45000);
+        }
       })
       .catch(function (e) {
         console.warn("cost refresh", e);
@@ -1224,31 +1107,20 @@
   }
 
   function pull() {
-    if (_pullBusy) return;
-    var auth = shellyAuth();
-    if (!auth) {
-      setLive(false, "Lisää avain");
-      document.getElementById("age").textContent = "Lisää Shelly-avain asetuksista";
-      document.getElementById("age").className = "stale";
-      return;
-    }
+    if (_pullBusy || !hasSession()) return;
     _pullBusy = true;
-    var url = shellyServer() + "/device/all_status?auth_key=" + encodeURIComponent(auth) + "&_=" + Date.now();
-    fetch(url, { method: "GET", mode: "cors", cache: "no-store" })
-      .then(function (r) {
-        if (r.status === 429) throw new Error("429");
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.json();
-      })
+    api("/shelly/status")
       .then(function (payload) {
         if (payload && payload.isok === false) throw new Error("Shelly hylkäsi");
         DATA = parseShellyAllStatus(payload);
+        if (payload && payload.ts) DATA.updated = Number(payload.ts);
         setLive(!!DATA.online, "Live");
         liveAppend({ ti: DATA.indoorC, to: DATA.outdoorC, p: DATA.powerW });
         paint();
         refreshCosts(false);
       })
       .catch(function (e) {
+        if (e && e.status === 401) return;
         var msg = e && e.message ? e.message : "virhe";
         setLive(false, msg === "429" ? "Rate limit" : "Virhe");
         document.getElementById("age").textContent = "Live epäonnistui · " + msg;
@@ -1273,15 +1145,10 @@
   var VX_FI = { home: "Kotona", away: "Poissa", boost: "Tehostus", fireplace: "Takka", adaptive: "Adaptiivinen" };
 
   function workerUrl() {
-    var u = String(WORKER_URL || "").trim().replace(/\/$/, "");
-    return (!u || /REPLACE/.test(u)) ? "" : u;
-  }
-  function mokkiToken() {
-    return (localStorage.getItem(LS_MOKKI_TOKEN) || "").trim();
+    return String(WORKER_URL || "").trim().replace(/\/$/, "");
   }
   function climNote() {
-    if (!workerUrl()) return "<strong>Ei vielä käytössä</strong> — välityspalvelinta (Worker) ei ole vielä otettu käyttöön. Ohjaa toistaiseksi chatissa.";
-    if (!mokkiToken()) return "<strong>Ohjausavain puuttuu</strong> — avaa sivu linkillä, jossa on <code>#t=…</code>, tai lisää avain asetuksista (⚙).";
+    if (!workerUrl()) return "<strong>Ei vielä käytössä</strong> — välityspalvelinta (Worker) ei ole otettu käyttöön.";
     return "";
   }
   function paintClimShell() {
@@ -1298,19 +1165,9 @@
     document.getElementById("vxChip").hidden = !!note;
     return !note;
   }
-  function mokkiApi(path, body) {
-    var opts = { method: body ? "POST" : "GET", mode: "cors", cache: "no-store", headers: { "X-Mokki-Token": mokkiToken() } };
-    if (body) { opts.headers["Content-Type"] = "application/json"; opts.body = JSON.stringify(body); }
-    return fetch(workerUrl() + path, opts).then(function (r) {
-      return r.json().catch(function () { return {}; }).then(function (j) {
-        if (r.status === 401) throw new Error("ohjausavain ei kelpaa");
-        if (!r.ok) throw new Error((j && j.error) || ("HTTP " + r.status));
-        return j;
-      });
-    });
-  }
+  function mokkiApi(path, body) { return api(path, body); }
   function climPull(force) {
-    if (!paintClimShell()) return;
+    if (!paintClimShell() || !hasSession()) return;
     if (_climBusy) return;
     if (!force && _climLast && Date.now() - _climLast < CLIM_POLL_MS - 2000) return; // ei tiheämmin kuin ~60 s
     _climBusy = true;
@@ -1322,6 +1179,7 @@
       if (il && !il.error) { lv.ii = il.indoorC; lv.is = il.setC; lv.io = il.on == null ? null : (il.on ? 1 : 0); }
       liveAppend(lv);
     }).catch(function (e) {
+      if (e && e.status === 401) return;
       _climErr = e && e.message ? e.message : "yhteysvirhe";
     }).finally(function () {
       _climBusy = false;
@@ -1499,7 +1357,9 @@
   var CH_OPEN = {};         // key -> hours
   var HIST_REFRESH_MS = 5 * 60 * 1000;
   var CHARTS = {
-    power:   { title: "Sähköteho", unit: "W", dec: 0, series: [{ k: "p", label: "Kokonaisteho", color: "#4ecdc4", area: true, backfill: true }] },
+    power:   { title: "Sähköteho + pörssihinta", unit: "W", dec: 0, spot2: true, series: [{ k: "p", label: "Kokonaisteho (W)", color: "#4ecdc4", area: true, backfill: true }, { k: "sp", label: "Pörssi snt/kWh (oikea asteikko)", color: "#e3c36a", step: true, thin: true, axis2: true, unit: "snt", dec: 1 }] },
+    ebars7:  { title: "Sähkönkulutus · 7 vrk", bars: "week" },
+    ebarsM:  { title: "Sähkönkulutus · kuukausi", bars: "month" },
     spot:    { title: "Pörssisähkö (sis. ALV)", unit: "snt", dec: 1, spot: true, series: [{ k: "sp", label: "snt/kWh", color: "#e3c36a", step: true, area: true }] },
     indoor:  { title: "Sisälämpötila", unit: "°", dec: 1, series: [{ k: "ti", label: "Sisä · Shelly", color: "#e3c36a" }, { k: "ii", label: "ILP-anturi", color: "#7eb8e0", thin: true }, { k: "ve", label: "Vallox poisto", color: "#a8b0bc", thin: true }] },
     outdoor: { title: "Ulkolämpötila", unit: "°", dec: 1, series: [{ k: "to", label: "Ulko · Shelly", color: "#7eb8e0" }, { k: "vo", label: "Vallox ulko", color: "#a8b0bc", thin: true }] },
@@ -1563,6 +1423,18 @@
     var el = document.querySelector('[data-chart-panel="' + key + '"]');
     var cfg = CHARTS[key];
     var h = CH_OPEN[key] || 24;
+    if (cfg.bars) {
+      if (!el.getAttribute("data-built")) {
+        el.innerHTML = '<div class="ch-head"><div class="ch-title">' + esc(cfg.title) + '</div>' +
+          '<div class="ch-range" role="group" aria-label="Yksikkö">' +
+          [["kwh", "kWh"], ["eur", "€"]].map(function (r) { return '<button type="button" data-eb-metric="' + r[0] + '">' + r[1] + '</button>'; }).join("") +
+          '</div></div><div class="ch-legend"></div><div class="ch-plot"></div><div class="ch-foot"><span class="ch-stats">—</span><span class="ch-src">—</span></div>' +
+          (cfg.bars === "month" ? '<div class="ch-sec"><div class="ch-title">Kuukaudet</div><div class="ch-plot ch-plot2"></div><div class="ch-foot"><span class="ch-stats2">—</span><span class="ch-src2"></span></div></div>' : '');
+        el.setAttribute("data-built", "1");
+      }
+      el.querySelectorAll("[data-eb-metric]").forEach(function (b) { b.className = b.getAttribute("data-eb-metric") === EB_METRIC ? "on" : ""; });
+      return el;
+    }
     if (!el.getAttribute("data-built")) {
       el.innerHTML = '<div class="ch-head"><div class="ch-title">' + esc(cfg.title) + '</div>' +
         '<div class="ch-range" role="group" aria-label="Aikaväli">' +
@@ -1584,6 +1456,10 @@
       if (cfg.spot && spot) {
         spot.rows.forEach(function (r) { if (r.t >= from - 3600000) pts.push({ t: r.t, v: r.sp }); });
       } else {
+        if (sd.axis2 && cfg.spot2) {
+          if (SPOT_RAW) SPOT_RAW.rows.forEach(function (r) { if (r.t >= from - 3600000 && r.t <= now) pts.push({ t: r.t, v: r.sp }); });
+          out[sd.k] = pts; return;
+        }
         if (sd.backfill && cache && cache.backfill) cache.backfill.forEach(function (b) { if (b.t >= from && (!hist.length || b.t < hist[0].t)) pts.push({ t: b.t, v: b.p, bf: true }); });
         rows.forEach(function (r) { if (r[sd.k] != null && r.t >= from) pts.push({ t: r.t, v: Number(r[sd.k]) }); });
       }
@@ -1596,6 +1472,7 @@
   function renderChart(key, quiet) {
     if (!CH_OPEN[key]) return;
     var cfg = CHARTS[key], hours = CH_OPEN[key];
+    if (cfg.bars) return renderBars(key, quiet);
     var el = panelShell(key);
     var plot = el.querySelector(".ch-plot");
     var cache = HIST[hours], spot = cfg.spot ? SPOT_RAW : null;
@@ -1603,16 +1480,22 @@
     if (cfg.spot && !spot) { if (!quiet) plot.innerHTML = '<div class="empty" style="padding:30px 4px">Ladataan hintoja…</div>'; return; }
     var d = seriesPoints(key, hours, cache, spot);
     var W = Math.max(260, Math.round(plot.clientWidth || el.clientWidth - 28 || 600)), H = 190;
-    var padL = 36, padR = 58, padT = 10, padB = 22;
+    var has2 = cfg.series.some(function (sd) { return sd.axis2; });
+    var padL = 36, padR = has2 ? 96 : 58, padT = 10, padB = 22;
     var x0 = d.from, x1 = d.now;
     if (cfg.spot) { var last = spot.rows.length ? spot.rows[spot.rows.length - 1].t + 3600000 : x1; x1 = Math.max(x1, Math.min(last, d.now + 36 * 3600000)); }
     var all = [];
-    cfg.series.forEach(function (sd) { d.pts[sd.k].forEach(function (p) { if (p.t >= x0 - 3600000 && p.t <= x1) all.push(p.v); }); });
+    var all2 = [];
+    cfg.series.forEach(function (sd) { d.pts[sd.k].forEach(function (p) { if (p.t >= x0 - 3600000 && p.t <= x1) (sd.axis2 ? all2 : all).push(p.v); }); });
     (cfg.refs || []).forEach(function (r) { all.push(r.v); });
-    var legend = cfg.series.map(function (sd) { return '<span><i style="background:' + sd.color + '"></i>' + esc(sd.label) + '</span>'; }).join("");
+    var legend = cfg.series.map(function (sd) {
+      var extra = "";
+      if (sd.axis2 && SPOT_RAW) { var nowSp = null; SPOT_RAW.rows.forEach(function (r) { if (r.t <= Date.now()) nowSp = r.sp; }); if (nowSp != null) extra = " · nyt " + num(nowSp, 1); }
+      return '<span><i style="background:' + sd.color + '"></i>' + esc(sd.label + extra) + '</span>';
+    }).join("");
     if (cfg.onBand) legend += '<span><i style="background:rgba(227,195,106,.35);height:8px"></i>ILP päällä</span>';
     el.querySelector(".ch-legend").innerHTML = legend;
-    var hasData = cfg.series.some(function (sd) { return d.pts[sd.k].length; });
+    var hasData = cfg.series.some(function (sd) { return !sd.axis2 && d.pts[sd.k].length; });
     if (!hasData) {
       plot.innerHTML = '<div class="empty" style="padding:30px 4px">Ei vielä dataa tältä ajalta — näytteitä kertyy 5 min välein.</div>';
       el.querySelector(".ch-stats").textContent = "—";
@@ -1629,6 +1512,14 @@
     lo = Math.floor(lo / yStep) * yStep; hi = Math.ceil(hi / yStep) * yStep;
     var X = function (t) { return padL + (t - x0) / (x1 - x0) * (W - padL - padR); };
     var Y = function (v) { return padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB); };
+    var lo2 = 0, hi2 = 1, yStep2 = 1, Y2 = Y;
+    if (has2 && all2.length) {
+      lo2 = Math.min(0, Math.min.apply(null, all2)); hi2 = Math.max.apply(null, all2);
+      if (hi2 - lo2 < 5) hi2 = lo2 + 5;
+      yStep2 = niceStep(hi2 - lo2, 4);
+      lo2 = Math.floor(lo2 / yStep2) * yStep2; hi2 = Math.ceil(hi2 / yStep2) * yStep2;
+      Y2 = function (v) { return padT + (1 - (v - lo2) / (hi2 - lo2)) * (H - padT - padB); };
+    }
     var svg = '<svg class="ch-svg" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" role="img" aria-label="' + esc(cfg.title) + '">';
     svg += '<defs>' + cfg.series.map(function (sd, i) { return '<linearGradient id="g_' + key + i + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + sd.color + '" stop-opacity=".28"/><stop offset="1" stop-color="' + sd.color + '" stop-opacity="0"/></linearGradient>'; }).join("") + '</defs>';
     // ILP päällä -vyöhykkeet
@@ -1645,6 +1536,12 @@
       var yy = Y(yv).toFixed(1);
       svg += '<line x1="' + padL + '" x2="' + (W - padR) + '" y1="' + yy + '" y2="' + yy + '" stroke="rgba(255,255,255,.06)"/>';
       svg += '<text x="' + (padL - 6) + '" y="' + (Number(yy) + 3.5) + '" text-anchor="end">' + esc(num(yv, yStep < 1 ? 1 : 0)) + '</text>';
+    }
+    if (has2 && all2.length) {
+      var c2 = (cfg.series.filter(function (sd) { return sd.axis2; })[0] || {}).color || "#e3c36a";
+      for (var yv2 = lo2; yv2 <= hi2 + 1e-9; yv2 += yStep2) {
+        svg += '<text x="' + (W - padR + 6) + '" y="' + (Y2(yv2) + 3.5).toFixed(1) + '" text-anchor="start" style="fill:' + c2 + ';opacity:.8">' + esc(num(yv2, yStep2 < 1 ? 1 : 0)) + '</text>';
+      }
     }
     // x-akseli Helsingin ajassa
     var plotW = W - padL - padR, spanH = (x1 - x0) / 3600000;
@@ -1674,27 +1571,28 @@
     cfg.series.forEach(function (sd, si) {
       var pts = d.pts[sd.k].filter(function (p) { return p.t >= x0 - 3600000 && p.t <= x1 + 3600000; });
       if (!pts.length) return;
+      var YY = sd.axis2 ? Y2 : Y;
       var gapMs = hours > 48 ? 50 * 60000 : 25 * 60000;
       var segs = [], seg = [];
       pts.forEach(function (p, i) {
         var prev = pts[i - 1];
-        var g = prev && (prev.bf || p.bf) ? 100 * 60000 : cfg.spot ? 3 * 3600000 : gapMs;
+        var g = prev && (prev.bf || p.bf) ? 100 * 60000 : (cfg.spot || sd.axis2) ? 3 * 3600000 : gapMs;
         if (prev && p.t - prev.t > g) { segs.push(seg); seg = []; }
         seg.push(p);
       });
       segs.push(seg);
-      segs.forEach(function (sg) {
+      segs.forEach(function (sg, sgi) {
         if (!sg.length) return;
         var dstr = "";
         sg.forEach(function (p, i) {
-          var px = X(Math.max(x0, Math.min(x1, p.t))), py = Y(p.v);
+          var px = X(Math.max(x0, Math.min(x1, p.t))), py = YY(p.v);
           if (i === 0) dstr += "M" + px.toFixed(1) + " " + py.toFixed(1);
           else if (sd.step) dstr += "H" + px.toFixed(1) + "V" + py.toFixed(1);
           else dstr += "L" + px.toFixed(1) + " " + py.toFixed(1);
         });
         var lastP = sg[sg.length - 1];
         if (sd.step || cfg.spot) {
-          var endT = cfg.spot ? Math.min(x1, lastP.t + 3600000) : lastP.t;
+          var endT = cfg.spot ? Math.min(x1, lastP.t + 3600000) : sd.axis2 ? (sgi === segs.length - 1 ? x1 : Math.min(x1, lastP.t + 3600000)) : lastP.t;
           dstr += "H" + X(endT).toFixed(1);
         } else if (sg.length === 1) {
           dstr += "h2";
@@ -1711,6 +1609,7 @@
       var cur = null;
       if (cfg.spot) { for (var ci = pts.length - 1; ci >= 0; ci--) if (pts[ci].t <= d.now) { cur = { t: d.now, v: pts[ci].v }; break; } }
       else cur = pts[pts.length - 1];
+      if (cur && sd.axis2) cur = null; // oikean asteikon nykyarvo näkyy selitteessä
       if (cur) {
         var cx = X(Math.min(x1, cur.t)), cy = Y(cur.v);
         svg += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + (sd.thin ? 3 : 4.2) + '" fill="' + sd.color + '" stroke="#0b0f14" stroke-width="1.5"/>';
@@ -1721,7 +1620,7 @@
     curLabels.sort(function (a, b) { return a.y - b.y; });
     for (var li = 1; li < curLabels.length; li++) if (curLabels[li].y - curLabels[li - 1].y < 13) curLabels[li].y = curLabels[li - 1].y + 13;
     curLabels.forEach(function (l) {
-      svg += '<text class="cur" x="' + (W - padR + 8) + '" y="' + (Math.max(padT + 8, Math.min(H - padB, l.y)) + 4).toFixed(1) + '" style="fill:' + l.color + (l.main ? "" : ";font-size:10.5px") + '">' + esc(l.txt) + '</text>';
+      svg += '<text class="cur" x="' + (has2 ? W - 40 : W - padR + 8) + '" y="' + (Math.max(padT + 8, Math.min(H - padB, l.y)) + 4).toFixed(1) + '" style="fill:' + l.color + (l.main ? "" : ";font-size:10.5px") + '">' + esc(l.txt) + '</text>';
     });
     svg += '<line class="ch-cursor" x1="0" x2="0" y1="' + padT + '" y2="' + (H - padB) + '" stroke="rgba(244,241,234,.4)" visibility="hidden"/>';
     svg += '</svg>';
@@ -1738,7 +1637,95 @@
     var src = cfg.spot ? "sahkotin.fi · Helsingin aika" : (d.nHist + " näytettä · 5 min" + (cache && cache.backfill && cache.backfill.length && cfg.series[0].backfill ? " + Shelly-tuntihistoria (katko)" : "") + " · Helsingin aika");
     el.querySelector(".ch-src").textContent = src;
   }
+  // ---------- Sähkönkulutus: päivä- ja kuukausipylväät (Worker /energy/summary) ----------
+  var EB_METRIC = (function () { try { return localStorage.getItem("mokkiEbMetric") === "eur" ? "eur" : "kwh"; } catch (e) { return "kwh"; } })();
+  var WD_FI = ["su", "ma", "ti", "ke", "to", "pe", "la"];
+  var MO_FI = ["tammi", "helmi", "maalis", "huhti", "touko", "kesä", "heinä", "elo", "syys", "loka", "marras", "joulu"];
+  function ebLabelDay(date) { var d = new Date(date + "T12:00:00Z"); return { top: WD_FI[d.getUTCDay()], sub: d.getUTCDate() + "." + (d.getUTCMonth() + 1) + "." }; }
+  function ebFmt(v, metric) { return v == null ? "—" : metric === "eur" ? num(v, v >= 10 ? 1 : 2) + " €" : num(v, v >= 100 ? 0 : 1) + " kWh"; }
+  function barsSvg(plot, items, metric, opts) {
+    // items: [{ key, lbl, sub, kwh, eur, partial, est, info }]
+    var W = Math.max(260, Math.round(plot.clientWidth || 600)), H = opts.H || 200;
+    var padL = 34, padR = 8, padT = 22, padB = opts.twoLine ? 32 : 20;
+    var vals = items.map(function (it) { return Number(it[metric]) || 0; });
+    var hi = Math.max.apply(null, vals.concat([metric === "eur" ? 0.5 : 1]));
+    var yStep = niceStep(hi, 4); hi = Math.ceil(hi * 1.08 / yStep) * yStep;
+    var n = items.length, slot = (W - padL - padR) / Math.max(1, n), bw = Math.max(3, Math.min(46, slot * 0.68));
+    var Y = function (v) { return padT + (1 - v / hi) * (H - padT - padB); };
+    var color = metric === "eur" ? "#e3c36a" : "#4ecdc4";
+    var svg = '<svg class="ch-svg" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" style="height:' + H + 'px" role="img" aria-label="' + esc(opts.title || "") + '">';
+    for (var yv = 0; yv <= hi + 1e-9; yv += yStep) {
+      var yy = Y(yv).toFixed(1);
+      svg += '<line x1="' + padL + '" x2="' + (W - padR) + '" y1="' + yy + '" y2="' + yy + '" stroke="rgba(255,255,255,.06)"/>';
+      svg += '<text x="' + (padL - 6) + '" y="' + (Number(yy) + 3.5) + '" text-anchor="end">' + esc(num(yv, yStep < 1 ? (yStep < 0.1 ? 2 : 1) : 0)) + '</text>';
+    }
+    svg += '<text x="' + (padL - 6) + '" y="' + (padT - 10) + '" text-anchor="end" style="font-size:9.5px">' + (metric === "eur" ? "€" : "kWh") + '</text>';
+    var showVal = slot >= 30, showOther = slot >= 44, labelEvery = slot >= 26 ? 1 : slot >= 13 ? 2 : 5;
+    items.forEach(function (it, i) {
+      var v = Number(it[metric]) || 0, cx = padL + slot * (i + 0.5), x = cx - bw / 2, y = Y(v), h = Math.max(v > 0 ? 1.5 : 0, H - padB - y);
+      var op = it.partial ? ".55" : "1";
+      svg += '<rect x="' + x.toFixed(1) + '" y="' + (H - padB - h).toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + h.toFixed(1) + '" rx="' + Math.min(5, bw / 4).toFixed(1) + '" fill="' + color + '" fill-opacity="' + (it.partial ? ".45" : ".85") + '"' + (it.partial ? ' stroke="' + color + '" stroke-dasharray="3 2"' : '') + '/>';
+      if (showVal && it[metric] != null) {
+        svg += '<text class="bar-lbl" x="' + cx.toFixed(1) + '" y="' + (H - padB - h - (showOther ? 13 : 4)).toFixed(1) + '" text-anchor="middle" style="opacity:' + op + '">' + esc(metric === "eur" ? num(v, 2) + "€" : num(v, v >= 100 ? 0 : 1)) + '</text>';
+        if (showOther) {
+          var o = metric === "eur" ? it.kwh : it.eur;
+          svg += '<text class="bar-sub" x="' + cx.toFixed(1) + '" y="' + (H - padB - h - 3).toFixed(1) + '" text-anchor="middle">' + esc(o == null ? "" : metric === "eur" ? num(o, o >= 100 ? 0 : 1) + " kWh" : num(o, 2) + " €") + '</text>';
+        }
+      }
+      if (i % labelEvery === 0 || i === n - 1) {
+        svg += '<text x="' + cx.toFixed(1) + '" y="' + (H - padB + 13) + '" text-anchor="middle"' + (it.partial ? ' style="fill:#4ecdc4"' : '') + '>' + esc(it.lbl) + '</text>';
+        if (opts.twoLine && it.sub) svg += '<text x="' + cx.toFixed(1) + '" y="' + (H - padB + 25) + '" text-anchor="middle" style="font-size:9.5px">' + esc(it.sub) + '</text>';
+      }
+    });
+    svg += '</svg>';
+    plot.innerHTML = svg;
+    plot._bars = { items: items, padL: padL, padR: padR, W: W, slot: slot, metric: metric, statsSel: opts.statsSel };
+  }
+  function ebInfo(it) {
+    return it.info + " · " + ebFmt(it.kwh, "kwh") + " · " + ebFmt(it.eur, "eur") + (it.spotAvg != null ? " · pörssi ka " + num(it.spotAvg, 1) + " snt" : "") + (it.partial ? " · kesken" : "") + (it.est ? " · arvio (päivän keskihinta)" : "");
+  }
+  function barTip(plot, clientX) {
+    var b = plot._bars, svgEl = plot.querySelector("svg"); if (!b || !svgEl) return;
+    var rect = svgEl.getBoundingClientRect();
+    var px = (clientX - rect.left) * (b.W / rect.width);
+    var i = Math.floor((px - b.padL) / b.slot);
+    if (i < 0 || i >= b.items.length) return;
+    var panel = plot.closest(".chart-panel") || plot.parentNode;
+    var el = (plot.parentNode.querySelector(b.statsSel)) || panel.querySelector(b.statsSel);
+    if (el) el.textContent = ebInfo(b.items[i]);
+  }
+  function renderBars(key, quiet) {
+    var cfg = CHARTS[key];
+    var el = panelShell(key);
+    var plot = el.querySelector(".ch-plot");
+    var metric = EB_METRIC;
+    el.querySelector(".ch-legend").innerHTML = '<span><i style="background:' + (metric === "eur" ? "#e3c36a" : "#4ecdc4") + '"></i>' + (metric === "eur" ? "Kustannus € (pörssi + 8,12 snt/kWh)" : "Kulutus kWh") + '</span><span><i style="background:' + (metric === "eur" ? "#e3c36a" : "#4ecdc4") + ';opacity:.45"></i>Kesken (tämä päivä/kk)</span>';
+    if (!ENERGY) { if (!quiet) plot.innerHTML = '<div class="empty" style="padding:30px 4px">Ladataan kulutusta…</div>'; return; }
+    var days = (cfg.bars === "week" ? ENERGY.week : ENERGY.month) || [];
+    var items = days.map(function (d) {
+      var l = ebLabelDay(d.date);
+      return { lbl: cfg.bars === "week" ? l.top : String(Number(d.date.slice(8, 10))), sub: l.sub, kwh: d.kwh, eur: d.eur, partial: !!d.partial, est: !!d.est, spotAvg: d.spotAvg, info: l.top + " " + l.sub };
+    });
+    barsSvg(plot, items, metric, { twoLine: cfg.bars === "week", title: cfg.title, statsSel: ".ch-stats", H: cfg.bars === "week" ? 210 : 200 });
+    var tot = cfg.bars === "week" ? ENERGY.weekTotal : ENERGY.monthTotal;
+    var nDays = items.filter(function (x) { return x.kwh != null; }).length;
+    el.querySelector(".ch-stats").textContent = (cfg.bars === "week" ? "7 vrk yht. " : "Kuukausi yht. ") + ebFmt(tot && tot.kwh, "kwh") + " · " + ebFmt(tot && tot.eur, "eur") + (nDays ? " · ka " + num(tot.kwh / nDays, 1) + " kWh/vrk" : "");
+    var anyEst = items.some(function (x) { return x.est; });
+    el.querySelector(".ch-src").textContent = "Shelly EM-3p · " + (anyEst ? "osa päivistä arvio päivän keskihinnalla · " : "tuntihinnoin · ") + "napauta pylvästä";
+    if (cfg.bars === "month") {
+      var p2 = el.querySelector(".ch-plot2");
+      var mons = (ENERGY.months || []).map(function (m) {
+        var mi = Number(m.month.slice(5, 7)) - 1;
+        return { lbl: MO_FI[mi], sub: m.month.slice(0, 4), kwh: m.kwh, eur: m.eur, partial: !!m.partial, est: !!m.est, spotAvg: m.spotAvg, info: MO_FI[mi] + "kuu " + m.month.slice(0, 4) };
+      });
+      if (!mons.length) p2.innerHTML = '<div class="empty" style="padding:20px 4px">Ei kuukausidataa.</div>';
+      else barsSvg(p2, mons, metric, { twoLine: false, title: "Kuukaudet", statsSel: ".ch-stats2", H: 170 });
+      el.querySelector(".ch-stats2").textContent = mons.length ? mons.map(function (m) { return m.lbl + " " + ebFmt(m.kwh, "kwh") + " / " + ebFmt(m.eur, "eur") + (m.est ? "*" : ""); }).join(" · ") : "—";
+      el.querySelector(".ch-src2").textContent = mons.some(function (m) { return m.est; }) ? "* € arvio: kWh × (kuun keskihinta + 8,12 snt)" : "";
+    }
+  }
   function chartTip(plot, clientX) {
+    if (plot._bars) return barTip(plot, clientX);
     var g = plot._geo; if (!g) return;
     var svgEl = plot.querySelector("svg"); if (!svgEl) return;
     var rect = svgEl.getBoundingClientRect();
@@ -1749,7 +1736,7 @@
     g.cfg.series.forEach(function (sd) {
       var best = null;
       g.d.pts[sd.k].forEach(function (p) { if (!best || Math.abs(p.t - t) < Math.abs(best.t - t)) best = p; });
-      if (best && Math.abs(best.t - t) < (g.cfg.spot ? 3600000 : 45 * 60000)) parts.push(sd.label + " " + num(best.v, g.cfg.dec) + (g.cfg.unit === "°" ? "°" : " " + g.cfg.unit));
+      if (best && Math.abs(best.t - t) < (g.cfg.spot ? 3600000 : 45 * 60000)) parts.push(sd.label.replace(/ \(.*\)$/, "") + " " + num(best.v, sd.dec != null ? sd.dec : g.cfg.dec) + (sd.unit ? " " + sd.unit : g.cfg.unit === "°" ? "°" : " " + g.cfg.unit));
     });
     var cur = svgEl.querySelector(".ch-cursor");
     cur.setAttribute("x1", px.toFixed(1)); cur.setAttribute("x2", px.toFixed(1)); cur.setAttribute("visibility", "visible");
@@ -1763,7 +1750,11 @@
     document.querySelectorAll('[data-chart="' + key + '"]').forEach(function (t) { t.classList.add("chart-open"); t.setAttribute("aria-expanded", "true"); });
     renderChart(key);
     var h = CH_OPEN[key];
-    var p = CHARTS[key].spot ? spotLoad(h) : (!mokkiToken() || !workerUrl() ? Promise.reject(new Error("ohjausavain puuttuu (#t=…)")) : histLoad(h));
+    var cfgO = CHARTS[key];
+    var p = cfgO.bars ? (ENERGY ? Promise.resolve(ENERGY) : (_costLast = 0, api("/energy/summary").then(function (j) { ENERGY = j; ENERGY._at = Date.now(); return j; })))
+      : cfgO.spot ? spotLoad(h)
+      : cfgO.spot2 ? Promise.all([histLoad(h), spotLoad(h).catch(function () { return null; })])
+      : histLoad(h);
     p.then(function () { renderChart(key); }).catch(function (e) {
       el.querySelector(".ch-plot").innerHTML = '<div class="empty" style="padding:30px 4px">Historia ei latautunut: ' + esc(e && e.message ? e.message : "virhe") + '</div>';
     });
@@ -1776,6 +1767,14 @@
   }
   function toggleChart(key) { if (CH_OPEN[key]) closeChart(key); else openChart(key); }
   document.addEventListener("click", function (ev) {
+    var mb = ev.target.closest && ev.target.closest("[data-eb-metric]");
+    if (mb) {
+      ev.stopPropagation();
+      EB_METRIC = mb.getAttribute("data-eb-metric");
+      try { localStorage.setItem("mokkiEbMetric", EB_METRIC); } catch (e) {}
+      ["ebars7", "ebarsM"].forEach(function (k) { if (CH_OPEN[k]) renderChart(k); });
+      return;
+    }
     var rb = ev.target.closest && ev.target.closest("[data-ch-range]");
     if (rb) { ev.stopPropagation(); openChart(rb.getAttribute("data-ch-key"), Number(rb.getAttribute("data-ch-range"))); return; }
     if (ev.target.closest && ev.target.closest("button, .ch-plot, .chart-panel")) return;
@@ -1798,12 +1797,12 @@
   setInterval(function () {
     if (document.hidden) return;
     var hs = {};
-    Object.keys(CH_OPEN).forEach(function (k) { if (!CHARTS[k].spot) hs[CH_OPEN[k]] = true; });
+    Object.keys(CH_OPEN).forEach(function (k) { if (!CHARTS[k].spot && !CHARTS[k].bars) hs[CH_OPEN[k]] = true; });
     Object.keys(hs).forEach(function (h) {
       histLoad(Number(h), true).then(function () { Object.keys(CH_OPEN).forEach(function (k) { renderChart(k, true); }); }).catch(function () {});
     });
-    if (Object.keys(CH_OPEN).some(function (k) { return CHARTS[k].spot; })) {
-      spotLoad(168).then(function () { renderChart("spot", true); }).catch(function () {});
+    if (Object.keys(CH_OPEN).some(function (k) { return CHARTS[k].spot || CHARTS[k].spot2; })) {
+      spotLoad(168).then(function () { Object.keys(CH_OPEN).forEach(function (k) { if (CHARTS[k].spot || CHARTS[k].spot2) renderChart(k, true); }); }).catch(function () {});
     }
   }, HIST_REFRESH_MS);
 
@@ -1813,28 +1812,85 @@
     panel.hidden = !open;
     this.setAttribute("aria-expanded", open ? "true" : "false");
   });
-  document.getElementById("saveShelly").addEventListener("click", function () {
-    var srv = document.getElementById("shellyServer").value.trim() || DEFAULT_SERVER;
-    var key = document.getElementById("shellyAuth").value.trim();
-    var mtok = document.getElementById("mokkiToken").value.trim();
-    if (mtok) {
-      if (mtok !== mokkiToken()) { localStorage.setItem(LS_MOKKI_TOKEN, mtok); _setCk("mk_t", mtok); climPull(true); }
-    } else if (mokkiToken()) {
-      localStorage.removeItem(LS_MOKKI_TOKEN); _setCk("mk_t", ""); paintClimShell();
-    }
-    localStorage.setItem(LS_SHELLY_SERVER, srv.replace(/\/$/, ""));
-    if (!key) {
-      localStorage.removeItem(LS_SHELLY_AUTH);
-      toast("Avain poistettu", "ok");
-    } else {
-      localStorage.setItem(LS_SHELLY_AUTH, key);
-      _setCk("mk_a", key);
-      toast("Yhdistetään…", "ok");
-      document.getElementById("settingsPanel").hidden = true;
-      document.getElementById("settingsToggle").setAttribute("aria-expanded", "false");
-      pull();
-    }
+  // ---------- Kirjautumisnäkymä ----------
+  var _started = false;
+  function showLogin(msg, kind) {
+    document.body.classList.add("locked");
+    var err = document.getElementById("loginErr");
+    err.textContent = msg || "";
+    err.className = "login-err" + (kind === "info" ? " info" : "");
+    document.getElementById("loginBtn").disabled = false;
+    document.getElementById("loginBtn").textContent = "Kirjaudu";
+    setLive(false, "Kirjaudu");
     refreshHint();
+    setTimeout(function () { try { document.getElementById("loginPw").focus(); } catch (e) {} }, 50);
+  }
+  function unlock() {
+    document.body.classList.remove("locked");
+    refreshHint();
+    if (!_started) { _started = true; startDashboard(); return; }
+    pull(); refreshCosts(true); climPull(true);
+  }
+  function fmtWait(sec) {
+    var m = Math.ceil(Number(sec || 0) / 60);
+    return m <= 1 ? "noin minuutiksi" : m + " minuutiksi";
+  }
+  document.getElementById("loginForm").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var pwEl = document.getElementById("loginPw");
+    var pw = pwEl.value;
+    var remember = document.getElementById("loginRemember").checked;
+    var err = document.getElementById("loginErr");
+    var btn = document.getElementById("loginBtn");
+    if (!pw) { err.className = "login-err"; err.textContent = "Kirjoita salasana."; pwEl.focus(); return; }
+    btn.disabled = true; btn.textContent = "Kirjaudutaan…";
+    err.className = "login-err info"; err.textContent = "";
+    fetch(WORKER_URL + "/login", {
+      method: "POST", mode: "cors", cache: "no-store",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: pw, remember: remember })
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { return { r: r, j: j }; });
+    }).then(function (x) {
+      var r = x.r, j = x.j || {};
+      if (r.ok && j.token) {
+        pwEl.value = "";
+        sessSave({ token: j.token, exp: j.exp, remember: remember }, remember);
+        err.textContent = "";
+        unlock();
+        toast("Tervetuloa mökille", "ok");
+        return;
+      }
+      err.className = "login-err";
+      if (r.status === 429) {
+        err.textContent = "Liian monta väärää yritystä. Kirjautuminen on lukittu " + fmtWait(j.retryAfter || r.headers.get("Retry-After")) + ".";
+      } else if (r.status === 401) {
+        var left = Number(j.left);
+        err.textContent = "Väärä salasana." + (left > 0 && left <= 3 ? " " + left + (left === 1 ? " yritys" : " yritystä") + " jäljellä ennen lukitusta." : "");
+        pwEl.select();
+      } else {
+        err.textContent = "Kirjautuminen epäonnistui (palvelinvirhe " + r.status + "). Yritä hetken päästä uudelleen.";
+      }
+      btn.disabled = false; btn.textContent = "Kirjaudu";
+    }).catch(function () {
+      err.className = "login-err";
+      err.textContent = "Ei yhteyttä palvelimeen. Tarkista verkkoyhteys ja yritä uudelleen.";
+      btn.disabled = false; btn.textContent = "Kirjaudu";
+    });
+  });
+  document.getElementById("logoutBtn").addEventListener("click", function () {
+    var s0 = sessRead();
+    if (s0) {
+      fetch(WORKER_URL + "/logout", { method: "POST", mode: "cors", cache: "no-store", headers: { "Authorization": "Bearer " + s0.token } }).catch(function () {});
+    }
+    sessClear();
+    DATA = null; CLIM = null; ENERGY = null; HIST = {}; LIVE.length = 0;
+    COST = { day: null, week: null, month: null, spotNow: null, spotAvg: null };
+    Object.keys(CH_OPEN).forEach(closeChart);
+    document.getElementById("settingsPanel").hidden = true;
+    document.getElementById("settingsToggle").setAttribute("aria-expanded", "false");
+    paint(); paintCost();
+    showLogin("Kirjauduit ulos.", "info");
   });
   document.getElementById("refreshNow").addEventListener("click", function () {
     pull();
@@ -1865,20 +1921,23 @@
     else if (action === "mokki_pois") runScene("Mökki pois");
   });
 
+  function startDashboard() {
+    paint();
+    pull();
+    refreshCosts(true);
+    setInterval(pull, 15000);
+    setInterval(function () { refreshCosts(false); }, 5 * 60 * 1000);
+    setInterval(function () { if (DATA && DATA.updated) paint(); }, 5000);
+    paintClim();
+    climPull(true);
+    setInterval(function () { if (!document.hidden) climPull(false); }, CLIM_POLL_MS);
+    setInterval(function () { if (CLIM && !_climBusy) paintClim(); }, 15000);
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && hasSession()) { pull(); climPull(false); }
+    });
+  }
   refreshHint();
-  paint();
-  pull();
-  refreshCosts(true);
-  setInterval(pull, 15000);
-  setInterval(function () { refreshCosts(false); }, 5 * 60 * 1000);
-  setInterval(function () { if (DATA && DATA.updated) paint(); }, 5000);
-  paintClim();
-  climPull(true);
-  setInterval(function () { if (!document.hidden) climPull(false); }, CLIM_POLL_MS);
-  setInterval(function () { if (CLIM && !_climBusy) paintClim(); }, 15000);
-  document.addEventListener("visibilitychange", function () {
-    if (!document.hidden) { pull(); climPull(false); }
-  });
+  if (hasSession()) unlock(); else showLogin("");
 })();
 </script>
 </body>

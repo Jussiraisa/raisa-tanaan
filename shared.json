@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790846480238,
+  "updated": 1790847419843,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -276,15 +276,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-koulukuvaus-ellen-2026-10-01",
-      "who": "ellen",
-      "title": "Koulukuvaus 4C klo 12.30",
-      "date": "2026-10-01",
-      "start": "12:30",
-      "kind": "info",
-      "place": "Aurinkorinteen koulu"
     },
     {
       "id": "info-ellen-vanhempainilta-2026-10-01",
@@ -583,6 +574,64 @@
       "note": "tapahtuma 21.1.2027; info"
     },
     {
+      "id": "info-ambrosia-2026-10-31",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Helsinki",
+      "date": "2026-10-31",
+      "kind": "info",
+      "place": "Helsinki",
+      "dateEnd": "2026-11-01",
+      "note": "kulku Juna; huoltaja Anu"
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto/juna+taksi"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-milla-2026-10-02",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-02",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
       "id": "cal-_6p23echp69232b9n70rk8b9k64r32b9p6srj4b9n8cq3agq564r44ha668",
       "title": "Mea Arja",
       "date": "2026-10-01",
@@ -659,64 +708,6 @@
       "kind": "cal",
       "start": "22:00",
       "end": "22:15"
-    },
-    {
-      "id": "info-ambrosia-2026-10-31",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-31",
-      "kind": "info",
-      "place": "Helsinki",
-      "dateEnd": "2026-11-01",
-      "note": "kulku Juna; huoltaja Anu"
-    },
-    {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-milla-2026-10-02",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-02",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
     }
   ],
   "schoolLunch": {

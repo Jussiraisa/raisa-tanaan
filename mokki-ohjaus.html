@@ -1734,8 +1734,9 @@
       if (vx.profile === "fireplace" && vx.fireplaceMinLeft > 0) chips += "<span class=\"chip hot\">Takka " + esc(num(vx.fireplaceMinLeft)) + " min</span>";
       if (vx.online === false) {
         var ls = vx.lastSeen ? new Date(vx.lastSeen) : null;
-        chips += "<span class=\"chip hot\">⚠ Ei pilviyhteyttä" + (ls && !isNaN(ls) ? " klo " + String(ls.getHours()).padStart(2, "0") + "." + String(ls.getMinutes()).padStart(2, "0") + " alkaen" : "") + " – etäohjaus ei toimi, käytä koneen paneelia</span>";
+        chips += "<span class=\"chip hot\">⚠ Vallox ei ole yhteydessä Valloxin pilveen" + (ls && !isNaN(ls) ? " (viimeksi nähty klo " + String(ls.getHours()).padStart(2, "0") + "." + String(ls.getMinutes()).padStart(2, "0") + ")" : "") + " – komentoa ei voi lähettää</span>";
       }
+      if (vx.pending && vx.pending.profile) chips += "<span class=\"chip\">⏳ Jonossa: " + esc(VX_FI[vx.pending.profile] || vx.pending.profile) + " – asetetaan kun Vallox palaa</span>";
       document.getElementById("vxChips").innerHTML = chips;
       document.querySelectorAll("#valloxCard [data-vx]").forEach(function (b) {
         var p = b.getAttribute("data-vx");

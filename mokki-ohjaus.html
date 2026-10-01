@@ -1732,7 +1732,10 @@
       document.getElementById("vxRh").innerHTML = vx.rh != null ? esc(num(vx.rh)) + "<small>%</small>" : "—";
       if (vx.profile === "boost" && vx.boostMinLeft > 0) chips += "<span class=\"chip hot\">Tehostus " + esc(num(vx.boostMinLeft)) + " min</span>";
       if (vx.profile === "fireplace" && vx.fireplaceMinLeft > 0) chips += "<span class=\"chip hot\">Takka " + esc(num(vx.fireplaceMinLeft)) + " min</span>";
-      if (vx.online === false) chips += "<span class=\"chip\">Offline</span>";
+      if (vx.online === false) {
+        var ls = vx.lastSeen ? new Date(vx.lastSeen) : null;
+        chips += "<span class=\"chip hot\">⚠ Ei pilviyhteyttä" + (ls && !isNaN(ls) ? " klo " + String(ls.getHours()).padStart(2, "0") + "." + String(ls.getMinutes()).padStart(2, "0") + " alkaen" : "") + " – etäohjaus ei toimi, käytä koneen paneelia</span>";
+      }
       document.getElementById("vxChips").innerHTML = chips;
       document.querySelectorAll("#valloxCard [data-vx]").forEach(function (b) {
         var p = b.getAttribute("data-vx");

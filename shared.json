@@ -304,7 +304,8 @@
       "title": "KE-koe klo 14.15",
       "date": "2026-10-02",
       "start": "14:15",
-      "kind": "info"
+      "kind": "info",
+      "note": "metallit s.83–105 + monisteet"
     },
     {
       "id": "info-milla-rooma-hakemus-2026-10-02",
@@ -312,7 +313,8 @@
       "title": "Rooman hakemus klo 22 · 200 €",
       "date": "2026-10-02",
       "start": "22:00",
-      "kind": "info"
+      "kind": "info",
+      "note": "200 € omavastuu"
     },
     {
       "id": "info-samuel-turnaus-2026-10-03",
@@ -356,12 +358,13 @@
       "who": "ellen",
       "title": "Koe · äidinkieli",
       "date": "2026-10-06",
-      "start": "",
+      "start": "10:00",
       "end": "",
       "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
-      "status": ""
+      "status": "",
+      "note": "oikeinkirjoitus + tekstilajit; tekstikirja s.14–35 & 202–203, tehtäväkirja s.8–27"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",
@@ -403,12 +406,13 @@
       "who": "ellen",
       "title": "Koe · matematiikka",
       "date": "2026-10-09",
-      "start": "",
+      "start": "08:45",
       "end": "",
       "place": "Aurinkorinteen koulu",
       "kind": "info",
       "driver": "",
-      "status": ""
+      "status": "",
+      "note": "kertolasku s.60–98, kertotaulut 1–10"
     },
     {
       "id": "info-samuel-turnaus-2026-10-31",
@@ -564,6 +568,134 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-milla-2-jakso-2026-10-02",
+      "who": "milla",
+      "title": "2. jakso alkaa – tarkista lukkari",
+      "date": "2026-10-02",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-perhe-vy-vuosikokous-2026-10-05",
+      "who": "perhe",
+      "title": "Aurinkorinteen vanhempainyhdistyksen vuosikokous",
+      "date": "2026-10-05",
+      "start": "17:30",
+      "kind": "info",
+      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
+    },
+    {
+      "id": "info-wilma-milla-op05-2026-10-05",
+      "who": "milla",
+      "title": "OP05-tehtävät Teamsiin",
+      "date": "2026-10-05",
+      "kind": "info",
+      "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
+    },
+    {
+      "id": "info-wilma-milla-ro-tuokio-2026-10-06",
+      "who": "milla",
+      "title": "Ro-tuokio",
+      "date": "2026-10-06",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-milla-turpotietaja-2026-10-07",
+      "who": "milla",
+      "title": "Turpotietäjä-alkukilpailu",
+      "date": "2026-10-07",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "info",
+      "note": "vapaaehtoinen, Abitti"
+    },
+    {
+      "id": "info-wilma-samuel-unicef-2026-10-08",
+      "who": "samuel",
+      "title": "UNICEF-kävely",
+      "date": "2026-10-08",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-mea-ma-koe-2026-10-08",
+      "who": "mea",
+      "title": "MA-koe (matematiikka)",
+      "date": "2026-10-08",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-perhe-stm-kysely-2026-10-11",
+      "who": "perhe",
+      "title": "STM huoltajakysely DL",
+      "date": "2026-10-11",
+      "kind": "info",
+      "note": "vapaaehtoinen"
+    },
+    {
+      "id": "info-wilma-samuel-hontsa-2026-10-13",
+      "who": "samuel",
+      "title": "Höntsäpelipäivä (Samuel + Ellen)",
+      "date": "2026-10-13",
+      "start": "12:00",
+      "end": "15:00",
+      "kind": "info",
+      "place": "Kuopio-halli",
+      "note": "maksuton"
+    },
+    {
+      "id": "info-wilma-ellen-hontsa-2026-10-13",
+      "who": "ellen",
+      "title": "Höntsäpelipäivä (Samuel + Ellen)",
+      "date": "2026-10-13",
+      "start": "12:00",
+      "end": "15:00",
+      "kind": "info",
+      "place": "Kuopio-halli",
+      "note": "maksuton"
+    },
+    {
+      "id": "info-wilma-mea-hontsa-2026-10-13",
+      "who": "mea",
+      "title": "Höntsäpelipäivä",
+      "date": "2026-10-13",
+      "start": "16:00",
+      "end": "19:00",
+      "kind": "info",
+      "place": "Kuopio-halli",
+      "note": "maksuton"
+    },
+    {
+      "id": "info-wilma-milla-podcast-2026-10-19",
+      "who": "milla",
+      "title": "Podcast-tehtävä Teamsiin",
+      "date": "2026-10-19",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-mea-rub-koe-2026-10-21",
+      "who": "mea",
+      "title": "RUB iso koe (ruotsi)",
+      "date": "2026-10-21",
+      "kind": "info",
+      "note": "sanajärjestys, luonto/eläinsanasto, kpl 1–2, imperfekti, lukusanat"
+    },
+    {
+      "id": "info-wilma-milla-maa03-2026-10-28",
+      "who": "milla",
+      "title": "MAA03 välitesti (geometria) kpl 1–5",
+      "date": "2026-10-28",
+      "start": "09:35",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-milla-shaking-up-tech-2026-10-01",
+      "who": "milla",
+      "title": "Shaking up Tech -haku auki",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31",
+      "kind": "info",
+      "note": "tapahtuma 21.1.2027; info"
     }
   ],
   "schoolLunch": {

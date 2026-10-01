@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790847419843,
+  "updated": 1790854603109,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -630,14 +630,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "cal-_6p23echp69232b9n70rk8b9k64r32b9p6srj4b9n8cq3agq564r44ha668",
-      "title": "Mea Arja",
-      "date": "2026-10-01",
-      "kind": "cal",
-      "start": "14:00",
-      "end": "15:00"
     },
     {
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",

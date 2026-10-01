@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790827512799,
+  "updated": 1790827812529,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -499,14 +499,6 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "cal-md115enjo3omkea15kqlvlrqsg",
-      "title": "Milla · RUB12 koe (ruotsi)",
-      "date": "2026-09-30",
-      "start": null,
-      "end": null,
-      "kind": "cal"
-    },
-    {
       "id": "cal-m0uipdpv0rh2dbkc126fhg7il0",
       "title": "Samuel · Welhot P9 pelipassi deadline",
       "date": "2026-10-01",
@@ -536,6 +528,30 @@
       "title": "Mea · kemian opetus · Jussi + Mea",
       "date": "2026-10-01",
       "start": "18:30",
+      "end": "19:30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-fg1gmic29d8rsohros0jtq5ncg",
+      "title": "Ellen · UE-koe",
+      "date": "2026-10-02",
+      "start": "08:00",
+      "end": "16:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-0827co8uc1vkponb4a4i6448o4",
+      "title": "Mea · kemia koe",
+      "date": "2026-10-02",
+      "start": "14:15",
+      "end": "15:15",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-kldk1tse3u2f808d2e19q6uhcs",
+      "title": "Riikka · Padel",
+      "date": "2026-10-02",
+      "start": "18:00",
       "end": "19:30",
       "kind": "cal"
     }

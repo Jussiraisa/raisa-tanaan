@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790872253627,
+  "updated": 1790879823042,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -632,11 +632,50 @@
       "kind": "treeni"
     },
     {
+      "id": "cal-199mb6it0r48unrqua9jls77ms_20261001",
+      "title": "Anne-siskon syntymäpäivä (s. 1979)",
+      "date": "2026-10-01",
+      "kind": "cal"
+    },
+    {
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",
       "title": "Milla · Shaking up Tech -haku",
       "kind": "cal",
       "date": "2026-10-01",
       "dateEnd": "2026-10-31"
+    },
+    {
+      "id": "cal-tqghjc10g3c3eqmjuuph4qqduo",
+      "title": "Jussi vie Mean kouluun",
+      "date": "2026-10-02",
+      "start": "09:45",
+      "end": "10:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-gbe9gfg1bksqe1f2c4fbso790o",
+      "title": "Jussi mökillä",
+      "date": "2026-10-02",
+      "start": "12:00",
+      "end": "17:30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-4r1i96nfugpfjanbgbnl73nano",
+      "title": "Riikka hakee Mean koulusta ja vie Ellenin treeneihin",
+      "date": "2026-10-02",
+      "start": "14:45",
+      "end": "15:15",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-m4nkh1o5k59s3chj9bji8ds85s",
+      "title": "Hääpäiväillallinen, Boka (2 hlö)",
+      "date": "2026-10-02",
+      "start": "20:30",
+      "end": "22:00",
+      "kind": "cal",
+      "place": "Ravintola Boka, Koljonniemenkatu 2, Kuopio"
     },
     {
       "id": "cal-v3nh1r8qkc85r7adp9nfram1as",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790854603109,
+  "updated": 1790855033104,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -632,25 +632,33 @@
       "kind": "treeni"
     },
     {
+      "id": "cal-_6p23echp69232b9n70rk8b9k64r32b9p6srj4b9n8cq3agq564r44ha668",
+      "title": "Mea Arja",
+      "kind": "cal",
+      "date": "2026-10-01",
+      "start": "14:00",
+      "end": "15:00"
+    },
+    {
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",
       "title": "Milla · Shaking up Tech -haku",
-      "date": "2026-10-01",
       "kind": "cal",
+      "date": "2026-10-01",
       "dateEnd": "2026-10-31"
     },
     {
       "id": "cal-m0uipdpv0rh2dbkc126fhg7il0",
       "title": "Samuel · Welhot P9 pelipassi deadline",
-      "date": "2026-10-01",
       "kind": "cal",
+      "date": "2026-10-01",
       "start": "09:00",
       "end": "18:00"
     },
     {
       "id": "cal-cnid955r5ltkf40mnrsljd76n4",
       "title": "Ellen · Ambrosia vanhempainilta",
-      "date": "2026-10-01",
       "kind": "cal",
+      "date": "2026-10-01",
       "start": "17:00",
       "end": "18:00",
       "place": "Kuopiohalli"
@@ -658,46 +666,46 @@
     {
       "id": "cal-u92uio28rfmh1p8ppihvb0qioo",
       "title": "Mea · kemian opetus · Jussi + Mea",
-      "date": "2026-10-01",
       "kind": "cal",
+      "date": "2026-10-01",
       "start": "18:30",
       "end": "19:30"
     },
     {
       "id": "cal-v3nh1r8qkc85r7adp9nfram1as",
       "title": "Milla · 2. jakso alkaa – tarkista lukkari",
-      "date": "2026-10-02",
-      "kind": "cal"
+      "kind": "cal",
+      "date": "2026-10-02"
     },
     {
       "id": "cal-fg1gmic29d8rsohros0jtq5ncg",
       "title": "Ellen · UE-koe",
-      "date": "2026-10-02",
       "kind": "cal",
+      "date": "2026-10-02",
       "start": "08:00",
       "end": "16:00"
     },
     {
       "id": "cal-0827co8uc1vkponb4a4i6448o4",
       "title": "Mea · kemia koe",
-      "date": "2026-10-02",
       "kind": "cal",
+      "date": "2026-10-02",
       "start": "14:15",
       "end": "15:15"
     },
     {
       "id": "cal-kldk1tse3u2f808d2e19q6uhcs",
       "title": "Riikka · Padel",
-      "date": "2026-10-02",
       "kind": "cal",
+      "date": "2026-10-02",
       "start": "18:00",
       "end": "19:30"
     },
     {
       "id": "cal-i7sjkd209uecptuugj8jltihhs",
       "title": "Milla · Rooma-hakemus DL",
-      "date": "2026-10-02",
       "kind": "cal",
+      "date": "2026-10-02",
       "start": "22:00",
       "end": "22:15"
     }

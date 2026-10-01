@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790866863364,
+  "updated": 1790872253627,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -637,14 +637,6 @@
       "kind": "cal",
       "date": "2026-10-01",
       "dateEnd": "2026-10-31"
-    },
-    {
-      "id": "cal-u92uio28rfmh1p8ppihvb0qioo",
-      "title": "Mea · kemian opetus · Jussi + Mea",
-      "kind": "cal",
-      "date": "2026-10-01",
-      "start": "18:30",
-      "end": "19:30"
     },
     {
       "id": "cal-v3nh1r8qkc85r7adp9nfram1as",

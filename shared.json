@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790962313855,
+  "updated": 1790967680383,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -606,24 +606,6 @@
       "note": "Lähtö Joensuuhun klo 8.20 (kokoontuminen ~10.15 Nepenmäen koulu)"
     },
     {
-      "id": "cal-m4nkh1o5k59s3chj9bji8ds85s",
-      "title": "Hääpäiväillallinen, Boka (2 hlö)",
-      "date": "2026-10-02",
-      "kind": "cal",
-      "start": "20:30",
-      "end": "22:00",
-      "place": "Ravintola Boka, Koljonniemenkatu 2, Kuopio"
-    },
-    {
-      "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: Turnaus",
-      "date": "2026-10-03",
-      "kind": "cal",
-      "start": "10:00",
-      "end": "14:30",
-      "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
-    },
-    {
       "id": "cal-v3nh1r8qkc85r7adp9nfram1as",
       "title": "Milla · 2. jakso alkaa – tarkista lukkari",
       "date": "2026-10-02",
@@ -633,9 +615,18 @@
       "id": "cal-i7sjkd209uecptuugj8jltihhs",
       "title": "Milla · Rooma-hakemus DL",
       "date": "2026-10-02",
-      "kind": "cal",
       "start": "22:00",
-      "end": "22:15"
+      "end": "22:15",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
+      "title": "Welhot 2018: Turnaus",
+      "date": "2026-10-03",
+      "start": "10:00",
+      "end": "14:30",
+      "kind": "cal",
+      "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
     },
     {
       "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
@@ -647,26 +638,26 @@
       "id": "cal-890l2isupm2jj1itcadeedj40o",
       "title": "Samuel · Welhot Joensuu (peli 11)",
       "date": "2026-10-03",
-      "kind": "cal",
       "start": "10:15",
       "end": "14:30",
+      "kind": "cal",
       "place": "Joensuu"
     },
     {
       "id": "cal-ofrfqpkk5tfevs1m0ejqa51838",
       "title": "Riikka · Padel",
       "date": "2026-10-03",
-      "kind": "cal",
       "start": "10:30",
-      "end": "12:00"
+      "end": "12:00",
+      "kind": "cal"
     },
     {
       "id": "cal-hhihtdpvptk422p2i3p9to5cgs",
       "title": "Milla · Vivida hiontaleiri",
       "date": "2026-10-03",
-      "kind": "cal",
       "start": "16:00",
       "end": "20:00",
+      "kind": "cal",
       "place": "Bella Center"
     }
   ],

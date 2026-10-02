@@ -518,6 +518,16 @@
       "kind": "info"
     },
     {
+      "id": "info-wilma-perhe-nikotiini-info-2026-12-01",
+      "who": "perhe",
+      "title": "Nikotiini-info vanhemmille (Teams)",
+      "date": "2026-12-01",
+      "start": "18:00",
+      "end": "19:15",
+      "kind": "info",
+      "note": "Aurinkorinne, maksuton. Ilmoittaudu 30.11. mennessä."
+    },
+    {
       "id": "info-ambrosia-2026-10-31",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",

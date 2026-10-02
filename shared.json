@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790958701746,
+  "updated": 1790962313855,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -576,16 +576,6 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-milla-2026-10-02",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-02",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
       "id": "sheet-mea-2026-10-03",
       "who": "mea",
       "title": "Lianna",
@@ -604,6 +594,16 @@
       "end": "20:00",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-kakku-anne-2026-10-03",
+      "who": "jussi",
+      "title": "Vie kakku Annelle (~10 min) ennen Joensuuta",
+      "date": "2026-10-03",
+      "start": "08:10",
+      "end": "08:20",
+      "kind": "info",
+      "note": "Lähtö Joensuuhun klo 8.20 (kokoontuminen ~10.15 Nepenmäen koulu)"
     },
     {
       "id": "cal-m4nkh1o5k59s3chj9bji8ds85s",
@@ -668,16 +668,6 @@
       "start": "16:00",
       "end": "20:00",
       "place": "Bella Center"
-    },
-    {
-      "id": "info-kakku-anne-2026-10-03",
-      "who": "jussi",
-      "title": "Vie kakku Annelle (~10 min) ennen Joensuuta",
-      "date": "2026-10-03",
-      "start": "08:10",
-      "end": "08:20",
-      "kind": "info",
-      "note": "Lähtö Joensuuhun klo 8.20 (kokoontuminen ~10.15 Nepenmäen koulu)"
     }
   ],
   "schoolLunch": {

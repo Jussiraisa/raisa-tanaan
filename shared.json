@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790945533017,
+  "updated": 1790945880000,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -251,15 +251,6 @@
   },
   "note": "WA 28.9. Fiilis: to Welhot meidän; pe Ambrosia-vienti meidän. la 3.10. Joensuu kuski auki. Wilma kokeet synkattu.",
   "extras": [
-    {
-      "id": "info-mea-ke-koe-2026-10-02",
-      "who": "mea",
-      "title": "KE-koe klo 14.15",
-      "date": "2026-10-02",
-      "start": "14:15",
-      "kind": "info",
-      "note": "metallit s.83–105 + monisteet"
-    },
     {
       "id": "info-milla-rooma-hakemus-2026-10-02",
       "who": "milla",
@@ -605,39 +596,6 @@
       "kind": "treeni"
     },
     {
-      "id": "cal-gbe9gfg1bksqe1f2c4fbso790o",
-      "title": "Jussi mökillä",
-      "date": "2026-10-02",
-      "start": "12:00",
-      "end": "17:30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-m4nkh1o5k59s3chj9bji8ds85s",
-      "title": "Hääpäiväillallinen, Boka (2 hlö)",
-      "date": "2026-10-02",
-      "start": "20:30",
-      "end": "22:00",
-      "kind": "cal",
-      "place": "Ravintola Boka, Koljonniemenkatu 2, Kuopio"
-    },
-    {
-      "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: Turnaus",
-      "date": "2026-10-03",
-      "start": "10:00",
-      "end": "14:30",
-      "kind": "cal",
-      "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
-    },
-    {
-      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
-      "title": "Milla · Shaking up Tech -haku",
-      "date": "2026-10-01",
-      "kind": "cal",
-      "dateEnd": "2026-10-31"
-    },
-    {
       "id": "cal-v3nh1r8qkc85r7adp9nfram1as",
       "title": "Milla · 2. jakso alkaa – tarkista lukkari",
       "date": "2026-10-02",
@@ -652,12 +610,29 @@
       "kind": "cal"
     },
     {
+      "id": "cal-gbe9gfg1bksqe1f2c4fbso790o",
+      "title": "Jussi mökillä",
+      "date": "2026-10-02",
+      "start": "12:00",
+      "end": "17:30",
+      "kind": "cal"
+    },
+    {
       "id": "cal-kldk1tse3u2f808d2e19q6uhcs",
       "title": "Riikka · Padel",
       "date": "2026-10-02",
       "start": "18:00",
       "end": "19:30",
       "kind": "cal"
+    },
+    {
+      "id": "cal-m4nkh1o5k59s3chj9bji8ds85s",
+      "title": "Hääpäiväillallinen, Boka (2 hlö)",
+      "date": "2026-10-02",
+      "start": "20:30",
+      "end": "22:00",
+      "kind": "cal",
+      "place": "Ravintola Boka, Koljonniemenkatu 2, Kuopio"
     },
     {
       "id": "cal-i7sjkd209uecptuugj8jltihhs",
@@ -672,6 +647,15 @@
       "title": "Ainon synttärit",
       "date": "2026-10-03",
       "kind": "cal"
+    },
+    {
+      "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
+      "title": "Welhot 2018: Turnaus",
+      "date": "2026-10-03",
+      "start": "10:00",
+      "end": "14:30",
+      "kind": "cal",
+      "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
     },
     {
       "id": "cal-890l2isupm2jj1itcadeedj40o",

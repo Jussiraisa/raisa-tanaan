@@ -15,8 +15,8 @@ SHARED = ROOT / "shared.json"
 OUT = ROOT / "loppuvuosi.html"
 OUT_COPY = ROOT / "loppuvuosi-2026.html"
 
-TODAY = date(2026, 10, 1)
-RANGE_START = date(2026, 10, 1)
+TODAY = date(2026, 10, 2)
+RANGE_START = date(2026, 10, 2)
 RANGE_END = date(2026, 12, 31)  # inclusive
 
 MONTHS = {

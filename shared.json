@@ -565,15 +565,6 @@
       "kind": "info"
     },
     {
-      "id": "info-wilma-milla-shaking-up-tech-2026-10-01",
-      "who": "milla",
-      "title": "Shaking up Tech -haku auki",
-      "date": "2026-10-01",
-      "dateEnd": "2026-10-31",
-      "kind": "info",
-      "note": "tapahtuma 21.1.2027; info"
-    },
-    {
       "id": "info-ambrosia-2026-10-31",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",
@@ -636,13 +627,6 @@
       "title": "Anne-siskon syntymäpäivä (s. 1979)",
       "date": "2026-10-01",
       "kind": "cal"
-    },
-    {
-      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
-      "title": "Milla · Shaking up Tech -haku",
-      "kind": "cal",
-      "date": "2026-10-01",
-      "dateEnd": "2026-10-31"
     },
     {
       "id": "cal-tqghjc10g3c3eqmjuuph4qqduo",
@@ -753,6 +737,18 @@
     },
     "kodin-ja-koulun-paiva": {
       "2026-09-25": "Perhe ei osallistu"
+    },
+    "info-wilma-milla-shaking-up-tech-2026-10-01": {
+      "id": "info-wilma-milla-shaking-up-tech-2026-10-01",
+      "title": "Shaking up Tech -haku auki",
+      "date": "2026-10-01",
+      "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
+    },
+    "cal-sv9gsjhdifokii13rhid3ptat4": {
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "date": "2026-10-01",
+      "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
     }
   }
 }

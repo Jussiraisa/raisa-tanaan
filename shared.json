@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790945880000,
+  "updated": 1790946306155,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -599,14 +599,6 @@
       "id": "cal-v3nh1r8qkc85r7adp9nfram1as",
       "title": "Milla · 2. jakso alkaa – tarkista lukkari",
       "date": "2026-10-02",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-fg1gmic29d8rsohros0jtq5ncg",
-      "title": "Ellen · UE-koe",
-      "date": "2026-10-02",
-      "start": "08:00",
-      "end": "16:00",
       "kind": "cal"
     },
     {

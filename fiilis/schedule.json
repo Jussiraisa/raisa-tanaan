@@ -258,6 +258,14 @@
     },
     {
       "date": "2026-09-22",
+      "time": "",
+      "who": "perhe",
+      "title": "Pentutreffit Ella kotona",
+      "kind": "muu",
+      "place": "Koti"
+    },
+    {
+      "date": "2026-09-22",
       "time": "14:00",
       "end": "15:00",
       "who": "Mea",
@@ -303,14 +311,6 @@
       "title": "Hallituksen kokous",
       "kind": "työ",
       "source": "manual:jussi"
-    },
-    {
-      "date": "2026-09-22",
-      "time": "",
-      "who": "perhe",
-      "title": "Pentutreffit Ella kotona",
-      "kind": "muu",
-      "place": "Koti"
     },
     {
       "date": "2026-09-23",
@@ -727,6 +727,15 @@
     },
     {
       "date": "2026-10-01",
+      "time": "",
+      "who": "Samuel",
+      "title": "Pelipassi hankittava",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "deadline"
+    },
+    {
+      "date": "2026-10-01",
       "who": "Samuel",
       "title": "Koulukuvaus",
       "kind": "muu",
@@ -800,15 +809,6 @@
       "kind": "muu",
       "note": "Valkosuklaa-suklaakakku",
       "source": "fiilis"
-    },
-    {
-      "date": "2026-10-01",
-      "time": "",
-      "who": "Samuel",
-      "title": "Pelipassi hankittava",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "deadline"
     },
     {
       "date": "2026-10-02",
@@ -922,14 +922,25 @@
     },
     {
       "date": "2026-10-03",
+      "time": "08:10",
+      "end": "08:20",
+      "who": "Jussi",
+      "title": "Kakku Annelle",
+      "kind": "muu",
+      "source": "perhe",
+      "note": "~10 min, sitten lähtö Joensuuhun 8.20"
+    },
+    {
+      "date": "2026-10-03",
       "time": "10:15",
       "who": "Samuel",
       "title": "Welhot Joensuu ottelut",
-      "place": "Joensuu, Nepenmäki",
+      "place": "Joensuu, Nepenmäen koulu",
       "kind": "kisa",
       "source": "gcal:perhe",
-      "note": "kokoontuminen ~10:15 · peli 11:00 · loppu joskus 14 jälkeen · kuski AUKI (WA/Perhe 28.9.)",
-      "end": "14:30"
+      "note": "lähtö klo 8.20 · kokoontuminen ~10.15 · peli 11.00 · loppu ~14.30",
+      "end": "14:30",
+      "driver": "Jussi"
     },
     {
       "date": "2026-10-03",
@@ -1766,6 +1777,11 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "label": "Riikka · synttärijuhlat"
+    },
+    {
+      "start": "2026-10-03",
+      "end": "2026-10-03",
+      "label": "8.10 kakku Annelle · 8.20 lähtö Joensuuhun · Samuel Welhot 11.00 (Nepenmäki)"
     }
   ],
   "wilmaAlerts": [

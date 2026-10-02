@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790914554205,
+  "updated": 1790924447647,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -539,14 +539,6 @@
       "kind": "cal",
       "start": "08:00",
       "end": "16:00"
-    },
-    {
-      "id": "cal-tqghjc10g3c3eqmjuuph4qqduo",
-      "title": "Jussi vie Mean kouluun",
-      "date": "2026-10-02",
-      "kind": "cal",
-      "start": "09:45",
-      "end": "10:00"
     },
     {
       "id": "cal-gbe9gfg1bksqe1f2c4fbso790o",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791050204520,
+  "updated": 1791050971376,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -619,23 +619,30 @@
     {
       "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
       "title": "Welhot 2018: Turnaus Junnuliiga",
-      "date": "2026-10-04",
       "kind": "cal",
+      "date": "2026-10-04",
       "start": "09:00",
       "end": "11:00",
       "place": "Lippumäen uima- ja liikuntahalli"
     },
     {
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "kind": "cal",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31"
+    },
+    {
       "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
       "title": "Ainon synttärit",
-      "date": "2026-10-03",
-      "kind": "cal"
+      "kind": "cal",
+      "date": "2026-10-03"
     },
     {
       "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",
       "title": "Milla · valmennus",
-      "date": "2026-10-04",
       "kind": "cal",
+      "date": "2026-10-04",
       "start": "09:30",
       "end": "11:30"
     }

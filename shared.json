@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791000729285,
+  "updated": 1791004953289,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -578,16 +578,6 @@
       "end": "20:00",
       "place": "",
       "kind": "treeni"
-    },
-    {
-      "id": "info-kakku-anne-2026-10-03",
-      "who": "jussi",
-      "title": "Vie kakku Annelle (~10 min) ennen Joensuuta",
-      "date": "2026-10-03",
-      "start": "08:10",
-      "end": "08:20",
-      "kind": "info",
-      "note": "Lähtö Joensuuhun klo 8.20 (kokoontuminen ~10.15 Nepenmäen koulu)"
     },
     {
       "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1790967680383,
+  "updated": 1791000363630,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -252,15 +252,6 @@
   "note": "WA 28.9. Fiilis: to Welhot meidän; pe Ambrosia-vienti meidän. la 3.10. Joensuu kuski auki. Wilma kokeet synkattu.",
   "extras": [
     {
-      "id": "info-milla-rooma-hakemus-2026-10-02",
-      "who": "milla",
-      "title": "Rooman hakemus klo 22 · 200 €",
-      "date": "2026-10-02",
-      "start": "22:00",
-      "kind": "info",
-      "note": "200 € omavastuu"
-    },
-    {
       "id": "info-samuel-turnaus-2026-10-03",
       "who": "samuel",
       "title": "Welhot Joensuu (peli 11 · kokoontuminen ~10.15 · loppu joskus 14 jälkeen)",
@@ -397,13 +388,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-wilma-milla-2-jakso-2026-10-02",
-      "who": "milla",
-      "title": "2. jakso alkaa – tarkista lukkari",
-      "date": "2026-10-02",
-      "kind": "info"
     },
     {
       "id": "info-wilma-perhe-vy-vuosikokous-2026-10-05",
@@ -606,27 +590,22 @@
       "note": "Lähtö Joensuuhun klo 8.20 (kokoontuminen ~10.15 Nepenmäen koulu)"
     },
     {
-      "id": "cal-v3nh1r8qkc85r7adp9nfram1as",
-      "title": "Milla · 2. jakso alkaa – tarkista lukkari",
-      "date": "2026-10-02",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-i7sjkd209uecptuugj8jltihhs",
-      "title": "Milla · Rooma-hakemus DL",
-      "date": "2026-10-02",
-      "start": "22:00",
-      "end": "22:15",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
       "title": "Welhot 2018: Turnaus",
       "date": "2026-10-03",
+      "kind": "cal",
       "start": "10:00",
       "end": "14:30",
-      "kind": "cal",
       "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
+    },
+    {
+      "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
+      "title": "Welhot 2018: Turnaus Junnuliiga",
+      "date": "2026-10-04",
+      "kind": "cal",
+      "start": "09:00",
+      "end": "11:00",
+      "place": "Lippumäen uima- ja liikuntahalli"
     },
     {
       "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
@@ -638,27 +617,35 @@
       "id": "cal-890l2isupm2jj1itcadeedj40o",
       "title": "Samuel · Welhot Joensuu (peli 11)",
       "date": "2026-10-03",
+      "kind": "cal",
       "start": "10:15",
       "end": "14:30",
-      "kind": "cal",
       "place": "Joensuu"
     },
     {
       "id": "cal-ofrfqpkk5tfevs1m0ejqa51838",
       "title": "Riikka · Padel",
       "date": "2026-10-03",
+      "kind": "cal",
       "start": "10:30",
-      "end": "12:00",
-      "kind": "cal"
+      "end": "12:00"
     },
     {
       "id": "cal-hhihtdpvptk422p2i3p9to5cgs",
       "title": "Milla · Vivida hiontaleiri",
       "date": "2026-10-03",
+      "kind": "cal",
       "start": "16:00",
       "end": "20:00",
-      "kind": "cal",
       "place": "Bella Center"
+    },
+    {
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-10-04",
+      "kind": "cal",
+      "start": "09:30",
+      "end": "11:30"
     }
   ],
   "schoolLunch": {

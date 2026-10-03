@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791005958742,
+  "updated": 1791018156567,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -580,64 +580,6 @@
       "kind": "treeni"
     },
     {
-      "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: Turnaus",
-      "date": "2026-10-03",
-      "kind": "cal",
-      "start": "10:00",
-      "end": "14:30",
-      "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
-    },
-    {
-      "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: Turnaus Junnuliiga",
-      "date": "2026-10-04",
-      "kind": "cal",
-      "start": "09:00",
-      "end": "11:00",
-      "place": "Lippumäen uima- ja liikuntahalli"
-    },
-    {
-      "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
-      "title": "Ainon synttärit",
-      "date": "2026-10-03",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-890l2isupm2jj1itcadeedj40o",
-      "title": "Samuel · Welhot Joensuu (peli 11)",
-      "date": "2026-10-03",
-      "kind": "cal",
-      "start": "10:15",
-      "end": "14:30",
-      "place": "Joensuu"
-    },
-    {
-      "id": "cal-ofrfqpkk5tfevs1m0ejqa51838",
-      "title": "Riikka · Padel",
-      "date": "2026-10-03",
-      "kind": "cal",
-      "start": "10:30",
-      "end": "12:00"
-    },
-    {
-      "id": "cal-hhihtdpvptk422p2i3p9to5cgs",
-      "title": "Milla · Vivida hiontaleiri",
-      "date": "2026-10-03",
-      "kind": "cal",
-      "start": "16:00",
-      "end": "20:00",
-      "place": "Bella Center"
-    },
-    {
-      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",
-      "title": "Milla · valmennus",
-      "date": "2026-10-04",
-      "kind": "cal",
-      "start": "09:30",
-      "end": "11:30"
-    },
-    {
       "id": "info-tesla-kotihuolto-2026-10-05",
       "who": "",
       "title": "Tesla kotihuolto (auto kotona 8–12)",
@@ -718,6 +660,56 @@
       "end": "19:00",
       "kind": "info",
       "note": "Lianna & Vivida WA"
+    },
+    {
+      "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
+      "title": "Welhot 2018: Turnaus",
+      "date": "2026-10-03",
+      "kind": "cal",
+      "start": "10:00",
+      "end": "14:30",
+      "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
+    },
+    {
+      "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
+      "title": "Welhot 2018: Turnaus Junnuliiga",
+      "date": "2026-10-04",
+      "kind": "cal",
+      "start": "09:00",
+      "end": "11:00",
+      "place": "Lippumäen uima- ja liikuntahalli"
+    },
+    {
+      "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
+      "title": "Ainon synttärit",
+      "date": "2026-10-03",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-890l2isupm2jj1itcadeedj40o",
+      "title": "Samuel · Welhot Joensuu (peli 11)",
+      "date": "2026-10-03",
+      "kind": "cal",
+      "start": "10:15",
+      "end": "14:30",
+      "place": "Joensuu"
+    },
+    {
+      "id": "cal-hhihtdpvptk422p2i3p9to5cgs",
+      "title": "Milla · Vivida hiontaleiri",
+      "date": "2026-10-03",
+      "kind": "cal",
+      "start": "16:00",
+      "end": "20:00",
+      "place": "Bella Center"
+    },
+    {
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-10-04",
+      "kind": "cal",
+      "start": "09:30",
+      "end": "11:30"
     }
   ],
   "schoolLunch": {

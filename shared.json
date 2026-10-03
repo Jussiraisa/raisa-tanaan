@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791029498541,
+  "updated": 1791031248861,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -637,6 +637,13 @@
       "end": "19:00",
       "kind": "info",
       "note": "Lianna & Vivida WA"
+    },
+    {
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31",
+      "kind": "cal"
     },
     {
       "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",

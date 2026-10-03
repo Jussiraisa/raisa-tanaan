@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791000689026,
+  "updated": 1791000729285,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -143,10 +143,10 @@
       "ride": ""
     },
     "info-samuel-turnaus-2026-10-03": {
-      "driver": "",
-      "status": "",
-      "ride": "",
-      "note": "Kuski auki — WA Fiilis 28.9."
+      "driver": "Jussi",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "WA: Jussi vie Samuelin omalla autolla Joensuuhun (ei enää auki)"
     },
     "info-mea-voimat-2026-10-05": {
       "driver": "",
@@ -249,7 +249,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "WA 28.9. Fiilis: to Welhot meidän; pe Ambrosia-vienti meidän. la 3.10. Joensuu kuski auki. Wilma kokeet synkattu.",
+  "note": "WA: la Joensuu Jussi vie. to Welhot meidän; pe Ambrosia-vienti meidän. Wilma login-seinä aamulla 3.10.",
   "extras": [
     {
       "id": "info-samuel-turnaus-2026-10-03",
@@ -260,9 +260,9 @@
       "end": "14:30",
       "kind": "info",
       "place": "Joensuu",
-      "driver": "",
-      "status": "",
-      "note": "WA Fiilis 28.9.2026; kuski AUKI · lähtö klo 8.20 (kakku Annelle ensin)"
+      "driver": "Jussi",
+      "status": "us",
+      "note": "Jussi vie omalla autolla · lähtö klo 8.20 (kakku Annelle ensin)"
     },
     {
       "id": "info-milla-hionta-2026-10-03",

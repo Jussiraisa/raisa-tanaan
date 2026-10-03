@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791018156567,
+  "updated": 1791027043889,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -251,19 +251,6 @@
   },
   "note": "Tee: Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; joukkue Intersport/Kortti-Piste; la Joensuu Jussi+Samuel omalla (paikalle 10); su Welhot 12.45–15 Lippumäki kyyti auki; ma Tesla 8–12 + VY 17.30; ti Ellen äi-koe + Riikka Oulu; to Welhot meidän; pe Ambrosia-vienti meidän. Wilma login epäonnistui 3.10.",
   "extras": [
-    {
-      "id": "info-samuel-turnaus-2026-10-03",
-      "who": "samuel",
-      "title": "Welhot Joensuu (paikalle 10 · pelit 11+)",
-      "date": "2026-10-03",
-      "start": "10:00",
-      "end": "14:30",
-      "kind": "info",
-      "place": "Joensuu",
-      "driver": "Jussi",
-      "status": "us",
-      "note": "WA: Jussi+Samuel omalla"
-    },
     {
       "id": "info-milla-hionta-2026-10-03",
       "who": "milla",
@@ -662,15 +649,6 @@
       "note": "Lianna & Vivida WA"
     },
     {
-      "id": "cal-_68o38dpj6ksj4g2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: Turnaus",
-      "date": "2026-10-03",
-      "kind": "cal",
-      "start": "10:00",
-      "end": "14:30",
-      "place": "Nepenmäen Koulu, Kärpänkatu 7 Joensuu"
-    },
-    {
       "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
       "title": "Welhot 2018: Turnaus Junnuliiga",
       "date": "2026-10-04",
@@ -684,15 +662,6 @@
       "title": "Ainon synttärit",
       "date": "2026-10-03",
       "kind": "cal"
-    },
-    {
-      "id": "cal-890l2isupm2jj1itcadeedj40o",
-      "title": "Samuel · Welhot Joensuu (peli 11)",
-      "date": "2026-10-03",
-      "kind": "cal",
-      "start": "10:15",
-      "end": "14:30",
-      "place": "Joensuu"
     },
     {
       "id": "cal-hhihtdpvptk422p2i3p9to5cgs",

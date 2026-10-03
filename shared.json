@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791051329142,
+  "updated": 1791052653568,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -617,6 +617,19 @@
       "note": "Lianna & Vivida WA"
     },
     {
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "kind": "cal",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31"
+    },
+    {
+      "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
+      "title": "Ainon synttärit",
+      "kind": "cal",
+      "date": "2026-10-03"
+    },
+    {
       "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
       "title": "Welhot 2018: Turnaus Junnuliiga",
       "kind": "cal",
@@ -624,12 +637,6 @@
       "start": "09:00",
       "end": "11:00",
       "place": "Lippumäen uima- ja liikuntahalli"
-    },
-    {
-      "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
-      "title": "Ainon synttärit",
-      "kind": "cal",
-      "date": "2026-10-03"
     },
     {
       "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",

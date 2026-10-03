@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791033196473,
+  "updated": 1791047068724,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -251,18 +251,6 @@
   },
   "note": "Tee: Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; joukkue Intersport/Kortti-Piste; la Joensuu Jussi+Samuel omalla (paikalle 10); su Welhot 12.45–15 Lippumäki kyyti auki; ma Tesla 8–12 + VY 17.30; ti Ellen äi-koe + Riikka Oulu; to Welhot meidän; pe Ambrosia-vienti meidän. Wilma login epäonnistui 3.10.",
   "extras": [
-    {
-      "id": "info-milla-hionta-2026-10-03",
-      "who": "milla",
-      "title": "Vivida hiontaleiri",
-      "date": "2026-10-03",
-      "start": "16:00",
-      "end": "20:00",
-      "place": "Bella Center",
-      "kind": "treeni",
-      "driver": "",
-      "status": ""
-    },
     {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
@@ -547,16 +535,6 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-milla-2026-10-03",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-03",
-      "start": "16:00",
-      "end": "20:00",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
       "id": "info-tesla-kotihuolto-2026-10-05",
       "who": "",
       "title": "Tesla kotihuolto (auto kotona 8–12)",
@@ -643,15 +621,6 @@
       "title": "Ainon synttärit",
       "date": "2026-10-03",
       "kind": "cal"
-    },
-    {
-      "id": "cal-hhihtdpvptk422p2i3p9to5cgs",
-      "title": "Milla · Vivida hiontaleiri",
-      "date": "2026-10-03",
-      "start": "16:00",
-      "end": "20:00",
-      "kind": "cal",
-      "place": "Bella Center"
     },
     {
       "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",

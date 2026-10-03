@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791004953289,
+  "updated": 1791005958742,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -249,20 +249,20 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "WA: la Joensuu Jussi vie. to Welhot meidän; pe Ambrosia-vienti meidän. Wilma login-seinä aamulla 3.10.",
+  "note": "Tee: Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; joukkue Intersport/Kortti-Piste; la Joensuu Jussi+Samuel omalla (paikalle 10); su Welhot 12.45–15 Lippumäki kyyti auki; ma Tesla 8–12 + VY 17.30; ti Ellen äi-koe + Riikka Oulu; to Welhot meidän; pe Ambrosia-vienti meidän. Wilma login epäonnistui 3.10.",
   "extras": [
     {
       "id": "info-samuel-turnaus-2026-10-03",
       "who": "samuel",
-      "title": "Welhot Joensuu (peli 11 · kokoontuminen ~10.15 · loppu joskus 14 jälkeen)",
+      "title": "Welhot Joensuu (paikalle 10 · pelit 11+)",
       "date": "2026-10-03",
-      "start": "10:15",
+      "start": "10:00",
       "end": "14:30",
       "kind": "info",
       "place": "Joensuu",
       "driver": "Jussi",
       "status": "us",
-      "note": "Jussi vie omalla autolla · lähtö klo 8.20 (kakku Annelle ensin)"
+      "note": "WA: Jussi+Samuel omalla"
     },
     {
       "id": "info-milla-hionta-2026-10-03",
@@ -636,6 +636,88 @@
       "kind": "cal",
       "start": "09:30",
       "end": "11:30"
+    },
+    {
+      "id": "info-tesla-kotihuolto-2026-10-05",
+      "who": "",
+      "title": "Tesla kotihuolto (auto kotona 8–12)",
+      "date": "2026-10-05",
+      "start": "08:00",
+      "end": "12:00",
+      "kind": "info",
+      "place": "Rakovalkeankatu 11",
+      "note": "Lauantairaportti 3.10."
+    },
+    {
+      "id": "info-joukkue-kortti-33841-2026-10-06",
+      "who": "samuel",
+      "title": "JOUKKUE Kortti-Piste 33841 · 213,95 € erä",
+      "date": "2026-10-06",
+      "kind": "info",
+      "note": "SB Welhot P9 — ei henkilökohtainen"
+    },
+    {
+      "id": "info-joukkue-intersport-6667-2026-10-08",
+      "who": "samuel",
+      "title": "JOUKKUE Intersport 6667 · 141 € erä",
+      "date": "2026-10-08",
+      "kind": "info",
+      "note": "WELHOT/2018 — ei henkilökohtainen"
+    },
+    {
+      "id": "info-welhot-maksut-myohassa-2026-10-03",
+      "who": "samuel",
+      "title": "Welhot maksut myöhässä: 100 € + 60 €",
+      "date": "2026-10-03",
+      "kind": "info",
+      "note": "19818 erä 18.9. · 19889 erä 23.9. · Gmail lukematon"
+    },
+    {
+      "id": "info-samuel-junnuliiga-2026-10-04",
+      "who": "samuel",
+      "title": "Welhot junnuliiga 12.45–15 Lippumäki",
+      "date": "2026-10-04",
+      "start": "12:45",
+      "end": "15:00",
+      "place": "Lippumäki",
+      "kind": "info",
+      "driver": "",
+      "status": "",
+      "note": "WA korjaa kalenterin 9–11; kyyti auki"
+    },
+    {
+      "id": "info-vivida-strassit-2026-10-03",
+      "who": "milla",
+      "title": "Vivida strassit 19,17 € MobilePay",
+      "date": "2026-10-03",
+      "kind": "info",
+      "note": "Lotta · lauantairaportti"
+    },
+    {
+      "id": "info-vivida-kisakallio-2026-10-17",
+      "who": "milla",
+      "title": "Vivida Kisakallio aluerinkileiri",
+      "date": "2026-10-17",
+      "dateEnd": "2026-10-18",
+      "kind": "info"
+    },
+    {
+      "id": "info-welhot-syysloma-ylapyoro-2026-10-12",
+      "who": "samuel",
+      "title": "Welhot: Ylä-Pyörö peruttu syyslomalla (ma-treeni pois)",
+      "date": "2026-10-12",
+      "dateEnd": "2026-10-18",
+      "kind": "info"
+    },
+    {
+      "id": "info-kalakukko-teams-2026-10-07",
+      "who": "",
+      "title": "Teams: Kalakukko Cup peruuntuminen + budjetti",
+      "date": "2026-10-07",
+      "start": "18:00",
+      "end": "19:00",
+      "kind": "info",
+      "note": "Lianna & Vivida WA"
     }
   ],
   "schoolLunch": {

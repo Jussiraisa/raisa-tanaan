@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791028329098,
+  "updated": 1791028875583,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -545,16 +545,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-03",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-03",
-      "start": "12:30",
-      "end": "15:00",
-      "place": "",
-      "kind": "treeni"
     },
     {
       "id": "sheet-milla-2026-10-03",

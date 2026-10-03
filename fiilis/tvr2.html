@@ -702,6 +702,29 @@ body.evening .photo-cap, body.night .photo-cap {
     for (var i = 0; i < list.length; i++) {
       if (list[i].date === iso) out.push(list[i]);
     }
+    /* v138: weeklyEvents (start/endDate/except[]); skip if explicit event same day/who/title */
+    var weekly = schedule.weeklyEvents || [];
+    var wd = null;
+    try { wd = new Date(iso + "T12:00:00").getDay(); } catch (e) {}
+    for (var w = 0; w < weekly.length; w++) {
+      var r = weekly[w];
+      if (!r || wd == null || r.weekday !== wd) continue;
+      if (r.start && iso < r.start) continue;
+      if (r.endDate && iso > r.endDate) continue;
+      if (r.except && r.except.indexOf(iso) >= 0) continue;
+      var dupW = false;
+      for (var q = 0; q < list.length; q++) {
+        var x = list[q];
+        if (x && x.date === iso && String(x.who || "").toLowerCase() === String(r.who || "").toLowerCase() &&
+            String(x.title || "").toLowerCase().replace(/\s+/g, " ").trim() === String(r.title || "").toLowerCase().replace(/\s+/g, " ").trim()) { dupW = true; break; }
+      }
+      if (dupW) continue;
+      out.push({
+        date: iso, time: r.time || "", end: r.end || "", who: r.who || "",
+        title: r.title || "", place: r.place || "", kind: r.kind || "muu",
+        source: r.source || "weekly", driver: r.driver || "", pickup: r.pickup || "", note: r.note || ""
+      });
+    }
     out.sort(function (a, b) {
       return (parseMin(a.time) || 0) - (parseMin(b.time) || 0);
     });

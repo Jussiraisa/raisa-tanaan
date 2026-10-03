@@ -328,7 +328,7 @@ body.evening .day .ev, body.night .day .ev {
       var r = weekly[w];
       if (!r || wd == null || r.weekday !== wd) continue;
       if (r.start && iso < r.start) continue;
-      if (r.endDate && iso > r.endDate) continue;
+      if (r.endDate && iso > r.endDate) continue; if (r.except && r.except.indexOf(iso) >= 0) continue; var dupW = false; for (var q = 0; q < list.length; q++) { var x = list[q]; if (x && x.date === iso && String(x.who || "").toLowerCase() === String(r.who || "").toLowerCase() && String(x.title || "").toLowerCase().replace(/\s+/g, " ").trim() === String(r.title || "").toLowerCase().replace(/\s+/g, " ").trim()) { dupW = true; break; } } if (dupW) continue; /* v138: weekly except[] + skip if explicit event same day/who/title */
       out.push({
         date: iso,
         time: r.time || "",
@@ -339,7 +339,8 @@ body.evening .day .ev, body.night .day .ev {
         kind: r.kind || "muu",
         source: r.source || "weekly",
         driver: r.driver || "",
-        pickup: r.pickup || ""
+        pickup: r.pickup || "",
+        note: r.note || ""
       });
     }
     out.sort(function (a, b) {

@@ -694,6 +694,16 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "info-wilma-mea-ai-koe-2026-10-23",
+      "who": "mea",
+      "title": "Äidinkielen koe",
+      "date": "2026-10-23",
+      "start": "08:50",
+      "end": "09:35",
+      "kind": "info",
+      "note": "Wilma 4.10."
     }
   ],
   "schoolLunch": {

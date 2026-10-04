@@ -2889,80 +2889,17 @@
   ],
   "wilmaAlerts": [
     {
-      "due": "2026-09-25",
-      "title": "KE01 kemia 9–12",
+      "due": "2026-10-05",
+      "title": "OP05-tehtävät Teamsiin",
       "who": "Milla",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-09-28",
-      "title": "ÄI01 kirjoitustaito 10–13",
-      "who": "Milla",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "who": "Milla",
-      "title": "MAY01 luvut ja yhtälöt 8.50–12",
-      "due": "2026-09-29",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-09-30",
-      "title": "EN sanakoe",
-      "who": "Ellen",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-09-30",
-      "title": "RUB12 ruotsi (koe)",
-      "who": "Milla",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "who": "Ellen",
-      "title": "Koulukuvaus to 1.10. klo 12.30 · lomake",
-      "due": "2026-10-01",
       "needAction": true,
-      "source": "wilma:perhe"
+      "source": "gcal:perhe"
     },
     {
-      "who": "Samuel",
-      "title": "Koulukuvaus to 1.10. klo 8.10 · lomake",
-      "due": "2026-10-01",
-      "needAction": true,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-10-01",
-      "title": "Pelipassi hankittava",
-      "who": "Samuel",
-      "needAction": true,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-10-02",
-      "title": "UE-koe",
-      "who": "Ellen",
+      "due": "2026-10-05",
+      "title": "Aurinkorinteen vanhempainyhdistyksen vuosikokous 17.30",
+      "who": "perhe",
       "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-10-02",
-      "title": "Kemia koe 14.15",
-      "who": "Mea",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "who": "Milla",
-      "title": "Rooman opintomatka · hakemus pe 2.10. klo 22",
-      "due": "2026-10-02",
-      "needAction": true,
       "source": "wilma:perhe"
     },
     {
@@ -2973,58 +2910,16 @@
       "source": "wilma:perhe"
     },
     {
-      "due": "2026-10-09",
-      "title": "Matematiikan koe",
-      "who": "Ellen",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-10-28",
-      "title": "MAA03 geometria 9.35",
+      "due": "2026-10-06",
+      "title": "Ro-tuokio",
       "who": "Milla",
       "needAction": false,
       "source": "wilma:perhe"
-    },
-    {
-      "who": "Ellen",
-      "title": "Poissaoloja 27 h (15.9.) · tarvittaessa opettaja",
-      "due": "",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "who": "Mea",
-      "title": "Poissaoloja 60 h (14.9.) · tarvittaessa opettaja",
-      "due": "",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "who": "Milla",
-      "title": "Poissaolovaroitukset RUB11, MAY01, KE01 · yhteys aineopettajiin",
-      "due": "",
-      "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-10-05",
-      "title": "OP05-tehtävät Teamsiin",
-      "who": "Milla",
-      "needAction": true,
-      "source": "gcal:perhe"
     },
     {
       "due": "2026-10-07",
       "title": "Turpotietäjä-alkukilpailu 9–11",
       "who": "Milla",
-      "needAction": false,
-      "source": "gcal:perhe"
-    },
-    {
-      "due": "2026-10-08",
-      "title": "MA-koe",
-      "who": "Mea",
       "needAction": false,
       "source": "gcal:perhe"
     },
@@ -3036,22 +2931,98 @@
       "source": "gcal:perhe"
     },
     {
+      "due": "2026-10-08",
+      "title": "MA3-koe",
+      "who": "Mea",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-09",
+      "title": "Matematiikan koe",
+      "who": "Ellen",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
       "due": "2026-10-11",
       "title": "STM huoltajakysely DL",
       "who": "perhe",
       "needAction": false,
       "source": "gcal:perhe"
-    }
-  ],
-  "whatsappAlerts": [
+    },
     {
-      "due": "2026-09-28",
-      "title": "Lianna-viikko synkattu: Julia ma/ke, Amanda la, Riikka su; lähtöajat ja Mea/Enni-pickupit päivitetty.",
+      "due": "2026-10-12",
+      "title": "Syysloma 12.–16.10.",
+      "who": "perhe",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-13",
+      "title": "Höntsäpelipäivä Ellen + Samuel 12.00",
+      "who": "Ellen",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-13",
+      "title": "Höntsäpelipäivä 16.00",
       "who": "Mea",
       "needAction": false,
-      "source": "wa:perhe"
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-17",
+      "title": "Voimistelun liikuntalauantai (Supersyysloma) 10.00",
+      "who": "perhe",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-19",
+      "title": "Podcast-tehtävä Teamsiin",
+      "who": "Milla",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-21",
+      "title": "RUB iso koe (ruotsi)",
+      "who": "Mea",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-23",
+      "title": "Äidinkielen koe 08.50",
+      "who": "Mea",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-27",
+      "title": "BI3-koe 08.00",
+      "who": "Mea",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-28",
+      "title": "MAA03 geometria 9.35",
+      "who": "Milla",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-12-01",
+      "title": "Nikotiini-info vanhemmille (Teams) 18.00",
+      "who": "perhe",
+      "needAction": false,
+      "source": "wilma:perhe"
     }
   ],
+  "whatsappAlerts": [],
   "weeklyEvents": [
     {
       "start": "2026-09-27",

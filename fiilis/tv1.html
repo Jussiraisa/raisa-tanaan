@@ -1802,7 +1802,11 @@
     for (var i = 0; i < alerts.length; i++) {
       var a = alerts[i];
       if (!a) continue;
-      if (a.needAction === false) continue;
+      /* v139: vanhat pois; tulevat 7 pv (kokeet/tapahtumat) näkyviin, needAction aina */
+      var _t = (now && now.iso) ? now.iso : new Date().toISOString().slice(0,10);
+      if (a.due && a.due < _t) continue;
+      var _lim = (function(){ var p=_t.split("-"); var dd=new Date(+p[0], +p[1]-1, +p[2]+7); var m=dd.getMonth()+1, g=dd.getDate(); return dd.getFullYear()+"-"+(m<10?"0":"")+m+"-"+(g<10?"0":"")+g; })();
+      if (a.needAction !== true && !(a.due && a.due <= _lim)) continue;
       items.push({
         src: "Wilma",
         cls: "",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791086977389,
+  "updated": 1791087202069,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -264,13 +264,6 @@
   "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
   "extras": [
     {
-      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
-      "title": "Milla · Shaking up Tech -haku",
-      "date": "2026-10-01",
-      "dateEnd": "2026-10-31",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
       "title": "Welhot 2018: Turnaus Junnuliiga",
       "date": "2026-10-04",
@@ -286,6 +279,39 @@
       "start": "09:30",
       "end": "11:30",
       "kind": "cal"
+    },
+    {
+      "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",
+      "title": "Milla · OP05-tehtävät Teamsiin",
+      "date": "2026-10-05",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-n031ppo4v5ep3kn6a91hn5nvq8",
+      "title": "Tesla kotihuolto",
+      "date": "2026-10-05",
+      "start": "08:00",
+      "end": "12:00",
+      "kind": "cal",
+      "place": "Rakovalkeankatu 11, 70840 Kuopio"
+    },
+    {
+      "id": "cal-qt2a8joqabeb1b8guvkmg46rs8",
+      "title": "Perhe · Aurinkorinteen vanhempainyhdistyksen vuosikokous",
+      "date": "2026-10-05",
+      "start": "17:30",
+      "end": "19:00",
+      "kind": "cal",
+      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
+    },
+    {
+      "id": "cal-25bqjq0l13qvfpr8oq0ifd3pdo",
+      "title": "Mea · Liannan voimat",
+      "date": "2026-10-05",
+      "start": "18:30",
+      "end": "19:30",
+      "kind": "cal",
+      "place": "Kuoppari"
     },
     {
       "id": "info-milla-vivida-2026-10-04",
@@ -327,27 +353,12 @@
       "note": "WA: su molemmat"
     },
     {
-      "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",
-      "title": "Milla · OP05-tehtävät Teamsiin",
-      "date": "2026-10-05",
-      "kind": "cal"
-    },
-    {
       "id": "info-wilma-milla-op05-2026-10-05",
       "who": "milla",
       "title": "OP05-tehtävät Teamsiin",
       "date": "2026-10-05",
       "kind": "info",
       "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
-    },
-    {
-      "id": "cal-n031ppo4v5ep3kn6a91hn5nvq8",
-      "title": "Tesla kotihuolto",
-      "date": "2026-10-05",
-      "start": "08:00",
-      "end": "12:00",
-      "kind": "cal",
-      "place": "Rakovalkeankatu 11, 70840 Kuopio"
     },
     {
       "id": "info-tesla-kotihuolto-2026-10-05",
@@ -361,15 +372,6 @@
       "note": "Lauantairaportti 3.10."
     },
     {
-      "id": "cal-qt2a8joqabeb1b8guvkmg46rs8",
-      "title": "Perhe · Aurinkorinteen vanhempainyhdistyksen vuosikokous",
-      "date": "2026-10-05",
-      "start": "17:30",
-      "end": "19:00",
-      "kind": "cal",
-      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
-    },
-    {
       "id": "info-wilma-perhe-vy-vuosikokous-2026-10-05",
       "who": "perhe",
       "title": "Aurinkorinteen vanhempainyhdistyksen vuosikokous",
@@ -377,15 +379,6 @@
       "start": "17:30",
       "kind": "info",
       "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
-    },
-    {
-      "id": "cal-25bqjq0l13qvfpr8oq0ifd3pdo",
-      "title": "Mea · Liannan voimat",
-      "date": "2026-10-05",
-      "start": "18:30",
-      "end": "19:30",
-      "kind": "cal",
-      "place": "Kuoppari"
     },
     {
       "id": "info-mea-voimat-2026-10-05",

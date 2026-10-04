@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791087202069,
+  "updated": 1791096431507,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -279,6 +279,15 @@
       "start": "09:30",
       "end": "11:30",
       "kind": "cal"
+    },
+    {
+      "id": "cal-_68o36chl70qjcg2ed5mmarj8elqn8rpecdnmq",
+      "title": "Welhot 2018: 17:00-18:00",
+      "date": "2026-10-05",
+      "start": "17:00",
+      "end": "19:00",
+      "kind": "cal",
+      "place": "Ylä-Pyörön koulu"
     },
     {
       "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",

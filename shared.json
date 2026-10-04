@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791127291221,
+  "updated": 1791127868956,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -267,8 +267,8 @@
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",
       "title": "Milla · Shaking up Tech -haku",
       "date": "2026-10-01",
-      "kind": "cal",
-      "dateEnd": "2026-10-31"
+      "dateEnd": "2026-10-31",
+      "kind": "cal"
     },
     {
       "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",
@@ -280,41 +280,28 @@
       "id": "cal-n031ppo4v5ep3kn6a91hn5nvq8",
       "title": "Tesla kotihuolto",
       "date": "2026-10-05",
-      "kind": "cal",
       "start": "08:00",
       "end": "12:00",
+      "kind": "cal",
       "place": "Rakovalkeankatu 11, 70840 Kuopio"
     },
     {
       "id": "cal-qt2a8joqabeb1b8guvkmg46rs8",
       "title": "Perhe · Aurinkorinteen vanhempainyhdistyksen vuosikokous",
       "date": "2026-10-05",
-      "kind": "cal",
       "start": "17:30",
       "end": "19:00",
+      "kind": "cal",
       "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
     },
     {
       "id": "cal-25bqjq0l13qvfpr8oq0ifd3pdo",
       "title": "Mea · Liannan voimat",
       "date": "2026-10-05",
-      "kind": "cal",
       "start": "18:30",
       "end": "19:30",
+      "kind": "cal",
       "place": "Kuoppari"
-    },
-    {
-      "id": "info-mea-lianna-2026-10-04",
-      "who": "mea",
-      "title": "Lianna treeni",
-      "date": "2026-10-04",
-      "start": "16:00",
-      "end": "18:30",
-      "place": "BellaCenter",
-      "kind": "treeni",
-      "driver": "Riikka",
-      "status": "us",
-      "note": "WA: su molemmat"
     },
     {
       "id": "info-wilma-milla-op05-2026-10-05",

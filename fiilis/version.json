@@ -1,7 +1,7 @@
 {
-  "schedule": "2026-10-03-cal-wk42",
-  "updated": "2026-10-03T09:35:00+03:00",
+  "schedule": "2026-10-04-cal-am",
+  "updated": "2026-10-04T05:55:00+03:00",
   "ui": "20260929-v138-today-bigger",
-  "poll": "v138-cal-wk42",
-  "note": "Kalenteritäyttö vko 42 → kesä 2027 (gcal Perhe/Voimistelu/jussi + juhlapyhät, Gmail, kuopio.fi loma-ajat); weeklyEvents except[] + dedupe kaikissa näkymissä."
+  "poll": "v138-cal-am-1004",
+  "note": "Synkka 4.10. aamu: pe 9.10 Vivida poistettu (ei gcal); muuten QUIET vs 3.10."
 }

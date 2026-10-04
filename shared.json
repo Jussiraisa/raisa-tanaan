@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791086958298,
+  "updated": 1791086977389,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -264,6 +264,30 @@
   "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
   "extras": [
     {
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
+      "title": "Welhot 2018: Turnaus Junnuliiga",
+      "date": "2026-10-04",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "cal",
+      "place": "Lippumäen uima- ja liikuntahalli"
+    },
+    {
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-10-04",
+      "start": "09:30",
+      "end": "11:30",
+      "kind": "cal"
+    },
+    {
       "id": "info-milla-vivida-2026-10-04",
       "who": "milla",
       "title": "Vivida treeni",
@@ -275,6 +299,19 @@
       "driver": "",
       "status": "",
       "note": "kyyti auki"
+    },
+    {
+      "id": "info-samuel-junnuliiga-2026-10-04",
+      "who": "samuel",
+      "title": "Welhot junnuliiga 12.45–15 Lippumäki",
+      "date": "2026-10-04",
+      "start": "12:45",
+      "end": "15:00",
+      "place": "Lippumäki",
+      "kind": "info",
+      "driver": "",
+      "status": "",
+      "note": "WA vahvistaa 12.45–15; kyyti auki"
     },
     {
       "id": "info-mea-lianna-2026-10-04",
@@ -290,6 +327,67 @@
       "note": "WA: su molemmat"
     },
     {
+      "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",
+      "title": "Milla · OP05-tehtävät Teamsiin",
+      "date": "2026-10-05",
+      "kind": "cal"
+    },
+    {
+      "id": "info-wilma-milla-op05-2026-10-05",
+      "who": "milla",
+      "title": "OP05-tehtävät Teamsiin",
+      "date": "2026-10-05",
+      "kind": "info",
+      "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
+    },
+    {
+      "id": "cal-n031ppo4v5ep3kn6a91hn5nvq8",
+      "title": "Tesla kotihuolto",
+      "date": "2026-10-05",
+      "start": "08:00",
+      "end": "12:00",
+      "kind": "cal",
+      "place": "Rakovalkeankatu 11, 70840 Kuopio"
+    },
+    {
+      "id": "info-tesla-kotihuolto-2026-10-05",
+      "who": "",
+      "title": "Tesla kotihuolto (auto kotona 8–12)",
+      "date": "2026-10-05",
+      "start": "08:00",
+      "end": "12:00",
+      "kind": "info",
+      "place": "Rakovalkeankatu 11",
+      "note": "Lauantairaportti 3.10."
+    },
+    {
+      "id": "cal-qt2a8joqabeb1b8guvkmg46rs8",
+      "title": "Perhe · Aurinkorinteen vanhempainyhdistyksen vuosikokous",
+      "date": "2026-10-05",
+      "start": "17:30",
+      "end": "19:00",
+      "kind": "cal",
+      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
+    },
+    {
+      "id": "info-wilma-perhe-vy-vuosikokous-2026-10-05",
+      "who": "perhe",
+      "title": "Aurinkorinteen vanhempainyhdistyksen vuosikokous",
+      "date": "2026-10-05",
+      "start": "17:30",
+      "kind": "info",
+      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
+    },
+    {
+      "id": "cal-25bqjq0l13qvfpr8oq0ifd3pdo",
+      "title": "Mea · Liannan voimat",
+      "date": "2026-10-05",
+      "start": "18:30",
+      "end": "19:30",
+      "kind": "cal",
+      "place": "Kuoppari"
+    },
+    {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
       "title": "Liannan voimat",
@@ -300,6 +398,32 @@
       "kind": "treeni",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "info-joukkue-kortti-33841-2026-10-06",
+      "who": "samuel",
+      "title": "JOUKKUE Kortti-Piste 33841 · 213,95 € erä",
+      "date": "2026-10-06",
+      "kind": "info",
+      "note": "SB Welhot P9 — ei henkilökohtainen"
+    },
+    {
+      "id": "info-riikka-oulu-2026-10-06",
+      "who": "",
+      "title": "Riikka Ouluun",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "kind": "info",
+      "place": "Oulu",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "info-wilma-milla-ro-tuokio-2026-10-06",
+      "who": "milla",
+      "title": "Ro-tuokio",
+      "date": "2026-10-06",
+      "kind": "info"
     },
     {
       "id": "info-ellen-koe-aidinkieli-2026-10-06",
@@ -315,17 +439,6 @@
       "note": "oikeinkirjoitus + tekstilajit; tekstikirja s.14–35 & 202–203, tehtäväkirja s.8–27"
     },
     {
-      "id": "info-riikka-oulu-2026-10-06",
-      "who": "",
-      "title": "Riikka Ouluun",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "kind": "info",
-      "place": "Oulu",
-      "driver": "",
-      "status": ""
-    },
-    {
       "id": "info-lianna-harkkakisa-2026-10-06",
       "who": "mea",
       "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
@@ -338,6 +451,16 @@
       "status": ""
     },
     {
+      "id": "info-wilma-milla-turpotietaja-2026-10-07",
+      "who": "milla",
+      "title": "Turpotietäjä-alkukilpailu",
+      "date": "2026-10-07",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "info",
+      "note": "vapaaehtoinen, Abitti"
+    },
+    {
       "id": "info-mea-terapia-2026-10-07",
       "who": "mea",
       "title": "Terapia",
@@ -348,6 +471,38 @@
       "place": "",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "info-kalakukko-teams-2026-10-07",
+      "who": "",
+      "title": "Teams: Kalakukko Cup peruuntuminen + budjetti",
+      "date": "2026-10-07",
+      "start": "18:00",
+      "end": "19:00",
+      "kind": "info",
+      "note": "Lianna & Vivida WA"
+    },
+    {
+      "id": "info-joukkue-intersport-6667-2026-10-08",
+      "who": "samuel",
+      "title": "JOUKKUE Intersport 6667 · 141 € erä",
+      "date": "2026-10-08",
+      "kind": "info",
+      "note": "WELHOT/2018 — ei henkilökohtainen"
+    },
+    {
+      "id": "info-wilma-mea-ma-koe-2026-10-08",
+      "who": "mea",
+      "title": "MA-koe",
+      "date": "2026-10-08",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-samuel-unicef-2026-10-08",
+      "who": "samuel",
+      "title": "UNICEF-kävely",
+      "date": "2026-10-08",
+      "kind": "info"
     },
     {
       "id": "info-ellen-koe-matematiikka-2026-10-09",
@@ -363,94 +518,6 @@
       "note": "kertolasku s.60–98, kertotaulut 1–10"
     },
     {
-      "id": "info-samuel-turnaus-2026-10-31",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
-      "date": "2026-10-31",
-      "place": "Kuopio Studentia",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-samuel-turnaus-2026-11-15",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Suonenjoki",
-      "date": "2026-11-15",
-      "place": "Suonenjoki",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-samuel-turnaus-2026-11-28",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Siilinjärvi",
-      "date": "2026-11-28",
-      "place": "Siilinjärvi",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-samuel-turnaus-2026-12-19",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
-      "date": "2026-12-19",
-      "place": "Kuopio Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-wilma-perhe-vy-vuosikokous-2026-10-05",
-      "who": "perhe",
-      "title": "Aurinkorinteen vanhempainyhdistyksen vuosikokous",
-      "date": "2026-10-05",
-      "start": "17:30",
-      "kind": "info",
-      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
-    },
-    {
-      "id": "info-wilma-milla-op05-2026-10-05",
-      "who": "milla",
-      "title": "OP05-tehtävät Teamsiin",
-      "date": "2026-10-05",
-      "kind": "info",
-      "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
-    },
-    {
-      "id": "info-wilma-milla-ro-tuokio-2026-10-06",
-      "who": "milla",
-      "title": "Ro-tuokio",
-      "date": "2026-10-06",
-      "kind": "info"
-    },
-    {
-      "id": "info-wilma-milla-turpotietaja-2026-10-07",
-      "who": "milla",
-      "title": "Turpotietäjä-alkukilpailu",
-      "date": "2026-10-07",
-      "start": "09:00",
-      "end": "11:00",
-      "kind": "info",
-      "note": "vapaaehtoinen, Abitti"
-    },
-    {
-      "id": "info-wilma-samuel-unicef-2026-10-08",
-      "who": "samuel",
-      "title": "UNICEF-kävely",
-      "date": "2026-10-08",
-      "kind": "info"
-    },
-    {
-      "id": "info-wilma-mea-ma-koe-2026-10-08",
-      "who": "mea",
-      "title": "MA-koe",
-      "date": "2026-10-08",
-      "kind": "info"
-    },
-    {
       "id": "info-wilma-perhe-stm-kysely-2026-10-11",
       "who": "perhe",
       "title": "STM huoltajakysely DL",
@@ -459,8 +526,16 @@
       "note": "vapaaehtoinen"
     },
     {
-      "id": "info-wilma-samuel-hontsa-2026-10-13",
+      "id": "info-welhot-syysloma-ylapyoro-2026-10-12",
       "who": "samuel",
+      "title": "Welhot: Ylä-Pyörö peruttu syyslomalla (ma-treeni pois)",
+      "date": "2026-10-12",
+      "dateEnd": "2026-10-18",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-ellen-hontsa-2026-10-13",
+      "who": "ellen",
       "title": "Höntsäpelipäivä (Samuel + Ellen)",
       "date": "2026-10-13",
       "start": "12:00",
@@ -470,8 +545,8 @@
       "note": "maksuton"
     },
     {
-      "id": "info-wilma-ellen-hontsa-2026-10-13",
-      "who": "ellen",
+      "id": "info-wilma-samuel-hontsa-2026-10-13",
+      "who": "samuel",
       "title": "Höntsäpelipäivä (Samuel + Ellen)",
       "date": "2026-10-13",
       "start": "12:00",
@@ -490,6 +565,14 @@
       "kind": "info",
       "place": "Kuopio-halli",
       "note": "maksuton"
+    },
+    {
+      "id": "info-vivida-kisakallio-2026-10-17",
+      "who": "milla",
+      "title": "Vivida Kisakallio aluerinkileiri",
+      "date": "2026-10-17",
+      "dateEnd": "2026-10-18",
+      "kind": "info"
     },
     {
       "id": "info-wilma-milla-podcast-2026-10-19",
@@ -515,16 +598,6 @@
       "kind": "info"
     },
     {
-      "id": "info-wilma-perhe-nikotiini-info-2026-12-01",
-      "who": "perhe",
-      "title": "Nikotiini-info vanhemmille (Teams)",
-      "date": "2026-12-01",
-      "start": "18:00",
-      "end": "19:15",
-      "kind": "info",
-      "note": "Aurinkorinne, maksuton. Ilmoittaudu 30.11. mennessä."
-    },
-    {
       "id": "info-ambrosia-2026-10-31",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",
@@ -533,6 +606,26 @@
       "place": "Helsinki",
       "dateEnd": "2026-11-01",
       "note": "kulku Juna"
+    },
+    {
+      "id": "info-samuel-turnaus-2026-10-31",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
+      "date": "2026-10-31",
+      "place": "Kuopio Studentia",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "info-samuel-turnaus-2026-11-15",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Suonenjoki",
+      "date": "2026-11-15",
+      "place": "Suonenjoki",
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ambrosia-2026-11-21",
@@ -545,6 +638,26 @@
       "note": "kulku Auto/juna+taksi"
     },
     {
+      "id": "info-samuel-turnaus-2026-11-28",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Siilinjärvi",
+      "date": "2026-11-28",
+      "place": "Siilinjärvi",
+      "kind": "info",
+      "driver": "",
+      "status": ""
+    },
+    {
+      "id": "info-wilma-perhe-nikotiini-info-2026-12-01",
+      "who": "perhe",
+      "title": "Nikotiini-info vanhemmille (Teams)",
+      "date": "2026-12-01",
+      "start": "18:00",
+      "end": "19:15",
+      "kind": "info",
+      "note": "Aurinkorinne, maksuton. Ilmoittaudu 30.11. mennessä."
+    },
+    {
       "id": "info-ambrosia-2026-12-04",
       "who": "ellen",
       "title": "Ambrosia leiri · Vierumäki",
@@ -553,6 +666,16 @@
       "place": "Vierumäki",
       "dateEnd": "2026-12-05",
       "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-samuel-turnaus-2026-12-19",
+      "who": "samuel",
+      "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
+      "date": "2026-12-19",
+      "place": "Kuopio Luola",
+      "kind": "info",
+      "driver": "",
+      "status": ""
     },
     {
       "id": "info-ambrosia-2027-03-19",
@@ -571,111 +694,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "info-tesla-kotihuolto-2026-10-05",
-      "who": "",
-      "title": "Tesla kotihuolto (auto kotona 8–12)",
-      "date": "2026-10-05",
-      "start": "08:00",
-      "end": "12:00",
-      "kind": "info",
-      "place": "Rakovalkeankatu 11",
-      "note": "Lauantairaportti 3.10."
-    },
-    {
-      "id": "info-joukkue-kortti-33841-2026-10-06",
-      "who": "samuel",
-      "title": "JOUKKUE Kortti-Piste 33841 · 213,95 € erä",
-      "date": "2026-10-06",
-      "kind": "info",
-      "note": "SB Welhot P9 — ei henkilökohtainen"
-    },
-    {
-      "id": "info-joukkue-intersport-6667-2026-10-08",
-      "who": "samuel",
-      "title": "JOUKKUE Intersport 6667 · 141 € erä",
-      "date": "2026-10-08",
-      "kind": "info",
-      "note": "WELHOT/2018 — ei henkilökohtainen"
-    },
-    {
-      "id": "info-welhot-maksut-myohassa-2026-10-03",
-      "who": "samuel",
-      "title": "Welhot maksut myöhässä: 100 € + 60 €",
-      "date": "2026-10-03",
-      "kind": "info",
-      "note": "19818 erä 18.9. · 19889 erä 23.9. · Gmail lukematon"
-    },
-    {
-      "id": "info-samuel-junnuliiga-2026-10-04",
-      "who": "samuel",
-      "title": "Welhot junnuliiga 12.45–15 Lippumäki",
-      "date": "2026-10-04",
-      "start": "12:45",
-      "end": "15:00",
-      "place": "Lippumäki",
-      "kind": "info",
-      "driver": "",
-      "status": "",
-      "note": "WA vahvistaa 12.45–15; kyyti auki"
-    },
-    {
-      "id": "info-vivida-strassit-2026-10-03",
-      "who": "milla",
-      "title": "Vivida strassit 19,17 € MobilePay",
-      "date": "2026-10-03",
-      "kind": "info",
-      "note": "Lotta · lauantairaportti"
-    },
-    {
-      "id": "info-vivida-kisakallio-2026-10-17",
-      "who": "milla",
-      "title": "Vivida Kisakallio aluerinkileiri",
-      "date": "2026-10-17",
-      "dateEnd": "2026-10-18",
-      "kind": "info"
-    },
-    {
-      "id": "info-welhot-syysloma-ylapyoro-2026-10-12",
-      "who": "samuel",
-      "title": "Welhot: Ylä-Pyörö peruttu syyslomalla (ma-treeni pois)",
-      "date": "2026-10-12",
-      "dateEnd": "2026-10-18",
-      "kind": "info"
-    },
-    {
-      "id": "info-kalakukko-teams-2026-10-07",
-      "who": "",
-      "title": "Teams: Kalakukko Cup peruuntuminen + budjetti",
-      "date": "2026-10-07",
-      "start": "18:00",
-      "end": "19:00",
-      "kind": "info",
-      "note": "Lianna & Vivida WA"
-    },
-    {
-      "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: Turnaus Junnuliiga",
-      "kind": "cal",
-      "date": "2026-10-04",
-      "start": "09:00",
-      "end": "11:00",
-      "place": "Lippumäen uima- ja liikuntahalli"
-    },
-    {
-      "id": "cal-8g3udqal8rtq77e36bqi4ue0p8",
-      "title": "Ainon synttärit",
-      "kind": "cal",
-      "date": "2026-10-03"
-    },
-    {
-      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",
-      "title": "Milla · valmennus",
-      "kind": "cal",
-      "date": "2026-10-04",
-      "start": "09:30",
-      "end": "11:30"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791111717412,
+  "updated": 1791115261506,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -304,19 +304,6 @@
       "end": "19:30",
       "kind": "cal",
       "place": "Kuoppari"
-    },
-    {
-      "id": "info-samuel-junnuliiga-2026-10-04",
-      "who": "samuel",
-      "title": "Welhot junnuliiga 12.45–15 Lippumäki",
-      "date": "2026-10-04",
-      "start": "12:45",
-      "end": "15:00",
-      "place": "Lippumäki",
-      "kind": "info",
-      "driver": "",
-      "status": "",
-      "note": "WA vahvistaa 12.45–15; kyyti auki"
     },
     {
       "id": "info-mea-lianna-2026-10-04",

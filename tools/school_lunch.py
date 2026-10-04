@@ -16,8 +16,8 @@ Entries from --start onward that the source does not return are removed (never g
 """
 import argparse, datetime as dt, json, os, re, sys, urllib.parse, urllib.request
 
-BASE = "https://menu.servica.fi/ServicaAromieMenus/FI/Default/_/_/api"
-PAGE = "/ServicaAromieMenus/FI/Default/_/_/Page/home"
+BASE = "https://menu.servica.fi/ServicaAromieMenus/FI/Default/SERVICA/_/api"
+PAGE = "/ServicaAromieMenus/FI/Default/SERVICA/_/Page/home"
 SCHEDULE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "fiilis", "schedule.json")
 
 

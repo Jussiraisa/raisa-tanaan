@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791123701926,
+  "updated": 1791124735056,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -482,6 +482,15 @@
       "date": "2026-10-12",
       "dateEnd": "2026-10-18",
       "kind": "info"
+    },
+    {
+      "id": "info-wilma-perhe-syysloma-2026-10-12",
+      "who": "perhe",
+      "title": "Syysloma 12.–16.10.",
+      "date": "2026-10-12",
+      "dateEnd": "2026-10-16",
+      "kind": "info",
+      "note": "Wilma 4.10.: ei tunteja kenelläkään"
     },
     {
       "id": "info-wilma-ellen-hontsa-2026-10-13",

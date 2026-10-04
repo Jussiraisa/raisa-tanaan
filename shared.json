@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791128284616,
+  "updated": 1791131463477,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -263,6 +263,13 @@
   },
   "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
   "extras": [
+    {
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31",
+      "kind": "cal"
+    },
     {
       "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",
       "title": "Milla · OP05-tehtävät Teamsiin",

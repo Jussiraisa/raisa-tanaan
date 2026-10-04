@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791054267454,
+  "updated": 1791086958298,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -229,6 +229,18 @@
       "status": "us",
       "ride": "vie+hakee",
       "note": "WA+oletus 28.9.2026 Fiilis: kyyti meille torstai"
+    },
+    "kyyti-mea-lianna-2026-10-04": {
+      "driver": "Riikka",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "WA Lianna 27.9.: Su onnistuu; Riikka su molemmat (4.10.)"
+    },
+    "info-samuel-junnuliiga-2026-10-04": {
+      "driver": "",
+      "status": "",
+      "ride": "",
+      "note": "WA 4.10.: 12.45–15 Lippumäki; kyyti AUKI"
     }
   },
   "cooks": {
@@ -249,8 +261,34 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; joukkue Intersport/Kortti-Piste; la Joensuu Jussi+Samuel omalla (paikalle 10); su Welhot 12.45–15 Lippumäki kyyti auki; ma Tesla 8–12 + VY 17.30; ti Ellen äi-koe + Riikka Oulu; to Welhot meidän; pe Ambrosia-vienti meidän. Wilma login epäonnistui 3.10.",
+  "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
   "extras": [
+    {
+      "id": "info-milla-vivida-2026-10-04",
+      "who": "milla",
+      "title": "Vivida treeni",
+      "date": "2026-10-04",
+      "start": "11:30",
+      "end": "14:00",
+      "place": "BellaCenter",
+      "kind": "treeni",
+      "driver": "",
+      "status": "",
+      "note": "kyyti auki"
+    },
+    {
+      "id": "info-mea-lianna-2026-10-04",
+      "who": "mea",
+      "title": "Lianna treeni",
+      "date": "2026-10-04",
+      "start": "16:00",
+      "end": "18:30",
+      "place": "BellaCenter",
+      "kind": "treeni",
+      "driver": "Riikka",
+      "status": "us",
+      "note": "WA: su molemmat"
+    },
     {
       "id": "info-mea-voimat-2026-10-05",
       "who": "mea",
@@ -580,7 +618,7 @@
       "kind": "info",
       "driver": "",
       "status": "",
-      "note": "WA korjaa kalenterin 9–11; kyyti auki"
+      "note": "WA vahvistaa 12.45–15; kyyti auki"
     },
     {
       "id": "info-vivida-strassit-2026-10-03",

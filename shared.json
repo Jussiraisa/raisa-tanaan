@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791096431507,
+  "updated": 1791100588560,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -263,15 +263,6 @@
   },
   "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
   "extras": [
-    {
-      "id": "cal-_68o38dpj6spj0g2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: Turnaus Junnuliiga",
-      "date": "2026-10-04",
-      "start": "09:00",
-      "end": "11:00",
-      "kind": "cal",
-      "place": "Lippumäen uima- ja liikuntahalli"
-    },
     {
       "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261004T063000Z",
       "title": "Milla · valmennus",

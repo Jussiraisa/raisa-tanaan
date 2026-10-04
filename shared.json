@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791116628117,
+  "updated": 1791123701926,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -263,15 +263,6 @@
   },
   "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
   "extras": [
-    {
-      "id": "cal-_68o36chl70qjcg2ed5mmarj8elqn8rpecdnmq",
-      "title": "Welhot 2018: 17:00-18:00",
-      "date": "2026-10-05",
-      "kind": "cal",
-      "start": "17:00",
-      "end": "19:00",
-      "place": "Ylä-Pyörön koulu"
-    },
     {
       "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",
       "title": "Milla · OP05-tehtävät Teamsiin",

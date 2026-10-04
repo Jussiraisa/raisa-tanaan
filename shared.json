@@ -279,15 +279,6 @@
       "place": "Rakovalkeankatu 11, 70840 Kuopio"
     },
     {
-      "id": "cal-qt2a8joqabeb1b8guvkmg46rs8",
-      "title": "Perhe · Aurinkorinteen vanhempainyhdistyksen vuosikokous",
-      "date": "2026-10-05",
-      "start": "17:30",
-      "end": "19:00",
-      "kind": "cal",
-      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
-    },
-    {
       "id": "cal-25bqjq0l13qvfpr8oq0ifd3pdo",
       "title": "Mea · Liannan voimat",
       "date": "2026-10-05",
@@ -314,15 +305,6 @@
       "kind": "info",
       "place": "Rakovalkeankatu 11",
       "note": "Lauantairaportti 3.10."
-    },
-    {
-      "id": "info-wilma-perhe-vy-vuosikokous-2026-10-05",
-      "who": "perhe",
-      "title": "Aurinkorinteen vanhempainyhdistyksen vuosikokous",
-      "date": "2026-10-05",
-      "start": "17:30",
-      "kind": "info",
-      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
     },
     {
       "id": "info-mea-voimat-2026-10-05",
@@ -724,6 +706,8 @@
       "title": "Milla · Shaking up Tech -haku",
       "date": "2026-10-01",
       "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
-    }
+    },
+    "cal-qt2a8joqabeb1b8guvkmg46rs8": "Jussi 4.10: ei mennä",
+    "info-wilma-perhe-vy-vuosikokous-2026-10-05": "Jussi 4.10: ei mennä"
   }
 }

@@ -70,7 +70,16 @@ def fmt_hm(h: int, m: int) -> str:
 def parse_time_range(text: str):
     m = TIME_RE.search(text or "")
     if not m:
-        return None
+        # Fallback: single time like "klo 18 (paikalle klo 17)" -> start at arrival, end +2h from main time
+        singles = re.findall(r"klo\s*(\d{1,2})(?:[.:](\d{2}))?", text or "", re.I)
+        if not singles:
+            return None
+        mh, mm = int(singles[0][0]), int(singles[0][1] or 0)
+        arr = re.search(r"paikalle\s*klo\s*(\d{1,2})(?:[.:](\d{2}))?", text or "", re.I)
+        sh, sm = (int(arr.group(1)), int(arr.group(2) or 0)) if arr else (mh, mm)
+        if not (0 <= mh <= 23 and 0 <= sh <= 23):
+            return None
+        return fmt_hm(sh, sm), fmt_hm(min(mh + 2, 23), mm)
     h1 = int(m.group(1))
     mi1 = int(m.group(2) or 0)
     h2 = int(m.group(3))

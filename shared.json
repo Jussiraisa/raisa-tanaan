@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791190912486,
+  "updated": 1791191877500,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -637,6 +637,16 @@
       "note": "Wilma 4.10."
     },
     {
+      "id": "info-mea-valmennus-2026-10-08",
+      "who": "mea",
+      "title": "Valmennus",
+      "date": "2026-10-08",
+      "start": "17:00",
+      "end": "18:30",
+      "kind": "info",
+      "note": "Bella Center"
+    },
+    {
       "id": "info-ambrosia-2026-10-31",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",
@@ -715,14 +725,14 @@
       "kind": "treeni"
     },
     {
-      "id": "info-mea-valmennus-2026-10-08",
-      "who": "mea",
-      "title": "Valmennus",
-      "date": "2026-10-08",
+      "id": "sheet-milla-2026-10-06",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-06",
       "start": "17:00",
-      "end": "18:30",
-      "kind": "info",
-      "note": "Bella Center"
+      "end": "20:00",
+      "place": "",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

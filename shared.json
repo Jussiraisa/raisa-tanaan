@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791178740557,
+  "updated": 1791190912486,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -270,15 +270,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-n031ppo4v5ep3kn6a91hn5nvq8",
-      "title": "Tesla kotihuolto",
-      "date": "2026-10-05",
-      "start": "08:00",
-      "end": "12:00",
-      "kind": "cal",
-      "place": "Rakovalkeankatu 11, 70840 Kuopio"
-    },
-    {
       "id": "cal-qt2a8joqabeb1b8guvkmg46rs8",
       "title": "Perhe · Aurinkorinteen vanhempainyhdistyksen vuosikokous",
       "date": "2026-10-05",
@@ -342,17 +333,6 @@
       "date": "2026-10-05",
       "kind": "info",
       "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
-    },
-    {
-      "id": "info-tesla-kotihuolto-2026-10-05",
-      "who": "",
-      "title": "Tesla kotihuolto (auto kotona 8–12)",
-      "date": "2026-10-05",
-      "start": "08:00",
-      "end": "12:00",
-      "kind": "info",
-      "place": "Rakovalkeankatu 11",
-      "note": "Lauantairaportti 3.10."
     },
     {
       "id": "info-mea-voimat-2026-10-05",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791132249609,
+  "updated": 1791173227728,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -286,6 +286,45 @@
       "end": "19:30",
       "kind": "cal",
       "place": "Kuoppari"
+    },
+    {
+      "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9g60r40qjledpmi",
+      "title": "Riikan koulupäivät",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-m875i3vg8ifb9g8fd1ok9afed0",
+      "title": "Milla · Ro-tuokio",
+      "date": "2026-10-06",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-gu9qrcvihfs77iem1qrf9m06ss",
+      "title": "Mea terapia · Minna Proskin-Ruuskanen",
+      "date": "2026-10-06",
+      "start": "09:00",
+      "end": "10:00",
+      "kind": "cal",
+      "place": "Maaherrankatu, kirjaston vastapäätä, 2. kerros, Kuopio"
+    },
+    {
+      "id": "cal-2jl72bumtgnijk9o1foec3ej4s",
+      "title": "Ellen · Äidinkielen koe",
+      "date": "2026-10-06",
+      "start": "10:00",
+      "end": "10:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
+      "title": "Riikka Oulu",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "start": "21:00",
+      "end": "22:00",
+      "kind": "cal"
     },
     {
       "id": "info-wilma-milla-op05-2026-10-05",

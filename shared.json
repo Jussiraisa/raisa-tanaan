@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791216289758,
+  "updated": 1791218192975,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -270,15 +270,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-25bqjq0l13qvfpr8oq0ifd3pdo",
-      "title": "Mea · Liannan voimat",
-      "date": "2026-10-05",
-      "start": "18:30",
-      "end": "19:30",
-      "kind": "cal",
-      "place": "Kuoppari"
-    },
-    {
       "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9g60r40qjledpmi",
       "title": "Riikan koulupäivät",
       "date": "2026-10-06",
@@ -326,18 +317,6 @@
       "date": "2026-10-05",
       "kind": "info",
       "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
-    },
-    {
-      "id": "info-mea-voimat-2026-10-05",
-      "who": "mea",
-      "title": "Liannan voimat",
-      "date": "2026-10-05",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "Kuoppari",
-      "kind": "treeni",
-      "driver": "",
-      "status": ""
     },
     {
       "id": "info-joukkue-kortti-33841-2026-10-06",
@@ -707,16 +686,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-05",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-05",
-      "start": "18:30",
-      "end": "19:30",
-      "place": "",
-      "kind": "treeni"
     },
     {
       "id": "sheet-mea-2026-10-06",

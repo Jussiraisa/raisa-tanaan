@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791173864638,
+  "updated": 1791178740557,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -277,6 +277,15 @@
       "end": "12:00",
       "kind": "cal",
       "place": "Rakovalkeankatu 11, 70840 Kuopio"
+    },
+    {
+      "id": "cal-qt2a8joqabeb1b8guvkmg46rs8",
+      "title": "Perhe · Aurinkorinteen vanhempainyhdistyksen vuosikokous",
+      "date": "2026-10-05",
+      "start": "17:30",
+      "end": "19:00",
+      "kind": "cal",
+      "place": "Aurinkorinteen koulu (A-ovi / ruokala)"
     },
     {
       "id": "cal-25bqjq0l13qvfpr8oq0ifd3pdo",

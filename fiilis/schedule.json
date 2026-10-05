@@ -1212,6 +1212,17 @@
       "date": "2026-10-08",
       "time": "17:00",
       "end": "18:30",
+      "who": "Mea",
+      "title": "Valmennus",
+      "place": "Bella Center",
+      "kind": "treeni",
+      "source": "jussi:fiilis",
+      "note": "Jussi 5.10"
+    },
+    {
+      "date": "2026-10-08",
+      "time": "17:00",
+      "end": "18:30",
       "who": "Samuel",
       "title": "Welhot",
       "place": "Puijonsarven koulu",
@@ -1584,19 +1595,19 @@
     },
     {
       "date": "2026-10-19",
-      "who": "Milla",
-      "title": "Podcast-tehtävä Teamsiin",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Wilma"
-    },
-    {
-      "date": "2026-10-19",
       "who": "Mea",
       "title": "Rippikoulupaikan tiedot sähköpostiin",
       "kind": "muu",
       "source": "gmail",
       "note": "vko 43 (19.–23.10.) · Kuopion srk · toiveet Rytky kesä 2027"
+    },
+    {
+      "date": "2026-10-19",
+      "who": "Milla",
+      "title": "Podcast-tehtävä Teamsiin",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Wilma"
     },
     {
       "date": "2026-10-20",
@@ -2243,20 +2254,20 @@
     },
     {
       "date": "2026-12-02",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Riikan koulupäivät · lähtö 2.12 klo 15.30"
+    },
+    {
+      "date": "2026-12-02",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
       "place": "BVKZSC",
       "source": "gcal:perhe",
       "note": "paluu FR2344 STN 07:55 → HEL 12:45"
-    },
-    {
-      "date": "2026-12-02",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Riikan koulupäivät · lähtö 2.12 klo 15.30"
     },
     {
       "date": "2026-12-03",
@@ -2372,24 +2383,15 @@
     },
     {
       "date": "2026-12-12",
-      "who": "Milla",
-      "title": "Vivida Mestikset",
+      "who": "Mea",
+      "title": "Lianna Mestikset",
       "place": "Jyväskylä",
       "kind": "kisa",
       "source": "gcal:voimistelu",
-      "note": "11.–13.12."
+      "note": "12.–13.12."
     },
     {
       "date": "2026-12-12",
-      "who": "Mea",
-      "title": "Lianna Mestikset",
-      "place": "Jyväskylä",
-      "kind": "kisa",
-      "source": "gcal:voimistelu",
-      "note": "12.–13.12."
-    },
-    {
-      "date": "2026-12-13",
       "who": "Milla",
       "title": "Vivida Mestikset",
       "place": "Jyväskylä",
@@ -2405,6 +2407,15 @@
       "kind": "kisa",
       "source": "gcal:voimistelu",
       "note": "12.–13.12."
+    },
+    {
+      "date": "2026-12-13",
+      "who": "Milla",
+      "title": "Vivida Mestikset",
+      "place": "Jyväskylä",
+      "kind": "kisa",
+      "source": "gcal:voimistelu",
+      "note": "11.–13.12."
     },
     {
       "date": "2026-12-14",
@@ -2478,15 +2489,15 @@
     },
     {
       "date": "2026-12-20",
-      "who": "Milla",
-      "title": "Vivida päättärit",
+      "who": "Mea",
+      "title": "Lianna päättärit",
       "kind": "juhla",
       "source": "gcal:voimistelu"
     },
     {
       "date": "2026-12-20",
-      "who": "Mea",
-      "title": "Lianna päättärit",
+      "who": "Milla",
+      "title": "Vivida päättärit",
       "kind": "juhla",
       "source": "gcal:voimistelu"
     },

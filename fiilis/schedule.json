@@ -1289,6 +1289,14 @@
     },
     {
       "date": "2026-10-09",
+      "who": "Ellen",
+      "title": "Valmistautuminen harkkakisoihin (la)",
+      "kind": "muu",
+      "source": "jussi:fiilis",
+      "note": "Jussi 5.10"
+    },
+    {
+      "date": "2026-10-09",
       "who": "Mea",
       "title": "Päivätyö Mieli ry",
       "kind": "muu",
@@ -1303,6 +1311,26 @@
     },
     {
       "date": "2026-10-10",
+      "time": "10:30",
+      "end": "12:00",
+      "who": "Riikka",
+      "title": "Padel",
+      "kind": "muu",
+      "source": "jussi:fiilis",
+      "note": "Jussi 5.10"
+    },
+    {
+      "date": "2026-10-10",
+      "time": "11:00",
+      "end": "13:00",
+      "who": "Ellen",
+      "title": "Harkkakisat",
+      "kind": "kisa",
+      "source": "jussi:fiilis",
+      "note": "Jussi 5.10"
+    },
+    {
+      "date": "2026-10-10",
       "time": "12:30",
       "end": "15:00",
       "who": "Milla",
@@ -1310,6 +1338,15 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-10-10",
+      "time": "17:00",
+      "who": "Riikka",
+      "title": "Keikka",
+      "kind": "muu",
+      "source": "jussi:fiilis",
+      "note": "Jussi 5.10"
     },
     {
       "date": "2026-10-10",

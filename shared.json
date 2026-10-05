@@ -724,6 +724,16 @@
       "end": "19:00",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-mea-valmennus-2026-10-08",
+      "who": "mea",
+      "title": "Valmennus",
+      "date": "2026-10-08",
+      "start": "17:00",
+      "end": "18:30",
+      "kind": "info",
+      "note": "Pello Center"
     }
   ],
   "schoolLunch": {

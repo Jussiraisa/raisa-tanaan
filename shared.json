@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791191877500,
+  "updated": 1791206637079,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -464,6 +464,14 @@
       "driver": "",
       "status": "",
       "note": "kertolasku s.60–98, kertotaulut 1–10"
+    },
+    {
+      "id": "info-mea-poissa-2026-10-09",
+      "who": "mea",
+      "title": "Kotona / poissa koulusta",
+      "date": "2026-10-09",
+      "kind": "info",
+      "note": "Jussi 5.10."
     },
     {
       "id": "info-wilma-perhe-stm-kysely-2026-10-11",

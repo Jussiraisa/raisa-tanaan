@@ -2884,6 +2884,13 @@
   "wilmaAlerts": [
     {
       "due": "2026-10-05",
+      "title": "CAT v9 QA ok · lähetä vain 1 rojalti (TBA tai €0.50) · älä Briefingiä · TBA-xlsx: poista €0 tai jätä pois",
+      "who": "Jussi",
+      "needAction": true,
+      "source": "savroc:cat-v9-qa"
+    },
+    {
+      "due": "2026-10-05",
       "title": "OP05-tehtävät Teamsiin",
       "who": "Milla",
       "needAction": true,

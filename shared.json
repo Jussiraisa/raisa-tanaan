@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791206813140,
+  "updated": 1791207165781,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -326,14 +326,6 @@
       "dateEnd": "2026-10-09",
       "start": "21:00",
       "end": "22:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-nnah5jb5at54s5hl2ls3rjhqu8",
-      "title": "Milla: Klassikan päivä",
-      "date": "2026-10-09",
-      "start": "09:40",
-      "end": "14:20",
       "kind": "cal"
     },
     {

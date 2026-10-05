@@ -2512,15 +2512,6 @@
       "source": "gcal:voimistelu"
     },
     {
-      "who": "Milla",
-      "title": "Mestikset jyväskylä",
-      "kind": "muu",
-      "source": "ical:milla",
-      "date": "2026-12-11",
-      "time": "15:00",
-      "end": "16:00"
-    },
-    {
       "date": "2026-12-11",
       "who": "Milla",
       "title": "Vivida Mestikset",

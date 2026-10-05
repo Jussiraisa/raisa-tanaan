@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791206637079,
+  "updated": 1791206813140,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -296,9 +296,11 @@
     },
     {
       "id": "cal-m875i3vg8ifb9g8fd1ok9afed0",
-      "title": "Milla · Ro-tuokio",
+      "title": "Milla: Ro",
       "date": "2026-10-06",
-      "kind": "cal"
+      "kind": "cal",
+      "start": "13:00",
+      "end": "13:30"
     },
     {
       "id": "cal-gu9qrcvihfs77iem1qrf9m06ss",
@@ -324,6 +326,14 @@
       "dateEnd": "2026-10-09",
       "start": "21:00",
       "end": "22:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-nnah5jb5at54s5hl2ls3rjhqu8",
+      "title": "Milla: Klassikan päivä",
+      "date": "2026-10-09",
+      "start": "09:40",
+      "end": "14:20",
       "kind": "cal"
     },
     {
@@ -366,11 +376,14 @@
       "status": ""
     },
     {
-      "id": "info-wilma-milla-ro-tuokio-2026-10-06",
+      "id": "info-wilma-milla-ro-2026-10-06",
       "who": "milla",
-      "title": "Ro-tuokio",
+      "title": "Ro",
       "date": "2026-10-06",
-      "kind": "info"
+      "start": "13:00",
+      "end": "13:30",
+      "kind": "info",
+      "note": "Wilma Ro-asialista 6.10."
     },
     {
       "id": "info-ellen-koe-aidinkieli-2026-10-06",
@@ -472,6 +485,16 @@
       "date": "2026-10-09",
       "kind": "info",
       "note": "Jussi 5.10."
+    },
+    {
+      "id": "info-wilma-milla-klassikan-paiva-2026-10-09",
+      "who": "milla",
+      "title": "Klassikan päivä",
+      "date": "2026-10-09",
+      "start": "09:40",
+      "end": "14:20",
+      "kind": "info",
+      "note": "Wilma Ro-asialista 6.10.: koulu kaikille 9.40–14.20"
     },
     {
       "id": "info-wilma-perhe-stm-kysely-2026-10-11",

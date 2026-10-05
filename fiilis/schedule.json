@@ -1376,6 +1376,15 @@
     },
     {
       "date": "2026-10-11",
+      "time": "14:00",
+      "who": "Mea",
+      "title": "Mean synttärit · Annen ja Hannan perheet",
+      "kind": "juhla",
+      "source": "jussi:fiilis",
+      "note": "Jussi 5.10"
+    },
+    {
+      "date": "2026-10-11",
       "time": "16:00",
       "end": "18:30",
       "who": "Mea",
@@ -2871,9 +2880,19 @@
       "label": "Ainon juhlat"
     },
     {
+      "start": "2026-10-03",
+      "end": "2026-10-03",
+      "label": "8.10 kakku Annelle · 8.20 lähtö Joensuuhun · Samuel Welhot 11.00 (Nepenmäki)"
+    },
+    {
       "start": "2026-10-10",
       "end": "2026-10-18",
       "label": "Syysloma · 10.–18.10."
+    },
+    {
+      "start": "2026-10-11",
+      "end": "2026-10-11",
+      "label": "Mean synttärit klo 14 · Annen ja Hannan perheet"
     },
     {
       "start": "2026-10-12",
@@ -2889,11 +2908,6 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "label": "Riikka · synttärijuhlat"
-    },
-    {
-      "start": "2026-10-03",
-      "end": "2026-10-03",
-      "label": "8.10 kakku Annelle · 8.20 lähtö Joensuuhun · Samuel Welhot 11.00 (Nepenmäki)"
     },
     {
       "start": "2026-10-25",

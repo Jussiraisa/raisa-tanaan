@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791173227728,
+  "updated": 1791173864638,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -588,16 +588,6 @@
       "kind": "info"
     },
     {
-      "id": "info-ambrosia-2026-10-31",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-31",
-      "kind": "info",
-      "place": "Helsinki",
-      "dateEnd": "2026-11-01",
-      "note": "kulku Juna"
-    },
-    {
       "id": "info-samuel-turnaus-2026-10-31",
       "who": "samuel",
       "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
@@ -616,16 +606,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi"
     },
     {
       "id": "info-samuel-turnaus-2026-11-28",
@@ -648,16 +628,6 @@
       "note": "Aurinkorinne, maksuton. Ilmoittaudu 30.11. mennessä."
     },
     {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
       "id": "info-samuel-turnaus-2026-12-19",
       "who": "samuel",
       "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
@@ -666,6 +636,46 @@
       "kind": "info",
       "driver": "",
       "status": ""
+    },
+    {
+      "id": "info-wilma-mea-ai-koe-2026-10-23",
+      "who": "mea",
+      "title": "Äidinkielen koe",
+      "date": "2026-10-23",
+      "start": "08:50",
+      "end": "09:35",
+      "kind": "info",
+      "note": "Wilma 4.10."
+    },
+    {
+      "id": "info-ambrosia-2026-10-31",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Helsinki",
+      "date": "2026-10-31",
+      "kind": "info",
+      "place": "Helsinki",
+      "dateEnd": "2026-11-01",
+      "note": "kulku Juna"
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto/juna+taksi"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
     },
     {
       "id": "info-ambrosia-2027-03-19",
@@ -686,14 +696,34 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "info-wilma-mea-ai-koe-2026-10-23",
+      "id": "sheet-mea-2026-10-05",
       "who": "mea",
-      "title": "Äidinkielen koe",
-      "date": "2026-10-23",
-      "start": "08:50",
-      "end": "09:35",
-      "kind": "info",
-      "note": "Wilma 4.10."
+      "title": "Lianna",
+      "date": "2026-10-05",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-05",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-05",
+      "start": "17:30",
+      "end": "18:30",
+      "place": "Luola",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-mea-2026-10-06",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-06",
+      "start": "17:00",
+      "end": "19:00",
+      "place": "",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

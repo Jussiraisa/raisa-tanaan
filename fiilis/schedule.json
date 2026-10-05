@@ -1113,7 +1113,9 @@
       "who": "Mea",
       "title": "Lianna harkkakisa",
       "place": "Ylä-Pyörön koulu",
-      "kind": "kisa"
+      "kind": "kisa",
+      "leave": "16:15",
+      "note": "Lähtö 16:15 · pitsa mukaan"
     },
     {
       "date": "2026-10-06",

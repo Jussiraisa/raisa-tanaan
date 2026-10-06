@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791258679143,
+  "updated": 1791259551784,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -264,9 +264,10 @@
   "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
   "extras": [
     {
-      "id": "cal-f2fmo2k52tji8vof6sfm0dbmds",
-      "title": "Milla · OP05-tehtävät Teamsiin",
-      "date": "2026-10-05",
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31",
       "kind": "cal"
     },
     {
@@ -275,14 +276,6 @@
       "date": "2026-10-06",
       "dateEnd": "2026-10-09",
       "kind": "cal"
-    },
-    {
-      "id": "cal-m875i3vg8ifb9g8fd1ok9afed0",
-      "title": "Milla: Ro",
-      "date": "2026-10-06",
-      "kind": "cal",
-      "start": "13:00",
-      "end": "13:30"
     },
     {
       "id": "cal-gu9qrcvihfs77iem1qrf9m06ss",
@@ -302,6 +295,14 @@
       "kind": "cal"
     },
     {
+      "id": "cal-m875i3vg8ifb9g8fd1ok9afed0",
+      "title": "Milla: Ro",
+      "date": "2026-10-06",
+      "start": "13:00",
+      "end": "13:30",
+      "kind": "cal"
+    },
+    {
       "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
       "title": "Riikka Oulu",
       "date": "2026-10-06",
@@ -311,12 +312,44 @@
       "kind": "cal"
     },
     {
-      "id": "info-wilma-milla-op05-2026-10-05",
-      "who": "milla",
-      "title": "OP05-tehtävät Teamsiin",
-      "date": "2026-10-05",
-      "kind": "info",
-      "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
+      "id": "cal-r10ehcjulks4g2n78hjmpatduc",
+      "title": "Samuel · Ei liikuntaa (ei varusteita)",
+      "date": "2026-10-07",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-ovhl3k3ht6kasmo4qofblg3r40",
+      "title": "Milla · Turpotietäjä-alkukilpailu",
+      "date": "2026-10-07",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-kagvogifmlmqvqigmhpsrdhh9o",
+      "title": "Milla · Dresdenin vieraiden KV-esitys",
+      "date": "2026-10-07",
+      "start": "12:45",
+      "end": "13:05",
+      "kind": "cal",
+      "place": "Kuopion klassillinen lukio, lk 138"
+    },
+    {
+      "id": "cal-ogvn8s7j7hvrh4r9fki920q5lo",
+      "title": "Milla · Sijoittajakoulu (vapaaehtoinen)",
+      "date": "2026-10-07",
+      "start": "14:30",
+      "end": "15:45",
+      "kind": "cal",
+      "place": "Kuopion klassillinen lukio"
+    },
+    {
+      "id": "cal-djt05i2id97kred3b9nghogv0c",
+      "title": "Mea terapia · Tarja Pajunen",
+      "date": "2026-10-07",
+      "start": "17:45",
+      "end": "18:45",
+      "kind": "cal"
     },
     {
       "id": "info-joukkue-kortti-33841-2026-10-06",

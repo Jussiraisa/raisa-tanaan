@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791292179336,
+  "updated": 1791292747982,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -281,6 +281,13 @@
       "title": "Milla · Shaking up Tech -haku",
       "date": "2026-10-01",
       "dateEnd": "2026-10-31",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-7p64e2kqquq6i5nncor3c4rv60",
+      "title": "Samuel · Matikan testi (jakso 3) tällä viikolla",
+      "date": "2026-10-05",
+      "dateEnd": "2026-10-09",
       "kind": "cal"
     },
     {

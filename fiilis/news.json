@@ -1,23 +1,28 @@
 {
-  "updated": "2026-10-06T05:07:54Z",
+  "updated": "2026-10-06T09:00:23Z",
   "yle": [
     {
-      "title": "Satu Helkama ostaa konkurssiin menneen Tunturin ja toivoo, että pyörien hinta nousee",
-      "url": "https://yle.fi/a/74-20249412?origin=rss",
+      "title": "Hallitus haluaa romuttaa vanhat polttomoottoriautot – katso, mitä merkkejä on murskattu eniten",
+      "url": "https://yle.fi/a/74-20246752?origin=rss",
       "source": "Yle"
     },
     {
-      "title": "Myrsky rantautui Suomeen: yli 2 000 taloutta ilman sähköä, kaksi retkeilijää pelastettiin Enontekiöllä",
-      "url": "https://yle.fi/a/74-20249986?origin=rss",
+      "title": "EK: Tekoäly voisi päättää toimeentulotuesta",
+      "url": "https://yle.fi/a/74-20250056?origin=rss",
       "source": "Yle"
     },
     {
-      "title": "Analyysi: Espanjan kuningasparin harvinainen vierailu nostaa esiin Venäjän uhan",
-      "url": "https://yle.fi/a/74-20248728?origin=rss",
+      "title": "Näihin neljään suuntaan Venäjä voi kehittyä – katso asiantuntijoiden lista",
+      "url": "https://yle.fi/a/74-20250045?origin=rss",
       "source": "Yle"
     }
   ],
   "x": [
+    {
+      "title": "San Diego",
+      "url": "https://x.com/search?q=San%20Diego",
+      "source": "X"
+    },
     {
       "title": "Falcons",
       "url": "https://x.com/search?q=Falcons",
@@ -31,11 +36,6 @@
     {
       "title": "Yankees",
       "url": "https://x.com/search?q=Yankees",
-      "source": "X"
-    },
-    {
-      "title": "Bijan",
-      "url": "https://x.com/search?q=Bijan",
       "source": "X"
     }
   ]

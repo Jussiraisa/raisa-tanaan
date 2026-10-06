@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791292747982,
+  "updated": 1791302624398,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -362,18 +362,6 @@
       "dateEnd": "2026-10-09",
       "kind": "info",
       "place": "Oulu",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-lianna-harkkakisa-2026-10-06",
-      "who": "mea",
-      "title": "Lianna harkkakisa + kahvio (Ylä-Pyörö)",
-      "date": "2026-10-06",
-      "start": "17:00",
-      "end": "19:00",
-      "place": "Ylä-Pyörön koulu",
-      "kind": "info",
       "driver": "",
       "status": ""
     },
@@ -801,16 +789,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-06",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-06",
-      "start": "17:00",
-      "end": "19:00",
-      "place": "",
-      "kind": "treeni"
     },
     {
       "id": "sheet-milla-2026-10-06",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791218192975,
+  "updated": 1791258679143,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -417,6 +417,8 @@
       "who": "mea",
       "title": "MA3-koe",
       "date": "2026-10-08",
+      "start": "11:15",
+      "end": "12:00",
       "kind": "info",
       "note": "kpl 14–21, 23"
     },
@@ -425,7 +427,8 @@
       "who": "samuel",
       "title": "UNICEF-kävely",
       "date": "2026-10-08",
-      "kind": "info"
+      "kind": "info",
+      "note": "Lahjoitus vapaaehtoinen: MobilePay 39375 tai unicef.fi. Ke 7.10. ei liikuntaa."
     },
     {
       "id": "info-ellen-koe-matematiikka-2026-10-09",
@@ -559,7 +562,7 @@
       "start": "08:00",
       "end": "09:00",
       "kind": "info",
-      "note": "Wilma 4.10."
+      "note": "Wilma 4.10. kpl 2–6, 12 + monisteet"
     },
     {
       "id": "info-wilma-milla-maa03-2026-10-28",
@@ -627,7 +630,7 @@
       "start": "08:50",
       "end": "09:35",
       "kind": "info",
-      "note": "Wilma 4.10."
+      "note": "Wilma 4.10. AI3 moduskoe s. 204–215 + vihko + modustaulukko; palauta modusmonisteet ennen koetta"
     },
     {
       "id": "info-mea-valmennus-2026-10-08",
@@ -706,6 +709,97 @@
       "end": "20:00",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-milla-dresden-esitys-2026-10-07",
+      "who": "milla",
+      "title": "Dresdenin vieraiden KV-esitys",
+      "date": "2026-10-07",
+      "start": "12:45",
+      "end": "13:05",
+      "kind": "info",
+      "place": "lk 138",
+      "note": "Wilma Ro-asialista 6.10."
+    },
+    {
+      "id": "info-wilma-milla-sijoittajakoulu-2026-10-07",
+      "who": "milla",
+      "title": "Sijoittajakoulu",
+      "date": "2026-10-07",
+      "start": "14:30",
+      "end": "15:45",
+      "kind": "info",
+      "note": "vapaaehtoinen, Wilma Ro-asialista 6.10."
+    },
+    {
+      "id": "info-wilma-samuel-ei-liikuntaa-2026-10-07",
+      "who": "samuel",
+      "title": "Ei liikuntaa (ei varusteita)",
+      "date": "2026-10-07",
+      "kind": "info",
+      "note": "viikkoviesti vk 41: to UNICEF-kävely"
+    },
+    {
+      "id": "info-wilma-milla-laksypajat-2026-10-19",
+      "who": "milla",
+      "title": "Läksypajat alkavat",
+      "date": "2026-10-19",
+      "start": "08:45",
+      "end": "09:30",
+      "kind": "info",
+      "place": "ENA/RU lk 210, MA lk 231",
+      "note": "vapaaehtoinen"
+    },
+    {
+      "id": "info-wilma-milla-op05-palautukset-2026-11-06",
+      "who": "milla",
+      "title": "OP05-palautukset (teht. 5 & 6)",
+      "date": "2026-11-06",
+      "kind": "info",
+      "note": "kirjoitelma tekijänoikeuksista + Forms-kysely, tiimitehtäviä"
+    },
+    {
+      "id": "info-wilma-mea-ena3-koe-2026-11-12",
+      "who": "mea",
+      "title": "ENA3-koe",
+      "date": "2026-11-12",
+      "kind": "info",
+      "note": "Wilma 6.10."
+    },
+    {
+      "id": "info-wilma-milla-op05-ilmastodiagrammi-2026-11-18",
+      "who": "milla",
+      "title": "OP05 ilmastodiagrammi (itsenäinen teht. 3)",
+      "date": "2026-11-18",
+      "kind": "info",
+      "note": "Wilma 6.10."
+    },
+    {
+      "id": "info-wilma-mea-rub3-koe-2026-11-27",
+      "who": "mea",
+      "title": "RUB3-koe",
+      "date": "2026-11-27",
+      "kind": "info",
+      "note": "Wilma 6.10. Lontoo-lähtö samana iltana"
+    },
+    {
+      "id": "info-wilma-mea-bi3-koe-2026-12-01",
+      "who": "mea",
+      "title": "BI3-koe + BI-vihkon palautus",
+      "date": "2026-12-01",
+      "start": "08:00",
+      "end": "09:00",
+      "kind": "info",
+      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko. HUOM: Lontoo 27.11.–2.12."
+    },
+    {
+      "id": "info-wilma-mea-ke3-koe-2026-12-11",
+      "who": "mea",
+      "title": "KE3-koe",
+      "date": "2026-12-11",
+      "start": "14:15",
+      "kind": "info",
+      "note": "Wilma 6.10."
     }
   ],
   "schoolLunch": {

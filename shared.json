@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791270203823,
+  "updated": 1791272727473,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -291,14 +291,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-2jl72bumtgnijk9o1foec3ej4s",
-      "title": "Ellen · Äidinkielen koe",
-      "date": "2026-10-06",
-      "start": "10:00",
-      "end": "10:45",
-      "kind": "cal"
-    },
-    {
       "id": "cal-m875i3vg8ifb9g8fd1ok9afed0",
       "title": "Milla: Ro",
       "date": "2026-10-06",
@@ -383,19 +375,6 @@
       "end": "13:30",
       "kind": "info",
       "note": "Wilma Ro-asialista 6.10."
-    },
-    {
-      "id": "info-ellen-koe-aidinkieli-2026-10-06",
-      "who": "ellen",
-      "title": "Koe · äidinkieli",
-      "date": "2026-10-06",
-      "start": "10:00",
-      "end": "10:45",
-      "place": "Aurinkorinteen koulu",
-      "kind": "info",
-      "driver": "",
-      "status": "",
-      "note": "oikeinkirjoitus + tekstilajit; tekstikirja s.14–35 & 202–203, tehtäväkirja s.8–27"
     },
     {
       "id": "info-lianna-harkkakisa-2026-10-06",

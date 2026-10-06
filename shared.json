@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791282954740,
+  "updated": 1791292179336,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -668,6 +668,22 @@
       "date": "2026-10-07",
       "kind": "info",
       "note": "viikkoviesti vk 41: to UNICEF-kävely"
+    },
+    {
+      "id": "info-wilma-samuel-matikan-testi-2026-10-07",
+      "who": "samuel",
+      "title": "Matikan testi (jakso 3) tällä viikolla",
+      "date": "2026-10-07",
+      "kind": "info",
+      "note": "Wilma viikkoviesti vk 41: päivää ei kerrottu (viim. pe 9.10.)"
+    },
+    {
+      "id": "info-wilma-samuel-m365-kirjautuminen-2026-10-07",
+      "who": "samuel",
+      "title": "Kotitehtävä: M365-kirjautumisen harjoittelu",
+      "date": "2026-10-07",
+      "kind": "info",
+      "note": "omilla tunnuksilla, viikkoviesti vk 41"
     },
     {
       "id": "info-wilma-milla-laksypajat-2026-10-19",

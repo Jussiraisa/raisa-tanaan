@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791260297886,
+  "updated": 1791270203823,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -289,15 +289,6 @@
       "date": "2026-10-06",
       "dateEnd": "2026-10-09",
       "kind": "cal"
-    },
-    {
-      "id": "cal-gu9qrcvihfs77iem1qrf9m06ss",
-      "title": "Mea terapia · Minna Proskin-Ruuskanen",
-      "date": "2026-10-06",
-      "start": "09:00",
-      "end": "10:00",
-      "kind": "cal",
-      "place": "Maaherrankatu, kirjaston vastapäätä, 2. kerros, Kuopio"
     },
     {
       "id": "cal-2jl72bumtgnijk9o1foec3ej4s",

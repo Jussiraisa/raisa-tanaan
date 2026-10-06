@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791259763540,
+  "updated": 1791259853437,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -154,9 +154,10 @@
       "ride": ""
     },
     "info-lianna-harkkakisa-2026-10-06": {
-      "driver": "",
-      "status": "",
-      "ride": ""
+      "driver": "Meidän (oma kyyti)",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "WA Lianna 4.10.: Ti ei yhteiskyytiä, omalla kyydillä"
     },
     "info-riikka-oulu-2026-10-06": {
       "driver": "",
@@ -241,6 +242,18 @@
       "status": "",
       "ride": "",
       "note": "WA 4.10.: 12.45–15 Lippumäki; kyyti AUKI"
+    },
+    "kyyti-samuel-welhot-2026-10-06": {
+      "driver": "Sanna (Manen äiti)",
+      "status": "other",
+      "ride": "vie",
+      "note": "WA Säbä kyydit 4.10. 20.36: \"Ti meiltä\""
+    },
+    "kyyti-ellen-ambrosia-2026-10-06": {
+      "driver": "Keinäset (Mika)",
+      "status": "other",
+      "ride": "vie+hakee",
+      "note": "WA Ambrosia 4.10.: Mika \"onnistuu\" (harkkakisojen takia)"
     }
   },
   "cooks": {
@@ -261,7 +274,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: Samuel junnuliiga 12.45–15 Lippumäki kyyti AUKI; Milla Vivida 11.30–14 BellaCenter kyyti auki; Mea Lianna 16–18.30 meidän (Riikka); Welhot 100€+60€ myöhässä; Vivida strassit 19,17€; ma Tesla 8–12 + VY 17.30; Wilma login-seinä 4.10.",
+  "note": "Tee: kokki tänään auki; Samuel sähly 16.30 Sanna vie (haku varmista); Ellen Ambrosia Keinäset; Mea+Milla harkkakisa 17–19 Ylä-Pyörö oma kyyti; Riikka Ouluun 21.",
   "extras": [
     {
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",

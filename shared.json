@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791272727473,
+  "updated": 1791282954740,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -291,14 +291,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-m875i3vg8ifb9g8fd1ok9afed0",
-      "title": "Milla: Ro",
-      "date": "2026-10-06",
-      "start": "13:00",
-      "end": "13:30",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
       "title": "Riikka Oulu",
       "date": "2026-10-06",
@@ -365,16 +357,6 @@
       "place": "Oulu",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-wilma-milla-ro-2026-10-06",
-      "who": "milla",
-      "title": "Ro",
-      "date": "2026-10-06",
-      "start": "13:00",
-      "end": "13:30",
-      "kind": "info",
-      "note": "Wilma Ro-asialista 6.10."
     },
     {
       "id": "info-lianna-harkkakisa-2026-10-06",

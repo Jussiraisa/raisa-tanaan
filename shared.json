@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791259853437,
+  "updated": 1791260297886,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -689,74 +689,6 @@
       "note": "Bella Center"
     },
     {
-      "id": "info-ambrosia-2026-10-31",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-31",
-      "kind": "info",
-      "place": "Helsinki",
-      "dateEnd": "2026-11-01",
-      "note": "kulku Juna"
-    },
-    {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-06",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-06",
-      "start": "17:00",
-      "end": "19:00",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-10-06",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-06",
-      "start": "17:00",
-      "end": "20:00",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
       "id": "info-wilma-milla-dresden-esitys-2026-10-07",
       "who": "milla",
       "title": "Dresdenin vieraiden KV-esitys",
@@ -846,6 +778,94 @@
       "start": "14:15",
       "kind": "info",
       "note": "Wilma 6.10."
+    },
+    {
+      "id": "info-ambrosia-2026-10-31",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Helsinki",
+      "date": "2026-10-31",
+      "kind": "info",
+      "place": "Helsinki",
+      "dateEnd": "2026-11-01",
+      "note": "kulku Juna"
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto/juna+taksi"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-10-06",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-06",
+      "start": "17:00",
+      "end": "19:00",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-06",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-06",
+      "start": "17:00",
+      "end": "20:00",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-mea-2026-10-07",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-07",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-07",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-07",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

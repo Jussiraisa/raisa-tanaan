@@ -258,14 +258,6 @@
     },
     {
       "date": "2026-09-22",
-      "time": "",
-      "who": "perhe",
-      "title": "Pentutreffit Ella kotona",
-      "kind": "muu",
-      "place": "Koti"
-    },
-    {
-      "date": "2026-09-22",
       "time": "14:00",
       "end": "15:00",
       "who": "Mea",
@@ -313,11 +305,12 @@
       "source": "manual:jussi"
     },
     {
-      "date": "2026-09-23",
-      "who": "Milla",
-      "title": "Vapaapäivä koulusta",
+      "date": "2026-09-22",
+      "time": "",
+      "who": "perhe",
+      "title": "Pentutreffit Ella kotona",
       "kind": "muu",
-      "source": "perhe"
+      "place": "Koti"
     },
     {
       "date": "2026-09-23",
@@ -354,13 +347,11 @@
       "kind": "treeni"
     },
     {
-      "date": "2026-09-24",
-      "who": "Riikka",
-      "title": "Synttärit · porkkanakakku (to–pe)",
-      "place": "Koti",
+      "date": "2026-09-23",
+      "who": "Milla",
+      "title": "Vapaapäivä koulusta",
       "kind": "muu",
-      "source": "perhe",
-      "note": "Porkkanakakku Mea synttäreihin · jatkuu pe"
+      "source": "perhe"
     },
     {
       "date": "2026-09-24",
@@ -385,6 +376,15 @@
       "place": "",
       "note": "Paikka auki (WA)",
       "source": "perhe:wa"
+    },
+    {
+      "date": "2026-09-24",
+      "who": "Riikka",
+      "title": "Synttärit · porkkanakakku (to–pe)",
+      "place": "Koti",
+      "kind": "muu",
+      "source": "perhe",
+      "note": "Porkkanakakku Mea synttäreihin · jatkuu pe"
     },
     {
       "date": "2026-09-25",
@@ -513,34 +513,6 @@
     },
     {
       "date": "2026-09-28",
-      "who": "Ellen",
-      "title": "Koulukuvausvaatteet valmiiksi",
-      "kind": "muu",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-09-28",
-      "who": "Ellen",
-      "title": "Poistumisharjoitus",
-      "kind": "muu",
-      "source": "wilma:perhe"
-    },
-    {
-      "date": "2026-09-28",
-      "who": "Samuel",
-      "title": "Koulukuvausvaatteet valmiiksi",
-      "kind": "muu",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-09-28",
-      "who": "Samuel",
-      "title": "Poistumisharjoitus",
-      "kind": "muu",
-      "source": "wilma:perhe"
-    },
-    {
-      "date": "2026-09-28",
       "time": "10:00",
       "end": "13:00",
       "who": "Milla",
@@ -600,6 +572,34 @@
       "title": "Padel",
       "kind": "harrastus",
       "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-09-28",
+      "who": "Ellen",
+      "title": "Koulukuvausvaatteet valmiiksi",
+      "kind": "muu",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-09-28",
+      "who": "Ellen",
+      "title": "Poistumisharjoitus",
+      "kind": "muu",
+      "source": "wilma:perhe"
+    },
+    {
+      "date": "2026-09-28",
+      "who": "Samuel",
+      "title": "Koulukuvausvaatteet valmiiksi",
+      "kind": "muu",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-09-28",
+      "who": "Samuel",
+      "title": "Poistumisharjoitus",
+      "kind": "muu",
+      "source": "wilma:perhe"
     },
     {
       "date": "2026-09-29",
@@ -675,23 +675,6 @@
     },
     {
       "date": "2026-09-30",
-      "who": "Ellen",
-      "title": "EN sanakoe",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "place": "Aurinkorinteen koulu",
-      "note": "koe"
-    },
-    {
-      "date": "2026-09-30",
-      "who": "Milla",
-      "title": "RUB12 ruotsi",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "koe (ei kellonaikaa)"
-    },
-    {
-      "date": "2026-09-30",
       "time": "18:00",
       "end": "20:30",
       "place": "Kuopiohalli",
@@ -726,29 +709,21 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-01",
-      "who": "Milla",
-      "title": "Ainon kakku · aineksien osto",
-      "kind": "muu",
-      "note": "Valkosuklaa-suklaakakku",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-10-01",
-      "who": "Milla",
-      "title": "Ainon kakku · kakkupohja",
-      "kind": "muu",
-      "note": "Valkosuklaa-suklaakakku",
-      "source": "fiilis"
-    },
-    {
-      "date": "2026-10-01",
-      "time": "",
-      "who": "Samuel",
-      "title": "Pelipassi hankittava",
+      "date": "2026-09-30",
+      "who": "Ellen",
+      "title": "EN sanakoe",
       "kind": "muu",
       "source": "wilma:perhe",
-      "note": "deadline"
+      "place": "Aurinkorinteen koulu",
+      "note": "koe"
+    },
+    {
+      "date": "2026-09-30",
+      "who": "Milla",
+      "title": "RUB12 ruotsi",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koe (ei kellonaikaa)"
     },
     {
       "date": "2026-10-01",
@@ -811,21 +786,29 @@
       "source": "gcal:perhe"
     },
     {
-      "date": "2026-10-02",
-      "who": "Ellen",
-      "title": "UE-koe",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "place": "Aurinkorinteen koulu",
-      "note": "koe"
-    },
-    {
-      "date": "2026-10-02",
+      "date": "2026-10-01",
       "who": "Milla",
-      "title": "Ainon kakku · täyttö",
+      "title": "Ainon kakku · aineksien osto",
       "kind": "muu",
       "note": "Valkosuklaa-suklaakakku",
       "source": "fiilis"
+    },
+    {
+      "date": "2026-10-01",
+      "who": "Milla",
+      "title": "Ainon kakku · kakkupohja",
+      "kind": "muu",
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
+    },
+    {
+      "date": "2026-10-01",
+      "time": "",
+      "who": "Samuel",
+      "title": "Pelipassi hankittava",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "deadline"
     },
     {
       "date": "2026-10-02",
@@ -921,10 +904,21 @@
       "note": "deadline · omavastuu 200 €"
     },
     {
-      "date": "2026-10-03",
-      "who": "Aino",
-      "title": "Ainon juhlat",
-      "kind": "juhla"
+      "date": "2026-10-02",
+      "who": "Ellen",
+      "title": "UE-koe",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "place": "Aurinkorinteen koulu",
+      "note": "koe"
+    },
+    {
+      "date": "2026-10-02",
+      "who": "Milla",
+      "title": "Ainon kakku · täyttö",
+      "kind": "muu",
+      "note": "Valkosuklaa-suklaakakku",
+      "source": "fiilis"
     },
     {
       "date": "2026-10-03",
@@ -980,6 +974,12 @@
       "kind": "treeni"
     },
     {
+      "date": "2026-10-03",
+      "who": "Aino",
+      "title": "Ainon juhlat",
+      "kind": "juhla"
+    },
+    {
       "date": "2026-10-04",
       "time": "09:00",
       "end": "11:00",
@@ -1020,14 +1020,6 @@
       "pickup": "Riikka",
       "source": "gcal:voimistelu",
       "note": "WA Lianna · Mea molemmat (Räisä)"
-    },
-    {
-      "date": "2026-10-05",
-      "who": "Milla",
-      "title": "OP05-tehtävät Teamsiin",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
     },
     {
       "date": "2026-10-05",
@@ -1082,19 +1074,12 @@
       "pickup": "Enni"
     },
     {
-      "date": "2026-10-06",
-      "who": "Ellen",
-      "title": "Äidinkielen koe",
+      "date": "2026-10-05",
+      "who": "Milla",
+      "title": "OP05-tehtävät Teamsiin",
       "kind": "muu",
-      "place": "Aurinkorinteen koulu",
-      "source": "wilma:perhe",
-      "note": "koe"
-    },
-    {
-      "date": "2026-10-06",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu"
+      "source": "gcal:perhe",
+      "note": "luku 7 PPT + posteri, luku 8 tehtävä 3"
     },
     {
       "date": "2026-10-06",
@@ -1172,7 +1157,16 @@
       "note": "Riikka Oulussa — ei kuskiksi"
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-10-06",
+      "who": "Ellen",
+      "title": "Äidinkielen koe",
+      "kind": "muu",
+      "place": "Aurinkorinteen koulu",
+      "source": "wilma:perhe",
+      "note": "koe"
+    },
+    {
+      "date": "2026-10-06",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
@@ -1220,25 +1214,19 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-08",
-      "who": "Mea",
-      "title": "MA3-koe",
+      "who": "Milla",
+      "title": "Palaveri 16",
       "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "koe · kpl 14–21, 23"
+      "source": "ical:milla",
+      "date": "2026-10-07",
+      "time": "23:00",
+      "end": "00:00"
     },
     {
-      "date": "2026-10-08",
+      "date": "2026-10-07",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
-    },
-    {
-      "date": "2026-10-08",
-      "who": "Samuel",
-      "title": "UNICEF-kävely",
-      "kind": "muu",
-      "source": "gcal:perhe"
     },
     {
       "date": "2026-10-08",
@@ -1272,35 +1260,25 @@
       "end": "20:00"
     },
     {
-      "date": "2026-10-09",
-      "who": "Ellen",
-      "title": "Matematiikan koe",
-      "kind": "muu",
-      "place": "Aurinkorinteen koulu",
-      "source": "wilma:perhe",
-      "note": "koe · kertolaskuja"
-    },
-    {
-      "date": "2026-10-09",
-      "who": "Ellen",
-      "title": "Valmistautuminen harkkakisoihin (la)",
-      "kind": "muu",
-      "source": "jussi:fiilis",
-      "note": "Jussi 5.10"
-    },
-    {
-      "date": "2026-10-09",
+      "date": "2026-10-08",
       "who": "Mea",
-      "title": "Poissa koulusta (kotona)",
+      "title": "MA3-koe",
       "kind": "muu",
       "source": "gcal:perhe",
-      "note": "Jussi 5.10: kotona, ei päivätyötä"
+      "note": "koe · kpl 14–21, 23"
     },
     {
-      "date": "2026-10-09",
+      "date": "2026-10-08",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu"
+    },
+    {
+      "date": "2026-10-08",
+      "who": "Samuel",
+      "title": "UNICEF-kävely",
+      "kind": "muu",
+      "source": "gcal:perhe"
     },
     {
       "date": "2026-10-09",
@@ -1337,11 +1315,35 @@
       "driver": "Mea itse"
     },
     {
-      "date": "2026-10-10",
-      "who": "perhe",
-      "title": "Syysloma alkaa",
-      "kind": "loma",
-      "endDate": "2026-10-18"
+      "date": "2026-10-09",
+      "who": "Ellen",
+      "title": "Matematiikan koe",
+      "kind": "muu",
+      "place": "Aurinkorinteen koulu",
+      "source": "wilma:perhe",
+      "note": "koe · kertolaskuja"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Ellen",
+      "title": "Valmistautuminen harkkakisoihin (la)",
+      "kind": "muu",
+      "source": "jussi:fiilis",
+      "note": "Jussi 5.10"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Mea",
+      "title": "Poissa koulusta (kotona)",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Jussi 5.10: kotona, ei päivätyötä"
+    },
+    {
+      "date": "2026-10-09",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu"
     },
     {
       "date": "2026-10-10",
@@ -1384,12 +1386,11 @@
       "note": "Jussi 5.10"
     },
     {
-      "date": "2026-10-11",
+      "date": "2026-10-10",
       "who": "perhe",
-      "title": "STM huoltajakysely DL",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "vapaaehtoinen"
+      "title": "Syysloma alkaa",
+      "kind": "loma",
+      "endDate": "2026-10-18"
     },
     {
       "date": "2026-10-11",
@@ -1433,6 +1434,14 @@
       "note": "su-vuoro Riikka (Oulu ohi)"
     },
     {
+      "date": "2026-10-11",
+      "who": "perhe",
+      "title": "STM huoltajakysely DL",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "vapaaehtoinen"
+    },
+    {
       "date": "2026-10-12",
       "time": "16:00",
       "end": "17:30",
@@ -1461,13 +1470,6 @@
       "place": "Kuoppari",
       "kind": "treeni",
       "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-10-13",
-      "who": "perhe",
-      "title": "Lontoo-matka",
-      "kind": "matka",
-      "place": "C38QGW"
     },
     {
       "date": "2026-10-13",
@@ -1537,7 +1539,7 @@
       "note": "ennen Lontoo-lentoa 23:50"
     },
     {
-      "date": "2026-10-14",
+      "date": "2026-10-13",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
@@ -1556,7 +1558,7 @@
       "note": "ke-oletus Sofian perhe · Ellen kotona (Lontoo: vanhemmat+Milla+Mea)"
     },
     {
-      "date": "2026-10-15",
+      "date": "2026-10-14",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
@@ -1575,7 +1577,7 @@
       "note": "to-oletus Meidän ei päde · vanhemmat Lontoossa — kuski AUKI (ei WA-tietoa)"
     },
     {
-      "date": "2026-10-16",
+      "date": "2026-10-15",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
@@ -1594,16 +1596,7 @@
       "note": "pe-oletus Meidän ei päde · vanhemmat Lontoossa — kuski AUKI (ei WA-tietoa)"
     },
     {
-      "date": "2026-10-17",
-      "who": "Milla",
-      "title": "Vivida aluerinkileiri",
-      "place": "Kisakallio",
-      "kind": "treeni",
-      "source": "gcal:voimistelu",
-      "note": "17.–19.10 Kisakallio · paluu Lontoosta aamulla ~11:15 — tarkista ehtiikö"
-    },
-    {
-      "date": "2026-10-17",
+      "date": "2026-10-16",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
@@ -1621,13 +1614,20 @@
       "note": "paluu Lontoosta HEL 11:15 — tarkista ehtiikö"
     },
     {
-      "date": "2026-10-18",
+      "date": "2026-10-17",
       "who": "Milla",
       "title": "Vivida aluerinkileiri",
       "place": "Kisakallio",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "note": "17.–19.10 Kisakallio"
+      "note": "17.–19.10 Kisakallio · paluu Lontoosta aamulla ~11:15 — tarkista ehtiikö"
+    },
+    {
+      "date": "2026-10-17",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka",
+      "place": "C38QGW"
     },
     {
       "date": "2026-10-18",
@@ -1640,20 +1640,13 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-10-19",
-      "who": "Mea",
-      "title": "Rippikoulupaikan tiedot sähköpostiin",
-      "kind": "muu",
-      "source": "gmail",
-      "note": "vko 43 (19.–23.10.) · Kuopion srk · toiveet Rytky kesä 2027"
-    },
-    {
-      "date": "2026-10-19",
+      "date": "2026-10-18",
       "who": "Milla",
-      "title": "Podcast-tehtävä Teamsiin",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Wilma"
+      "title": "Vivida aluerinkileiri",
+      "place": "Kisakallio",
+      "kind": "treeni",
+      "source": "gcal:voimistelu",
+      "note": "17.–19.10 Kisakallio"
     },
     {
       "date": "2026-10-19",
@@ -1686,6 +1679,22 @@
       "source": "gcal:voimistelu"
     },
     {
+      "date": "2026-10-19",
+      "who": "Mea",
+      "title": "Rippikoulupaikan tiedot sähköpostiin",
+      "kind": "muu",
+      "source": "gmail",
+      "note": "vko 43 (19.–23.10.) · Kuopion srk · toiveet Rytky kesä 2027"
+    },
+    {
+      "date": "2026-10-19",
+      "who": "Milla",
+      "title": "Podcast-tehtävä Teamsiin",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Wilma"
+    },
+    {
       "date": "2026-10-20",
       "time": "16:30",
       "end": "18:00",
@@ -1694,14 +1703,6 @@
       "place": "Lippumäki",
       "kind": "treeni",
       "driver": "Jussi"
-    },
-    {
-      "date": "2026-10-21",
-      "who": "Mea",
-      "title": "RUB iso koe",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "koe · sanajärjestys, luonto/eläinsanasto, kpl 1–2, imperfekti, lukusanat"
     },
     {
       "date": "2026-10-21",
@@ -1722,6 +1723,14 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-10-21",
+      "who": "Mea",
+      "title": "RUB iso koe",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe · sanajärjestys, luonto/eläinsanasto, kpl 1–2, imperfekti, lukusanat"
     },
     {
       "who": "Milla",
@@ -1857,20 +1866,6 @@
     },
     {
       "date": "2026-10-31",
-      "who": "Milla",
-      "title": "Vivida kisat · TTNV Cup",
-      "kind": "kisa",
-      "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-10-31",
-      "who": "perhe",
-      "title": "Pyhäinpäivä",
-      "kind": "juhla",
-      "source": "gcal:juhlapyhat"
-    },
-    {
-      "date": "2026-10-31",
       "time": "09:00",
       "end": "16:00",
       "who": "Samuel",
@@ -1890,6 +1885,20 @@
       "source": "gcal:voimistelu"
     },
     {
+      "date": "2026-10-31",
+      "who": "Milla",
+      "title": "Vivida kisat · TTNV Cup",
+      "kind": "kisa",
+      "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-10-31",
+      "who": "perhe",
+      "title": "Pyhäinpäivä",
+      "kind": "juhla",
+      "source": "gcal:juhlapyhat"
+    },
+    {
       "date": "2026-11-01",
       "time": "16:00",
       "end": "18:30",
@@ -1898,14 +1907,6 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-11-02",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Riikan koulupäivät · lähtö 2.11 klo 15.30"
     },
     {
       "date": "2026-11-02",
@@ -1928,7 +1929,7 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-11-03",
+      "date": "2026-11-02",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu",
@@ -1945,7 +1946,7 @@
       "source": "gcal:jussi"
     },
     {
-      "date": "2026-11-04",
+      "date": "2026-11-03",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu",
@@ -1971,6 +1972,14 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-11-04",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Riikan koulupäivät · lähtö 2.11 klo 15.30"
     },
     {
       "date": "2026-11-05",
@@ -2002,21 +2011,6 @@
     },
     {
       "date": "2026-11-08",
-      "who": "Mea",
-      "title": "Lianna Illusion Cup (epävarma)",
-      "kind": "kisa",
-      "source": "gcal:voimistelu",
-      "note": "Ei sovi kaikille; tilalle 1.11 TTNV tai 15.11 Sisu Cup"
-    },
-    {
-      "date": "2026-11-08",
-      "who": "perhe",
-      "title": "Isänpäivä",
-      "kind": "juhla",
-      "source": "gcal:juhlapyhat"
-    },
-    {
-      "date": "2026-11-08",
       "time": "11:30",
       "end": "14:00",
       "who": "Milla",
@@ -2042,6 +2036,21 @@
       "date": "2026-11-08",
       "time": "14:00",
       "end": "15:00"
+    },
+    {
+      "date": "2026-11-08",
+      "who": "Mea",
+      "title": "Lianna Illusion Cup (epävarma)",
+      "kind": "kisa",
+      "source": "gcal:voimistelu",
+      "note": "Ei sovi kaikille; tilalle 1.11 TTNV tai 15.11 Sisu Cup"
+    },
+    {
+      "date": "2026-11-08",
+      "who": "perhe",
+      "title": "Isänpäivä",
+      "kind": "juhla",
+      "source": "gcal:juhlapyhat"
     },
     {
       "date": "2026-11-09",
@@ -2113,14 +2122,6 @@
     },
     {
       "date": "2026-11-14",
-      "who": "Milla",
-      "title": "Vivida kisaviikonloppu (Espoo/TRE)",
-      "kind": "kisa",
-      "source": "gcal:voimistelu",
-      "note": "tarkentuu · 14.–15.11."
-    },
-    {
-      "date": "2026-11-14",
       "time": "12:30",
       "end": "15:00",
       "who": "Mea",
@@ -2130,7 +2131,7 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-11-15",
+      "date": "2026-11-14",
       "who": "Milla",
       "title": "Vivida kisaviikonloppu (Espoo/TRE)",
       "kind": "kisa",
@@ -2156,6 +2157,14 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-11-15",
+      "who": "Milla",
+      "title": "Vivida kisaviikonloppu (Espoo/TRE)",
+      "kind": "kisa",
+      "source": "gcal:voimistelu",
+      "note": "tarkentuu · 14.–15.11."
     },
     {
       "date": "2026-11-16",
@@ -2208,15 +2217,6 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-11-21",
-      "who": "Mea",
-      "title": "Lianna Elixiria Cup (epävarma)",
-      "place": "Tampere",
-      "kind": "kisa",
-      "source": "gcal:voimistelu",
-      "note": "lähtö 21.11 · 21.–22.11."
-    },
-    {
       "who": "Milla",
       "title": "Kisat tampere",
       "kind": "kisa",
@@ -2224,6 +2224,15 @@
       "date": "2026-11-21",
       "time": "15:00",
       "end": "16:00"
+    },
+    {
+      "date": "2026-11-21",
+      "who": "Mea",
+      "title": "Lianna Elixiria Cup (epävarma)",
+      "place": "Tampere",
+      "kind": "kisa",
+      "source": "gcal:voimistelu",
+      "note": "lähtö 21.11 · 21.–22.11."
     },
     {
       "date": "2026-11-22",
@@ -2292,15 +2301,6 @@
     },
     {
       "date": "2026-11-27",
-      "who": "perhe",
-      "title": "Lontoo-matka",
-      "kind": "matka",
-      "place": "BVKZSC",
-      "source": "gcal:perhe",
-      "note": "FR2345 HEL 23:40 → STN · koko perhe (6)"
-    },
-    {
-      "date": "2026-11-27",
       "time": "18:00",
       "end": "20:30",
       "who": "Milla",
@@ -2310,12 +2310,13 @@
       "source": "gcal:voimistelu"
     },
     {
-      "date": "2026-11-28",
+      "date": "2026-11-27",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
       "place": "BVKZSC",
-      "source": "gcal:perhe"
+      "source": "gcal:perhe",
+      "note": "FR2345 HEL 23:40 → STN · koko perhe (6)"
     },
     {
       "date": "2026-11-28",
@@ -2327,6 +2328,14 @@
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018",
       "note": "Samuel Lontoossa 27.11–2.12 (BVKZSC) — tarkista osallistuminen"
+    },
+    {
+      "date": "2026-11-28",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka",
+      "place": "BVKZSC",
+      "source": "gcal:perhe"
     },
     {
       "date": "2026-11-29",
@@ -2354,14 +2363,6 @@
     },
     {
       "date": "2026-12-01",
-      "who": "perhe",
-      "title": "Lontoo-matka",
-      "kind": "matka",
-      "place": "BVKZSC",
-      "source": "gcal:perhe"
-    },
-    {
-      "date": "2026-12-01",
       "time": "18:00",
       "end": "19:15",
       "who": "perhe",
@@ -2370,6 +2371,34 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "Aurinkorinne (Esa Miettinen) · perhe Lontoossa — Teams"
+    },
+    {
+      "date": "2026-12-01",
+      "who": "perhe",
+      "title": "Lontoo-matka",
+      "kind": "matka",
+      "place": "BVKZSC",
+      "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Mea",
+      "title": "Lianna treeni",
+      "place": "Bella Center",
+      "kind": "treeni",
+      "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-12-02",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni",
+      "source": "gcal:voimistelu"
     },
     {
       "date": "2026-12-02",
@@ -2389,26 +2418,6 @@
       "note": "paluu FR2344 STN 07:55 → HEL 12:45"
     },
     {
-      "date": "2026-12-02",
-      "time": "18:00",
-      "end": "20:30",
-      "who": "Mea",
-      "title": "Lianna treeni",
-      "place": "Bella Center",
-      "kind": "treeni",
-      "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-12-02",
-      "time": "18:00",
-      "end": "20:30",
-      "who": "Milla",
-      "title": "Vivida treeni",
-      "place": "Bella Center",
-      "kind": "treeni",
-      "source": "gcal:voimistelu"
-    },
-    {
       "date": "2026-12-03",
       "who": "Riikka",
       "title": "Oulu",
@@ -2418,14 +2427,6 @@
     },
     {
       "date": "2026-12-04",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Riikan koulupäivät · lähtö 2.12 klo 15.30"
-    },
-    {
-      "date": "2026-12-04",
       "time": "18:00",
       "end": "20:30",
       "who": "Mea",
@@ -2433,6 +2434,14 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-12-04",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Riikan koulupäivät · lähtö 2.12 klo 15.30"
     },
     {
       "date": "2026-12-05",
@@ -2443,13 +2452,6 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-12-06",
-      "who": "perhe",
-      "title": "Itsenäisyyspäivä",
-      "kind": "juhla",
-      "source": "gcal:juhlapyhat"
     },
     {
       "date": "2026-12-06",
@@ -2470,6 +2472,13 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-12-06",
+      "who": "perhe",
+      "title": "Itsenäisyyspäivä",
+      "kind": "juhla",
+      "source": "gcal:juhlapyhat"
     },
     {
       "date": "2026-12-07",

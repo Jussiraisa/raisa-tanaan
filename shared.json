@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791378372288,
+  "updated": 1791383587697,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -712,6 +712,25 @@
       "note": "Wilma 6.10."
     },
     {
+      "id": "info-wilma-ellen-en-koe-2026-10-28",
+      "who": "ellen",
+      "title": "Englannin koe (kpl 1–3)",
+      "date": "2026-10-28",
+      "kind": "info",
+      "note": "Wilma 7.10. · chapters 1–3",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
+      "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
+      "who": "perhe",
+      "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
+      "date": "2026-10-21",
+      "dateEnd": "2026-11-12",
+      "kind": "info",
+      "note": "Wilma 7.10. · turvakielto: soita 017-2734500",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
       "id": "info-ambrosia-2026-10-31",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",
@@ -778,25 +797,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-ellen-en-koe-2026-10-28",
-      "who": "ellen",
-      "title": "Englannin koe (kpl 1–3)",
-      "date": "2026-10-28",
-      "kind": "info",
-      "note": "Wilma 7.10. · chapters 1–3",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
-      "who": "perhe",
-      "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
-      "date": "2026-10-21",
-      "dateEnd": "2026-11-12",
-      "kind": "info",
-      "note": "Wilma 7.10. · turvakielto: soita 017-2734500",
-      "place": "Aurinkorinteen koulu"
     }
   ],
   "schoolLunch": {

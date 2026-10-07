@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791345999553,
+  "updated": 1791346014798,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -254,6 +254,18 @@
       "status": "other",
       "ride": "vie+hakee",
       "note": "WA Ambrosia 4.10.: Mika \"onnistuu\" (harkkakisojen takia)"
+    },
+    "kyyti-mea-lianna-2026-10-07": {
+      "driver": "Mea ei mene (terapia)",
+      "status": "other",
+      "ride": "",
+      "note": "WA Lianna 4.10.: Mea ti+pe; ke Amanda/Elina"
+    },
+    "kyyti-samuel-welhot-2026-10-08": {
+      "driver": "Meidän",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "WA Säbä 5.10.: \"Meiltä torstai\""
     }
   },
   "cooks": {
@@ -274,7 +286,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: kokki tänään auki; Samuel sähly 16.30 Sanna vie (haku varmista); Ellen Ambrosia Keinäset; Mea+Milla harkkakisa 17–19 Ylä-Pyörö oma kyyti; Riikka Ouluun 21.",
+  "note": "Tee: kokki tänään auki; Mea terapia 17.45 (ei Liannaa); Milla Vivida 18 kyyti auki; Ellen Ambrosia 18 Sofian perhe vie, haku auki; Teams Kalakukko 18–19; Riikka Oulussa.",
   "extras": [
     {
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791360443738,
+  "updated": 1791367667821,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -325,15 +325,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-kagvogifmlmqvqigmhpsrdhh9o",
-      "title": "Milla · Dresdenin vieraiden KV-esitys",
-      "date": "2026-10-07",
-      "start": "12:45",
-      "end": "13:05",
-      "kind": "cal",
-      "place": "Kuopion klassillinen lukio, lk 138"
-    },
-    {
       "id": "cal-ogvn8s7j7hvrh4r9fki920q5lo",
       "title": "Milla · Sijoittajakoulu (vapaaehtoinen)",
       "date": "2026-10-07",
@@ -641,17 +632,6 @@
       "end": "18:30",
       "kind": "info",
       "note": "Bella Center"
-    },
-    {
-      "id": "info-wilma-milla-dresden-esitys-2026-10-07",
-      "who": "milla",
-      "title": "Dresdenin vieraiden KV-esitys",
-      "date": "2026-10-07",
-      "start": "12:45",
-      "end": "13:05",
-      "kind": "info",
-      "place": "lk 138",
-      "note": "Wilma Ro-asialista 6.10."
     },
     {
       "id": "info-wilma-milla-sijoittajakoulu-2026-10-07",

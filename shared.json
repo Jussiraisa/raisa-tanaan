@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791348197172,
+  "updated": 1791360443738,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -325,14 +325,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-ovhl3k3ht6kasmo4qofblg3r40",
-      "title": "Milla · Turpotietäjä-alkukilpailu",
-      "date": "2026-10-07",
-      "start": "09:00",
-      "end": "11:00",
-      "kind": "cal"
-    },
-    {
       "id": "cal-kagvogifmlmqvqigmhpsrdhh9o",
       "title": "Milla · Dresdenin vieraiden KV-esitys",
       "date": "2026-10-07",
@@ -389,16 +381,6 @@
       "place": "Oulu",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-wilma-milla-turpotietaja-2026-10-07",
-      "who": "milla",
-      "title": "Turpotietäjä-alkukilpailu",
-      "date": "2026-10-07",
-      "start": "09:00",
-      "end": "11:00",
-      "kind": "info",
-      "note": "vapaaehtoinen, Abitti"
     },
     {
       "id": "info-mea-terapia-2026-10-07",

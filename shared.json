@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791367667821,
+  "updated": 1791374851934,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -339,7 +339,8 @@
       "date": "2026-10-07",
       "start": "17:45",
       "end": "18:45",
-      "kind": "cal"
+      "kind": "cal",
+      "place": "Vuorikatu 26 B, 4. krs, Kuopio"
     },
     {
       "id": "cal-46tfafncotsea8mcn1ac5k4ll8",

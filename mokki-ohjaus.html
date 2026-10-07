@@ -269,6 +269,10 @@
     .flag.on .state { color: var(--blue); }
     .flag.hot.on { border-color: rgba(227,195,106,.35); background: linear-gradient(180deg, rgba(227,195,106,.10), transparent); }
     .flag.hot.on .state { color: var(--warm); }
+    .flag.save.on { border-color: rgba(126,184,224,.45); background: linear-gradient(180deg, rgba(126,184,224,.12), transparent); }
+    .flag.save.on .state { color: var(--blue); }
+    .flag .state-sub { margin-top: 4px; font-size: 13px; font-weight: 600; color: var(--dim); }
+    #setbackFlags { margin-bottom: var(--gap); }
 
     .ilp-note {
       display: flex; gap: 12px; align-items: flex-start;
@@ -735,6 +739,19 @@
   <div class="chart-panel" data-chart-panel="indoor" hidden></div>
   <div class="chart-panel" data-chart-panel="outdoor" hidden></div>
 
+  <section class="flags" aria-label="Lämmityksen pudotus" id="setbackFlags">
+    <div class="flag save" id="flagFloor">
+      <div class="name">Lattialämmitys pudotus</div>
+      <div class="state" id="floorSetbackState">—</div>
+      <div class="state-sub" id="floorSetbackSub">rele —</div>
+    </div>
+    <div class="flag save" id="flagRadiator">
+      <div class="name">Patterit pudotus</div>
+      <div class="state" id="radiatorSetbackState">—</div>
+      <div class="state-sub" id="radiatorSetbackSub">rele —</div>
+    </div>
+  </section>
+
   <section class="card" aria-label="ILP" id="ilpCard">
     <div class="card-head">
       <div class="lbl">Lämpöpumppu</div>
@@ -904,7 +921,7 @@
         <li>⏱️ Säästö (pudotus) palautuu itsestään normaaliksi: automaatiolla 20 min kuluttua ellei sitä uusita, Poissa-napilla <b data-s="setbackFailsafeH">24</b> h kuluttua. Jos palvelin kaatuu, lämmitys palaa normaaliksi.</li>
         <li>✔️ Jokainen ohjaus tarkistetaan lukemalla laitteen tila, yritetään kerran uudelleen. Jos säästön päälle meno ei varmistu, se käännetään pois.</li>
         <li>🧊 Jäähdytys (myös auto ja kuivaus) on estetty lämmityskaudella ja aina kun ulkona on alle <b data-s="coolMinOutdoorC">20</b> °C (tai ulkolämpöä ei tiedetä). Jos lämpöpumppu löytyy jäähdytykseltä, siitä tulee hälytys ja se vaihdetaan lämmitykselle samaan lämpötilaan (koeajossa vain kirjataan).</li>
-        <li>❄️ Lämpöpumppua ei sammuteta lämmityskaudella (<b data-s="heatSeasonStart">9</b>.–<b data-s="heatSeasonEnd">4</b>. kuukausi) eikä kun ulkona on alle <b data-s="heatOutdoorC">10</b> °C. Muulloin Poissa voi sammuttaa sen. Hälytys vain, jos se on pois ja sisällä on alle <b data-s="ilpAlertIndoorC">18</b> °C tai ulkona alle <b data-s="ilpOffAlarmC">0</b> °C.</li>
+        <li>❄️ Lämpöpumppua ei sammuteta lämmityskaudella (<b data-s="heatSeasonStart">9</b>.–<b data-s="heatSeasonEnd">4</b>. kuukausi) eikä kun ulkona on alle <b data-s="heatOutdoorC">10</b> °C. Muulloin Poissa voi sammuttaa sen. Hälytys: kotona jos pois ja sisällä alle <b data-s="ilpAlertIndoorC">18</b> °C; poissa vain jos sisällä alle poissa-tavoitteen (− hystereesi, tyypillisesti 15,5 °C) tai ulkona alle <b data-s="ilpOffAlarmC">0</b> °C — ei siis punaisena, kun poissa ja sisällä on vielä yli ylläpitotasoa.</li>
         <li>🌡️ Sisälämpömittari on katon rajassa, jossa on lämpimämpää kuin oleskelutasolla. Siksi kylmärajat ovat varovaisia: oikeasti oleskelutasolla on vähän kylmempää kuin näkyy.</li>
         <li>🔥 Takan tunnistus vaatii, että sekä sisälämpö nousee vähintään <b data-s="fireRiseC">4</b> °C että poistoilma vähintään <b data-s="fireExtractRiseC">2</b> °C puolessa tunnissa – ei lasketa, jos lämpöpumppu, sauna, iso sähköteho tai aurinko selittää nousun.</li>
         <li>🔥 Takka päällä: ilmanvaihto EI mene tehostukselle eikä poissa-tilaan (alipaine voi vetää savua sisään). Takkatoiminto (ylipaine) auttaa vetoa. Poissa-nappi kysyy varmistuksen. Lämpöpumppua ei sammuteta, mutta sen lämpöä voidaan laskea.</li>
@@ -956,7 +973,10 @@
     indoorCh: 101,
     outdoorCh: 100,
     ev: "841fe8817aac",
-    evCh: 0
+    evCh: 0,
+    setback: "841fe88e7a98",
+    floorCh: 1,
+    radiatorCh: 2
   };
   var DATA = null;
   var _pullBusy = false;
@@ -1437,6 +1457,11 @@
       var sb = component(sst, "light", saunaDev.channel) || component(sst, "switch", saunaDev.channel);
       sauna = !!(sb && sb.output);
     }
+    var sbRoot = map[SENSOR.setback] || {};
+    var floorSw = component(sbRoot, "switch", SENSOR.floorCh);
+    var radSw = component(sbRoot, "switch", SENSOR.radiatorCh);
+    var floorSetback = floorSw && floorSw.output != null ? !!floorSw.output : null;
+    var radiatorSetback = radSw && radSw.output != null ? !!radSw.output : null;
     return {
       online: online,
       powerW: powerW,
@@ -1450,6 +1475,8 @@
       lightWatts: lightWatts,
       evCharge: evCharge,
       sauna: sauna,
+      floorSetback: floorSetback,
+      radiatorSetback: radiatorSetback,
       updated: Date.now(),
       source: "shelly-live"
     };
@@ -1491,6 +1518,25 @@
     var fs = document.getElementById("flagSauna");
     fs.className = "flag hot" + (sauna ? " on" : "");
     document.getElementById("saunaState").textContent = sauna ? "Päällä" : "Pois";
+
+    function paintSetback(flagId, stateId, subId, on) {
+      var fl = document.getElementById(flagId);
+      if (on == null) {
+        fl.className = "flag save";
+        document.getElementById(stateId).textContent = "—";
+        document.getElementById(subId).textContent = "rele ei vastaa";
+      } else if (on) {
+        fl.className = "flag save on";
+        document.getElementById(stateId).textContent = "Päällä";
+        document.getElementById(subId).textContent = "lämmitys pienemmällä";
+      } else {
+        fl.className = "flag save";
+        document.getElementById(stateId).textContent = "Pois";
+        document.getElementById(subId).textContent = "normaali lämpö";
+      }
+    }
+    paintSetback("flagFloor", "floorSetbackState", "floorSetbackSub", d.floorSetback);
+    paintSetback("flagRadiator", "radiatorSetbackState", "radiatorSetbackSub", d.radiatorSetback);
 
     var onSet = {};
     lightsOn.forEach(function (n) { onSet[n] = true; });

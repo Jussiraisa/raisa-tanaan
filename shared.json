@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791383587697,
+  "updated": 1791388121818,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -323,15 +323,6 @@
       "title": "Samuel · Ei liikuntaa (ei varusteita)",
       "date": "2026-10-07",
       "kind": "cal"
-    },
-    {
-      "id": "cal-djt05i2id97kred3b9nghogv0c",
-      "title": "Mea terapia · Tarja Pajunen",
-      "date": "2026-10-07",
-      "start": "17:45",
-      "end": "18:45",
-      "kind": "cal",
-      "place": "Vuorikatu 26 B, 4. krs, Kuopio"
     },
     {
       "id": "cal-46tfafncotsea8mcn1ac5k4ll8",

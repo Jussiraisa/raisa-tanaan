@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791347112429,
+  "updated": 1791348197172,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -289,6 +289,15 @@
   "note": "Tee: kokki tänään auki; Mea terapia 17.45 (ei Liannaa); Milla Vivida 18 kyyti auki; Ellen Ambrosia 18 Sofian perhe vie, haku auki; Teams Kalakukko 18–19; Riikka Oulussa.",
   "extras": [
     {
+      "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
+      "title": "Riikka Oulu",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "start": "21:00",
+      "end": "22:00",
+      "kind": "cal"
+    },
+    {
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",
       "title": "Milla · Shaking up Tech -haku",
       "date": "2026-10-01",
@@ -307,15 +316,6 @@
       "title": "Riikan koulupäivät",
       "date": "2026-10-06",
       "dateEnd": "2026-10-09",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
-      "title": "Riikka Oulu",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "start": "21:00",
-      "end": "22:00",
       "kind": "cal"
     },
     {
@@ -369,6 +369,15 @@
       "title": "Samuel · UNICEF-kävely",
       "date": "2026-10-08",
       "kind": "cal"
+    },
+    {
+      "id": "cal-q3nojj6ggs7avf89p8jebssbjo",
+      "title": "Mea · valmennus",
+      "date": "2026-10-08",
+      "start": "17:00",
+      "end": "18:30",
+      "kind": "cal",
+      "place": "Bella Center"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",

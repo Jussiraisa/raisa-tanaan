@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791377259537,
+  "updated": 1791378372288,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -424,7 +424,7 @@
       "kind": "info",
       "driver": "",
       "status": "",
-      "note": "kertolasku s.60–98, kertotaulut 1–10"
+      "note": "kertolasku s.60–98, kertotaulut 1–10 · opettaja Olli Laukkanen"
     },
     {
       "id": "info-mea-poissa-2026-10-09",
@@ -432,17 +432,17 @@
       "title": "Kotona / poissa koulusta",
       "date": "2026-10-09",
       "kind": "info",
-      "note": "Jussi 5.10."
+      "note": "Jussi 5.10. · koulussa päivätyökeräys (vapaaehtoinen), Mea kotona"
     },
     {
       "id": "info-wilma-milla-klassikan-paiva-2026-10-09",
       "who": "milla",
       "title": "Klassikan päivä",
       "date": "2026-10-09",
-      "start": "09:40",
+      "start": "08:10",
       "end": "14:20",
       "kind": "info",
-      "note": "Wilma Ro-asialista 6.10.: koulu kaikille 9.40–14.20"
+      "note": "JN1 08:10, sitten ohjelma 09:40–14:20 (Wilma 7.10.)"
     },
     {
       "id": "info-wilma-perhe-stm-kysely-2026-10-11",
@@ -463,11 +463,11 @@
     {
       "id": "info-wilma-perhe-syysloma-2026-10-12",
       "who": "perhe",
-      "title": "Syysloma 12.–16.10.",
+      "title": "Syysloma 12.–18.10. (vko 42)",
       "date": "2026-10-12",
-      "dateEnd": "2026-10-16",
+      "dateEnd": "2026-10-18",
       "kind": "info",
-      "note": "Wilma 4.10.: ei tunteja kenelläkään"
+      "note": "Wilma: viikko 42 tyhjä lukkareissa (syysloma). Ei pyyhitä vakio-lukkareita."
     },
     {
       "id": "info-wilma-ellen-hontsa-2026-10-13",
@@ -778,6 +778,25 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-ellen-en-koe-2026-10-28",
+      "who": "ellen",
+      "title": "Englannin koe (kpl 1–3)",
+      "date": "2026-10-28",
+      "kind": "info",
+      "note": "Wilma 7.10. · chapters 1–3",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
+      "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
+      "who": "perhe",
+      "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
+      "date": "2026-10-21",
+      "dateEnd": "2026-11-12",
+      "kind": "info",
+      "note": "Wilma 7.10. · turvakielto: soita 017-2734500",
+      "place": "Aurinkorinteen koulu"
     }
   ],
   "schoolLunch": {

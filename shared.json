@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791306158094,
+  "updated": 1791345947778,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -812,9 +812,9 @@
     }
   ],
   "schoolLunch": {
-    "date": "2026-10-06",
-    "dish": "Ohrapuuroa + sekamehukeittoa",
-    "veg": ""
+    "date": "2026-10-07",
+    "dish": "Kapteenin kalapuikkoja + kermaviilikastiketta + perunaa",
+    "veg": "Pinaatti-raejuustonappeja + kermaviilikastiketta"
   },
   "vacation": {
     "from": "",

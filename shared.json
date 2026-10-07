@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791345947778,
+  "updated": 1791345999553,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -347,12 +347,16 @@
       "kind": "cal"
     },
     {
-      "id": "info-joukkue-kortti-33841-2026-10-06",
-      "who": "samuel",
-      "title": "JOUKKUE Kortti-Piste 33841 · 213,95 € erä",
-      "date": "2026-10-06",
-      "kind": "info",
-      "note": "SB Welhot P9 — ei henkilökohtainen"
+      "id": "cal-46tfafncotsea8mcn1ac5k4ll8",
+      "title": "Mea · MA-koe",
+      "date": "2026-10-08",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-l2gi7ui2jasd9fu01grmd00690",
+      "title": "Samuel · UNICEF-kävely",
+      "date": "2026-10-08",
+      "kind": "cal"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",

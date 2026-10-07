@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791374851934,
+  "updated": 1791377259537,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -325,15 +325,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-ogvn8s7j7hvrh4r9fki920q5lo",
-      "title": "Milla · Sijoittajakoulu (vapaaehtoinen)",
-      "date": "2026-10-07",
-      "start": "14:30",
-      "end": "15:45",
-      "kind": "cal",
-      "place": "Kuopion klassillinen lukio"
-    },
-    {
       "id": "cal-djt05i2id97kred3b9nghogv0c",
       "title": "Mea terapia · Tarja Pajunen",
       "date": "2026-10-07",
@@ -633,16 +624,6 @@
       "end": "18:30",
       "kind": "info",
       "note": "Bella Center"
-    },
-    {
-      "id": "info-wilma-milla-sijoittajakoulu-2026-10-07",
-      "who": "milla",
-      "title": "Sijoittajakoulu",
-      "date": "2026-10-07",
-      "start": "14:30",
-      "end": "15:45",
-      "kind": "info",
-      "note": "vapaaehtoinen, Wilma Ro-asialista 6.10."
     },
     {
       "id": "info-wilma-samuel-ei-liikuntaa-2026-10-07",

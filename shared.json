@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791388121818,
+  "updated": 1791388856669,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -355,28 +355,6 @@
       "place": "Oulu",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-mea-terapia-2026-10-07",
-      "who": "mea",
-      "title": "Terapia",
-      "date": "2026-10-07",
-      "start": "17:00",
-      "end": "",
-      "kind": "info",
-      "place": "",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-kalakukko-teams-2026-10-07",
-      "who": "",
-      "title": "Teams: Kalakukko Cup peruuntuminen + budjetti",
-      "date": "2026-10-07",
-      "start": "18:00",
-      "end": "19:00",
-      "kind": "info",
-      "note": "Lianna & Vivida WA"
     },
     {
       "id": "info-joukkue-intersport-6667-2026-10-08",

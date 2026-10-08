@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791431219819,
+  "updated": 1791432285962,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -319,12 +319,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-r10ehcjulks4g2n78hjmpatduc",
-      "title": "Samuel · Ei liikuntaa (ei varusteita)",
-      "date": "2026-10-07",
-      "kind": "cal"
-    },
-    {
       "id": "cal-46tfafncotsea8mcn1ac5k4ll8",
       "title": "Mea · MA-koe",
       "date": "2026-10-08",
@@ -344,6 +338,28 @@
       "end": "18:30",
       "kind": "cal",
       "place": "Bella Center"
+    },
+    {
+      "id": "cal-n0k5p7soko73h6nnjs5qumtgso",
+      "title": "Mea: poissa koulusta",
+      "date": "2026-10-09",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-nnah5jb5at54s5hl2ls3rjhqu8",
+      "title": "Milla · Klassikan päivä",
+      "date": "2026-10-09",
+      "start": "08:10",
+      "end": "14:20",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-1k6gnm8qvsinpl42pocjsvh1go",
+      "title": "Ellen · Matematiikan koe",
+      "date": "2026-10-09",
+      "start": "08:45",
+      "end": "09:30",
+      "kind": "cal"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",
@@ -593,30 +609,6 @@
       "end": "18:30",
       "kind": "info",
       "note": "Bella Center"
-    },
-    {
-      "id": "info-wilma-samuel-ei-liikuntaa-2026-10-07",
-      "who": "samuel",
-      "title": "Ei liikuntaa (ei varusteita)",
-      "date": "2026-10-07",
-      "kind": "info",
-      "note": "viikkoviesti vk 41: to UNICEF-kävely"
-    },
-    {
-      "id": "info-wilma-samuel-matikan-testi-2026-10-07",
-      "who": "samuel",
-      "title": "Matikan testi (jakso 3) tällä viikolla",
-      "date": "2026-10-07",
-      "kind": "info",
-      "note": "Wilma viikkoviesti vk 41: päivää ei kerrottu (viim. pe 9.10.)"
-    },
-    {
-      "id": "info-wilma-samuel-m365-kirjautuminen-2026-10-07",
-      "who": "samuel",
-      "title": "Kotitehtävä: M365-kirjautumisen harjoittelu",
-      "date": "2026-10-07",
-      "kind": "info",
-      "note": "omilla tunnuksilla, viikkoviesti vk 41"
     },
     {
       "id": "info-wilma-milla-laksypajat-2026-10-19",

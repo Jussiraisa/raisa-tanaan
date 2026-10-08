@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791450066318,
+  "updated": 1791488987126,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -331,18 +331,17 @@
       "kind": "cal"
     },
     {
-      "id": "cal-q3nojj6ggs7avf89p8jebssbjo",
-      "title": "Mea · valmennus",
-      "date": "2026-10-08",
-      "start": "17:00",
-      "end": "18:30",
-      "kind": "cal",
-      "place": "Bella Center"
-    },
-    {
       "id": "cal-n0k5p7soko73h6nnjs5qumtgso",
       "title": "Mea: poissa koulusta",
       "date": "2026-10-09",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-t6bj92g3sqs55kjt127eq6ig58",
+      "title": "Ilmoita: Ellen ei mene treeneihin",
+      "date": "2026-10-09",
+      "start": "07:00",
+      "end": "07:15",
       "kind": "cal"
     },
     {
@@ -589,16 +588,6 @@
       "end": "09:35",
       "kind": "info",
       "note": "Wilma 4.10. AI3 moduskoe s. 204–215 + vihko + modustaulukko; palauta modusmonisteet ennen koetta"
-    },
-    {
-      "id": "info-mea-valmennus-2026-10-08",
-      "who": "mea",
-      "title": "Valmennus",
-      "date": "2026-10-08",
-      "start": "17:00",
-      "end": "18:30",
-      "kind": "info",
-      "note": "Bella Center"
     },
     {
       "id": "info-wilma-milla-laksypajat-2026-10-19",

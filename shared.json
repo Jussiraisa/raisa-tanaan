@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791394416391,
+  "updated": 1791431219819,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -690,13 +690,23 @@
       "place": "Aurinkorinteen koulu"
     },
     {
+      "id": "info-wilma-perhe-valke-2026-10-16",
+      "who": "perhe",
+      "title": "Välke-viikonloppu (Kuopio mediataidefestivaali)",
+      "date": "2026-10-16",
+      "dateEnd": "2026-10-18",
+      "kind": "info",
+      "place": "Kuopio",
+      "note": "Wilma 8.10. · vapaaehtoinen info · Lontoo 13.–17.10."
+    },
+    {
       "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
       "who": "perhe",
       "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
       "date": "2026-10-21",
       "dateEnd": "2026-11-12",
       "kind": "info",
-      "note": "Wilma 7.10. · turvakielto: soita 017-2734500",
+      "note": "Wilma 7.10. · turvakielto: soita 017-2734500 · Wilma 8.10.: Pop Up 21.10.–12.11., Samuel & Ellen",
       "place": "Aurinkorinteen koulu"
     },
     {

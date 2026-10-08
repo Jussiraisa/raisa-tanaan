@@ -61,6 +61,9 @@ def event_bounds(e: dict) -> tuple[date, date, bool, str | None]:
         return sd, ed, True, None
     sdt = parse_iso_dt(s["dateTime"])
     edt = parse_iso_dt(en["dateTime"])
+    # Evening event that runs past midnight (< 12 h): show on start day only
+    if edt.date() > sdt.date() and (edt - sdt) < timedelta(hours=12):
+        return sdt.date(), sdt.date(), False, sdt.strftime("%H:%M")
     # keep local calendar date from the offset-aware datetime as-is
     return sdt.date(), edt.date(), False, sdt.strftime("%H:%M")
 
@@ -84,6 +87,7 @@ def is_routine(title: str) -> bool:
         r"\bliannan voimat\b",
         r"\bmea · liannan voimat\b",
         r"\bmea valmennus\b",
+        r"^(mea · )?valmennus$",
         r"\bmilla · valmennus\b",
         r"\bsamuel treeni",
         r"\bsamuel treenit",
@@ -98,6 +102,16 @@ def is_routine(title: str) -> bool:
 
 
 def categorize(title: str, detail: str = "") -> str:
+    # Title decides first; detail only as fallback (detail often mentions other trips)
+    tl = title.lower()
+    if any(x in tl for x in ("terveydenhuolto", "hammas", "suun ")):
+        return "terveys"
+    if re.search(r"\bkoe\b|-koe\b|kokeet", tl):
+        return "koulu"
+    if tl.startswith("lff"):
+        return "matka"
+    if any(x in tl for x in ("syysloma", "joululoma")):
+        return "koulu"
     t = (title + " " + detail).lower()
     if any(x in t for x in (
         "turnaus", "kisa", "cup", "mestik", "harkkakisa", "testit",
@@ -340,6 +354,8 @@ def extras_to_events(shared: dict) -> list[dict]:
         # Skip routine treeni extras (Liannan voimat weekly)
         title = (ex.get("title") or "").strip()
         kind = ex.get("kind") or ""
+        if is_routine(title) or "valmennus" in eid:
+            continue
         if kind == "treeni" and is_routine(title) or (
             kind == "treeni" and re.search(r"voimat|treeni|oheinen|valmennus", title, re.I)
             and not re.search(r"hionta|leiri|kisa|cup|turnaus", title, re.I)
@@ -450,6 +466,7 @@ def dedupe_key(ev: dict) -> str:
     t = ev["title"].lower()
     t = t.replace("(?)", "").strip()
     t = re.sub(r"\s+", " ", t)
+    t = re.sub(r"^perhe · ", "", t)
     # Map aliases
     aliases = [
         (r"riikka oulu|riikan koulupäiv", "riikka oulu"),
@@ -466,6 +483,7 @@ def dedupe_key(ev: dict) -> str:
         (r"mea ke-koe|mea · kemia", "mea ke-koe"),
         (r"vivida hiontaleiri", "vivida hiontaleiri"),
         (r"lontoo", "lontoo"),
+        (r"syysloma", "syysloma"),
         (r"lianna \+ vivida päättärit|lianna päättärit|vivida päättärit", "paattarit"),
     ]
     norm = t

@@ -1248,7 +1248,7 @@
       "place": "Puijonsarven koulu",
       "kind": "treeni",
       "driver": "Mane",
-      "note": "WA Säbä kyydit 5.10: Sanna (Manen äiti) \"Meiltä torstai\""
+      "note": "WA Säbä kyydit 5.10: Sanna (Manen äiti) \"Meiltä torstai\" · vahvistettu 8.10"
     },
     {
       "who": "Milla",
@@ -1296,11 +1296,12 @@
       "end": "18:30",
       "place": "Luola",
       "title": "Ambrosia treeni",
-      "note": "meidän vienti · Riikka Oulussa — ei kuskiksi",
+      "note": "meidän vienti · haku Sofien perhe (WA Ambrosia kyydit 16.8 pysyvä)",
       "who": "Ellen",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "driver": "Meidän"
+      "driver": "Meidän",
+      "pickup": "Sofien perhe"
     },
     {
       "date": "2026-10-09",
@@ -1311,8 +1312,8 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "note": "Riikka Oulussa — ei kuskiksi",
-      "driver": "Mea itse"
+      "note": "WA Lianna kyytirinki 4.10 Riikka: \"Pe meille\"",
+      "driver": "Meidän"
     },
     {
       "date": "2026-10-09",
@@ -1433,7 +1434,7 @@
       "driver": "Riikka",
       "pickup": "Riikka",
       "source": "gcal:voimistelu",
-      "note": "su-vuoro Riikka (Oulu ohi)"
+      "note": "oletus Riikka · ei vahvistettu WA:ssa"
     },
     {
       "date": "2026-10-11",

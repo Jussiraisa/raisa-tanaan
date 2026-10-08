@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791432432129,
+  "updated": 1791433392244,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -748,6 +748,16 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-10-09",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-09",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

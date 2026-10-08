@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791432285962,
+  "updated": 1791432432129,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -286,7 +286,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: kokki tänään auki; Mea terapia 17.45 (ei Liannaa); Milla Vivida 18 kyyti auki; Ellen Ambrosia 18 Sofian perhe vie, haku auki; Teams Kalakukko 18–19; Riikka Oulussa.",
+  "note": "Tee: Samuel Welhot 17 Puijonsarvi meidän (lähtö ~16.30) + Mea valmennus 17 Bella Center samaan aikaan, Riikka Oulussa → Mean kyyti auki; Milla tuuraa valmennusta 19–20; ruoka tähteet.",
   "extras": [
     {
       "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
@@ -751,9 +751,9 @@
     }
   ],
   "schoolLunch": {
-    "date": "2026-10-07",
-    "dish": "Kapteenin kalapuikkoja + kermaviilikastiketta + perunaa",
-    "veg": "Pinaatti-raejuustonappeja + kermaviilikastiketta"
+    "date": "2026-10-08",
+    "dish": "Broilerikiusausta",
+    "veg": "Linssi-kasviskiusausta"
   },
   "vacation": {
     "from": "",

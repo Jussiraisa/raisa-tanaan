@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791433392244,
+  "updated": 1791450066318,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -379,16 +379,6 @@
       "date": "2026-10-08",
       "kind": "info",
       "note": "WELHOT/2018 — ei henkilökohtainen"
-    },
-    {
-      "id": "info-wilma-mea-ma-koe-2026-10-08",
-      "who": "mea",
-      "title": "MA3-koe",
-      "date": "2026-10-08",
-      "start": "11:15",
-      "end": "12:00",
-      "kind": "info",
-      "note": "kpl 14–21, 23"
     },
     {
       "id": "info-wilma-samuel-unicef-2026-10-08",

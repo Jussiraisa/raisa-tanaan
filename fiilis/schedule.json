@@ -1292,6 +1292,17 @@
     },
     {
       "date": "2026-10-09",
+      "who": "Ellen",
+      "title": "Matematiikan koe",
+      "kind": "muu",
+      "place": "Aurinkorinteen koulu",
+      "source": "wilma:perhe",
+      "note": "koe klo 8.45 · kertolaskut, kertotaulut 1–10",
+      "time": "08:45",
+      "end": "09:30"
+    },
+    {
+      "date": "2026-10-09",
       "time": "16:00",
       "end": "18:30",
       "place": "Luola",
@@ -1314,17 +1325,6 @@
       "source": "gcal:voimistelu",
       "note": "WA Lianna kyytirinki 4.10 Riikka: \"Pe meille\"",
       "driver": "Meidän"
-    },
-    {
-      "date": "2026-10-09",
-      "who": "Ellen",
-      "title": "Matematiikan koe",
-      "kind": "muu",
-      "place": "Aurinkorinteen koulu",
-      "source": "wilma:perhe",
-      "note": "koe klo 8.45 · kertolaskut, kertotaulut 1–10",
-      "time": "08:45",
-      "end": "09:30"
     },
     {
       "date": "2026-10-09",

@@ -1306,13 +1306,11 @@
       "time": "16:00",
       "end": "18:30",
       "place": "Luola",
-      "title": "Ambrosia treeni",
-      "note": "meidän vienti · haku Sofien perhe (WA Ambrosia kyydit 16.8 pysyvä)",
+      "title": "Ambrosia treeni · Ellen ei mene",
+      "note": "Käyttäjä 8.10 illalla: Ellen ei mene treeneihin, ei kyytiä",
       "who": "Ellen",
-      "kind": "treeni",
-      "source": "gcal:voimistelu",
-      "driver": "Meidän",
-      "pickup": "Sofien perhe"
+      "kind": "muu",
+      "source": "gcal:voimistelu"
     },
     {
       "date": "2026-10-09",

@@ -886,6 +886,7 @@
     <div class="lbl">Automaatio</div>
     <div class="auto-line" id="autoLine"><span class="dot" aria-hidden="true"></span><span>Automaatio: koeajo – ei ohjaa laitteita</span></div>
     <div class="hint" id="autoWhen">—</div>
+    <div class="hint" id="autoSensor" style="margin-top:4px">—</div>
     <div class="lbl" style="margin-top:14px">Mitä automaatio tekisi nyt</div>
     <ul class="plan-list" id="planNow"><li>Ladataan…</li></ul>
     <div class="lbl" style="margin-top:14px">Seuraavat tunnit</div>
@@ -922,6 +923,7 @@
         <li>✔️ Jokainen ohjaus tarkistetaan lukemalla laitteen tila, yritetään kerran uudelleen. Jos säästön päälle meno ei varmistu, se käännetään pois.</li>
         <li>🧊 Jäähdytys (myös auto ja kuivaus) on estetty lämmityskaudella ja aina kun ulkona on alle <b data-s="coolMinOutdoorC">20</b> °C (tai ulkolämpöä ei tiedetä). Jos lämpöpumppu löytyy jäähdytykseltä, siitä tulee hälytys ja se vaihdetaan lämmitykselle samaan lämpötilaan (koeajossa vain kirjataan).</li>
         <li>❄️ Lämpöpumppua ei sammuteta lämmityskaudella (<b data-s="heatSeasonStart">9</b>.–<b data-s="heatSeasonEnd">4</b>. kuukausi) eikä kun ulkona on alle <b data-s="heatOutdoorC">10</b> °C. Muulloin Poissa voi sammuttaa sen. Hälytys: kotona jos pois ja sisällä alle <b data-s="ilpAlertIndoorC">18</b> °C; poissa vain jos sisällä alle poissa-tavoitteen (− hystereesi, tyypillisesti 15,5 °C) tai ulkona alle <b data-s="ilpOffAlarmC">0</b> °C — ei siis punaisena, kun poissa ja sisällä on vielä yli ylläpitotasoa.</li>
+        <li>🌙 Yöllä (klo <b data-s="nightStartH">22</b>–<b data-s="nightEndH">7</b>) ohjaus käyttää lämpöpumpun omaa sisäanturia, koska Shelly katonrajassa näyttää liikaa. Lämpöpumpun anturi mittaa sisäyksikön imuilmaa kokonaisasteina ja voi näyttää vähän liikaa kun pumppu käy. Jos sen lukema puuttuu, on vanha tai epäuskottava, käytetään Shellyä. Automaatio käynnistää pumpun hiljaisella puhaltimella; käsin vaihdettu puhallin jää voimaan.</li>
         <li>🌡️ Sisälämpömittari on katon rajassa, jossa on lämpimämpää kuin oleskelutasolla. Siksi kylmärajat ovat varovaisia: oikeasti oleskelutasolla on vähän kylmempää kuin näkyy.</li>
         <li>🔥 Takan tunnistus vaatii, että sekä sisälämpö nousee vähintään <b data-s="fireRiseC">4</b> °C että poistoilma vähintään <b data-s="fireExtractRiseC">2</b> °C puolessa tunnissa – ei lasketa, jos lämpöpumppu, sauna, iso sähköteho tai aurinko selittää nousun.</li>
         <li>🔥 Takka päällä: ilmanvaihto EI mene tehostukselle eikä poissa-tilaan (alipaine voi vetää savua sisään). Takkatoiminto (ylipaine) auttaa vetoa. Poissa-nappi kysyy varmistuksen. Lämpöpumppua ei sammuteta, mutta sen lämpöä voidaan laskea.</li>
@@ -1737,7 +1739,7 @@
         b.className = "btn mode" + (on ? (ilp.mode === "heat" ? " warm-on" : " on") : "");
       });
       var hint = (ILP_MODE_FI[ilp.mode] || ilp.mode || "—") +
-        (ilp.fan ? " · puhallin " + (ILP_FAN_FI[ilp.fan] || ilp.fan) : "") +
+        (ilp.quiet ? " · puhallin hiljainen 🤫" : ilp.fan ? " · puhallin " + (ILP_FAN_FI[ilp.fan] || ilp.fan) : "") +
         " · " + ageLabel(CLIM._at);
       if (_ilpPendingSet != null) hint = "Asetetaan " + degC(_ilpPendingSet, ilp.step === 0.5 ? 1 : 0) + "…";
       if (_ilpSending) hint = "Lähetetään…";
@@ -2520,6 +2522,16 @@
     var p = d.plan;
     document.getElementById("autoLine").lastChild.textContent = d.dryRun ? "Automaatio: koeajo – ei ohjaa laitteita" : "Automaatio: OHJAA LAITTEITA";
     document.getElementById("autoWhen").textContent = "Laskettu " + hhmm(p.generatedAt) + " · tila: " + ((d.occupancy && d.occupancy.mode) === "away" ? "poissa" : (d.occupancy && d.occupancy.mode) === "home" ? "kotona" : ((d.occupancy && d.occupancy.mode) || "?")) + (p.inputs && p.inputs.spotNow != null ? " · hinta nyt " + fmtNum(p.inputs.spotNow, 0.1) + " snt" : "") + (p.fireplace && p.fireplace.on ? " · 🔥 takka" : "");
+    var inp = p.inputs || {};
+    var sensEl = document.getElementById("autoSensor");
+    if (sensEl) {
+      var isIlp = /^ILP/.test(inp.indoorSrc || "");
+      sensEl.textContent = "🌡️ Ohjaus käyttää: " + (isIlp ? "lämpöpumpun omaa anturia" + (inp.night ? " (yö)" : "") : "Shellyä (katonraja)") +
+        (inp.indoorC != null ? " " + fmtNum(inp.indoorC, 0.1) + " °C" : "") +
+        " · Shelly " + (inp.indoorShellyC != null ? fmtNum(inp.indoorShellyC, 0.1) + " °C" : "—") +
+        " · ILP " + (inp.indoorIlpC != null ? fmtNum(inp.indoorIlpC, 1) + " °C" : "—") +
+        (inp.indoorWhy ? " — " + inp.indoorWhy : "");
+    }
     var items = Object.keys(p.devices || {}).map(function (k) { var it = p.devices[k]; return { k: k, it: it }; });
     document.getElementById("planNow").innerHTML = items.map(function (x) {
       var it = x.it;

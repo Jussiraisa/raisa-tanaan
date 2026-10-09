@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791546493958,
+  "updated": 1791551634645,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -295,22 +295,6 @@
   "note": "Pe 9.10: Ilmoita Ambrosia-ringille Ellen EI treeneihin. Ellen matikkakoe 8.45. Milla Klassikan päivä 8.10–14.20. Mea kotona. Mea Lianna 18–20.30 Bella Center — kyyti auki (Riikka Oulussa). Ruoka: katkarapukeitto + patongit (kokki auki).",
   "extras": [
     {
-      "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
-      "title": "Riikka Oulu",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "start": "21:00",
-      "end": "22:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
-      "title": "Milla · Shaking up Tech -haku",
-      "date": "2026-10-01",
-      "dateEnd": "2026-10-31",
-      "kind": "cal"
-    },
-    {
       "id": "cal-7p64e2kqquq6i5nncor3c4rv60",
       "title": "Samuel · Matikan testi (jakso 3) tällä viikolla",
       "date": "2026-10-05",
@@ -322,6 +306,15 @@
       "title": "Riikan koulupäivät",
       "date": "2026-10-06",
       "dateEnd": "2026-10-09",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
+      "title": "Riikka Oulu",
+      "date": "2026-10-06",
+      "dateEnd": "2026-10-09",
+      "start": "21:00",
+      "end": "22:00",
       "kind": "cal"
     },
     {

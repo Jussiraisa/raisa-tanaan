@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791519123791,
+  "updated": 1791519249791,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -291,74 +291,62 @@
     {
       "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
       "title": "Riikka Oulu",
+      "kind": "cal",
       "date": "2026-10-06",
       "dateEnd": "2026-10-09",
       "start": "21:00",
-      "end": "22:00",
-      "kind": "cal"
+      "end": "22:00"
     },
     {
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",
       "title": "Milla · Shaking up Tech -haku",
+      "kind": "cal",
       "date": "2026-10-01",
-      "dateEnd": "2026-10-31",
-      "kind": "cal"
+      "dateEnd": "2026-10-31"
     },
     {
       "id": "cal-7p64e2kqquq6i5nncor3c4rv60",
       "title": "Samuel · Matikan testi (jakso 3) tällä viikolla",
+      "kind": "cal",
       "date": "2026-10-05",
-      "dateEnd": "2026-10-09",
-      "kind": "cal"
+      "dateEnd": "2026-10-09"
     },
     {
       "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9g60r40qjledpmi",
       "title": "Riikan koulupäivät",
+      "kind": "cal",
       "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-46tfafncotsea8mcn1ac5k4ll8",
-      "title": "Mea · MA-koe",
-      "date": "2026-10-08",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-l2gi7ui2jasd9fu01grmd00690",
-      "title": "Samuel · UNICEF-kävely",
-      "date": "2026-10-08",
-      "kind": "cal"
+      "dateEnd": "2026-10-09"
     },
     {
       "id": "cal-n0k5p7soko73h6nnjs5qumtgso",
       "title": "Mea: poissa koulusta",
-      "date": "2026-10-09",
-      "kind": "cal"
+      "kind": "cal",
+      "date": "2026-10-09"
     },
     {
       "id": "cal-t6bj92g3sqs55kjt127eq6ig58",
       "title": "Ilmoita: Ellen ei mene treeneihin",
+      "kind": "cal",
       "date": "2026-10-09",
       "start": "07:00",
-      "end": "07:15",
-      "kind": "cal"
+      "end": "07:15"
     },
     {
       "id": "cal-nnah5jb5at54s5hl2ls3rjhqu8",
       "title": "Milla · Klassikan päivä",
+      "kind": "cal",
       "date": "2026-10-09",
       "start": "08:10",
-      "end": "14:20",
-      "kind": "cal"
+      "end": "14:20"
     },
     {
       "id": "cal-1k6gnm8qvsinpl42pocjsvh1go",
       "title": "Ellen · Matematiikan koe",
+      "kind": "cal",
       "date": "2026-10-09",
       "start": "08:45",
-      "end": "09:30",
-      "kind": "cal"
+      "end": "09:30"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",
@@ -370,22 +358,6 @@
       "place": "Oulu",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-joukkue-intersport-6667-2026-10-08",
-      "who": "samuel",
-      "title": "JOUKKUE Intersport 6667 · 141 € erä",
-      "date": "2026-10-08",
-      "kind": "info",
-      "note": "WELHOT/2018 — ei henkilökohtainen"
-    },
-    {
-      "id": "info-wilma-samuel-unicef-2026-10-08",
-      "who": "samuel",
-      "title": "UNICEF-kävely",
-      "date": "2026-10-08",
-      "kind": "info",
-      "note": "Lahjoitus vapaaehtoinen: MobilePay 39375 tai unicef.fi. Ke 7.10. ei liikuntaa."
     },
     {
       "id": "info-ellen-koe-matematiikka-2026-10-09",

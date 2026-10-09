@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791519249791,
+  "updated": 1791519396867,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -323,14 +323,6 @@
       "title": "Mea: poissa koulusta",
       "kind": "cal",
       "date": "2026-10-09"
-    },
-    {
-      "id": "cal-t6bj92g3sqs55kjt127eq6ig58",
-      "title": "Ilmoita: Ellen ei mene treeneihin",
-      "kind": "cal",
-      "date": "2026-10-09",
-      "start": "07:00",
-      "end": "07:15"
     },
     {
       "id": "cal-nnah5jb5at54s5hl2ls3rjhqu8",
@@ -708,6 +700,16 @@
       "start": "18:00",
       "end": "20:30",
       "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-10",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-10",
+      "start": "12:30",
+      "end": "15:00",
+      "place": "BellaCenter",
       "kind": "treeni"
     }
   ],

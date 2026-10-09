@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791538076908,
+  "updated": 1791538410141,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -302,6 +302,13 @@
       "start": "21:00",
       "end": "22:00",
       "dateEnd": "2026-10-09"
+    },
+    {
+      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+      "title": "Milla · Shaking up Tech -haku",
+      "kind": "cal",
+      "date": "2026-10-01",
+      "dateEnd": "2026-10-31"
     },
     {
       "id": "cal-7p64e2kqquq6i5nncor3c4rv60",

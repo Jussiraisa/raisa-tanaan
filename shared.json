@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791527187003,
+  "updated": 1791527502160,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -307,8 +307,6 @@
       "id": "cal-sv9gsjhdifokii13rhid3ptat4",
       "title": "Milla · Shaking up Tech -haku",
       "date": "2026-10-01",
-      "start": null,
-      "end": null,
       "kind": "cal",
       "dateEnd": "2026-10-31"
     },
@@ -316,8 +314,6 @@
       "id": "cal-7p64e2kqquq6i5nncor3c4rv60",
       "title": "Samuel · Matikan testi (jakso 3) tällä viikolla",
       "date": "2026-10-05",
-      "start": null,
-      "end": null,
       "kind": "cal",
       "dateEnd": "2026-10-09"
     },
@@ -325,8 +321,6 @@
       "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9g60r40qjledpmi",
       "title": "Riikan koulupäivät",
       "date": "2026-10-06",
-      "start": null,
-      "end": null,
       "kind": "cal",
       "dateEnd": "2026-10-09"
     },
@@ -334,8 +328,6 @@
       "id": "cal-n0k5p7soko73h6nnjs5qumtgso",
       "title": "Mea: poissa koulusta",
       "date": "2026-10-09",
-      "start": null,
-      "end": null,
       "kind": "cal"
     },
     {
@@ -344,14 +336,6 @@
       "date": "2026-10-09",
       "start": "08:10",
       "end": "14:20",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-1k6gnm8qvsinpl42pocjsvh1go",
-      "title": "Ellen · Matematiikan koe",
-      "date": "2026-10-09",
-      "start": "08:45",
-      "end": "09:30",
       "kind": "cal"
     },
     {
@@ -364,19 +348,6 @@
       "place": "Oulu",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-ellen-koe-matematiikka-2026-10-09",
-      "who": "ellen",
-      "title": "Koe · matematiikka",
-      "date": "2026-10-09",
-      "start": "08:45",
-      "end": "09:30",
-      "place": "Aurinkorinteen koulu",
-      "kind": "info",
-      "driver": "",
-      "status": "",
-      "note": "kertolasku s.60–98, kertotaulut 1–10 · opettaja Olli Laukkanen"
     },
     {
       "id": "info-mea-poissa-2026-10-09",

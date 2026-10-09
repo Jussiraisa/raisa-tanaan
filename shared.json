@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791527502160,
+  "updated": 1791528166021,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -298,17 +298,10 @@
       "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
       "title": "Riikka Oulu",
       "date": "2026-10-06",
+      "kind": "cal",
       "start": "21:00",
       "end": "22:00",
-      "kind": "cal",
       "dateEnd": "2026-10-09"
-    },
-    {
-      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
-      "title": "Milla · Shaking up Tech -haku",
-      "date": "2026-10-01",
-      "kind": "cal",
-      "dateEnd": "2026-10-31"
     },
     {
       "id": "cal-7p64e2kqquq6i5nncor3c4rv60",
@@ -334,9 +327,9 @@
       "id": "cal-nnah5jb5at54s5hl2ls3rjhqu8",
       "title": "Milla · Klassikan päivä",
       "date": "2026-10-09",
+      "kind": "cal",
       "start": "08:10",
-      "end": "14:20",
-      "kind": "cal"
+      "end": "14:20"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",

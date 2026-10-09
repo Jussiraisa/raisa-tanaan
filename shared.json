@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791557690665,
+  "updated": 1791572965114,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -306,15 +306,6 @@
       "title": "Riikan koulupäivät",
       "date": "2026-10-06",
       "dateEnd": "2026-10-09",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_6ks38d9k650kaba1752j2b9k6l1kcb9o74qjgb9m8d33gdi368qkagho8c",
-      "title": "Riikka Oulu",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "start": "21:00",
-      "end": "22:00",
       "kind": "cal"
     },
     {

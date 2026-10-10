@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791605100008,
+  "updated": 1791605212405,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -295,24 +295,27 @@
   "note": "La 10.10: Milla Vivida 12.30–15 BellaCenter (kyyti auki). Ei koulua. Ruoka: Nacho-pelti (kokki auki). Su: Milla Vivida 11.30–14 + Mea Lianna 16–18.30 (kyydit auki). STM-kysely DL su 11.10 (vapaaehtoinen). Syysloma ma–su 12.–18.10. Lontoo ti 13.10 illalla (Jussi, Riikka, Milla, Mea, Aida).",
   "extras": [
     {
-      "id": "cal-7p64e2kqquq6i5nncor3c4rv60",
-      "title": "Samuel · Matikan testi (jakso 3) tällä viikolla",
-      "date": "2026-10-05",
-      "dateEnd": "2026-10-09",
+      "id": "cal-kt9i3ui0r79c2plngdkkbkh51o",
+      "title": "Perhe · STM huoltajakysely DL",
+      "date": "2026-10-11",
       "kind": "cal"
     },
     {
-      "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9g60r40qjledpmi",
-      "title": "Riikan koulupäivät",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261011T063000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-10-11",
+      "start": "09:30",
+      "end": "11:30",
       "kind": "cal"
     },
     {
-      "id": "cal-n0k5p7soko73h6nnjs5qumtgso",
-      "title": "Mea: poissa koulusta",
-      "date": "2026-10-09",
-      "kind": "cal"
+      "id": "cal-3uemcnj1lu47eotv5d6acl4uqk",
+      "title": "LFF: Joy of Joys",
+      "date": "2026-10-11",
+      "start": "15:45",
+      "end": "17:45",
+      "kind": "cal",
+      "place": "Vue West End, Leicester Square, London"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",

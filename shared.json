@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791572965114,
+  "updated": 1791605100008,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -292,7 +292,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Pe 9.10: Ilmoita Ambrosia-ringille Ellen EI treeneihin. Ellen matikkakoe 8.45. Milla Klassikan päivä 8.10–14.20. Mea kotona. Mea Lianna 18–20.30 Bella Center — kyyti auki (Riikka Oulussa). Ruoka: katkarapukeitto + patongit (kokki auki).",
+  "note": "La 10.10: Milla Vivida 12.30–15 BellaCenter (kyyti auki). Ei koulua. Ruoka: Nacho-pelti (kokki auki). Su: Milla Vivida 11.30–14 + Mea Lianna 16–18.30 (kyydit auki). STM-kysely DL su 11.10 (vapaaehtoinen). Syysloma ma–su 12.–18.10. Lontoo ti 13.10 illalla (Jussi, Riikka, Milla, Mea, Aida).",
   "extras": [
     {
       "id": "cal-7p64e2kqquq6i5nncor3c4rv60",
@@ -662,12 +662,32 @@
       "end": "15:00",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "sheet-mea-2026-10-11",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-11",
+      "start": "16:00",
+      "end": "18:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-11",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-11",
+      "start": "11:30",
+      "end": "14:00",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {
-    "date": "2026-10-09",
-    "dish": "Jauhelihakastiketta",
-    "veg": "Tomaattista soijakastiketta"
+    "date": "2026-10-19",
+    "dish": "Broileri Tikka Masalaa + täysjyväriisiä",
+    "veg": "kasvis Tikka Masalaa"
   },
   "vacation": {
     "from": "",

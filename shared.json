@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791605212405,
+  "updated": 1791611570611,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -292,7 +292,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "La 10.10: Milla Vivida 12.30–15 BellaCenter (kyyti auki). Ei koulua. Ruoka: Nacho-pelti (kokki auki). Su: Milla Vivida 11.30–14 + Mea Lianna 16–18.30 (kyydit auki). STM-kysely DL su 11.10 (vapaaehtoinen). Syysloma ma–su 12.–18.10. Lontoo ti 13.10 illalla (Jussi, Riikka, Milla, Mea, Aida).",
+  "note": "Tee: Welhot 100€+60€ (myöhässä). Vivida strassit 19,17€ + teipit 4,75€. La Milla Vivida 12.30–15 kyyti auki. Ellen harkkakisa? (oli kipeä). Su Ambrosia Helsinki-huoltaja DL. Syysloma 12.–18.10. Lontoo ti 13.10. Kisakallio PERUTTU. Mea Wilma 89h varoitus.",
   "extras": [
     {
       "id": "cal-kt9i3ui0r79c2plngdkkbkh51o",
@@ -397,10 +397,11 @@
     {
       "id": "info-vivida-kisakallio-2026-10-17",
       "who": "milla",
-      "title": "Vivida Kisakallio aluerinkileiri",
+      "title": "Vivida Kisakallio PERUTTU (syksy)",
       "date": "2026-10-17",
       "dateEnd": "2026-10-18",
-      "kind": "info"
+      "kind": "info",
+      "note": "WA 1.9. · peru Lyyti · kevät 29.–30.1.2027"
     },
     {
       "id": "info-wilma-perhe-liikuntalauantai-2026-10-17",
@@ -685,6 +686,66 @@
       "end": "14:00",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-lauantai-welhot-maksut-2026-10-10",
+      "who": "samuel",
+      "title": "Welhot aloitus+jäsen myöhässä (100€+60€)",
+      "date": "2026-10-10",
+      "kind": "info",
+      "note": "myClub 19818/19889 · ei maksettu"
+    },
+    {
+      "id": "info-london-departure-2026-10-13",
+      "who": "perhe",
+      "title": "Lontoo lähtö FR2345 HEL 23:50",
+      "date": "2026-10-13",
+      "kind": "info",
+      "note": "Jussi, Riikka, Milla, Mea, Aida · STN"
+    },
+    {
+      "id": "info-london-return-2026-10-17",
+      "who": "perhe",
+      "title": "Lontoo paluu FR2344 STN 06:25 → HEL 11:15",
+      "date": "2026-10-17",
+      "kind": "info"
+    },
+    {
+      "id": "info-welhot-syyskokous-2026-10-14",
+      "who": "samuel",
+      "title": "Welhot syyskokous (ei ehditä — Lontoo)",
+      "date": "2026-10-14",
+      "start": "17:00",
+      "kind": "info",
+      "place": "Kuopio-halli",
+      "note": "perhe Lontoossa"
+    },
+    {
+      "id": "info-wilma-mea-poissaolo-varoitus-2026-10-10",
+      "who": "mea",
+      "title": "Wilma: poissaolot 89 h (raja 87 h) — ota yhteyttä",
+      "date": "2026-10-10",
+      "kind": "info",
+      "note": "Wilma 9.10. kiireellinen"
+    },
+    {
+      "id": "info-ambrosia-helsinki-huoltaja-dl-2026-10-11",
+      "who": "ellen",
+      "title": "Ambrosia Helsinki-huoltaja DL",
+      "date": "2026-10-11",
+      "kind": "info",
+      "note": "kisat 30.–31.10. · vastaa tänään"
+    },
+    {
+      "id": "info-ambrosia-harkkakisa-2026-10-10",
+      "who": "ellen",
+      "title": "Ambrosia harkkakisa (jos osallistuu)",
+      "date": "2026-10-10",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "info",
+      "place": "Kuopiohalli",
+      "note": "Ellen kipeä to — varmista"
     }
   ],
   "schoolLunch": {

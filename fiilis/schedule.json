@@ -1847,15 +1847,6 @@
       "source": "gcal:voimistelu"
     },
     {
-      "who": "Milla",
-      "title": "Kakku terhille",
-      "kind": "muu",
-      "source": "ical:milla",
-      "date": "2026-10-29",
-      "time": "14:00",
-      "end": "15:00"
-    },
-    {
       "date": "2026-10-30",
       "time": "18:00",
       "end": "20:30",
@@ -1864,6 +1855,15 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "who": "Milla",
+      "title": "Kakut terhille",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-10-31",
+      "time": "09:00",
+      "end": "10:00"
     },
     {
       "date": "2026-10-31",

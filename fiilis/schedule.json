@@ -1721,8 +1721,17 @@
       "kind": "treeni",
       "source": "ical:milla",
       "date": "2026-10-22",
-      "time": "19:00",
-      "end": "20:00"
+      "time": "16:00",
+      "end": "17:00"
+    },
+    {
+      "who": "Milla",
+      "title": "Meikki hiukset yms",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-10-22",
+      "time": "18:00",
+      "end": "19:00"
     },
     {
       "date": "2026-10-24",

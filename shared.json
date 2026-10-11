@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791691563398,
+  "updated": 1791691749742,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -316,6 +316,21 @@
       "end": "17:45",
       "kind": "cal",
       "place": "Vue West End, Leicester Square, London"
+    },
+    {
+      "id": "cal-iqvaa8mmh1bjt3e2l6ti7pe5ik",
+      "title": "Perhe · Syysloma (vko 42)",
+      "date": "2026-10-12",
+      "dateEnd": "2026-10-18",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_8h2jcca160p32ba38p0jcb9k6kp3cba284o32b9j88p4ahhk8gs3edhl8k",
+      "title": "Riikka 40V",
+      "date": "2026-10-12",
+      "start": "10:00",
+      "end": "11:00",
+      "kind": "cal"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",

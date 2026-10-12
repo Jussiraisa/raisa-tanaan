@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791812379688,
+  "updated": 1791815348809,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -333,9 +333,7 @@
       "date": "2026-10-13",
       "start": "17:00",
       "end": "17:45",
-      "kind": "cal",
-      "note": "syysloma – tarkista · kuski auki",
-      "who": "mea"
+      "kind": "cal"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",
@@ -767,16 +765,6 @@
       "date": "2026-10-19",
       "kind": "info",
       "note": "uusi päivä auki — tarkista Wilmasta"
-    },
-    {
-      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261018T063000Z",
-      "who": "milla",
-      "title": "Milla · valmennus",
-      "date": "2026-10-18",
-      "start": "09:30",
-      "end": "11:30",
-      "kind": "cal",
-      "note": "syysloma – tarkista"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791815348809,
+  "updated": 1791816402608,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -336,25 +336,6 @@
       "kind": "cal"
     },
     {
-      "id": "info-riikka-oulu-2026-10-06",
-      "who": "",
-      "title": "Riikka Ouluun",
-      "date": "2026-10-06",
-      "dateEnd": "2026-10-09",
-      "kind": "info",
-      "place": "Oulu",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-mea-poissa-2026-10-09",
-      "who": "mea",
-      "title": "Kotona / poissa koulusta",
-      "date": "2026-10-09",
-      "kind": "info",
-      "note": "Jussi 5.10. · koulussa päivätyökeräys (vapaaehtoinen), Mea kotona"
-    },
-    {
       "id": "info-welhot-syysloma-ylapyoro-2026-10-12",
       "who": "samuel",
       "title": "Welhot ma 12.10. peruttu (syysloma)",
@@ -609,14 +590,57 @@
       "place": "Aurinkorinteen koulu"
     },
     {
-      "id": "info-ambrosia-2026-10-31",
+      "id": "info-london-departure-2026-10-13",
+      "who": "perhe",
+      "title": "Lontoo lähtö FR2345 HEL 23:50",
+      "date": "2026-10-13",
+      "kind": "info",
+      "note": "Jussi, Riikka, Milla, Aida · lähtö Kuopiosta ~16.30 · Mea, Ellen, Samuel kotona",
+      "start": "16:30"
+    },
+    {
+      "id": "info-london-return-2026-10-17",
+      "who": "perhe",
+      "title": "Lontoo paluu FR2344 STN 06:25 → HEL 11:15",
+      "date": "2026-10-17",
+      "kind": "info",
+      "note": "Jussi, Riikka, Milla, Aida"
+    },
+    {
+      "id": "info-welhot-syyskokous-2026-10-14",
+      "who": "samuel",
+      "title": "Welhot syyskokous (ei ehditä — Lontoo)",
+      "date": "2026-10-14",
+      "start": "17:00",
+      "kind": "info",
+      "place": "Kuopio-halli",
+      "note": "Jussi Lontoossa"
+    },
+    {
+      "id": "info-kirjastot-kiinni-2026-10-20",
+      "who": "perhe",
+      "title": "Kirjastot kiinni",
+      "date": "2026-10-20",
+      "dateEnd": "2026-11-03",
+      "kind": "info"
+    },
+    {
+      "id": "info-ellen-ma-koe-siirto-2026-10-19",
+      "who": "ellen",
+      "title": "MA-koe siirtyy syysloman jälkeen",
+      "date": "2026-10-19",
+      "kind": "info",
+      "note": "uusi päivä auki — tarkista Wilmasta"
+    },
+    {
+      "id": "info-ambrosia-2026-10-30",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-31",
+      "date": "2026-10-30",
       "kind": "info",
       "place": "Helsinki",
-      "dateEnd": "2026-11-01",
-      "note": "kulku Juna"
+      "dateEnd": "2026-10-31",
+      "note": "kulku Juna; huoltaja Pipsa"
     },
     {
       "id": "info-ambrosia-2026-11-21",
@@ -655,116 +679,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-09",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-09",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-10-10",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-10",
-      "start": "12:30",
-      "end": "15:00",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-mea-2026-10-11",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-11",
-      "start": "16:00",
-      "end": "18:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-10-11",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-11",
-      "start": "11:30",
-      "end": "14:00",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "info-lauantai-welhot-maksut-2026-10-10",
-      "who": "samuel",
-      "title": "Welhot aloitus+jäsen myöhässä (100€+60€)",
-      "date": "2026-10-10",
-      "kind": "info",
-      "note": "myClub 19818/19889 · ei maksettu"
-    },
-    {
-      "id": "info-london-departure-2026-10-13",
-      "who": "perhe",
-      "title": "Lontoo lähtö FR2345 HEL 23:50",
-      "date": "2026-10-13",
-      "kind": "info",
-      "note": "Jussi, Riikka, Milla, Aida · lähtö Kuopiosta ~16.30 · Mea, Ellen, Samuel kotona",
-      "start": "16:30"
-    },
-    {
-      "id": "info-london-return-2026-10-17",
-      "who": "perhe",
-      "title": "Lontoo paluu FR2344 STN 06:25 → HEL 11:15",
-      "date": "2026-10-17",
-      "kind": "info",
-      "note": "Jussi, Riikka, Milla, Aida"
-    },
-    {
-      "id": "info-welhot-syyskokous-2026-10-14",
-      "who": "samuel",
-      "title": "Welhot syyskokous (ei ehditä — Lontoo)",
-      "date": "2026-10-14",
-      "start": "17:00",
-      "kind": "info",
-      "place": "Kuopio-halli",
-      "note": "Jussi Lontoossa"
-    },
-    {
-      "id": "info-wilma-mea-poissaolo-varoitus-2026-10-10",
-      "who": "mea",
-      "title": "Wilma: poissaolot 89 h (raja 87 h) — ota yhteyttä",
-      "date": "2026-10-10",
-      "kind": "info",
-      "note": "Wilma 9.10. kiireellinen"
-    },
-    {
-      "id": "info-ambrosia-harkkakisa-2026-10-10",
-      "who": "ellen",
-      "title": "Ambrosia harkkakisa (jos osallistuu)",
-      "date": "2026-10-10",
-      "start": "11:00",
-      "end": "13:00",
-      "kind": "info",
-      "place": "Kuopiohalli",
-      "note": "Ellen kipeä to — varmista"
-    },
-    {
-      "id": "info-kirjastot-kiinni-2026-10-20",
-      "who": "perhe",
-      "title": "Kirjastot kiinni",
-      "date": "2026-10-20",
-      "dateEnd": "2026-11-03",
-      "kind": "info"
-    },
-    {
-      "id": "info-ellen-ma-koe-siirto-2026-10-19",
-      "who": "ellen",
-      "title": "MA-koe siirtyy syysloman jälkeen",
-      "date": "2026-10-19",
-      "kind": "info",
-      "note": "uusi päivä auki — tarkista Wilmasta"
     }
   ],
   "schoolLunch": {

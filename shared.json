@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791810832253,
+  "updated": 1791812379688,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "ei meidän",
@@ -292,7 +292,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: Ambrosia Helsinki-huoltaja DL TÄNÄÄN. Mea Wilma 89h — ota yhteyttä. STM-kysely DL (vapaaehtoinen). Su kokki auki (hampparit). Syysloma 12.–18.10. Lontoo ti 13.10. Welhot Ylä-Pyörö peruttu lomalla. Huomenna Riikan synttärit.",
+  "note": "Syysloma 12.–18.10. Lontoo ti 13.10.–la 17.10. (Jussi, Riikka, Milla, Aida; lähtö Kuopiosta ~16.30). Mea, Ellen, Samuel kotona — kyydit 13.–16.10. AUKI. Mea Wilma 89 h — ota yhteyttä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
     {
       "id": "cal-iqvaa8mmh1bjt3e2l6ti7pe5ik",
@@ -333,7 +333,9 @@
       "date": "2026-10-13",
       "start": "17:00",
       "end": "17:45",
-      "kind": "cal"
+      "kind": "cal",
+      "note": "syysloma – tarkista · kuski auki",
+      "who": "mea"
     },
     {
       "id": "info-riikka-oulu-2026-10-06",
@@ -355,19 +357,10 @@
       "note": "Jussi 5.10. · koulussa päivätyökeräys (vapaaehtoinen), Mea kotona"
     },
     {
-      "id": "info-wilma-perhe-stm-kysely-2026-10-11",
-      "who": "perhe",
-      "title": "STM huoltajakysely DL",
-      "date": "2026-10-11",
-      "kind": "info",
-      "note": "vapaaehtoinen"
-    },
-    {
       "id": "info-welhot-syysloma-ylapyoro-2026-10-12",
       "who": "samuel",
-      "title": "Welhot: Ylä-Pyörö peruttu syyslomalla (ma-treeni pois)",
+      "title": "Welhot ma 12.10. peruttu (syysloma)",
       "date": "2026-10-12",
-      "dateEnd": "2026-10-18",
       "kind": "info"
     },
     {
@@ -410,7 +403,7 @@
       "end": "19:00",
       "kind": "info",
       "place": "Kuopio-halli",
-      "note": "maksuton"
+      "note": "maksuton · Mea kotona (ei Lontoossa) · kyyti auki"
     },
     {
       "id": "info-vivida-kisakallio-2026-10-17",
@@ -719,14 +712,16 @@
       "title": "Lontoo lähtö FR2345 HEL 23:50",
       "date": "2026-10-13",
       "kind": "info",
-      "note": "Jussi, Riikka, Milla, Mea, Aida · STN"
+      "note": "Jussi, Riikka, Milla, Aida · lähtö Kuopiosta ~16.30 · Mea, Ellen, Samuel kotona",
+      "start": "16:30"
     },
     {
       "id": "info-london-return-2026-10-17",
       "who": "perhe",
       "title": "Lontoo paluu FR2344 STN 06:25 → HEL 11:15",
       "date": "2026-10-17",
-      "kind": "info"
+      "kind": "info",
+      "note": "Jussi, Riikka, Milla, Aida"
     },
     {
       "id": "info-welhot-syyskokous-2026-10-14",
@@ -736,7 +731,7 @@
       "start": "17:00",
       "kind": "info",
       "place": "Kuopio-halli",
-      "note": "perhe Lontoossa"
+      "note": "Jussi Lontoossa"
     },
     {
       "id": "info-wilma-mea-poissaolo-varoitus-2026-10-10",
@@ -745,14 +740,6 @@
       "date": "2026-10-10",
       "kind": "info",
       "note": "Wilma 9.10. kiireellinen"
-    },
-    {
-      "id": "info-ambrosia-helsinki-huoltaja-dl-2026-10-11",
-      "who": "ellen",
-      "title": "Ambrosia Helsinki-huoltaja DL",
-      "date": "2026-10-11",
-      "kind": "info",
-      "note": "kisat 30.–31.10. · vastaa tänään"
     },
     {
       "id": "info-ambrosia-harkkakisa-2026-10-10",
@@ -764,6 +751,32 @@
       "kind": "info",
       "place": "Kuopiohalli",
       "note": "Ellen kipeä to — varmista"
+    },
+    {
+      "id": "info-kirjastot-kiinni-2026-10-20",
+      "who": "perhe",
+      "title": "Kirjastot kiinni",
+      "date": "2026-10-20",
+      "dateEnd": "2026-11-03",
+      "kind": "info"
+    },
+    {
+      "id": "info-ellen-ma-koe-siirto-2026-10-19",
+      "who": "ellen",
+      "title": "MA-koe siirtyy syysloman jälkeen",
+      "date": "2026-10-19",
+      "kind": "info",
+      "note": "uusi päivä auki — tarkista Wilmasta"
+    },
+    {
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261018T063000Z",
+      "who": "milla",
+      "title": "Milla · valmennus",
+      "date": "2026-10-18",
+      "start": "09:30",
+      "end": "11:30",
+      "kind": "cal",
+      "note": "syysloma – tarkista"
     }
   ],
   "schoolLunch": {
@@ -772,11 +785,11 @@
     "veg": "kasvis Tikka Masalaa"
   },
   "vacation": {
-    "from": "",
-    "to": "",
-    "hideSchool": false,
+    "from": "2026-10-12",
+    "to": "2026-10-18",
+    "hideSchool": true,
     "hideHobbies": false,
-    "label": ""
+    "label": "Syysloma vko 42"
   },
   "trip": {
     "today": "",
@@ -818,6 +831,15 @@
       "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
     },
     "cal-qt2a8joqabeb1b8guvkmg46rs8": "Jussi 4.10: ei mennä",
-    "info-wilma-perhe-vy-vuosikokous-2026-10-05": "Jussi 4.10: ei mennä"
+    "info-wilma-perhe-vy-vuosikokous-2026-10-05": "Jussi 4.10: ei mennä",
+    "samuel-sahly-ma": {
+      "2026-10-12": "Welhot peruttu (syysloma)"
+    },
+    "info-vivida-kisakallio-2026-10-17": {
+      "id": "info-vivida-kisakallio-2026-10-17",
+      "title": "Vivida Kisakallio",
+      "date": "2026-10-17",
+      "reason": "PERUTTU (syksy)"
+    }
   }
 }

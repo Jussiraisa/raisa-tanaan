@@ -700,6 +700,7 @@ label.f {
         status: "us",
         kind: "treeni",
         notesByDate: { "2026-08-26": "Sofie pois" },
+        overridesByDate: { "2026-10-14": { note: "syysloma – tarkista" } },
         cancelledByDate: {}
       },
       {
@@ -716,6 +717,7 @@ label.f {
         status: "us",
         kind: "treeni",
         notesByDate: {},
+        overridesByDate: { "2026-10-16": { driver: "", status: "open", note: "syysloma – tarkista · vanhemmat Lontoossa — kuski auki" } },
         cancelledByDate: {}
       },
       {
@@ -748,6 +750,7 @@ label.f {
         status: "us",
         kind: "treeni",
         notesByDate: {},
+        overridesByDate: { "2026-10-13": { driver: "", status: "open", note: "syysloma – tarkista · Jussi lähtee 16.30 — kuski auki" } },
         cancelledByDate: {}
       },
       {
@@ -764,6 +767,7 @@ label.f {
         status: "other",
         kind: "treeni",
         notesByDate: {},
+        overridesByDate: { "2026-10-15": { driver: "", status: "open", note: "syysloma – tarkista · vanhemmat Lontoossa — kuski auki" } },
         cancelledByDate: {}
       },
       {
@@ -1913,7 +1917,7 @@ label.f {
       tomMenot = mealItem(tomMeal, tomDay.key);
     }
     const schoolBlock = (away && store.vacation && store.vacation.hideSchool)
-      ? "<div class=\"lbl2\">Koulu</div><div class=\"card\">Koulu pois · Espanja-viikko</div>"
+      ? "<div class=\"lbl2\">Koulu</div><div class=\"card\">Koulu pois · " + esc(store.vacation.label || "loma") + "</div>"
       : ("<div class=\"lbl2\">" + schoolLbl + "</div><div class=\"school\">" + schoolRows(schoolDay.key) + "</div>");
     const tomSchool = (away && store.vacation && store.vacation.hideSchool)
       ? ""

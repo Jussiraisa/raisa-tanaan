@@ -705,6 +705,10 @@
     <span class="m-ic" aria-hidden="true">🚶</span><span id="motionTxt">Liike (tie): —</span><span class="m-more">Näytä ▾</span>
   </button>
   <ul class="motion-list" id="motionList" hidden></ul>
+  <button class="motion-line" type="button" id="lightLogLine" aria-expanded="false" aria-controls="lightLogList">
+    <span class="m-ic" aria-hidden="true">💡</span><span id="lightLogTxt">Ulkovalojen tapahtumat</span><span class="m-more">Näytä ▾</span>
+  </button>
+  <ul class="motion-list" id="lightLogList" hidden></ul>
   <button class="fire-btn" type="button" id="fireBtn" aria-pressed="false">
     <span class="f-ic" aria-hidden="true">🔥</span>
     <span><span class="f-big" id="fireBig">Takka</span><span class="f-sub" id="fireSub">Paina, kun sytytät takan</span></span>
@@ -2636,7 +2640,28 @@
     this.querySelector(".m-more").textContent = open ? "Piilota ▴" : "Näytä ▾";
     if (open) loadMotion();
   });
+  // ---------- Ulkovalojen tapahtumat (GET /lights/log) ----------
+  function paintLightLog(r) {
+    var ev = (r && r.events) || [], src = (r && r.sources) || {}, st = (r && r.state) || {};
+    var now = Object.keys(st).map(function (k) { return k + " " + (st[k].on ? "päällä" + (st[k].b != null ? " " + st[k].b + " %" : "") : "pois"); }).join(" · ");
+    document.getElementById("lightLogTxt").textContent = "Ulkovalojen tapahtumat" + (now ? " – " + now : "");
+    document.getElementById("lightLogList").innerHTML = (ev.length ? ev.slice(0, 30).map(function (e) {
+      var when = esc(hkiDay(e.t)) + " klo " + esc(hkiHm(e.t)), what;
+      if (e.kind === "valo") what = (e.on ? "💡 " : "⚫ ") + esc(e.name) + " " + (e.on ? "päälle" + (e.b != null ? " " + e.b + " %" : "") : "pois") +
+        " <small>" + esc(e.src ? (src[e.src] ? src[e.src] + " (" + e.src + ")" : e.src) : "lähde ?") + "</small>";
+      else what = (e.kind === "tila" ? "🏠 Tila " : "🎬 Kohtaus ") + esc(e.name || "") + " <small>" + esc(e.src || "") + (e.ok === false ? " – epäonnistui" : "") + "</small>";
+      return "<li>" + when + " " + what + "</li>";
+    }).join("") : "<li><small>Ei tapahtumia vielä (loki alkoi 12.10.2026).</small></li>") + "<li><small>" + esc((r && r.note) || "") + "</small></li>";
+  }
+  function loadLightLog() { return api("/lights/log?n=30").then(paintLightLog).catch(function () {}); }
+  document.getElementById("lightLogLine").addEventListener("click", function () {
+    var l = document.getElementById("lightLogList"), open = l.hidden;
+    l.hidden = !open; this.setAttribute("aria-expanded", open ? "true" : "false");
+    this.querySelector(".m-more").textContent = open ? "Piilota ▴" : "Näytä ▾";
+    if (open) loadLightLog();
+  });
   function startAuto() {
+    loadLightLog();
     loadAuto(false); loadSettingsUi(); loadFire(); loadAlerts(); loadMotion();
     setInterval(function () { if (!document.hidden) loadMotion(); }, 60000);
     setInterval(function () { if (!document.hidden) { loadAuto(false); loadFire(); loadAlerts(); } }, 120000);

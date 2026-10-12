@@ -2906,6 +2906,38 @@
       "kind": "schoolOff",
       "where": "kotona",
       "note": "Poissa koulusta (Jussi 5.10)"
+    },
+    {
+      "who": "Milla",
+      "from": "2026-10-12",
+      "to": "2026-10-16",
+      "kind": "schoolOff",
+      "where": "syysloma",
+      "note": "Syysloma (Kuopio 12.–16.10.)"
+    },
+    {
+      "who": "Mea",
+      "from": "2026-10-12",
+      "to": "2026-10-16",
+      "kind": "schoolOff",
+      "where": "syysloma",
+      "note": "Syysloma (Kuopio 12.–16.10.)"
+    },
+    {
+      "who": "Ellen",
+      "from": "2026-10-12",
+      "to": "2026-10-16",
+      "kind": "schoolOff",
+      "where": "syysloma",
+      "note": "Syysloma (Kuopio 12.–16.10.)"
+    },
+    {
+      "who": "Samuel",
+      "from": "2026-10-12",
+      "to": "2026-10-16",
+      "kind": "schoolOff",
+      "where": "syysloma",
+      "note": "Syysloma (Kuopio 12.–16.10.)"
     }
   ],
   "anniversaries": [

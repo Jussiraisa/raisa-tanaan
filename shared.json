@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791864533262,
+  "updated": 1791864946494,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "kyyti auki",
@@ -372,13 +372,6 @@
       "end": "01:00",
       "kind": "cal",
       "place": "Prince Charles Cinema, Leicester Place, London"
-    },
-    {
-      "id": "info-welhot-syysloma-ylapyoro-2026-10-12",
-      "who": "samuel",
-      "title": "Welhot ma 12.10. peruttu (syysloma)",
-      "date": "2026-10-12",
-      "kind": "info"
     },
     {
       "id": "info-wilma-perhe-syysloma-2026-10-12",

@@ -1,11 +1,12 @@
 {
   "v": 2,
-  "updated": 1791816402608,
+  "updated": 1791864533262,
   "drivers": {
     "ellen-ambrosia": {
-      "driver": "ei meidän",
+      "driver": "kyyti auki",
       "status": "other",
-      "ride": "vie+hakee"
+      "ride": "vie+hakee",
+      "note": "Ti 13.10 Ambrosia: ei WA-sopimusta; Lontoo-lähtö ~16.30 — kyyti auki"
     },
     "ellen-ambrosia-pe": {
       "driver": "Meidän",
@@ -19,9 +20,10 @@
       "ride": ""
     },
     "samuel-sahly-ti": {
-      "driver": "Jussi vie · Riikka hakee 18:00",
-      "status": "us",
-      "ride": "vie+hakee"
+      "driver": "ei mene",
+      "status": "other",
+      "ride": "",
+      "note": "WA 11.10: Samuel poissa ti treeneistä (Sini tarjosi)"
     },
     "samuel-sahly": {
       "driver": "Jussi",
@@ -310,6 +312,14 @@
       "place": "London Stansted (STN)"
     },
     {
+      "id": "cal-_6h1j8gpk70sk2b9p6cokcb9k60rjib9o8krj2ba16d330h216cs3ch9m8c",
+      "title": "Mea lääkkeet",
+      "date": "2026-10-13",
+      "start": "07:00",
+      "end": "08:00",
+      "kind": "cal"
+    },
+    {
       "id": "cal-p0fevcac6krm2h8mrqr1ljhmlg",
       "title": "Samuel & Ellen · Höntsäpelipäivä",
       "date": "2026-10-13",
@@ -334,6 +344,34 @@
       "start": "17:00",
       "end": "17:45",
       "kind": "cal"
+    },
+    {
+      "id": "cal-_6cqk8cpo6cq3eb9g74qkcb9k6cq36ba18l2jcb9g6l1j8d1h750k2c226c",
+      "title": "Mea lääkkeet",
+      "date": "2026-10-14",
+      "start": "07:00",
+      "end": "08:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-hgh67hqrsnrp8s6eeuc0o7u8es",
+      "title": "LFF: The Match",
+      "date": "2026-10-14",
+      "dateEnd": "2026-10-15",
+      "start": "22:45",
+      "end": "00:45",
+      "kind": "cal",
+      "place": "BFI Southbank, Belvedere Road, London"
+    },
+    {
+      "id": "cal-vk4592oindihn7g0g82kdgkg6k",
+      "title": "LFF: It Gets Worse",
+      "date": "2026-10-14",
+      "dateEnd": "2026-10-15",
+      "start": "23:00",
+      "end": "01:00",
+      "kind": "cal",
+      "place": "Prince Charles Cinema, Leicester Place, London"
     },
     {
       "id": "info-welhot-syysloma-ylapyoro-2026-10-12",
@@ -734,6 +772,9 @@
       "title": "Vivida Kisakallio",
       "date": "2026-10-17",
       "reason": "PERUTTU (syksy)"
+    },
+    "samuel-sahly-ti": {
+      "2026-10-13": "WA Säbä 11.10: Samuel tiistain ainakin poissa treeneistä"
     }
   }
 }

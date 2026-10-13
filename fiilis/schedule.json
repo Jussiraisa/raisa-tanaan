@@ -1387,13 +1387,6 @@
       "note": "Jussi 5.10"
     },
     {
-      "date": "2026-10-12",
-      "who": "perhe",
-      "title": "Syysloma alkaa",
-      "kind": "loma",
-      "endDate": "2026-10-18"
-    },
-    {
       "date": "2026-10-11",
       "time": "09:30",
       "end": "11:30",
@@ -1465,6 +1458,13 @@
       "note": "syysloma – tarkista"
     },
     {
+      "date": "2026-10-12",
+      "who": "perhe",
+      "title": "Syysloma alkaa",
+      "kind": "loma",
+      "endDate": "2026-10-18"
+    },
+    {
       "date": "2026-10-13",
       "time": "12:00",
       "end": "15:00",
@@ -1511,6 +1511,14 @@
     },
     {
       "date": "2026-10-13",
+      "time": "16:30",
+      "who": "perhe",
+      "title": "Lontoo: lähtö Kuopiosta (FR2345 HEL 23:50)",
+      "kind": "matka",
+      "note": "Jussi, Riikka, Milla, Aida · Mea, Ellen, Samuel kotona"
+    },
+    {
+      "date": "2026-10-13",
       "time": "17:00",
       "end": "18:30",
       "who": "Ellen",
@@ -1538,14 +1546,6 @@
       "title": "Lontoo-matka",
       "kind": "matka",
       "place": "C38QGW"
-    },
-    {
-      "date": "2026-10-13",
-      "time": "16:30",
-      "who": "perhe",
-      "title": "Lontoo: lähtö Kuopiosta (FR2345 HEL 23:50)",
-      "kind": "matka",
-      "note": "Jussi, Riikka, Milla, Aida · Mea, Ellen, Samuel kotona"
     },
     {
       "date": "2026-10-14",
@@ -1624,6 +1624,16 @@
     },
     {
       "date": "2026-10-18",
+      "time": "09:30",
+      "end": "11:30",
+      "who": "Milla",
+      "title": "Valmennus",
+      "kind": "treeni",
+      "source": "gcal:perhe",
+      "note": "syysloma – tarkista"
+    },
+    {
+      "date": "2026-10-18",
       "time": "16:00",
       "end": "18:30",
       "who": "Mea",
@@ -1631,16 +1641,6 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "note": "syysloma – tarkista"
-    },
-    {
-      "date": "2026-10-18",
-      "time": "09:30",
-      "end": "11:30",
-      "who": "Milla",
-      "title": "Valmennus",
-      "kind": "treeni",
-      "source": "gcal:perhe",
       "note": "syysloma – tarkista"
     },
     {
@@ -1675,6 +1675,13 @@
     },
     {
       "date": "2026-10-19",
+      "who": "Ellen",
+      "title": "MA-koe siirtyy syysloman jälkeen",
+      "kind": "muu",
+      "note": "uusi päivä auki"
+    },
+    {
+      "date": "2026-10-19",
       "who": "Mea",
       "title": "Rippikoulupaikan tiedot sähköpostiin",
       "kind": "muu",
@@ -1688,13 +1695,6 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "Wilma"
-    },
-    {
-      "date": "2026-10-19",
-      "who": "Ellen",
-      "title": "MA-koe siirtyy syysloman jälkeen",
-      "kind": "muu",
-      "note": "uusi päivä auki"
     },
     {
       "date": "2026-10-20",
@@ -2026,6 +2026,15 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "who": "Milla",
+      "title": "Onnin juhliin kakku",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-11-07",
+      "time": "15:00",
+      "end": "16:00"
     },
     {
       "date": "2026-11-08",

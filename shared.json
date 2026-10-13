@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791904818165,
+  "updated": 1791909086131,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "kyyti auki",
@@ -310,15 +310,6 @@
       "dateEnd": "2026-10-17",
       "kind": "cal",
       "place": "London Stansted (STN)"
-    },
-    {
-      "id": "cal-3oa7311hi22evha6rf3sbtf72c",
-      "title": "Mea · Höntsäpelipäivä",
-      "date": "2026-10-13",
-      "start": "16:00",
-      "end": "19:00",
-      "kind": "cal",
-      "place": "Kuopio-halli"
     },
     {
       "id": "cal-_6cqk8cpo6cq3eb9g74qkcb9k6cq36ba18l2jcb9g6l1j8d1h750k2c226c",

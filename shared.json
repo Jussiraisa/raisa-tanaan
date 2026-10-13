@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791893738529,
+  "updated": 1791901975492,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "kyyti auki",
@@ -364,28 +364,6 @@
       "dateEnd": "2026-10-18",
       "kind": "info",
       "note": "Wilma: viikko 42 tyhjä lukkareissa (syysloma). Ei pyyhitä vakio-lukkareita."
-    },
-    {
-      "id": "info-wilma-ellen-hontsa-2026-10-13",
-      "who": "ellen",
-      "title": "Höntsäpelipäivä (Samuel + Ellen)",
-      "date": "2026-10-13",
-      "start": "12:00",
-      "end": "15:00",
-      "kind": "info",
-      "place": "Kuopio-halli",
-      "note": "maksuton"
-    },
-    {
-      "id": "info-wilma-samuel-hontsa-2026-10-13",
-      "who": "samuel",
-      "title": "Höntsäpelipäivä (Samuel + Ellen)",
-      "date": "2026-10-13",
-      "start": "12:00",
-      "end": "15:00",
-      "kind": "info",
-      "place": "Kuopio-halli",
-      "note": "maksuton"
     },
     {
       "id": "info-wilma-mea-hontsa-2026-10-13",

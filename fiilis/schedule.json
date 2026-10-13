@@ -1527,7 +1527,8 @@
       "kind": "treeni",
       "driver": "AUKI",
       "source": "gcal:voimistelu",
-      "note": "syysloma – tarkista · vanhemmat Lontoossa — kuski AUKI"
+      "note": "syysloma – tarkista · vanhemmat Lontoossa — kuski AUKI",
+      "pickup": "AUKI"
     },
     {
       "date": "2026-10-13",
@@ -1557,7 +1558,8 @@
       "kind": "treeni",
       "source": "gcal:voimistelu",
       "driver": "Sofian perhe",
-      "note": "syysloma – tarkista · ke-oletus Sofian perhe"
+      "note": "syysloma – tarkista · ke-oletus Sofian perhe",
+      "pickup": "AUKI"
     },
     {
       "date": "2026-10-14",
@@ -1595,7 +1597,8 @@
       "kind": "treeni",
       "source": "gcal:voimistelu",
       "driver": "AUKI",
-      "note": "syysloma – tarkista · vanhemmat Lontoossa — kuski AUKI"
+      "note": "syysloma – tarkista · vanhemmat Lontoossa — kuski AUKI",
+      "pickup": "AUKI"
     },
     {
       "date": "2026-10-16",

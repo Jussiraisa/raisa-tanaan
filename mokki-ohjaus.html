@@ -709,6 +709,7 @@
     <span class="m-ic" aria-hidden="true">💡</span><span id="lightLogTxt">Ulkovalojen tapahtumat</span><span class="m-more">Näytä ▾</span>
   </button>
   <ul class="motion-list" id="lightLogList" hidden></ul>
+  <div class="motion-line" id="co2AutoLine" style="cursor:default"><span class="m-ic" aria-hidden="true">🫁</span><span id="co2AutoTxt">CO₂ → Kotona: —</span></div>
   <button class="fire-btn" type="button" id="fireBtn" aria-pressed="false">
     <span class="f-ic" aria-hidden="true">🔥</span>
     <span><span class="f-big" id="fireBig">Takka</span><span class="f-sub" id="fireSub">Paina, kun sytytät takan</span></span>
@@ -2653,6 +2654,17 @@
       return "<li>" + when + " " + what + "</li>";
     }).join("") : "<li><small>Ei tapahtumia vielä (loki alkoi 12.10.2026).</small></li>") + "<li><small>" + esc((r && r.note) || "") + "</small></li>";
   }
+  // ---------- CO₂ nousu → Kotona (GET /co2/auto) ----------
+  function loadCo2Auto() {
+    return api("/co2/auto").then(function (r) {
+      var s = r.settings || {}, d = r.detector || {}, el = document.getElementById("co2AutoTxt");
+      var txt = "CO₂ → Kotona: " + (s.co2AutoHome == 1 ? "käytössä" : "pois käytöstä") + " (nousu ≥ " + s.co2RisePpm + " ppm ja ≥ " + s.co2MinPpm + " ppm, 2 mittausta, vain Poissa-tilasta)";
+      if (d.cur != null) txt += " · nyt " + d.cur + " ppm" + (d.base != null ? " (taso " + d.base + ")" : "");
+      if (d.why) txt += " · " + d.why;
+      if (r.last && r.last.at) txt += " · viimeksi " + hkiDay(r.last.at) + " klo " + hkiHm(r.last.at);
+      el.textContent = txt;
+    }).catch(function () {});
+  }
   function loadLightLog() { return api("/lights/log?n=30").then(paintLightLog).catch(function () {}); }
   document.getElementById("lightLogLine").addEventListener("click", function () {
     var l = document.getElementById("lightLogList"), open = l.hidden;
@@ -2661,7 +2673,7 @@
     if (open) loadLightLog();
   });
   function startAuto() {
-    loadLightLog();
+    loadLightLog(); loadCo2Auto();
     loadAuto(false); loadSettingsUi(); loadFire(); loadAlerts(); loadMotion();
     setInterval(function () { if (!document.hidden) loadMotion(); }, 60000);
     setInterval(function () { if (!document.hidden) { loadAuto(false); loadFire(); loadAlerts(); } }, 120000);

@@ -1550,19 +1550,6 @@
     },
     {
       "date": "2026-10-14",
-      "time": "18:00",
-      "end": "20:30",
-      "place": "Kuopiohalli",
-      "title": "Ambrosia treeni",
-      "who": "Ellen",
-      "kind": "treeni",
-      "source": "gcal:voimistelu",
-      "driver": "Sofian perhe",
-      "note": "syysloma – tarkista · ke-oletus Sofian perhe",
-      "pickup": "AUKI"
-    },
-    {
-      "date": "2026-10-14",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
@@ -1570,35 +1557,10 @@
     },
     {
       "date": "2026-10-15",
-      "time": "17:00",
-      "end": "18:30",
-      "who": "Samuel",
-      "title": "Welhot",
-      "place": "Puijonsarven koulu",
-      "kind": "treeni",
-      "source": "gcal:perhe+nimenhuuto",
-      "driver": "AUKI",
-      "note": "syysloma – tarkista · vanhemmat Lontoossa — kuski AUKI"
-    },
-    {
-      "date": "2026-10-15",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
       "place": "C38QGW"
-    },
-    {
-      "date": "2026-10-16",
-      "time": "16:00",
-      "end": "18:30",
-      "place": "Luola",
-      "title": "Ambrosia treeni",
-      "who": "Ellen",
-      "kind": "treeni",
-      "source": "gcal:voimistelu",
-      "driver": "AUKI",
-      "note": "syysloma – tarkista · vanhemmat Lontoossa — kuski AUKI",
-      "pickup": "AUKI"
     },
     {
       "date": "2026-10-16",
@@ -3325,7 +3287,11 @@
       "title": "Welhot",
       "place": "Puijonsarven koulu",
       "kind": "treeni",
-      "source": "nimenhuuto:welhot2018"
+      "source": "nimenhuuto:welhot2018",
+      "except": [
+        "2026-10-22",
+        "2026-10-29"
+      ]
     },
     {
       "start": "2026-10-20",

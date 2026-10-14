@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791909086131,
+  "updated": "2026-10-14T06:43:54+03:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "kyyti auki",
@@ -595,6 +595,14 @@
       "id": "info-kirjastot-kiinni-2026-10-20",
       "who": "perhe",
       "title": "Kirjastot kiinni",
+      "date": "2026-10-20",
+      "dateEnd": "2026-11-03",
+      "kind": "info"
+    },
+    {
+      "id": "info-wilma-kirjasto-suljettu-2026-10-20",
+      "who": "perhe",
+      "title": "Kuopion kirjastot kiinni 20.10.–3.11. (uusi järjestelmä)",
       "date": "2026-10-20",
       "dateEnd": "2026-11-03",
       "kind": "info"

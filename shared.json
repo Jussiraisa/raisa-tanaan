@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-10-14T06:43:54+03:00",
+  "updated": 1791951182308,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "kyyti auki",
@@ -338,6 +338,34 @@
       "end": "01:00",
       "kind": "cal",
       "place": "Prince Charles Cinema, Leicester Place, London"
+    },
+    {
+      "id": "cal-gjqaarf62bnuc8c1a8dh0dcbis",
+      "title": "LFF: A Long Winter",
+      "date": "2026-10-15",
+      "start": "14:15",
+      "end": "16:15",
+      "kind": "cal",
+      "place": "Royal Festival Hall, Southbank Centre, London"
+    },
+    {
+      "id": "cal-k23qvapuvmainq3lvitgm4cfeo",
+      "title": "LFF: Artificial",
+      "date": "2026-10-15",
+      "start": "16:50",
+      "end": "18:50",
+      "kind": "cal",
+      "place": "Vue West End, Leicester Square, London"
+    },
+    {
+      "id": "cal-fpa216k431mtd5tpi03du1u58c",
+      "title": "LFF: Klara and the Sun",
+      "date": "2026-10-15",
+      "dateEnd": "2026-10-16",
+      "start": "22:45",
+      "end": "00:45",
+      "kind": "cal",
+      "place": "Royal Festival Hall, Southbank Centre, London"
     },
     {
       "id": "info-wilma-perhe-syysloma-2026-10-12",

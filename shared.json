@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1791951648400,
+  "updated": 1791954397474,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "kyyti auki",
@@ -310,14 +310,6 @@
       "dateEnd": "2026-10-17",
       "kind": "cal",
       "place": "London Stansted (STN)"
-    },
-    {
-      "id": "cal-_6cqk8cpo6cq3eb9g74qkcb9k6cq36ba18l2jcb9g6l1j8d1h750k2c226c",
-      "title": "Mea lääkkeet",
-      "date": "2026-10-14",
-      "start": "07:00",
-      "end": "08:00",
-      "kind": "cal"
     },
     {
       "id": "cal-hgh67hqrsnrp8s6eeuc0o7u8es",

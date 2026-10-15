@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792037071646,
+  "updated": 1792037732690,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -650,6 +650,16 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-milla-2026-10-16",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-16",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

@@ -1,12 +1,12 @@
 {
   "v": 2,
-  "updated": 1791954397474,
+  "updated": 1792036997750,
   "drivers": {
     "ellen-ambrosia": {
-      "driver": "kyyti auki",
-      "status": "other",
+      "driver": "Meidän",
+      "status": "us",
       "ride": "vie+hakee",
-      "note": "Ti 13.10 Ambrosia: ei WA-sopimusta; Lontoo-lähtö ~16.30 — kyyti auki"
+      "note": "Oletus ti (vienti+haku meidän)"
     },
     "ellen-ambrosia-pe": {
       "driver": "Meidän",
@@ -20,10 +20,9 @@
       "ride": ""
     },
     "samuel-sahly-ti": {
-      "driver": "ei mene",
-      "status": "other",
-      "ride": "",
-      "note": "WA 11.10: Samuel poissa ti treeneistä (Sini tarjosi)"
+      "driver": "",
+      "status": "",
+      "ride": ""
     },
     "samuel-sahly": {
       "driver": "Jussi",
@@ -312,26 +311,6 @@
       "place": "London Stansted (STN)"
     },
     {
-      "id": "cal-hgh67hqrsnrp8s6eeuc0o7u8es",
-      "title": "LFF: The Match",
-      "date": "2026-10-14",
-      "dateEnd": "2026-10-15",
-      "start": "22:45",
-      "end": "00:45",
-      "kind": "cal",
-      "place": "BFI Southbank, Belvedere Road, London"
-    },
-    {
-      "id": "cal-vk4592oindihn7g0g82kdgkg6k",
-      "title": "LFF: It Gets Worse",
-      "date": "2026-10-14",
-      "dateEnd": "2026-10-15",
-      "start": "23:00",
-      "end": "01:00",
-      "kind": "cal",
-      "place": "Prince Charles Cinema, Leicester Place, London"
-    },
-    {
       "id": "cal-gjqaarf62bnuc8c1a8dh0dcbis",
       "title": "LFF: A Long Winter",
       "date": "2026-10-15",
@@ -580,16 +559,6 @@
       "date": "2026-10-17",
       "kind": "info",
       "note": "Jussi, Riikka, Milla, Aida"
-    },
-    {
-      "id": "info-welhot-syyskokous-2026-10-14",
-      "who": "samuel",
-      "title": "Welhot syyskokous (ei ehditä — Lontoo)",
-      "date": "2026-10-14",
-      "start": "17:00",
-      "kind": "info",
-      "place": "Kuopio-halli",
-      "note": "Jussi Lontoossa"
     },
     {
       "id": "info-kirjastot-kiinni-2026-10-20",

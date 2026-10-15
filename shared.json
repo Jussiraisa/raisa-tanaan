@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792074045719,
+  "updated": 1792081254452,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -309,15 +309,6 @@
       "dateEnd": "2026-10-17",
       "kind": "cal",
       "place": "London Stansted (STN)"
-    },
-    {
-      "id": "cal-k23qvapuvmainq3lvitgm4cfeo",
-      "title": "LFF: Artificial",
-      "date": "2026-10-15",
-      "start": "16:50",
-      "end": "18:50",
-      "kind": "cal",
-      "place": "Vue West End, Leicester Square, London"
     },
     {
       "id": "cal-fpa216k431mtd5tpi03du1u58c",

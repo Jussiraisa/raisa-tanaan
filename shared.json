@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792160090129,
+  "updated": 1792166920883,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -327,15 +327,6 @@
       "dateEnd": "2026-10-17",
       "kind": "cal",
       "place": "London Stansted (STN)"
-    },
-    {
-      "id": "cal-nvk98nmq2735tc4u6iq2ne46dc",
-      "title": "LFF: Being Heumann",
-      "date": "2026-10-16",
-      "start": "16:50",
-      "end": "18:50",
-      "kind": "cal",
-      "place": "Vue West End, Leicester Square, London"
     },
     {
       "id": "info-wilma-perhe-syysloma-2026-10-12",

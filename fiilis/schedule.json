@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-15T06:05:00+03:00",
+  "updated": "2026-10-16T06:47:38+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1581,11 +1581,11 @@
       "time": "12:30",
       "end": "15:00",
       "who": "Mea",
-      "title": "Lianna treeni",
+      "title": "Lianna treeni · Mea ei mene",
       "place": "Bella Center",
-      "kind": "treeni",
+      "kind": "muu",
       "source": "gcal:voimistelu",
-      "note": "syysloma – tarkista"
+      "note": "WA Lianna kyytirinki 15.10: Mea ei mene, ei kyytiä"
     },
     {
       "date": "2026-10-18",
@@ -1606,7 +1606,9 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "note": "syysloma – tarkista"
+      "note": "WA Lianna kyytirinki 15.10 · Meidän (Riikka) vie · Tiina Roininen (Enni) hakee",
+      "driver": "Meidän",
+      "pickup": "Enni"
     },
     {
       "date": "2026-10-19",

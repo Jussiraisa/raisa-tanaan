@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792081254452,
+  "updated": 1792123641011,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -309,16 +309,6 @@
       "dateEnd": "2026-10-17",
       "kind": "cal",
       "place": "London Stansted (STN)"
-    },
-    {
-      "id": "cal-fpa216k431mtd5tpi03du1u58c",
-      "title": "LFF: Klara and the Sun",
-      "date": "2026-10-15",
-      "dateEnd": "2026-10-16",
-      "start": "22:45",
-      "end": "00:45",
-      "kind": "cal",
-      "place": "Royal Festival Hall, Southbank Centre, London"
     },
     {
       "id": "cal-sba96u2nei0aitstrel5b1p2e4",

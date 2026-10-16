@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792123641011,
+  "updated": 1792123901313,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -273,6 +273,24 @@
       "status": "other",
       "ride": "",
       "note": "Kalenteri: ilmoita valmentajalle + kyytiringille"
+    },
+    "kyyti-mea-lianna-2026-10-17": {
+      "driver": "Mea ei mene",
+      "status": "other",
+      "ride": "",
+      "note": "WA Lianna 15.10: la Mea ei mene, ei kyytiä"
+    },
+    "kyyti-mea-lianna-2026-10-18": {
+      "driver": "Meidän (Riikka) vie · Enni hakee",
+      "status": "us",
+      "ride": "vie+haku",
+      "note": "WA Lianna 15.10 · Meidän vie · Tiina/Enni hakee"
+    },
+    "kyyti-ellen-ambrosia-2026-10-16": {
+      "driver": "ei mene",
+      "status": "other",
+      "ride": "",
+      "note": "fiilis 14.10: pe Ambrosia peruttu"
     }
   },
   "cooks": {
@@ -293,7 +311,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Syysloma 12.–18.10. Lontoo ti 13.10.–la 17.10. (Jussi, Riikka, Milla, Aida; lähtö Kuopiosta ~16.30). Mea, Ellen, Samuel kotona — kyydit 13.–16.10. AUKI. Mea Wilma 89 h — ota yhteyttä. Kirjastot kiinni 20.10.–3.11.",
+  "note": "Syysloma 12.–18.10. Lontoo ti 13.10.–la 17.10. (Jussi, Riikka, Milla, Aida; paluu la FR2344 STN 06:25→HEL 11:15). Mea, Ellen, Samuel kotona. Ellen Ambrosia pe 16.10 peruttu. Samuel Welhot to 15/22/29.10 peruttu. Mea Wilma 89 h — ota yhteyttä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
     {
       "id": "cal-iqvaa8mmh1bjt3e2l6ti7pe5ik",
@@ -662,7 +680,8 @@
       "2026-09-25": "NTV-kisat peruttu (Jussi: ei kisoja)",
       "2026-09-26": "NTV-kisat peruttu (Jussi: ei kisoja)",
       "2026-09-27": "NTV-kisat peruttu (Jussi: ei kisoja)",
-      "2026-10-09": "Ellen ei mene Ambrosiaan (Jussi 8.10.)"
+      "2026-10-09": "Ellen ei mene Ambrosiaan (Jussi 8.10.)",
+      "2026-10-16": "Ellen ei treeneissä tällä viikolla (fiilis 14.10)"
     },
     "info-kkp-2026-09-25": {
       "id": "info-kkp-2026-09-25",
@@ -698,6 +717,12 @@
     },
     "samuel-sahly-ti": {
       "2026-10-13": "WA Säbä 11.10: Samuel tiistain ainakin poissa treeneistä"
+    },
+    "sheet-milla-2026-10-16": {
+      "id": "sheet-milla-2026-10-16",
+      "title": "Vivida",
+      "date": "2026-10-16",
+      "reason": "Milla Lontoossa"
     }
   }
 }

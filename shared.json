@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792124254556,
+  "updated": 1792124365217,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -649,6 +649,16 @@
       "start": "18:00",
       "end": "20:30",
       "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-mea-2026-10-17",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-17",
+      "start": "12:30",
+      "end": "15:00",
+      "place": "",
       "kind": "treeni"
     }
   ],

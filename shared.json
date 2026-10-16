@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792142659066,
+  "updated": 1792160090129,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -327,24 +327,6 @@
       "dateEnd": "2026-10-17",
       "kind": "cal",
       "place": "London Stansted (STN)"
-    },
-    {
-      "id": "cal-sba96u2nei0aitstrel5b1p2e4",
-      "title": "LFF: Elsinore",
-      "date": "2026-10-16",
-      "start": "14:30",
-      "end": "16:30",
-      "kind": "cal",
-      "place": "BFI Southbank, Belvedere Road, London"
-    },
-    {
-      "id": "cal-l0kog6nn2qu8q8d8es3e874a3s",
-      "title": "LFF: Look Back",
-      "date": "2026-10-16",
-      "start": "14:55",
-      "end": "16:55",
-      "kind": "cal",
-      "place": "Vue West End, Leicester Square, London"
     },
     {
       "id": "cal-nvk98nmq2735tc4u6iq2ne46dc",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792209970209,
+  "updated": 1792216348385,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -311,7 +311,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Syysloma 12.–18.10. Lontoo ti 13.10.–la 17.10. (Jussi, Riikka, Milla, Aida; paluu la FR2344 STN 06:25→HEL 11:15). Mea, Ellen, Samuel kotona. Ellen Ambrosia pe 16.10 peruttu (WA). Mea Lianna la ei mene; su Meidän vie / Enni hakee. Mea Wilma 87 h poissaolo (viesti 9.10.) — ota yhteyttä. Kirjastot kiinni 20.10.–3.11.",
+  "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida kisa 24.10 vai 31.10? Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
     {
       "id": "cal-iqvaa8mmh1bjt3e2l6ti7pe5ik",
@@ -582,7 +582,7 @@
       "kind": "info",
       "place": "Helsinki",
       "dateEnd": "2026-10-31",
-      "note": "kulku Juna; huoltaja Pipsa"
+      "note": "juna pe 13.00–17.25 · paluu la 15.24–19.50 · Scandic Park · huoltajat Pekka H. + Sofien vanhempi (meiltä ei tarvita) · Ellen koulusta aiemmin pe"
     },
     {
       "id": "info-ambrosia-2026-11-21",
@@ -631,6 +631,88 @@
       "end": "15:00",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-perhe-myclub-laskutus-2026-10-18",
+      "who": "perhe",
+      "title": "Welhot MyClub-laskutus (lokakuun kk-maksu)",
+      "date": "2026-10-18",
+      "kind": "info",
+      "note": "luvattu rahastonhoitajille · + Lucas Oksman pelisetti 100 € + kk-maksu"
+    },
+    {
+      "id": "info-samuel-nimenhuuto-2026-10-19",
+      "who": "samuel",
+      "title": "Nimenhuuto IN/OUT: Welhot ma 19.10 + ti 20.10",
+      "date": "2026-10-19",
+      "kind": "info",
+      "note": "ma 17–18 Ylä-Pyörö · ti 16.30–18 Lippumäki"
+    },
+    {
+      "id": "info-perhe-matkahuolto-nouto-2026-10-20",
+      "who": "perhe",
+      "title": "Matkahuolto-paketti: nouto viimeistään tänään",
+      "date": "2026-10-20",
+      "kind": "info",
+      "place": "S-market Keilankanta",
+      "note": "Verkkokauppa.com · koodi sähköpostissa"
+    },
+    {
+      "id": "info-perhe-posti-noudot-2026-10-21",
+      "who": "perhe",
+      "title": "Posti-paketit (2): nouto viimeistään tänään",
+      "date": "2026-10-21",
+      "kind": "info",
+      "note": "Keilankannan automaatti (lokero 70) + K-Market Pirtinportti · koodit sähköpostissa"
+    },
+    {
+      "id": "info-samuel-welhot-peruttu-2026-10-22",
+      "who": "samuel",
+      "title": "Welhot to-treeni PERUTTU",
+      "date": "2026-10-22",
+      "kind": "info",
+      "note": "WA: sali muussa käytössä · ei kyytiä · kalenterissa vielä"
+    },
+    {
+      "id": "info-samuel-welhot-peruttu-2026-10-29",
+      "who": "samuel",
+      "title": "Welhot to-treeni PERUTTU",
+      "date": "2026-10-29",
+      "kind": "info",
+      "note": "WA: sali muussa käytössä · ei kyytiä · kalenterissa vielä"
+    },
+    {
+      "id": "info-milla-vivida-kalakukko-cup-2026-10-24",
+      "who": "milla",
+      "title": "Vivida Kalakukko Cup? (tarkista)",
+      "date": "2026-10-24",
+      "kind": "info",
+      "note": "WA: 1. kisa 24.10 · kalenterissa 'TTNV Cup' 31.10 · erityisruokavalio kisaruokaan?"
+    },
+    {
+      "id": "info-samuel-intersport-6723-2026-10-28",
+      "who": "samuel",
+      "title": "Intersport 6723 eräpäivä 82,50 € (joukkueen lasku)",
+      "date": "2026-10-28",
+      "kind": "info",
+      "note": "ei henkilökohtainen → joukkueen rahastonhoito / Topias"
+    },
+    {
+      "id": "info-samuel-joukkuekuvaus-2026-11-03",
+      "who": "samuel",
+      "title": "Welhot P9 joukkuekuvaus",
+      "date": "2026-11-03",
+      "start": "16:30",
+      "kind": "info",
+      "place": "Lippumäki",
+      "note": "ilmoittaudu urheilu.seppalan.fi, koodi JRAPCSE4FD"
+    },
+    {
+      "id": "info-ellen-juhlanaytos-2026-11-10",
+      "who": "ellen",
+      "title": "Ambrosia juhlanäytös",
+      "date": "2026-11-10",
+      "kind": "info"
     }
   ],
   "schoolLunch": {

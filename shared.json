@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792296323875,
+  "updated": 1792314810044,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -318,14 +318,6 @@
       "title": "Perhe · Syysloma (vko 42)",
       "date": "2026-10-12",
       "dateEnd": "2026-10-18",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261018T063000Z",
-      "title": "Milla · valmennus",
-      "date": "2026-10-18",
-      "start": "09:30",
-      "end": "11:30",
       "kind": "cal"
     },
     {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792216348385,
+  "updated": 1792296323875,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -321,20 +321,27 @@
       "kind": "cal"
     },
     {
-      "id": "cal-_e1in4q355lm6urjkdtniqr3fddgmmtbl5lr6mrpk6906ktbjedkg",
-      "title": "Lontoon reissu (Ryanair C38QGW)",
-      "date": "2026-10-13",
-      "dateEnd": "2026-10-17",
-      "kind": "cal",
-      "place": "London Stansted (STN)"
-    },
-    {
       "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261018T063000Z",
       "title": "Milla · valmennus",
       "date": "2026-10-18",
       "start": "09:30",
       "end": "11:30",
       "kind": "cal"
+    },
+    {
+      "id": "cal-anukutj29feimeedudotbr56ms",
+      "title": "Milla · Podcast-tehtävä Teamsiin",
+      "date": "2026-10-19",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-a3dqdipk9k0jkkvoc9beodvvg0",
+      "title": "Milla · Läksypajat alkavat (vapaaehtoinen)",
+      "date": "2026-10-19",
+      "start": "08:45",
+      "end": "09:30",
+      "kind": "cal",
+      "place": "Kuopion klassillinen lukio (ENA/RU lk 210, MA lk 231)"
     },
     {
       "id": "info-wilma-perhe-syysloma-2026-10-12",

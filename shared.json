@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792314810044,
+  "updated": 1792328549238,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -712,6 +712,15 @@
       "title": "Ambrosia juhlanäytös",
       "date": "2026-11-10",
       "kind": "info"
+    },
+    {
+      "id": "info-wilma-mea-ma-ope-poissa-2026-10-19",
+      "who": "mea",
+      "title": "Mea: matikan ope poissa koko viikon",
+      "date": "2026-10-19",
+      "dateEnd": "2026-10-23",
+      "kind": "info",
+      "note": "Wilma 18.10. Jenni Kärkkäinen: \"Olen ensi viikon poissa\" · MA-tunneilla mahdollisesti sijainen"
     }
   ],
   "schoolLunch": {

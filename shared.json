@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792393781969,
+  "updated": 1792401342274,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -420,17 +420,6 @@
       "end": "09:35",
       "kind": "info",
       "note": "Wilma 4.10. AI3 moduskoe s. 204–215 + vihko + modustaulukko; palauta modusmonisteet ennen koetta"
-    },
-    {
-      "id": "info-wilma-milla-laksypajat-2026-10-19",
-      "who": "milla",
-      "title": "Läksypajat alkavat",
-      "date": "2026-10-19",
-      "start": "08:45",
-      "end": "09:30",
-      "kind": "info",
-      "place": "ENA/RU lk 210, MA lk 231",
-      "note": "vapaaehtoinen"
     },
     {
       "id": "info-wilma-milla-op05-palautukset-2026-11-06",

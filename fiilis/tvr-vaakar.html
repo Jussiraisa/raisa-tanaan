@@ -42,6 +42,18 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
 #cap .sk{color:#C2185B;font-style:italic;font-weight:bold;margin-right:.55vh;}
 #cap .bd{display:inline-block;background:#C2185B;color:#fff;border-radius:999px;padding:.2vh 1.3vh;margin-left:.9vh;
   font-family:"Helvetica Neue",Arial,sans-serif;font-weight:bold;font-size:4vh;}
+.guest{position:absolute;left:0;top:0;width:100%;height:100%;box-sizing:border-box;padding:0 3vw 0 3vw;
+  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;}
+.guest .slot.gph{width:55vw;height:82vh;margin-right:3vw;}
+.guest .slot.gph img{object-fit:contain;background:#FBF6F3;}
+.gcard{position:relative;-webkit-box-flex:1;-webkit-flex:1;flex:1;max-width:44vw;margin:0 auto;max-height:78vh;box-sizing:border-box;
+  background:rgba(251,246,243,.96);border-radius:1.6vw;padding:5vh 3vw 4.5vh 3.4vw;overflow:hidden;
+  box-shadow:0 1vw 3vw rgba(194,24,91,.30),0 .25vw .9vw rgba(194,24,91,.18);}
+.gcard .gbar{position:absolute;left:0;top:0;bottom:0;width:.9vh;}
+.gcard .gq{font-family:Georgia,"Times New Roman",serif;font-size:12vh;line-height:.6;height:6vh;color:#C2185B;opacity:.35;}
+.gcard .gt{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:3.2vh;line-height:1.42;color:#4a2a36;margin:0 0 4vh;}
+.gcard .gn{display:inline-block;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:bold;font-size:3vh;
+  padding:.8vh 2.2vh;border-radius:999px;color:#fff;letter-spacing:.02em;}
 #title{position:absolute;left:0;top:0;width:100%;height:100%;z-index:8;opacity:0;pointer-events:none;
   -webkit-transition:opacity 1.2s ease-in-out;transition:opacity 1.2s ease-in-out;
   background:linear-gradient(145deg,#C2185B 0%,#D45A7A 40%,#E8C4C4 100%);
@@ -71,6 +83,30 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
   var layers = [document.getElementById("L0"), document.getElementById("L1")];
   var titleEl = document.getElementById("title");
   var cur = 0, slideCount = 0;
+  var GUEST_MS = 12000, GUEST_EVERY = 3;
+  var GUESTS = [], guestQ = [], photosSinceGuest = 0;
+  var GCOL = { punainen: "#C62828", sininen: "#1E5AA8", keltainen: "#E0A800", "vihreä": "#2E7D32", vihrea: "#2E7D32",
+    pinkki: "#D81B60", ruskea: "#795548", oranssi: "#EF6C00", viininpunainen: "#7B1E3A" };
+  function gColor(c) { c = String(c || "").toLowerCase(); return GCOL[c] || (/^#[0-9a-f]{6}$/i.test(c) ? c : "#C2185B"); }
+  function gInk(c) { return c === "#E0A800" ? "#3A2A00" : "#FFFFFF"; }
+  function loadGuests() {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", "tvr-vaakar/guests.json?t=" + new Date().getTime(), true);
+      x.onreadystatechange = function () {
+        if (x.readyState !== 4 || x.status < 200 || x.status >= 300) return;
+        try {
+          var j = JSON.parse(x.responseText), ok = [];
+          if (j && j.length) for (var i = 0; i < j.length; i++) {
+            if (j[i] && j[i].photo && (j[i].text || j[i].names)) ok.push(j[i]);
+          }
+          GUESTS = ok;
+        } catch (e) {}
+      };
+      x.send();
+    } catch (e) {}
+  }
+  loadGuests();
   var landQ = [], portQ = [], leftover = null;
   var KB = [
     ["scale(1.0) translate(-0.8%,-0.5%)", "scale(1.045) translate(0.8%,0.5%)"],
@@ -99,6 +135,15 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
     }
   }
   function nextSlide() {
+    if (GUESTS.length && photosSinceGuest >= GUEST_EVERY) {
+      if (!guestQ.length) guestQ = shuffle(GUESTS);
+      photosSinceGuest = 0;
+      return { kind: "G", guest: guestQ.shift(), names: [] };
+    }
+    photosSinceGuest++;
+    return nextPhotoSlide();
+  }
+  function nextPhotoSlide() {
     /* Prefer mixing: if both pools nonempty, pick landscape ~1/3 of the time */
     var wantL, nL = landQ.length, nP = portQ.length + (leftover ? 1 : 0);
     if (!nL && !nP) { refillLand(); refillPort(); leftover = null; nL = landQ.length; nP = portQ.length; }
@@ -183,6 +228,12 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
       im.src = "tvr-vaakar/photos/" + pending.names[i];
       pendingImgs.push(im);
     }
+    if (pending.kind === "G") {
+      var gi = new Image();
+      gi.src = "tvr-vaakar/" + pending.guest.photo;
+      pendingImgs.push(gi);
+      return;
+    }
     var bg = new Image();
     bg.src = "tvr-vaakar/photos/bg/" + pending.names[0];
     pendingImgs.push(bg);
@@ -206,8 +257,49 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
     var L = layers[cur];
     var box = L.querySelector(".photos");
     while (box.firstChild) box.removeChild(box.firstChild);
-    L.querySelector(".bg").style.backgroundImage = "url(tvr-vaakar/photos/bg/" + slide.names[0] + ")";
+    var oldG = L.querySelector(".guest");
+    if (oldG) oldG.parentNode.removeChild(oldG);
     var slots = [];
+    if (slide.kind === "G") {
+      L.querySelector(".bg").style.backgroundImage = "none";
+      var g = slide.guest, col = gColor(g.color);
+      var gw = document.createElement("div"); gw.className = "guest";
+      var dg = KB[kbi++ % 4];
+      var gs = document.createElement("div"); gs.className = "slot gph";
+      var gkb = document.createElement("div"); gkb.className = "kb";
+      var gimg = document.createElement("img"); gimg.alt = "";
+      gimg.onload = function () {
+        try {
+          var a = gimg.naturalWidth / gimg.naturalHeight, vw = window.innerWidth || 1920, vh = window.innerHeight || 1080;
+          var mw = vw * 0.55, mh = vh * 0.82, w, hh;
+          if (!a) return;
+          if (mw / mh > a) { hh = mh; w = mh * a; } else { w = mw; hh = mw / a; }
+          gs.style.width = Math.round(w) + "px"; gs.style.height = Math.round(hh) + "px";
+        } catch (e) {}
+      };
+      gimg.src = "tvr-vaakar/" + g.photo;
+      gkb.appendChild(gimg); gs.appendChild(gkb);
+      setTr(gkb, null); setT(gkb, dg[0]); gs._kb = gkb; gs._kbTo = dg[1];
+      var card = document.createElement("div"); card.className = "gcard";
+      var bar = document.createElement("div"); bar.className = "gbar"; bar.style.background = col;
+      var q = document.createElement("div"); q.className = "gq"; q.textContent = "\u201C";
+      var t = document.createElement("p"); t.className = "gt"; t.textContent = String(g.text || "");
+      var n = document.createElement("span"); n.className = "gn"; n.textContent = String(g.names || "");
+      n.style.background = col; n.style.color = gInk(col);
+      card.appendChild(bar); card.appendChild(q); card.appendChild(t); card.appendChild(n);
+      gw.appendChild(gs); gw.appendChild(card);
+      L.appendChild(gw);
+      slots.push(gs);
+      L.className = "layer on";
+      layers[1 - cur].className = "layer";
+      cur = 1 - cur;
+      setTimeout(function () {
+        setTr(gs._kb, ((GUEST_MS + FADE_MS * 2) / 1000) + "s linear");
+        setT(gs._kb, gs._kbTo);
+      }, 40);
+      return;
+    }
+    L.querySelector(".bg").style.backgroundImage = "url(tvr-vaakar/photos/bg/" + slide.names[0] + ")";
     if (slide.kind === "L") {
       var d0 = KB[kbi++ % 4];
       slots.push(makeSlot(slide.names[0], "land", d0[0], d0[1]));
@@ -245,9 +337,10 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
       slideCount++;
       var doTitle = (slideCount > 1 && (slideCount - 1) % TITLE_EVERY === 0);
       var go = function () {
+        var dur = (pending.kind === "G") ? GUEST_MS : SHOW_MS;
         paintSlide(pending);
         preload();
-        setTimeout(loop, SHOW_MS + FADE_MS);
+        setTimeout(loop, dur + FADE_MS);
       };
       if (doTitle) showTitle(go);
       else go();

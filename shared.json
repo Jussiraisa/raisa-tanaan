@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792383559166,
+  "updated": 1792393781969,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -318,15 +318,6 @@
       "title": "Milla · Podcast-tehtävä Teamsiin",
       "date": "2026-10-19",
       "kind": "cal"
-    },
-    {
-      "id": "cal-a3dqdipk9k0jkkvoc9beodvvg0",
-      "title": "Milla · Läksypajat alkavat (vapaaehtoinen)",
-      "date": "2026-10-19",
-      "start": "08:45",
-      "end": "09:30",
-      "kind": "cal",
-      "place": "Kuopion klassillinen lukio (ENA/RU lk 210, MA lk 231)"
     },
     {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261020T140000Z",

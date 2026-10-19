@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792415070599,
+  "updated": 1792419799996,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -601,6 +601,25 @@
       "note": "Wilma 19.10. YH01.3 Suomalainen yhteiskunta · Risto Vuori · 25 käsitettä/osa, 2 osaa à 10 p · koko koe 20 % arvosanasta"
     },
     {
+      "id": "info-wilma-milla-palautepaiva-2026-10-21",
+      "who": "milla",
+      "title": "Palautepäivä (lyhyet tunnit 8:10–11, normaalit tunnit klo 11 alkaen)",
+      "date": "2026-10-21",
+      "start": "08:10",
+      "end": "11:00",
+      "kind": "info",
+      "note": "Wilma Ro-asialista 20.10.2026"
+    },
+    {
+      "id": "info-wilma-milla-uusintailmo-2026-10-21",
+      "who": "milla",
+      "title": "Uusintaan ilmoittautuminen auki (Forms-linkki Wilmassa)",
+      "date": "2026-10-21",
+      "dateEnd": "2026-10-23",
+      "kind": "info",
+      "note": "Wilma Ro-asialista 20.10.2026 · auki Ke 21.10. klo 08:00 – Pe 23.10. klo 14:30"
+    },
+    {
       "id": "info-ambrosia-2026-10-30",
       "who": "ellen",
       "title": "Ambrosia kisat · Helsinki",
@@ -667,25 +686,6 @@
       "end": "18:30",
       "place": "Luola",
       "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-milla-palautepaiva-2026-10-21",
-      "who": "milla",
-      "title": "Palautepäivä (lyhyet tunnit 8:10–11, normaalit tunnit klo 11 alkaen)",
-      "date": "2026-10-21",
-      "start": "08:10",
-      "end": "11:00",
-      "kind": "info",
-      "note": "Wilma Ro-asialista 20.10.2026"
-    },
-    {
-      "id": "info-wilma-milla-uusintailmo-2026-10-21",
-      "who": "milla",
-      "title": "Uusintaan ilmoittautuminen auki (Forms-linkki Wilmassa)",
-      "date": "2026-10-21",
-      "dateEnd": "2026-10-23",
-      "kind": "info",
-      "note": "Wilma Ro-asialista 20.10.2026 · auki Ke 21.10. klo 08:00 – Pe 23.10. klo 14:30"
     }
   ],
   "schoolLunch": {

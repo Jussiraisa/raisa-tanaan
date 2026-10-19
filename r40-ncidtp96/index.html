@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Skål Riikka 40!</title>
+<style>
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#FBF6F3;}
+body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user-select:none;cursor:none;}
+#ka{position:fixed;left:0;top:0;width:100vw;height:100vh;object-fit:cover;z-index:0;background:#FBF6F3;pointer-events:none;}
+#stage{position:fixed;left:50%;top:50%;width:100vw;height:56.25vw;max-height:100vh;max-width:177.78vh;
+  -webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:1;overflow:hidden;background:#FBF6F3;}
+.layer{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;
+  -webkit-transition:opacity 2.2s ease-in-out;transition:opacity 2.2s ease-in-out;}
+.layer.on{opacity:1;}
+.bg{position:absolute;left:-4%;top:-4%;width:108%;height:108%;background-size:cover;background-position:center;}
+.bg:after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(251,246,243,.35);}
+.kb{position:absolute;left:0;top:0;width:100%;height:100%;
+  -webkit-transition:-webkit-transform 10.4s linear;transition:transform 10.4s linear;}
+.frame{position:absolute;left:50%;top:46%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
+  border:0.45vw solid #FBF6F3;border-radius:1.6vw;overflow:hidden;background:#FBF6F3;
+  box-shadow:0 1.2vw 3.6vw rgba(194,24,91,.30),0 .2vw .8vw rgba(194,24,91,.18);}
+.frame img{display:block;max-width:84vw;max-height:76vh;width:auto;height:auto;border-radius:1.15vw;}
+#conf{position:absolute;left:0;top:0;width:100%;height:100%;z-index:5;pointer-events:none;}
+#cap{position:absolute;left:50%;bottom:3.2%;-webkit-transform:translateX(-50%);transform:translateX(-50%);z-index:6;
+  background:rgba(251,246,243,.94);border-radius:999px;padding:.55vw 1.1vw .55vw 2.2vw;white-space:nowrap;
+  font-size:2.6vw;color:#5a3a44;letter-spacing:.04em;box-shadow:0 .5vw 1.8vw rgba(194,24,91,.22);
+  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;}
+#cap .sk{color:#C2185B;font-style:italic;font-weight:bold;margin-right:.6vw;}
+#cap .bd{display:inline-block;background:#C2185B;color:#fff;border-radius:999px;padding:.15vw 1vw;margin-left:.8vw;
+  font-family:"Helvetica Neue",Arial,sans-serif;font-weight:bold;font-size:2.3vw;}
+</style>
+</head>
+<body>
+<video id="ka" src="keepalive.mp4" muted autoplay loop playsinline webkit-playsinline preload="auto"></video>
+<div id="stage">
+  <div class="layer" id="L0"><div class="bg"></div><div class="kb"><div class="frame"><img alt=""></div></div></div>
+  <div class="layer" id="L1"><div class="bg"></div><div class="kb"><div class="frame"><img alt=""></div></div></div>
+  <canvas id="conf"></canvas>
+  <div id="cap"><span class="sk">Skål</span>Riikka<span class="bd">40!</span></div>
+</div>
+<script>
+(function () {
+  var PHOTOS = ["01.jpg","02.jpg","03.jpg","04.jpg","06.jpg","07.jpg","08.jpg","09.jpg","10.jpg","11.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg","25.jpg","26.jpg","27.jpg","28.jpg","29.jpg","30.jpg","31.jpg","32.jpg","33.jpg","34.jpg","35.jpg","36.jpg","37.jpg","38.jpg","39.jpg","40.jpg","41.jpg","43.jpg","45.jpg","46.jpg","48.jpg","49.jpg","50.jpg","51.jpg","52.jpg","53.jpg","54.jpg","55.jpg","56.jpg","57.jpg"];
+  var SHOW_MS = 8000, FADE_MS = 2200;
+  var order = [], pos = 0, cur = 0, last = null;
+  var layers = [document.getElementById("L0"), document.getElementById("L1")];
+  var KB = [
+    ["scale(1.0) translate(-1.5%,-1%)", "scale(1.08) translate(1.5%,1%)"],
+    ["scale(1.08) translate(1.5%,-1%)", "scale(1.0) translate(-1.5%,1%)"],
+    ["scale(1.0) translate(1.5%,1%)", "scale(1.08) translate(-1.5%,-1%)"],
+    ["scale(1.08) translate(-1.5%,1%)", "scale(1.0) translate(1.5%,-1%)"]
+  ];
+  var kbi = 0;
+
+  function shuffle() {
+    var a = PHOTOS.slice(), i, j, t;
+    for (i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); t = a[i]; a[i] = a[j]; a[j] = t; }
+    if (last !== null && a.length > 1 && a[0] === last) { t = a[0]; a[0] = a[a.length - 1]; a[a.length - 1] = t; }
+    return a;
+  }
+  function next() {
+    if (pos >= order.length) { order = shuffle(); pos = 0; }
+    last = order[pos]; pos++;
+    return last;
+  }
+  function setT(el, v) { el.style.webkitTransform = v; el.style.transform = v; }
+  function setTr(el, v) { el.style.webkitTransition = v ? "-webkit-transform " + v : "none"; el.style.transition = v ? "transform " + v : "none"; }
+
+  var pending = null, pendingImg = null;
+  function preload() {
+    pending = next();
+    pendingImg = new Image();
+    pendingImg.src = "photos/" + pending;
+  }
+  function show() {
+    var name = pending, L = layers[cur], kb = L.querySelector(".kb"), d = KB[kbi % 4];
+    kbi++;
+    L.querySelector(".bg").style.backgroundImage = "url(photos/bg/" + name + ")";
+    L.querySelector("img").src = "photos/" + name;
+    setTr(kb, null); setT(kb, d[0]);
+    void kb.offsetWidth;
+    setTimeout(function () {
+      setTr(kb, ((SHOW_MS + FADE_MS * 2) / 1000) + "s linear"); setT(kb, d[1]);
+    }, 30);
+    L.className = "layer on";
+    layers[1 - cur].className = "layer";
+    cur = 1 - cur;
+    preload();
+  }
+  function loop() {
+    var go = function () { show(); setTimeout(loop, SHOW_MS + FADE_MS); };
+    if (pendingImg && !pendingImg.complete) {
+      var done = false, f = function () { if (!done) { done = true; go(); } };
+      pendingImg.onload = f; pendingImg.onerror = f; setTimeout(f, 6000);
+    } else go();
+  }
+  order = shuffle(); preload(); loop();
+
+  /* confetti */
+  var cv = document.getElementById("conf"), cx = cv.getContext && cv.getContext("2d");
+  var cols = ["#C2185B", "#C2185B", "#E8C4C4", "#E8C4C4", "#E8C4C4", "#D4AF37"];
+  var P = [], W = 0, H = 0, i;
+  function size() { W = cv.width = cv.offsetWidth || window.innerWidth; H = cv.height = cv.offsetHeight || window.innerHeight; }
+  function mk(top) {
+    return { x: Math.random() * W, y: top ? -20 - Math.random() * H * 0.3 : Math.random() * H,
+      w: 6 + Math.random() * 8, h: 4 + Math.random() * 6, vy: 0.35 + Math.random() * 0.7,
+      ph: Math.random() * 6.28, sw: 0.6 + Math.random() * 1.2, r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.04,
+      c: cols[Math.floor(Math.random() * cols.length)] };
+  }
+  if (cx) {
+    size(); window.addEventListener("resize", size);
+    for (i = 0; i < 38; i++) P.push(mk(false));
+    var raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || function (f) { return setTimeout(f, 33); };
+    var tick = function () {
+      cx.clearRect(0, 0, W, H);
+      for (var k = 0; k < P.length; k++) {
+        var p = P[k]; p.y += p.vy * (H / 900); p.ph += 0.02; p.r += p.vr;
+        var x = p.x + Math.sin(p.ph) * 14 * p.sw;
+        if (p.y > H + 20) P[k] = mk(true);
+        cx.save(); cx.globalAlpha = 0.75; cx.translate(x, p.y); cx.rotate(p.r);
+        cx.fillStyle = p.c; cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.ph * 1.3)) + 1);
+        cx.restore();
+      }
+      raf(tick);
+    };
+    raf(tick);
+  }
+
+  /* keep-awake (as fiilis lg-keepalive.js) */
+  var v = document.getElementById("ka");
+  function playHard() { try { v.muted = true; var pr = v.play(); if (pr && pr["catch"]) pr["catch"](function () {}); } catch (e) {} }
+  function requestWake() { try { if (navigator.wakeLock && navigator.wakeLock.request) navigator.wakeLock.request("screen")["catch"](function () {}); } catch (e) {} }
+  function webosHold() {
+    try {
+      if (!(window.webOS && webOS.service && webOS.service.request)) return;
+      webOS.service.request("luna://com.palm.power/com/palm/power", {
+        method: "activityStart", parameters: { id: "riikka40-keepalive", duration_ms: 900000 },
+        onSuccess: function () {}, onFailure: function () {} });
+    } catch (e) {}
+  }
+  function kick() {
+    if (v.ended || v.paused || v.readyState < 2) { if (!v.getAttribute("src")) v.src = "keepalive.mp4"; }
+    playHard(); requestWake(); webosHold();
+  }
+  v.addEventListener("pause", function () { setTimeout(kick, 200); });
+  v.addEventListener("ended", playHard);
+  v.addEventListener("playing", function () { requestWake(); webosHold(); });
+  v.addEventListener("error", function () { v.src = "keepalive.mp4?r=" + new Date().getTime(); playHard(); });
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) kick(); });
+  kick(); setTimeout(kick, 500); setTimeout(kick, 2000);
+  setInterval(kick, 5000); setInterval(requestWake, 25000); setInterval(webosHold, 90000);
+
+  setTimeout(function () { try { window.location.reload(); } catch (e) {} }, 6 * 3600 * 1000);
+})();
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-18T21:21:36+03:00",
+  "updated": "2026-10-19T06:56:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1705,7 +1705,7 @@
       "source": "gcal:voimistelu",
       "driver": "Julia tai Meidän · AUKI",
       "pickup": "Meidän",
-      "note": "WA 18.10 · vienti Julia tai Meidän AUKI · haku Meidän"
+      "note": "WA 18.10 · vienti Julia tai Meidän AUKI (Riikka vahvistaa) · haku Meidän (Riikka)"
     },
     {
       "date": "2026-10-21",

@@ -33,7 +33,7 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
 </style>
 </head>
 <body>
-<video id="ka" src="keepalive.mp4" muted autoplay loop playsinline webkit-playsinline preload="auto"></video>
+<video id="ka" src="tvr-vaakar/keepalive.mp4" muted autoplay loop playsinline webkit-playsinline preload="auto"></video>
 <div id="stage">
   <div class="layer" id="L0"><div class="bg"></div><div class="kb"><div class="frame"><img alt=""></div></div></div>
   <div class="layer" id="L1"><div class="bg"></div><div class="kb"><div class="frame"><img alt=""></div></div></div>
@@ -72,13 +72,13 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
   function preload() {
     pending = next();
     pendingImg = new Image();
-    pendingImg.src = "photos/" + pending;
+    pendingImg.src = "tvr-vaakar/photos/" + pending;
   }
   function show() {
     var name = pending, L = layers[cur], kb = L.querySelector(".kb"), d = KB[kbi % 4];
     kbi++;
-    L.querySelector(".bg").style.backgroundImage = "url(photos/bg/" + name + ")";
-    L.querySelector("img").src = "photos/" + name;
+    L.querySelector(".bg").style.backgroundImage = "url(tvr-vaakar/photos/bg/" + name + ")";
+    L.querySelector("img").src = "tvr-vaakar/photos/" + name;
     setTr(kb, null); setT(kb, d[0]);
     void kb.offsetWidth;
     setTimeout(function () {
@@ -141,13 +141,13 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
     } catch (e) {}
   }
   function kick() {
-    if (v.ended || v.paused || v.readyState < 2) { if (!v.getAttribute("src")) v.src = "keepalive.mp4"; }
+    if (v.ended || v.paused || v.readyState < 2) { if (!v.getAttribute("src")) v.src = "tvr-vaakar/keepalive.mp4"; }
     playHard(); requestWake(); webosHold();
   }
   v.addEventListener("pause", function () { setTimeout(kick, 200); });
   v.addEventListener("ended", playHard);
   v.addEventListener("playing", function () { requestWake(); webosHold(); });
-  v.addEventListener("error", function () { v.src = "keepalive.mp4?r=" + new Date().getTime(); playHard(); });
+  v.addEventListener("error", function () { v.src = "tvr-vaakar/keepalive.mp4?r=" + new Date().getTime(); playHard(); });
   document.addEventListener("visibilitychange", function () { if (!document.hidden) kick(); });
   kick(); setTimeout(kick, 500); setTimeout(kick, 2000);
   setInterval(kick, 5000); setInterval(requestWake, 25000); setInterval(webosHold, 90000);

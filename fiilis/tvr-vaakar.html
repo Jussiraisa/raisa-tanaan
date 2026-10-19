@@ -6,120 +6,278 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Skål Riikka 40!</title>
 <style>
-html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#FBF6F3;}
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#E7B9B9;}
 body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user-select:none;cursor:none;}
-#ka{position:fixed;left:0;top:0;width:100vw;height:100vh;object-fit:cover;z-index:0;background:#FBF6F3;pointer-events:none;}
-#stage{position:fixed;left:50%;top:50%;width:100vw;height:56.25vw;max-height:100vh;max-width:177.78vh;
-  -webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:1;overflow:hidden;background:#FBF6F3;}
+#ka{position:fixed;left:0;top:0;width:100vw;height:100vh;object-fit:cover;z-index:0;background:#E7B9B9;pointer-events:none;}
+#stage{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:1;overflow:hidden;background:#E7B9B9;}
 .layer{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;
   -webkit-transition:opacity 2.2s ease-in-out;transition:opacity 2.2s ease-in-out;}
 .layer.on{opacity:1;}
-.bg{position:absolute;left:-4%;top:-4%;width:108%;height:108%;background-size:cover;background-position:center;}
-.bg:after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(251,246,243,.35);}
-.kb{position:absolute;left:0;top:0;width:100%;height:100%;
+.bg{position:absolute;left:-6%;top:-6%;width:112%;height:112%;background-size:cover;background-position:center;
+  -webkit-filter:blur(0);filter:none;}
+.bg:after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;
+  background:
+    radial-gradient(ellipse at center, rgba(194,24,91,0) 35%, rgba(194,24,91,.28) 100%),
+    linear-gradient(160deg, rgba(243,217,214,.55) 0%, rgba(231,185,185,.70) 45%, rgba(210,130,145,.62) 100%);}
+.photos{position:absolute;left:0;top:0;width:100%;height:100%;display:-webkit-box;display:-webkit-flex;display:flex;
+  -webkit-box-align:center;-webkit-align-items:center;align-items:center;
+  -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+  -webkit-box-orient:horizontal;-webkit-flex-direction:row;flex-direction:row;gap:1.4vw;padding:0 1.5vw;box-sizing:border-box;}
+.slot{position:relative;overflow:hidden;border:0.35vw solid #FBF6F3;border-radius:1.4vw;background:#FBF6F3;
+  box-shadow:0 1vw 3vw rgba(194,24,91,.34),0 .25vw .9vw rgba(194,24,91,.2);
+  -webkit-flex-shrink:0;flex-shrink:0;}
+.slot.land{width:92vw;height:86vh;max-width:92vw;max-height:86vh;}
+.slot.dipt{width:44vw;height:86vh;}
+.slot.solo{width:60vh;height:88vh;max-width:55vw;}
+.slot .kb{position:absolute;left:0;top:0;width:100%;height:100%;
   -webkit-transition:-webkit-transform 10.4s linear;transition:transform 10.4s linear;}
-.frame{position:absolute;left:50%;top:46%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
-  border:0.45vw solid #FBF6F3;border-radius:1.6vw;overflow:hidden;background:#FBF6F3;
-  box-shadow:0 1.2vw 3.6vw rgba(194,24,91,.30),0 .2vw .8vw rgba(194,24,91,.18);}
-.frame img{display:block;max-width:84vw;max-height:76vh;width:auto;height:auto;border-radius:1.15vw;}
+.slot img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:transparent;}
+.slot.dipt img{object-fit:cover;}
 #conf{position:absolute;left:0;top:0;width:100%;height:100%;z-index:5;pointer-events:none;}
-#cap{position:absolute;left:50%;bottom:3.2%;-webkit-transform:translateX(-50%);transform:translateX(-50%);z-index:6;
-  background:rgba(251,246,243,.94);border-radius:999px;padding:.55vw 1.1vw .55vw 2.2vw;white-space:nowrap;
-  font-size:2.6vw;color:#5a3a44;letter-spacing:.04em;box-shadow:0 .5vw 1.8vw rgba(194,24,91,.22);
-  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;}
-#cap .sk{color:#C2185B;font-style:italic;font-weight:bold;margin-right:.6vw;}
-#cap .bd{display:inline-block;background:#C2185B;color:#fff;border-radius:999px;padding:.15vw 1vw;margin-left:.8vw;
-  font-family:"Helvetica Neue",Arial,sans-serif;font-weight:bold;font-size:2.3vw;}
+#cap{position:absolute;left:50%;bottom:2.2%;-webkit-transform:translateX(-50%);transform:translateX(-50%);z-index:6;
+  background:rgba(251,246,243,.95);border-radius:999px;padding:.55vh 1.4vh .55vh 2.6vh;white-space:nowrap;
+  font-size:4.5vh;color:#5a3a44;letter-spacing:.04em;box-shadow:0 .6vh 2vh rgba(194,24,91,.28);
+  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;
+  line-height:1.15;}
+#cap .sk{color:#C2185B;font-style:italic;font-weight:bold;margin-right:.55vh;}
+#cap .bd{display:inline-block;background:#C2185B;color:#fff;border-radius:999px;padding:.2vh 1.3vh;margin-left:.9vh;
+  font-family:"Helvetica Neue",Arial,sans-serif;font-weight:bold;font-size:4vh;}
+#title{position:absolute;left:0;top:0;width:100%;height:100%;z-index:8;opacity:0;pointer-events:none;
+  -webkit-transition:opacity 1.2s ease-in-out;transition:opacity 1.2s ease-in-out;
+  background:linear-gradient(145deg,#C2185B 0%,#D45A7A 40%,#E8C4C4 100%);
+  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;
+  -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;}
+#title.on{opacity:1;}
+#title .inner{text-align:center;color:#fff;text-shadow:0 .4vh 1.6vh rgba(90,30,50,.35);}
+#title .sk{font-size:9vh;font-style:italic;font-weight:bold;letter-spacing:.03em;}
+#title .nm{font-size:8vh;margin-top:1vh;font-weight:normal;}
+#title .bd{display:inline-block;margin-top:2.5vh;background:rgba(255,255,255,.95);color:#C2185B;border-radius:999px;
+  padding:1vh 3.5vh;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:bold;font-size:7vh;}
 </style>
 </head>
 <body>
 <video id="ka" src="tvr-vaakar/keepalive.mp4" muted autoplay loop playsinline webkit-playsinline preload="auto"></video>
 <div id="stage">
-  <div class="layer" id="L0"><div class="bg"></div><div class="kb"><div class="frame"><img alt=""></div></div></div>
-  <div class="layer" id="L1"><div class="bg"></div><div class="kb"><div class="frame"><img alt=""></div></div></div>
+  <div class="layer" id="L0"><div class="bg"></div><div class="photos"></div></div>
+  <div class="layer" id="L1"><div class="bg"></div><div class="photos"></div></div>
   <canvas id="conf"></canvas>
   <div id="cap"><span class="sk">Skål</span>Riikka<span class="bd">40!</span></div>
+  <div id="title"><div class="inner"><div class="sk">Skål</div><div class="nm">Riikka</div><div class="bd">40!</div></div></div>
 </div>
 <script>
 (function () {
-  var PHOTOS = ["01.jpg","02.jpg","03.jpg","04.jpg","06.jpg","07.jpg","08.jpg","09.jpg","10.jpg","11.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg","25.jpg","26.jpg","27.jpg","28.jpg","29.jpg","30.jpg","31.jpg","32.jpg","33.jpg","34.jpg","35.jpg","36.jpg","37.jpg","38.jpg","39.jpg","40.jpg","41.jpg","43.jpg","45.jpg","46.jpg","48.jpg","49.jpg","50.jpg","51.jpg","52.jpg","53.jpg","54.jpg","55.jpg","56.jpg","57.jpg"];
-  var SHOW_MS = 8000, FADE_MS = 2200;
-  var order = [], pos = 0, cur = 0, last = null;
+  var PHOTOS = [{n:"01.jpg",o:"L",a:1.3333},{n:"02.jpg",o:"L",a:1.4895},{n:"03.jpg",o:"P",a:0.6715},{n:"04.jpg",o:"P",a:0.6667},{n:"06.jpg",o:"P",a:0.666},{n:"07.jpg",o:"L",a:1.5},{n:"08.jpg",o:"P",a:0.75},{n:"09.jpg",o:"L",a:1.3333},{n:"10.jpg",o:"L",a:1.3333},{n:"11.jpg",o:"P",a:0.75},{n:"14.jpg",o:"L",a:1.3333},{n:"15.jpg",o:"L",a:1.3333},{n:"16.jpg",o:"L",a:1.3333},{n:"17.jpg",o:"P",a:0.75},{n:"18.jpg",o:"L",a:1.5},{n:"19.jpg",o:"P",a:0.6667},{n:"20.jpg",o:"L",a:1.5},{n:"21.jpg",o:"P",a:0.6667},{n:"22.jpg",o:"P",a:0.6667},{n:"23.jpg",o:"P",a:0.6632},{n:"24.jpg",o:"L",a:1.5071},{n:"25.jpg",o:"P",a:0.75},{n:"26.jpg",o:"L",a:1.3333},{n:"27.jpg",o:"P",a:0.75},{n:"28.jpg",o:"P",a:0.75},{n:"29.jpg",o:"L",a:1.3333},{n:"30.jpg",o:"L",a:1.3333},{n:"31.jpg",o:"P",a:0.75},{n:"32.jpg",o:"P",a:0.75},{n:"33.jpg",o:"P",a:0.75},{n:"34.jpg",o:"P",a:0.75},{n:"35.jpg",o:"P",a:0.75},{n:"36.jpg",o:"P",a:0.75},{n:"37.jpg",o:"P",a:0.75},{n:"38.jpg",o:"P",a:0.75},{n:"39.jpg",o:"L",a:1.3313},{n:"40.jpg",o:"L",a:1.3333},{n:"41.jpg",o:"P",a:0.75},{n:"43.jpg",o:"P",a:0.7479},{n:"45.jpg",o:"P",a:0.7514},{n:"46.jpg",o:"P",a:0.75},{n:"48.jpg",o:"P",a:0.7479},{n:"49.jpg",o:"P",a:0.8537},{n:"50.jpg",o:"P",a:0.7479},{n:"51.jpg",o:"P",a:0.7479},{n:"52.jpg",o:"P",a:0.75},{n:"53.jpg",o:"P",a:0.6195},{n:"54.jpg",o:"P",a:0.7514},{n:"55.jpg",o:"P",a:0.75},{n:"56.jpg",o:"L",a:1.3311},{n:"57.jpg",o:"P",a:0.7479}];
+  var SHOW_MS = 8000, FADE_MS = 2200, TITLE_MS = 6000, TITLE_EVERY = 10;
   var layers = [document.getElementById("L0"), document.getElementById("L1")];
+  var titleEl = document.getElementById("title");
+  var cur = 0, slideCount = 0;
+  var landQ = [], portQ = [], leftover = null;
   var KB = [
-    ["scale(1.0) translate(-1.5%,-1%)", "scale(1.08) translate(1.5%,1%)"],
-    ["scale(1.08) translate(1.5%,-1%)", "scale(1.0) translate(-1.5%,1%)"],
-    ["scale(1.0) translate(1.5%,1%)", "scale(1.08) translate(-1.5%,-1%)"],
-    ["scale(1.08) translate(-1.5%,1%)", "scale(1.0) translate(1.5%,-1%)"]
+    ["scale(1.0) translate(-0.8%,-0.5%)", "scale(1.045) translate(0.8%,0.5%)"],
+    ["scale(1.045) translate(0.8%,-0.5%)", "scale(1.0) translate(-0.8%,0.5%)"],
+    ["scale(1.0) translate(0.8%,0.5%)", "scale(1.045) translate(-0.8%,-0.5%)"],
+    ["scale(1.045) translate(-0.8%,0.5%)", "scale(1.0) translate(0.8%,-0.5%)"]
   ];
   var kbi = 0;
+  var lastLand = null, lastPortA = null, lastPortB = null;
 
-  function shuffle() {
-    var a = PHOTOS.slice(), i, j, t;
-    for (i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); t = a[i]; a[i] = a[j]; a[j] = t; }
-    if (last !== null && a.length > 1 && a[0] === last) { t = a[0]; a[0] = a[a.length - 1]; a[a.length - 1] = t; }
-    return a;
+  function shuffle(a) {
+    var b = a.slice(), i, j, t;
+    for (i = b.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1)); t = b[i]; b[i] = b[j]; b[j] = t; }
+    return b;
   }
-  function next() {
-    if (pos >= order.length) { order = shuffle(); pos = 0; }
-    last = order[pos]; pos++;
-    return last;
+  function refillLand() {
+    landQ = shuffle(PHOTOS.filter(function (p) { return p.o === "L"; }).map(function (p) { return p.n; }));
+    if (lastLand && landQ.length > 1 && landQ[0] === lastLand) {
+      var t = landQ[0]; landQ[0] = landQ[landQ.length - 1]; landQ[landQ.length - 1] = t;
+    }
   }
+  function refillPort() {
+    portQ = shuffle(PHOTOS.filter(function (p) { return p.o === "P"; }).map(function (p) { return p.n; }));
+    if (lastPortB && portQ.length > 1 && portQ[0] === lastPortB) {
+      var t = portQ[0]; portQ[0] = portQ[portQ.length - 1]; portQ[portQ.length - 1] = t;
+    }
+  }
+  function nextSlide() {
+    /* Prefer mixing: if both pools nonempty, pick landscape ~1/3 of the time */
+    var wantL, nL = landQ.length, nP = portQ.length + (leftover ? 1 : 0);
+    if (!nL && !nP) { refillLand(); refillPort(); leftover = null; nL = landQ.length; nP = portQ.length; }
+    if (!nL) wantL = false;
+    else if (!nP) wantL = true;
+    else wantL = Math.random() < 0.34;
+    if (wantL) {
+      if (!landQ.length) refillLand();
+      var n = landQ.shift(); lastLand = n;
+      return { kind: "L", names: [n] };
+    }
+    if (leftover) {
+      var solo = leftover; leftover = null; lastPortA = solo; lastPortB = null;
+      return { kind: "S", names: [solo] };
+    }
+    if (portQ.length < 2) {
+      if (portQ.length === 1) { leftover = portQ.shift(); refillPort(); }
+      else refillPort();
+    }
+    if (portQ.length >= 2) {
+      var a = portQ.shift(), b = portQ.shift();
+      lastPortA = a; lastPortB = b;
+      return { kind: "D", names: [a, b] };
+    }
+    if (portQ.length === 1) {
+      var s = portQ.shift(); lastPortA = s; lastPortB = null;
+      return { kind: "S", names: [s] };
+    }
+    /* fallback landscape */
+    if (!landQ.length) refillLand();
+    var ln = landQ.shift(); lastLand = ln;
+    return { kind: "L", names: [ln] };
+  }
+
   function setT(el, v) { el.style.webkitTransform = v; el.style.transform = v; }
-  function setTr(el, v) { el.style.webkitTransition = v ? "-webkit-transform " + v : "none"; el.style.transition = v ? "transform " + v : "none"; }
-
-  var pending = null, pendingImg = null;
-  function preload() {
-    pending = next();
-    pendingImg = new Image();
-    pendingImg.src = "tvr-vaakar/photos/" + pending;
+  function setTr(el, v) {
+    el.style.webkitTransition = v ? "-webkit-transform " + v : "none";
+    el.style.transition = v ? "transform " + v : "none";
   }
-  function show() {
-    var name = pending, L = layers[cur], kb = L.querySelector(".kb"), d = KB[kbi % 4];
-    kbi++;
-    L.querySelector(".bg").style.backgroundImage = "url(tvr-vaakar/photos/bg/" + name + ")";
-    L.querySelector("img").src = "tvr-vaakar/photos/" + name;
-    setTr(kb, null); setT(kb, d[0]);
-    void kb.offsetWidth;
-    setTimeout(function () {
-      setTr(kb, ((SHOW_MS + FADE_MS * 2) / 1000) + "s linear"); setT(kb, d[1]);
-    }, 30);
+  function findMeta(name) {
+    for (var i = 0; i < PHOTOS.length; i++) if (PHOTOS[i].n === name) return PHOTOS[i];
+    return { n: name, o: "L", a: 1.5 };
+  }
+  function sizeSlot(wrap, cls, aspect) {
+    var vh = window.innerHeight || 1080, vw = window.innerWidth || 1920;
+    var maxW, maxH;
+    if (cls === "land") { maxW = vw * 0.92; maxH = vh * 0.86; }
+    else if (cls === "solo") { maxW = vw * 0.55; maxH = vh * 0.88; }
+    else { return; }
+    var w, h;
+    if (maxW / maxH > aspect) { h = maxH; w = maxH * aspect; }
+    else { w = maxW; h = maxW / aspect; }
+    wrap.style.width = Math.round(w) + "px";
+    wrap.style.height = Math.round(h) + "px";
+    wrap.style.maxWidth = "none";
+    wrap.style.maxHeight = "none";
+  }
+  function makeSlot(name, cls, kbFrom, kbTo) {
+    var wrap = document.createElement("div");
+    wrap.className = "slot " + cls;
+    var meta = findMeta(name);
+    sizeSlot(wrap, cls, meta.a || (meta.o === "P" ? 0.72 : 1.5));
+    var kb = document.createElement("div");
+    kb.className = "kb";
+    var img = document.createElement("img");
+    img.alt = "";
+    img.src = "tvr-vaakar/photos/" + name;
+    kb.appendChild(img);
+    wrap.appendChild(kb);
+    setTr(kb, null); setT(kb, kbFrom);
+    wrap._kb = kb; wrap._kbTo = kbTo;
+    return wrap;
+  }
+
+  var pending = null, pendingImgs = [];
+
+  function preload() {
+    pending = nextSlide();
+    pendingImgs = [];
+    for (var i = 0; i < pending.names.length; i++) {
+      var im = new Image();
+      im.src = "tvr-vaakar/photos/" + pending.names[i];
+      pendingImgs.push(im);
+    }
+    var bg = new Image();
+    bg.src = "tvr-vaakar/photos/bg/" + pending.names[0];
+    pendingImgs.push(bg);
+  }
+
+  function waitReady(cb) {
+    var left = pendingImgs.length, done = false;
+    function one() {
+      left--;
+      if (left <= 0 && !done) { done = true; cb(); }
+    }
+    if (!pendingImgs.length) { cb(); return; }
+    for (var i = 0; i < pendingImgs.length; i++) {
+      if (pendingImgs[i].complete) one();
+      else { pendingImgs[i].onload = one; pendingImgs[i].onerror = one; }
+    }
+    setTimeout(function () { if (!done) { done = true; cb(); } }, 6000);
+  }
+
+  function paintSlide(slide) {
+    var L = layers[cur];
+    var box = L.querySelector(".photos");
+    while (box.firstChild) box.removeChild(box.firstChild);
+    L.querySelector(".bg").style.backgroundImage = "url(tvr-vaakar/photos/bg/" + slide.names[0] + ")";
+    var slots = [];
+    if (slide.kind === "L") {
+      var d0 = KB[kbi++ % 4];
+      slots.push(makeSlot(slide.names[0], "land", d0[0], d0[1]));
+    } else if (slide.kind === "D") {
+      var d1 = KB[kbi++ % 4], d2 = KB[kbi++ % 4];
+      slots.push(makeSlot(slide.names[0], "dipt", d1[0], d1[1]));
+      slots.push(makeSlot(slide.names[1], "dipt", d2[0], d2[1]));
+    } else {
+      var d3 = KB[kbi++ % 4];
+      slots.push(makeSlot(slide.names[0], "solo", d3[0], d3[1]));
+    }
+    for (var i = 0; i < slots.length; i++) box.appendChild(slots[i]);
     L.className = "layer on";
     layers[1 - cur].className = "layer";
     cur = 1 - cur;
-    preload();
+    setTimeout(function () {
+      for (var j = 0; j < slots.length; j++) {
+        var s = slots[j];
+        setTr(s._kb, ((SHOW_MS + FADE_MS * 2) / 1000) + "s linear");
+        setT(s._kb, s._kbTo);
+      }
+    }, 40);
   }
+
+  function showTitle(then) {
+    titleEl.className = "on";
+    setTimeout(function () {
+      titleEl.className = "";
+      setTimeout(then, 400);
+    }, TITLE_MS);
+  }
+
   function loop() {
-    var go = function () { show(); setTimeout(loop, SHOW_MS + FADE_MS); };
-    if (pendingImg && !pendingImg.complete) {
-      var done = false, f = function () { if (!done) { done = true; go(); } };
-      pendingImg.onload = f; pendingImg.onerror = f; setTimeout(f, 6000);
-    } else go();
+    waitReady(function () {
+      slideCount++;
+      var doTitle = (slideCount > 1 && (slideCount - 1) % TITLE_EVERY === 0);
+      var go = function () {
+        paintSlide(pending);
+        preload();
+        setTimeout(loop, SHOW_MS + FADE_MS);
+      };
+      if (doTitle) showTitle(go);
+      else go();
+    });
   }
-  order = shuffle(); preload(); loop();
+
+  refillLand(); refillPort(); preload(); loop();
 
   /* confetti */
   var cv = document.getElementById("conf"), cx = cv.getContext && cv.getContext("2d");
-  var cols = ["#C2185B", "#C2185B", "#E8C4C4", "#E8C4C4", "#E8C4C4", "#D4AF37"];
+  var cols = ["#C2185B", "#C2185B", "#E8C4C4", "#E8C4C4", "#E8C4C4", "#D4AF37", "#F3D9D6"];
   var P = [], W = 0, H = 0, i;
   function size() { W = cv.width = cv.offsetWidth || window.innerWidth; H = cv.height = cv.offsetHeight || window.innerHeight; }
   function mk(top) {
     return { x: Math.random() * W, y: top ? -20 - Math.random() * H * 0.3 : Math.random() * H,
-      w: 6 + Math.random() * 8, h: 4 + Math.random() * 6, vy: 0.35 + Math.random() * 0.7,
+      w: 7 + Math.random() * 10, h: 4 + Math.random() * 7, vy: 0.4 + Math.random() * 0.75,
       ph: Math.random() * 6.28, sw: 0.6 + Math.random() * 1.2, r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.04,
       c: cols[Math.floor(Math.random() * cols.length)] };
   }
   if (cx) {
     size(); window.addEventListener("resize", size);
-    for (i = 0; i < 38; i++) P.push(mk(false));
+    for (i = 0; i < 48; i++) P.push(mk(false));
     var raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || function (f) { return setTimeout(f, 33); };
     var tick = function () {
       cx.clearRect(0, 0, W, H);
       for (var k = 0; k < P.length; k++) {
         var p = P[k]; p.y += p.vy * (H / 900); p.ph += 0.02; p.r += p.vr;
-        var x = p.x + Math.sin(p.ph) * 14 * p.sw;
+        var x = p.x + Math.sin(p.ph) * 16 * p.sw;
         if (p.y > H + 20) P[k] = mk(true);
-        cx.save(); cx.globalAlpha = 0.75; cx.translate(x, p.y); cx.rotate(p.r);
+        cx.save(); cx.globalAlpha = 0.8; cx.translate(x, p.y); cx.rotate(p.r);
         cx.fillStyle = p.c; cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.ph * 1.3)) + 1);
         cx.restore();
       }
@@ -128,7 +286,7 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
     raf(tick);
   }
 
-  /* keep-awake (as fiilis lg-keepalive.js) */
+  /* keep-awake */
   var v = document.getElementById("ka");
   function playHard() { try { v.muted = true; var pr = v.play(); if (pr && pr["catch"]) pr["catch"](function () {}); } catch (e) {} }
   function requestWake() { try { if (navigator.wakeLock && navigator.wakeLock.request) navigator.wakeLock.request("screen")["catch"](function () {}); } catch (e) {} }
@@ -153,6 +311,33 @@ body{font-family:"Georgia","Times New Roman",serif;-webkit-user-select:none;user
   setInterval(kick, 5000); setInterval(requestWake, 25000); setInterval(webosHold, 90000);
 
   setTimeout(function () { try { window.location.reload(); } catch (e) {} }, 6 * 3600 * 1000);
+
+  /* soft update: poll tvr-vaakar/version.json */
+  var seenV = null;
+  function checkVer() {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", "tvr-vaakar/version.json?t=" + new Date().getTime(), true);
+      x.onreadystatechange = function () {
+        if (x.readyState !== 4 || x.status < 200 || x.status >= 300) return;
+        try {
+          var j = JSON.parse(x.responseText);
+          var key = String((j && j.v) || "");
+          if (!key) return;
+          if (seenV === null) { seenV = key; return; }
+          if (key !== seenV) {
+            try {
+              var u = window.location.href.split("?")[0] + "?r=" + new Date().getTime();
+              window.location.replace(u);
+            } catch (e2) { window.location.reload(); }
+          }
+        } catch (e3) {}
+      };
+      x.send();
+    } catch (e) {}
+  }
+  setTimeout(checkVer, 4000);
+  setInterval(checkVer, 10 * 60 * 1000);
 })();
 </script>
 </body>

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792382748925,
+  "updated": 1792383559166,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -337,35 +337,6 @@
       "kind": "cal"
     },
     {
-      "id": "info-wilma-perhe-syysloma-2026-10-12",
-      "who": "perhe",
-      "title": "Syysloma 12.–18.10. (vko 42)",
-      "date": "2026-10-12",
-      "dateEnd": "2026-10-18",
-      "kind": "info",
-      "note": "Wilma: viikko 42 tyhjä lukkareissa (syysloma). Ei pyyhitä vakio-lukkareita."
-    },
-    {
-      "id": "info-vivida-kisakallio-2026-10-17",
-      "who": "milla",
-      "title": "Vivida Kisakallio PERUTTU (syksy)",
-      "date": "2026-10-17",
-      "dateEnd": "2026-10-18",
-      "kind": "info",
-      "note": "WA 1.9. · peru Lyyti · kevät 29.–30.1.2027"
-    },
-    {
-      "id": "info-wilma-perhe-liikuntalauantai-2026-10-17",
-      "who": "perhe",
-      "title": "Voimistelun liikuntalauantai (Supersyysloma)",
-      "date": "2026-10-17",
-      "start": "10:00",
-      "end": "11:00",
-      "kind": "info",
-      "place": "BellaCenter",
-      "note": "maksuton"
-    },
-    {
       "id": "info-wilma-milla-podcast-2026-10-19",
       "who": "milla",
       "title": "Podcast-tehtävä Teamsiin",
@@ -531,16 +502,6 @@
       "place": "Aurinkorinteen koulu"
     },
     {
-      "id": "info-wilma-perhe-valke-2026-10-16",
-      "who": "perhe",
-      "title": "Välke-viikonloppu (Kuopio mediataidefestivaali)",
-      "date": "2026-10-16",
-      "dateEnd": "2026-10-18",
-      "kind": "info",
-      "place": "Kuopio",
-      "note": "Wilma 8.10. · vapaaehtoinen info · Lontoo 13.–17.10."
-    },
-    {
       "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
       "who": "perhe",
       "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
@@ -549,14 +510,6 @@
       "kind": "info",
       "note": "Wilma 7.10. · turvakielto: soita 017-2734500 · Wilma 8.10.: Pop Up 21.10.–12.11., Samuel & Ellen",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "info-london-return-2026-10-17",
-      "who": "perhe",
-      "title": "Lontoo paluu FR2344 STN 06:25 → HEL 11:15",
-      "date": "2026-10-17",
-      "kind": "info",
-      "note": "Jussi, Riikka, Milla, Aida"
     },
     {
       "id": "info-kirjastot-kiinni-2026-10-20",
@@ -573,72 +526,6 @@
       "date": "2026-10-20",
       "dateEnd": "2026-11-03",
       "kind": "info"
-    },
-    {
-      "id": "info-ambrosia-2026-10-30",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-30",
-      "kind": "info",
-      "place": "Helsinki",
-      "dateEnd": "2026-10-31",
-      "note": "juna pe 13.00–17.25 · paluu la 15.24–19.50 · Scandic Park · huoltajat Pekka H. + Sofien vanhempi (meiltä ei tarvita) · Ellen koulusta aiemmin pe"
-    },
-    {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-17",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-17",
-      "start": "12:30",
-      "end": "15:00",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "info-perhe-myclub-laskutus-2026-10-18",
-      "who": "perhe",
-      "title": "Welhot MyClub-laskutus (lokakuun kk-maksu)",
-      "date": "2026-10-18",
-      "kind": "info",
-      "note": "luvattu rahastonhoitajille · + Lucas Oksman pelisetti 100 € + kk-maksu"
     },
     {
       "id": "info-samuel-nimenhuuto-2026-10-19",
@@ -732,6 +619,74 @@
       "end": "09:25",
       "kind": "info",
       "note": "Wilma 19.10. YH01.3 Suomalainen yhteiskunta · Risto Vuori · 25 käsitettä/osa, 2 osaa à 10 p · koko koe 20 % arvosanasta"
+    },
+    {
+      "id": "info-ambrosia-2026-10-30",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Helsinki",
+      "date": "2026-10-30",
+      "kind": "info",
+      "place": "Helsinki",
+      "dateEnd": "2026-10-31",
+      "note": "kulku Juna; huoltaja Pipsa"
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto/juna+taksi"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-10-19",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-19",
+      "start": "18:30",
+      "end": "19:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-19",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-19",
+      "start": "17:30",
+      "end": "18:30",
+      "place": "Luola",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

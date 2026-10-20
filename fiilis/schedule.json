@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-19T06:56:00+03:00",
+  "updated": "2026-10-20T06:05:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Synkka 18.10.2026 aamu: Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Ei Jussin työreissua (Outlook: Teams-palaverit, Veturi Roadshow Kuopio to 22.10, Nordea-lounas Kuopio ti 27.10). Riikka ei poissa 18.–28.10. Lisätty Ellenin englannin koe ke 28.10 (kpl 1–3, Perhe-kalenteri/Wilma 7.10). Kyydit ennallaan.",
+  "note": "Synkka 20.10.2026 aamu: Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Ei Jussin työreissua (Teams-palaverit, Veturi Roadshow Kuopio to 22.10, Nordea-lounas Kuopio ti 27.10). Riikka ei poissa 20.–31.10. Lisätty Millan palautepäivä ke 21.10 (koulu 8.10, lyhyet tunnit 8.10–11), YH käsitekoe to 22.10 klo 8.10 ja uusintaan ilmoittautuminen 21.–23.10 (Wilma). Kyydit ennallaan.",
   "events": [
     {
       "date": "2026-09-20",
@@ -1678,6 +1678,16 @@
     },
     {
       "date": "2026-10-21",
+      "time": "08:10",
+      "end": "11:00",
+      "who": "Milla",
+      "title": "Palautepäivä · lyhyet tunnit",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koulu alkaa 8.10 (ei 9.40) · lyhyet tunnit 8.10–11, normaalit tunnit klo 11 alkaen"
+    },
+    {
+      "date": "2026-10-21",
       "time": "09:00",
       "end": "10:00",
       "who": "Mea",
@@ -1741,8 +1751,9 @@
       "kind": "muu",
       "source": "ical:milla",
       "date": "2026-10-22",
-      "time": "21:00",
-      "end": "22:00"
+      "time": "08:10",
+      "end": "09:25",
+      "note": "koe · YH01.3 Suomalainen yhteiskunta, käsitekoe 1. osa (Wilma 19.10.)"
     },
     {
       "date": "2026-10-23",
@@ -3288,11 +3299,26 @@
       "source": "wilma:perhe"
     },
     {
+      "due": "2026-10-22",
+      "title": "YH käsitekoe 1. osa 08.10",
+      "who": "Milla",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
       "due": "2026-10-23",
       "title": "Äidinkielen koe 08.50",
       "who": "Mea",
       "needAction": false,
       "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-10-23",
+      "title": "Uusintaan ilmoittautuminen (Forms-linkki Wilmassa)",
+      "who": "Milla",
+      "needAction": true,
+      "source": "wilma:perhe",
+      "note": "auki ke 21.10. klo 8.00 – pe 23.10. klo 14.30"
     },
     {
       "due": "2026-10-27",

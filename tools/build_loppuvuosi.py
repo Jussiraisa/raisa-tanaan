@@ -467,6 +467,8 @@ def dedupe_key(ev: dict) -> str:
     t = t.replace("(?)", "").strip()
     t = re.sub(r"\s+", " ", t)
     t = re.sub(r"^perhe · ", "", t)
+    # "Milla: X" (calendar) == "Milla · X" (info extras)
+    t = re.sub(r"^(milla|mea|ellen|samuel|riikka|jussi)\s*[:·]\s*", r"\1 · ", t)
     # Map aliases
     aliases = [
         (r"riikka oulu|riikan koulupäiv", "riikka oulu"),
@@ -561,7 +563,27 @@ def merge_events(events: list[dict]) -> list[dict]:
 
     # Second pass: drop Joensuu Welhot 2018 duplicate if Samuel turnaus Joensuu exists same day
     # (already covered by alias). Also drop second Samuel koulukuvaus single-day if range exists.
-    return merged
+    # Near-duplicates: same start day + same time, one core title is a prefix of the other
+    # (e.g. "Sijoittajakoulu" vs "Milla: Sijoittajakoulu", "MAA03 välitesti" vs "... kpl 1–5").
+    def core(ev: dict) -> str:
+        t = ev["title"].lower()
+        t = re.sub(r"^(milla|mea|ellen|samuel|riikka|jussi|perhe)\s*[:·]\s*", "", t)
+        t = re.sub(r"[^\w ]+", " ", t)
+        return re.sub(r"\s+", " ", t).strip()
+
+    drop: set[int] = set()
+    for i, a in enumerate(merged):
+        for j, b in enumerate(merged):
+            if i == j or i in drop or j in drop:
+                continue
+            if a["start"] != b["start"] or a.get("time") != b.get("time"):
+                continue
+            ca, cb = core(a), core(b)
+            if len(ca) >= 8 and cb != ca and cb.startswith(ca):
+                drop.add(i)  # keep the longer, more specific one (b)
+            elif ca == cb and len(a["title"]) < len(b["title"]):
+                drop.add(i)
+    return [ev for k, ev in enumerate(merged) if k not in drop]
 
 
 def build_days(events: list[dict]) -> dict[str, list[dict]]:

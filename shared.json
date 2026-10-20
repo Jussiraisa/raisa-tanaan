@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792470185337,
+  "updated": 1792508891132,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -313,14 +313,6 @@
   },
   "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida kisa 24.10 vai 31.10? Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
-    {
-      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261020T140000Z",
-      "title": "Mea valmennus",
-      "date": "2026-10-20",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
-    },
     {
       "id": "cal-9i1oo22taj307l8gpacnrm52c4",
       "title": "Mea · RUB iso koe",

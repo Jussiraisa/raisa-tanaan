@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-20T06:05:00+03:00",
+  "updated": "2026-10-20T06:50:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1667,7 +1667,9 @@
       "title": "Welhot",
       "place": "Lippumäki",
       "kind": "treeni",
-      "driver": "Jussi"
+      "driver": "Juha · hakee 10 yli",
+      "pickup": "Meidän? · vahvistamatta",
+      "note": "WA 20.10 · vienti Juha (hakee Samppa 10 yli) · haku todennäköisesti Meidän, vahvistamatta"
     },
     {
       "date": "2026-10-20",
@@ -1925,6 +1927,17 @@
       "source": "gcal:voimistelu"
     },
     {
+      "date": "2026-10-30",
+      "time": "13:00",
+      "end": "17:25",
+      "who": "Ellen",
+      "title": "Ambrosia kisamatka: juna Helsinkiin",
+      "kind": "matka",
+      "place": "Scandic Park",
+      "source": "perhe:wa",
+      "note": "Kisamatka Helsinkiin pe 30.10.–la 31.10. junalla · hotelli Scandic Park · paluu la 15:24–19:50 · mukana: AUKI"
+    },
+    {
       "who": "Milla",
       "title": "Kakut terhille",
       "kind": "muu",
@@ -1966,6 +1979,16 @@
       "title": "Pyhäinpäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
+    },
+    {
+      "date": "2026-10-31",
+      "time": "15:24",
+      "end": "19:50",
+      "who": "Ellen",
+      "title": "Ambrosia kisamatka: paluujuna Helsingistä",
+      "kind": "matka",
+      "source": "perhe:wa",
+      "note": "Paluu kisamatkalta · mukana: AUKI"
     },
     {
       "date": "2026-11-01",
@@ -3472,7 +3495,10 @@
       "place": "Luola",
       "kind": "treeni",
       "source": "gcal:voimistelu",
-      "driver": "Meidän"
+      "driver": "Meidän",
+      "except": [
+        "2026-10-30"
+      ]
     }
   ]
 }

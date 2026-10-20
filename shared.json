@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792419799996,
+  "updated": 1792467738566,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -686,6 +686,59 @@
       "end": "18:30",
       "place": "Luola",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-milla-jakso1-uusinta-2026-10-28",
+      "who": "milla",
+      "title": "Jakso 1 pitkä uusinta",
+      "date": "2026-10-28",
+      "start": "14:30",
+      "end": "17:30",
+      "kind": "info",
+      "note": "Wilma 20.10.2026 · vain jos ilmoittautunut uusintaan 21.–23.10.",
+      "place": "Klassillinen lukio"
+    },
+    {
+      "id": "info-wilma-milla-sijoittajakoulu-2026-10-21",
+      "who": "milla",
+      "title": "Sijoittajakoulu",
+      "date": "2026-10-21",
+      "start": "14:30",
+      "end": "15:45",
+      "kind": "info",
+      "note": "Wilma Ro-asialista 20.10.2026",
+      "place": "Klassillinen lukio"
+    },
+    {
+      "id": "info-wilma-milla-lyseon-paiva-2026-10-23",
+      "who": "milla",
+      "title": "Lyseon päivä (Kuopion Lyseo)",
+      "date": "2026-10-23",
+      "start": "11:00",
+      "end": "14:20",
+      "kind": "info",
+      "note": "Wilma 20.10.2026 · Lyseolla ei normaaleja tunteja; ei kerrottu vaikuttaako Millan tunteihin",
+      "place": "Kuopion Lyseo"
+    },
+    {
+      "id": "info-wilma-milla-laksypajat-2026-10-26",
+      "who": "milla",
+      "title": "Läksypajat (EN+RU 210, MA 231)",
+      "date": "2026-10-26",
+      "start": "08:45",
+      "end": "09:30",
+      "kind": "info",
+      "note": "Wilma 20.10.2026",
+      "place": "Klassillinen lukio"
+    },
+    {
+      "id": "info-wilma-mea-luokanvalvoja-poissa-2026-10-26",
+      "who": "mea",
+      "title": "Mea: luokanvalvoja Jenni Kärkkäinen poissa",
+      "date": "2026-10-26",
+      "dateEnd": "2026-10-30",
+      "kind": "info",
+      "note": "Wilma 20.10.2026 · kiireelliset asiat rehtorille"
     }
   ],
   "schoolLunch": {

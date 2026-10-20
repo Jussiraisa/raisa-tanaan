@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792467738566,
+  "updated": 1792469327424,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -314,18 +314,58 @@
   "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida kisa 24.10 vai 31.10? Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
     {
-      "id": "cal-anukutj29feimeedudotbr56ms",
-      "title": "Milla · Podcast-tehtävä Teamsiin",
-      "date": "2026-10-19",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261020T140000Z",
       "title": "Mea valmennus",
       "date": "2026-10-20",
       "start": "17:00",
       "end": "17:45",
       "kind": "cal"
+    },
+    {
+      "id": "cal-9i1oo22taj307l8gpacnrm52c4",
+      "title": "Mea · RUB iso koe",
+      "date": "2026-10-21",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-pi9d81fa9lumiaelvjhk88t32g",
+      "title": "Milla: Uusintaan ilmoittautuminen auki (Forms-linkki Wilmassa)",
+      "date": "2026-10-21",
+      "dateEnd": "2026-10-23",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-99acg3oel23mnegsaaus2aoj28",
+      "title": "Perhe · Suun terveydenhuolto (mobiili) Aurinkorinne",
+      "date": "2026-10-21",
+      "dateEnd": "2026-11-12",
+      "kind": "cal",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
+      "id": "cal-th4tksvhqq0u0lntcoippeveg8",
+      "title": "Milla: Palautepäivä (lyhyet tunnit 8:10–11, normaalit tunnit klo 11 alkaen)",
+      "date": "2026-10-21",
+      "start": "08:10",
+      "end": "11:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-nd9eu6h87b9ujq5ani0ecd2cks",
+      "title": "Mea · terapia",
+      "date": "2026-10-21",
+      "start": "09:00",
+      "end": "10:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-2pq2clsnaoq00ufi91etktqnm0",
+      "title": "Milla: Sijoittajakoulu",
+      "date": "2026-10-21",
+      "start": "14:30",
+      "end": "15:45",
+      "kind": "cal",
+      "place": "Klassillinen lukio"
     },
     {
       "id": "info-wilma-milla-podcast-2026-10-19",

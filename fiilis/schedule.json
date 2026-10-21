@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-20T06:50:00+03:00",
+  "updated": "2026-10-21T05:55:00+03:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -183,7 +183,7 @@
       ]
     }
   ],
-  "note": "Synkka 20.10.2026 aamu: Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Ei Jussin työreissua (Teams-palaverit, Veturi Roadshow Kuopio to 22.10, Nordea-lounas Kuopio ti 27.10). Riikka ei poissa 20.–31.10. Lisätty Millan palautepäivä ke 21.10 (koulu 8.10, lyhyet tunnit 8.10–11), YH käsitekoe to 22.10 klo 8.10 ja uusintaan ilmoittautuminen 21.–23.10 (Wilma). Kyydit ennallaan.",
+  "note": "Synkka 21.10.2026 aamu: Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Ei Jussin työreissua (Veturi Roadshow Kuopio to 22.10, Nordea-lounas Kuopio ti 27.10). Riikka ei poissa 21.–31.10. Lisätty Millan Sijoittajakoulu ke 21.10 klo 14.30–15.45 (Wilma). Kyydit ennallaan.",
   "events": [
     {
       "date": "2026-09-20",
@@ -1687,6 +1687,17 @@
       "kind": "muu",
       "source": "wilma:perhe",
       "note": "koulu alkaa 8.10 (ei 9.40) · lyhyet tunnit 8.10–11, normaalit tunnit klo 11 alkaen"
+    },
+    {
+      "date": "2026-10-21",
+      "time": "14:30",
+      "end": "15:45",
+      "who": "Milla",
+      "title": "Sijoittajakoulu",
+      "place": "Klassillinen lukio",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "Wilma Ro-asialista 20.10."
     },
     {
       "date": "2026-10-21",

@@ -50,7 +50,11 @@ def esc(s: str) -> str:
 def parse_iso_dt(s: str) -> datetime:
     if s.endswith("Z"):
         s = s[:-1] + "+00:00"
-    return datetime.fromisoformat(s)
+    dt = datetime.fromisoformat(s)
+    if dt.tzinfo is not None:
+        from zoneinfo import ZoneInfo
+        dt = dt.astimezone(ZoneInfo("Europe/Helsinki"))
+    return dt
 
 
 def event_bounds(e: dict) -> tuple[date, date, bool, str | None]:

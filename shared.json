@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792555985181,
+  "updated": 1792556307003,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -538,15 +538,6 @@
       "date": "2026-10-20",
       "dateEnd": "2026-11-03",
       "kind": "info"
-    },
-    {
-      "id": "info-perhe-matkahuolto-nouto-2026-10-20",
-      "who": "perhe",
-      "title": "Matkahuolto-paketti: nouto viimeistään tänään",
-      "date": "2026-10-20",
-      "kind": "info",
-      "place": "S-market Keilankanta",
-      "note": "Verkkokauppa.com · koodi sähköpostissa"
     },
     {
       "id": "info-perhe-posti-noudot-2026-10-21",

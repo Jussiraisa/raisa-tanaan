@@ -446,12 +446,12 @@
       "note": "kirjoitelma tekijänoikeuksista + Forms-kysely, tiimitehtäviä"
     },
     {
-      "id": "info-wilma-mea-ena3-koe-2026-11-12",
-      "who": "mea",
-      "title": "ENA3-koe",
-      "date": "2026-11-12",
+      "id": "info-wilma-milla-influenssarokotus-2026-11-09",
+      "who": "milla",
+      "title": "Influenssarokotus (ajanvaraus) 9.11. tai 11.11.",
+      "date": "2026-11-09",
       "kind": "info",
-      "note": "Wilma 6.10."
+      "note": "Wilma 21.10., th Heli Kolehmainen: rokotukset ma 9.11. ja ke 11.11. ajanvarauksella. Varaus p. 044 718 6561 ma–pe 8–9, OmaSavo tai neuvontapiste ma–pe 12–12.45. Maksuton riskiryhmille, muut resepti opiskeluterveydenhuollosta."
     },
     {
       "id": "info-wilma-milla-op05-ilmastodiagrammi-2026-11-18",
@@ -460,6 +460,14 @@
       "date": "2026-11-18",
       "kind": "info",
       "note": "Wilma 6.10."
+    },
+    {
+      "id": "info-wilma-mea-ena3-koe-2026-11-19",
+      "who": "mea",
+      "title": "ENA3-koe",
+      "date": "2026-11-19",
+      "kind": "info",
+      "note": "Wilma 6.10.; siirretty 12.11. → 19.11. (Wilma 21.10.)"
     },
     {
       "id": "info-wilma-mea-rub3-koe-2026-11-27",

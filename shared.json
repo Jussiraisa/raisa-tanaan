@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792556307003,
+  "updated": 1792566288540,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -340,14 +340,6 @@
       "date": "2026-10-21",
       "start": "08:10",
       "end": "11:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-nd9eu6h87b9ujq5ani0ecd2cks",
-      "title": "Mea · terapia",
-      "date": "2026-10-21",
-      "start": "09:00",
-      "end": "10:00",
       "kind": "cal"
     },
     {

@@ -311,7 +311,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida Kalakukko Cup la 24.10 (WA) – sama päivä kuin Riikan juhlat Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
+  "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida Kalakukko Cup la 24.10 PERUTTU · Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
     {
       "id": "cal-9i1oo22taj307l8gpacnrm52c4",
@@ -562,14 +562,6 @@
       "date": "2026-10-29",
       "kind": "info",
       "note": "WA: sali muussa käytössä · ei kyytiä · kalenterissa vielä"
-    },
-    {
-      "id": "info-milla-vivida-kalakukko-cup-2026-10-24",
-      "who": "milla",
-      "title": "Vivida Kalakukko Cup? (tarkista)",
-      "date": "2026-10-24",
-      "kind": "info",
-      "note": "WA: 1. kisa 24.10 · kalenterissa 'TTNV Cup' 31.10 · erityisruokavalio kisaruokaan?"
     },
     {
       "id": "info-samuel-intersport-6723-2026-10-28",

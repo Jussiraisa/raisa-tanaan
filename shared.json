@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792508891132,
+  "updated": 1792555293372,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -758,9 +758,9 @@
     }
   ],
   "schoolLunch": {
-    "date": "2026-10-20",
-    "dish": "Puurobaari: kaurasuurimopuuroa + raejuustoa, mustaherukkahilloa, omenasosetta",
-    "veg": "sama (puurobaari)"
+    "date": "2026-10-21",
+    "dish": "Kirjolohipyöryköitä + kermaviilikastiketta + perunaa",
+    "veg": "Porkkanapyöryköitä + kermaviilikastiketta"
   },
   "vacation": {
     "from": "2026-10-12",

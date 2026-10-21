@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792566288540,
+  "updated": 1792570077778,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -333,14 +333,6 @@
       "dateEnd": "2026-11-12",
       "kind": "cal",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "cal-th4tksvhqq0u0lntcoippeveg8",
-      "title": "Milla: Palautepäivä (lyhyet tunnit 8:10–11, normaalit tunnit klo 11 alkaen)",
-      "date": "2026-10-21",
-      "start": "08:10",
-      "end": "11:00",
-      "kind": "cal"
     },
     {
       "id": "cal-2pq2clsnaoq00ufi91etktqnm0",

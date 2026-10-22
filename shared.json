@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792642189792,
+  "updated": 1792642974174,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -371,14 +371,6 @@
       "kind": "cal"
     },
     {
-      "id": "info-wilma-mea-rub-koe-2026-10-21",
-      "who": "mea",
-      "title": "RUB iso koe (ruotsi)",
-      "date": "2026-10-21",
-      "kind": "info",
-      "note": "sanajärjestys, luonto/eläinsanasto, kpl 1–2, imperfekti, lukusanat"
-    },
-    {
       "id": "info-wilma-mea-bi3-koe-2026-10-27",
       "who": "mea",
       "title": "BI3-koe",
@@ -551,14 +543,6 @@
       "kind": "info"
     },
     {
-      "id": "info-perhe-posti-noudot-2026-10-21",
-      "who": "perhe",
-      "title": "Posti-paketit (2): nouto viimeistään tänään",
-      "date": "2026-10-21",
-      "kind": "info",
-      "note": "Keilankannan automaatti (lokero 70) + K-Market Pirtinportti · koodit sähköpostissa"
-    },
-    {
       "id": "info-samuel-welhot-peruttu-2026-10-22",
       "who": "samuel",
       "title": "Welhot to-treeni PERUTTU",
@@ -718,23 +702,13 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-mea-2026-10-21",
+      "id": "sheet-mea-2026-10-23",
       "who": "mea",
       "title": "Lianna",
-      "date": "2026-10-21",
+      "date": "2026-10-23",
       "start": "18:00",
       "end": "20:30",
       "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-10-21",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-21",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
       "kind": "treeni"
     }
   ],

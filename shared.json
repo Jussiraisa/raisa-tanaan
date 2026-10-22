@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792674906941,
+  "updated": 1792678787208,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -644,64 +644,6 @@
       "note": "Wilma 20.10.2026 · kiireelliset asiat rehtorille"
     },
     {
-      "id": "info-ambrosia-2026-10-30",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-30",
-      "kind": "info",
-      "place": "Helsinki",
-      "dateEnd": "2026-10-31",
-      "note": "kulku Juna; huoltaja Pipsa"
-    },
-    {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-23",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
       "id": "info-wilma-ellen-ym7-koe-2026-10-29",
       "who": "ellen",
       "title": "YM7-koe: Metsät ja suot",
@@ -772,6 +714,64 @@
       "dateEnd": "2026-10-23",
       "kind": "info",
       "note": "Wilma 22.10. · Samuelin & Ellenin koulureitti · asfaltointi myöhemmin koulupäivänä, pvm ei tiedossa"
+    },
+    {
+      "id": "info-ambrosia-2026-10-30",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Helsinki",
+      "date": "2026-10-30",
+      "kind": "info",
+      "place": "Helsinki",
+      "dateEnd": "2026-10-31",
+      "note": "kulku Juna; huoltaja Pipsa"
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto/juna+taksi"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-10-23",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-23",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792593238496,
+  "updated": 1792642134923,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -314,12 +314,6 @@
   "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida Kalakukko Cup la 24.10 PERUTTU · Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
     {
-      "id": "cal-9i1oo22taj307l8gpacnrm52c4",
-      "title": "Mea · RUB iso koe",
-      "date": "2026-10-21",
-      "kind": "cal"
-    },
-    {
       "id": "cal-pi9d81fa9lumiaelvjhk88t32g",
       "title": "Milla: Uusintaan ilmoittautuminen auki (Forms-linkki Wilmassa)",
       "date": "2026-10-21",
@@ -340,6 +334,40 @@
       "date": "2026-10-22",
       "start": "08:10",
       "end": "09:25",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-1u3uv9ded301m7gkgq50ejd2as",
+      "title": "Mea · äidinkielen koe",
+      "date": "2026-10-23",
+      "start": "08:50",
+      "end": "09:35",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-lve2e23k6ub8qd5drr7ufhi5ck",
+      "title": "Milla: Lyseon päivä (Kuopion Lyseo)",
+      "date": "2026-10-23",
+      "start": "11:00",
+      "end": "14:20",
+      "kind": "cal",
+      "place": "Kuopion Lyseo"
+    },
+    {
+      "id": "cal-_8d23ae9i74rjab9n850j6b9k610j6ba18co48ba27513agi68l132d2260",
+      "title": "Millan mopo huolto",
+      "date": "2026-10-23",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "cal",
+      "place": "Kääpäkuja 12\nKuopio, Suomi"
+    },
+    {
+      "id": "cal-_8osjcgpo850k2b9n6srkab9k6114aba270qjcba2710j2g9k6h2j4c1m60",
+      "title": "Muista m16 aluslevy",
+      "date": "2026-10-23",
+      "start": "14:00",
+      "end": "15:00",
       "kind": "cal"
     },
     {

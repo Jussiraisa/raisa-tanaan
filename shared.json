@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792652705474,
+  "updated": 1792661080405,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -583,16 +583,6 @@
       "dateEnd": "2026-10-23",
       "kind": "info",
       "note": "Wilma 18.10. Jenni Kärkkäinen: \"Olen ensi viikon poissa\" · MA-tunneilla mahdollisesti sijainen"
-    },
-    {
-      "id": "info-wilma-milla-yh-kasitekoe-2026-10-22",
-      "who": "milla",
-      "title": "YH käsitekoe 1. osa",
-      "date": "2026-10-22",
-      "start": "08:10",
-      "end": "09:25",
-      "kind": "info",
-      "note": "Wilma 19.10. YH01.3 Suomalainen yhteiskunta · Risto Vuori · 25 käsitettä/osa, 2 osaa à 10 p · koko koe 20 % arvosanasta"
     },
     {
       "id": "info-wilma-milla-uusintailmo-2026-10-21",

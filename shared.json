@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792673985979,
+  "updated": 1792674906941,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -344,6 +344,14 @@
       "end": "14:20",
       "kind": "cal",
       "place": "Kuopion Lyseo"
+    },
+    {
+      "id": "cal-segi8fi5rk24irb190fnc8ksps",
+      "title": "Milla · DL uusintaan ilmoittautuminen klo 14:30",
+      "date": "2026-10-23",
+      "start": "14:00",
+      "end": "14:30",
+      "kind": "cal"
     },
     {
       "id": "cal-_8d23ae9i74rjab9n850j6b9k610j6ba18co48ba27513agi68l132d2260",

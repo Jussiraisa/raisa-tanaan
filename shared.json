@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792728275635,
+  "updated": 1792729275080,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -559,14 +559,6 @@
       "kind": "info"
     },
     {
-      "id": "info-samuel-welhot-peruttu-2026-10-22",
-      "who": "samuel",
-      "title": "Welhot to-treeni PERUTTU",
-      "date": "2026-10-22",
-      "kind": "info",
-      "note": "WA: sali muussa käytössä · ei kyytiä · kalenterissa vielä"
-    },
-    {
       "id": "info-samuel-welhot-peruttu-2026-10-29",
       "who": "samuel",
       "title": "Welhot to-treeni PERUTTU",
@@ -786,6 +778,16 @@
       "date": "2026-10-23",
       "start": "18:00",
       "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-24",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-24",
+      "start": "12:30",
+      "end": "15:00",
       "place": "",
       "kind": "treeni"
     }

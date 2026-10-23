@@ -1690,6 +1690,16 @@
     },
     {
       "date": "2026-10-21",
+      "time": "09:00",
+      "end": "10:00",
+      "who": "Mea",
+      "title": "Terapia",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Perhe-kalenteri (lisätty 13.10.)"
+    },
+    {
+      "date": "2026-10-21",
       "time": "14:30",
       "end": "15:45",
       "who": "Milla",
@@ -1698,16 +1708,6 @@
       "kind": "muu",
       "source": "wilma:perhe",
       "note": "Wilma Ro-asialista 20.10."
-    },
-    {
-      "date": "2026-10-21",
-      "time": "09:00",
-      "end": "10:00",
-      "who": "Mea",
-      "title": "Terapia",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Perhe-kalenteri (lisätty 13.10.)"
     },
     {
       "date": "2026-10-21",
@@ -1742,6 +1742,16 @@
     },
     {
       "who": "Milla",
+      "title": "Yh käsiteloe",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-10-22",
+      "time": "08:10",
+      "end": "09:25",
+      "note": "koe · YH01.3 Suomalainen yhteiskunta, käsitekoe 1. osa (Wilma 19.10.)"
+    },
+    {
+      "who": "Milla",
       "title": "Valmennus tuuraamaan",
       "kind": "treeni",
       "source": "ical:milla",
@@ -1757,16 +1767,6 @@
       "date": "2026-10-22",
       "time": "18:00",
       "end": "19:00"
-    },
-    {
-      "who": "Milla",
-      "title": "Yh käsiteloe",
-      "kind": "muu",
-      "source": "ical:milla",
-      "date": "2026-10-22",
-      "time": "08:10",
-      "end": "09:25",
-      "note": "koe · YH01.3 Suomalainen yhteiskunta, käsitekoe 1. osa (Wilma 19.10.)"
     },
     {
       "date": "2026-10-23",
@@ -1920,22 +1920,21 @@
     },
     {
       "who": "Milla",
+      "title": "Kynsihuolto",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-10-29",
+      "time": "16:15",
+      "end": "17:15"
+    },
+    {
+      "who": "Milla",
       "title": "Yh oppimisessee",
       "kind": "muu",
       "source": "ical:milla",
       "date": "2026-10-29",
       "time": "21:00",
       "end": "22:00"
-    },
-    {
-      "date": "2026-10-30",
-      "time": "18:00",
-      "end": "20:30",
-      "who": "Milla",
-      "title": "Vivida treeni",
-      "place": "Bella Center",
-      "kind": "treeni",
-      "source": "gcal:voimistelu"
     },
     {
       "date": "2026-10-30",
@@ -1947,6 +1946,16 @@
       "place": "Scandic Park",
       "source": "perhe:wa",
       "note": "Kisamatka Helsinkiin pe 30.10.–la 31.10. junalla · hotelli Scandic Park · paluu la 15:24–19:50 · mukana: AUKI"
+    },
+    {
+      "date": "2026-10-30",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Milla",
+      "title": "Vivida treeni",
+      "place": "Bella Center",
+      "kind": "treeni",
+      "source": "gcal:voimistelu"
     },
     {
       "who": "Milla",
@@ -1979,6 +1988,16 @@
     },
     {
       "date": "2026-10-31",
+      "time": "15:24",
+      "end": "19:50",
+      "who": "Ellen",
+      "title": "Ambrosia kisamatka: paluujuna Helsingistä",
+      "kind": "matka",
+      "source": "perhe:wa",
+      "note": "Paluu kisamatkalta · mukana: AUKI"
+    },
+    {
+      "date": "2026-10-31",
       "who": "Milla",
       "title": "Vivida kisat · TTNV Cup",
       "kind": "kisa",
@@ -1990,16 +2009,6 @@
       "title": "Pyhäinpäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
-    },
-    {
-      "date": "2026-10-31",
-      "time": "15:24",
-      "end": "19:50",
-      "who": "Ellen",
-      "title": "Ambrosia kisamatka: paluujuna Helsingistä",
-      "kind": "matka",
-      "source": "perhe:wa",
-      "note": "Paluu kisamatkalta · mukana: AUKI"
     },
     {
       "date": "2026-11-01",

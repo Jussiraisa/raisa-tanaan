@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792678787208,
+  "updated": 1792728275635,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -368,6 +368,22 @@
       "date": "2026-10-23",
       "start": "14:00",
       "end": "15:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-g5d3th7rjgar3u2suo8j6epr38",
+      "title": "Ellin hautajaiset",
+      "date": "2026-10-24",
+      "start": "12:00",
+      "end": "14:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6sqj6d1p6spj4ba46d2j6b9k8kp4aba26so44ba4610jad1m6kq42d268k",
+      "title": "Riikka synttärit",
+      "date": "2026-10-24",
+      "start": "17:00",
+      "end": "18:00",
       "kind": "cal"
     },
     {

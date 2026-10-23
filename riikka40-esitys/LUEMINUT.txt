@@ -4,4 +4,4 @@ Näppäimet: F = koko näyttö, välilyönti = tauko, nuolet = edellinen/seuraav
 TV:n USB-tikulta toistoon käytä MP4-tiedostoa.
 Fontit: Cormorant Garamond ja Jost (SIL Open Font License 1.1), tekstit valmiiksi kuviksi renderöity.
 
-Verkkoversio: vaakasuunta 16:9. Jos selain raportoi pystynäkymän, esitys kierretään automaattisesti 90° (?rotate=0 pois, ?rotate=ccw toiseen suuntaan, ?rotate=cw pakota).
+Verkkoversio: vaakasuunta 16:9. Jos selain (ei puhelin/tabletti) raportoi pystynäkymän, esitys kierretään automaattisesti 90°; puhelimella pystyssä esitys näytetään oikein päin koko leveydellä (?rotate=0 pois, ?rotate=ccw toiseen suuntaan, ?rotate=cw pakota).

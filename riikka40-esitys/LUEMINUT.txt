@@ -1,7 +1,0 @@
-Riikka 40 – kevyt kuvaesitys
-Avaa index.html selaimella (toimii ilman verkkoyhteyttä). Esitys pyörii automaattisesti ja alkaa alusta lopussa.
-Näppäimet: F = koko näyttö, välilyönti = tauko, nuolet = edellinen/seuraava, Home = alkuun.
-TV:n USB-tikulta toistoon käytä MP4-tiedostoa.
-Fontit: Cormorant Garamond ja Jost (SIL Open Font License 1.1), tekstit valmiiksi kuviksi renderöity.
-
-Verkkoversio: vaakasuunta 16:9. Jos selain (ei puhelin/tabletti) raportoi pystynäkymän, esitys kierretään automaattisesti 90°; puhelimella pystyssä esitys näytetään oikein päin koko leveydellä (?rotate=0 pois, ?rotate=ccw toiseen suuntaan, ?rotate=cw pakota).

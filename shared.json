@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792729275080,
+  "updated": 1792739498657,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -327,14 +327,6 @@
       "dateEnd": "2026-11-12",
       "kind": "cal",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "cal-1u3uv9ded301m7gkgq50ejd2as",
-      "title": "Mea · äidinkielen koe",
-      "date": "2026-10-23",
-      "start": "08:50",
-      "end": "09:35",
-      "kind": "cal"
     },
     {
       "id": "cal-lve2e23k6ub8qd5drr7ufhi5ck",

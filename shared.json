@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792746922196,
+  "updated": 1792757673517,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -327,40 +327,6 @@
       "dateEnd": "2026-11-12",
       "kind": "cal",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "cal-lve2e23k6ub8qd5drr7ufhi5ck",
-      "title": "Milla: Lyseon päivä (Kuopion Lyseo)",
-      "date": "2026-10-23",
-      "start": "11:00",
-      "end": "14:20",
-      "kind": "cal",
-      "place": "Kuopion Lyseo"
-    },
-    {
-      "id": "cal-segi8fi5rk24irb190fnc8ksps",
-      "title": "Milla · DL uusintaan ilmoittautuminen klo 14:30",
-      "date": "2026-10-23",
-      "start": "14:00",
-      "end": "14:30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_8d23ae9i74rjab9n850j6b9k610j6ba18co48ba27513agi68l132d2260",
-      "title": "Millan mopo huolto",
-      "date": "2026-10-23",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal",
-      "place": "Kääpäkuja 12\nKuopio, Suomi"
-    },
-    {
-      "id": "cal-_8osjcgpo850k2b9n6srkab9k6114aba270qjcba2710j2g9k6h2j4c1m60",
-      "title": "Muista m16 aluslevy",
-      "date": "2026-10-23",
-      "start": "14:00",
-      "end": "15:00",
-      "kind": "cal"
     },
     {
       "id": "cal-g5d3th7rjgar3u2suo8j6epr38",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792757673517,
+  "updated": 1792765221423,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -567,17 +567,6 @@
       "kind": "info",
       "note": "Wilma 20.10.2026 · vain jos ilmoittautunut uusintaan 21.–23.10.",
       "place": "Klassillinen lukio"
-    },
-    {
-      "id": "info-wilma-milla-lyseon-paiva-2026-10-23",
-      "who": "milla",
-      "title": "Lyseon päivä (Kuopion Lyseo)",
-      "date": "2026-10-23",
-      "start": "11:00",
-      "end": "14:20",
-      "kind": "info",
-      "note": "Wilma 20.10.2026 · Lyseolla ei normaaleja tunteja; ei kerrottu vaikuttaako Millan tunteihin",
-      "place": "Kuopion Lyseo"
     },
     {
       "id": "info-wilma-milla-laksypajat-2026-10-26",

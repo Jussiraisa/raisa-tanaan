@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792820755684,
+  "updated": 1792840257740,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -320,14 +320,6 @@
       "dateEnd": "2026-11-12",
       "kind": "cal",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "cal-g5d3th7rjgar3u2suo8j6epr38",
-      "title": "Ellin hautajaiset",
-      "date": "2026-10-24",
-      "start": "12:00",
-      "end": "14:00",
-      "kind": "cal"
     },
     {
       "id": "cal-_6sqj6d1p6spj4ba46d2j6b9k8kp4aba26so44ba4610jad1m6kq42d268k",

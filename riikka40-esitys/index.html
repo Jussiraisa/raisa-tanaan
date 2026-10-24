@@ -1,7 +1,61 @@
 <!doctype html><html lang="fi"><head><meta charset="utf-8"><title>Riikka 40 – Tervetuloa</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <style>html,body{margin:0;width:100%;height:100%;background:#000;overflow:hidden;cursor:none}
-img{position:fixed;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 50%;display:block;image-orientation:from-image}</style></head>
-<body><video src="keepalive.mp4" autoplay muted loop playsinline style="position:fixed;left:0;top:0;width:2px;height:2px;opacity:.01"></video>
-<img src="riikka40_tervetuloa_v3.jpg?v=20261023c" alt="Paljon onnea, Riikka – Tervetuloa juhliin">
+#pic,#ka{position:fixed;left:0;top:0;width:100vw;height:100vh;object-fit:contain;object-position:50% 50%;display:block;margin:0;padding:0;border:0;background:#000}
+#pic{z-index:0;image-orientation:from-image}
+#ka{z-index:1;opacity:1;visibility:visible;pointer-events:none;transform:none}</style></head>
+<body>
+<img id="pic" src="riikka40_tervetuloa_v3.jpg?v=20261023c" alt="Paljon onnea, Riikka – Tervetuloa juhliin">
+<!-- Pysy päällä: sama keinot kuin infonäytön lg-keepalive.js (koko ruudun toistuva video,
+     wake lock, webOS activityStart, hiljainen ääni). LG sammuttaa ruudun, jos video on piilossa
+     tai vain nurkassa, joten tervetulokuva itse on koko ruudun video. Ei uudelleenohjauksia. -->
+<video id="ka" src="riikka40_tervetuloa_v3.mp4?v=20261024a" poster="riikka40_tervetuloa_v3.jpg?v=20261023c"
+  muted autoplay loop playsinline webkit-playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+<script>
+(function () {
+  var MP4 = "riikka40_tervetuloa_v3.mp4?v=20261024a";
+  var v = document.getElementById("ka");
+  function playHard() {
+    try { v.muted = true; v.defaultMuted = true; v.volume = 0; v.loop = true;
+      var p = v.play(); if (p && p["catch"]) p["catch"](function () {}); } catch (e) {}
+  }
+  function requestWake() {
+    try { if (navigator.wakeLock && navigator.wakeLock.request) navigator.wakeLock.request("screen")["catch"](function () {}); } catch (e) {}
+  }
+  function webosHold() {
+    try {
+      if (!(window.webOS && webOS.service && webOS.service.request)) return;
+      webOS.service.request("luna://com.palm.power/com/palm/power", {
+        method: "activityStart", parameters: { id: "riikka40-keepalive", duration_ms: 900000 },
+        onSuccess: function () {}, onFailure: function () {} });
+    } catch (e) {}
+  }
+  function startAudio() {
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+      var ac = new AC(), osc = ac.createOscillator(), gain = ac.createGain();
+      gain.gain.value = 0.00002; osc.frequency.value = 40;
+      osc.connect(gain); gain.connect(ac.destination); osc.start();
+      setInterval(function () { try { if (ac.state === "suspended") ac.resume(); } catch (e) {} }, 12000);
+    } catch (e) {}
+  }
+  function kick() {
+    if (!v.getAttribute("src")) v.src = MP4;
+    playHard(); requestWake(); webosHold();
+  }
+  v.addEventListener("loadeddata", playHard);
+  v.addEventListener("canplay", playHard);
+  v.addEventListener("playing", function () { requestWake(); webosHold(); });
+  v.addEventListener("pause", function () { setTimeout(kick, 200); });
+  v.addEventListener("ended", playHard);
+  v.addEventListener("error", function () {
+    setTimeout(function () { v.src = MP4 + "&r=" + Date.now(); playHard(); }, 3000);
+  });
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) kick(); });
+  startAudio();
+  kick(); setTimeout(kick, 500); setTimeout(kick, 2000);
+  setInterval(kick, 5000); setInterval(requestWake, 25000); setInterval(webosHold, 90000);
+})();
+</script>
 </body></html>

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792815034745,
+  "updated": 1792820755684,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -311,7 +311,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida Kalakukko Cup la 24.10 PERUTTU · Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
+  "note": "Tee: maksa Welhot 260 € (2 myöhässä, 1 erä pe 30.10) · KP Fishing -nouto ti 27.10 mennessä · jaa la 31.10 tehtävät (Samuelin turnaus, Millan kisat, Mea Lianna, Ellen asemalta 19:50) · varaa Noccon rokotus. Welhot to 29.10 ei treeniä. Kirjastot kiinni 3.11. asti.",
   "extras": [
     {
       "id": "cal-99acg3oel23mnegsaaus2aoj28",
@@ -736,6 +736,66 @@
       "end": "15:00",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-ellen-paluu-2026-10-31",
+      "who": "ellen",
+      "title": "Ellen kotiin Helsingistä · haku Kuopion asemalta",
+      "date": "2026-10-31",
+      "start": "19:50",
+      "place": "Kuopion rautatieasema",
+      "kind": "info",
+      "note": "Paluujuna 15.24–19.50 · sovi hakija (la 31.10 täysi päivä)"
+    },
+    {
+      "id": "info-samuel-welhot-laskut-2026-10-30",
+      "who": "samuel",
+      "title": "Welhot-laskut 260 € (19818+19889 myöhässä, 20544 erä 30.10)",
+      "date": "2026-10-30",
+      "kind": "info",
+      "note": "19818 aloitusmaksu 100 € · 19889 jäsenmaksu 60 € · 20544 kk-maksu loka 100 € · viitteet raportissa"
+    },
+    {
+      "id": "info-perhe-kp-fishing-nouto-2026-10-27",
+      "who": "perhe",
+      "title": "Nouto: KP Fishing -paketti (Posti) viimeistään tänään",
+      "date": "2026-10-27",
+      "place": "K-Market Pirtinportti, Sipulikatu 2",
+      "kind": "info",
+      "note": "Noutokoodi sähköpostissa / raportissa"
+    },
+    {
+      "id": "info-samuel-kortti-piste-34085-2026-11-02",
+      "who": "samuel",
+      "title": "Kortti-Piste 34085 eräpäivä 24,65 € (joukkueen lasku)",
+      "date": "2026-11-02",
+      "kind": "info",
+      "note": "ei henkilökohtainen → joukkueen rahastonhoitaja"
+    },
+    {
+      "id": "info-mea-rippikoulu-muutostoiveet-2026-11-03",
+      "who": "mea",
+      "title": "DL: rippikoulun (Rytky 9) muutostoiveet",
+      "date": "2026-11-03",
+      "kind": "info",
+      "note": "Kirjallisesti reetta.ojanpera@evl.fi + miika.koistinen@evl.fi · vain jos muutettavaa"
+    },
+    {
+      "id": "info-ellen-ambrosia-pe-ei-treenia-2026-10-30",
+      "who": "ellen",
+      "title": "Ambrosia pe-treeni: ei tarvita (Ellen kisareissulla)",
+      "date": "2026-10-30",
+      "kind": "info",
+      "note": "Ei vientiä Luolaan · Ellen Helsingissä 30.–31.10"
+    },
+    {
+      "id": "info-perhe-nocco-rokotus-2026-10-26",
+      "who": "perhe",
+      "title": "Nocco: rokotus – aika vielä varaamatta",
+      "date": "2026-10-26",
+      "dateEnd": "2026-10-30",
+      "kind": "info",
+      "note": "Varaa aika eläinlääkäriltä"
     }
   ],
   "schoolLunch": {

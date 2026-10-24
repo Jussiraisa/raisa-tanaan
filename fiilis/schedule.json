@@ -1920,15 +1920,6 @@
     },
     {
       "who": "Milla",
-      "title": "Kynsihuolto",
-      "kind": "muu",
-      "source": "ical:milla",
-      "date": "2026-10-29",
-      "time": "16:15",
-      "end": "17:15"
-    },
-    {
-      "who": "Milla",
       "title": "Yh oppimisessee",
       "kind": "muu",
       "source": "ical:milla",

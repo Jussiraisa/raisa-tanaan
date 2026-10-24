@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792765221423,
+  "updated": 1792815034745,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -314,13 +314,6 @@
   "note": "Tee: Welhot-maksut 160 € (myöhässä) · MyClub-laskutus su · Nimenhuuto ma+ti · paketit ti–ke · Elli-maksutapa · Vivida Kalakukko Cup la 24.10 PERUTTU · Mea Lianna su: meiltä vienti, Enni hakee. Welhot to 22.10 + 29.10 ei treenejä. Kirjastot kiinni 20.10.–3.11.",
   "extras": [
     {
-      "id": "cal-pi9d81fa9lumiaelvjhk88t32g",
-      "title": "Milla: Uusintaan ilmoittautuminen auki (Forms-linkki Wilmassa)",
-      "date": "2026-10-21",
-      "dateEnd": "2026-10-23",
-      "kind": "cal"
-    },
-    {
       "id": "cal-99acg3oel23mnegsaaus2aoj28",
       "title": "Perhe · Suun terveydenhuolto (mobiili) Aurinkorinne",
       "date": "2026-10-21",
@@ -342,6 +335,22 @@
       "date": "2026-10-24",
       "start": "17:00",
       "end": "18:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261025T073000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-10-25",
+      "start": "09:30",
+      "end": "11:30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6h332e9h6sq4ab9j8h0j2b9k69148b9p6p0j8b9l8gp48h9h6h1jgc9h84",
+      "title": "Riikka synttärit sukulaiset",
+      "date": "2026-10-25",
+      "start": "10:00",
+      "end": "11:00",
       "kind": "cal"
     },
     {

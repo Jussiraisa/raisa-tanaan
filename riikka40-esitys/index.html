@@ -1,4 +1,4 @@
-<!doctype html><html lang="fi"><head><meta charset="utf-8"><title>Riikka 40 – Tervetuloa</title>
+<!doctype html><html lang="fi"><head><meta charset="utf-8"><title>Riikka 40 – Juhlakooste</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <style>html,body{margin:0;width:100%;height:100%;background:#000;overflow:hidden;cursor:none}
@@ -6,19 +6,34 @@
 #pic{z-index:0;image-orientation:from-image}
 #ka{z-index:1;opacity:1;visibility:visible;pointer-events:none;transform:none}</style></head>
 <body>
-<img id="pic" src="riikka40_tervetuloa_v3.jpg?v=20261023c" alt="Paljon onnea, Riikka – Tervetuloa juhliin">
-<!-- Pysy päällä: sama keinot kuin infonäytön lg-keepalive.js (koko ruudun toistuva video,
-     wake lock, webOS activityStart, hiljainen ääni). LG sammuttaa ruudun, jos video on piilossa
-     tai vain nurkassa, joten tervetulokuva itse on koko ruudun video. Ei uudelleenohjauksia. -->
-<video id="ka" src="riikka40_tervetuloa_v3.mp4?v=20261024a" poster="riikka40_tervetuloa_v3.jpg?v=20261023c"
-  muted autoplay loop playsinline webkit-playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+<img id="pic" src="riikka40_juhlakooste_v3.jpg?v=20261025a" alt="Riikka 40 – juhlakooste">
+<!-- Juhlakooste v3 koko ruudulla, mykistettynä (TV:n autoplay vaatii muted).
+     Kooste toistuu kokonaan, sitten tervetulovideo ~10 s, sitten kooste uudelleen.
+     Pysy päällä: samat keinot kuin infonäytön lg-keepalive.js (koko ruudun video aina
+     toistossa, wake lock, webOS activityStart, hiljainen ääni). Ei uudelleenohjauksia. -->
+<video id="ka" src="riikka40_juhlakooste_v3.mp4?v=20261025a" poster="riikka40_juhlakooste_v3.jpg?v=20261025a"
+  muted autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
 <script>
 (function () {
-  var MP4 = "riikka40_tervetuloa_v3.mp4?v=20261024a";
+  var MAIN = "riikka40_juhlakooste_v3.mp4?v=20261025a";
+  var WELCOME = "riikka40_tervetuloa_v3.mp4?v=20261024a";
+  var WELCOME_MS = 10000;
   var v = document.getElementById("ka");
+  var mode = "main", welcomeTimer = null, lastT = -1, stuck = 0;
+
   function playHard() {
-    try { v.muted = true; v.defaultMuted = true; v.volume = 0; v.loop = true;
+    try { v.muted = true; v.defaultMuted = true; v.volume = 0; v.loop = (mode === "welcome");
       var p = v.play(); if (p && p["catch"]) p["catch"](function () {}); } catch (e) {}
+  }
+  function setSrc(src) { try { v.src = src; v.load(); } catch (e) {} playHard(); }
+  function toMain() {
+    if (welcomeTimer) { clearTimeout(welcomeTimer); welcomeTimer = null; }
+    mode = "main"; lastT = -1; stuck = 0; setSrc(MAIN);
+  }
+  function toWelcome() {
+    mode = "welcome"; lastT = -1; stuck = 0; setSrc(WELCOME);
+    if (welcomeTimer) clearTimeout(welcomeTimer);
+    welcomeTimer = setTimeout(toMain, WELCOME_MS);
   }
   function requestWake() {
     try { if (navigator.wakeLock && navigator.wakeLock.request) navigator.wakeLock.request("screen")["catch"](function () {}); } catch (e) {}
@@ -41,21 +56,31 @@
     } catch (e) {}
   }
   function kick() {
-    if (!v.getAttribute("src")) v.src = MP4;
+    if (!v.getAttribute("src")) v.src = (mode === "main") ? MAIN : WELCOME;
+    if (mode === "main" && v.ended) { toWelcome(); return; }
     playHard(); requestWake(); webosHold();
+  }
+  // Vahtikoira: jos toisto jumittaa ~30 s, ladataan kooste uudelleen.
+  function watchdog() {
+    var t = v.currentTime || 0;
+    if (t === lastT && !v.ended) { stuck++; if (stuck >= 6) toMain(); } else stuck = 0;
+    lastT = t;
   }
   v.addEventListener("loadeddata", playHard);
   v.addEventListener("canplay", playHard);
   v.addEventListener("playing", function () { requestWake(); webosHold(); });
-  v.addEventListener("pause", function () { setTimeout(kick, 200); });
-  v.addEventListener("ended", playHard);
+  v.addEventListener("pause", function () { if (!v.ended) setTimeout(kick, 200); });
+  v.addEventListener("ended", function () { if (mode === "main") toWelcome(); else playHard(); });
   v.addEventListener("error", function () {
-    setTimeout(function () { v.src = MP4 + "&r=" + Date.now(); playHard(); }, 3000);
+    setTimeout(function () {
+      if (mode === "main") toWelcome(); else { mode = "main"; setSrc(MAIN + "&r=" + Date.now()); }
+    }, 3000);
   });
   document.addEventListener("visibilitychange", function () { if (!document.hidden) kick(); });
   startAudio();
-  kick(); setTimeout(kick, 500); setTimeout(kick, 2000);
-  setInterval(kick, 5000); setInterval(requestWake, 25000); setInterval(webosHold, 90000);
+  playHard(); setTimeout(kick, 500); setTimeout(kick, 2000);
+  setInterval(kick, 5000); setInterval(watchdog, 5000);
+  setInterval(requestWake, 25000); setInterval(webosHold, 90000);
 })();
 </script>
 </body></html>

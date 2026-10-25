@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792905203350,
+  "updated": 1792919531500,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -327,14 +327,6 @@
       "date": "2026-10-25",
       "start": "09:30",
       "end": "11:30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_6h332e9h6sq4ab9j8h0j2b9k69148b9p6p0j8b9l8gp48h9h6h1jgc9h84",
-      "title": "Riikka synttärit sukulaiset",
-      "date": "2026-10-25",
-      "start": "10:00",
-      "end": "11:00",
       "kind": "cal"
     },
     {

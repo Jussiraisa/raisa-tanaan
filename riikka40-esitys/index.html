@@ -4,26 +4,59 @@
 <style>html,body{margin:0;width:100%;height:100%;background:#000;overflow:hidden;cursor:none}
 #pic,#ka{position:fixed;left:0;top:0;width:100vw;height:100vh;object-fit:contain;object-position:50% 50%;display:block;margin:0;padding:0;border:0;background:#000}
 #pic{z-index:0;image-orientation:from-image}
-#ka{z-index:1;opacity:1;visibility:visible;pointer-events:none;transform:none}</style></head>
+#ka{z-index:1;opacity:1;visibility:visible;pointer-events:none;transform:none}
+#snd{position:fixed;right:2.2vw;bottom:2.6vh;z-index:3;font:600 clamp(14px,1.5vw,26px)/1.2 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:#fff;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.45em .95em;
+  opacity:0;transition:opacity .8s ease;pointer-events:none;letter-spacing:.02em;text-shadow:0 1px 2px #000}
+#snd.on{opacity:.85}
+#hit{position:fixed;inset:0;z-index:2;background:transparent}</style></head>
 <body>
-<img id="pic" src="riikka40_juhlakooste_v3.jpg?v=20261025a" alt="Riikka 40 – juhlakooste">
-<!-- Juhlakooste v3 koko ruudulla, mykistettynä (TV:n autoplay vaatii muted).
-     Kooste toistuu kokonaan, sitten tervetulovideo ~10 s, sitten kooste uudelleen.
+<img id="pic" src="riikka40_juhlakooste_v4.jpg?v=20261025b" alt="Riikka 40 – juhlakooste">
+<!-- Juhlakooste v4 koko ruudulla. Oletuksena mykistettynä (TV:n autoplay vaatii muted).
+     Kooste toistuu kokonaan, sitten tervetulovideo ~10 s (aina mykistettynä), sitten kooste uudelleen.
+     Ääni: kaukosäätimen OK (Enter) / välilyönti / klikkaus vaihtaa koosteen äänen päälle/pois.
+     ?sound=1 yrittää äänellistä autoplayta ja palaa mykistettyyn, jos selain estää.
      Pysy päällä: samat keinot kuin infonäytön lg-keepalive.js (koko ruudun video aina
      toistossa, wake lock, webOS activityStart, hiljainen ääni). Ei uudelleenohjauksia. -->
-<video id="ka" src="riikka40_juhlakooste_v3.mp4?v=20261025a" poster="riikka40_juhlakooste_v3.jpg?v=20261025a"
+<video id="ka" src="riikka40_juhlakooste_v4.mp4?v=20261025b" poster="riikka40_juhlakooste_v4.jpg?v=20261025b"
   muted autoplay playsinline webkit-playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+<div id="hit" aria-hidden="true"></div>
+<div id="snd" role="status" aria-live="polite">Paina OK: ääni</div>
 <script>
 (function () {
-  var MAIN = "riikka40_juhlakooste_v3.mp4?v=20261025a";
+  var MAIN = "riikka40_juhlakooste_v4.mp4?v=20261025b";
   var WELCOME = "riikka40_tervetuloa_v3.mp4?v=20261024a";
-  var WELCOME_MS = 10000;
-  var v = document.getElementById("ka");
+  var WELCOME_MS = 10000, HINT_MS = 10000;
+  var v = document.getElementById("ka"), hint = document.getElementById("snd");
   var mode = "main", welcomeTimer = null, lastT = -1, stuck = 0;
+  // Ääni: soundOn = käyttäjä haluaa koosteeseen äänen. Tervetulovideo on aina mykistetty.
+  var soundOn = /[?&]sound=1(&|$)/.test(location.search), hintTimer = null, lastToggle = 0, ac = null;
 
+  function wantAudible() { return soundOn && mode === "main"; }
+  function applyAudio() {
+    try {
+      if (wantAudible()) { v.defaultMuted = false; v.muted = false; v.volume = 1; }
+      else { v.muted = true; v.defaultMuted = true; v.volume = 0; }
+    } catch (e) {}
+  }
+  function hintText() { return soundOn ? "\u266A Ääni päällä \u00B7 OK: mykistä" : "Paina OK: ääni"; }
+  function showHint(txt) {
+    hint.textContent = txt || hintText(); hint.className = "on";
+    if (hintTimer) clearTimeout(hintTimer);
+    hintTimer = setTimeout(function () { hint.className = ""; }, HINT_MS);
+  }
+  // Jos selain estää äänellisen toiston, palataan mykistettyyn eikä toisto pysähdy.
+  function fallbackMuted() {
+    soundOn = false; applyAudio();
+    try { var p = v.play(); if (p && p["catch"]) p["catch"](function () {}); } catch (e) {}
+    showHint("Paina OK: ääni");
+  }
   function playHard() {
-    try { v.muted = true; v.defaultMuted = true; v.volume = 0; v.loop = (mode === "welcome");
-      var p = v.play(); if (p && p["catch"]) p["catch"](function () {}); } catch (e) {}
+    try { applyAudio(); v.loop = (mode === "welcome");
+      var audible = !v.muted;
+      var p = v.play();
+      if (p && p["catch"]) p["catch"](function () { if (audible) fallbackMuted(); });
+    } catch (e) { if (!v.muted) fallbackMuted(); }
   }
   function setSrc(src) { try { v.src = src; v.load(); } catch (e) {} playHard(); }
   function toMain() {
@@ -49,7 +82,7 @@
   function startAudio() {
     try {
       var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
-      var ac = new AC(), osc = ac.createOscillator(), gain = ac.createGain();
+      ac = new AC(); var osc = ac.createOscillator(), gain = ac.createGain();
       gain.gain.value = 0.00002; osc.frequency.value = 40;
       osc.connect(gain); gain.connect(ac.destination); osc.start();
       setInterval(function () { try { if (ac.state === "suspended") ac.resume(); } catch (e) {} }, 12000);
@@ -66,6 +99,27 @@
     if (t === lastT && !v.ended) { stuck++; if (stuck >= 6) toMain(); } else stuck = 0;
     lastT = t;
   }
+  // Äänen vaihto (käyttäjän ele: OK/Enter, välilyönti, klikkaus/napautus).
+  function toggleSound() {
+    var now = Date.now(); if (now - lastToggle < 400) return; // OK voi laukaista sekä keydownin että clickin
+    lastToggle = now;
+    soundOn = !soundOn;
+    try { if (ac && ac.state === "suspended") ac.resume(); } catch (e) {}
+    playHard();
+    showHint(soundOn && mode !== "main" ? "\u266A Ääni päällä koosteessa" : hintText());
+  }
+  function isToggleKey(e) {
+    var k = e.key, c = e.keyCode || e.which;
+    return k === "Enter" || k === " " || k === "Spacebar" || k === "MediaPlayPause" || k === "m" || k === "M" ||
+      c === 13 || c === 32 || c === 415 || c === 19 || c === 10252;
+  }
+  document.addEventListener("keydown", function (e) {
+    if (isToggleKey(e)) { try { e.preventDefault(); } catch (x) {} toggleSound(); }
+    else showHint(); // muu näppäin (nuolet tms.): näytä vain vihje
+  }, true);
+  document.addEventListener("click", function () { toggleSound(); }, true);
+  document.addEventListener("touchend", function (e) { try { e.preventDefault(); } catch (x) {} toggleSound(); }, { passive: false });
+
   v.addEventListener("loadeddata", playHard);
   v.addEventListener("canplay", playHard);
   v.addEventListener("playing", function () { requestWake(); webosHold(); });
@@ -81,6 +135,7 @@
   playHard(); setTimeout(kick, 500); setTimeout(kick, 2000);
   setInterval(kick, 5000); setInterval(watchdog, 5000);
   setInterval(requestWake, 25000); setInterval(webosHold, 90000);
+  setTimeout(function () { showHint(); }, 1500);
 })();
 </script>
 </body></html>

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792919531500,
+  "updated": 1792927442455,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -320,14 +320,6 @@
       "dateEnd": "2026-11-12",
       "kind": "cal",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261025T073000Z",
-      "title": "Milla · valmennus",
-      "date": "2026-10-25",
-      "start": "09:30",
-      "end": "11:30",
-      "kind": "cal"
     },
     {
       "id": "cal-biha49icqsqh6h81lq0bd303s8",

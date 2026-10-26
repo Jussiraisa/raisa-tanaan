@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792992228123,
+  "updated": 1793009959449,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -336,15 +336,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-8s0f7e1qnv1vnj6o50keq16g40",
-      "title": "Milla: Läksypajat (EN+RU 210, MA 231)",
-      "date": "2026-10-26",
-      "start": "08:45",
-      "end": "09:30",
-      "kind": "cal",
-      "place": "Klassillinen lukio"
-    },
-    {
       "id": "cal-17csgogufqlgqv704t851na7l4",
       "title": "Askartelukulma: liimaus (Mean terapian aikaan)",
       "date": "2026-10-26",
@@ -589,17 +580,6 @@
       "end": "17:30",
       "kind": "info",
       "note": "Wilma 20.10.2026 · vain jos ilmoittautunut uusintaan 21.–23.10.",
-      "place": "Klassillinen lukio"
-    },
-    {
-      "id": "info-wilma-milla-laksypajat-2026-10-26",
-      "who": "milla",
-      "title": "Läksypajat (EN+RU 210, MA 231)",
-      "date": "2026-10-26",
-      "start": "08:45",
-      "end": "09:30",
-      "kind": "info",
-      "note": "Wilma 20.10.2026",
       "place": "Klassillinen lukio"
     },
     {

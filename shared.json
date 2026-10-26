@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793009959449,
+  "updated": 1793028331547,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -333,22 +333,6 @@
       "title": "Nocco: rokotus (varaa aika eläinlääkäriltä)",
       "date": "2026-10-26",
       "dateEnd": "2026-10-30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-17csgogufqlgqv704t851na7l4",
-      "title": "Askartelukulma: liimaus (Mean terapian aikaan)",
-      "date": "2026-10-26",
-      "start": "13:00",
-      "end": "14:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-gg0epo4ktl7ub63srp975uuc0g",
-      "title": "Mea · terapia (Minna Prousk / Ruuskanen / Heiläinen?)",
-      "date": "2026-10-26",
-      "start": "13:00",
-      "end": "14:00",
       "kind": "cal"
     },
     {

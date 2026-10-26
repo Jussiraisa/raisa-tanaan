@@ -1988,6 +1988,15 @@
       "note": "Paluu kisamatkalta · mukana: AUKI"
     },
     {
+      "who": "Milla",
+      "title": "Kynnet",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-10-31",
+      "time": "15:30",
+      "end": "16:30"
+    },
+    {
       "date": "2026-10-31",
       "who": "Milla",
       "title": "Vivida kisat · TTNV Cup",
@@ -2000,6 +2009,15 @@
       "title": "Pyhäinpäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
+    },
+    {
+      "who": "Milla",
+      "title": "Kisat tampere",
+      "kind": "kisa",
+      "source": "ical:milla",
+      "date": "2026-11-01",
+      "time": "15:00",
+      "end": "16:00"
     },
     {
       "date": "2026-11-01",

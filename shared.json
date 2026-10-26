@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1792927442455,
+  "updated": 1792992164196,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -548,24 +548,6 @@
       "kind": "info"
     },
     {
-      "id": "info-wilma-mea-ma-ope-poissa-2026-10-19",
-      "who": "mea",
-      "title": "Mea: matikan ope poissa koko viikon",
-      "date": "2026-10-19",
-      "dateEnd": "2026-10-23",
-      "kind": "info",
-      "note": "Wilma 18.10. Jenni Kärkkäinen: \"Olen ensi viikon poissa\" · MA-tunneilla mahdollisesti sijainen"
-    },
-    {
-      "id": "info-wilma-milla-uusintailmo-2026-10-21",
-      "who": "milla",
-      "title": "Uusintaan ilmoittautuminen auki (Forms-linkki Wilmassa)",
-      "date": "2026-10-21",
-      "dateEnd": "2026-10-23",
-      "kind": "info",
-      "note": "Wilma Ro-asialista 20.10.2026 · auki Ke 21.10. klo 08:00 – Pe 23.10. klo 14:30"
-    },
-    {
       "id": "info-wilma-milla-jakso1-uusinta-2026-10-28",
       "who": "milla",
       "title": "Jakso 1 pitkä uusinta",
@@ -632,15 +614,6 @@
       "note": "Wilma 22.10., th Noora Teittinen · ilmoitus 30.10. mennessä"
     },
     {
-      "id": "info-wilma-milla-uusintailmo-dl-2026-10-23",
-      "who": "milla",
-      "title": "DL: uusintaan ilmoittautuminen klo 14:30",
-      "date": "2026-10-23",
-      "start": "14:30",
-      "kind": "info",
-      "note": "Wilma Ro-asialista 20.10. · Forms-linkki Wilmassa · uusinta ke 28.10. klo 14:30–17:30"
-    },
-    {
       "id": "info-wilma-milla-luma-kahvila-2026-10-27",
       "who": "milla",
       "title": "Luma-kahvila (vapaaehtoinen)",
@@ -650,91 +623,6 @@
       "kind": "info",
       "note": "Wilma Ro-asialista 20.10. · vain tiedoksi",
       "place": "Klassillinen lukio"
-    },
-    {
-      "id": "info-wilma-samuel-ope-kirjoitusvapaa-2026-10-23",
-      "who": "samuel",
-      "title": "Ope Satu Pesonen-Kokko kirjoitusvapaalla to–pe",
-      "date": "2026-10-23",
-      "kind": "info",
-      "note": "Wilma 22.10. · poissa 22.–23.10."
-    },
-    {
-      "id": "info-wilma-perhe-pyoratie-auki-2026-10-22",
-      "who": "perhe",
-      "title": "Pyörätie Katajalehdonkatu–Lehtoniementie auki (sorapinta)",
-      "date": "2026-10-22",
-      "dateEnd": "2026-10-23",
-      "kind": "info",
-      "note": "Wilma 22.10. · Samuelin & Ellenin koulureitti · asfaltointi myöhemmin koulupäivänä, pvm ei tiedossa"
-    },
-    {
-      "id": "info-ambrosia-2026-10-30",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-30",
-      "kind": "info",
-      "place": "Helsinki",
-      "dateEnd": "2026-10-31",
-      "note": "kulku Juna; huoltaja Pipsa"
-    },
-    {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-10-23",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-23",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-10-24",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-24",
-      "start": "12:30",
-      "end": "15:00",
-      "place": "",
-      "kind": "treeni"
     },
     {
       "id": "info-ellen-paluu-2026-10-31",
@@ -795,6 +683,74 @@
       "dateEnd": "2026-10-30",
       "kind": "info",
       "note": "Varaa aika eläinlääkäriltä"
+    },
+    {
+      "id": "info-ambrosia-2026-10-30",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Helsinki",
+      "date": "2026-10-30",
+      "kind": "info",
+      "place": "Helsinki",
+      "dateEnd": "2026-10-31",
+      "note": "kulku Juna; huoltaja Pipsa"
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto/juna+taksi"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-10-26",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-26",
+      "start": "16:00",
+      "end": "17:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-10-26",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-10-26",
+      "start": "16:30",
+      "end": "17:30",
+      "place": "Luola",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

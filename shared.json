@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793078449456,
+  "updated": 1793078646522,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -762,23 +762,23 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-mea-2026-10-26",
+      "id": "sheet-mea-2026-10-28",
       "who": "mea",
       "title": "Lianna",
-      "date": "2026-10-26",
-      "start": "16:00",
-      "end": "17:30",
+      "date": "2026-10-28",
+      "start": "18:00",
+      "end": "20:30",
       "place": "",
       "kind": "treeni"
     },
     {
-      "id": "sheet-milla-2026-10-26",
+      "id": "sheet-milla-2026-10-28",
       "who": "milla",
       "title": "Vivida",
-      "date": "2026-10-26",
-      "start": "16:30",
-      "end": "17:30",
-      "place": "Luola",
+      "date": "2026-10-28",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
       "kind": "treeni"
     }
   ],

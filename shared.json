@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793165308489,
+  "updated": 1793165346467,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -437,12 +437,12 @@
       "who": "samuel",
       "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
       "date": "2026-10-31",
-      "place": "Studentia, Yliopistonranta 3, Kuopio",
+      "place": "Studentia, Yliopistonranta 3 (Savilahti, B-ovi)",
       "kind": "info",
       "driver": "",
       "status": "",
       "start": "10:00",
-      "note": "Tila aukeaa 10, vanhemmat kasaavat kaukalot · ekat pelit 11 (tulospalvelu.salibandy.fi) · tulostaulu/pöytäkirja 2 vanhempaa/kenttä 1,5–2 h vuoroissa · kanttiini 11–16, WA \"P9 taustajoukot\" (Riikka leipoo, ilm. 21.9, vuoroa ei sovittu)"
+      "note": "Kotiturnaus Studentia (Yliopistonranta 3, Savilahti, B-ovi) · tila auki klo 10 · ensimmäiset pelit klo 11 · otteluohjelma: https://tulospalvelu.salibandy.fi/category/558!sb2026sk/group/1/fixtures · Vanhemmilta talkoot: kaukaloiden ja penkkien kasaus, tulostaulu + ottelupöytäkirja (2 vanhempaa/kenttä, 1,5–2 h vuorot) · kanttiini 11–16 järjestetty WA-ryhmässä \"P9 taustajoukot\" (Riikka ilmoittautui leipomaan 21.9.)"
     },
     {
       "id": "info-milla-ttnv-2026-11-01",
@@ -453,12 +453,12 @@
       "end": "22:00",
       "place": "Hervannan vapaa-aikakeskus, Tampere",
       "kind": "info",
-      "note": "Vahvistettu seuran kisainfosta: su 1.11 (ei la 31.10) · 8.30 lähtö Kuopio-Hallilta bussilla (ABC Pitkälahden kautta n. 8.40, lähtöpaikasta WA-kysely) · lounas ABC Oritupa n. 11.40 · perillä n. 13 · lämppä 14.45 · Millan suoritus 16.12 · palkintojenjako n. 17.30 jälkeen · päivällinen ABC Oritupa 18–18.45 · Kuopiossa n. 22 · Päälle edustusasu (musta alaosa, KRV-takki) · Mukaan: kisapuku, keilat, tossut + varatossut, hiustenlaittotarvikkeet, omat meikit, eväät, rahaa ruokiin"
+      "note": "WA-kisainfo: su 1.11 (EI la 31.10) · 8.30 lähtö Kuopio-Hallilta (bussi n. 8.40 ABC Pitkälahden kautta, lähtöpaikasta kysely WA-ryhmässä) · lounas ABC Oritupa n. 11.40 · perillä Tampereella n. 13 (Hervannan vapaa-aikakeskus) · lämppä 14.45 · Millan suoritus 16.12 · palkintojen jako n. 17.30, lähtö heti sen jälkeen · päivällinen ABC Oritupa 18–18.45 · Kuopiossa n. 22 · Päälle seuran edustusasu (musta alaosa, KRV-takki) · Pakkaa: kisapuku, keilat (kapteenisto hoitaa varakeilat), tossut + varatossut, hiustenlaittotarvikkeet, omat meikit, eväät · ruokailuihin rahaa · Valmentajat Eveliina, Lotta, Sara"
     },
     {
       "id": "info-samuel-halloween-2026-11-01",
       "who": "samuel",
-      "title": "Welhottaret Halloween-peli (vapaaehtoinen, ilmainen)",
+      "title": "Halloween-peli · Welhottaret (vapaaehtoinen, ilmainen)",
       "date": "2026-11-01",
       "start": "15:00",
       "place": "Lippumäki",
@@ -695,7 +695,7 @@
       "start": "19:50",
       "place": "Kuopion rautatieasema",
       "kind": "info",
-      "note": "Paluujuna 15.24–19.50 · sovi hakija (la 31.10 täysi päivä)"
+      "note": "Paluujuna 15.24–19.50 · huoltajat tiedottavat paluukyydistä · tavarat kannetaan hotellilta kisapaikalle ja sieltä junaan"
     },
     {
       "id": "info-samuel-welhot-laskut-2026-10-30",
@@ -746,7 +746,7 @@
       "kind": "info",
       "place": "Helsinki",
       "dateEnd": "2026-10-31",
-      "note": "kulku Juna; huoltaja Pipsa"
+      "note": "kulku juna; huoltaja Pipsa · WA: tapaaminen pe 30.10 klo 12.45 matkakeskuksen aulassa (linja-autoaseman puoli) · juna Helsinkiin, hotelli Scandic Park · mukaan välipalaa junaan ja eväitä lauantaille · Ellenille pankkikortti/rahaa ruokiin (pe päivällinen + iltapala, la kisan jälkeinen ruoka) ja metrolippuun (vain pankkikortti tai HSL-sovellus, käteinen ei käy) · pakkauslista ja tarkka aikataulu voimistelijoiden omassa WA-ryhmässä · paluu la 19.50 Kuopioon"
     },
     {
       "id": "info-ambrosia-2026-11-21",

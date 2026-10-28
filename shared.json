@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793163673156,
+  "updated": 1793164305006,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -291,6 +291,36 @@
       "status": "other",
       "ride": "",
       "note": "fiilis 14.10: pe Ambrosia peruttu"
+    },
+    "kyyti-mea-lianna-2026-10-28": {
+      "driver": "vienti Amandan perhe / haku Ennin perhe?",
+      "status": "other",
+      "ride": "vie+hakee",
+      "note": "WA Lianna: haku varmistettava (Tiina) – Tiina 27.10 ke palaverissa, Enni omalla kyydillä · 18–18.30 vanhempien palaveri"
+    },
+    "kyyti-ellen-ambrosia-2026-10-28": {
+      "driver": "Idan perhe vie · Meidän hakee",
+      "status": "us",
+      "ride": "hakee",
+      "note": "WA-ketju 22.10, tarkista (aiemmin Sofian perhe vie) · Heini: \"Sopii!\" · Ida: Hautalahdenkuja 5 (Sipulikadun K-kaupan piha), Sofie: Rantapuistonkatu 1"
+    },
+    "kyyti-mea-lianna-2026-10-31": {
+      "driver": "Julian perhe",
+      "status": "other",
+      "ride": "vie+hakee",
+      "note": "WA Lianna: la kyydit Julian perhe · Mea yökylässä Saanalla, treeni jää väliin"
+    },
+    "kyyti-mea-lianna-2026-11-01": {
+      "driver": "Meidän",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "WA Lianna: su Mea meidän perhe molemmat suunnat"
+    },
+    "kyyti-ellen-kisamatka-2026-10-31": {
+      "driver": "Meidän · asemalta 19.50",
+      "status": "us",
+      "ride": "hakee",
+      "note": "Ambrosia Helsingin kisamatka: kokoontuminen pe 30.10 12.45 matkakeskus (linja-autoaseman puoli), paluu la 19.50"
     }
   },
   "cooks": {

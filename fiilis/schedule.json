@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-28T05:58:00+02:00",
+  "updated": "2026-10-28T07:20:00+02:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1889,7 +1889,10 @@
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Amandan perhe",
+      "pickup": "Ennin perhe? · haku varmistettava (Tiina)",
+      "note": "WA Lianna: vienti Amandan perhe, haku Ennin perhe · Tiina 27.10: ke palaverissa, Enni omalla kyydillä → haku varmistettava (Tiina) · 18–18.30 vanhempien palaveri"
     },
     {
       "date": "2026-10-28",
@@ -1919,6 +1922,30 @@
       "note": "koe · kpl 1–3 (Wilma 7.10.)"
     },
     {
+      "date": "2026-10-28",
+      "time": "18:00",
+      "end": "18:30",
+      "who": "Mea",
+      "title": "Lianna vanhempien palaveri",
+      "place": "Bella Center",
+      "kind": "muu",
+      "source": "perhe:wa",
+      "note": "WA (Reetta/seura): vanhempien ja voimistelijoiden palaveri treenien alussa"
+    },
+    {
+      "date": "2026-10-28",
+      "time": "18:00",
+      "end": "20:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Kuopiohalli",
+      "kind": "treeni",
+      "source": "gcal:voimistelu",
+      "driver": "Idan perhe",
+      "pickup": "Meidän",
+      "note": "WA-ketju 22.10, tarkista: ke vienti Idan perhe (aiemmin muistissa Sofian perhe) · haku meidän – Heini pyysi vaihtoa, \"Sopii!\" · nouto: Ida Hautalahdenkuja 5 (Sipulikadun K-kaupan piha), Sofie Rantapuistonkatu 1"
+    },
+    {
       "who": "Milla",
       "title": "Yh oppimisessee",
       "kind": "muu",
@@ -1929,14 +1956,14 @@
     },
     {
       "date": "2026-10-30",
-      "time": "13:00",
+      "time": "12:45",
       "end": "17:25",
       "who": "Ellen",
       "title": "Ambrosia kisamatka: juna Helsinkiin",
       "kind": "matka",
-      "place": "Scandic Park",
+      "place": "Matkakeskus, aula (linja-autoaseman puoli)",
       "source": "perhe:wa",
-      "note": "Kisamatka Helsinkiin pe 30.10.–la 31.10. junalla · hotelli Scandic Park · paluu la 15:24–19:50 · mukana: AUKI"
+      "note": "WA 26.10: kokoontuminen pe klo 12.45 matkakeskuksen aulassa (linja-autoaseman puoli) · pvm päätelty (\"perjantaina\") · juna Helsinkiin, hotelli Scandic Park · paluu la 15:24–19:50 · mukana: AUKI"
     },
     {
       "date": "2026-10-30",
@@ -1973,7 +2000,8 @@
       "title": "Welhot turnaus",
       "place": "Studentia, Kuopio",
       "kind": "kisa",
-      "source": "nimenhuuto:welhot2018"
+      "source": "nimenhuuto:welhot2018",
+      "note": "WA 25.10: turnauskutsu PDF (Studentia) · päivä PDF:stä tarkistamatta"
     },
     {
       "date": "2026-10-31",
@@ -1983,7 +2011,8 @@
       "title": "Ambrosia kisamatka: paluujuna Helsingistä",
       "kind": "matka",
       "source": "perhe:wa",
-      "note": "Paluu kisamatkalta · mukana: AUKI"
+      "note": "Paluu Kuopioon la 19.50 · huoltajat hoitavat paluun, Ellen haetaan asemalta · mukana: AUKI",
+      "pickup": "Meidän · asemalta 19.50"
     },
     {
       "who": "Milla",
@@ -2007,7 +2036,8 @@
       "who": "Milla",
       "title": "Vivida kisat · TTNV Cup",
       "kind": "kisa",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "note": "WA: TTNV Cup su 1.11 Tampereella – tarkista päivä (voimistelu-kal. 31.10)"
     },
     {
       "date": "2026-10-31",
@@ -2033,7 +2063,19 @@
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Meidän",
+      "pickup": "Meidän",
+      "note": "WA Lianna: su Mea meidän perhe molemmat suunnat"
+    },
+    {
+      "date": "2026-11-01",
+      "who": "Milla",
+      "title": "Vivida kisat · TTNV Cup Tampere",
+      "place": "Hervannan vapaa-aikakeskus",
+      "kind": "kisa",
+      "source": "perhe:wa",
+      "note": "WA: su 1.11 TTNV Cup · valmentajat Eveliina, Lotta, Sara · kellonaika kisainfossa (Google Docs, lukematta)"
     },
     {
       "date": "2026-11-02",

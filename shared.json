@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793182845473,
+  "updated": 1793201479931,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -378,24 +378,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-p8sb6lss7rolr98um7i0lplte8",
-      "title": "Vaalennus/raidoitus (Mari) · Styleinroom",
-      "date": "2026-10-28",
-      "start": "13:00",
-      "end": "16:00",
-      "kind": "cal",
-      "place": "Styleinroom"
-    },
-    {
-      "id": "cal-t97t26g7el8b6duf9dsehrvuts",
-      "title": "Milla: Jakso 1 pitkä uusinta",
-      "date": "2026-10-28",
-      "start": "14:30",
-      "end": "17:30",
-      "kind": "cal",
-      "place": "Klassillinen lukio"
-    },
-    {
       "id": "cal-058sjmv8pdd57ivlbkhb1g6rb8",
       "title": "Mea · Lianna vanhempien palaveri",
       "date": "2026-10-28",
@@ -622,17 +604,6 @@
       "kind": "info"
     },
     {
-      "id": "info-wilma-milla-jakso1-uusinta-2026-10-28",
-      "who": "milla",
-      "title": "Jakso 1 pitkä uusinta",
-      "date": "2026-10-28",
-      "start": "14:30",
-      "end": "17:30",
-      "kind": "info",
-      "note": "Wilma 20.10.2026 · vain jos ilmoittautunut uusintaan 21.–23.10.",
-      "place": "Klassillinen lukio"
-    },
-    {
       "id": "info-wilma-mea-luokanvalvoja-poissa-2026-10-26",
       "who": "mea",
       "title": "Mea: luokanvalvoja Jenni Kärkkäinen poissa",
@@ -735,7 +706,7 @@
       "kind": "info",
       "place": "Helsinki",
       "dateEnd": "2026-10-31",
-      "note": "kulku juna; huoltaja Pipsa · WA: tapaaminen pe 30.10 klo 12.45 matkakeskuksen aulassa (linja-autoaseman puoli) · juna Helsinkiin, hotelli Scandic Park · mukaan välipalaa junaan ja eväitä lauantaille · Ellenille pankkikortti/rahaa ruokiin (pe päivällinen + iltapala, la kisan jälkeinen ruoka) ja metrolippuun (vain pankkikortti tai HSL-sovellus, käteinen ei käy) · pakkauslista ja tarkka aikataulu voimistelijoiden omassa WA-ryhmässä · paluu la 19.50 Kuopioon"
+      "note": "kulku Juna; huoltaja Pipsa"
     },
     {
       "id": "info-ambrosia-2026-11-21",

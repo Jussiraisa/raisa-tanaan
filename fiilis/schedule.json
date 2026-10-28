@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-28T07:20:00+02:00",
+  "updated": "2026-10-28T07:28:00+02:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -1994,14 +1994,14 @@
     },
     {
       "date": "2026-10-31",
-      "time": "09:00",
+      "time": "10:00",
       "end": "16:00",
       "who": "Samuel",
       "title": "Welhot turnaus",
-      "place": "Studentia, Kuopio",
+      "place": "Studentia, Yliopistonranta 3, Kuopio",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018",
-      "note": "WA 25.10: turnauskutsu PDF (Studentia) · päivä PDF:stä tarkistamatta"
+      "note": "Kotiturnaus · tila aukeaa 10 (vanhemmat kasaavat kaukalot) · ekat pelit 11 (tulospalvelu.salibandy.fi) · tulostaulu/pöytäkirja 2 vanhempaa/kenttä 1,5–2 h vuoroissa · kanttiini 11–16, WA \"P9 taustajoukot\" (Riikka leipoo, ilm. 21.9, vuoroa ei sovittu)"
     },
     {
       "date": "2026-10-31",
@@ -2030,14 +2030,6 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "Lianna-treeni la 31.10 jää väliin · paluuaika sovitaan"
-    },
-    {
-      "date": "2026-10-31",
-      "who": "Milla",
-      "title": "Vivida kisat · TTNV Cup",
-      "kind": "kisa",
-      "source": "gcal:voimistelu",
-      "note": "WA: TTNV Cup su 1.11 Tampereella – tarkista päivä (voimistelu-kal. 31.10)"
     },
     {
       "date": "2026-10-31",
@@ -2075,7 +2067,20 @@
       "place": "Hervannan vapaa-aikakeskus",
       "kind": "kisa",
       "source": "perhe:wa",
-      "note": "WA: su 1.11 TTNV Cup · valmentajat Eveliina, Lotta, Sara · kellonaika kisainfossa (Google Docs, lukematta)"
+      "note": "Vahvistettu seuran kisainfosta: su 1.11 (ei la 31.10) · 8.30 lähtö Kuopio-Hallilta bussilla (ABC Pitkälahden kautta n. 8.40, lähtöpaikasta WA-kysely) · lounas ABC Oritupa n. 11.40 · perillä n. 13 · lämppä 14.45 · Millan suoritus 16.12 · palkintojenjako n. 17.30 jälkeen · päivällinen ABC Oritupa 18–18.45 · Kuopiossa n. 22 · Päälle edustusasu (musta alaosa, KRV-takki) · Mukaan: kisapuku, keilat, tossut + varatossut, hiustenlaittotarvikkeet, omat meikit, eväät, rahaa ruokiin",
+      "time": "08:30",
+      "end": "22:00"
+    },
+    {
+      "date": "2026-11-01",
+      "time": "15:00",
+      "end": "16:00",
+      "who": "Samuel",
+      "title": "Welhottaret Halloween-peli (vapaaehtoinen, ilmainen)",
+      "place": "Lippumäki",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Paras Halloween-asu palkitaan"
     },
     {
       "date": "2026-11-02",

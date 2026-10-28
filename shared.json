@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793164832917,
+  "updated": 1793165308489,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -341,7 +341,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: maksa Welhot 260 € (2 myöhässä, 1 erä pe 30.10) · KP Fishing -nouto ti 27.10 mennessä · jaa la 31.10 tehtävät (Samuelin turnaus, Millan kisat, Mea Lianna, Ellen asemalta 19:50). Welhot to 29.10 ei treeniä. Kirjastot kiinni 3.11. asti.",
+  "note": "Tee: maksa Welhot 260 € (2 myöhässä, 1 erä pe 30.10) · KP Fishing -nouto ti 27.10 mennessä · jaa la 31.10 tehtävät (Samuelin turnaus, Mea Lianna, Ellen asemalta 19:50) · Millan TTNV Cup su 1.11 (bussi 8.30 Kuopio-Halli). Welhot to 29.10 ei treeniä. Kirjastot kiinni 3.11. asti.",
   "extras": [
     {
       "id": "cal-99acg3oel23mnegsaaus2aoj28",
@@ -437,10 +437,33 @@
       "who": "samuel",
       "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
       "date": "2026-10-31",
-      "place": "Kuopio Studentia",
+      "place": "Studentia, Yliopistonranta 3, Kuopio",
       "kind": "info",
       "driver": "",
-      "status": ""
+      "status": "",
+      "start": "10:00",
+      "note": "Tila aukeaa 10, vanhemmat kasaavat kaukalot · ekat pelit 11 (tulospalvelu.salibandy.fi) · tulostaulu/pöytäkirja 2 vanhempaa/kenttä 1,5–2 h vuoroissa · kanttiini 11–16, WA \"P9 taustajoukot\" (Riikka leipoo, ilm. 21.9, vuoroa ei sovittu)"
+    },
+    {
+      "id": "info-milla-ttnv-2026-11-01",
+      "who": "milla",
+      "title": "Vivida TTNV Cup Tampere (suoritus 16.12)",
+      "date": "2026-11-01",
+      "start": "08:30",
+      "end": "22:00",
+      "place": "Hervannan vapaa-aikakeskus, Tampere",
+      "kind": "info",
+      "note": "Vahvistettu seuran kisainfosta: su 1.11 (ei la 31.10) · 8.30 lähtö Kuopio-Hallilta bussilla (ABC Pitkälahden kautta n. 8.40, lähtöpaikasta WA-kysely) · lounas ABC Oritupa n. 11.40 · perillä n. 13 · lämppä 14.45 · Millan suoritus 16.12 · palkintojenjako n. 17.30 jälkeen · päivällinen ABC Oritupa 18–18.45 · Kuopiossa n. 22 · Päälle edustusasu (musta alaosa, KRV-takki) · Mukaan: kisapuku, keilat, tossut + varatossut, hiustenlaittotarvikkeet, omat meikit, eväät, rahaa ruokiin"
+    },
+    {
+      "id": "info-samuel-halloween-2026-11-01",
+      "who": "samuel",
+      "title": "Welhottaret Halloween-peli (vapaaehtoinen, ilmainen)",
+      "date": "2026-11-01",
+      "start": "15:00",
+      "place": "Lippumäki",
+      "kind": "info",
+      "note": "Paras Halloween-asu palkitaan"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",

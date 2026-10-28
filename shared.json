@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793201479931,
+  "updated": 1793207940048,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -376,15 +376,6 @@
       "title": "Ellen · Englannin koe (kpl 1–3)",
       "date": "2026-10-28",
       "kind": "cal"
-    },
-    {
-      "id": "cal-058sjmv8pdd57ivlbkhb1g6rb8",
-      "title": "Mea · Lianna vanhempien palaveri",
-      "date": "2026-10-28",
-      "start": "18:00",
-      "end": "18:30",
-      "kind": "cal",
-      "place": "Bella Center"
     },
     {
       "id": "cal-m6efaprpa171k2pmooafka119c",

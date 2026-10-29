@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793251386783,
+  "updated": 1793269087905,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -370,15 +370,6 @@
       "date": "2026-10-26",
       "dateEnd": "2026-10-30",
       "kind": "cal"
-    },
-    {
-      "id": "cal-m6efaprpa171k2pmooafka119c",
-      "title": "Ellen · YM7 ympäristöopin koe (Metsät ja suot)",
-      "date": "2026-10-29",
-      "start": "10:00",
-      "end": "10:45",
-      "kind": "cal",
-      "place": "Aurinkorinteen koulu"
     },
     {
       "id": "cal-87jpa268tm5ltrl5ka1o05clt4",

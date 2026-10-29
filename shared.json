@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793250394082,
+  "updated": 1793251223384,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -372,12 +372,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-rk1igca94hjdcs8jdrbk6og25s",
-      "title": "Ellen · Englannin koe (kpl 1–3)",
-      "date": "2026-10-28",
-      "kind": "cal"
-    },
-    {
       "id": "cal-m6efaprpa171k2pmooafka119c",
       "title": "Ellen · YM7 ympäristöopin koe (Metsät ja suot)",
       "date": "2026-10-29",
@@ -385,14 +379,6 @@
       "end": "10:45",
       "kind": "cal",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "info-wilma-milla-maa03-2026-10-28",
-      "who": "milla",
-      "title": "MAA03 välitesti (geometria) kpl 1–5",
-      "date": "2026-10-28",
-      "start": "09:35",
-      "kind": "info"
     },
     {
       "id": "info-samuel-turnaus-2026-10-31",
@@ -527,15 +513,6 @@
       "note": "Wilma 6.10."
     },
     {
-      "id": "info-wilma-ellen-en-koe-2026-10-28",
-      "who": "ellen",
-      "title": "Englannin koe (kpl 1–3)",
-      "date": "2026-10-28",
-      "kind": "info",
-      "note": "Wilma 7.10. · chapters 1–3",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
       "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
       "who": "perhe",
       "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
@@ -568,14 +545,6 @@
       "date": "2026-10-29",
       "kind": "info",
       "note": "WA: sali muussa käytössä · ei kyytiä · kalenterissa vielä"
-    },
-    {
-      "id": "info-samuel-intersport-6723-2026-10-28",
-      "who": "samuel",
-      "title": "Intersport 6723 eräpäivä 82,50 € (joukkueen lasku)",
-      "date": "2026-10-28",
-      "kind": "info",
-      "note": "ei henkilökohtainen → joukkueen rahastonhoito / Topias"
     },
     {
       "id": "info-samuel-joukkuekuvaus-2026-11-03",
@@ -612,15 +581,6 @@
       "kind": "info",
       "note": "Wilma 22.10. · s. 4–29 + monistepaketti · muistutus ke-iltana",
       "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "info-wilma-mea-hi-koe-2026-10-28",
-      "who": "mea",
-      "title": "HI-koe (historia) kpl 4–7",
-      "date": "2026-10-28",
-      "start": "10:45",
-      "kind": "info",
-      "note": "Wilma 22.10. · HI8 kpl 4–7, s. 32–59 · muistutus ti-iltana"
     },
     {
       "id": "info-wilma-mea-influenssa-ilmoitus-2026-10-30",
@@ -738,20 +698,10 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-mea-2026-10-28",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-28",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-10-28",
+      "id": "sheet-milla-2026-10-30",
       "who": "milla",
       "title": "Vivida",
-      "date": "2026-10-28",
+      "date": "2026-10-30",
       "start": "18:00",
       "end": "20:30",
       "place": "BellaCenter",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793251223384,
+  "updated": 1793251386783,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -379,6 +379,28 @@
       "end": "10:45",
       "kind": "cal",
       "place": "Aurinkorinteen koulu"
+    },
+    {
+      "id": "cal-87jpa268tm5ltrl5ka1o05clt4",
+      "title": "Mea · DL: ilmoita influenssarokotuksesta terkkarille (Wilma)",
+      "date": "2026-10-30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-9mvegpcntr14kuunaaglmvg9m4",
+      "title": "Mea: yökylä Saanalla",
+      "date": "2026-10-30",
+      "dateEnd": "2026-10-31",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-4v4i83shlr6402uae9rbvve5j4",
+      "title": "Ellen · Helsingin kisamatka (Ambrosia): kokoontuminen 12.45",
+      "date": "2026-10-30",
+      "start": "12:45",
+      "end": "17:25",
+      "kind": "cal",
+      "place": "Kuopion matkakeskus, aula (linja-autoaseman puoli)"
     },
     {
       "id": "info-samuel-turnaus-2026-10-31",

@@ -258,14 +258,6 @@
     },
     {
       "date": "2026-09-22",
-      "time": "",
-      "who": "perhe",
-      "title": "Pentutreffit Ella kotona",
-      "kind": "muu",
-      "place": "Koti"
-    },
-    {
-      "date": "2026-09-22",
       "time": "14:00",
       "end": "15:00",
       "who": "Mea",
@@ -311,6 +303,14 @@
       "title": "Hallituksen kokous",
       "kind": "työ",
       "source": "manual:jussi"
+    },
+    {
+      "date": "2026-09-22",
+      "time": "",
+      "who": "perhe",
+      "title": "Pentutreffit Ella kotona",
+      "kind": "muu",
+      "place": "Koti"
     },
     {
       "date": "2026-09-23",
@@ -727,15 +727,6 @@
     },
     {
       "date": "2026-10-01",
-      "time": "",
-      "who": "Samuel",
-      "title": "Pelipassi hankittava",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "deadline"
-    },
-    {
-      "date": "2026-10-01",
       "who": "Samuel",
       "title": "Koulukuvaus",
       "kind": "muu",
@@ -809,6 +800,15 @@
       "kind": "muu",
       "note": "Valkosuklaa-suklaakakku",
       "source": "fiilis"
+    },
+    {
+      "date": "2026-10-01",
+      "time": "",
+      "who": "Samuel",
+      "title": "Pelipassi hankittava",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "deadline"
     },
     {
       "date": "2026-10-02",
@@ -1885,6 +1885,19 @@
       "date": "2026-10-28",
       "time": "18:00",
       "end": "20:30",
+      "who": "Ellen",
+      "title": "Ambrosia treeni",
+      "place": "Kuopiohalli",
+      "kind": "treeni",
+      "source": "gcal:voimistelu",
+      "driver": "Idan perhe",
+      "pickup": "Meidän",
+      "note": "WA-ketju 22.10, tarkista: ke vienti Idan perhe (aiemmin muistissa Sofian perhe) · haku meidän – Heini pyysi vaihtoa, \"Sopii!\" · nouto: Ida Hautalahdenkuja 5 (Sipulikadun K-kaupan piha), Sofie Rantapuistonkatu 1"
+    },
+    {
+      "date": "2026-10-28",
+      "time": "18:00",
+      "end": "20:30",
       "who": "Mea",
       "title": "Lianna treeni",
       "place": "Bella Center",
@@ -1893,6 +1906,17 @@
       "driver": "Amandan perhe",
       "pickup": "Ennin perhe? · haku varmistettava (Tiina)",
       "note": "WA Lianna: vienti Amandan perhe, haku Ennin perhe · Tiina 27.10: ke palaverissa, Enni omalla kyydillä → haku varmistettava (Tiina) · 18–18.30 vanhempien palaveri"
+    },
+    {
+      "date": "2026-10-28",
+      "time": "18:00",
+      "end": "18:30",
+      "who": "Mea",
+      "title": "Lianna vanhempien palaveri",
+      "place": "Bella Center",
+      "kind": "muu",
+      "source": "perhe:wa",
+      "note": "WA (Reetta/seura): vanhempien ja voimistelijoiden palaveri treenien alussa"
     },
     {
       "date": "2026-10-28",
@@ -1920,30 +1944,6 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "koe · kpl 1–3 (Wilma 7.10.)"
-    },
-    {
-      "date": "2026-10-28",
-      "time": "18:00",
-      "end": "18:30",
-      "who": "Mea",
-      "title": "Lianna vanhempien palaveri",
-      "place": "Bella Center",
-      "kind": "muu",
-      "source": "perhe:wa",
-      "note": "WA (Reetta/seura): vanhempien ja voimistelijoiden palaveri treenien alussa"
-    },
-    {
-      "date": "2026-10-28",
-      "time": "18:00",
-      "end": "20:30",
-      "who": "Ellen",
-      "title": "Ambrosia treeni",
-      "place": "Kuopiohalli",
-      "kind": "treeni",
-      "source": "gcal:voimistelu",
-      "driver": "Idan perhe",
-      "pickup": "Meidän",
-      "note": "WA-ketju 22.10, tarkista: ke vienti Idan perhe (aiemmin muistissa Sofian perhe) · haku meidän – Heini pyysi vaihtoa, \"Sopii!\" · nouto: Ida Hautalahdenkuja 5 (Sipulikadun K-kaupan piha), Sofie Rantapuistonkatu 1"
     },
     {
       "who": "Milla",
@@ -2039,28 +2039,6 @@
       "source": "gcal:juhlapyhat"
     },
     {
-      "who": "Milla",
-      "title": "Kisat",
-      "kind": "kisa",
-      "source": "ical:milla",
-      "date": "2026-11-01",
-      "time": "12:00",
-      "end": "13:00"
-    },
-    {
-      "date": "2026-11-01",
-      "time": "16:00",
-      "end": "18:30",
-      "who": "Mea",
-      "title": "Lianna treeni",
-      "place": "Bella Center",
-      "kind": "treeni",
-      "source": "gcal:voimistelu",
-      "driver": "Meidän",
-      "pickup": "Meidän",
-      "note": "WA Lianna: su Mea meidän perhe molemmat suunnat"
-    },
-    {
       "date": "2026-11-01",
       "who": "Milla",
       "title": "Vivida kisat · TTNV Cup Tampere",
@@ -2081,6 +2059,19 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "Paras Halloween-asu palkitaan"
+    },
+    {
+      "date": "2026-11-01",
+      "time": "16:00",
+      "end": "18:30",
+      "who": "Mea",
+      "title": "Lianna treeni",
+      "place": "Bella Center",
+      "kind": "treeni",
+      "source": "gcal:voimistelu",
+      "driver": "Meidän",
+      "pickup": "Meidän",
+      "note": "WA Lianna: su Mea meidän perhe molemmat suunnat"
     },
     {
       "date": "2026-11-02",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793337492591,
+  "updated": 1793337532489,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -392,6 +392,24 @@
       "end": "17:25",
       "kind": "cal",
       "place": "Kuopion matkakeskus, aula (linja-autoaseman puoli)"
+    },
+    {
+      "id": "cal-r45t1ftih5dejame4407a9aki4",
+      "title": "Samuel · Welhot P9 turnaus Kuopio Studentia",
+      "date": "2026-10-31",
+      "start": "08:00",
+      "end": "17:00",
+      "kind": "cal",
+      "place": "Studentia, Yliopistonranta 3, Kuopio"
+    },
+    {
+      "id": "cal-uh92295ge1uehpr33m8k3i8a2s",
+      "title": "Ellen · Helsingin kisamatka: paluu, haku asemalta 19.50",
+      "date": "2026-10-31",
+      "start": "19:50",
+      "end": "20:15",
+      "kind": "cal",
+      "place": "Kuopion rautatieasema"
     },
     {
       "id": "info-samuel-turnaus-2026-10-31",

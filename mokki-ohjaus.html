@@ -2656,7 +2656,7 @@
     document.getElementById("lightLogList").innerHTML = (ev.length ? ev.slice(0, 30).map(function (e) {
       var when = esc(hkiDay(e.t)) + " klo " + esc(hkiHm(e.t)), what;
       if (e.kind === "valo") what = (e.on ? "💡 " : "⚫ ") + esc(e.name) + " " + (e.on ? "päälle" + (e.b != null ? " " + e.b + " %" : "") : "pois") +
-        " <small>" + esc(e.src ? (src[e.src] ? src[e.src] + " (" + e.src + ")" : e.src) : "lähde ?") + "</small>";
+        " <small>" + esc(e.src ? (src[e.src] ? src[e.src] + " (" + e.src + ")" : e.src) : "lähde ?") + (e.why ? " – " + esc(e.why) + (e.ok === false ? " epäonnistui" : "") : "") + "</small>";
       else what = (e.kind === "tila" ? "🏠 Tila " : "🎬 Kohtaus ") + esc(e.name || "") + " <small>" + esc(e.src || "") + (e.ok === false ? " – epäonnistui" : "") + "</small>";
       return "<li>" + when + " " + what + "</li>";
     }).join("") : "<li><small>Ei tapahtumia vielä (loki alkoi 12.10.2026).</small></li>") + "<li><small>" + esc((r && r.note) || "") + "</small></li>";

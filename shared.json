@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793336578849,
+  "updated": 1793337492591,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -552,14 +552,6 @@
       "kind": "info"
     },
     {
-      "id": "info-samuel-welhot-peruttu-2026-10-29",
-      "who": "samuel",
-      "title": "Welhot to-treeni PERUTTU",
-      "date": "2026-10-29",
-      "kind": "info",
-      "note": "WA: sali muussa käytössä · ei kyytiä · kalenterissa vielä"
-    },
-    {
       "id": "info-samuel-joukkuekuvaus-2026-11-03",
       "who": "samuel",
       "title": "Welhot P9 joukkuekuvaus",
@@ -584,16 +576,6 @@
       "dateEnd": "2026-10-30",
       "kind": "info",
       "note": "Wilma 20.10.2026 · kiireelliset asiat rehtorille"
-    },
-    {
-      "id": "info-wilma-ellen-ym7-koe-2026-10-29",
-      "who": "ellen",
-      "title": "YM7-koe: Metsät ja suot",
-      "date": "2026-10-29",
-      "start": "10:00",
-      "kind": "info",
-      "note": "Wilma 22.10. · s. 4–29 + monistepaketti · muistutus ke-iltana",
-      "place": "Aurinkorinteen koulu"
     },
     {
       "id": "info-wilma-mea-influenssa-ilmoitus-2026-10-30",
@@ -709,6 +691,16 @@
       "start": "18:00",
       "end": "20:30",
       "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-mea-2026-10-31",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-10-31",
+      "start": "12:30",
+      "end": "15:00",
+      "place": "",
       "kind": "treeni"
     }
   ],

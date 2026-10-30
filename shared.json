@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793336565478,
+  "updated": 1793336578849,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -652,15 +652,6 @@
       "date": "2026-10-30",
       "kind": "info",
       "note": "Ei vientiä Luolaan · Ellen Helsingissä 30.–31.10"
-    },
-    {
-      "id": "info-perhe-nocco-rokotus-2026-10-26",
-      "who": "perhe",
-      "title": "Nocco: rokotus – aika vielä varaamatta",
-      "date": "2026-10-26",
-      "dateEnd": "2026-10-30",
-      "kind": "info",
-      "note": "Varaa aika eläinlääkäriltä"
     },
     {
       "id": "info-ambrosia-2026-10-30",

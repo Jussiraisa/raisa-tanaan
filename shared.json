@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793380614515,
+  "updated": 1793423782511,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -358,26 +358,6 @@
       "place": "Aurinkorinteen koulu"
     },
     {
-      "id": "cal-biha49icqsqh6h81lq0bd303s8",
-      "title": "Mea: luokanvalvoja Jenni Kärkkäinen poissa",
-      "date": "2026-10-26",
-      "dateEnd": "2026-10-30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-lacf2ckfc9k7qqhua6vukm3f8k",
-      "title": "Nocco: rokotus (varaa aika eläinlääkäriltä)",
-      "date": "2026-10-26",
-      "dateEnd": "2026-10-30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-87jpa268tm5ltrl5ka1o05clt4",
-      "title": "Mea · DL: ilmoita influenssarokotuksesta terkkarille (Wilma)",
-      "date": "2026-10-30",
-      "kind": "cal"
-    },
-    {
       "id": "cal-9mvegpcntr14kuunaaglmvg9m4",
       "title": "Mea: yökylä Saanalla",
       "date": "2026-10-30",
@@ -401,6 +381,32 @@
       "end": "20:15",
       "kind": "cal",
       "place": "Kuopion rautatieasema"
+    },
+    {
+      "id": "cal-otcd5nseu29bq38665pn7t5b14",
+      "title": "Milla · Vivida TTNV Cup Tampere",
+      "date": "2026-11-01",
+      "start": "08:30",
+      "end": "22:00",
+      "kind": "cal",
+      "place": "Hervannan vapaa-aikakeskus, Tampere"
+    },
+    {
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261101T073000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-11-01",
+      "start": "09:30",
+      "end": "11:30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-f21q38ko72dp2f2vtctde275cg",
+      "title": "Samuel · Welhottaret Halloween-peli (vapaaehtoinen, ilmainen), Lippumäki",
+      "date": "2026-11-01",
+      "start": "15:00",
+      "end": "16:00",
+      "kind": "cal",
+      "place": "Lippumäki, Kuopio"
     },
     {
       "id": "info-samuel-turnaus-2026-10-31",

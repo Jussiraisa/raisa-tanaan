@@ -1,795 +1,819 @@
 {
-  "v": 2,
-  "updated": 1793423782511,
-  "drivers": {
-    "ellen-ambrosia": {
-      "driver": "Meidän",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "Oletus ti (vienti+haku meidän)"
-    },
-    "ellen-ambrosia-pe": {
-      "driver": "Meidän",
-      "status": "us",
-      "ride": "vie",
-      "note": "Oletus pe-vienti; WA 28.9. ei sanonut muuta (Fiilis)"
-    },
-    "samuel-sahly-ma": {
-      "driver": "Sini/Topias",
-      "status": "other",
-      "ride": ""
-    },
-    "samuel-sahly-ti": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "samuel-sahly": {
-      "driver": "Jussi",
-      "status": "us",
-      "ride": "vie+hakee"
-    },
-    "milla-etainfo": {
-      "driver": "",
-      "status": "us",
-      "ride": ""
-    },
-    "jussi-kalakisat": {
-      "driver": "Jussi",
-      "status": "us",
-      "ride": ""
-    },
-    "ellen-samuel-syyskirkko": {
-      "driver": "kävellen mennään koulun kanssa",
-      "status": "us",
-      "ride": ""
-    },
-    "mea-teatteripolku": {
-      "driver": "",
-      "status": "us",
-      "ride": ""
-    },
-    "riikka-oulu": {
-      "driver": "Oma auto + juna",
-      "status": "us",
-      "ride": ""
-    },
-    "mea-konsertti": {
-      "driver": "",
-      "status": "us",
-      "ride": ""
-    },
-    "mea-kisakallio": {
-      "driver": "",
-      "status": "us",
-      "ride": ""
-    },
-    "perhe-alicante": {
-      "driver": "",
-      "status": "us",
-      "ride": ""
-    },
-    "cal-fih6q5lol7al6pcsoeo5v7gsr0": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "sheet-mea-2026-09-20": {
-      "driver": "Elina ~12.05",
-      "status": "other",
-      "ride": ""
-    },
-    "sheet-milla-2026-09-20": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-ellen-kyyti-su-2026-09-20": {
-      "driver": "Riikka",
-      "status": "us",
-      "ride": ""
-    },
-    "info-samuel-retki-2026-09-21": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-mea-voimat-2026-09-21": {
-      "driver": "Julia vie · Enni hakee",
-      "status": "other",
-      "ride": "vie+hakee"
-    },
-    "info-pentutreffit-2026-09-22": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-ellen-leos-2026-09-23": {
-      "driver": "Jussi",
-      "note": "Joukkueilta Leo’s; ei Kuopiohallia"
-    },
-    "info-mea-synttarit-2026-09-26": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-milla-hionta-2026-09-26": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-mea-voimat-2026-09-28": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-koulukuvaus-ellen-2026-09-30": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-ellen-vanhempainilta-2026-10-01": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-samuel-pelipassi-2026-10-01": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-milla-hionta-2026-10-03": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-samuel-turnaus-2026-10-03": {
-      "driver": "Jussi",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "WA: Jussi vie Samuelin omalla autolla Joensuuhun (ei enää auki)"
-    },
-    "info-mea-voimat-2026-10-05": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-lianna-harkkakisa-2026-10-06": {
-      "driver": "Meidän (oma kyyti)",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "WA Lianna 4.10.: Ti ei yhteiskyytiä, omalla kyydillä"
-    },
-    "info-riikka-oulu-2026-10-06": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-mea-terapia-2026-10-07": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-samuel-turnaus-2026-10-31": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-samuel-turnaus-2026-11-15": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-samuel-turnaus-2026-11-28": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "info-samuel-turnaus-2026-12-19": {
-      "driver": "",
-      "status": "",
-      "ride": ""
-    },
-    "kyyti-mea-lianna-2026-09-23": {
-      "driver": "Julia / Enni",
-      "status": "other",
-      "ride": "vie+hakee",
-      "note": "WA: Ke 17.30 kyytiin Enni, Mea, Amanda. Enni kirjaston kautta Luolalle."
-    },
-    "kyyti-mea-lianna-2026-09-25": {
-      "driver": "Amanda / Elina",
-      "note": "WA: Pe Amanda (Elina ottaa molemmat). Mea mukana pe."
-    },
-    "kyyti-mea-lianna-2026-09-27": {
-      "driver": "Riikka",
-      "note": "WA: Su Mea (Riikka molemmat)."
-    },
-    "kyyti-mea-lianna-2026-09-21": {
-      "driver": "vienti Julia / haku Enni",
-      "note": "WA Lianna kyytirinki: Ma Julia vie, Enni hakee. Mea mukana (voimat)."
-    },
-    "kyyti-samuel-welhot-2026-09-22": {
-      "driver": "Topias",
-      "note": "Jussi ei vie — Topias. Lähtö ~16.15"
-    },
-    "kyyti-ellen-ambrosia-2026-09-22": {
-      "driver": "Räisä",
-      "note": "Voimistelu-kalenteri: meidän kyydit"
-    },
-    "cal-ot896g1o8ccv4k44abuac3ju34": {
-      "driver": "Jussi",
-      "note": "Joukkueilta Leo’s; ei Kuopiohallia"
-    },
-    "info-jussi-padel-jari-2026-09-24": {
-      "driver": "",
-      "status": "",
-      "ride": "",
-      "note": "Jari Väänänen · WA 22.9. bille=padel. Paikka auki."
-    },
-    "samuel-sahly-to": {
-      "driver": "Meidän",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "WA+oletus 28.9.2026 Fiilis: kyyti meille torstai"
-    },
-    "kyyti-mea-lianna-2026-10-04": {
-      "driver": "Riikka",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "WA Lianna 27.9.: Su onnistuu; Riikka su molemmat (4.10.)"
-    },
-    "info-samuel-junnuliiga-2026-10-04": {
-      "driver": "",
-      "status": "",
-      "ride": "",
-      "note": "WA 4.10.: 12.45–15 Lippumäki; kyyti AUKI"
-    },
-    "kyyti-samuel-welhot-2026-10-06": {
-      "driver": "Sanna (Manen äiti)",
-      "status": "other",
-      "ride": "vie",
-      "note": "WA Säbä kyydit 4.10. 20.36: \"Ti meiltä\""
-    },
-    "kyyti-ellen-ambrosia-2026-10-06": {
-      "driver": "Keinäset (Mika)",
-      "status": "other",
-      "ride": "vie+hakee",
-      "note": "WA Ambrosia 4.10.: Mika \"onnistuu\" (harkkakisojen takia)"
-    },
-    "kyyti-mea-lianna-2026-10-07": {
-      "driver": "Mea ei mene (terapia)",
-      "status": "other",
-      "ride": "",
-      "note": "WA Lianna 4.10.: Mea ti+pe; ke Amanda/Elina"
-    },
-    "kyyti-samuel-welhot-2026-10-08": {
-      "driver": "Meidän",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "WA Säbä 5.10.: \"Meiltä torstai\""
-    },
-    "kyyti-ellen-ambrosia-2026-10-09": {
-      "driver": "ei mene",
-      "status": "other",
-      "ride": "",
-      "note": "Kalenteri: ilmoita valmentajalle + kyytiringille"
-    },
-    "kyyti-mea-lianna-2026-10-17": {
-      "driver": "Mea ei mene",
-      "status": "other",
-      "ride": "",
-      "note": "WA Lianna 15.10: la Mea ei mene, ei kyytiä"
-    },
-    "kyyti-mea-lianna-2026-10-18": {
-      "driver": "Meidän (Riikka) vie · Enni hakee",
-      "status": "us",
-      "ride": "vie+haku",
-      "note": "WA Lianna 15.10 · Meidän vie · Tiina/Enni hakee"
-    },
-    "kyyti-ellen-ambrosia-2026-10-16": {
-      "driver": "ei mene",
-      "status": "other",
-      "ride": "",
-      "note": "fiilis 14.10: pe Ambrosia peruttu"
-    },
-    "kyyti-mea-lianna-2026-10-28": {
-      "driver": "Ennin kyydissä (haku klo 20.30)",
-      "status": "other",
-      "ride": "vie+hakee",
-      "note": "Käyttäjä 28.10. (PM:n välittämänä): Mea tulee Ennin kyydissä, ei meidän hakua · vienti Amanda (WA Lianna 26.10.) · 18–18.30 vanhempien palaveri"
-    },
-    "kyyti-ellen-ambrosia-2026-10-28": {
-      "driver": "Idan perhe vie · Meidän hakee",
-      "status": "us",
-      "ride": "hakee",
-      "note": "WA-ketju 22.10, tarkista (aiemmin Sofian perhe vie) · Heini: \"Sopii!\" · Ida: Hautalahdenkuja 5 (Sipulikadun K-kaupan piha), Sofie: Rantapuistonkatu 1"
-    },
-    "kyyti-mea-lianna-2026-10-31": {
-      "driver": "Julian perhe",
-      "status": "other",
-      "ride": "vie+hakee",
-      "note": "WA Lianna: la kyydit Julian perhe · Mea yökylässä Saanalla, treeni jää väliin"
-    },
-    "kyyti-mea-lianna-2026-11-01": {
-      "driver": "Meidän",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "WA Lianna: su Mea meidän perhe molemmat suunnat"
-    },
-    "kyyti-ellen-kisamatka-2026-10-31": {
-      "driver": "Meidän · asemalta 19.50",
-      "status": "us",
-      "ride": "hakee",
-      "note": "Ambrosia Helsingin kisamatka: kokoontuminen pe 30.10 12.45 matkakeskus (linja-autoaseman puoli), paluu la 19.50"
-    },
-    "kyyti-milla-vivida-2026-10-28": {
-      "driver": "skootteri (kulkee itse)",
-      "status": "other",
-      "ride": "",
-      "note": "Käyttäjä 28.10. (PM:n välittämänä): Milla menee Vividaan yleensä skootterilla, ei kyytiä · oletus tuleville kerroille · 18–20.30 BellaCenter"
-    }
+ "v": 2,
+ "updated": "2026-10-31T08:38:00+02:00",
+ "drivers": {
+  "ellen-ambrosia": {
+   "driver": "Meidän",
+   "status": "us",
+   "ride": "vie+hakee",
+   "note": "Oletus ti (vienti+haku meidän)"
   },
-  "cooks": {
-    "la": "",
-    "su": "",
-    "ma": "",
-    "ti": "",
-    "ke": "",
-    "to": "",
-    "pe": ""
+  "ellen-ambrosia-pe": {
+   "driver": "Meidän",
+   "status": "us",
+   "ride": "vie",
+   "note": "Oletus pe-vienti; WA 28.9. ei sanonut muuta (Fiilis)"
   },
-  "dishes": {
-    "la": "Nacho-pelti",
-    "su": "Hampparit (liha + Beyond)",
-    "ma": "Lohikeitto",
-    "ti": "Kana + riisi + kermakastike",
-    "ke": "Kalakeitto",
-    "to": "Tähteet",
-    "pe": "Katkarapukeitto + patongit"
+  "samuel-sahly-ma": {
+   "driver": "Sini/Topias",
+   "status": "other",
+   "ride": ""
   },
-  "note": "Tee: KP Fishing -nouto ti 27.10 mennessä · jaa la 31.10 tehtävät (Samuelin turnaus, Mea Lianna, Ellen asemalta 19:50) · Millan TTNV Cup su 1.11 (bussi 8.30 Kuopio-Halli). Welhot to 29.10 ei treeniä. Kirjastot kiinni 3.11. asti.",
-  "extras": [
-    {
-      "id": "cal-99acg3oel23mnegsaaus2aoj28",
-      "title": "Perhe · Suun terveydenhuolto (mobiili) Aurinkorinne",
-      "date": "2026-10-21",
-      "dateEnd": "2026-11-12",
-      "kind": "cal",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "cal-9mvegpcntr14kuunaaglmvg9m4",
-      "title": "Mea: yökylä Saanalla",
-      "date": "2026-10-30",
-      "dateEnd": "2026-10-31",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-r45t1ftih5dejame4407a9aki4",
-      "title": "Samuel · Welhot P9 turnaus Kuopio Studentia",
-      "date": "2026-10-31",
-      "start": "08:00",
-      "end": "17:00",
-      "kind": "cal",
-      "place": "Studentia, Yliopistonranta 3, Kuopio"
-    },
-    {
-      "id": "cal-uh92295ge1uehpr33m8k3i8a2s",
-      "title": "Ellen · Helsingin kisamatka: paluu, haku asemalta 19.50",
-      "date": "2026-10-31",
-      "start": "19:50",
-      "end": "20:15",
-      "kind": "cal",
-      "place": "Kuopion rautatieasema"
-    },
-    {
-      "id": "cal-otcd5nseu29bq38665pn7t5b14",
-      "title": "Milla · Vivida TTNV Cup Tampere",
-      "date": "2026-11-01",
-      "start": "08:30",
-      "end": "22:00",
-      "kind": "cal",
-      "place": "Hervannan vapaa-aikakeskus, Tampere"
-    },
-    {
-      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261101T073000Z",
-      "title": "Milla · valmennus",
-      "date": "2026-11-01",
-      "start": "09:30",
-      "end": "11:30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-f21q38ko72dp2f2vtctde275cg",
-      "title": "Samuel · Welhottaret Halloween-peli (vapaaehtoinen, ilmainen), Lippumäki",
-      "date": "2026-11-01",
-      "start": "15:00",
-      "end": "16:00",
-      "kind": "cal",
-      "place": "Lippumäki, Kuopio"
-    },
-    {
-      "id": "info-samuel-turnaus-2026-10-31",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
-      "date": "2026-10-31",
-      "place": "Studentia, Yliopistonranta 3 (Savilahti, B-ovi)",
-      "kind": "info",
-      "driver": "",
-      "status": "",
-      "start": "10:00",
-      "note": "Kotiturnaus Studentia (Yliopistonranta 3, Savilahti, B-ovi) · tila auki klo 10 · ensimmäiset pelit klo 11 · otteluohjelma: https://tulospalvelu.salibandy.fi/category/558!sb2026sk/group/1/fixtures · Vanhemmilta talkoot: kaukaloiden ja penkkien kasaus, tulostaulu + ottelupöytäkirja (2 vanhempaa/kenttä, 1,5–2 h vuorot) · kanttiini 11–16 järjestetty WA-ryhmässä \"P9 taustajoukot\" (Riikka ilmoittautui leipomaan 21.9.)"
-    },
-    {
-      "id": "info-milla-ttnv-2026-11-01",
-      "who": "milla",
-      "title": "Vivida TTNV Cup Tampere (suoritus 16.12)",
-      "date": "2026-11-01",
-      "start": "08:30",
-      "end": "22:00",
-      "place": "Hervannan vapaa-aikakeskus, Tampere",
-      "kind": "info",
-      "note": "WA-kisainfo: su 1.11 (EI la 31.10) · 8.30 lähtö Kuopio-Hallilta (bussi n. 8.40 ABC Pitkälahden kautta, lähtöpaikasta kysely WA-ryhmässä) · lounas ABC Oritupa n. 11.40 · perillä Tampereella n. 13 (Hervannan vapaa-aikakeskus) · lämppä 14.45 · Millan suoritus 16.12 · palkintojen jako n. 17.30, lähtö heti sen jälkeen · päivällinen ABC Oritupa 18–18.45 · Kuopiossa n. 22 · Päälle seuran edustusasu (musta alaosa, KRV-takki) · Pakkaa: kisapuku, keilat (kapteenisto hoitaa varakeilat), tossut + varatossut, hiustenlaittotarvikkeet, omat meikit, eväät · ruokailuihin rahaa · Valmentajat Eveliina, Lotta, Sara"
-    },
-    {
-      "id": "info-samuel-halloween-2026-11-01",
-      "who": "samuel",
-      "title": "Halloween-peli · Welhottaret (vapaaehtoinen, ilmainen)",
-      "date": "2026-11-01",
-      "start": "15:00",
-      "place": "Lippumäki",
-      "kind": "info",
-      "note": "Paras Halloween-asu palkitaan"
-    },
-    {
-      "id": "info-samuel-turnaus-2026-11-15",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Suonenjoki",
-      "date": "2026-11-15",
-      "place": "Suonenjoki",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-samuel-turnaus-2026-11-28",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Siilinjärvi",
-      "date": "2026-11-28",
-      "place": "Siilinjärvi",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-wilma-perhe-nikotiini-info-2026-12-01",
-      "who": "perhe",
-      "title": "Nikotiini-info vanhemmille (Teams)",
-      "date": "2026-12-01",
-      "start": "18:00",
-      "end": "19:15",
-      "kind": "info",
-      "note": "Aurinkorinne, maksuton. Ilmoittaudu 30.11. mennessä."
-    },
-    {
-      "id": "info-samuel-turnaus-2026-12-19",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
-      "date": "2026-12-19",
-      "place": "Kuopio Luola",
-      "kind": "info",
-      "driver": "",
-      "status": ""
-    },
-    {
-      "id": "info-wilma-milla-op05-palautukset-2026-11-06",
-      "who": "milla",
-      "title": "OP05-palautukset (teht. 5 & 6)",
-      "date": "2026-11-06",
-      "kind": "info",
-      "note": "kirjoitelma tekijänoikeuksista + Forms-kysely, tiimitehtäviä"
-    },
-    {
-      "id": "info-wilma-milla-influenssarokotus-2026-11-09",
-      "who": "milla",
-      "title": "Influenssarokotus (ajanvaraus) 9.11. tai 11.11.",
-      "date": "2026-11-09",
-      "kind": "info",
-      "note": "Wilma 21.10., th Heli Kolehmainen: rokotukset ma 9.11. ja ke 11.11. ajanvarauksella. Varaus p. 044 718 6561 ma–pe 8–9, OmaSavo tai neuvontapiste ma–pe 12–12.45. Maksuton riskiryhmille, muut resepti opiskeluterveydenhuollosta."
-    },
-    {
-      "id": "info-wilma-milla-op05-ilmastodiagrammi-2026-11-18",
-      "who": "milla",
-      "title": "OP05 ilmastodiagrammi (itsenäinen teht. 3)",
-      "date": "2026-11-18",
-      "kind": "info",
-      "note": "Wilma 6.10."
-    },
-    {
-      "id": "info-wilma-mea-ena3-koe-2026-11-19",
-      "who": "mea",
-      "title": "ENA3-koe",
-      "date": "2026-11-19",
-      "kind": "info",
-      "note": "Wilma 6.10.; siirretty 12.11. → 19.11. (Wilma 21.10.)"
-    },
-    {
-      "id": "info-wilma-mea-rub3-koe-2026-11-27",
-      "who": "mea",
-      "title": "RUB3-koe",
-      "date": "2026-11-27",
-      "kind": "info",
-      "note": "Wilma 6.10. Lontoo-lähtö samana iltana"
-    },
-    {
-      "id": "info-wilma-mea-bi3-koe-2026-12-01",
-      "who": "mea",
-      "title": "BI3-koe + BI-vihkon palautus",
-      "date": "2026-12-01",
-      "start": "08:00",
-      "end": "09:00",
-      "kind": "info",
-      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko. HUOM: Lontoo 27.11.–2.12."
-    },
-    {
-      "id": "info-wilma-mea-ke3-koe-2026-12-11",
-      "who": "mea",
-      "title": "KE3-koe",
-      "date": "2026-12-11",
-      "start": "14:15",
-      "kind": "info",
-      "note": "Wilma 6.10."
-    },
-    {
-      "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
-      "who": "perhe",
-      "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
-      "date": "2026-10-21",
-      "dateEnd": "2026-11-12",
-      "kind": "info",
-      "note": "Wilma 7.10. · turvakielto: soita 017-2734500 · Wilma 8.10.: Pop Up 21.10.–12.11., Samuel & Ellen",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
-      "id": "info-kirjastot-kiinni-2026-10-20",
-      "who": "perhe",
-      "title": "Kirjastot kiinni",
-      "date": "2026-10-20",
-      "dateEnd": "2026-11-03",
-      "kind": "info"
-    },
-    {
-      "id": "info-wilma-kirjasto-suljettu-2026-10-20",
-      "who": "perhe",
-      "title": "Kuopion kirjastot kiinni 20.10.–3.11. (uusi järjestelmä)",
-      "date": "2026-10-20",
-      "dateEnd": "2026-11-03",
-      "kind": "info"
-    },
-    {
-      "id": "info-samuel-joukkuekuvaus-2026-11-03",
-      "who": "samuel",
-      "title": "Welhot P9 joukkuekuvaus",
-      "date": "2026-11-03",
-      "start": "16:30",
-      "kind": "info",
-      "place": "Lippumäki",
-      "note": "ilmoittaudu urheilu.seppalan.fi, koodi JRAPCSE4FD"
-    },
-    {
-      "id": "info-ellen-juhlanaytos-2026-11-10",
-      "who": "ellen",
-      "title": "Ambrosia juhlanäytös",
-      "date": "2026-11-10",
-      "kind": "info"
-    },
-    {
-      "id": "info-wilma-mea-luokanvalvoja-poissa-2026-10-26",
-      "who": "mea",
-      "title": "Mea: luokanvalvoja Jenni Kärkkäinen poissa",
-      "date": "2026-10-26",
-      "dateEnd": "2026-10-30",
-      "kind": "info",
-      "note": "Wilma 20.10.2026 · kiireelliset asiat rehtorille"
-    },
-    {
-      "id": "info-wilma-mea-influenssa-ilmoitus-2026-10-30",
-      "who": "mea",
-      "title": "DL: influenssarokote – ilmoita terkkarille Wilmassa",
-      "date": "2026-10-30",
-      "kind": "info",
-      "note": "Wilma 22.10., th Noora Teittinen: jos Mea kuuluu maksuttoman rokotteen piiriin, ilmoita Wilma-viestillä pe 30.10. mennessä. Rokotus ti 17.11."
-    },
-    {
-      "id": "info-wilma-mea-influenssarokotus-2026-11-17",
-      "who": "mea",
-      "title": "Influenssarokotus koululla",
-      "date": "2026-11-17",
-      "kind": "info",
-      "note": "Wilma 22.10., th Noora Teittinen · ilmoitus 30.10. mennessä"
-    },
-    {
-      "id": "info-ellen-paluu-2026-10-31",
-      "who": "ellen",
-      "title": "Ellen kotiin Helsingistä · haku Kuopion asemalta",
-      "date": "2026-10-31",
-      "start": "19:50",
-      "place": "Kuopion rautatieasema",
-      "kind": "info",
-      "note": "Paluujuna 15.24–19.50 · huoltajat tiedottavat paluukyydistä · tavarat kannetaan hotellilta kisapaikalle ja sieltä junaan"
-    },
-    {
-      "id": "info-samuel-welhot-laskut-2026-10-30",
-      "who": "samuel",
-      "title": "Welhot-laskut: ei avoimia (20544 maksettu 22.10.)",
-      "date": "2026-10-30",
-      "kind": "info",
-      "note": "Welhot Raha 27.10.: 0 € avoinna · 19818 maksettu 19.9. · 19889 maksettu aiemmin · 20544 (100 €, er. 30.10.) maksettu 22.10. (ei vielä tiliotteella)"
-    },
-    {
-      "id": "info-samuel-kortti-piste-34085-2026-11-02",
-      "who": "samuel",
-      "title": "Kortti-Piste 34085 eräpäivä 24,65 € (joukkueen lasku)",
-      "date": "2026-11-02",
-      "kind": "info",
-      "note": "ei henkilökohtainen → joukkueen rahastonhoitaja"
-    },
-    {
-      "id": "info-mea-rippikoulu-muutostoiveet-2026-11-03",
-      "who": "mea",
-      "title": "DL: rippikoulun (Rytky 9) muutostoiveet",
-      "date": "2026-11-03",
-      "kind": "info",
-      "note": "Kirjallisesti reetta.ojanpera@evl.fi + miika.koistinen@evl.fi · vain jos muutettavaa"
-    },
-    {
-      "id": "info-ellen-ambrosia-pe-ei-treenia-2026-10-30",
-      "who": "ellen",
-      "title": "Ambrosia pe-treeni: ei tarvita (Ellen kisareissulla)",
-      "date": "2026-10-30",
-      "kind": "info",
-      "note": "Ei vientiä Luolaan · Ellen Helsingissä 30.–31.10"
-    },
-    {
-      "id": "info-ambrosia-2026-10-30",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Helsinki",
-      "date": "2026-10-30",
-      "kind": "info",
-      "place": "Helsinki",
-      "dateEnd": "2026-10-31",
-      "note": "kulku Juna; huoltaja Pipsa"
-    },
-    {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-milla-2026-10-30",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-10-30",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-mea-2026-10-31",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-10-31",
-      "start": "12:30",
-      "end": "15:00",
-      "place": "",
-      "kind": "treeni"
-    }
-  ],
-  "schoolLunch": {
-    "date": "2026-10-30",
-    "dish": "Kasvis-makaronilaatikkoa",
-    "veg": ""
+  "samuel-sahly-ti": {
+   "driver": "",
+   "status": "",
+   "ride": ""
   },
-  "vacation": {
-    "from": "2026-10-12",
-    "to": "2026-10-18",
-    "hideSchool": true,
-    "hideHobbies": false,
-    "label": "Syysloma vko 42"
+  "samuel-sahly": {
+   "driver": "Jussi",
+   "status": "us",
+   "ride": "vie+hakee"
   },
-  "trip": {
-    "today": "",
-    "monday": "",
-    "weatherPlace": "",
-    "weatherLat": null,
-    "weatherLon": null
+  "milla-etainfo": {
+   "driver": "",
+   "status": "us",
+   "ride": ""
   },
-  "cancelled": {
-    "mea-lianna-pe": {
-      "2026-09-18": "ei treeniä (sheet vko 38)"
-    },
-    "ellen-ambrosia": {
-      "2026-09-23": "Leo’s Leikkimaa (WA)",
-      "2026-09-25": "NTV-kisat peruttu (Jussi: ei kisoja)",
-      "2026-09-26": "NTV-kisat peruttu (Jussi: ei kisoja)",
-      "2026-09-27": "NTV-kisat peruttu (Jussi: ei kisoja)",
-      "2026-10-09": "Ellen ei mene Ambrosiaan (Jussi 8.10.)",
-      "2026-10-16": "Ellen ei treeneissä tällä viikolla (fiilis 14.10)"
-    },
-    "info-kkp-2026-09-25": {
-      "id": "info-kkp-2026-09-25",
-      "title": "Kodin ja koulun päivä",
-      "date": "2026-09-25",
-      "reason": "Jussi 24.9.: ei mennä"
-    },
-    "kodin-ja-koulun-paiva": {
-      "2026-09-25": "Perhe ei osallistu"
-    },
-    "info-wilma-milla-shaking-up-tech-2026-10-01": {
-      "id": "info-wilma-milla-shaking-up-tech-2026-10-01",
-      "title": "Shaking up Tech -haku auki",
-      "date": "2026-10-01",
-      "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
-    },
-    "cal-sv9gsjhdifokii13rhid3ptat4": {
-      "id": "cal-sv9gsjhdifokii13rhid3ptat4",
-      "title": "Milla · Shaking up Tech -haku",
-      "date": "2026-10-01",
-      "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
-    },
-    "cal-qt2a8joqabeb1b8guvkmg46rs8": "Jussi 4.10: ei mennä",
-    "info-wilma-perhe-vy-vuosikokous-2026-10-05": "Jussi 4.10: ei mennä",
-    "samuel-sahly-ma": {
-      "2026-10-12": "Welhot peruttu (syysloma)"
-    },
-    "info-vivida-kisakallio-2026-10-17": {
-      "id": "info-vivida-kisakallio-2026-10-17",
-      "title": "Vivida Kisakallio",
-      "date": "2026-10-17",
-      "reason": "PERUTTU (syksy)"
-    },
-    "samuel-sahly-ti": {
-      "2026-10-13": "WA Säbä 11.10: Samuel tiistain ainakin poissa treeneistä"
-    },
-    "sheet-milla-2026-10-16": {
-      "id": "sheet-milla-2026-10-16",
-      "title": "Vivida",
-      "date": "2026-10-16",
-      "reason": "Milla Lontoossa"
-    }
+  "jussi-kalakisat": {
+   "driver": "Jussi",
+   "status": "us",
+   "ride": ""
+  },
+  "ellen-samuel-syyskirkko": {
+   "driver": "kävellen mennään koulun kanssa",
+   "status": "us",
+   "ride": ""
+  },
+  "mea-teatteripolku": {
+   "driver": "",
+   "status": "us",
+   "ride": ""
+  },
+  "riikka-oulu": {
+   "driver": "Oma auto + juna",
+   "status": "us",
+   "ride": ""
+  },
+  "mea-konsertti": {
+   "driver": "",
+   "status": "us",
+   "ride": ""
+  },
+  "mea-kisakallio": {
+   "driver": "",
+   "status": "us",
+   "ride": ""
+  },
+  "perhe-alicante": {
+   "driver": "",
+   "status": "us",
+   "ride": ""
+  },
+  "cal-fih6q5lol7al6pcsoeo5v7gsr0": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "sheet-mea-2026-09-20": {
+   "driver": "Elina ~12.05",
+   "status": "other",
+   "ride": ""
+  },
+  "sheet-milla-2026-09-20": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-ellen-kyyti-su-2026-09-20": {
+   "driver": "Riikka",
+   "status": "us",
+   "ride": ""
+  },
+  "info-samuel-retki-2026-09-21": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-mea-voimat-2026-09-21": {
+   "driver": "Julia vie · Enni hakee",
+   "status": "other",
+   "ride": "vie+hakee"
+  },
+  "info-pentutreffit-2026-09-22": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-ellen-leos-2026-09-23": {
+   "driver": "Jussi",
+   "note": "Joukkueilta Leo’s; ei Kuopiohallia"
+  },
+  "info-mea-synttarit-2026-09-26": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-milla-hionta-2026-09-26": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-mea-voimat-2026-09-28": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-koulukuvaus-ellen-2026-09-30": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-ellen-vanhempainilta-2026-10-01": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-samuel-pelipassi-2026-10-01": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-milla-hionta-2026-10-03": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-samuel-turnaus-2026-10-03": {
+   "driver": "Jussi",
+   "status": "us",
+   "ride": "vie+hakee",
+   "note": "WA: Jussi vie Samuelin omalla autolla Joensuuhun (ei enää auki)"
+  },
+  "info-mea-voimat-2026-10-05": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-lianna-harkkakisa-2026-10-06": {
+   "driver": "Meidän (oma kyyti)",
+   "status": "us",
+   "ride": "vie+hakee",
+   "note": "WA Lianna 4.10.: Ti ei yhteiskyytiä, omalla kyydillä"
+  },
+  "info-riikka-oulu-2026-10-06": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-mea-terapia-2026-10-07": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-samuel-turnaus-2026-10-31": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-samuel-turnaus-2026-11-15": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-samuel-turnaus-2026-11-28": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "info-samuel-turnaus-2026-12-19": {
+   "driver": "",
+   "status": "",
+   "ride": ""
+  },
+  "kyyti-mea-lianna-2026-09-23": {
+   "driver": "Julia / Enni",
+   "status": "other",
+   "ride": "vie+hakee",
+   "note": "WA: Ke 17.30 kyytiin Enni, Mea, Amanda. Enni kirjaston kautta Luolalle."
+  },
+  "kyyti-mea-lianna-2026-09-25": {
+   "driver": "Amanda / Elina",
+   "note": "WA: Pe Amanda (Elina ottaa molemmat). Mea mukana pe."
+  },
+  "kyyti-mea-lianna-2026-09-27": {
+   "driver": "Riikka",
+   "note": "WA: Su Mea (Riikka molemmat)."
+  },
+  "kyyti-mea-lianna-2026-09-21": {
+   "driver": "vienti Julia / haku Enni",
+   "note": "WA Lianna kyytirinki: Ma Julia vie, Enni hakee. Mea mukana (voimat)."
+  },
+  "kyyti-samuel-welhot-2026-09-22": {
+   "driver": "Topias",
+   "note": "Jussi ei vie — Topias. Lähtö ~16.15"
+  },
+  "kyyti-ellen-ambrosia-2026-09-22": {
+   "driver": "Räisä",
+   "note": "Voimistelu-kalenteri: meidän kyydit"
+  },
+  "cal-ot896g1o8ccv4k44abuac3ju34": {
+   "driver": "Jussi",
+   "note": "Joukkueilta Leo’s; ei Kuopiohallia"
+  },
+  "info-jussi-padel-jari-2026-09-24": {
+   "driver": "",
+   "status": "",
+   "ride": "",
+   "note": "Jari Väänänen · WA 22.9. bille=padel. Paikka auki."
+  },
+  "samuel-sahly-to": {
+   "driver": "Meidän",
+   "status": "us",
+   "ride": "vie+hakee",
+   "note": "WA+oletus 28.9.2026 Fiilis: kyyti meille torstai"
+  },
+  "kyyti-mea-lianna-2026-10-04": {
+   "driver": "Riikka",
+   "status": "us",
+   "ride": "vie+hakee",
+   "note": "WA Lianna 27.9.: Su onnistuu; Riikka su molemmat (4.10.)"
+  },
+  "info-samuel-junnuliiga-2026-10-04": {
+   "driver": "",
+   "status": "",
+   "ride": "",
+   "note": "WA 4.10.: 12.45–15 Lippumäki; kyyti AUKI"
+  },
+  "kyyti-samuel-welhot-2026-10-06": {
+   "driver": "Sanna (Manen äiti)",
+   "status": "other",
+   "ride": "vie",
+   "note": "WA Säbä kyydit 4.10. 20.36: \"Ti meiltä\""
+  },
+  "kyyti-ellen-ambrosia-2026-10-06": {
+   "driver": "Keinäset (Mika)",
+   "status": "other",
+   "ride": "vie+hakee",
+   "note": "WA Ambrosia 4.10.: Mika \"onnistuu\" (harkkakisojen takia)"
+  },
+  "kyyti-mea-lianna-2026-10-07": {
+   "driver": "Mea ei mene (terapia)",
+   "status": "other",
+   "ride": "",
+   "note": "WA Lianna 4.10.: Mea ti+pe; ke Amanda/Elina"
+  },
+  "kyyti-samuel-welhot-2026-10-08": {
+   "driver": "Meidän",
+   "status": "us",
+   "ride": "vie+hakee",
+   "note": "WA Säbä 5.10.: \"Meiltä torstai\""
+  },
+  "kyyti-ellen-ambrosia-2026-10-09": {
+   "driver": "ei mene",
+   "status": "other",
+   "ride": "",
+   "note": "Kalenteri: ilmoita valmentajalle + kyytiringille"
+  },
+  "kyyti-mea-lianna-2026-10-17": {
+   "driver": "Mea ei mene",
+   "status": "other",
+   "ride": "",
+   "note": "WA Lianna 15.10: la Mea ei mene, ei kyytiä"
+  },
+  "kyyti-mea-lianna-2026-10-18": {
+   "driver": "Meidän (Riikka) vie · Enni hakee",
+   "status": "us",
+   "ride": "vie+haku",
+   "note": "WA Lianna 15.10 · Meidän vie · Tiina/Enni hakee"
+  },
+  "kyyti-ellen-ambrosia-2026-10-16": {
+   "driver": "ei mene",
+   "status": "other",
+   "ride": "",
+   "note": "fiilis 14.10: pe Ambrosia peruttu"
+  },
+  "kyyti-mea-lianna-2026-10-28": {
+   "driver": "Ennin kyydissä (haku klo 20.30)",
+   "status": "other",
+   "ride": "vie+hakee",
+   "note": "Käyttäjä 28.10. (PM:n välittämänä): Mea tulee Ennin kyydissä, ei meidän hakua · vienti Amanda (WA Lianna 26.10.) · 18–18.30 vanhempien palaveri"
+  },
+  "kyyti-ellen-ambrosia-2026-10-28": {
+   "driver": "Idan perhe vie · Meidän hakee",
+   "status": "us",
+   "ride": "hakee",
+   "note": "WA-ketju 22.10, tarkista (aiemmin Sofian perhe vie) · Heini: \"Sopii!\" · Ida: Hautalahdenkuja 5 (Sipulikadun K-kaupan piha), Sofie: Rantapuistonkatu 1"
+  },
+  "kyyti-mea-lianna-2026-10-31": {
+   "driver": "Julian perhe",
+   "status": "other",
+   "ride": "vie+hakee",
+   "note": "WA Lianna: la kyydit Julian perhe · Mea yökylässä Saanalla, treeni jää väliin"
+  },
+  "kyyti-mea-lianna-2026-11-01": {
+   "driver": "Meidän",
+   "status": "us",
+   "ride": "vie+hakee",
+   "note": "WA Lianna: su Mea meidän perhe molemmat suunnat"
+  },
+  "kyyti-ellen-kisamatka-2026-10-31": {
+   "driver": "Meidän · asemalta 19.50",
+   "status": "us",
+   "ride": "hakee",
+   "note": "Ambrosia Helsingin kisamatka: kokoontuminen pe 30.10 12.45 matkakeskus (linja-autoaseman puoli), paluu la 19.50"
+  },
+  "kyyti-milla-vivida-2026-10-28": {
+   "driver": "skootteri (kulkee itse)",
+   "status": "other",
+   "ride": "",
+   "note": "Käyttäjä 28.10. (PM:n välittämänä): Milla menee Vividaan yleensä skootterilla, ei kyytiä · oletus tuleville kerroille · 18–20.30 BellaCenter"
   }
+ },
+ "cooks": {
+  "la": "",
+  "su": "",
+  "ma": "",
+  "ti": "",
+  "ke": "",
+  "to": "",
+  "pe": ""
+ },
+ "dishes": {
+  "la": "Nacho-pelti",
+  "su": "Hampparit (liha + Beyond)",
+  "ma": "Lohikeitto",
+  "ti": "Kana + riisi + kermakastike",
+  "ke": "Kalakeitto",
+  "to": "Tähteet",
+  "pe": "Katkarapukeitto + patongit"
+ },
+ "note": "Tee: maksa Welhot 20544 100 € · Ellen asemalta 19.50 tänään · su 1.11 Milla TTNV-bussi 8.30 Kuopio-Halli · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.30 → ti kyydit ruuhkassa.",
+ "extras": [
+  {
+   "id": "cal-99acg3oel23mnegsaaus2aoj28",
+   "title": "Perhe · Suun terveydenhuolto (mobiili) Aurinkorinne",
+   "date": "2026-10-21",
+   "dateEnd": "2026-11-12",
+   "kind": "cal",
+   "place": "Aurinkorinteen koulu"
+  },
+  {
+   "id": "cal-9mvegpcntr14kuunaaglmvg9m4",
+   "title": "Mea: yökylä Saanalla",
+   "date": "2026-10-30",
+   "dateEnd": "2026-10-31",
+   "kind": "cal"
+  },
+  {
+   "id": "cal-r45t1ftih5dejame4407a9aki4",
+   "title": "Samuel · Welhot P9 turnaus Kuopio Studentia",
+   "date": "2026-10-31",
+   "start": "08:00",
+   "end": "17:00",
+   "kind": "cal",
+   "place": "Studentia, Yliopistonranta 3, Kuopio"
+  },
+  {
+   "id": "cal-uh92295ge1uehpr33m8k3i8a2s",
+   "title": "Ellen · Helsingin kisamatka: paluu, haku asemalta 19.50",
+   "date": "2026-10-31",
+   "start": "19:50",
+   "end": "20:15",
+   "kind": "cal",
+   "place": "Kuopion rautatieasema"
+  },
+  {
+   "id": "cal-otcd5nseu29bq38665pn7t5b14",
+   "title": "Milla · Vivida TTNV Cup Tampere",
+   "date": "2026-11-01",
+   "start": "08:30",
+   "end": "22:00",
+   "kind": "cal",
+   "place": "Hervannan vapaa-aikakeskus, Tampere"
+  },
+  {
+   "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261101T073000Z",
+   "title": "Milla · valmennus",
+   "date": "2026-11-01",
+   "start": "09:30",
+   "end": "11:30",
+   "kind": "cal"
+  },
+  {
+   "id": "cal-f21q38ko72dp2f2vtctde275cg",
+   "title": "Samuel · Welhottaret Halloween-peli (vapaaehtoinen, ilmainen), Lippumäki",
+   "date": "2026-11-01",
+   "start": "15:00",
+   "end": "16:00",
+   "kind": "cal",
+   "place": "Lippumäki, Kuopio"
+  },
+  {
+   "id": "info-samuel-turnaus-2026-10-31",
+   "who": "samuel",
+   "title": "Welhot P9 turnaus Kuopio (Studentia · kotiturnaus)",
+   "date": "2026-10-31",
+   "place": "Studentia, Yliopistonranta 3 (Savilahti, B-ovi)",
+   "kind": "info",
+   "driver": "",
+   "status": "",
+   "start": "10:00",
+   "note": "Kotiturnaus Studentia (Yliopistonranta 3, Savilahti, B-ovi) · tila auki klo 10 · ensimmäiset pelit klo 11 · otteluohjelma: https://tulospalvelu.salibandy.fi/category/558!sb2026sk/group/1/fixtures · Vanhemmilta talkoot: kaukaloiden ja penkkien kasaus, tulostaulu + ottelupöytäkirja (2 vanhempaa/kenttä, 1,5–2 h vuorot) · kanttiini 11–16 järjestetty WA-ryhmässä \"P9 taustajoukot\" (Riikka ilmoittautui leipomaan 21.9.)"
+  },
+  {
+   "id": "info-milla-ttnv-2026-11-01",
+   "who": "milla",
+   "title": "Vivida TTNV Cup Tampere (suoritus 16.12)",
+   "date": "2026-11-01",
+   "start": "08:30",
+   "end": "22:00",
+   "place": "Hervannan vapaa-aikakeskus, Tampere",
+   "kind": "info",
+   "note": "WA-kisainfo: su 1.11 (EI la 31.10) · 8.30 lähtö Kuopio-Hallilta (bussi n. 8.40 ABC Pitkälahden kautta, lähtöpaikasta kysely WA-ryhmässä) · lounas ABC Oritupa n. 11.40 · perillä Tampereella n. 13 (Hervannan vapaa-aikakeskus) · lämppä 14.45 · Millan suoritus 16.12 · palkintojen jako n. 17.30, lähtö heti sen jälkeen · päivällinen ABC Oritupa 18–18.45 · Kuopiossa n. 22 · Päälle seuran edustusasu (musta alaosa, KRV-takki) · Pakkaa: kisapuku, keilat (kapteenisto hoitaa varakeilat), tossut + varatossut, hiustenlaittotarvikkeet, omat meikit, eväät · ruokailuihin rahaa · Valmentajat Eveliina, Lotta, Sara"
+  },
+  {
+   "id": "info-samuel-halloween-2026-11-01",
+   "who": "samuel",
+   "title": "Halloween-peli · Welhottaret (vapaaehtoinen, ilmainen)",
+   "date": "2026-11-01",
+   "start": "15:00",
+   "place": "Lippumäki",
+   "kind": "info",
+   "note": "Paras Halloween-asu palkitaan"
+  },
+  {
+   "id": "info-samuel-turnaus-2026-11-15",
+   "who": "samuel",
+   "title": "Welhot P9 turnaus Suonenjoki",
+   "date": "2026-11-15",
+   "place": "Suonenjoki",
+   "kind": "info",
+   "driver": "",
+   "status": ""
+  },
+  {
+   "id": "info-samuel-turnaus-2026-11-28",
+   "who": "samuel",
+   "title": "Welhot P9 turnaus Siilinjärvi",
+   "date": "2026-11-28",
+   "place": "Siilinjärvi",
+   "kind": "info",
+   "driver": "",
+   "status": ""
+  },
+  {
+   "id": "info-wilma-perhe-nikotiini-info-2026-12-01",
+   "who": "perhe",
+   "title": "Nikotiini-info vanhemmille (Teams)",
+   "date": "2026-12-01",
+   "start": "18:00",
+   "end": "19:15",
+   "kind": "info",
+   "note": "Aurinkorinne, maksuton. Ilmoittaudu 30.11. mennessä."
+  },
+  {
+   "id": "info-samuel-turnaus-2026-12-19",
+   "who": "samuel",
+   "title": "Welhot P9 turnaus Kuopio (Luola · kotiturnaus)",
+   "date": "2026-12-19",
+   "place": "Kuopio Luola",
+   "kind": "info",
+   "driver": "",
+   "status": ""
+  },
+  {
+   "id": "info-wilma-milla-op05-palautukset-2026-11-06",
+   "who": "milla",
+   "title": "OP05-palautukset (teht. 5 & 6)",
+   "date": "2026-11-06",
+   "kind": "info",
+   "note": "kirjoitelma tekijänoikeuksista + Forms-kysely, tiimitehtäviä"
+  },
+  {
+   "id": "info-wilma-milla-influenssarokotus-2026-11-09",
+   "who": "milla",
+   "title": "Influenssarokotus (ajanvaraus) 9.11. tai 11.11.",
+   "date": "2026-11-09",
+   "kind": "info",
+   "note": "Wilma 21.10., th Heli Kolehmainen: rokotukset ma 9.11. ja ke 11.11. ajanvarauksella. Varaus p. 044 718 6561 ma–pe 8–9, OmaSavo tai neuvontapiste ma–pe 12–12.45. Maksuton riskiryhmille, muut resepti opiskeluterveydenhuollosta."
+  },
+  {
+   "id": "info-wilma-milla-op05-ilmastodiagrammi-2026-11-18",
+   "who": "milla",
+   "title": "OP05 ilmastodiagrammi (itsenäinen teht. 3)",
+   "date": "2026-11-18",
+   "kind": "info",
+   "note": "Wilma 6.10."
+  },
+  {
+   "id": "info-wilma-mea-ena3-koe-2026-11-19",
+   "who": "mea",
+   "title": "ENA3-koe",
+   "date": "2026-11-19",
+   "kind": "info",
+   "note": "Wilma 6.10.; siirretty 12.11. → 19.11. (Wilma 21.10.)"
+  },
+  {
+   "id": "info-wilma-mea-rub3-koe-2026-11-27",
+   "who": "mea",
+   "title": "RUB3-koe",
+   "date": "2026-11-27",
+   "kind": "info",
+   "note": "Wilma 6.10. Lontoo-lähtö samana iltana"
+  },
+  {
+   "id": "info-wilma-mea-bi3-koe-2026-12-01",
+   "who": "mea",
+   "title": "BI3-koe + BI-vihkon palautus",
+   "date": "2026-12-01",
+   "start": "08:00",
+   "end": "09:00",
+   "kind": "info",
+   "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko. HUOM: Lontoo 27.11.–2.12."
+  },
+  {
+   "id": "info-wilma-mea-ke3-koe-2026-12-11",
+   "who": "mea",
+   "title": "KE3-koe",
+   "date": "2026-12-11",
+   "start": "14:15",
+   "kind": "info",
+   "note": "Wilma 6.10."
+  },
+  {
+   "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
+   "who": "perhe",
+   "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
+   "date": "2026-10-21",
+   "dateEnd": "2026-11-12",
+   "kind": "info",
+   "note": "Wilma 7.10. · turvakielto: soita 017-2734500 · Wilma 8.10.: Pop Up 21.10.–12.11., Samuel & Ellen",
+   "place": "Aurinkorinteen koulu"
+  },
+  {
+   "id": "info-kirjastot-kiinni-2026-10-20",
+   "who": "perhe",
+   "title": "Kirjastot kiinni",
+   "date": "2026-10-20",
+   "dateEnd": "2026-11-03",
+   "kind": "info"
+  },
+  {
+   "id": "info-wilma-kirjasto-suljettu-2026-10-20",
+   "who": "perhe",
+   "title": "Kuopion kirjastot kiinni 20.10.–3.11. (uusi järjestelmä)",
+   "date": "2026-10-20",
+   "dateEnd": "2026-11-03",
+   "kind": "info"
+  },
+  {
+   "id": "info-samuel-joukkuekuvaus-2026-11-03",
+   "who": "samuel",
+   "title": "Welhot P9 joukkuekuvaus",
+   "date": "2026-11-03",
+   "start": "16:30",
+   "kind": "info",
+   "place": "Lippumäki",
+   "note": "ilmoittaudu urheilu.seppalan.fi, koodi JRAPCSE4FD"
+  },
+  {
+   "id": "info-ellen-juhlanaytos-2026-11-10",
+   "who": "ellen",
+   "title": "Ambrosia juhlanäytös",
+   "date": "2026-11-10",
+   "kind": "info"
+  },
+  {
+   "id": "info-wilma-mea-luokanvalvoja-poissa-2026-10-26",
+   "who": "mea",
+   "title": "Mea: luokanvalvoja Jenni Kärkkäinen poissa",
+   "date": "2026-10-26",
+   "dateEnd": "2026-10-30",
+   "kind": "info",
+   "note": "Wilma 20.10.2026 · kiireelliset asiat rehtorille"
+  },
+  {
+   "id": "info-wilma-mea-influenssa-ilmoitus-2026-10-30",
+   "who": "mea",
+   "title": "DL: influenssarokote – ilmoita terkkarille Wilmassa",
+   "date": "2026-10-30",
+   "kind": "info",
+   "note": "Wilma 22.10., th Noora Teittinen: jos Mea kuuluu maksuttoman rokotteen piiriin, ilmoita Wilma-viestillä pe 30.10. mennessä. Rokotus ti 17.11."
+  },
+  {
+   "id": "info-wilma-mea-influenssarokotus-2026-11-17",
+   "who": "mea",
+   "title": "Influenssarokotus koululla",
+   "date": "2026-11-17",
+   "kind": "info",
+   "note": "Wilma 22.10., th Noora Teittinen · ilmoitus 30.10. mennessä"
+  },
+  {
+   "id": "info-ellen-paluu-2026-10-31",
+   "who": "ellen",
+   "title": "Ellen kotiin Helsingistä · haku Kuopion asemalta",
+   "date": "2026-10-31",
+   "start": "19:50",
+   "place": "Kuopion rautatieasema",
+   "kind": "info",
+   "note": "Paluujuna 15.24–19.50 · huoltajat tiedottavat paluukyydistä · tavarat kannetaan hotellilta kisapaikalle ja sieltä junaan"
+  },
+  {
+   "id": "info-samuel-welhot-laskut-2026-10-30",
+   "who": "samuel",
+   "title": "Welhot-laskut: ei avoimia (20544 maksettu 22.10.)",
+   "date": "2026-10-30",
+   "kind": "info",
+   "note": "Welhot Raha 27.10.: 0 € avoinna · 19818 maksettu 19.9. · 19889 maksettu aiemmin · 20544 (100 €, er. 30.10.) maksettu 22.10. (ei vielä tiliotteella)"
+  },
+  {
+   "id": "info-samuel-kortti-piste-34085-2026-11-02",
+   "who": "samuel",
+   "title": "Kortti-Piste 34085 eräpäivä 24,65 € (joukkueen lasku)",
+   "date": "2026-11-02",
+   "kind": "info",
+   "note": "ei henkilökohtainen → joukkueen rahastonhoitaja"
+  },
+  {
+   "id": "info-mea-rippikoulu-muutostoiveet-2026-11-03",
+   "who": "mea",
+   "title": "DL: rippikoulun (Rytky 9) muutostoiveet",
+   "date": "2026-11-03",
+   "kind": "info",
+   "note": "Kirjallisesti reetta.ojanpera@evl.fi + miika.koistinen@evl.fi · vain jos muutettavaa"
+  },
+  {
+   "id": "info-ellen-ambrosia-pe-ei-treenia-2026-10-30",
+   "who": "ellen",
+   "title": "Ambrosia pe-treeni: ei tarvita (Ellen kisareissulla)",
+   "date": "2026-10-30",
+   "kind": "info",
+   "note": "Ei vientiä Luolaan · Ellen Helsingissä 30.–31.10"
+  },
+  {
+   "id": "info-ambrosia-2026-10-30",
+   "who": "ellen",
+   "title": "Ambrosia kisat · Helsinki",
+   "date": "2026-10-30",
+   "kind": "info",
+   "place": "Helsinki",
+   "dateEnd": "2026-10-31",
+   "note": "kulku Juna; huoltaja Pipsa"
+  },
+  {
+   "id": "info-ambrosia-2026-11-21",
+   "who": "ellen",
+   "title": "Ambrosia kisat · Jyväskylä",
+   "date": "2026-11-21",
+   "kind": "info",
+   "place": "Jyväskylä",
+   "dateEnd": "2026-11-22",
+   "note": "kulku Auto/juna+taksi"
+  },
+  {
+   "id": "info-ambrosia-2026-12-04",
+   "who": "ellen",
+   "title": "Ambrosia leiri · Vierumäki",
+   "date": "2026-12-04",
+   "kind": "info",
+   "place": "Vierumäki",
+   "dateEnd": "2026-12-05",
+   "note": "kulku Juna+taksi; yö Vierumäki"
+  },
+  {
+   "id": "info-ambrosia-2027-03-19",
+   "who": "ellen",
+   "title": "Ambrosia leiri · Vierumäki",
+   "date": "2027-03-19",
+   "kind": "info",
+   "place": "Vierumäki",
+   "dateEnd": "2027-03-21"
+  },
+  {
+   "id": "info-ambrosia-2027-06-11",
+   "who": "ellen",
+   "title": "Ambrosia voimistelupäivät · Espoo",
+   "date": "2027-06-11",
+   "kind": "info",
+   "place": "Espoo",
+   "dateEnd": "2027-06-13"
+  },
+  {
+   "id": "sheet-milla-2026-10-30",
+   "who": "milla",
+   "title": "Vivida",
+   "date": "2026-10-30",
+   "start": "18:00",
+   "end": "20:30",
+   "place": "BellaCenter",
+   "kind": "treeni"
+  },
+  {
+   "id": "sheet-mea-2026-10-31",
+   "who": "mea",
+   "title": "Lianna",
+   "date": "2026-10-31",
+   "start": "12:30",
+   "end": "15:00",
+   "place": "",
+   "kind": "treeni"
+  },
+  {
+   "id": "info-samuel-welhot-20544-2026-10-31",
+   "who": "samuel",
+   "title": "Maksa Welhot 20544 · 100 € (erä 30.10)",
+   "date": "2026-10-31",
+   "kind": "info",
+   "note": "FI62 5600 0520 3725 77 · viite 2 05449 · lokakuun kk-maksu"
+  },
+  {
+   "id": "info-riikka-lahto-2026-11-02",
+   "who": "riikka",
+   "title": "Riikka lähtee (koulupäivät, Oulu) klo 15.30",
+   "date": "2026-11-02",
+   "start": "15:30",
+   "kind": "info",
+   "note": "alkuviikon kyydit Jussilla"
+  },
+  {
+   "id": "info-isanpaiva-2026-11-08",
+   "who": "perhe",
+   "title": "Isänpäivä",
+   "date": "2026-11-08",
+   "kind": "info"
+  }
+ ],
+ "schoolLunch": {
+  "date": "2026-10-30",
+  "dish": "Kasvis-makaronilaatikkoa",
+  "veg": ""
+ },
+ "vacation": {
+  "from": "2026-10-12",
+  "to": "2026-10-18",
+  "hideSchool": true,
+  "hideHobbies": false,
+  "label": "Syysloma vko 42"
+ },
+ "trip": {
+  "today": "",
+  "monday": "",
+  "weatherPlace": "",
+  "weatherLat": null,
+  "weatherLon": null
+ },
+ "cancelled": {
+  "mea-lianna-pe": {
+   "2026-09-18": "ei treeniä (sheet vko 38)"
+  },
+  "ellen-ambrosia": {
+   "2026-09-23": "Leo’s Leikkimaa (WA)",
+   "2026-09-25": "NTV-kisat peruttu (Jussi: ei kisoja)",
+   "2026-09-26": "NTV-kisat peruttu (Jussi: ei kisoja)",
+   "2026-09-27": "NTV-kisat peruttu (Jussi: ei kisoja)",
+   "2026-10-09": "Ellen ei mene Ambrosiaan (Jussi 8.10.)",
+   "2026-10-16": "Ellen ei treeneissä tällä viikolla (fiilis 14.10)"
+  },
+  "info-kkp-2026-09-25": {
+   "id": "info-kkp-2026-09-25",
+   "title": "Kodin ja koulun päivä",
+   "date": "2026-09-25",
+   "reason": "Jussi 24.9.: ei mennä"
+  },
+  "kodin-ja-koulun-paiva": {
+   "2026-09-25": "Perhe ei osallistu"
+  },
+  "info-wilma-milla-shaking-up-tech-2026-10-01": {
+   "id": "info-wilma-milla-shaking-up-tech-2026-10-01",
+   "title": "Shaking up Tech -haku auki",
+   "date": "2026-10-01",
+   "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
+  },
+  "cal-sv9gsjhdifokii13rhid3ptat4": {
+   "id": "cal-sv9gsjhdifokii13rhid3ptat4",
+   "title": "Milla · Shaking up Tech -haku",
+   "date": "2026-10-01",
+   "reason": "Jussi 2.10.: poista Fiiliksestä, älä lisää uudelleen"
+  },
+  "cal-qt2a8joqabeb1b8guvkmg46rs8": "Jussi 4.10: ei mennä",
+  "info-wilma-perhe-vy-vuosikokous-2026-10-05": "Jussi 4.10: ei mennä",
+  "samuel-sahly-ma": {
+   "2026-10-12": "Welhot peruttu (syysloma)"
+  },
+  "info-vivida-kisakallio-2026-10-17": {
+   "id": "info-vivida-kisakallio-2026-10-17",
+   "title": "Vivida Kisakallio",
+   "date": "2026-10-17",
+   "reason": "PERUTTU (syksy)"
+  },
+  "samuel-sahly-ti": {
+   "2026-10-13": "WA Säbä 11.10: Samuel tiistain ainakin poissa treeneistä"
+  },
+  "sheet-milla-2026-10-16": {
+   "id": "sheet-milla-2026-10-16",
+   "title": "Vivida",
+   "date": "2026-10-16",
+   "reason": "Milla Lontoossa"
+  }
+ }
 }

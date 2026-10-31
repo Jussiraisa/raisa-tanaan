@@ -733,7 +733,7 @@
     <article class="metric" data-chart="indoor" role="button" tabindex="0">
       <div class="lbl">Sisällä</div>
       <div class="val" id="indoorVal">—°</div>
-      <div class="sub" id="indoorSub">Shelly live</div>
+      <div class="sub" id="indoorSub">Katon anturi</div>
     </article>
     <article class="metric" data-chart="outdoor" role="button" tabindex="0">
       <div class="lbl">Ulkona</div>
@@ -930,7 +930,7 @@
         <li>🧊 Jäähdytys (myös auto ja kuivaus) on estetty lämmityskaudella ja aina kun ulkona on alle <b data-s="coolMinOutdoorC">20</b> °C (tai ulkolämpöä ei tiedetä). Jos lämpöpumppu löytyy jäähdytykseltä, siitä tulee hälytys ja se vaihdetaan lämmitykselle samaan lämpötilaan (koeajossa vain kirjataan).</li>
         <li>❄️ Lämpöpumppua ei sammuteta lämmityskaudella (<b data-s="heatSeasonStart">9</b>.–<b data-s="heatSeasonEnd">4</b>. kuukausi) eikä kun ulkona on alle <b data-s="heatOutdoorC">10</b> °C. Muulloin Poissa voi sammuttaa sen. Hälytys: kotona jos pois ja sisällä alle <b data-s="ilpAlertIndoorC">18</b> °C; poissa vain jos sisällä alle poissa-tavoitteen (− hystereesi, tyypillisesti 15,5 °C) tai ulkona alle <b data-s="ilpOffAlarmC">0</b> °C — ei siis punaisena, kun poissa ja sisällä on vielä yli ylläpitotasoa.</li>
         <li>🌙 Yöllä (klo <b data-s="nightStartH">22</b>–<b data-s="nightEndH">7</b>) ohjaus käyttää lämpöpumpun omaa sisäanturia, koska Shelly katonrajassa näyttää liikaa. Lämpöpumpun anturi mittaa sisäyksikön imuilmaa kokonaisasteina ja voi näyttää vähän liikaa kun pumppu käy. Jos sen lukema puuttuu, on vanha tai epäuskottava, käytetään Shellyä. Automaatio käynnistää pumpun hiljaisella puhaltimella; käsin vaihdettu puhallin jää voimaan.</li>
-        <li>🌙 Kotona-tilassa yöllä (klo <b data-s="nightStartH">22</b>–<b data-s="nightEndH">7</b>) lämpöpumppu on päällä koko yön kotona-asetuksella hiljaisella puhaltimella, kun ulkona on alle <b data-s="ilpHomeNightOnBelowOutdoorC">20</b> °C – "tarpeeksi lämmin" -sammutus ja sähkön hinta eivät sammuta sitä. Jos ulkolämpöä ei saada, oletetaan kylmä. Pakkassuoja, turvatila, käsiohitus ja takka toimivat kuten ennen; Poissa-tila ennallaan.</li>
+        <li id="ruleHomeOn">🏠 Kotona-tilassa lämpöpumppu on päällä kotona-asetuksella hiljaisella puhaltimella <span id="ruleHomeOnWhen">koko vuorokauden</span>: yöllä (klo <b data-s="nightStartH">22</b>–<b data-s="nightEndH">7</b>) kun ulkona on alle <b data-s="ilpHomeNightOnBelowOutdoorC">20</b> °C ja päivällä kun ulkona on alle <b data-s="ilpHomeDayOnBelowOutdoorC">20</b> °C (−30 = ei käytössä) – katon anturin "tarpeeksi lämmin" -sammutus ja sähkön hinta eivät sammuta sitä. Jos ulkolämpöä ei saada, oletetaan kylmä. Pakkassuoja, turvatila, käsiohitus ja takka toimivat kuten ennen; Poissa-tila ennallaan.</li>
         <li>🌡️ Sisälämpömittari on katon rajassa, jossa on lämpimämpää kuin oleskelutasolla. Siksi kylmärajat ovat varovaisia: oikeasti oleskelutasolla on vähän kylmempää kuin näkyy.</li>
         <li>🔥 Takan tunnistus vaatii, että sekä sisälämpö nousee vähintään <b data-s="fireRiseC">4</b> °C että poistoilma vähintään <b data-s="fireExtractRiseC">2</b> °C puolessa tunnissa – ei lasketa, jos lämpöpumppu, sauna, iso sähköteho tai aurinko selittää nousun.</li>
         <li>🔥 Takka päällä: ilmanvaihto EI mene tehostukselle eikä poissa-tilaan (alipaine voi vetää savua sisään). Takkatoiminto (ylipaine) auttaa vetoa. Poissa-nappi kysyy varmistuksen. Lämpöpumppua ei sammuteta, mutta sen lämpöä voidaan laskea.</li>
@@ -1491,6 +1491,13 @@
     };
   }
 
+  // 31.10.2026: Shelly is a ceiling sensor → label it, show the heat pump's own reading next to it
+  var _ilpIndoorC = null;
+  function updIndoorSub() {
+    var el = document.getElementById("indoorSub"); if (!el) return;
+    el.textContent = "Katon anturi" + (_ilpIndoorC != null ? " · ILP-anturi " + num(_ilpIndoorC, 0) + " °C" : "");
+  }
+
   function paint() {
     var d = DATA || {};
     var power = Number(d.powerW);
@@ -1521,7 +1528,7 @@
 
     document.getElementById("indoorVal").textContent = d.indoorC != null ? num(d.indoorC, 1) + "°" : "—°";
     document.getElementById("outdoorVal").textContent = d.outdoorC != null ? num(d.outdoorC, 1) + "°" : "—°";
-    document.getElementById("indoorSub").textContent = "lämpötila sisällä";
+    updIndoorSub();
     document.getElementById("outdoorSub").textContent = "lämpötila ulkona";
 
     var fs = document.getElementById("flagSauna");
@@ -1736,6 +1743,7 @@
       chip.textContent = ilp.on ? "Päällä" : "Pois";
       chip.className = "chip" + (ilp.on ? (cool ? " on" : " hot") : "");
       document.getElementById("ilpIndoor").textContent = degC(ilp.indoorC);
+      _ilpIndoorC = ilp.indoorC; updIndoorSub();
       var shown = _ilpPendingSet != null ? _ilpPendingSet : ilp.setC;
       setEl.textContent = degC(shown, ilp.step === 0.5 ? 1 : 0);
       setEl.className = "cl-val" + (_ilpPendingSet != null ? " pending" : "");
@@ -2541,7 +2549,9 @@
     }
     var hnEl = document.getElementById("autoHomeNight"), hn = p.devices && p.devices.ilp && p.devices.ilp.homeNight;
     if (hnEl) {
-      if (hn && hn.active) { hnEl.hidden = false; hnEl.textContent = "🌙 Kotona-yösääntö PÄÄLLÄ: " + (hn.text || "lämpöpumppu päällä koko yön") + (hn.outdoorAssumed ? " (ulkolämpö puuttuu → oletettu kylmä)" : ""); }
+      var ha = p.devices && p.devices.ilp && p.devices.ilp.homeAlwaysOn;
+      if (ha && ha.active) { hnEl.hidden = false; hnEl.textContent = (ha.period === "päivä" ? "🏠 Kotona-päiväsääntö PÄÄLLÄ: " : "🌙 Kotona-yösääntö PÄÄLLÄ: ") + (ha.text || "lämpöpumppu päällä") + (ha.outdoorAssumed ? " (ulkolämpö puuttuu → oletettu kylmä)" : ""); }
+      else if (hn && hn.active) { hnEl.hidden = false; hnEl.textContent = "🌙 Kotona-yösääntö PÄÄLLÄ: " + (hn.text || "lämpöpumppu päällä koko yön") + (hn.outdoorAssumed ? " (ulkolämpö puuttuu → oletettu kylmä)" : ""); }
       else hnEl.hidden = true;
     }
     var items = Object.keys(p.devices || {}).map(function (k) { var it = p.devices[k]; return { k: k, it: it }; });
@@ -2573,6 +2583,9 @@
     document.getElementById("setMain").innerHTML = MAIN_SET.filter(function (k) { return S.schema[k]; }).map(function (k) { return setRowHtml(k, S.schema[k], S.values[k]); }).join("");
     document.getElementById("setMore").innerHTML = keys.filter(function (k) { return MAIN_SET.indexOf(k) < 0; }).map(function (k) { return setRowHtml(k, S.schema[k], S.values[k]); }).join("");
     Array.prototype.forEach.call(document.querySelectorAll("[data-s]"), function (el) { var k = el.getAttribute("data-s"); if (S.values[k] != null) el.textContent = fmtNum(S.values[k], S.schema[k].step); });
+    var rw = document.getElementById("ruleHomeOnWhen");
+    if (rw) { var nOn = Number(S.values.ilpHomeNightOnBelowOutdoorC != null ? S.values.ilpHomeNightOnBelowOutdoorC : 20) > -30, dOn = Number(S.values.ilpHomeDayOnBelowOutdoorC != null ? S.values.ilpHomeDayOnBelowOutdoorC : 20) > -30;
+      rw.textContent = nOn && dOn ? "koko vuorokauden" : nOn ? "yöllä (päiväsääntö pois käytöstä)" : dOn ? "päivällä (yösääntö pois käytöstä)" : "– molemmat säännöt pois käytöstä"; }
     if (S.relayNote) document.getElementById("relayNote").textContent = S.relayNote;
   }
   document.getElementById("saveCard").addEventListener("click", function (ev) {

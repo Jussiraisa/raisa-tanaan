@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793466942564,
+  "updated": "2026-11-01T07:08:07+02:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -347,7 +347,7 @@
     "to": "Tähteet",
     "pe": "Katkarapukeitto + patongit"
   },
-  "note": "Tee: maksa Welhot 20544 100 € · Ellen asemalta 19.50 tänään · su 1.11 Milla TTNV-bussi 8.30 Kuopio-Halli · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.30 → ti kyydit ruuhkassa.",
+  "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.30 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
       "id": "cal-99acg3oel23mnegsaaus2aoj28",
@@ -735,9 +735,9 @@
     }
   ],
   "schoolLunch": {
-    "date": "2026-10-30",
-    "dish": "Kasvis-makaronilaatikkoa",
-    "veg": ""
+    "date": "2026-11-02",
+    "dish": "Lihapyöryköitä + kermaista ruskeakastiketta + perunaa",
+    "veg": "kasvisjauhispyöryköitä + ruskeakastike"
   },
   "vacation": {
     "from": "2026-10-12",

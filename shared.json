@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-11-01T07:08:07+02:00",
+  "updated": 1793510635401,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -358,22 +358,6 @@
       "place": "Aurinkorinteen koulu"
     },
     {
-      "id": "cal-9mvegpcntr14kuunaaglmvg9m4",
-      "title": "Mea: yökylä Saanalla",
-      "date": "2026-10-30",
-      "dateEnd": "2026-10-31",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-uh92295ge1uehpr33m8k3i8a2s",
-      "title": "Ellen · Helsingin kisamatka: paluu, haku asemalta 19.50",
-      "date": "2026-10-31",
-      "start": "19:50",
-      "end": "20:15",
-      "kind": "cal",
-      "place": "Kuopion rautatieasema"
-    },
-    {
       "id": "cal-otcd5nseu29bq38665pn7t5b14",
       "title": "Milla · Vivida TTNV Cup Tampere",
       "date": "2026-11-01",
@@ -398,6 +382,30 @@
       "end": "16:00",
       "kind": "cal",
       "place": "Lippumäki, Kuopio"
+    },
+    {
+      "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9h60p40qjledpmi",
+      "title": "Riikan koulupäivät",
+      "date": "2026-11-02",
+      "dateEnd": "2026-11-05",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-98taesbg3ghdcsegmofb0c1phs",
+      "title": "Mea · terapia (Minna Proskin-Ruuskanen)",
+      "date": "2026-11-02",
+      "start": "13:00",
+      "end": "14:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6p1kcc1h8l34cb9o8p234b9k651j2b9p6l134b9p8h34cd1g8gojcci674",
+      "title": "Riikka Oulu",
+      "date": "2026-11-02",
+      "dateEnd": "2026-11-05",
+      "start": "21:00",
+      "end": "22:00",
+      "kind": "cal"
     },
     {
       "id": "info-samuel-turnaus-2026-10-31",

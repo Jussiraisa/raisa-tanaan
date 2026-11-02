@@ -1941,6 +1941,7 @@
       var trav = has(p, "travel") || src.indexOf("matka-") >= 0;
       var fam = has(p, "family") || has(p, "kids");
       if (has(p, "uusi")) s += 2;
+      var _yy = parseInt(String(p.year || "").slice(0, 4), 10); if (_yy >= 2025) s += 3; else if (_yy >= 2022) s += 1; /* FIILIS-MOOD v2: tuoreet (2025–2026) painottuvat */
       if (slot === "morning" && (has(p, "arki") || has(p, "nature"))) s += 2;
       if ((slot === "evening" || slot === "night") && (has(p, "home") || (fam && !trav))) s += 2;
       if (weekend && (fam || trav)) s += 1.5;
@@ -1969,7 +1970,7 @@
         var out = [];
         for (var i = 0; i < data.length; i++) {
           var m = data[i];
-          if (m && m.src && (String(m.src).indexOf("matka-") >= 0 || String(m.src).indexOf("albums/arki/") >= 0)) {
+          if (m && m.src && (String(m.src).indexOf("matka-") >= 0 || String(m.src).indexOf("albums/arki/") >= 0 || String(m.src).indexOf("albums/tuoreet/") >= 0)) {
             out.push({ src: m.src, place: m.place || "Muisto", year: m.year || "", tags: m.tags || [], slot: m.slot || [] });
           }
         }

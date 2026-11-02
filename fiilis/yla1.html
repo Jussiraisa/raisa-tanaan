@@ -797,6 +797,7 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       if (now.wd === 5 && hasTag(p, "travel")) sc += 1;
       /* FIILIS-MOOD v1: uudet, aamu arki, ilta perhe/koti, vkl perhe+reissut, vuodenaika */
       if (hasTag(p, "uusi")) sc += 3;
+      var _yy = parseInt(String(p.year || "").slice(0, 4), 10); if (_yy >= 2025) sc += 3; else if (_yy >= 2022) sc += 1; /* FIILIS-MOOD v2: tuoreet (2025–2026) painottuvat */
       if (slot === "morning" && (hasTag(p, "arki") || hasTag(p, "nature"))) sc += 2;
       if ((slot === "evening" || slot === "night") && (hasTag(p, "home") || (hasTag(p, "family") && !hasTag(p, "travel")))) sc += 2;
       if ((now.wd === 6 || now.wd === 0) && (hasTag(p, "family") || hasTag(p, "travel"))) sc += 1;

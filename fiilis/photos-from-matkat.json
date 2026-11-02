@@ -1,5 +1,1643 @@
 [
   {
+    "src": "photos-web/albums/tuoreet/uusi-001.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-002.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-003.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-004.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "london",
+      "nature",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-005.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-006.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-007.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-008.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-009.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-010.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-011.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-012.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-013.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-014.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-015.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-016.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-017.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-018.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-019.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-020.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-021.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-022.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-023.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-024.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-025.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-026.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-027.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-028.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-029.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-030.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-031.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-032.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-033.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-034.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-035.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-036.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-037.jpg",
+    "place": "Lontoo",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-038.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-039.jpg",
+    "place": "Illallisella Alicantessa",
+    "year": "2026",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-040.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-041.jpg",
+    "place": "Alicanten linna",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-042.jpg",
+    "place": "Alicanten linna",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-043.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-044.jpg",
+    "place": "Alicante",
+    "year": "2026",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-045.jpg",
+    "place": "Pentuvierailu",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "arki",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-046.jpg",
+    "place": "Pentuvierailu",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "arki",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-047.jpg",
+    "place": "Pentuvierailu",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "arki",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-048.jpg",
+    "place": "Pentuvierailu",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "kids",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-049.jpg",
+    "place": "Pentuvierailu",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "kids",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-050.jpg",
+    "place": "Pentuvierailu",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "kids",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-051.jpg",
+    "place": "Pentuvierailu",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "kids",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-052.jpg",
+    "place": "Kotona",
+    "year": "2026",
+    "vibe": "cozy",
+    "tags": [
+      "family",
+      "home",
+      "kids",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-053.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-054.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-055.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-056.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-057.jpg",
+    "place": "Brasilia",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-058.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-059.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "calm",
+    "tags": [
+      "nature",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-060.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-061.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-062.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-063.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-064.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-065.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "calm",
+    "tags": [
+      "nature",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-066.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-067.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-068.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "calm",
+    "tags": [
+      "nature",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-069.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-070.jpg",
+    "place": "Ruka",
+    "year": "2026",
+    "vibe": "calm",
+    "tags": [
+      "nature",
+      "travel",
+      "talvi",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-071.jpg",
+    "place": "Pariisi",
+    "year": "2025",
+    "vibe": "cozy",
+    "tags": [
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-072.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-073.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-074.jpg",
+    "place": "Costa Brava",
+    "year": "2025",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "travel",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-075.jpg",
+    "place": "Italian järvillä",
+    "year": "2025",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-076.jpg",
+    "place": "Italian järvillä",
+    "year": "2025",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-077.jpg",
+    "place": "Italian järvillä",
+    "year": "2025",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-078.jpg",
+    "place": "Italian järvillä",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "travel",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-079.jpg",
+    "place": "Rannalla",
+    "year": "2025",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-080.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "morning",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-081.jpg",
+    "place": "Vaellus Rivieralla",
+    "year": "2024",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "morning",
+      "day"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-082.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-083.jpg",
+    "place": "Riviera",
+    "year": "2024",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-084.jpg",
+    "place": "Pieni Karhunkierros",
+    "year": "2024",
+    "vibe": "adventure",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-085.jpg",
+    "place": "Pieni Karhunkierros",
+    "year": "2024",
+    "vibe": "calm",
+    "tags": [
+      "nature",
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-086.jpg",
+    "place": "Pieni Karhunkierros",
+    "year": "2024",
+    "vibe": "calm",
+    "tags": [
+      "nature",
+      "travel",
+      "kevat",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-087.jpg",
+    "place": "Lontoo",
+    "year": "2023",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-088.jpg",
+    "place": "Alpeilla",
+    "year": "2023",
+    "vibe": "calm",
+    "tags": [
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-089.jpg",
+    "place": "Auringonkukkapelto",
+    "year": "2023",
+    "vibe": "warm",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-090.jpg",
+    "place": "Riviera",
+    "year": "2023",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-091.jpg",
+    "place": "Riviera",
+    "year": "2023",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "day",
+      "afternoon"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-092.jpg",
+    "place": "Riviera",
+    "year": "2023",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "nature",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-093.jpg",
+    "place": "Riviera",
+    "year": "2023",
+    "vibe": "bright",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-094.jpg",
+    "place": "Lontoo",
+    "year": "2022",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-095.jpg",
+    "place": "Lontoo",
+    "year": "2022",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "travel",
+      "london",
+      "syksy",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-096.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "bright",
+    "tags": [
+      "travel",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-097.jpg",
+    "place": "Eurooppa",
+    "year": "2022",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "afternoon",
+      "evening"
+    ]
+  },
+  {
+    "src": "photos-web/albums/tuoreet/uusi-098.jpg",
+    "place": "Lontoo",
+    "year": "2022",
+    "vibe": "joy",
+    "tags": [
+      "family",
+      "kids",
+      "travel",
+      "london",
+      "kesa",
+      "uusi"
+    ],
+    "slot": [
+      "evening",
+      "night"
+    ]
+  },
+  {
     "src": "photos-web/albums/arki/arki-001.jpg",
     "place": "Hääpäivä",
     "year": "2010",

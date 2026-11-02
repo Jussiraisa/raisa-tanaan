@@ -1241,6 +1241,7 @@
       var trav = has(p, "travel") || src.indexOf("matka-") >= 0;
       var fam = has(p, "family") || has(p, "kids");
       if (has(p, "uusi")) s += 2;
+      var _yy = parseInt(String(p.year || "").slice(0, 4), 10); if (_yy >= 2025) s += 3; else if (_yy >= 2022) s += 1; /* FIILIS-MOOD v2: tuoreet (2025–2026) painottuvat */
       if (slot === "morning" && (has(p, "arki") || has(p, "nature"))) s += 2;
       if ((slot === "evening" || slot === "night") && (has(p, "home") || (fam && !trav))) s += 2;
       if (weekend && (fam || trav)) s += 1.5;

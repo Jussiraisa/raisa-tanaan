@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-10-28T07:29:00+02:00",
+  "updated": "2026-11-02T19:45:00+02:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -181,9 +181,41 @@
       "weekdays": [
         5
       ]
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "10:00",
+      "end": "13:00",
+      "date": "2026-11-03",
+      "source": "perhe-ohitus"
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "12:00",
+      "end": "15:00",
+      "date": "2026-11-04",
+      "source": "perhe-ohitus"
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "08:00",
+      "end": "13:00",
+      "date": "2026-11-05",
+      "source": "perhe-ohitus"
+    },
+    {
+      "who": "Mea",
+      "label": "Koulu",
+      "time": "10:00",
+      "end": "13:00",
+      "date": "2026-11-06",
+      "source": "perhe-ohitus"
     }
   ],
-  "note": "Synkka 21.10.2026 aamu: Google-kalenterit (Perhe, Voimistelu, jussi.raisa) + Outlook-työ tarkistettu. Ei Jussin työreissua (Veturi Roadshow Kuopio to 22.10, Nordea-lounas Kuopio ti 27.10). Riikka ei poissa 21.–31.10. Lisätty Millan Sijoittajakoulu ke 21.10 klo 14.30–15.45 (Wilma). Kyydit ennallaan.",
+  "note": "Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus).",
   "events": [
     {
       "date": "2026-09-20",
@@ -2081,7 +2113,8 @@
       "title": "Terapia",
       "kind": "muu",
       "source": "gcal:perhe",
-      "note": "Vahvistettu terapeutilta 27.10."
+      "note": "Vahvistettu terapeutilta 27.10.",
+      "driver": "Riikka"
     },
     {
       "date": "2026-11-02",
@@ -2089,16 +2122,6 @@
       "end": "18:30",
       "who": "Milla",
       "title": "Vivida oheinen",
-      "place": "Luola",
-      "kind": "treeni",
-      "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-11-02",
-      "time": "18:30",
-      "end": "19:30",
-      "who": "Mea",
-      "title": "Liannan voimat",
       "place": "Luola",
       "kind": "treeni",
       "source": "gcal:voimistelu"
@@ -2122,6 +2145,15 @@
     },
     {
       "date": "2026-11-03",
+      "time": "17:00",
+      "end": "17:45",
+      "who": "Mea",
+      "title": "Valmennus",
+      "kind": "treeni",
+      "source": "perhe-ohitus"
+    },
+    {
+      "date": "2026-11-03",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu",
@@ -2157,6 +2189,13 @@
       "note": "Riikan koulupäivät · lähtö 2.11 klo 15.00"
     },
     {
+      "date": "2026-11-04",
+      "who": "Mea",
+      "title": "Matkus kavereiden kanssa",
+      "kind": "muu",
+      "source": "perhe-ohitus"
+    },
+    {
       "date": "2026-11-05",
       "who": "Riikka",
       "title": "Oulu",
@@ -2165,14 +2204,24 @@
       "note": "Riikan koulupäivät · lähtö 2.11 klo 15.00"
     },
     {
+      "date": "2026-11-05",
+      "who": "Mea",
+      "title": "Joukkueilta / kaverit",
+      "kind": "muu",
+      "source": "perhe-ohitus"
+    },
+    {
       "date": "2026-11-06",
-      "time": "18:00",
-      "end": "20:30",
+      "time": "18:30",
+      "end": "20:00",
       "who": "Mea",
       "title": "Lianna treeni",
       "place": "Bella Center",
       "kind": "treeni",
-      "source": "gcal:voimistelu"
+      "source": "gcal:voimistelu",
+      "driver": "Meidän",
+      "pickup": "Meidän",
+      "note": "meidän kyydit"
     },
     {
       "date": "2026-11-07",
@@ -2185,6 +2234,14 @@
       "source": "gcal:voimistelu"
     },
     {
+      "date": "2026-11-07",
+      "time": "14:00",
+      "who": "Mea",
+      "title": "Onnin synttärit",
+      "kind": "juhla",
+      "source": "perhe-ohitus"
+    },
+    {
       "who": "Milla",
       "title": "Onnin juhliin kakku",
       "kind": "muu",
@@ -2192,6 +2249,16 @@
       "date": "2026-11-07",
       "time": "15:00",
       "end": "16:00"
+    },
+    {
+      "date": "2026-11-08",
+      "time": "08:15",
+      "who": "Mea",
+      "title": "Kisat Jyväskylässä (Mea ei kisaa)",
+      "place": "Jyväskylä",
+      "kind": "kisa",
+      "source": "perhe-ohitus",
+      "note": "Lähtö 8:15 ABC Pitkälahti"
     },
     {
       "date": "2026-11-08",
@@ -2220,14 +2287,6 @@
       "date": "2026-11-08",
       "time": "14:00",
       "end": "15:00"
-    },
-    {
-      "date": "2026-11-08",
-      "who": "Mea",
-      "title": "Lianna Illusion Cup (epävarma)",
-      "kind": "kisa",
-      "source": "gcal:voimistelu",
-      "note": "Ei sovi kaikille; tilalle 1.11 TTNV tai 15.11 Sisu Cup"
     },
     {
       "date": "2026-11-08",

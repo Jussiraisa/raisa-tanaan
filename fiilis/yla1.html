@@ -1408,14 +1408,36 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
     return now.wd === 6 || (now.wd === 0 && now.hour < 15);
   }
 
+  /** Koulu päiväkohtaisella ohituksella: schoolStarts-rivi jolla "date":"YYYY-MM-DD"
+      ohittaa saman henkilön weekdays-oletuksen sille päivälle (ei osu muille päiville). */
+  function schoolRowsForDay(list, wd, iso) {
+    var out = [];
+    var over = {};
+    var isoWd = null;
+    if (iso) { try { isoWd = new Date(String(iso).slice(0, 10) + "T12:00:00").getDay(); } catch (e) {} }
+    list = list || [];
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      if (!s || !s.date) continue;
+      if (iso && s.date === iso && isoWd === wd) { out.push(s); over[s.who] = 1; }
+    }
+    for (var k = 0; k < list.length; k++) {
+      var r = list[k];
+      if (!r || r.date) continue;
+      var days = r.weekdays || r.days || [];
+      if (days.indexOf(wd) < 0) continue;
+      if (over[r.who]) continue;
+      out.push(r);
+    }
+    return out;
+  }
+
   function schoolStartsForWd(wd, iso) {
-    var list = (schedule && schedule.schoolStarts) || (FALLBACK && FALLBACK.schoolStarts) || [];
+    var list = schoolRowsForDay((schedule && schedule.schoolStarts) || (FALLBACK && FALLBACK.schoolStarts) || [], wd, iso);
     var out = [];
     for (var i = 0; i < list.length; i++) {
       var s = list[i];
       if (!s) continue;
-      var days = s.weekdays || s.days || [];
-      if (days.indexOf(wd) < 0) continue;
       if (iso && isSchoolOff(s.who, iso)) continue;
       out.push(s);
     }

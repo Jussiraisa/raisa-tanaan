@@ -675,17 +675,36 @@ body.evening .photo-cap, body.night .photo-cap {
     return { wd: dayIdx, tomorrow: tomorrow, lunchIso: lunchIso, focusIso: focusIso, label: label };
   }
 
+  /** Koulu päiväkohtaisella ohituksella: schoolStarts-rivi jolla "date":"YYYY-MM-DD"
+      ohittaa saman henkilön weekdays-oletuksen sille päivälle (ei osu muille päiville). */
+  function schoolRowsForDay(list, wd, iso) {
+    var out = [];
+    var over = {};
+    var isoWd = null;
+    if (iso) { try { isoWd = new Date(String(iso).slice(0, 10) + "T12:00:00").getDay(); } catch (e) {} }
+    list = list || [];
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      if (!s || !s.date) continue;
+      if (iso && s.date === iso && isoWd === wd) { out.push(s); over[s.who] = 1; }
+    }
+    for (var k = 0; k < list.length; k++) {
+      var r = list[k];
+      if (!r || r.date) continue;
+      var days = r.weekdays || r.days || [];
+      if (days.indexOf(wd) < 0) continue;
+      if (over[r.who]) continue;
+      out.push(r);
+    }
+    return out;
+  }
+
   function schoolForTarget(tgt) {
     var out = [];
     if (!schedule || !schedule.schoolStarts) return out;
-    var list = schedule.schoolStarts;
-    for (var i = 0; i < list.length; i++) {
-      var s = list[i];
-      var wds = s.weekdays || [];
-      var ok = false;
-      for (var j = 0; j < wds.length; j++) if (wds[j] === tgt.wd) ok = true;
-      if (ok) out.push(s);
-    }
+    var iso = tgt.focusIso || tgt.lunchIso || "";
+    var list = schoolRowsForDay(schedule.schoolStarts, tgt.wd, iso);
+    for (var i = 0; i < list.length; i++) out.push(list[i]);
     out.sort(function (a, b) {
       var ia = KID_ORDER.indexOf(a.who); if (ia < 0) ia = 99;
       var ib = KID_ORDER.indexOf(b.who); if (ib < 0) ib = 99;
@@ -1075,14 +1094,11 @@ body.evening .photo-cap, body.night .photo-cap {
     var dt = new Date(Date.UTC(p.y, p.m - 1, p.d));
     var wd = dt.getUTCDay();
     if (wd >= 1 && wd <= 5 && schedule && schedule.schoolStarts) {
-      var ss = schedule.schoolStarts;
+      var ss = schoolRowsForDay(schedule.schoolStarts, wd, iso);
       var kids = {};
       for (var s = 0; s < ss.length; s++) {
         var row = ss[s];
-        var wds = row.weekdays || [];
-        var ok = false;
-        for (var j = 0; j < wds.length; j++) if (wds[j] === wd) ok = true;
-        if (ok && row.who && !kids[row.who]) {
+        if (row.who && !kids[row.who]) {
           kids[row.who] = 1;
           push({ who: row.who, title: "Koulu", kind: "koulu", _soft: 1 });
         }

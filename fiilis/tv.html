@@ -1274,6 +1274,30 @@
     return wd === 6 || (wd === 0 && hour < 15);
   }
 
+  /** Koulu päiväkohtaisella ohituksella: schoolStarts-rivi jolla "date":"YYYY-MM-DD"
+      ohittaa saman henkilön weekdays-oletuksen sille päivälle (ei osu muille päiville). */
+  function schoolRowsForDay(list, wd, iso) {
+    var out = [];
+    var over = {};
+    var isoWd = null;
+    if (iso) { try { isoWd = new Date(String(iso).slice(0, 10) + "T12:00:00").getDay(); } catch (e) {} }
+    list = list || [];
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      if (!s || !s.date) continue;
+      if (iso && s.date === iso && isoWd === wd) { out.push(s); over[s.who] = 1; }
+    }
+    for (var k = 0; k < list.length; k++) {
+      var r = list[k];
+      if (!r || r.date) continue;
+      var days = r.weekdays || r.days || [];
+      if (days.indexOf(wd) < 0) continue;
+      if (over[r.who]) continue;
+      out.push(r);
+    }
+    return out;
+  }
+
   function collectSchool(schedule, n) {
     const wd = new Date(n.y, n.m - 1, n.d).getDay();
     const schools = (schedule && schedule.schoolStarts) || [];
@@ -1288,8 +1312,7 @@
       tomorrow = true;
       lunchDate = addDaysIso(n, wd === 0 ? 1 : 2);
     }
-    const matched = schools
-      .filter(s => (s.weekdays || []).includes(dayIdx))
+    const matched = schoolRowsForDay(schools, dayIdx, tomorrow ? lunchDate : isoDate(n))
       .slice()
       .sort((a, b) => String(a.time).localeCompare(String(b.time)) || String(a.who).localeCompare(String(b.who)));
     const items = matched.map(s => ({
@@ -1315,7 +1338,7 @@
       Array.prototype.push.apply(subParts, ride);
       if (e.note) subParts.push(e.note);
       items.push({
-        time: e.time,
+        time: e.time || "—",
         main: e.who + " — " + title,
         sub: subParts.join(" · "),
         kind: e.kind || "muu",

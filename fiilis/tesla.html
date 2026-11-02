@@ -436,8 +436,8 @@
   }
   function applyTheme(hour) { document.body.className = themeClass(hour); }
 
-  var LONTOO_START = "2026-10-13";
-  var LONTOO_END = "2026-10-17";
+  var LONTOO_START = "2026-11-27";
+  var LONTOO_END = "2026-12-02";
   var DAYS = [
     { key: "su", full: "Sunnuntai", short: "SU" },
     { key: "ma", full: "Maanantai", short: "MA" },
@@ -1054,7 +1054,6 @@
       var x = exps[i];
       if (!x || !x.start || !isNiceExpectation(x.label)) continue;
       if (now.iso > (x.end || x.start)) continue;
-      if (/lontoo/i.test(String(x.label || ""))) continue;
       var d = daysUntilIso(x.start, now);
       if (d < 0 || d > 60) continue;
       var k = String(x.label || "").toLowerCase() + "|" + x.start;

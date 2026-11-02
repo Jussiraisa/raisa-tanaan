@@ -260,7 +260,7 @@ body.evening .photo-cap, body.night .photo-cap {
       <div class="card odotcard">
         <div class="lbl">Odotukset</div>
         <div class="countdown" id="countdown">
-          <div class="cd-label">Lontoo · 13.–17.10.</div>
+          <div class="cd-label">Lontoo · 27.11.–2.12.</div>
           <div class="cd-big">– päivää</div>
         </div>
         <div class="scroll" id="odoteList"></div>
@@ -391,8 +391,8 @@ body.evening .photo-cap, body.night .photo-cap {
     { src: "photos-web/matka-2018-2026-kalastus-04-083.jpg", place: "Kalastus", year: "2018–2026" },
     { src: "photos-web/matka-2018-2026-kalastus-05-084.jpg", place: "Kalastus", year: "2018–2026" },
   ];
-  var LONTOO_START = "2026-10-13";
-  var LONTOO_END = "2026-10-17";
+  var LONTOO_START = "2026-11-27";
+  var LONTOO_END = "2026-12-02";
   var FALLBACK = {
     timezone: "Europe/Helsinki",
     schoolStarts: [
@@ -429,7 +429,7 @@ body.evening .photo-cap, body.night .photo-cap {
       { date: "2026-09-26", time: "13:00", who: "Mea", title: "Synttärit", kind: "juhla" },
       { date: "2026-10-02", who: "perhe", title: "Hääpäivä", kind: "juhla" },
       { date: "2026-10-12", who: "Riikka", title: "Syntymäpäivä", kind: "juhla" },
-      { date: "2026-10-13", who: "perhe", title: "Lontoo-matka", kind: "matka" },
+      { date: "2026-11-27", who: "perhe", title: "Lontoo-matka", kind: "matka" },
       { date: "2026-10-24", who: "Riikka", title: "Synttärijuhlat kavereille", kind: "juhla" }
     ],
     schoolLunch: {
@@ -899,7 +899,7 @@ body.evening .photo-cap, body.night .photo-cap {
     var listEl = document.getElementById("odoteList");
     if (el) {
       var d = daysUntil(LONTOO_START, now);
-      var label = "Lontoo · 13.–17.10.";
+      var label = "Lontoo · 27.11.–2.12.";
       var big = "";
       if (d > 1) {
         big = d + " PÄIVÄÄ";
@@ -910,10 +910,11 @@ body.evening .photo-cap, body.night .photo-cap {
         big = "nyt menossa";
       } else {
         label = "Lontoo";
-        big = "kiitos matkasta";
+        big = "";
       }
       el.innerHTML = "<div class=\"cd-label\">" + esc(label) + "</div>"
         + "<div class=\"cd-big\">" + esc(big) + "</div>";
+      el.style.display = big ? "" : "none";
     }
     if (!listEl) return;
     var items = [];

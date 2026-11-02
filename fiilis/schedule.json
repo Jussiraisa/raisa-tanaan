@@ -1546,28 +1546,28 @@
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "C38QGW"
+      "place": "Lontoo"
     },
     {
       "date": "2026-10-14",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "C38QGW"
+      "place": "Lontoo"
     },
     {
       "date": "2026-10-15",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "C38QGW"
+      "place": "Lontoo"
     },
     {
       "date": "2026-10-16",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "C38QGW"
+      "place": "Lontoo"
     },
     {
       "date": "2026-10-17",
@@ -1585,7 +1585,7 @@
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "C38QGW"
+      "place": "Lontoo"
     },
     {
       "date": "2026-10-18",
@@ -2507,7 +2507,7 @@
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "BVKZSC",
+      "place": "Lontoo",
       "source": "gcal:perhe",
       "note": "FR2345 HEL 23:40 → STN · koko perhe (6)"
     },
@@ -2520,14 +2520,14 @@
       "place": "Siilinjärvi, Ahmo",
       "kind": "kisa",
       "source": "nimenhuuto:welhot2018",
-      "note": "Samuel Lontoossa 27.11–2.12 (BVKZSC) — tarkista osallistuminen"
+      "note": "Samuel Lontoossa 27.11–2.12 — tarkista osallistuminen"
     },
     {
       "date": "2026-11-28",
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "BVKZSC",
+      "place": "Lontoo",
       "source": "gcal:perhe"
     },
     {
@@ -2535,7 +2535,7 @@
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "BVKZSC",
+      "place": "Lontoo",
       "source": "gcal:perhe"
     },
     {
@@ -2551,7 +2551,7 @@
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "BVKZSC",
+      "place": "Lontoo",
       "source": "gcal:perhe"
     },
     {
@@ -2570,7 +2570,7 @@
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "BVKZSC",
+      "place": "Lontoo",
       "source": "gcal:perhe"
     },
     {
@@ -2606,7 +2606,7 @@
       "who": "perhe",
       "title": "Lontoo-matka",
       "kind": "matka",
-      "place": "BVKZSC",
+      "place": "Lontoo",
       "source": "gcal:perhe",
       "note": "paluu FR2344 STN 07:55 → HEL 12:45"
     },

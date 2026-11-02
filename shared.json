@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793620490251,
+  "updated": 1793632911890,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -370,14 +370,6 @@
       "note": "Lähtö ma 2.11. klo 15.00 (aiemmin 15.30)"
     },
     {
-      "id": "cal-98taesbg3ghdcsegmofb0c1phs",
-      "title": "Mea · terapia (Minna Proskin-Ruuskanen) · Riikka vie",
-      "date": "2026-11-02",
-      "start": "13:00",
-      "end": "14:00",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_6p1kcc1h8l34cb9o8p234b9k651j2b9p6l134b9p8h34cd1g8gojcci674",
       "title": "Riikka Oulu",
       "date": "2026-11-02",
@@ -585,54 +577,6 @@
       "kind": "info"
     },
     {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto/juna+taksi; kuski Kaarle, Pipsa+3, Mika+4"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-11-02",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-11-02",
-      "start": "17:00",
-      "end": "18:00",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
       "id": "cal-plqqo95rfni5pelqput3fbsuv0",
       "title": "Mea · ei koulua",
       "date": "2026-11-02",
@@ -719,6 +663,54 @@
       "place": "lähtö ABC Pitkälahti",
       "kind": "cal",
       "note": "lähtö 8.15 ABC Pitkälahti"
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto; yö Ei; kuski Kaarle, Pipsa+3, Mika+4"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-11-02",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-11-02",
+      "start": "17:00",
+      "end": "18:00",
+      "place": "",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

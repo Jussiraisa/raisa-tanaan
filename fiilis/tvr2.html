@@ -1319,18 +1319,71 @@ body.evening .photo-cap, body.night .photo-cap {
     });
   }
 
+  /* FIILIS-MOOD v1 (2.11.2026): kuvien ajoitus.
+     Aamu = rauhallinen arki/luonto, ilta+yö = perhe/koti, viikonloppu (pe-ilta–su) = perhe + reissut,
+     vuodenaika-tagi painottuu, lähestyvä Lontoo (27.11.–2.12.) nostaa Lontoon ja aiemmat reissut,
+     uudet kuvat (tag "uusi") painottuvat. Painotettu satunnaisjärjestys, vanhat mukana pienemmällä osuudella. */
+  function fiilisMoodDeck(list, n) {
+    if (!list || !list.length) return list || [];
+    var d = new Date(), P = {};
+    try {
+      var fp = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Helsinki", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", weekday: "short", hour12: false }).formatToParts(d);
+      for (var q = 0; q < fp.length; q++) P[fp[q].type] = fp[q].value;
+    } catch (e) {
+      P.year = String(d.getFullYear()); P.month = String(d.getMonth() + 1); P.day = String(d.getDate());
+      P.hour = String(d.getHours()); P.weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][d.getDay()];
+    }
+    var h = (parseInt(P.hour, 10) || 0) % 24, mo = parseInt(P.month, 10) || 1, dy = parseInt(P.day, 10) || 1, yr = parseInt(P.year, 10) || 2026;
+    var wd = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[P.weekday];
+    if (wd == null) wd = d.getDay();
+    var weekend = wd === 6 || wd === 0 || (wd === 5 && h >= 16);
+    var slot = (h >= 5 && h < 10) ? "morning" : (h >= 10 && h < 15) ? "day" : (h >= 15 && h < 18) ? "afternoon" : (h >= 18 && h < 22) ? "evening" : "night";
+    var season = (mo >= 3 && mo <= 5) ? "kevat" : (mo >= 6 && mo <= 8) ? "kesa" : (mo >= 9 && mo <= 11) ? "syksy" : "talvi";
+    var today = Date.UTC(yr, mo - 1, dy);
+    var tripDays = Math.round((Date.UTC(2026, 10, 27) - today) / 864e5);
+    var tripOn = today >= Date.UTC(2026, 10, 27) && today <= Date.UTC(2026, 11, 2);
+    var tripSoon = tripDays > 0 && tripDays <= 30;
+    function has(p, t) { return !!(p.tags && p.tags.indexOf && p.tags.indexOf(t) >= 0); }
+    function w(p) {
+      var s = 1, src = String(p.src || "");
+      var lon = /lontoo|london/i.test((p.place || "") + " " + src) || has(p, "london");
+      var trav = has(p, "travel") || src.indexOf("matka-") >= 0;
+      var fam = has(p, "family") || has(p, "kids");
+      if (has(p, "uusi")) s += 2;
+      if (slot === "morning" && (has(p, "arki") || has(p, "nature"))) s += 2;
+      if ((slot === "evening" || slot === "night") && (has(p, "home") || (fam && !trav))) s += 2;
+      if (weekend && (fam || trav)) s += 1.5;
+      if (has(p, season)) s += 1.5;
+      if (p.slot && p.slot.indexOf && p.slot.indexOf(slot) >= 0) s += 1;
+      if (tripOn || tripSoon) {
+        if (lon) s += tripOn ? 4 : (tripDays <= 7 ? 3 : 2);
+        else if (trav) s += 1;
+      }
+      return s;
+    }
+    var arr = [];
+    for (var i = 0; i < list.length; i++) arr.push({ p: list[i], k: Math.pow(Math.random(), 1 / w(list[i])) });
+    arr.sort(function (a, b) { return b.k - a.k; });
+    var out = [], seen = {};
+    for (var j = 0; j < arr.length && out.length < (n == null ? 36 : n); j++) {
+      if (seen[arr[j].p.src]) continue;
+      seen[arr[j].p.src] = 1;
+      out.push(arr[j].p);
+    }
+    return out;
+  }
   function loadPhotos() {
     getJSON("photos-from-matkat.json?t=" + Date.now(), function (data) {
       if (data && data.length) {
         var out = [];
         for (var i = 0; i < data.length; i++) {
           var m = data[i];
-          if (m && m.src && String(m.src).indexOf("matka-") >= 0) {
-            out.push({ src: m.src, place: m.place || "Muisto", year: m.year || "" });
+          if (m && m.src && (String(m.src).indexOf("matka-") >= 0 || String(m.src).indexOf("albums/arki/") >= 0)) {
+            out.push({ src: m.src, place: m.place || "Muisto", year: m.year || "", tags: m.tags || [], slot: m.slot || [] });
           }
         }
         out = filterPhotos(out);
-        if (out.length >= 8) photos = out;
+        if (out.length >= 8) photos = fiilisMoodDeck(out, 36);
       }
       paintPhoto();
     });
@@ -1402,6 +1455,7 @@ body.evening .photo-cap, body.night .photo-cap {
   paintPhoto();
   loadSchedule();
   loadPhotos();
+  setInterval(loadPhotos, 60 * 60 * 1000); /* FIILIS-MOOD: tunnin välein uusi painotus */
   loadWeather();
   setInterval(tickClock, 1000);
   setInterval(function () { paint(); }, 30000);

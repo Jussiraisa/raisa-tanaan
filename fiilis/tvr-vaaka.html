@@ -802,13 +802,20 @@ body.evening .hero { box-shadow: 0 .6vmin 2.4vmin rgba(40,28,14,.14); }
       if (slot === "night" && (v === "calm" || v === "cozy")) sc += 2;
       if ((now.wd === 6 || now.wd === 0) && (hasTag(p, "kids") || hasTag(p, "nature"))) sc += 1;
       if (now.wd === 5 && hasTag(p, "travel")) sc += 1;
+      /* FIILIS-MOOD v1: uudet, aamu arki, ilta perhe/koti, vkl perhe+reissut, vuodenaika */
+      if (hasTag(p, "uusi")) sc += 3;
+      if (slot === "morning" && (hasTag(p, "arki") || hasTag(p, "nature"))) sc += 2;
+      if ((slot === "evening" || slot === "night") && (hasTag(p, "home") || (hasTag(p, "family") && !hasTag(p, "travel")))) sc += 2;
+      if ((now.wd === 6 || now.wd === 0) && (hasTag(p, "family") || hasTag(p, "travel"))) sc += 1;
+      var _mo = now.month || (new Date().getMonth() + 1);
+      if (hasTag(p, (_mo >= 3 && _mo <= 5) ? "kevat" : (_mo >= 6 && _mo <= 8) ? "kesa" : (_mo >= 9 && _mo <= 11) ? "syksy" : "talvi")) sc += 2;
       return sc;
     }
     function pickWeighted(pool, n) {
       if (!pool.length || n <= 0) return [];
       var scored = [];
       for (var i = 0; i < pool.length; i++) {
-        scored.push({ p: pool[i], s: score(pool[i]), r: Math.random() });
+        scored.push({ p: pool[i], s: score(pool[i]) + Math.random() * 5, r: Math.random() }); /* jitter: vanhatkin pääsevät välillä mukaan */
       }
       scored.sort(function (a, b) {
         if (b.s !== a.s) return b.s - a.s;

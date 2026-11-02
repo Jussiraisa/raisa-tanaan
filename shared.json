@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793632911890,
+  "updated": 1793640294075,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -362,12 +362,17 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
+      "id": "cal-plqqo95rfni5pelqput3fbsuv0",
+      "title": "Mea · ei koulua",
+      "date": "2026-11-02",
+      "kind": "cal"
+    },
+    {
       "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9h60p40qjledpmi",
       "title": "Riikan koulupäivät",
       "date": "2026-11-02",
       "dateEnd": "2026-11-05",
-      "kind": "cal",
-      "note": "Lähtö ma 2.11. klo 15.00 (aiemmin 15.30)"
+      "kind": "cal"
     },
     {
       "id": "cal-_6p1kcc1h8l34cb9o8p234b9k651j2b9p6l134b9p8h34cd1g8gojcci674",
@@ -376,6 +381,14 @@
       "dateEnd": "2026-11-05",
       "start": "21:00",
       "end": "22:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-9mdtks8f00hjm7isipa8i050f0",
+      "title": "Mea · koulu",
+      "date": "2026-11-03",
+      "start": "10:00",
+      "end": "13:00",
       "kind": "cal"
     },
     {
@@ -575,94 +588,6 @@
       "title": "Isänpäivä",
       "date": "2026-11-08",
       "kind": "info"
-    },
-    {
-      "id": "cal-plqqo95rfni5pelqput3fbsuv0",
-      "title": "Mea · ei koulua",
-      "date": "2026-11-02",
-      "kind": "cal",
-      "note": "Ei treenejä"
-    },
-    {
-      "id": "cal-9mdtks8f00hjm7isipa8i050f0",
-      "title": "Mea · koulu",
-      "date": "2026-11-03",
-      "start": "10:00",
-      "end": "13:00",
-      "kind": "cal",
-      "place": "Jynkänlahden yläaste",
-      "driver": "Jussi",
-      "status": "us",
-      "ride": "vie",
-      "note": "Jussi vie"
-    },
-    {
-      "id": "cal-qbn19ers89m1215mjg4qo03vug",
-      "title": "Mea · koulu",
-      "date": "2026-11-04",
-      "start": "12:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-jm86295rl737r8ba3b0c5dtbe4",
-      "title": "Mea · Matkus kavereiden kanssa",
-      "date": "2026-11-04",
-      "kind": "cal",
-      "note": "aika ei tiedossa · ei kyytiä"
-    },
-    {
-      "id": "cal-pdpjgln1o72ip6mj26kh9r4sec",
-      "title": "Mea · koulu",
-      "date": "2026-11-05",
-      "start": "08:00",
-      "end": "13:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-61aflrsd1se5o0di30tiqorri0",
-      "title": "Mea · joukkueilta / kaverit",
-      "date": "2026-11-05",
-      "kind": "cal",
-      "note": "aika ei tiedossa"
-    },
-    {
-      "id": "cal-boulcm8ii9okmhu56p82uuorho",
-      "title": "Mea · koulu",
-      "date": "2026-11-06",
-      "start": "10:00",
-      "end": "13:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-s95ag1f7i258df3l3jd82fum64",
-      "who": "mea",
-      "title": "Treenit",
-      "date": "2026-11-06",
-      "start": "18:30",
-      "end": "20:00",
-      "kind": "treeni",
-      "driver": "Jussi",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "meidän kyydit (Riikka Oulussa, Jussi ajaa)"
-    },
-    {
-      "id": "cal-v1qd2nki3i531b4sm79pce0e6k",
-      "title": "Mea · Onnin synttärit",
-      "date": "2026-11-07",
-      "start": "14:00",
-      "end": "16:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-94jhschr1nagg2tokqjnnn0gls",
-      "title": "Mea · kisat Jyväskylä (Mea ei kisaa)",
-      "date": "2026-11-08",
-      "start": "08:15",
-      "place": "lähtö ABC Pitkälahti",
-      "kind": "cal",
-      "note": "lähtö 8.15 ABC Pitkälahti"
     },
     {
       "id": "info-ambrosia-2026-11-21",

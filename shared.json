@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793619447220,
+  "updated": 1793620490251,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -333,6 +333,12 @@
       "status": "us",
       "ride": "vie+hakee",
       "note": "Riikka Oulussa → Jussi ajaa (meidän kyydit)"
+    },
+    "cal-9mdtks8f00hjm7isipa8i050f0": {
+      "driver": "Jussi",
+      "status": "us",
+      "ride": "vie",
+      "note": "Jussi vie Mean kouluun ti 3.11. (10–13, Jynkänlahden yläaste)"
     }
   },
   "cooks": {
@@ -639,7 +645,12 @@
       "date": "2026-11-03",
       "start": "10:00",
       "end": "13:00",
-      "kind": "cal"
+      "kind": "cal",
+      "place": "Jynkänlahden yläaste",
+      "driver": "Jussi",
+      "status": "us",
+      "ride": "vie",
+      "note": "Jussi vie"
     },
     {
       "id": "cal-qbn19ers89m1215mjg4qo03vug",

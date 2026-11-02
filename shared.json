@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793614811441,
+  "updated": 1793618319773,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -350,14 +350,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.30 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-99acg3oel23mnegsaaus2aoj28",
-      "title": "Perhe · Suun terveydenhuolto (mobiili) Aurinkorinne",
-      "date": "2026-10-21",
-      "dateEnd": "2026-11-12",
-      "kind": "cal",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
       "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9h60p40qjledpmi",
       "title": "Riikan koulupäivät",
       "date": "2026-11-02",
@@ -379,6 +371,22 @@
       "dateEnd": "2026-11-05",
       "start": "21:00",
       "end": "22:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_8grj4d9i8kp4ab9p6gsjcb9k8op30b9o70p30b9j60ok8d226t330h1n6c",
+      "title": "Mea siedätys",
+      "date": "2026-11-03",
+      "start": "13:30",
+      "end": "14:30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261103T150000Z",
+      "title": "Mea valmennus",
+      "date": "2026-11-03",
+      "start": "17:00",
+      "end": "17:45",
       "kind": "cal"
     },
     {

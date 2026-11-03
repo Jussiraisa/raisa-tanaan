@@ -2182,21 +2182,13 @@
     },
     {
       "date": "2026-11-04",
-      "who": "Riikka",
-      "title": "Oulu",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Riikan koulupäivät · lähtö 2.11 klo 15.00"
-    },
-    {
-      "date": "2026-11-04",
       "who": "Mea",
       "title": "Matkus kavereiden kanssa",
       "kind": "muu",
       "source": "perhe-ohitus"
     },
     {
-      "date": "2026-11-05",
+      "date": "2026-11-04",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu",
@@ -2209,6 +2201,14 @@
       "title": "Joukkueilta / kaverit",
       "kind": "muu",
       "source": "perhe-ohitus"
+    },
+    {
+      "date": "2026-11-05",
+      "who": "Riikka",
+      "title": "Oulu",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Riikan koulupäivät · lähtö 2.11 klo 15.00"
     },
     {
       "date": "2026-11-06",
@@ -2437,6 +2437,15 @@
       "place": "Luola",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "who": "Milla",
+      "title": "Milie",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-11-17",
+      "time": "18:00",
+      "end": "19:00"
     },
     {
       "date": "2026-11-18",

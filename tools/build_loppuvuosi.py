@@ -878,7 +878,7 @@ def main():
     days = build_days(events)
 
     # Month sections
-    jumps = "".join(f'<a href="#{mid}">{name}</a>' for m, (name, mid) in MONTHS.items())
+    jumps = "".join(f'<a href="#{mid}">{name}</a>' for m, (name, mid) in MONTHS.items() if m >= RANGE_START.month)
     legend = (
         '<div class="legend">'
         '<span><i class="dot" style="background:#e11d48"></i>Kisat</span>'
@@ -890,7 +890,8 @@ def main():
         "</div>"
     )
     sections = []
-    for m, (name, mid) in MONTHS.items():
+    MONTHS_ACTIVE = {m: v for m, v in MONTHS.items() if m >= RANGE_START.month}
+    for m, (name, mid) in MONTHS_ACTIVE.items():
         sections.append(
             f'<section class="month" id="{mid}"><h2>{name}</h2>'
             + month_grid_html(2026, m, days)

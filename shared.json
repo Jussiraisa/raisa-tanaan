@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793682474526,
+  "updated": 1793683126369,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -362,12 +362,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-plqqo95rfni5pelqput3fbsuv0",
-      "title": "Mea · ei koulua",
-      "date": "2026-11-02",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9h60p40qjledpmi",
       "title": "Riikan koulupäivät",
       "date": "2026-11-02",
@@ -405,6 +399,27 @@
       "date": "2026-11-03",
       "start": "17:00",
       "end": "17:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-jm86295rl737r8ba3b0c5dtbe4",
+      "title": "Mea · Matkus kavereiden kanssa",
+      "date": "2026-11-04",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-tgqh3vjdfu8gnfbrcafp9kk45s",
+      "title": "Mea: terapeutti lomalla, ei terapiaa 4.–13.11.",
+      "date": "2026-11-04",
+      "dateEnd": "2026-11-13",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-qbn19ers89m1215mjg4qo03vug",
+      "title": "Mea · koulu",
+      "date": "2026-11-04",
+      "start": "12:00",
+      "end": "15:00",
       "kind": "cal"
     },
     {

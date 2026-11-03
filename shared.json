@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793701487899,
+  "updated": 1793704877588,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -381,14 +381,6 @@
       "dateEnd": "2026-11-05",
       "start": "21:00",
       "end": "22:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-9mdtks8f00hjm7isipa8i050f0",
-      "title": "Mea · koulu",
-      "date": "2026-11-03",
-      "start": "10:00",
-      "end": "13:00",
       "kind": "cal"
     },
     {

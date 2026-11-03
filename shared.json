@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793640294075,
+  "updated": 1793681948943,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -472,12 +472,12 @@
       "note": "Wilma 6.10."
     },
     {
-      "id": "info-wilma-mea-ena3-koe-2026-11-19",
+      "id": "info-wilma-mea-ena3-koe-2026-11-26",
       "who": "mea",
       "title": "ENA3-koe",
-      "date": "2026-11-19",
+      "date": "2026-11-26",
       "kind": "info",
-      "note": "Wilma 6.10.; siirretty 12.11. → 19.11. (Wilma 21.10.)"
+      "note": "Wilma 6.10. (12.11.) → 21.10. (19.11.) → koekalenteri 3.11.: to 26.11. \"Themes 1 & 2\" (IiM)"
     },
     {
       "id": "info-wilma-mea-rub3-koe-2026-11-27",
@@ -485,7 +485,7 @@
       "title": "RUB3-koe",
       "date": "2026-11-27",
       "kind": "info",
-      "note": "Wilma 6.10. Lontoo-lähtö samana iltana"
+      "note": "Wilma 6.10., vahvistettu 3.11. (SaHe). Lontoo-lähtö samana iltana"
     },
     {
       "id": "info-wilma-mea-bi3-koe-2026-12-01",
@@ -495,7 +495,7 @@
       "start": "08:00",
       "end": "09:00",
       "kind": "info",
-      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko. HUOM: Lontoo 27.11.–2.12."
+      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko + monisteet; vihkotyön palautus (A-KS). Vahvistettu Wilma 3.11. HUOM: Lontoo 27.11.–2.12."
     },
     {
       "id": "info-wilma-mea-ke3-koe-2026-12-11",
@@ -636,6 +636,98 @@
       "end": "18:00",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-mea-ue3-koe-2026-11-12",
+      "who": "mea",
+      "title": "UE3-koe (uskonto)",
+      "date": "2026-11-12",
+      "kind": "info",
+      "note": "Wilma koekalenteri 3.11. (RauTu, KaOt) · aika ei merkitty"
+    },
+    {
+      "id": "info-wilma-mea-ai-kirjallisuuskoe-2026-12-08",
+      "who": "mea",
+      "title": "ÄI kirjallisuuskoe (genret)",
+      "date": "2026-12-08",
+      "start": "10:50",
+      "end": "11:35",
+      "kind": "info",
+      "note": "Loisto 8 s. 100–139 + muistiinpanot + monisteet (AKa)"
+    },
+    {
+      "id": "info-wilma-mea-taidetestaajat-retki-2026-11-10",
+      "who": "mea",
+      "title": "Taidetestaajat-retki Helsinkiin (Dracula)",
+      "date": "2026-11-10",
+      "start": "05:30",
+      "end": "21:00",
+      "kind": "info",
+      "place": "Helsinki · lähtö Jynkänlahden koulu",
+      "note": "Paikalla 5.20 · eväät/taskuraha · koulupäivä korvautuu · osallistuminen vielä päättämättä"
+    },
+    {
+      "id": "info-wilma-mea-taidetestaajat-ilmoitus-2026-11-09",
+      "who": "mea",
+      "title": "DL: päätä + ilmoita Taidetestaajat-osallistuminen",
+      "date": "2026-11-09",
+      "kind": "info",
+      "note": "Ennen 10.11. JenPulle/Peltokorvelle Wilmassa · JenPu kysyi 23.10. jaksaako 15–16 h päivän, ei vastattu"
+    },
+    {
+      "id": "info-wilma-mea-valkkarikoulutus-2026-11-06",
+      "who": "mea",
+      "title": "Välkkärikoulutus (vapaaehtoinen)",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "info",
+      "note": "Wilma 30.10. P. Vainio · ilmoittautumislinkki, 20 paikkaa, arvonta · pe-koulu 10–13"
+    },
+    {
+      "id": "info-wilma-samuel-testiniput-2026-11-06",
+      "who": "samuel",
+      "title": "DL: testiniput allekirjoitettuna kouluun",
+      "date": "2026-11-06",
+      "kind": "info",
+      "note": "Wilma 2.11. Satu Pesonen-Kokko"
+    },
+    {
+      "id": "info-wilma-samuel-kumma-retki-2026-11-12",
+      "who": "samuel",
+      "title": "Luokan retki: Kumma-museo + kaupunginkirjasto",
+      "date": "2026-11-12",
+      "kind": "info",
+      "note": "bussilla, koulu antaa eväät · aikataulu ensi viikon tiedotteessa"
+    },
+    {
+      "id": "info-wilma-milla-huoltajailta-2026-11-11",
+      "who": "milla",
+      "title": "1. vsk huoltajailta",
+      "date": "2026-11-11",
+      "start": "18:00",
+      "end": "19:30",
+      "kind": "info",
+      "place": "Klassillinen lukio / Teams",
+      "note": "kahvi 17.30 · Wilma 2.11. A-M Tiilikainen"
+    },
+    {
+      "id": "info-wilma-milla-huoltajailta-kysely-2026-11-09",
+      "who": "milla",
+      "title": "DL: huoltajaillan osallistumiskysely",
+      "date": "2026-11-09",
+      "start": "12:00",
+      "kind": "info",
+      "note": "Forms-linkki Wilma-viestissä 2.11. · klo 12 mennessä"
+    },
+    {
+      "id": "info-wilma-perhe-influenssarokotus-2026-11-12",
+      "who": "perhe",
+      "title": "Ellen & Samuel: influenssarokotuspäivä koululla",
+      "date": "2026-11-12",
+      "kind": "info",
+      "place": "Aurinkorinteen koulu",
+      "note": "Wilma 23.10. M. Kiiskinen · maksuttoman ilmoitus 2.11. mennyt"
     }
   ],
   "schoolLunch": {

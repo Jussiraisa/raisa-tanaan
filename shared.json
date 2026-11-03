@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793704877588,
+  "updated": 1793719293135,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -381,14 +381,6 @@
       "dateEnd": "2026-11-05",
       "start": "21:00",
       "end": "22:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_8grj4d9i8kp4ab9p6gsjcb9k8op30b9o70p30b9j60ok8d226t330h1n6c",
-      "title": "Mea siedätys",
-      "date": "2026-11-03",
-      "start": "13:30",
-      "end": "14:30",
       "kind": "cal"
     },
     {

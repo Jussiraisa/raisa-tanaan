@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793726452607,
+  "updated": 1793769597964,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -514,32 +514,6 @@
       "place": "Aurinkorinteen koulu"
     },
     {
-      "id": "info-kirjastot-kiinni-2026-10-20",
-      "who": "perhe",
-      "title": "Kirjastot kiinni",
-      "date": "2026-10-20",
-      "dateEnd": "2026-11-03",
-      "kind": "info"
-    },
-    {
-      "id": "info-wilma-kirjasto-suljettu-2026-10-20",
-      "who": "perhe",
-      "title": "Kuopion kirjastot kiinni 20.10.–3.11. (uusi järjestelmä)",
-      "date": "2026-10-20",
-      "dateEnd": "2026-11-03",
-      "kind": "info"
-    },
-    {
-      "id": "info-samuel-joukkuekuvaus-2026-11-03",
-      "who": "samuel",
-      "title": "Welhot P9 joukkuekuvaus",
-      "date": "2026-11-03",
-      "start": "16:30",
-      "kind": "info",
-      "place": "Lippumäki",
-      "note": "ilmoittaudu urheilu.seppalan.fi, koodi JRAPCSE4FD"
-    },
-    {
       "id": "info-ellen-juhlanaytos-2026-11-10",
       "who": "ellen",
       "title": "Ambrosia juhlanäytös",
@@ -553,14 +527,6 @@
       "date": "2026-11-17",
       "kind": "info",
       "note": "Wilma 22.10., th Noora Teittinen · ilmoitus 30.10. mennessä"
-    },
-    {
-      "id": "info-mea-rippikoulu-muutostoiveet-2026-11-03",
-      "who": "mea",
-      "title": "DL: rippikoulun (Rytky 9) muutostoiveet",
-      "date": "2026-11-03",
-      "kind": "info",
-      "note": "Kirjallisesti reetta.ojanpera@evl.fi + miika.koistinen@evl.fi · vain jos muutettavaa"
     },
     {
       "id": "info-isanpaiva-2026-11-08",
@@ -662,14 +628,12 @@
       "note": "Wilma 23.10. M. Kiiskinen · maksuttoman ilmoitus 2.11. mennyt"
     },
     {
-      "id": "info-kyytiehdotus-2026-11-03",
-      "who": "perhe",
-      "title": "Kyytiehdotus: Samuel, Ellen ja Mea (ehdotus / varmistamatta)",
-      "date": "2026-11-03",
-      "start": "16:05",
-      "end": "18:50",
+      "id": "info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
+      "who": "ellen",
+      "title": "DL: varaa oppimiskeskusteluaika",
+      "date": "2026-11-28",
       "kind": "info",
-      "note": "Ehdotus / varmistamatta (Riikka Oulussa, Jussi ainoa kuski; WA lukematta). 16.05 lähtö kotoa Samuel + Ellen (+ Mea, jos valmennuksen paikka on reitin varrella) → 16.15 Samuel Lippumäki (joukkuekuvaus 16.30) → n. 16.35 Ellen Kuopio-halli (treeni 17–18.30). Mean valmennus 17–17.45: paikka tarkista (kalenterissa ei paikkaa). Haut: 17.45 Mea (paikka tarkista) → 18.00 Samuel Lippumäki → 18.30 Ellen Kuopio-halli → kotona n. 18.50. B: jos Samuelin kyyti järjestyy toisen perheen kanssa (Säbä-kyydit), Jussi vie vain Ellenin (+ Mean) n. 16.20 ja hakee Ellenin 18.30."
+      "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
     },
     {
       "id": "info-ambrosia-2026-11-21",
@@ -728,14 +692,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
-      "who": "ellen",
-      "title": "DL: varaa oppimiskeskusteluaika",
-      "date": "2026-11-28",
-      "kind": "info",
-      "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
     }
   ],
   "schoolLunch": {

@@ -728,6 +728,14 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
+      "who": "ellen",
+      "title": "DL: varaa oppimiskeskusteluaika",
+      "date": "2026-11-28",
+      "kind": "info",
+      "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
     }
   ],
   "schoolLunch": {

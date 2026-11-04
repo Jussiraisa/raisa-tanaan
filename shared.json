@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793769597964,
+  "updated": 1793769895452,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -402,6 +402,20 @@
       "date": "2026-11-04",
       "start": "12:00",
       "end": "15:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-61aflrsd1se5o0di30tiqorri0",
+      "title": "Mea · joukkueilta / kaverit",
+      "date": "2026-11-05",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-pdpjgln1o72ip6mj26kh9r4sec",
+      "title": "Mea · koulu",
+      "date": "2026-11-05",
+      "start": "08:00",
+      "end": "13:00",
       "kind": "cal"
     },
     {

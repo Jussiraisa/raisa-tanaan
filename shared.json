@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793772089555,
+  "updated": 1793805486468,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -403,14 +403,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-qbn19ers89m1215mjg4qo03vug",
-      "title": "Mea · koulu",
-      "date": "2026-11-04",
-      "start": "12:00",
-      "end": "15:00",
-      "kind": "cal"
-    },
-    {
       "id": "cal-61aflrsd1se5o0di30tiqorri0",
       "title": "Mea · joukkueilta / kaverit",
       "date": "2026-11-05",
@@ -656,6 +648,16 @@
       "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
     },
     {
+      "id": "info-kyytiehdotus-2026-11-04",
+      "who": "perhe",
+      "title": "Kyytiehdotus: Ellen, Mea ja Milla (ehdotus / varmistamatta)",
+      "date": "2026-11-04",
+      "start": "17:40",
+      "end": "20:55",
+      "kind": "info",
+      "note": "Ehdotus / varmistamatta (Riikka Oulussa, Jussi ainoa kuski; WA lukematta). Viennit: Ellen Kuopio-halliin Sofian perhe (ke-sopimus, varmista). 17.40 Jussi vie Mean Liannaan (paikka tarkista – kalenterissa ei paikkaa) ja Millan BellaCenteriin, jos reitin varrella; muuten Milla skootterilla BellaCenteriin (lähtö n. 17.40). Haut 20.30: Jussi hakee Ellenin Kuopio-hallista (haku meillä) ja Mean, järjestys paikan mukaan → kotona n. 20.55. Milla kotiin skootterilla; jos sää/pimeys huono, Jussi hakee Millan BellaCenteristä Ellen-/Mea-haun jälkeen. Avoimet: Mean treenipaikka, Sofian perheen vienti, Millan skootteri vai kyyti."
+    },
+    {
       "id": "info-ambrosia-2026-11-21",
       "who": "ellen",
       "title": "Ambrosia kisat · Jyväskylä",
@@ -712,16 +714,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "info-kyytiehdotus-2026-11-04",
-      "who": "perhe",
-      "title": "Kyytiehdotus: Ellen, Mea ja Milla (ehdotus / varmistamatta)",
-      "date": "2026-11-04",
-      "start": "17:40",
-      "end": "20:55",
-      "kind": "info",
-      "note": "Ehdotus / varmistamatta (Riikka Oulussa, Jussi ainoa kuski; WA lukematta). Viennit: Ellen Kuopio-halliin Sofian perhe (ke-sopimus, varmista). 17.40 Jussi vie Mean Liannaan (paikka tarkista – kalenterissa ei paikkaa) ja Millan BellaCenteriin, jos reitin varrella; muuten Milla skootterilla BellaCenteriin (lähtö n. 17.40). Haut 20.30: Jussi hakee Ellenin Kuopio-hallista (haku meillä) ja Mean, järjestys paikan mukaan → kotona n. 20.55. Milla kotiin skootterilla; jos sää/pimeys huono, Jussi hakee Millan BellaCenteristä Ellen-/Mea-haun jälkeen. Avoimet: Mean treenipaikka, Sofian perheen vienti, Millan skootteri vai kyyti."
     }
   ],
   "schoolLunch": {

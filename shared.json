@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793877724763,
+  "updated": 1793887364370,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -739,6 +739,25 @@
       "date": "2026-11-06",
       "kind": "info",
       "note": "Ehdotus / varmistamatta (WA lukematta). Ellen Ambrosia -vienti meidän perhe (oletus pe). Mean Lianna-treeni 18–20.30 (paikka tarkista, kalenterissa ei paikkaa) – kyyti auki. Riikka kotona to illalla/pe? tarkista."
+    },
+    {
+      "id": "info-wilma-milla-yh01-3-koe-2026-11-12",
+      "who": "milla",
+      "title": "YH01.3 käsitekoe (2. osa)",
+      "date": "2026-11-12",
+      "start": "08:10",
+      "kind": "info",
+      "note": "Wilma 5.11."
+    },
+    {
+      "id": "info-wilma-mea-etavanhempainilta-2026-11-19",
+      "who": "mea",
+      "title": "Etävanhempainilta (Teams, maksuton)",
+      "date": "2026-11-19",
+      "start": "18:00",
+      "end": "19:30",
+      "kind": "info",
+      "note": "Wilma 5.11. Harjula Jari · ilmoittautuminen pelastakaalapset.fi (ei ilmoittauduttu)"
     }
   ],
   "schoolLunch": {

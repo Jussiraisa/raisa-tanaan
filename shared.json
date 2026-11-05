@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1793854919878,
+ "updated": 1793856152306,
  "drivers": {
   "ellen-ambrosia": {
    "driver": "Meidän",
@@ -390,12 +390,6 @@
    "kind": "cal"
   },
   {
-   "id": "cal-jm86295rl737r8ba3b0c5dtbe4",
-   "title": "Mea · Matkus kavereiden kanssa",
-   "date": "2026-11-04",
-   "kind": "cal"
-  },
-  {
    "id": "cal-tgqh3vjdfu8gnfbrcafp9kk45s",
    "title": "Mea: terapeutti lomalla, ei terapiaa 4.–13.11.",
    "date": "2026-11-04",
@@ -648,16 +642,6 @@
    "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
   },
   {
-   "id": "info-kyytiehdotus-2026-11-04",
-   "who": "perhe",
-   "title": "Kyytiehdotus: Ellen, Mea ja Milla (ehdotus / varmistamatta)",
-   "date": "2026-11-04",
-   "start": "17:40",
-   "end": "20:55",
-   "kind": "info",
-   "note": "Ehdotus / varmistamatta (Riikka Oulussa, Jussi ainoa kuski; WA lukematta). Viennit: Ellen Kuopio-halliin Sofian perhe (ke-sopimus, varmista). 17.40 Jussi vie Mean Liannaan (paikka tarkista – kalenterissa ei paikkaa) ja Millan BellaCenteriin, jos reitin varrella; muuten Milla skootterilla BellaCenteriin (lähtö n. 17.40). Haut 20.30: Jussi hakee Ellenin Kuopio-hallista (haku meillä) ja Mean, järjestys paikan mukaan → kotona n. 20.55. Milla kotiin skootterilla; jos sää/pimeys huono, Jussi hakee Millan BellaCenteristä Ellen-/Mea-haun jälkeen. Avoimet: Mean treenipaikka, Sofian perheen vienti, Millan skootteri vai kyyti."
-  },
-  {
    "id": "info-ambrosia-2026-11-21",
    "who": "ellen",
    "title": "Ambrosia kisat · Jyväskylä",
@@ -696,23 +680,13 @@
    "dateEnd": "2027-06-13"
   },
   {
-   "id": "sheet-mea-2026-11-04",
+   "id": "sheet-mea-2026-11-06",
    "who": "mea",
    "title": "Lianna",
-   "date": "2026-11-04",
+   "date": "2026-11-06",
    "start": "18:00",
    "end": "20:30",
    "place": "",
-   "kind": "treeni"
-  },
-  {
-   "id": "sheet-milla-2026-11-04",
-   "who": "milla",
-   "title": "Vivida",
-   "date": "2026-11-04",
-   "start": "18:00",
-   "end": "20:30",
-   "place": "BellaCenter",
    "kind": "treeni"
   }
  ],

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793856239061,
+  "updated": 1793857169333,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -351,6 +351,18 @@
       "status": "",
       "ride": "vie+hakee",
       "note": "Kyytiehdotus 4.11. · Ellenin vienti Sofian perhe, haku meillä · Mean Liannan paikka tarkista · Milla skootterilla? · WA lukematta"
+    },
+    "info-kyytiehdotus-2026-11-05": {
+      "driver": "Jussi · ehdotus / varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "Kyytiehdotus 5.11. · Samuelin Welhot-kyyti meidän (oletus to) · Riikka Oulussa → Jussi ajaa · WA lukematta"
+    },
+    "info-kyytiehdotus-2026-11-06": {
+      "driver": "Jussi · ehdotus / varmistamatta",
+      "status": "",
+      "ride": "vie",
+      "note": "Kyytiehdotus 6.11. · Ellen Ambrosia pe-vienti meidän (oletus) · Mean Lianna 18–20.30 paikka tarkista · WA lukematta"
     }
   },
   "cooks": {
@@ -717,6 +729,24 @@
       "end": "20:30",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-kyytiehdotus-2026-11-05",
+      "who": "perhe",
+      "title": "Kyytiehdotus: Samuel Welhot (ehdotus / varmistamatta)",
+      "date": "2026-11-05",
+      "start": "16:40",
+      "end": "19:20",
+      "kind": "info",
+      "note": "Ehdotus / varmistamatta (Riikka Oulussa klo 22 asti, Jussi ainoa kuski; WA lukematta). Lähtö 16.40 → Samuelin treenit 17.00 Puijonsarven koulu (17–19), Jussi vie ja hakee 19.00. Teams-kokous 17.00–17.30 menee päällekkäin: lähde ennen kokousta tai ota kokous autosta/etänä, tai pyydä toista perhettä viemään. Avoin: kokouksen ja kyydin ristiriita."
+    },
+    {
+      "id": "info-kyytiehdotus-2026-11-06",
+      "who": "perhe",
+      "title": "Kyytiehdotus pe 6.11. (ehdotus / varmistamatta)",
+      "date": "2026-11-06",
+      "kind": "info",
+      "note": "Ehdotus / varmistamatta (WA lukematta). Ellen Ambrosia -vienti meidän perhe (oletus pe). Mean Lianna-treeni 18–20.30 (paikka tarkista, kalenterissa ei paikkaa) – kyyti auki. Riikka kotona to illalla/pe? tarkista."
     }
   ],
   "schoolLunch": {

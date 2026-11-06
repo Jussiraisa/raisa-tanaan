@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793887364370,
+  "updated": 1793940133115,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -758,6 +758,16 @@
       "end": "19:30",
       "kind": "info",
       "note": "Wilma 5.11. Harjula Jari · ilmoittautuminen pelastakaalapset.fi (ei ilmoittauduttu)"
+    },
+    {
+      "id": "info-wilma-ellen-nerf-kerho-2027-01-11",
+      "who": "ellen",
+      "title": "Kevään nerf-kerho ma 14–15 (alkaen 11.1.2027)",
+      "date": "2027-01-11",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "info",
+      "note": "25 paikkaa ilmoittautumisjärjestyksessä · lomake Wilma-viestissä Hyvönen Ossi 26.10."
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793941581738,
+  "updated": 1793942304106,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -386,32 +386,10 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-_e1in4q355lp6iqbbddgiqqrfelm7ab9i60p3cc9h60p40qjledpmi",
-      "title": "Riikan koulupäivät",
-      "date": "2026-11-02",
-      "dateEnd": "2026-11-05",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_6p1kcc1h8l34cb9o8p234b9k651j2b9p6l134b9p8h34cd1g8gojcci674",
-      "title": "Riikka Oulu",
-      "date": "2026-11-02",
-      "dateEnd": "2026-11-05",
-      "start": "21:00",
-      "end": "22:00",
-      "kind": "cal"
-    },
-    {
       "id": "cal-tgqh3vjdfu8gnfbrcafp9kk45s",
       "title": "Mea: terapeutti lomalla, ei terapiaa 4.–13.11.",
       "date": "2026-11-04",
       "dateEnd": "2026-11-13",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-61aflrsd1se5o0di30tiqorri0",
-      "title": "Mea · joukkueilta / kaverit",
-      "date": "2026-11-05",
       "kind": "cal"
     },
     {
@@ -442,6 +420,14 @@
       "end": "13:00",
       "kind": "cal",
       "place": "Jynkänlahden koulu"
+    },
+    {
+      "id": "cal-v1qd2nki3i531b4sm79pce0e6k",
+      "title": "Mea · Onnin synttärit",
+      "date": "2026-11-07",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "cal"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",
@@ -675,6 +661,45 @@
       "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
     },
     {
+      "id": "info-kyytiehdotus-2026-11-06",
+      "who": "perhe",
+      "title": "Kyytiehdotus pe 6.11. (ehdotus / varmistamatta)",
+      "date": "2026-11-06",
+      "kind": "info",
+      "note": "Ellen Ambrosia pe-vienti meidän (Luola 16–18.30). Mea Lianna BellaCenter 18–20.30 — Perhe-kalenteri: Jussi vie+hakee. WA lukematta.",
+      "driver": "Jussi · Ellen vienti + Mea Lianna",
+      "ride": "vie+hakee"
+    },
+    {
+      "id": "info-wilma-milla-yh01-3-koe-2026-11-12",
+      "who": "milla",
+      "title": "YH01.3 käsitekoe (2. osa)",
+      "date": "2026-11-12",
+      "start": "08:10",
+      "kind": "info",
+      "note": "Wilma 5.11."
+    },
+    {
+      "id": "info-wilma-mea-etavanhempainilta-2026-11-19",
+      "who": "mea",
+      "title": "Etävanhempainilta (Teams, maksuton)",
+      "date": "2026-11-19",
+      "start": "18:00",
+      "end": "19:30",
+      "kind": "info",
+      "note": "Wilma 5.11. Harjula Jari · ilmoittautuminen pelastakaalapset.fi (ei ilmoittauduttu)"
+    },
+    {
+      "id": "info-wilma-ellen-nerf-kerho-2027-01-11",
+      "who": "ellen",
+      "title": "Kevään nerf-kerho ma 14–15 (alkaen 11.1.2027)",
+      "date": "2027-01-11",
+      "start": "14:00",
+      "end": "15:00",
+      "kind": "info",
+      "note": "25 paikkaa ilmoittautumisjärjestyksessä · lomake Wilma-viestissä Hyvönen Ossi 26.10."
+    },
+    {
       "id": "info-ambrosia-2026-11-21",
       "who": "ellen",
       "title": "Ambrosia kisat · Jyväskylä",
@@ -719,57 +744,18 @@
       "date": "2026-11-06",
       "start": "18:00",
       "end": "20:30",
-      "place": "BellaCenter",
+      "place": "",
       "kind": "treeni"
     },
     {
-      "id": "info-kyytiehdotus-2026-11-05",
-      "who": "perhe",
-      "title": "Kyytiehdotus: Samuel Welhot (ehdotus / varmistamatta)",
-      "date": "2026-11-05",
-      "start": "16:40",
-      "end": "19:20",
-      "kind": "info",
-      "note": "Ehdotus / varmistamatta (Riikka Oulussa klo 22 asti, Jussi ainoa kuski; WA lukematta). Lähtö 16.40 → Samuelin treenit 17.00 Puijonsarven koulu (17–19), Jussi vie ja hakee 19.00. Teams-kokous 17.00–17.30 menee päällekkäin: lähde ennen kokousta tai ota kokous autosta/etänä, tai pyydä toista perhettä viemään. Avoin: kokouksen ja kyydin ristiriita."
-    },
-    {
-      "id": "info-kyytiehdotus-2026-11-06",
-      "who": "perhe",
-      "title": "Kyytiehdotus pe 6.11. (ehdotus / varmistamatta)",
-      "date": "2026-11-06",
-      "kind": "info",
-      "note": "Ellen Ambrosia pe-vienti meidän (Luola 16–18.30). Mea Lianna BellaCenter 18–20.30 — Perhe-kalenteri: Jussi vie+hakee. WA lukematta.",
-      "driver": "Jussi · Ellen vienti + Mea Lianna",
-      "ride": "vie+hakee"
-    },
-    {
-      "id": "info-wilma-milla-yh01-3-koe-2026-11-12",
+      "id": "sheet-milla-2026-11-07",
       "who": "milla",
-      "title": "YH01.3 käsitekoe (2. osa)",
-      "date": "2026-11-12",
-      "start": "08:10",
-      "kind": "info",
-      "note": "Wilma 5.11."
-    },
-    {
-      "id": "info-wilma-mea-etavanhempainilta-2026-11-19",
-      "who": "mea",
-      "title": "Etävanhempainilta (Teams, maksuton)",
-      "date": "2026-11-19",
-      "start": "18:00",
-      "end": "19:30",
-      "kind": "info",
-      "note": "Wilma 5.11. Harjula Jari · ilmoittautuminen pelastakaalapset.fi (ei ilmoittauduttu)"
-    },
-    {
-      "id": "info-wilma-ellen-nerf-kerho-2027-01-11",
-      "who": "ellen",
-      "title": "Kevään nerf-kerho ma 14–15 (alkaen 11.1.2027)",
-      "date": "2027-01-11",
-      "start": "14:00",
+      "title": "Vivida",
+      "date": "2026-11-07",
+      "start": "12:30",
       "end": "15:00",
-      "kind": "info",
-      "note": "25 paikkaa ilmoittautumisjärjestyksessä · lomake Wilma-viestissä Hyvönen Ossi 26.10."
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

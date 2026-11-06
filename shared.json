@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793940133115,
+  "updated": 1793941581738,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -719,7 +719,7 @@
       "date": "2026-11-06",
       "start": "18:00",
       "end": "20:30",
-      "place": "",
+      "place": "BellaCenter",
       "kind": "treeni"
     },
     {
@@ -738,7 +738,9 @@
       "title": "Kyytiehdotus pe 6.11. (ehdotus / varmistamatta)",
       "date": "2026-11-06",
       "kind": "info",
-      "note": "Ehdotus / varmistamatta (WA lukematta). Ellen Ambrosia -vienti meidän perhe (oletus pe). Mean Lianna-treeni 18–20.30 (paikka tarkista, kalenterissa ei paikkaa) – kyyti auki. Riikka kotona to illalla/pe? tarkista."
+      "note": "Ellen Ambrosia pe-vienti meidän (Luola 16–18.30). Mea Lianna BellaCenter 18–20.30 — Perhe-kalenteri: Jussi vie+hakee. WA lukematta.",
+      "driver": "Jussi · Ellen vienti + Mea Lianna",
+      "ride": "vie+hakee"
     },
     {
       "id": "info-wilma-milla-yh01-3-koe-2026-11-12",
@@ -771,9 +773,9 @@
     }
   ],
   "schoolLunch": {
-    "date": "2026-11-05",
-    "dish": "Tortilloja + meksikolaista kastiketta",
-    "veg": ""
+    "date": "2026-11-06",
+    "dish": "Tonnikalalasagnettea",
+    "veg": "pinaattista linssi-pastavuokaa"
   },
   "vacation": {
     "from": "2026-10-12",

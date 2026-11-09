@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1793942304106,
+  "updated": 1794219431571,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -393,43 +393,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-v7coki0ggoufassoioon25pk3k",
-      "title": "Milla · OP05-palautukset DL (teht. 5 & 6)",
-      "date": "2026-11-06",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-kuqqjtuulq5qfscvd9o8ehjdn4",
-      "title": "Samuel · DL: testiniput allekirjoitettuna kouluun",
-      "date": "2026-11-06",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-boulcm8ii9okmhu56p82uuorho",
-      "title": "Mea · koulu",
-      "date": "2026-11-06",
-      "start": "10:00",
-      "end": "13:00",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-dni79kptlbd9q943eb4dlq4d44",
-      "title": "Mea · Välkkärikoulutus (vapaaehtoinen)",
-      "date": "2026-11-06",
-      "start": "11:00",
-      "end": "13:00",
-      "kind": "cal",
-      "place": "Jynkänlahden koulu"
-    },
-    {
-      "id": "cal-v1qd2nki3i531b4sm79pce0e6k",
-      "title": "Mea · Onnin synttärit",
-      "date": "2026-11-07",
-      "start": "14:00",
-      "end": "16:00",
-      "kind": "cal"
-    },
-    {
       "id": "info-samuel-turnaus-2026-11-15",
       "who": "samuel",
       "title": "Welhot P9 turnaus Suonenjoki",
@@ -468,14 +431,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-wilma-milla-op05-palautukset-2026-11-06",
-      "who": "milla",
-      "title": "OP05-palautukset (teht. 5 & 6)",
-      "date": "2026-11-06",
-      "kind": "info",
-      "note": "kirjoitelma tekijänoikeuksista + Forms-kysely, tiimitehtäviä"
     },
     {
       "id": "info-wilma-milla-influenssarokotus-2026-11-09",
@@ -554,13 +509,6 @@
       "note": "Wilma 22.10., th Noora Teittinen · ilmoitus 30.10. mennessä"
     },
     {
-      "id": "info-isanpaiva-2026-11-08",
-      "who": "perhe",
-      "title": "Isänpäivä",
-      "date": "2026-11-08",
-      "kind": "info"
-    },
-    {
       "id": "info-wilma-mea-ue3-koe-2026-11-12",
       "who": "mea",
       "title": "UE3-koe (uskonto)",
@@ -596,24 +544,6 @@
       "date": "2026-11-09",
       "kind": "info",
       "note": "Ennen 10.11. JenPulle/Peltokorvelle Wilmassa · JenPu kysyi 23.10. jaksaako 15–16 h päivän, ei vastattu"
-    },
-    {
-      "id": "info-wilma-mea-valkkarikoulutus-2026-11-06",
-      "who": "mea",
-      "title": "Välkkärikoulutus (vapaaehtoinen)",
-      "date": "2026-11-06",
-      "start": "11:00",
-      "end": "13:00",
-      "kind": "info",
-      "note": "Wilma 30.10. P. Vainio · ilmoittautumislinkki, 20 paikkaa, arvonta · pe-koulu 10–13"
-    },
-    {
-      "id": "info-wilma-samuel-testiniput-2026-11-06",
-      "who": "samuel",
-      "title": "DL: testiniput allekirjoitettuna kouluun",
-      "date": "2026-11-06",
-      "kind": "info",
-      "note": "Wilma 2.11. Satu Pesonen-Kokko"
     },
     {
       "id": "info-wilma-samuel-kumma-retki-2026-11-12",
@@ -659,16 +589,6 @@
       "date": "2026-11-28",
       "kind": "info",
       "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
-    },
-    {
-      "id": "info-kyytiehdotus-2026-11-06",
-      "who": "perhe",
-      "title": "Kyytiehdotus pe 6.11. (ehdotus / varmistamatta)",
-      "date": "2026-11-06",
-      "kind": "info",
-      "note": "Ellen Ambrosia pe-vienti meidän (Luola 16–18.30). Mea Lianna BellaCenter 18–20.30 — Perhe-kalenteri: Jussi vie+hakee. WA lukematta.",
-      "driver": "Jussi · Ellen vienti + Mea Lianna",
-      "ride": "vie+hakee"
     },
     {
       "id": "info-wilma-milla-yh01-3-koe-2026-11-12",
@@ -738,23 +658,13 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-mea-2026-11-06",
+      "id": "sheet-mea-2026-11-09",
       "who": "mea",
       "title": "Lianna",
-      "date": "2026-11-06",
-      "start": "18:00",
-      "end": "20:30",
+      "date": "2026-11-09",
+      "start": "16:00",
+      "end": "17:30",
       "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-11-07",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-11-07",
-      "start": "12:30",
-      "end": "15:00",
-      "place": "BellaCenter",
       "kind": "treeni"
     }
   ],

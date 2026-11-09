@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794223291917,
+  "updated": 1794232829319,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -543,7 +543,9 @@
       "title": "UE3-koe (uskonto)",
       "date": "2026-11-12",
       "kind": "info",
-      "note": "Wilma koekalenteri 3.11. (RauTu, KaOt) · aika ei merkitty"
+      "note": "Wilma: klo 10:00 · kpl 1–2, s. 6–27 (RauTu, KaOt)",
+      "start": "10:00",
+      "end": "10:45"
     },
     {
       "id": "info-wilma-mea-ai-kirjallisuuskoe-2026-12-08",
@@ -695,6 +697,49 @@
       "end": "17:30",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-mea-oppimiskeskustelu-varaus-2026-11-16",
+      "who": "mea",
+      "title": "DL: varaa oppimiskeskusteluaika",
+      "date": "2026-11-16",
+      "kind": "info",
+      "note": "Wilma-viesti Kärkkäinen 6.11. · määräaika ma 16.11."
+    },
+    {
+      "id": "info-wilma-mea-poissaoloraja-2026-11-09",
+      "who": "mea",
+      "title": "Wilma: kiireellinen poissaoloilmoitus — 116 h raja ylitetty",
+      "date": "2026-11-09",
+      "kind": "info",
+      "note": "Wilma 9.11.: poissaoloraja 116 h ylitetty · ei kalenterimerkintää"
+    },
+    {
+      "id": "info-wilma-milla-op05-poissaolo-2026-11-09",
+      "who": "milla",
+      "title": "Wilma: 3 h poissaolo OP05",
+      "date": "2026-11-09",
+      "kind": "info",
+      "note": "Wilma 9.11. · ei kalenterimerkintää"
+    },
+    {
+      "id": "info-wilma-ellen-kuvakukko-2026-11-11",
+      "who": "ellen",
+      "title": "Kuvakukko-elokuvakäynti",
+      "date": "2026-11-11",
+      "kind": "info",
+      "note": "Wilma: lukkarimuutos b-ryhmälle · viestin tarkempia tietoja ei avattu"
+    },
+    {
+      "id": "info-wilma-perhe-digiymparisto-teams-2026-12-16",
+      "who": "perhe",
+      "title": "Teams: digiympäristön riskit (Samuel+Ellen, vapaaehtoinen)",
+      "date": "2026-12-16",
+      "start": "18:00",
+      "end": "19:00",
+      "kind": "info",
+      "place": "Teams",
+      "note": "Vapaaehtoinen / matala prioriteetti · ei kalenterimerkintää"
     }
   ],
   "schoolLunch": {

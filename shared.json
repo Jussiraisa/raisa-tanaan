@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794219431571,
+  "updated": 1794223291917,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -390,6 +390,35 @@
       "title": "Mea: terapeutti lomalla, ei terapiaa 4.–13.11.",
       "date": "2026-11-04",
       "dateEnd": "2026-11-13",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-8698cnqv0jk1cdn3su1nurb0ao",
+      "title": "Mea · DL: päätä + ilmoita Taidetestaajat-osallistuminen",
+      "date": "2026-11-09",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-e0qbppjf84f0f7au5pcvahfnp4",
+      "title": "Milla: Influenssarokotus (ajanvaraus)",
+      "date": "2026-11-09",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-dee7o6hr73n53kn3ifsm9im0es",
+      "title": "Mea · Taidetestaajat-retki Helsinkiin (Dracula, Oopperatalo)",
+      "date": "2026-11-10",
+      "start": "05:30",
+      "end": "21:00",
+      "kind": "cal",
+      "place": "Jynkänlahden koulu (lähtö)"
+    },
+    {
+      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261110T150000Z",
+      "title": "Mea valmennus",
+      "date": "2026-11-10",
+      "start": "17:00",
+      "end": "17:45",
       "kind": "cal"
     },
     {

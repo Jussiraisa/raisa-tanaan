@@ -1,22 +1,5 @@
 [
   {
-    "src": "photos-web/albums/tuoreet/uusi-001.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/albums/tuoreet/uusi-002.jpg",
     "place": "Lontoo",
     "year": "2026",
@@ -132,43 +115,7 @@
     ]
   },
   {
-    "src": "photos-web/albums/tuoreet/uusi-009.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/albums/tuoreet/uusi-010.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-011.jpg",
     "place": "Lontoo",
     "year": "2026",
     "vibe": "joy",
@@ -346,24 +293,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/tuoreet/uusi-021.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
     "src": "photos-web/albums/tuoreet/uusi-022.jpg",
     "place": "Lontoo",
     "year": "2026",
@@ -381,24 +310,6 @@
   },
   {
     "src": "photos-web/albums/tuoreet/uusi-023.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-024.jpg",
     "place": "Lontoo",
     "year": "2026",
     "vibe": "joy",
@@ -558,61 +469,7 @@
     ]
   },
   {
-    "src": "photos-web/albums/tuoreet/uusi-033.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
     "src": "photos-web/albums/tuoreet/uusi-034.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-035.jpg",
-    "place": "Lontoo",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "travel",
-      "london",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-036.jpg",
     "place": "Lontoo",
     "year": "2026",
     "vibe": "joy",
@@ -758,38 +615,6 @@
     "slot": [
       "evening",
       "night"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-045.jpg",
-    "place": "Pentuvierailu",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "arki",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-046.jpg",
-    "place": "Pentuvierailu",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "arki",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
     ]
   },
   {
@@ -1180,21 +1005,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/tuoreet/uusi-071.jpg",
-    "place": "Pariisi",
-    "year": "2025",
-    "vibe": "cozy",
-    "tags": [
-      "travel",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
     "src": "photos-web/albums/tuoreet/uusi-072.jpg",
     "place": "Costa Brava",
     "year": "2025",
@@ -1202,38 +1012,6 @@
     "tags": [
       "family",
       "kids",
-      "travel",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-073.jpg",
-    "place": "Costa Brava",
-    "year": "2025",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-074.jpg",
-    "place": "Costa Brava",
-    "year": "2025",
-    "vibe": "warm",
-    "tags": [
-      "family",
       "travel",
       "syksy",
       "uusi"
@@ -1330,23 +1108,6 @@
     "tags": [
       "family",
       "travel",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "morning",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/albums/tuoreet/uusi-081.jpg",
-    "place": "Vaellus Rivieralla",
-    "year": "2024",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "nature",
       "kesa",
       "uusi"
     ],
@@ -1638,54 +1399,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-001.jpg",
-    "place": "Hääpäivä",
-    "year": "2010",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "kids",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-002.jpg",
-    "place": "Hääpäivä",
-    "year": "2010",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "kids",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-003.jpg",
-    "place": "Hääpäivä",
-    "year": "2010",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-004.jpg",
     "place": "Kotona",
     "year": "2014",
@@ -1753,44 +1466,10 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-008.jpg",
-    "place": "Lumileikit",
-    "year": "2014",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "arki",
-      "kids",
-      "kevat",
-      "uusi"
-    ],
-    "slot": [
-      "morning",
-      "day"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-009.jpg",
     "place": "Aamiaisella",
     "year": "2014",
     "vibe": "joy",
-    "tags": [
-      "family",
-      "arki",
-      "kids",
-      "kevat",
-      "uusi"
-    ],
-    "slot": [
-      "morning",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-010.jpg",
-    "place": "Pihalla",
-    "year": "2014",
-    "vibe": "bright",
     "tags": [
       "family",
       "arki",
@@ -1838,39 +1517,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-013.jpg",
-    "place": "Laiturilla",
-    "year": "2014",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "kids",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-014.jpg",
-    "place": "Leikkipuistossa",
-    "year": "2014",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "arki",
-      "kids",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "morning",
-      "day"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-015.jpg",
     "place": "Akvaariossa",
     "year": "2014",
@@ -1900,22 +1546,6 @@
     "slot": [
       "day",
       "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-017.jpg",
-    "place": "Budapest",
-    "year": "2014",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "morning",
-      "day"
     ]
   },
   {
@@ -1968,22 +1598,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-021.jpg",
-    "place": "Kesäilta",
-    "year": "2014",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "kids",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-022.jpg",
     "place": "Aamupala",
     "year": "2014",
@@ -1998,23 +1612,6 @@
     "slot": [
       "morning",
       "day"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-023.jpg",
-    "place": "Kesäpäivä",
-    "year": "2014",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "arki",
-      "kids",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
     ]
   },
   {
@@ -2050,23 +1647,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-026.jpg",
-    "place": "Leikkipuistossa",
-    "year": "2014",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "arki",
-      "kids",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "morning",
-      "day"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-027.jpg",
     "place": "Kesäkahvila",
     "year": "2014",
@@ -2075,22 +1655,6 @@
       "family",
       "kids",
       "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-028.jpg",
-    "place": "Rantaloma",
-    "year": "2014",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "syksy",
       "uusi"
     ],
     "slot": [
@@ -2133,23 +1697,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-031.jpg",
-    "place": "Tanssit",
-    "year": "2015",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "home",
-      "kids",
-      "talvi",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-032.jpg",
     "place": "Hiihtoloma",
     "year": "2015",
@@ -2179,22 +1726,6 @@
     "slot": [
       "day",
       "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-034.jpg",
-    "place": "Porotilalla",
-    "year": "2015",
-    "vibe": "soft",
-    "tags": [
-      "family",
-      "travel",
-      "kevat",
-      "uusi"
-    ],
-    "slot": [
-      "morning",
-      "day"
     ]
   },
   {
@@ -2376,22 +1907,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-046.jpg",
-    "place": "Reissussa",
-    "year": "2015",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "syksy",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-047.jpg",
     "place": "Pikkuneiti",
     "year": "2015",
@@ -2473,23 +1988,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-052.jpg",
-    "place": "Joulu",
-    "year": "2015",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home",
-      "kids",
-      "talvi",
-      "uusi"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-053.jpg",
     "place": "Rinteessä",
     "year": "2015",
@@ -2535,22 +2033,6 @@
     "slot": [
       "morning",
       "day"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-056.jpg",
-    "place": "Iltakävely",
-    "year": "2016",
-    "vibe": "calm",
-    "tags": [
-      "family",
-      "travel",
-      "talvi",
-      "uusi"
-    ],
-    "slot": [
-      "afternoon",
-      "evening"
     ]
   },
   {
@@ -2603,22 +2085,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/arki/arki-060.jpg",
-    "place": "Jalkapallo-ottelu",
-    "year": "2016",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "kevat",
-      "uusi"
-    ],
-    "slot": [
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/albums/arki/arki-061.jpg",
     "place": "Metsäretki",
     "year": "2016",
@@ -2632,22 +2098,6 @@
     "slot": [
       "day",
       "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-062.jpg",
-    "place": "Rantabulevardi",
-    "year": "2016",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kevat",
-      "uusi"
-    ],
-    "slot": [
-      "afternoon",
-      "evening"
     ]
   },
   {
@@ -2665,22 +2115,6 @@
     "slot": [
       "morning",
       "day"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-064.jpg",
-    "place": "Huvipuistossa",
-    "year": "2016",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "kevat",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
     ]
   },
   {
@@ -2718,22 +2152,6 @@
   {
     "src": "photos-web/albums/arki/arki-067.jpg",
     "place": "Veneilemässä",
-    "year": "2016",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "kids",
-      "kesa",
-      "uusi"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/albums/arki/arki-068.jpg",
-    "place": "Pihaleikit",
     "year": "2016",
     "vibe": "joy",
     "tags": [
@@ -2972,174 +2390,6 @@
     ]
   },
   {
-    "src": "photos-web/alicante-01.jpg",
-    "place": "Alicante",
-    "year": "",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/alicante-02.jpg",
-    "place": "Alicante",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/alicante-03.jpg",
-    "place": "Alicante",
-    "year": "",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/alicante-04.jpg",
-    "place": "Alicante",
-    "year": "",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/alicante-05.jpg",
-    "place": "Alicante",
-    "year": "",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2018-lontoo-03.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2018-lontoo-05.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2018-lontoo-11.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "soft",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2018-lontoo-17.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2018-lontoo-25.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "calm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2018-lontoo-29.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "soft",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/kb-2018-lontoo-33.jpg",
     "place": "Lontoo",
     "year": "2018",
@@ -3152,21 +2402,6 @@
     "slot": [
       "evening",
       "night"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2018-lontoo-37.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
     ]
   },
   {
@@ -3202,21 +2437,6 @@
     ]
   },
   {
-    "src": "photos-web/kb-2018-lontoo-48.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
     "src": "photos-web/kb-2024-riviera-03.jpg",
     "place": "Riviera",
     "year": "2024",
@@ -3248,22 +2468,6 @@
     ]
   },
   {
-    "src": "photos-web/kb-2024-riviera-11.jpg",
-    "place": "Riviera",
-    "year": "2024",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/kb-2024-riviera-14.jpg",
     "place": "Riviera",
     "year": "2024",
@@ -3277,21 +2481,6 @@
       "day",
       "afternoon",
       "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2024-riviera-21.jpg",
-    "place": "Riviera",
-    "year": "2024",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
     ]
   },
   {
@@ -3340,21 +2529,6 @@
     ]
   },
   {
-    "src": "photos-web/kb-2024-riviera-45.jpg",
-    "place": "Riviera",
-    "year": "2024",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
     "src": "photos-web/kb-2024-riviera-51.jpg",
     "place": "Riviera",
     "year": "2024",
@@ -3378,21 +2552,6 @@
       "family",
       "travel",
       "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-01.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
     ],
     "slot": [
       "day",
@@ -3430,235 +2589,6 @@
     ]
   },
   {
-    "src": "photos-web/kb-2025-lontoo-05.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-07.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-08.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-09.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "calm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-10.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-12.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-14.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-15.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-16.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-17.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-19.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-20.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-22.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "soft",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-23.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-24.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/kb-2025-lontoo-25.jpg",
     "place": "Lontoo",
     "year": "2025",
@@ -3671,22 +2601,6 @@
     "slot": [
       "afternoon",
       "day"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2025-lontoo-27.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "calm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
     ]
   },
   {
@@ -3705,21 +2619,6 @@
     ]
   },
   {
-    "src": "photos-web/kb-2026-alicante-06.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
     "src": "photos-web/kb-2026-alicante-10.jpg",
     "place": "Alicante",
     "year": "2026",
@@ -3732,36 +2631,6 @@
     "slot": [
       "day",
       "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-18.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-24.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
     ]
   },
   {
@@ -3781,68 +2650,6 @@
     ]
   },
   {
-    "src": "photos-web/kb-2026-alicante-41.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-47.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-48.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-57.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
     "src": "photos-web/kb-2026-alicante-64.jpg",
     "place": "Alicante",
     "year": "2026",
@@ -3855,98 +2662,6 @@
     "slot": [
       "day",
       "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-69.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-77.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/kb-2026-alicante-82.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/london-01.jpg",
-    "place": "Lontoo",
-    "year": "",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/london-02.jpg",
-    "place": "Lontoo",
-    "year": "",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/london-03.jpg",
-    "place": "Lontoo",
-    "year": "",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
     ]
   },
   {
@@ -4036,97 +2751,6 @@
     ]
   },
   {
-    "src": "photos-web/matka-2018-2026-kalastus-cover-078.jpg",
-    "place": "Kalastus",
-    "year": "2018–2026",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "nature"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-01-003.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-02-004.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-03-005.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-04-006.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "calm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2018-lontoo-cover-001.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/matka-2018-tanska-00-009.jpg",
     "place": "Tanska",
     "year": "2018",
@@ -4143,21 +2767,6 @@
     ]
   },
   {
-    "src": "photos-web/matka-2018-tanska-01-010.jpg",
-    "place": "Tanska",
-    "year": "2018",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
     "src": "photos-web/matka-2018-tanska-02-011.jpg",
     "place": "Tanska",
     "year": "2018",
@@ -4170,22 +2779,6 @@
     "slot": [
       "afternoon",
       "day"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2018-tanska-03-012.jpg",
-    "place": "Tanska",
-    "year": "2018",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
     ]
   },
   {
@@ -4234,22 +2827,6 @@
     ]
   },
   {
-    "src": "photos-web/matka-2019-italia-00-016.jpg",
-    "place": "Italia",
-    "year": "2019",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "adventure"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/matka-2019-italia-01-017.jpg",
     "place": "Italia",
     "year": "2019",
@@ -4277,51 +2854,6 @@
     "slot": [
       "day",
       "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2019-italia-03-019.jpg",
-    "place": "Italia",
-    "year": "2019",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "adventure"
-    ],
-    "slot": [
-      "morning",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2019-italia-04-020.jpg",
-    "place": "Italia",
-    "year": "2019",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "adventure"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2019-italia-05-021.jpg",
-    "place": "Italia",
-    "year": "2019",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "adventure"
-    ],
-    "slot": [
-      "morning",
-      "evening"
     ]
   },
   {
@@ -4629,22 +3161,6 @@
     ]
   },
   {
-    "src": "photos-web/matka-2023-road-trip-cover-036.jpg",
-    "place": "Road Trip",
-    "year": "2023",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "adventure"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/matka-2024-riviera-00-044.jpg",
     "place": "Riviera",
     "year": "2024",
@@ -4737,52 +3253,6 @@
     ]
   },
   {
-    "src": "photos-web/matka-2024-riviera-cover-043.jpg",
-    "place": "Riviera",
-    "year": "2024",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-00-051.jpg",
-    "place": "Costa Brava",
-    "year": "2025",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-costa-brava-01-052.jpg",
-    "place": "Costa Brava",
-    "year": "2025",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/matka-2025-costa-brava-03-054.jpg",
     "place": "Costa Brava",
     "year": "2025",
@@ -4829,161 +3299,7 @@
     ]
   },
   {
-    "src": "photos-web/matka-2025-costa-brava-cover-050.jpg",
-    "place": "Costa Brava",
-    "year": "2025",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-00-058.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-01-059.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "morning",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-02-060.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-03-061.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "adventure",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "afternoon",
-      "day"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-05-063.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2025-lontoo-cover-057.jpg",
-    "place": "Lontoo",
-    "year": "2025",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/matka-2026-alicante-00-072.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2026-alicante-01-073.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2026-alicante-02-074.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2026-alicante-03-075.jpg",
     "place": "Alicante",
     "year": "2026",
     "vibe": "cozy",
@@ -5014,68 +3330,7 @@
     ]
   },
   {
-    "src": "photos-web/matka-2026-alicante-05-077.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2026-alicante-cover-071.jpg",
-    "place": "Alicante",
-    "year": "2026",
-    "vibe": "joy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/matka-2026-brasilia-01-066.jpg",
-    "place": "Brasilia",
-    "year": "2026",
-    "vibe": "bright",
-    "tags": [
-      "family",
-      "travel",
-      "kids"
-    ],
-    "slot": [
-      "day",
-      "afternoon"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2026-brasilia-02-067.jpg",
-    "place": "Brasilia",
-    "year": "2026",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "travel",
-      "joy"
-    ],
-    "slot": [
-      "evening",
-      "night"
-    ]
-  },
-  {
-    "src": "photos-web/matka-2026-brasilia-04-069.jpg",
     "place": "Brasilia",
     "year": "2026",
     "vibe": "bright",
@@ -5136,22 +3391,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/lontoo/lontoo-002.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/albums/lontoo/lontoo-003.jpg",
     "place": "Lontoo",
     "year": "2018",
@@ -5184,55 +3423,7 @@
     ]
   },
   {
-    "src": "photos-web/albums/lontoo/lontoo-005.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/albums/lontoo/lontoo-006.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/albums/lontoo/lontoo-007.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/albums/lontoo/lontoo-008.jpg",
     "place": "Lontoo",
     "year": "2018",
     "vibe": "warm",
@@ -5360,71 +3551,7 @@
     ]
   },
   {
-    "src": "photos-web/albums/lontoo/lontoo-016.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/albums/lontoo/lontoo-017.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/albums/lontoo/lontoo-018.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/albums/lontoo/lontoo-019.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
-    "src": "photos-web/albums/lontoo/lontoo-020.jpg",
     "place": "Lontoo",
     "year": "2018",
     "vibe": "warm",
@@ -5472,22 +3599,6 @@
     ]
   },
   {
-    "src": "photos-web/albums/lontoo/lontoo-023.jpg",
-    "place": "Lontoo",
-    "year": "2018",
-    "vibe": "warm",
-    "tags": [
-      "family",
-      "travel",
-      "london"
-    ],
-    "slot": [
-      "day",
-      "afternoon",
-      "evening"
-    ]
-  },
-  {
     "src": "photos-web/albums/lontoo/lontoo-024.jpg",
     "place": "Lontoo",
     "year": "2018",
@@ -5520,112 +3631,7 @@
     ]
   },
   {
-    "src": "photos-web/albums/perhe/perhe-001.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-002.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
     "src": "photos-web/albums/perhe/perhe-003.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-004.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-005.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-006.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-007.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-008.jpg",
     "place": "Perhe",
     "year": "",
     "vibe": "cozy",
@@ -5655,67 +3661,7 @@
     ]
   },
   {
-    "src": "photos-web/albums/perhe/perhe-010.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
     "src": "photos-web/albums/perhe/perhe-011.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-012.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-013.jpg",
-    "place": "Perhe",
-    "year": "",
-    "vibe": "cozy",
-    "tags": [
-      "family",
-      "home"
-    ],
-    "slot": [
-      "evening",
-      "night",
-      "morning"
-    ]
-  },
-  {
-    "src": "photos-web/albums/perhe/perhe-014.jpg",
     "place": "Perhe",
     "year": "",
     "vibe": "cozy",

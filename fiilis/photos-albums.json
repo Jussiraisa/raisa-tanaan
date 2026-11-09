@@ -6,11 +6,6 @@
       "years": "2022–2026",
       "photos": [
         {
-          "src": "photos-web/albums/tuoreet/uusi-001.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
           "src": "photos-web/albums/tuoreet/uusi-002.jpg",
           "place": "Lontoo",
           "year": "2026"
@@ -46,17 +41,7 @@
           "year": "2026"
         },
         {
-          "src": "photos-web/albums/tuoreet/uusi-009.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
           "src": "photos-web/albums/tuoreet/uusi-010.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-011.jpg",
           "place": "Lontoo",
           "year": "2026"
         },
@@ -106,22 +91,12 @@
           "year": "2026"
         },
         {
-          "src": "photos-web/albums/tuoreet/uusi-021.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
           "src": "photos-web/albums/tuoreet/uusi-022.jpg",
           "place": "Lontoo",
           "year": "2026"
         },
         {
           "src": "photos-web/albums/tuoreet/uusi-023.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-024.jpg",
           "place": "Lontoo",
           "year": "2026"
         },
@@ -166,22 +141,7 @@
           "year": "2026"
         },
         {
-          "src": "photos-web/albums/tuoreet/uusi-033.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
           "src": "photos-web/albums/tuoreet/uusi-034.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-035.jpg",
-          "place": "Lontoo",
-          "year": "2026"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-036.jpg",
           "place": "Lontoo",
           "year": "2026"
         },
@@ -223,16 +183,6 @@
         {
           "src": "photos-web/albums/tuoreet/uusi-044.jpg",
           "place": "Alicante",
-          "year": "2026"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-045.jpg",
-          "place": "Pentuvierailu",
-          "year": "2026"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-046.jpg",
-          "place": "Pentuvierailu",
           "year": "2026"
         },
         {
@@ -356,22 +306,7 @@
           "year": "2026"
         },
         {
-          "src": "photos-web/albums/tuoreet/uusi-071.jpg",
-          "place": "Pariisi",
-          "year": "2025"
-        },
-        {
           "src": "photos-web/albums/tuoreet/uusi-072.jpg",
-          "place": "Costa Brava",
-          "year": "2025"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-073.jpg",
-          "place": "Costa Brava",
-          "year": "2025"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-074.jpg",
           "place": "Costa Brava",
           "year": "2025"
         },
@@ -403,11 +338,6 @@
         {
           "src": "photos-web/albums/tuoreet/uusi-080.jpg",
           "place": "Riviera",
-          "year": "2024"
-        },
-        {
-          "src": "photos-web/albums/tuoreet/uusi-081.jpg",
-          "place": "Vaellus Rivieralla",
           "year": "2024"
         },
         {
@@ -503,21 +433,6 @@
       "years": "2010–2019",
       "photos": [
         {
-          "src": "photos-web/albums/arki/arki-001.jpg",
-          "place": "Hääpäivä",
-          "year": "2010"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-002.jpg",
-          "place": "Hääpäivä",
-          "year": "2010"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-003.jpg",
-          "place": "Hääpäivä",
-          "year": "2010"
-        },
-        {
           "src": "photos-web/albums/arki/arki-004.jpg",
           "place": "Kotona",
           "year": "2014"
@@ -538,18 +453,8 @@
           "year": "2014"
         },
         {
-          "src": "photos-web/albums/arki/arki-008.jpg",
-          "place": "Lumileikit",
-          "year": "2014"
-        },
-        {
           "src": "photos-web/albums/arki/arki-009.jpg",
           "place": "Aamiaisella",
-          "year": "2014"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-010.jpg",
-          "place": "Pihalla",
           "year": "2014"
         },
         {
@@ -563,27 +468,12 @@
           "year": "2014"
         },
         {
-          "src": "photos-web/albums/arki/arki-013.jpg",
-          "place": "Laiturilla",
-          "year": "2014"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-014.jpg",
-          "place": "Leikkipuistossa",
-          "year": "2014"
-        },
-        {
           "src": "photos-web/albums/arki/arki-015.jpg",
           "place": "Akvaariossa",
           "year": "2014"
         },
         {
           "src": "photos-web/albums/arki/arki-016.jpg",
-          "place": "Budapest",
-          "year": "2014"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-017.jpg",
           "place": "Budapest",
           "year": "2014"
         },
@@ -603,18 +493,8 @@
           "year": "2014"
         },
         {
-          "src": "photos-web/albums/arki/arki-021.jpg",
-          "place": "Kesäilta",
-          "year": "2014"
-        },
-        {
           "src": "photos-web/albums/arki/arki-022.jpg",
           "place": "Aamupala",
-          "year": "2014"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-023.jpg",
-          "place": "Kesäpäivä",
           "year": "2014"
         },
         {
@@ -628,18 +508,8 @@
           "year": "2014"
         },
         {
-          "src": "photos-web/albums/arki/arki-026.jpg",
-          "place": "Leikkipuistossa",
-          "year": "2014"
-        },
-        {
           "src": "photos-web/albums/arki/arki-027.jpg",
           "place": "Kesäkahvila",
-          "year": "2014"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-028.jpg",
-          "place": "Rantaloma",
           "year": "2014"
         },
         {
@@ -653,11 +523,6 @@
           "year": "2014"
         },
         {
-          "src": "photos-web/albums/arki/arki-031.jpg",
-          "place": "Tanssit",
-          "year": "2015"
-        },
-        {
           "src": "photos-web/albums/arki/arki-032.jpg",
           "place": "Hiihtoloma",
           "year": "2015"
@@ -665,11 +530,6 @@
         {
           "src": "photos-web/albums/arki/arki-033.jpg",
           "place": "Hiihtoloma",
-          "year": "2015"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-034.jpg",
-          "place": "Porotilalla",
           "year": "2015"
         },
         {
@@ -728,11 +588,6 @@
           "year": "2015"
         },
         {
-          "src": "photos-web/albums/arki/arki-046.jpg",
-          "place": "Reissussa",
-          "year": "2015"
-        },
-        {
           "src": "photos-web/albums/arki/arki-047.jpg",
           "place": "Pikkuneiti",
           "year": "2015"
@@ -758,11 +613,6 @@
           "year": "2015"
         },
         {
-          "src": "photos-web/albums/arki/arki-052.jpg",
-          "place": "Joulu",
-          "year": "2015"
-        },
-        {
           "src": "photos-web/albums/arki/arki-053.jpg",
           "place": "Rinteessä",
           "year": "2015"
@@ -775,11 +625,6 @@
         {
           "src": "photos-web/albums/arki/arki-055.jpg",
           "place": "Jäinen järvi",
-          "year": "2016"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-056.jpg",
-          "place": "Iltakävely",
           "year": "2016"
         },
         {
@@ -798,28 +643,13 @@
           "year": "2016"
         },
         {
-          "src": "photos-web/albums/arki/arki-060.jpg",
-          "place": "Jalkapallo-ottelu",
-          "year": "2016"
-        },
-        {
           "src": "photos-web/albums/arki/arki-061.jpg",
           "place": "Metsäretki",
           "year": "2016"
         },
         {
-          "src": "photos-web/albums/arki/arki-062.jpg",
-          "place": "Rantabulevardi",
-          "year": "2016"
-        },
-        {
           "src": "photos-web/albums/arki/arki-063.jpg",
           "place": "Pyöräilemässä",
-          "year": "2016"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-064.jpg",
-          "place": "Huvipuistossa",
           "year": "2016"
         },
         {
@@ -835,11 +665,6 @@
         {
           "src": "photos-web/albums/arki/arki-067.jpg",
           "place": "Veneilemässä",
-          "year": "2016"
-        },
-        {
-          "src": "photos-web/albums/arki/arki-068.jpg",
-          "place": "Pihaleikit",
           "year": "2016"
         },
         {
@@ -925,11 +750,6 @@
           "year": "2018"
         },
         {
-          "src": "photos-web/albums/lontoo/lontoo-002.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
           "src": "photos-web/albums/lontoo/lontoo-003.jpg",
           "place": "Lontoo",
           "year": "2018"
@@ -940,22 +760,7 @@
           "year": "2018"
         },
         {
-          "src": "photos-web/albums/lontoo/lontoo-005.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
-          "src": "photos-web/albums/lontoo/lontoo-006.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
           "src": "photos-web/albums/lontoo/lontoo-007.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
-          "src": "photos-web/albums/lontoo/lontoo-008.jpg",
           "place": "Lontoo",
           "year": "2018"
         },
@@ -995,27 +800,7 @@
           "year": "2018"
         },
         {
-          "src": "photos-web/albums/lontoo/lontoo-016.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
           "src": "photos-web/albums/lontoo/lontoo-017.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
-          "src": "photos-web/albums/lontoo/lontoo-018.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
-          "src": "photos-web/albums/lontoo/lontoo-019.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
-          "src": "photos-web/albums/lontoo/lontoo-020.jpg",
           "place": "Lontoo",
           "year": "2018"
         },
@@ -1026,11 +811,6 @@
         },
         {
           "src": "photos-web/albums/lontoo/lontoo-022.jpg",
-          "place": "Lontoo",
-          "year": "2018"
-        },
-        {
-          "src": "photos-web/albums/lontoo/lontoo-023.jpg",
           "place": "Lontoo",
           "year": "2018"
         },
@@ -4612,42 +4392,7 @@
       "years": "",
       "photos": [
         {
-          "src": "photos-web/albums/perhe/perhe-001.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-002.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
           "src": "photos-web/albums/perhe/perhe-003.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-004.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-005.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-006.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-007.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-008.jpg",
           "place": "Perhe",
           "year": ""
         },
@@ -4657,27 +4402,7 @@
           "year": ""
         },
         {
-          "src": "photos-web/albums/perhe/perhe-010.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
           "src": "photos-web/albums/perhe/perhe-011.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-012.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-013.jpg",
-          "place": "Perhe",
-          "year": ""
-        },
-        {
-          "src": "photos-web/albums/perhe/perhe-014.jpg",
           "place": "Perhe",
           "year": ""
         },

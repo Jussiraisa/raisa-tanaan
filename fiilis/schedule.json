@@ -2393,15 +2393,6 @@
       "note": "bussilla · koulu antaa eväät"
     },
     {
-      "date": "2026-11-12",
-      "who": "Ellen",
-      "title": "Rokotuspäivä koululla",
-      "place": "Aurinkorinteen koulu",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "Ellen + Samuel"
-    },
-    {
       "who": "Milla",
       "title": "YH01.3 käsitekoe (2. osa)",
       "kind": "muu",
@@ -2486,14 +2477,6 @@
       "place": "Luola",
       "kind": "treeni",
       "source": "gcal:voimistelu"
-    },
-    {
-      "date": "2026-11-17",
-      "who": "Mea",
-      "title": "Rokotuspäivä koululla",
-      "place": "Jynkänlahden koulu",
-      "kind": "muu",
-      "source": "gcal:perhe"
     },
     {
       "who": "Milla",
@@ -3641,13 +3624,6 @@
       "title": "YM7-koe (Metsät ja suot) 10.00",
       "who": "Ellen",
       "needAction": false,
-      "source": "wilma:perhe"
-    },
-    {
-      "due": "2026-10-30",
-      "title": "Ilmoita influenssarokotuksesta terkkarille (rokotus ti 17.11.)",
-      "who": "Mea",
-      "needAction": true,
       "source": "wilma:perhe"
     },
     {

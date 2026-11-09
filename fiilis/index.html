@@ -1274,9 +1274,29 @@
     return wd === 6 || (wd === 0 && hour < 15);
   }
 
+  /** v-schoolOff: absences kind:"schoolOff" (tai note/where "vapaa|koulu") piilottaa koulun sille päivälle. */
+  function isSchoolOffAbs(abs, who, iso) {
+    if (!who || !iso || !abs || !abs.length) return false;
+    for (var i = 0; i < abs.length; i++) {
+      var a = abs[i];
+      if (!a || a.who !== who) continue;
+      if (a.from && a.to && iso >= a.from && iso <= a.to) {
+        if (a.kind === "schoolOff") return true;
+        if (/vapaa|koulu/i.test(String(a.note || "") + " " + String(a.where || ""))) return true;
+      }
+    }
+    return false;
+  }
+  function schoolRowsForDay(list, wd, iso, abs) {
+    var rows = schoolRowsForDayRaw(list, wd, iso);
+    if (!iso || !abs) return rows;
+    var out = [];
+    for (var i = 0; i < rows.length; i++) if (!isSchoolOffAbs(abs, rows[i] && rows[i].who, String(iso).slice(0, 10))) out.push(rows[i]);
+    return out;
+  }
   /** Koulu päiväkohtaisella ohituksella: schoolStarts-rivi jolla "date":"YYYY-MM-DD"
       ohittaa saman henkilön weekdays-oletuksen sille päivälle (ei osu muille päiville). */
-  function schoolRowsForDay(list, wd, iso) {
+  function schoolRowsForDayRaw(list, wd, iso) {
     var out = [];
     var over = {};
     var isoWd = null;
@@ -1312,7 +1332,7 @@
       tomorrow = true;
       lunchDate = addDaysIso(n, wd === 0 ? 1 : 2);
     }
-    const matched = schoolRowsForDay(schools, dayIdx, tomorrow ? lunchDate : isoDate(n))
+    const matched = schoolRowsForDay(schools, dayIdx, tomorrow ? lunchDate : isoDate(n), (schedule && schedule.absences) || [])
       .slice()
       .sort((a, b) => String(a.time).localeCompare(String(b.time)) || String(a.who).localeCompare(String(b.who)));
     const items = matched.map(s => ({

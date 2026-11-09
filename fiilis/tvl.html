@@ -1136,9 +1136,29 @@
     return { wd: dayIdx, tomorrow: tomorrow, lunchIso: lunchIso, focusIso: focusIso, label: label };
   }
 
+  /** v-schoolOff: absences kind:"schoolOff" (tai note/where "vapaa|koulu") piilottaa koulun sille päivälle. */
+  function isSchoolOffAbs(abs, who, iso) {
+    if (!who || !iso || !abs || !abs.length) return false;
+    for (var i = 0; i < abs.length; i++) {
+      var a = abs[i];
+      if (!a || a.who !== who) continue;
+      if (a.from && a.to && iso >= a.from && iso <= a.to) {
+        if (a.kind === "schoolOff") return true;
+        if (/vapaa|koulu/i.test(String(a.note || "") + " " + String(a.where || ""))) return true;
+      }
+    }
+    return false;
+  }
+  function schoolRowsForDay(list, wd, iso, abs) {
+    var rows = schoolRowsForDayRaw(list, wd, iso);
+    if (!iso || !abs) return rows;
+    var out = [];
+    for (var i = 0; i < rows.length; i++) if (!isSchoolOffAbs(abs, rows[i] && rows[i].who, String(iso).slice(0, 10))) out.push(rows[i]);
+    return out;
+  }
   /** Koulu päiväkohtaisella ohituksella: schoolStarts-rivi jolla "date":"YYYY-MM-DD"
       ohittaa saman henkilön weekdays-oletuksen sille päivälle (ei osu muille päiville). */
-  function schoolRowsForDay(list, wd, iso) {
+  function schoolRowsForDayRaw(list, wd, iso) {
     var out = [];
     var over = {};
     var isoWd = null;
@@ -1165,7 +1185,7 @@
     if (!tgt || tgt.hideSchool) return out;
     if (!schedule || !schedule.schoolStarts) return out;
     var iso = tgt.focusIso || tgt.lunchIso || "";
-    var list = schoolRowsForDay(schedule.schoolStarts, tgt.wd, iso);
+    var list = schoolRowsForDay(schedule.schoolStarts, tgt.wd, iso, schedule.absences || []);
     for (var i = 0; i < list.length; i++) out.push(list[i]);
     out.sort(function (a, b) {
       var ia = KID_ORDER.indexOf(a.who); if (ia < 0) ia = 99;
@@ -1583,7 +1603,7 @@
     var dt = new Date(Date.UTC(p.y, p.m - 1, p.d));
     var wd = dt.getUTCDay();
     if (wd >= 1 && wd <= 5 && schedule && schedule.schoolStarts) {
-      var ss = schoolRowsForDay(schedule.schoolStarts, wd, iso);
+      var ss = schoolRowsForDay(schedule.schoolStarts, wd, iso, schedule.absences || []);
       var kids = {};
       for (var s = 0; s < ss.length; s++) {
         var row = ss[s];

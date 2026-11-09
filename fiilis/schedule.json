@@ -2338,7 +2338,7 @@
       "time": "05:30",
       "end": "21:00",
       "who": "Mea",
-      "title": "Taidetestaajat-retki Helsinkiin (vahvista)",
+      "title": "Taidetestaajat-retki Helsinkiin",
       "place": "Jynkänlahden koulu (lähtö)",
       "kind": "muu",
       "source": "gcal:perhe",
@@ -3652,9 +3652,9 @@
     },
     {
       "due": "2026-11-09",
-      "title": "Päätä + ilmoita Taidetestaajat-osallistuminen (retki ti 10.11.)",
+      "title": "Taidetestaajat-retki ti 10.11. – Mea osallistuu",
       "who": "Mea",
-      "needAction": true,
+      "needAction": false,
       "source": "gcal:perhe"
     },
     {
@@ -3788,7 +3788,8 @@
       "kind": "treeni",
       "source": "gcal:jussi",
       "except": [
-        "2026-12-01"
+        "2026-12-01",
+        "2026-11-10"
       ]
     },
     {

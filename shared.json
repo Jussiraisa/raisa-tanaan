@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794287875673,
+  "updated": 1794288378623,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -400,6 +400,37 @@
       "end": "21:00",
       "kind": "cal",
       "place": "Jynkänlahden koulu (lähtö)"
+    },
+    {
+      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261110T150000Z",
+      "title": "Mea valmennus",
+      "date": "2026-11-10",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-okkq2mmj27hs25gllmusl28do4",
+      "title": "Milla: Influenssarokotus (ajanvaraus)",
+      "date": "2026-11-11",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-qmv17vohkdfoab9rae7ceu1o44",
+      "title": "Ellen · Kuvakukko-retki (B-ryhmä)",
+      "date": "2026-11-11",
+      "start": "08:45",
+      "end": "15:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-qsoivmv2e3np9noljg249rebk8",
+      "title": "Milla · 1. vuosikurssin huoltajailta",
+      "date": "2026-11-11",
+      "start": "18:00",
+      "end": "19:30",
+      "kind": "cal",
+      "place": "Kuopion klassillinen lukio (myös Teams)"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",

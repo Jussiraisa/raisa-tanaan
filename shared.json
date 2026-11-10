@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794290707685,
+  "updated": 1794306319871,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -711,13 +711,42 @@
       "note": "Wilma 10.11.: pe 13.11., kellonaika ei tiedossa."
     },
     {
-      "id": "info-ambrosia-2026-11-21",
+      "id": "kyyti-samuel-welhot-2026-11-10",
+      "who": "samuel",
+      "title": "Welhot (ehdotus / varmistamatta)",
+      "date": "2026-11-10",
+      "start": "16:30",
+      "end": "18:00",
+      "place": "Lippumäki, Petosentie 8",
+      "kind": "info",
+      "note": "Kyyti auki: tiistaille ei ole oletusta (to on meidän). WA lukematta. Jos kyyti on meidän, vienti ja haku osuvat päällekkäin Ellenin Ambrosian (17–18.30) kanssa."
+    },
+    {
+      "id": "kyyti-ellen-ambrosia-2026-11-10",
+      "who": "ellen",
+      "title": "Ambrosia (ehdotus / varmistamatta)",
+      "date": "2026-11-10",
+      "start": "17:00",
+      "end": "18:30",
+      "place": "Kuopiohalli",
+      "kind": "info",
+      "note": "Vienti+haku meidän (ti-oletus). WA lukematta."
+    },
+    {
+      "id": "info-kyytiehdotus-2026-11-10",
+      "who": "perhe",
+      "title": "Kyytiehdotus ti 10.11. (ehdotus / varmistamatta)",
+      "date": "2026-11-10",
+      "kind": "info",
+      "note": "Ehdotus / varmistamatta (WhatsApp lukematta). Ellen Ambrosia vienti+haku meidän (ti-oletus), treeni 17.00–18.30 Kuopiohalli. Samuel Welhot 16.30–18.00 Lippumäki (Petosentie 8): tiistaille ei ole kyytioletusta (to on meidän), kyyti auki; jos molemmat meidän, vienti ja haku osuvat päällekkäin. Mean haku n. klo 21 Jynkänlahden koululta (Taidetestaajat): kuka hakee ei ollut kirjattu, ehdotus meidän. Millan Vivida KRV juhlanäytös Musiikkikeskuksessa on merkitty ilman kyytiä (kellonaika puuttuu)."
+    },
+    {
+      "id": "info-ambrosia-2026-11-22",
       "who": "ellen",
       "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "kind": "info",
       "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
       "note": "kulku Auto; yö Ei; kuski Kaarle, Pipsa+3, Mika+4"
     },
     {
@@ -728,7 +757,7 @@
       "kind": "info",
       "place": "Vierumäki",
       "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
+      "note": "kulku Juna+taksi; huoltaja Mika; yö Vierumäki"
     },
     {
       "id": "info-ambrosia-2027-03-19",
@@ -767,36 +796,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "kyyti-samuel-welhot-2026-11-10",
-      "who": "samuel",
-      "title": "Welhot (ehdotus / varmistamatta)",
-      "date": "2026-11-10",
-      "start": "16:30",
-      "end": "18:00",
-      "place": "Lippumäki, Petosentie 8",
-      "kind": "info",
-      "note": "Kyyti auki: tiistaille ei ole oletusta (to on meidän). WA lukematta. Jos kyyti on meidän, vienti ja haku osuvat päällekkäin Ellenin Ambrosian (17–18.30) kanssa."
-    },
-    {
-      "id": "kyyti-ellen-ambrosia-2026-11-10",
-      "who": "ellen",
-      "title": "Ambrosia (ehdotus / varmistamatta)",
-      "date": "2026-11-10",
-      "start": "17:00",
-      "end": "18:30",
-      "place": "Kuopiohalli",
-      "kind": "info",
-      "note": "Vienti+haku meidän (ti-oletus). WA lukematta."
-    },
-    {
-      "id": "info-kyytiehdotus-2026-11-10",
-      "who": "perhe",
-      "title": "Kyytiehdotus ti 10.11. (ehdotus / varmistamatta)",
-      "date": "2026-11-10",
-      "kind": "info",
-      "note": "Ehdotus / varmistamatta (WhatsApp lukematta). Ellen Ambrosia vienti+haku meidän (ti-oletus), treeni 17.00–18.30 Kuopiohalli. Samuel Welhot 16.30–18.00 Lippumäki (Petosentie 8): tiistaille ei ole kyytioletusta (to on meidän), kyyti auki; jos molemmat meidän, vienti ja haku osuvat päällekkäin. Mean haku n. klo 21 Jynkänlahden koululta (Taidetestaajat): kuka hakee ei ollut kirjattu, ehdotus meidän. Millan Vivida KRV juhlanäytös Musiikkikeskuksessa on merkitty ilman kyytiä (kellonaika puuttuu)."
     }
   ],
   "schoolLunch": {

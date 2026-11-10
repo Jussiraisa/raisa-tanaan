@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794306319871,
+  "updated": 1794309835393,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -437,12 +437,6 @@
       "date": "2026-11-10",
       "start": "17:00",
       "end": "17:45",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-okkq2mmj27hs25gllmusl28do4",
-      "title": "Milla: Influenssarokotus (ajanvaraus)",
-      "date": "2026-11-11",
       "kind": "cal"
     },
     {

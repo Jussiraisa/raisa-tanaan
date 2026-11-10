@@ -2346,12 +2346,12 @@
     },
     {
       "who": "Milla",
-      "title": "17.30 palaveri sannin kaa",
+      "title": "Palaveri Sannin kanssa",
       "kind": "muu",
       "source": "ical:milla",
       "date": "2026-11-11",
-      "time": "08:00",
-      "end": "09:00"
+      "time": "17:30",
+      "end": "18:00"
     },
     {
       "date": "2026-11-11",
@@ -2386,12 +2386,13 @@
     },
     {
       "who": "Milla",
-      "title": "Käsitekoe 2 yh",
+      "title": "YH01.3 käsitekoe (2. osa)",
       "kind": "muu",
       "source": "ical:milla",
       "date": "2026-11-12",
-      "time": "21:00",
-      "end": "22:00"
+      "time": "08:10",
+      "end": "09:00",
+      "note": "aika Wilmasta"
     },
     {
       "date": "2026-11-12",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794286649575,
+  "updated": 1794287875673,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -393,12 +393,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-8698cnqv0jk1cdn3su1nurb0ao",
-      "title": "Mea · DL: päätä + ilmoita Taidetestaajat-osallistuminen",
-      "date": "2026-11-09",
-      "kind": "cal"
-    },
-    {
       "id": "cal-dee7o6hr73n53kn3ifsm9im0es",
       "title": "Mea · Taidetestaajat-retki Helsinkiin (Dracula, Oopperatalo)",
       "date": "2026-11-10",
@@ -539,14 +533,6 @@
       "note": "Paikalla 5.20 · eväät/taskuraha · korvaa ti 10.11. koulupäivän · vahvistettu"
     },
     {
-      "id": "info-wilma-mea-taidetestaajat-ilmoitus-2026-11-09",
-      "who": "mea",
-      "title": "DL: päätä + ilmoita Taidetestaajat-osallistuminen",
-      "date": "2026-11-09",
-      "kind": "info",
-      "note": "Ennen 10.11. JenPulle/Peltokorvelle Wilmassa · JenPu kysyi 23.10. jaksaako 15–16 h päivän, ei vastattu"
-    },
-    {
       "id": "info-wilma-samuel-kumma-retki-2026-11-12",
       "who": "samuel",
       "title": "Luokan retki: Kumma-museo + pääkirjasto",
@@ -566,15 +552,6 @@
       "kind": "info",
       "place": "Klassillinen lukio / Teams",
       "note": "kahvi 17.30 · Wilma 2.11. A-M Tiilikainen"
-    },
-    {
-      "id": "info-wilma-milla-huoltajailta-kysely-2026-11-09",
-      "who": "milla",
-      "title": "DL: huoltajaillan osallistumiskysely",
-      "date": "2026-11-09",
-      "start": "12:00",
-      "kind": "info",
-      "note": "Forms-linkki Wilma-viestissä 2.11. · klo 12 mennessä"
     },
     {
       "id": "info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
@@ -614,54 +591,6 @@
       "note": "25 paikkaa ilmoittautumisjärjestyksessä · lomake Wilma-viestissä Hyvönen Ossi 26.10."
     },
     {
-      "id": "info-ambrosia-2026-11-21",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-21",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "dateEnd": "2026-11-22",
-      "note": "kulku Auto; yö Ei; kuski Kaarle, Pipsa+3, Mika+4"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-11-09",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-11-09",
-      "start": "16:00",
-      "end": "17:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
       "id": "info-wilma-mea-oppimiskeskustelu-varaus-2026-11-16",
       "who": "mea",
       "title": "DL: varaa oppimiskeskusteluaika",
@@ -669,22 +598,6 @@
       "kind": "info",
       "note": "Wilma 10.11.: aikoja 11.11. (ilmoittautuminen päättyy ti 10.11.), 13.11. (DL 12.11.), 18.11. (DL 14.11.), 19.11. (DL 15.11.). Keskustelulomake täytettävä ennen keskustelua. Ei kalenterimerkintää ennen varausta.",
       "dateEnd": "2026-11-15"
-    },
-    {
-      "id": "info-wilma-mea-poissaoloraja-2026-11-09",
-      "who": "mea",
-      "title": "Wilma: kiireellinen poissaoloilmoitus — 116 h raja ylitetty",
-      "date": "2026-11-09",
-      "kind": "info",
-      "note": "Wilma 9.11.: poissaoloraja 116 h ylitetty · ei kalenterimerkintää"
-    },
-    {
-      "id": "info-wilma-milla-op05-poissaolo-2026-11-09",
-      "who": "milla",
-      "title": "Wilma: 3 h poissaolo OP05",
-      "date": "2026-11-09",
-      "kind": "info",
-      "note": "Wilma 9.11. · ei kalenterimerkintää"
     },
     {
       "id": "info-wilma-ellen-kuvakukko-2026-11-11",
@@ -733,6 +646,64 @@
       "date": "2026-11-13",
       "kind": "info",
       "note": "Wilma 10.11.: pe 13.11., kellonaika ei tiedossa."
+    },
+    {
+      "id": "info-ambrosia-2026-11-21",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-21",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "dateEnd": "2026-11-22",
+      "note": "kulku Auto; yö Ei; kuski Kaarle, Pipsa+3, Mika+4"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-11-11",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-11-11",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-11-11",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-11-11",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

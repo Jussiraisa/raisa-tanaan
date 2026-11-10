@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794232829319,
+  "updated": 1794286649575,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -399,12 +399,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-e0qbppjf84f0f7au5pcvahfnp4",
-      "title": "Milla: Influenssarokotus (ajanvaraus)",
-      "date": "2026-11-09",
-      "kind": "cal"
-    },
-    {
       "id": "cal-dee7o6hr73n53kn3ifsm9im0es",
       "title": "Mea · Taidetestaajat-retki Helsinkiin (Dracula, Oopperatalo)",
       "date": "2026-11-10",
@@ -412,14 +406,6 @@
       "end": "21:00",
       "kind": "cal",
       "place": "Jynkänlahden koulu (lähtö)"
-    },
-    {
-      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261110T150000Z",
-      "title": "Mea valmennus",
-      "date": "2026-11-10",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",
@@ -462,20 +448,12 @@
       "status": ""
     },
     {
-      "id": "info-wilma-milla-influenssarokotus-2026-11-09",
-      "who": "milla",
-      "title": "Influenssarokotus (ajanvaraus) 9.11. tai 11.11.",
-      "date": "2026-11-09",
-      "kind": "info",
-      "note": "Wilma 21.10., th Heli Kolehmainen: rokotukset ma 9.11. ja ke 11.11. ajanvarauksella. Varaus p. 044 718 6561 ma–pe 8–9, OmaSavo tai neuvontapiste ma–pe 12–12.45. Maksuton riskiryhmille, muut resepti opiskeluterveydenhuollosta."
-    },
-    {
       "id": "info-wilma-milla-op05-ilmastodiagrammi-2026-11-18",
       "who": "milla",
-      "title": "OP05 ilmastodiagrammi (itsenäinen teht. 3)",
+      "title": "OP05.F ilmastodiagrammitehtävä DL (Teams)",
       "date": "2026-11-18",
       "kind": "info",
-      "note": "Wilma 6.10."
+      "note": "Wilma 10.11.: DL ke 18.11. Teamsiin."
     },
     {
       "id": "info-wilma-mea-ena3-koe-2026-11-26",
@@ -530,14 +508,6 @@
       "kind": "info"
     },
     {
-      "id": "info-wilma-mea-influenssarokotus-2026-11-17",
-      "who": "mea",
-      "title": "Influenssarokotus koululla",
-      "date": "2026-11-17",
-      "kind": "info",
-      "note": "Wilma 22.10., th Noora Teittinen · ilmoitus 30.10. mennessä"
-    },
-    {
       "id": "info-wilma-mea-ue3-koe-2026-11-12",
       "who": "mea",
       "title": "UE3-koe (uskonto)",
@@ -550,7 +520,7 @@
     {
       "id": "info-wilma-mea-ai-kirjallisuuskoe-2026-12-08",
       "who": "mea",
-      "title": "ÄI kirjallisuuskoe (genret)",
+      "title": "AI3 kirjallisuuskoe (genret)",
       "date": "2026-12-08",
       "start": "10:50",
       "end": "11:35",
@@ -566,7 +536,7 @@
       "end": "21:00",
       "kind": "info",
       "place": "Helsinki · lähtö Jynkänlahden koulu",
-      "note": "Paikalla 5.20 · eväät/taskuraha · koulupäivä korvautuu · osallistuminen vielä päättämättä"
+      "note": "Paikalla 5.20 · eväät/taskuraha · korvaa ti 10.11. koulupäivän · vahvistettu"
     },
     {
       "id": "info-wilma-mea-taidetestaajat-ilmoitus-2026-11-09",
@@ -579,10 +549,12 @@
     {
       "id": "info-wilma-samuel-kumma-retki-2026-11-12",
       "who": "samuel",
-      "title": "Luokan retki: Kumma-museo + kaupunginkirjasto",
+      "title": "Luokan retki: Kumma-museo + pääkirjasto",
       "date": "2026-11-12",
       "kind": "info",
-      "note": "bussilla, koulu antaa eväät · aikataulu ensi viikon tiedotteessa"
+      "note": "Wilma 10.11.: 2B n. klo 9–11.45, bussilla, koulu antaa eväät.",
+      "start": "09:00",
+      "end": "11:45"
     },
     {
       "id": "info-wilma-milla-huoltajailta-2026-11-11",
@@ -603,15 +575,6 @@
       "start": "12:00",
       "kind": "info",
       "note": "Forms-linkki Wilma-viestissä 2.11. · klo 12 mennessä"
-    },
-    {
-      "id": "info-wilma-perhe-influenssarokotus-2026-11-12",
-      "who": "perhe",
-      "title": "Ellen & Samuel: influenssarokotuspäivä koululla",
-      "date": "2026-11-12",
-      "kind": "info",
-      "place": "Aurinkorinteen koulu",
-      "note": "Wilma 23.10. M. Kiiskinen · maksuttoman ilmoitus 2.11. mennyt"
     },
     {
       "id": "info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
@@ -702,9 +665,10 @@
       "id": "info-wilma-mea-oppimiskeskustelu-varaus-2026-11-16",
       "who": "mea",
       "title": "DL: varaa oppimiskeskusteluaika",
-      "date": "2026-11-16",
+      "date": "2026-11-10",
       "kind": "info",
-      "note": "Wilma-viesti Kärkkäinen 6.11. · määräaika ma 16.11."
+      "note": "Wilma 10.11.: aikoja 11.11. (ilmoittautuminen päättyy ti 10.11.), 13.11. (DL 12.11.), 18.11. (DL 14.11.), 19.11. (DL 15.11.). Keskustelulomake täytettävä ennen keskustelua. Ei kalenterimerkintää ennen varausta.",
+      "dateEnd": "2026-11-15"
     },
     {
       "id": "info-wilma-mea-poissaoloraja-2026-11-09",
@@ -725,10 +689,12 @@
     {
       "id": "info-wilma-ellen-kuvakukko-2026-11-11",
       "who": "ellen",
-      "title": "Kuvakukko-elokuvakäynti",
+      "title": "Kuvakukko-retki (B-ryhmä)",
       "date": "2026-11-11",
       "kind": "info",
-      "note": "Wilma: lukkarimuutos b-ryhmälle · viestin tarkempia tietoja ei avattu"
+      "note": "Wilma 10.11.: B-ryhmä koululle klo 8.45, bussi klo 9. Paluuaika ei tiedossa (merkitty klo 15 asti).",
+      "start": "08:45",
+      "end": "15:00"
     },
     {
       "id": "info-wilma-perhe-digiymparisto-teams-2026-12-16",
@@ -740,6 +706,33 @@
       "kind": "info",
       "place": "Teams",
       "note": "Vapaaehtoinen / matala prioriteetti · ei kalenterimerkintää"
+    },
+    {
+      "id": "info-wilma-ellen-korvaava-tunti-2026-11-12",
+      "who": "ellen",
+      "title": "Korvaava tunti (Kuvakukko)",
+      "date": "2026-11-12",
+      "start": "14:00",
+      "end": "14:45",
+      "kind": "info",
+      "note": "Wilma 10.11.: to 12.11. klo 14.00–14.45. Ellenin torstai päättyy silti klo 15.00."
+    },
+    {
+      "id": "info-wilma-ellen-uintijakso-2026-11-26",
+      "who": "ellen",
+      "title": "Uintijakso 26.11.–2.12. tuo lukkarimuutoksia",
+      "date": "2026-11-26",
+      "dateEnd": "2026-12-02",
+      "kind": "info",
+      "note": "Wilma 10.11.: yksityiskohdat myöhemmin. (Osittain päällekkäin Lontoon reissun 27.11.–2.12. kanssa.)"
+    },
+    {
+      "id": "info-wilma-samuel-kertotaulutesti-2026-11-13",
+      "who": "samuel",
+      "title": "Kertotaulutesti (2 ja 5)",
+      "date": "2026-11-13",
+      "kind": "info",
+      "note": "Wilma 10.11.: pe 13.11., kellonaika ei tiedossa."
     }
   ],
   "schoolLunch": {
@@ -816,6 +809,13 @@
     },
     "sheet-mea-2026-11-02": {
       "2026-11-02": "Mea ei treenejä ma 2.11."
-    }
+    },
+    "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261110T150000Z": {
+      "2026-11-10": "Mea Taidetestaajat-retki (paluu n. 21)"
+    },
+    "cal-e0qbppjf84f0f7au5pcvahfnp4": "ei näytetä (ei osallistuta)",
+    "info-wilma-milla-influenssarokotus-2026-11-09": "ei näytetä (ei osallistuta)",
+    "info-wilma-mea-influenssarokotus-2026-11-17": "ei näytetä (ei osallistuta)",
+    "info-wilma-perhe-influenssarokotus-2026-11-12": "ei näytetä (ei osallistuta)"
   }
 }

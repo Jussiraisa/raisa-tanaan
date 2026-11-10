@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Helsinki",
-  "updated": "2026-11-09T13:30:00+02:00",
+  "updated": "2026-11-10T06:57:29+02:00",
   "schoolStarts": [
     {
       "who": "Ellen",
@@ -158,7 +158,7 @@
     {
       "who": "Mea",
       "label": "Koulu",
-      "time": "10:00",
+      "time": "08:00",
       "end": "14:50",
       "weekdays": [
         3
@@ -167,7 +167,7 @@
     {
       "who": "Mea",
       "label": "Koulu",
-      "time": "08:00",
+      "time": "10:00",
       "end": "14:45",
       "weekdays": [
         4
@@ -215,7 +215,7 @@
       "source": "perhe-ohitus"
     }
   ],
-  "note": "Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus).",
+  "note": "Lukkarimuutos: Mea ke 8–14.50 (oli 10–14.50), to 10–14.45 (oli 8–14.45) (Wilma 10.11., vko 46–47). Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus).",
   "events": [
     {
       "date": "2026-09-20",
@@ -2334,7 +2334,7 @@
       "place": "Jynkänlahden koulu (lähtö)",
       "kind": "muu",
       "source": "gcal:perhe",
-      "note": "osallistuminen auki · lähtö 5.30 (paikalla 5.20), paluu n. 21 · eväät/taskuraha"
+      "note": "korvaa koulupäivän · lähtö 5.30 (paikalla 5.20), paluu n. 21 · eväät/taskuraha · vahvistettu"
     },
     {
       "date": "2026-11-10",
@@ -2343,6 +2343,16 @@
       "place": "Musiikkikeskus",
       "kind": "juhla",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-11-11",
+      "time": "08:45",
+      "end": "15:00",
+      "who": "Ellen",
+      "title": "Kuvakukko-retki (B-ryhmä)",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koululle klo 8.45, bussi klo 9 · paluuaika ei tiedossa (merkitty klo 15 asti)"
     },
     {
       "who": "Milla",
@@ -2401,15 +2411,37 @@
       "place": "Jynkänlahden koulu",
       "kind": "muu",
       "source": "gcal:perhe",
-      "note": "koe · aika ei tiedossa"
+      "note": "koe · klo 10.00 · kpl 1–2, s. 6–27 (RauTu, KaOt)",
+      "time": "10:00",
+      "end": "10:45"
     },
     {
       "date": "2026-11-12",
       "who": "Samuel",
-      "title": "Luokan retki: Kumma-museo + kirjasto",
+      "title": "Luokan retki: Kumma-museo + pääkirjasto",
       "kind": "muu",
       "source": "gcal:perhe",
-      "note": "bussilla · koulu antaa eväät"
+      "note": "2B n. klo 9–11.45 · bussilla · koulu antaa eväät",
+      "time": "09:00",
+      "end": "11:45"
+    },
+    {
+      "date": "2026-11-12",
+      "time": "14:00",
+      "end": "14:45",
+      "who": "Ellen",
+      "title": "Korvaava tunti (Kuvakukko)",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "klo 14.00–14.45 · torstai päättyy silti klo 15.00"
+    },
+    {
+      "date": "2026-11-13",
+      "who": "Samuel",
+      "title": "Kertotaulutesti (2 ja 5)",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koe · kellonaika ei tiedossa"
     },
     {
       "date": "2026-11-13",
@@ -2495,6 +2527,14 @@
       "date": "2026-11-17",
       "time": "18:00",
       "end": "19:00"
+    },
+    {
+      "date": "2026-11-18",
+      "who": "Milla",
+      "title": "OP05.F ilmastodiagrammitehtävä DL (Teams)",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "DL ke 18.11. Teamsiin"
     },
     {
       "date": "2026-11-18",
@@ -2622,6 +2662,14 @@
     },
     {
       "date": "2026-11-26",
+      "who": "Ellen",
+      "title": "Uintijakso 26.11.–2.12. (lukkarimuutoksia)",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "yksityiskohdat myöhemmin · osittain päällekkäin Lontoon reissun kanssa"
+    },
+    {
+      "date": "2026-11-26",
       "who": "Mea",
       "title": "ENA3-koe",
       "kind": "muu",
@@ -2697,6 +2745,17 @@
       "kind": "matka",
       "place": "Lontoo",
       "source": "gcal:perhe"
+    },
+    {
+      "date": "2026-12-01",
+      "time": "08:00",
+      "end": "09:00",
+      "who": "Mea",
+      "title": "BI3-koe + BI-vihkon palautus",
+      "place": "Jynkänlahden koulu",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe + vihkon palautus klo 8–9 · HUOM Lontoo 27.11.–2.12."
     },
     {
       "date": "2026-12-01",
@@ -2847,6 +2906,17 @@
       "source": "gcal:voimistelu"
     },
     {
+      "date": "2026-12-08",
+      "time": "10:50",
+      "end": "11:35",
+      "who": "Mea",
+      "title": "AI3 kirjallisuuskoe (genret)",
+      "place": "Jynkänlahden koulu",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe klo 10.50–11.35 · Loisto 8 s. 100–139 + muistiinpanot + monisteet (AKa)"
+    },
+    {
       "date": "2026-12-09",
       "time": "18:00",
       "end": "20:30",
@@ -2874,6 +2944,17 @@
       "kind": "kisa",
       "source": "gcal:voimistelu",
       "note": "11.–13.12."
+    },
+    {
+      "date": "2026-12-11",
+      "time": "14:15",
+      "end": "15:00",
+      "who": "Mea",
+      "title": "KE3-koe",
+      "place": "Jynkänlahden koulu",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe klo 14.15"
     },
     {
       "date": "2026-12-12",
@@ -3659,8 +3740,30 @@
       "source": "gcal:perhe"
     },
     {
+      "due": "2026-11-10",
+      "title": "Varaa oppimiskeskusteluaika (11.11. ilmoittautuminen päättyy tänään)",
+      "who": "Mea",
+      "needAction": true,
+      "source": "wilma:perhe",
+      "note": "Aikoja: 11.11. (DL ti 10.11.), 13.11. (DL 12.11.), 18.11. (DL 14.11.), 19.11. (DL 15.11.). Lomake täytettävä ennen keskustelua."
+    },
+    {
+      "due": "2026-11-11",
+      "title": "Kuvakukko-retki, B-ryhmä koululle 8.45 (bussi 9)",
+      "who": "Ellen",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
       "due": "2026-11-12",
-      "title": "UE3-koe (uskonto)",
+      "title": "Korvaava tunti 14.00–14.45 (päättyy silti 15.00)",
+      "who": "Ellen",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-11-12",
+      "title": "UE3-koe (uskonto) 10.00",
       "who": "Mea",
       "needAction": false,
       "source": "wilma:perhe"
@@ -3673,10 +3776,24 @@
       "source": "wilma:perhe"
     },
     {
+      "due": "2026-11-13",
+      "title": "Kertotaulutesti (2 ja 5)",
+      "who": "Samuel",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
       "due": "2026-11-18",
-      "title": "OP05 ilmastodiagrammi palautus",
+      "title": "OP05.F ilmastodiagrammitehtävä DL (Teams)",
       "who": "Milla",
       "needAction": true,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-11-26",
+      "title": "Uintijakso 26.11.–2.12. tuo lukkarimuutoksia (tiedot myöhemmin)",
+      "who": "Ellen",
+      "needAction": false,
       "source": "wilma:perhe"
     },
     {
@@ -3702,8 +3819,30 @@
     },
     {
       "due": "2026-12-01",
+      "title": "BI3-koe + BI-vihkon palautus 08.00–09.00",
+      "who": "Mea",
+      "needAction": false,
+      "source": "wilma:perhe",
+      "note": "päällekkäin Lontoon reissun kanssa"
+    },
+    {
+      "due": "2026-12-01",
       "title": "Nikotiini-info vanhemmille (Teams) 18.00",
       "who": "perhe",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-12-08",
+      "title": "AI3 kirjallisuuskoe (genret) 10.50–11.35",
+      "who": "Mea",
+      "needAction": false,
+      "source": "wilma:perhe"
+    },
+    {
+      "due": "2026-12-11",
+      "title": "KE3-koe 14.15",
+      "who": "Mea",
       "needAction": false,
       "source": "wilma:perhe"
     }

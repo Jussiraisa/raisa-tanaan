@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794288378623,
+  "updated": 1794290399879,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -363,6 +363,42 @@
       "status": "",
       "ride": "vie",
       "note": "Kyytiehdotus 6.11. · Ellen Ambrosia pe-vienti meidän (oletus) · Mean Lianna 18–20.30 paikka tarkista · WA lukematta"
+    },
+    "info-kyytiehdotus-2026-11-10": {
+      "driver": "Meidän · ehdotus / varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "Kyytiehdotus 10.11. · Ellen Ambrosia vie+hakee meidän (ti-oletus, treeni 17–18.30 Kuopiohalli) · Samuel Welhot 16.30–18.00 Lippumäki kyyti auki (ei ti-oletusta) · Mea haku n. 21 Jynkänlahden koulu, kuka hakee ei kirjattu, ehdotus meidän · WA lukematta"
+    },
+    "kyyti-samuel-welhot-2026-11-10": {
+      "driver": "auki · ehdotus / varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "Ei ti-oletusta (to on meidän). 16.30–18.00 Lippumäki, Petosentie 8. WA lukematta. Jos myös meidän, osuu päällekkäin Ellenin 17–18.30 kyydin kanssa."
+    },
+    "kyyti-ellen-ambrosia-2026-11-10": {
+      "driver": "Meidän · ehdotus / varmistamatta",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "Oletus ti (vienti+haku meidän). Voimistelu-kalenterissa treeni 17.00–18.30 Kuopiohalli. Juhlanäytöksen oma kellonaika puuttuu. WA lukematta."
+    },
+    "info-ellen-juhlanaytos-2026-11-10": {
+      "driver": "Meidän · ehdotus / varmistamatta",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "Oletus ti (vienti+haku meidän). Treeni 17.00–18.30 Kuopiohalli. WA lukematta."
+    },
+    "info-wilma-mea-taidetestaajat-retki-2026-11-10": {
+      "driver": "Meidän · ehdotus / varmistamatta",
+      "status": "us",
+      "ride": "hakee",
+      "note": "Haku n. klo 21 Jynkänlahden koululta (Taidetestaajat). Kuka hakee ei ollut kirjattu. WA lukematta."
+    },
+    "cal-dee7o6hr73n53kn3ifsm9im0es": {
+      "driver": "Meidän · ehdotus / varmistamatta",
+      "status": "us",
+      "ride": "hakee",
+      "note": "Haku n. klo 21 Jynkänlahden koululta (Taidetestaajat). Kuka hakee ei ollut kirjattu. WA lukematta."
     }
   },
   "cooks": {
@@ -530,7 +566,8 @@
       "who": "ellen",
       "title": "Ambrosia juhlanäytös",
       "date": "2026-11-10",
-      "kind": "info"
+      "kind": "info",
+      "note": "Ehdotus / varmistamatta: vienti+haku meidän (ti-oletus). Voimistelu-kalenterissa Ambrosia-treeni 17.00–18.30 Kuopiohalli. Juhlanäytöksen oma kellonaika puuttuu."
     },
     {
       "id": "info-wilma-mea-ue3-koe-2026-11-12",
@@ -735,6 +772,25 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "kyyti-samuel-welhot-2026-11-10",
+      "who": "samuel",
+      "title": "Welhot (ehdotus / varmistamatta)",
+      "date": "2026-11-10",
+      "start": "16:30",
+      "end": "18:00",
+      "place": "Lippumäki, Petosentie 8",
+      "kind": "info",
+      "note": "Kyyti auki: tiistaille ei ole oletusta (to on meidän). WA lukematta. Jos kyyti on meidän, vienti ja haku osuvat päällekkäin Ellenin Ambrosian (17–18.30) kanssa."
+    },
+    {
+      "id": "info-kyytiehdotus-2026-11-10",
+      "who": "perhe",
+      "title": "Kyytiehdotus ti 10.11. (ehdotus / varmistamatta)",
+      "date": "2026-11-10",
+      "kind": "info",
+      "note": "Ehdotus / varmistamatta (WhatsApp lukematta). Ellen Ambrosia vienti+haku meidän (ti-oletus); kalenterissa treeni 17.00–18.30 Kuopiohalli, juhlanäytöksen kellonaika puuttuu. Samuel Welhot 16.30–18.00 Lippumäki (Petosentie 8): tiistaille ei ole kyytioletusta (to on meidän), kyyti auki; jos molemmat meidän, vienti ja haku osuvat päällekkäin. Mean haku n. klo 21 Jynkänlahden koululta (Taidetestaajat): kuka hakee ei ollut kirjattu, ehdotus meidän."
     }
   ],
   "schoolLunch": {
@@ -818,6 +874,7 @@
     "cal-e0qbppjf84f0f7au5pcvahfnp4": "ei näytetä (ei osallistuta)",
     "info-wilma-milla-influenssarokotus-2026-11-09": "ei näytetä (ei osallistuta)",
     "info-wilma-mea-influenssarokotus-2026-11-17": "ei näytetä (ei osallistuta)",
-    "info-wilma-perhe-influenssarokotus-2026-11-12": "ei näytetä (ei osallistuta)"
+    "info-wilma-perhe-influenssarokotus-2026-11-12": "ei näytetä (ei osallistuta)",
+    "cal-okkq2mmj27hs25gllmusl28do4": "ei näytetä (ei osallistuta)"
   }
 }

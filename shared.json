@@ -803,6 +803,22 @@
       "date": "2026-11-11",
       "kind": "info",
       "note": "Ehdotus / varmistamatta. Ellen Ambrosia haku 20.30 meidän (oletus), vienti Sofian perhe (ke-oletus); treeni 18.00–20.30 Kuopiohalli (taulun toistuva meno ellen-ambrosia). Mea Lianna 18.00–20.30 vienti+haku meidän; paikka puuttuu tämän päivän sheet-riviltä (vanha ke-oletus BellaCenter). Milla hoitaa omat kyytinsä itse (Vivida 18–20.30 ja huoltajailta 18.00)."
+    },
+    {
+      "id": "info-wilma-ellen-ena-sanakoe-2026-11-18",
+      "who": "ellen",
+      "title": "ENA-sanakoe",
+      "date": "2026-11-18",
+      "kind": "info",
+      "note": "Wilma 11.11.: englannin sanakoe ke 18.11. (ei kellonaikaa)"
+    },
+    {
+      "id": "info-wilma-milla-lukkari-2026-11-19",
+      "who": "milla",
+      "title": "Ei lukkaria to 19.11.; pe 20.11. MAA03.3 9.00–13.15",
+      "date": "2026-11-19",
+      "kind": "info",
+      "note": "Wilma 11.11. ilta: vko 47 poikkeaa"
     }
   ],
   "schoolLunch": {

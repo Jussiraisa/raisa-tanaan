@@ -213,6 +213,14 @@
       "end": "13:00",
       "date": "2026-11-06",
       "source": "perhe-ohitus"
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:00",
+      "end": "13:15",
+      "date": "2026-11-20",
+      "source": "wilma:perhe"
     }
   ],
   "note": "Lukkarimuutos: Mea ke 8–14.50 (oli 10–14.50), to 10–14.45 (oli 8–14.45) (Wilma 10.11., vko 46–47). Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus).",
@@ -3246,6 +3254,14 @@
       "title": "Juhannuspäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
+    },
+    {
+      "date": "2026-11-18",
+      "who": "Ellen",
+      "title": "ENA-sanakoe",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koe (Wilma 11.11., ei kellonaikaa)"
     }
   ],
   "schoolLunch": {
@@ -3381,6 +3397,14 @@
       "kind": "schoolOff",
       "where": "ei koulua",
       "note": "Mea ei koulua ma 2.11. (Jussi 2.11.)"
+    },
+    {
+      "who": "Milla",
+      "from": "2026-11-19",
+      "to": "2026-11-19",
+      "kind": "schoolOff",
+      "where": "ei lukkaria",
+      "note": "Wilma 11.11. ilta: to 19.11. työjärjestys tyhjä"
     }
   ],
   "anniversaries": [

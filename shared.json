@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794372244935,
+  "updated": 1794374470072,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -423,15 +423,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-dee7o6hr73n53kn3ifsm9im0es",
-      "title": "Mea · Taidetestaajat-retki Helsinkiin (Dracula, Oopperatalo)",
-      "date": "2026-11-10",
-      "start": "05:30",
-      "end": "21:00",
-      "kind": "cal",
-      "place": "Jynkänlahden koulu (lähtö)"
-    },
-    {
       "id": "cal-qmv17vohkdfoab9rae7ceu1o44",
       "title": "Ellen · Kuvakukko-retki (B-ryhmä)",
       "date": "2026-11-11",
@@ -542,15 +533,6 @@
       "place": "Aurinkorinteen koulu"
     },
     {
-      "id": "info-milla-vivida-krv-juhlanaytos-2026-11-10",
-      "who": "milla",
-      "title": "Milla · Vivida · KRV juhlanäytös",
-      "date": "2026-11-10",
-      "kind": "info",
-      "place": "Musiikkikeskus",
-      "note": "Voimistelu-kalenteri. Kellonaika puuttuu. Kyytiä ei merkitty (odotetaan päätöstä)."
-    },
-    {
       "id": "info-wilma-mea-ue3-koe-2026-11-12",
       "who": "mea",
       "title": "UE3-koe (uskonto)",
@@ -569,17 +551,6 @@
       "end": "11:35",
       "kind": "info",
       "note": "Loisto 8 s. 100–139 + muistiinpanot + monisteet (AKa)"
-    },
-    {
-      "id": "info-wilma-mea-taidetestaajat-retki-2026-11-10",
-      "who": "mea",
-      "title": "Taidetestaajat-retki Helsinkiin (Dracula)",
-      "date": "2026-11-10",
-      "start": "05:30",
-      "end": "21:00",
-      "kind": "info",
-      "place": "Helsinki · lähtö Jynkänlahden koulu",
-      "note": "Paikalla 5.20 · eväät/taskuraha · korvaa ti 10.11. koulupäivän · vahvistettu"
     },
     {
       "id": "info-wilma-samuel-kumma-retki-2026-11-12",
@@ -695,36 +666,6 @@
       "date": "2026-11-13",
       "kind": "info",
       "note": "Wilma 10.11.: pe 13.11., kellonaika ei tiedossa."
-    },
-    {
-      "id": "kyyti-samuel-welhot-2026-11-10",
-      "who": "samuel",
-      "title": "Welhot (ehdotus / varmistamatta)",
-      "date": "2026-11-10",
-      "start": "16:30",
-      "end": "18:00",
-      "place": "Lippumäki, Petosentie 8",
-      "kind": "info",
-      "note": "Kyyti auki: tiistaille ei ole oletusta (to on meidän). WA lukematta. Jos kyyti on meidän, vienti ja haku osuvat päällekkäin Ellenin Ambrosian (17–18.30) kanssa."
-    },
-    {
-      "id": "kyyti-ellen-ambrosia-2026-11-10",
-      "who": "ellen",
-      "title": "Ambrosia (ehdotus / varmistamatta)",
-      "date": "2026-11-10",
-      "start": "17:00",
-      "end": "18:30",
-      "place": "Kuopiohalli",
-      "kind": "info",
-      "note": "Vienti+haku meidän (ti-oletus). WA lukematta."
-    },
-    {
-      "id": "info-kyytiehdotus-2026-11-10",
-      "who": "perhe",
-      "title": "Kyytiehdotus ti 10.11. (ehdotus / varmistamatta)",
-      "date": "2026-11-10",
-      "kind": "info",
-      "note": "Ehdotus / varmistamatta (WhatsApp lukematta). Ellen Ambrosia vienti+haku meidän (ti-oletus), treeni 17.00–18.30 Kuopiohalli. Samuel Welhot 16.30–18.00 Lippumäki (Petosentie 8): tiistaille ei ole kyytioletusta (to on meidän), kyyti auki; jos molemmat meidän, vienti ja haku osuvat päällekkäin. Mean haku n. klo 21 Jynkänlahden koululta (Taidetestaajat): kuka hakee ei ollut kirjattu, ehdotus meidän. Millan Vivida KRV juhlanäytös Musiikkikeskuksessa on merkitty ilman kyytiä (kellonaika puuttuu)."
     },
     {
       "id": "info-ambrosia-2026-11-22",

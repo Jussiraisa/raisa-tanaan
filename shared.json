@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794331130816,
+  "updated": 1794372244935,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -659,15 +659,15 @@
       "end": "15:00"
     },
     {
-      "id": "info-wilma-perhe-digiymparisto-teams-2026-12-16",
+      "id": "info-wilma-huoltajat-digiriskit-2026-12-16",
       "who": "perhe",
-      "title": "Teams: digiympäristön riskit (Samuel+Ellen, vapaaehtoinen)",
+      "title": "Huoltajat: digiriskit-keskustelu (Teams, Samuel & Ellen)",
       "date": "2026-12-16",
       "start": "18:00",
       "end": "19:00",
       "kind": "info",
       "place": "Teams",
-      "note": "Vapaaehtoinen / matala prioriteetti · ei kalenterimerkintää"
+      "note": "Wilma 11.11.: Miten auttaa nuorta suojautumaan digiympäristön riskeiltä? ke 16.12. klo 18–19 (Teams), Samuel ja Ellen."
     },
     {
       "id": "info-wilma-ellen-korvaava-tunti-2026-11-12",

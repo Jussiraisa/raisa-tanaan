@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794374470072,
+  "updated": 1794374727075,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -438,6 +438,46 @@
       "end": "19:30",
       "kind": "cal",
       "place": "Kuopion klassillinen lukio (myös Teams)"
+    },
+    {
+      "id": "cal-op4ap26dior1cdrtlem8cjudmo",
+      "title": "Perhe · Ellen & Samuel: influenssarokotuspäivä koululla",
+      "date": "2026-11-12",
+      "kind": "cal",
+      "place": "Aurinkorinteen koulu"
+    },
+    {
+      "id": "cal-4ubg2f9l0coa7todjnpop3s0ls",
+      "title": "Milla · YH01.3 käsitekoe (2. osa)",
+      "date": "2026-11-12",
+      "start": "08:10",
+      "end": "09:10",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-ar82qad5q71hr0ptuabc3sk93g",
+      "title": "Samuel · Luokan retki: Kumma-museo + pääkirjasto",
+      "date": "2026-11-12",
+      "start": "09:00",
+      "end": "11:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-5s0vibpv6rh3t6ovnmkdfeidts",
+      "title": "Mea · UE3-koe (uskonto)",
+      "date": "2026-11-12",
+      "start": "10:00",
+      "end": "10:45",
+      "kind": "cal",
+      "place": "Jynkänlahden koulu"
+    },
+    {
+      "id": "cal-vvs20edkm2ols5kn3lm8qqfb0g",
+      "title": "Ellen · korvaava tunti (Kuvakukko)",
+      "date": "2026-11-12",
+      "start": "14:00",
+      "end": "14:45",
+      "kind": "cal"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794374727075,
+  "updated": 1794376890974,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -393,6 +393,36 @@
       "status": "us",
       "ride": "hakee",
       "note": "Haku n. klo 21 Jynkänlahden koululta (Taidetestaajat). Kuka hakee ei ollut kirjattu. WA lukematta."
+    },
+    "sheet-milla-2026-11-11": {
+      "driver": "Milla itse",
+      "status": "other",
+      "ride": "",
+      "note": "Milla hoitaa itse"
+    },
+    "info-wilma-milla-huoltajailta-2026-11-11": {
+      "driver": "Milla itse",
+      "status": "other",
+      "ride": "",
+      "note": "Milla hoitaa itse"
+    },
+    "cal-qsoivmv2e3np9noljg249rebk8": {
+      "driver": "Milla itse",
+      "status": "other",
+      "ride": "",
+      "note": "Milla hoitaa itse"
+    },
+    "sheet-mea-2026-11-11": {
+      "driver": "Meidän · ehdotus / varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "Kyytiehdotus 11.11. · Lianna 18.00–20.30 vienti+haku meidän, varmistamatta. Paikka puuttuu tämän päivän sheet-riviltä (vanha ke-oletus BellaCenter)."
+    },
+    "info-kyytiehdotus-2026-11-11": {
+      "driver": "Meidän · ehdotus / varmistamatta",
+      "status": "",
+      "ride": "hakee",
+      "note": "Kyytiehdotus 11.11. · Ellen Ambrosia haku 20.30 meidän (oletus), vienti Sofian perhe (oletus), varmistamatta. Mea Lianna 18.00–20.30 vienti+haku meidän ehdotus, varmistamatta. Milla hoitaa omat kyytinsä itse."
     }
   },
   "cooks": {
@@ -424,7 +454,7 @@
     },
     {
       "id": "cal-qmv17vohkdfoab9rae7ceu1o44",
-      "title": "Ellen · Kuvakukko-retki (B-ryhmä)",
+      "title": "Ellen · Hammashoito 8.45, siitä suoraan Kuvakukko-retkelle (B-ryhmä)",
       "date": "2026-11-11",
       "start": "08:45",
       "end": "15:00",
@@ -438,13 +468,6 @@
       "end": "19:30",
       "kind": "cal",
       "place": "Kuopion klassillinen lukio (myös Teams)"
-    },
-    {
-      "id": "cal-op4ap26dior1cdrtlem8cjudmo",
-      "title": "Perhe · Ellen & Samuel: influenssarokotuspäivä koululla",
-      "date": "2026-11-12",
-      "kind": "cal",
-      "place": "Aurinkorinteen koulu"
     },
     {
       "id": "cal-4ubg2f9l0coa7todjnpop3s0ls",
@@ -662,10 +685,10 @@
     {
       "id": "info-wilma-ellen-kuvakukko-2026-11-11",
       "who": "ellen",
-      "title": "Kuvakukko-retki (B-ryhmä)",
+      "title": "Kuvakukko-retki (B-ryhmä): hammashoidosta suoraan retkelle",
       "date": "2026-11-11",
       "kind": "info",
-      "note": "Wilma 10.11.: B-ryhmä koululle klo 8.45, bussi klo 9. Paluuaika ei tiedossa (merkitty klo 15 asti).",
+      "note": "Hammashoito klo 8.45, siitä suoraan Kuvakukko-retkelle (ei koululle ennen bussia). Wilma 10.11.: B-ryhmä kokoontuu klo 8.45, bussi klo 9. Paluuaika ei tiedossa (merkitty klo 15 asti).",
       "start": "08:45",
       "end": "15:00"
     },
@@ -763,6 +786,23 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-ellen-hammas-2026-11-11",
+      "who": "ellen",
+      "title": "Hammashoito, siitä suoraan Kuvakukko-retkelle",
+      "date": "2026-11-11",
+      "start": "08:45",
+      "kind": "info",
+      "note": "Klo 8.45 hammashoito, siitä suoraan Kuvakukko-retkelle. Ei koululle ennen bussia (klo 9)."
+    },
+    {
+      "id": "info-kyytiehdotus-2026-11-11",
+      "who": "perhe",
+      "title": "Kyytiehdotus ke 11.11. (ehdotus / varmistamatta)",
+      "date": "2026-11-11",
+      "kind": "info",
+      "note": "Ehdotus / varmistamatta. Ellen Ambrosia haku 20.30 meidän (oletus), vienti Sofian perhe (ke-oletus); treeni 18.00–20.30 Kuopiohalli (taulun toistuva meno ellen-ambrosia). Mea Lianna 18.00–20.30 vienti+haku meidän; paikka puuttuu tämän päivän sheet-riviltä (vanha ke-oletus BellaCenter). Milla hoitaa omat kyytinsä itse (Vivida 18–20.30 ja huoltajailta 18.00)."
     }
   ],
   "schoolLunch": {
@@ -847,6 +887,7 @@
     "info-wilma-milla-influenssarokotus-2026-11-09": "ei näytetä (ei osallistuta)",
     "info-wilma-mea-influenssarokotus-2026-11-17": "ei näytetä (ei osallistuta)",
     "info-wilma-perhe-influenssarokotus-2026-11-12": "ei näytetä (ei osallistuta)",
-    "cal-okkq2mmj27hs25gllmusl28do4": "ei näytetä (ei osallistuta)"
+    "cal-okkq2mmj27hs25gllmusl28do4": "ei näytetä (ei osallistuta)",
+    "cal-op4ap26dior1cdrtlem8cjudmo": "ei näytetä (ei osallistuta)"
   }
 }

@@ -158,7 +158,7 @@
     {
       "who": "Mea",
       "label": "Koulu",
-      "time": "08:00",
+      "time": "10:00",
       "end": "14:50",
       "weekdays": [
         3
@@ -167,7 +167,7 @@
     {
       "who": "Mea",
       "label": "Koulu",
-      "time": "10:00",
+      "time": "08:00",
       "end": "14:45",
       "weekdays": [
         4
@@ -223,7 +223,7 @@
       "source": "wilma:perhe"
     }
   ],
-  "note": "Lukkarimuutos: Mea ke 8–14.50 (oli 10–14.50), to 10–14.45 (oli 8–14.45) (Wilma 10.11., vko 46–47). Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus).",
+  "note": "Lukkarimuutos: Mea ke 10–14.50, to 8–14.45 (sKU.2 to 8.00–9.45) (Wilma 12.11. viikkonäkymä, vko 46–47). Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus).",
   "events": [
     {
       "date": "2026-09-20",

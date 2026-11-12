@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794479025602,
+  "updated": 1794496534438,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -458,14 +458,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-vvs20edkm2ols5kn3lm8qqfb0g",
-      "title": "Ellen · korvaava tunti (Kuvakukko)",
-      "date": "2026-11-12",
-      "start": "14:00",
-      "end": "14:45",
-      "kind": "cal"
-    },
-    {
       "id": "cal-e5bgqr3hdinoo8h8qmp0hpd0uc",
       "title": "Samuel · kertotaulutesti (2 ja 5)",
       "date": "2026-11-13",
@@ -621,16 +613,6 @@
       "kind": "info",
       "place": "Teams",
       "note": "Wilma 11.11.: Miten auttaa nuorta suojautumaan digiympäristön riskeiltä? ke 16.12. klo 18–19 (Teams), Samuel ja Ellen."
-    },
-    {
-      "id": "info-wilma-ellen-korvaava-tunti-2026-11-12",
-      "who": "ellen",
-      "title": "Korvaava tunti (Kuvakukko)",
-      "date": "2026-11-12",
-      "start": "14:00",
-      "end": "14:45",
-      "kind": "info",
-      "note": "Wilma 10.11.: to 12.11. klo 14.00–14.45. Ellenin torstai päättyy silti klo 15.00."
     },
     {
       "id": "info-wilma-ellen-uintijakso-2026-11-26",

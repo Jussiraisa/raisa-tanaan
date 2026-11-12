@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794410710776,
+  "updated": 1794460650564,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -453,15 +453,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-qsoivmv2e3np9noljg249rebk8",
-      "title": "Milla · 1. vuosikurssin huoltajailta",
-      "date": "2026-11-11",
-      "start": "18:00",
-      "end": "19:30",
-      "kind": "cal",
-      "place": "Kuopion klassillinen lukio (myös Teams)"
-    },
-    {
       "id": "cal-4ubg2f9l0coa7todjnpop3s0ls",
       "title": "Milla · YH01.3 käsitekoe (2. osa)",
       "date": "2026-11-12",
@@ -618,17 +609,6 @@
       "end": "11:45"
     },
     {
-      "id": "info-wilma-milla-huoltajailta-2026-11-11",
-      "who": "milla",
-      "title": "1. vsk huoltajailta",
-      "date": "2026-11-11",
-      "start": "18:00",
-      "end": "19:30",
-      "kind": "info",
-      "place": "Klassillinen lukio / Teams",
-      "note": "kahvi 17.30 · Wilma 2.11. A-M Tiilikainen"
-    },
-    {
       "id": "info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
       "who": "ellen",
       "title": "DL: varaa oppimiskeskusteluaika",
@@ -713,23 +693,6 @@
       "note": "Wilma 10.11.: pe 13.11., kellonaika ei tiedossa."
     },
     {
-      "id": "info-ellen-hammas-2026-11-11",
-      "who": "ellen",
-      "title": "Hammashoito, siitä suoraan Kuvakukko-retkelle",
-      "date": "2026-11-11",
-      "start": "08:45",
-      "kind": "info",
-      "note": "Klo 8.45 hammashoito, siitä suoraan Kuvakukko-retkelle. Ei koululle ennen bussia (klo 9)."
-    },
-    {
-      "id": "info-kyytiehdotus-2026-11-11",
-      "who": "perhe",
-      "title": "Kyytiehdotus ke 11.11. (ehdotus / varmistamatta)",
-      "date": "2026-11-11",
-      "kind": "info",
-      "note": "Ehdotus / varmistamatta. Ellen Ambrosia haku 20.30 meidän (oletus), vienti Sofian perhe (ke-oletus); treeni 18.00–20.30 Kuopiohalli (taulun toistuva meno ellen-ambrosia). Mea Lianna 18.00–20.30 vienti+haku meidän; paikka puuttuu tämän päivän sheet-riviltä (vanha ke-oletus BellaCenter). Milla hoitaa omat kyytinsä itse (Vivida 18–20.30 ja huoltajailta 18.00)."
-    },
-    {
       "id": "info-wilma-ellen-ena-sanakoe-2026-11-18",
       "who": "ellen",
       "title": "ENA-sanakoe",
@@ -783,20 +746,10 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-mea-2026-11-11",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-11-11",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-11-11",
+      "id": "sheet-milla-2026-11-13",
       "who": "milla",
       "title": "Vivida",
-      "date": "2026-11-11",
+      "date": "2026-11-13",
       "start": "18:00",
       "end": "20:30",
       "place": "BellaCenter",

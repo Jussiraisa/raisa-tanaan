@@ -423,6 +423,11 @@
       "status": "",
       "ride": "hakee",
       "note": "Kyytiehdotus 11.11. · Ellen Ambrosia haku 20.30 meidän (oletus), vienti Sofian perhe (oletus), varmistamatta. Mea Lianna 18.00–20.30 vienti+haku meidän ehdotus, varmistamatta. Milla hoitaa omat kyytinsä itse."
+    },
+    "perhe-samuel-welhot-2026-11-12": {
+      "driver": "Riikka vie, Jussi hakee",
+      "status": "us",
+      "ride": "vie+hakee"
     }
   },
   "cooks": {
@@ -760,6 +765,25 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "perhe-samuel-welhot-2026-11-12",
+      "who": "samuel",
+      "title": "Samuel · Welhot",
+      "date": "2026-11-12",
+      "start": "17:00",
+      "kind": "info",
+      "place": "Puijonsarven koulu",
+      "note": "Riikka vie, Jussi hakee (käyttäjä 12.11.)"
+    },
+    {
+      "id": "perhe-jussi-savroc-palaveri-2026-11-12",
+      "who": "jussi",
+      "title": "Jussi · Savroc-palaveri (Teams)",
+      "date": "2026-11-12",
+      "start": "17:00",
+      "end": "17:30",
+      "kind": "info"
     }
   ],
   "schoolLunch": {

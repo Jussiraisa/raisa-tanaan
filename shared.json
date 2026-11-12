@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794460984529,
+  "updated": 1794479025602,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -458,31 +458,6 @@
       "kind": "cal"
     },
     {
-      "id": "cal-4ubg2f9l0coa7todjnpop3s0ls",
-      "title": "Milla · YH01.3 käsitekoe (2. osa)",
-      "date": "2026-11-12",
-      "start": "08:10",
-      "end": "09:10",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-ar82qad5q71hr0ptuabc3sk93g",
-      "title": "Samuel · Luokan retki: Kumma-museo + pääkirjasto",
-      "date": "2026-11-12",
-      "start": "09:00",
-      "end": "11:45",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-5s0vibpv6rh3t6ovnmkdfeidts",
-      "title": "Mea · UE3-koe (uskonto)",
-      "date": "2026-11-12",
-      "start": "10:00",
-      "end": "10:45",
-      "kind": "cal",
-      "place": "Jynkänlahden koulu"
-    },
-    {
       "id": "cal-vvs20edkm2ols5kn3lm8qqfb0g",
       "title": "Ellen · korvaava tunti (Kuvakukko)",
       "date": "2026-11-12",
@@ -590,16 +565,6 @@
       "place": "Aurinkorinteen koulu"
     },
     {
-      "id": "info-wilma-mea-ue3-koe-2026-11-12",
-      "who": "mea",
-      "title": "UE3-koe (uskonto)",
-      "date": "2026-11-12",
-      "kind": "info",
-      "note": "Wilma: klo 10:00 · kpl 1–2, s. 6–27 (RauTu, KaOt)",
-      "start": "10:00",
-      "end": "10:45"
-    },
-    {
       "id": "info-wilma-mea-ai-kirjallisuuskoe-2026-12-08",
       "who": "mea",
       "title": "AI3 kirjallisuuskoe (genret)",
@@ -610,31 +575,12 @@
       "note": "Loisto 8 s. 100–139 + muistiinpanot + monisteet (AKa)"
     },
     {
-      "id": "info-wilma-samuel-kumma-retki-2026-11-12",
-      "who": "samuel",
-      "title": "Luokan retki: Kumma-museo + pääkirjasto",
-      "date": "2026-11-12",
-      "kind": "info",
-      "note": "Wilma 10.11.: 2B n. klo 9–11.45, bussilla, koulu antaa eväät.",
-      "start": "09:00",
-      "end": "11:45"
-    },
-    {
       "id": "info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
       "who": "ellen",
       "title": "DL: varaa oppimiskeskusteluaika",
       "date": "2026-11-28",
       "kind": "info",
       "note": "Wilma-kutsu 3.11. Olli Laukkanen · vastaamatta · määräaika 28.11."
-    },
-    {
-      "id": "info-wilma-milla-yh01-3-koe-2026-11-12",
-      "who": "milla",
-      "title": "YH01.3 käsitekoe (2. osa)",
-      "date": "2026-11-12",
-      "start": "08:10",
-      "kind": "info",
-      "note": "Wilma 5.11."
     },
     {
       "id": "info-wilma-mea-etavanhempainilta-2026-11-19",
@@ -720,6 +666,26 @@
       "note": "Wilma 12.11.: viikko 47 on \"2. päättöviikko 2A\"; to 19.11. ei tunteja, pe 20.11. MAA03.3 9.00–13.15 (3 jaksoa)."
     },
     {
+      "id": "perhe-samuel-welhot-2026-11-12",
+      "who": "samuel",
+      "title": "Samuel · Welhot",
+      "date": "2026-11-12",
+      "start": "17:00",
+      "kind": "info",
+      "place": "Puijonsarven koulu",
+      "note": "Riikka vie, Jussi hakee (käyttäjä 12.11. Chief of Staffin kautta). Haku osuu klo 17–17.30 Savroc-palaverin jälkeen.",
+      "end": "18:30"
+    },
+    {
+      "id": "perhe-jussi-savroc-palaveri-2026-11-12",
+      "who": "jussi",
+      "title": "Jussi · Savroc-palaveri (Teams)",
+      "date": "2026-11-12",
+      "start": "17:00",
+      "end": "17:30",
+      "kind": "info"
+    },
+    {
       "id": "info-ambrosia-2026-11-22",
       "who": "ellen",
       "title": "Ambrosia kisat · Jyväskylä",
@@ -765,26 +731,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "perhe-samuel-welhot-2026-11-12",
-      "who": "samuel",
-      "title": "Samuel · Welhot",
-      "date": "2026-11-12",
-      "start": "17:00",
-      "kind": "info",
-      "place": "Puijonsarven koulu",
-      "note": "Riikka vie, Jussi hakee (käyttäjä 12.11. Chief of Staffin kautta). Haku osuu klo 17–17.30 Savroc-palaverin jälkeen.",
-      "end": "18:30"
-    },
-    {
-      "id": "perhe-jussi-savroc-palaveri-2026-11-12",
-      "who": "jussi",
-      "title": "Jussi · Savroc-palaveri (Teams)",
-      "date": "2026-11-12",
-      "start": "17:00",
-      "end": "17:30",
-      "kind": "info"
     }
   ],
   "schoolLunch": {

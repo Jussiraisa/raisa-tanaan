@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794460650564,
+  "updated": 1794460984529,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -483,6 +483,12 @@
       "date": "2026-11-12",
       "start": "14:00",
       "end": "14:45",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-e5bgqr3hdinoo8h8qmp0hpd0uc",
+      "title": "Samuel · kertotaulutesti (2 ja 5)",
+      "date": "2026-11-13",
       "kind": "cal"
     },
     {

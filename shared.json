@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794496534438,
+  "updated": 1794547354112,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -547,16 +547,6 @@
       "note": "Wilma 6.10."
     },
     {
-      "id": "info-wilma-perhe-suun-terveydenhuolto-2026-10-21",
-      "who": "perhe",
-      "title": "Suun terveydenhuolto (mobiili) Aurinkorinne",
-      "date": "2026-10-21",
-      "dateEnd": "2026-11-12",
-      "kind": "info",
-      "note": "Wilma 7.10. · turvakielto: soita 017-2734500 · Wilma 8.10.: Pop Up 21.10.–12.11., Samuel & Ellen",
-      "place": "Aurinkorinteen koulu"
-    },
-    {
       "id": "info-wilma-mea-ai-kirjallisuuskoe-2026-12-08",
       "who": "mea",
       "title": "AI3 kirjallisuuskoe (genret)",
@@ -648,26 +638,6 @@
       "note": "Wilma 12.11.: viikko 47 on \"2. päättöviikko 2A\"; to 19.11. ei tunteja, pe 20.11. MAA03.3 9.00–13.15 (3 jaksoa)."
     },
     {
-      "id": "perhe-samuel-welhot-2026-11-12",
-      "who": "samuel",
-      "title": "Samuel · Welhot",
-      "date": "2026-11-12",
-      "start": "17:00",
-      "kind": "info",
-      "place": "Puijonsarven koulu",
-      "note": "Riikka vie, Jussi hakee (käyttäjä 12.11. Chief of Staffin kautta). Haku osuu klo 17–17.30 Savroc-palaverin jälkeen.",
-      "end": "18:30"
-    },
-    {
-      "id": "perhe-jussi-savroc-palaveri-2026-11-12",
-      "who": "jussi",
-      "title": "Jussi · Savroc-palaveri (Teams)",
-      "date": "2026-11-12",
-      "start": "17:00",
-      "end": "17:30",
-      "kind": "info"
-    },
-    {
       "id": "info-ambrosia-2026-11-22",
       "who": "ellen",
       "title": "Ambrosia kisat · Jyväskylä",
@@ -709,8 +679,8 @@
       "who": "milla",
       "title": "Vivida",
       "date": "2026-11-13",
-      "start": "18:00",
-      "end": "20:30",
+      "start": "17:30",
+      "end": "20:00",
       "place": "BellaCenter",
       "kind": "treeni"
     }

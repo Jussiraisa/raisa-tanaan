@@ -178,7 +178,8 @@
     "info-samuel-turnaus-2026-11-15": {
       "driver": "",
       "status": "",
-      "ride": ""
+      "ride": "",
+      "note": "varmistamatta: kuljettaja ja lähtöaika auki (turnaus 8–16 Suonenjoki, Lintharju) · päätös la 14.11."
     },
     "info-samuel-turnaus-2026-11-28": {
       "driver": "",
@@ -471,7 +472,8 @@
       "place": "Suonenjoki",
       "kind": "info",
       "driver": "",
-      "status": ""
+      "status": "",
+      "note": "Kyyti varmistamatta: kuljettaja ja lähtöaika auki · Lintharju 8–16"
     },
     {
       "id": "info-samuel-turnaus-2026-11-28",

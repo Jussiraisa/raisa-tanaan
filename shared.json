@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794568979059,
+  "updated": 1794583407870,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -463,15 +463,6 @@
       "title": "Samuel · kertotaulutesti (2 ja 5)",
       "date": "2026-11-13",
       "kind": "cal"
-    },
-    {
-      "id": "cal-pm6tgom0djstchhluhbtih93ts",
-      "title": "Lääkäri: Henri Sihvonen (Pihlajalinna)",
-      "date": "2026-11-13",
-      "start": "13:40",
-      "end": "14:10",
-      "kind": "cal",
-      "place": "Pihlajalinna Kuopio, Leväsentie 1, Kuopio"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",

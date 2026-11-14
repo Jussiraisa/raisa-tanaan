@@ -2414,6 +2414,16 @@
     },
     {
       "date": "2026-11-12",
+      "who": "Samuel",
+      "title": "Luokan retki: Kumma-museo + pääkirjasto",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "2B n. klo 9–11.45 · bussilla · koulu antaa eväät",
+      "time": "09:00",
+      "end": "11:45"
+    },
+    {
+      "date": "2026-11-12",
       "who": "Mea",
       "title": "UE3-koe (uskonto)",
       "place": "Jynkänlahden koulu",
@@ -2422,16 +2432,6 @@
       "note": "koe · klo 10.00 · kpl 1–2, s. 6–27 (RauTu, KaOt)",
       "time": "10:00",
       "end": "10:45"
-    },
-    {
-      "date": "2026-11-12",
-      "who": "Samuel",
-      "title": "Luokan retki: Kumma-museo + pääkirjasto",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "2B n. klo 9–11.45 · bussilla · koulu antaa eväät",
-      "time": "09:00",
-      "end": "11:45"
     },
     {
       "date": "2026-11-12",
@@ -2444,12 +2444,25 @@
       "note": "klo 14.00–14.45 · torstai päättyy silti klo 15.00"
     },
     {
-      "date": "2026-11-13",
+      "date": "2026-11-12",
+      "time": "17:00",
+      "end": "17:30",
+      "who": "Jussi",
+      "title": "Savroc-palaveri (Teams)",
+      "kind": "työ",
+      "source": "manual:jussi"
+    },
+    {
+      "date": "2026-11-12",
+      "time": "17:00",
+      "end": "18:30",
       "who": "Samuel",
-      "title": "Kertotaulutesti (2 ja 5)",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "koe · kellonaika ei tiedossa"
+      "title": "Welhot",
+      "place": "Puijonsarven koulu",
+      "kind": "treeni",
+      "source": "manual:jussi",
+      "driver": "Riikka",
+      "pickup": "Jussi"
     },
     {
       "date": "2026-11-13",
@@ -2460,6 +2473,14 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-11-13",
+      "who": "Samuel",
+      "title": "Kertotaulutesti (2 ja 5)",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koe · kellonaika ei tiedossa"
     },
     {
       "date": "2026-11-14",
@@ -2537,12 +2558,13 @@
       "end": "19:00"
     },
     {
-      "date": "2026-11-18",
       "who": "Milla",
-      "title": "OP05.F ilmastodiagrammitehtävä DL (Teams)",
+      "title": "Treenit",
       "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "DL ke 18.11. Teamsiin"
+      "source": "ical:milla",
+      "date": "2026-11-18",
+      "time": "17:00",
+      "end": "18:00"
     },
     {
       "date": "2026-11-18",
@@ -2565,6 +2587,22 @@
       "source": "gcal:voimistelu"
     },
     {
+      "date": "2026-11-18",
+      "who": "Ellen",
+      "title": "ENA-sanakoe",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "koe (Wilma 11.11., ei kellonaikaa)"
+    },
+    {
+      "date": "2026-11-18",
+      "who": "Milla",
+      "title": "OP05.F ilmastodiagrammitehtävä DL (Teams)",
+      "kind": "muu",
+      "source": "wilma:perhe",
+      "note": "DL ke 18.11. Teamsiin"
+    },
+    {
       "date": "2026-11-19",
       "time": "18:00",
       "end": "19:30",
@@ -2574,6 +2612,15 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "ilmoittautuminen pelastakaalapset.fi"
+    },
+    {
+      "who": "Milla",
+      "title": "Matikka",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-11-20",
+      "time": "17:00",
+      "end": "18:00"
     },
     {
       "date": "2026-11-20",
@@ -2638,6 +2685,15 @@
       "kind": "treeni",
       "source": "gcal:voimistelu",
       "note": "laji peruttu"
+    },
+    {
+      "who": "Milla",
+      "title": "Lukutaidon koe",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-11-24",
+      "time": "17:00",
+      "end": "18:00"
     },
     {
       "who": "Milla",
@@ -2946,15 +3002,6 @@
     },
     {
       "date": "2026-12-11",
-      "who": "Milla",
-      "title": "Vivida Mestikset",
-      "place": "Jyväskylä",
-      "kind": "kisa",
-      "source": "gcal:voimistelu",
-      "note": "11.–13.12."
-    },
-    {
-      "date": "2026-12-11",
       "time": "14:15",
       "end": "15:00",
       "who": "Mea",
@@ -2963,6 +3010,15 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "koe klo 14.15"
+    },
+    {
+      "date": "2026-12-11",
+      "who": "Milla",
+      "title": "Vivida Mestikset",
+      "place": "Jyväskylä",
+      "kind": "kisa",
+      "source": "gcal:voimistelu",
+      "note": "11.–13.12."
     },
     {
       "date": "2026-12-12",
@@ -3254,35 +3310,6 @@
       "title": "Juhannuspäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
-    },
-    {
-      "date": "2026-11-18",
-      "who": "Ellen",
-      "title": "ENA-sanakoe",
-      "kind": "muu",
-      "source": "wilma:perhe",
-      "note": "koe (Wilma 11.11., ei kellonaikaa)"
-    },
-    {
-      "date": "2026-11-12",
-      "time": "17:00",
-      "end": "18:30",
-      "who": "Samuel",
-      "title": "Welhot",
-      "place": "Puijonsarven koulu",
-      "kind": "treeni",
-      "source": "manual:jussi",
-      "driver": "Riikka",
-      "pickup": "Jussi"
-    },
-    {
-      "date": "2026-11-12",
-      "time": "17:00",
-      "end": "17:30",
-      "who": "Jussi",
-      "title": "Savroc-palaveri (Teams)",
-      "kind": "työ",
-      "source": "manual:jussi"
     }
   ],
   "schoolLunch": {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794583407870,
+  "updated": 1794633734747,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -452,17 +452,38 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-tgqh3vjdfu8gnfbrcafp9kk45s",
-      "title": "Mea: terapeutti lomalla, ei terapiaa 4.–13.11.",
-      "date": "2026-11-04",
-      "dateEnd": "2026-11-13",
+      "id": "cal-lqjba3gvld4nvivem6h3ul907g",
+      "title": "Samuel · Welhot P9 turnaus Suonenjoki",
+      "date": "2026-11-15",
+      "start": "08:00",
+      "end": "17:00",
+      "kind": "cal",
+      "place": "Suonenjoki"
+    },
+    {
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261115T073000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-11-15",
+      "start": "09:30",
+      "end": "11:30",
       "kind": "cal"
     },
     {
-      "id": "cal-e5bgqr3hdinoo8h8qmp0hpd0uc",
-      "title": "Samuel · kertotaulutesti (2 ja 5)",
-      "date": "2026-11-13",
+      "id": "cal-_6go46e1o8523iba26h348b9k6kq42ba18kp36b9j8go3ahi364rj0cq368",
+      "title": "Magneettikuvaus",
+      "date": "2026-11-15",
+      "start": "14:00",
+      "end": "15:00",
       "kind": "cal"
+    },
+    {
+      "id": "cal-2qi0eni9as0gbamfkhutbn1ihc",
+      "title": "Magneettikuvaus (Pihlajalinna)",
+      "date": "2026-11-15",
+      "start": "14:00",
+      "end": "14:45",
+      "kind": "cal",
+      "place": "Pihlajalinna Kuopio, Leväsentie 1, Kuopio"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",

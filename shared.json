@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794752241302,
+  "updated": 1794752256195,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -575,7 +575,7 @@
       "start": "08:00",
       "end": "09:00",
       "kind": "info",
-      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko + monisteet; vihkotyön palautus (A-KS). Vahvistettu Wilma 3.11. HUOM: Lontoo 27.11.–2.12."
+      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko + monisteet; vihkotyön palautus (A-KS). Vahvistettu Wilma 3.11. HUOM: Lontoo 27.11.–2.12. Poissaoloanomus lähetetty 15.11. Jenni Kärkkäiselle."
     },
     {
       "id": "info-wilma-mea-ke3-koe-2026-12-11",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794750258385,
+  "updated": 1794752241302,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -676,6 +676,15 @@
       "date": "2026-11-19",
       "kind": "info",
       "note": "Wilma 12.11.: viikko 47 on \"2. päättöviikko 2A\"; to 19.11. ei tunteja, pe 20.11. MAA03.3 9.00–13.15 (3 jaksoa)."
+    },
+    {
+      "id": "info-wilma-milla-lukkari-2026-11-23",
+      "who": "milla",
+      "title": "Lukkari vko 48: 9.00–13.15 joka arkipäivä",
+      "date": "2026-11-23",
+      "dateEnd": "2026-11-27",
+      "kind": "info",
+      "note": "Wilma 15.11.: vko 48 tunnit joka arkipäivä 9.00–13.15 (kolme 75 min jaksoa): ma OP05.F/TO03.F, ti ÄI02.F/ÄI03.F, ke MU01.F, to KU01.F, pe YH01.3."
     },
     {
       "id": "info-ambrosia-2026-11-22",

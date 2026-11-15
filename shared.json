@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794741801024,
+  "updated": 1794750258385,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -723,6 +723,15 @@
       "end": "20:00",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-perhe-matka-2027-03-05",
+      "who": "perhe",
+      "title": "Perheen matka: Lontoo 6.–8.3., Benidorm 8.–15.3.",
+      "date": "2027-03-05",
+      "dateEnd": "2027-03-15",
+      "kind": "info",
+      "note": "Lennot: pe 5.3. HEL 23:40 → Stansted la 6.3. 00:50; ma 8.3. Gatwick 13:20 → Alicante 16:45; ma 15.3. Alicante 10:30 → HEL 15:50. Majoitus ja vuokra-auto Benidormissa ei vielä varattu. Lapset poissa koulusta pe 5.3.–ma 15.3."
     }
   ],
   "schoolLunch": {

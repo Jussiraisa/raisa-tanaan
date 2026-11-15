@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794633734747,
+  "updated": 1794720014308,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -482,6 +482,23 @@
       "date": "2026-11-15",
       "start": "14:00",
       "end": "14:45",
+      "kind": "cal",
+      "place": "Pihlajalinna Kuopio, Leväsentie 1, Kuopio"
+    },
+    {
+      "id": "cal-_74s46d9p6ksjiba48l2jab9k8ks3aba268r4ab9h6d238ci66l342hi684",
+      "title": "Lääkäri",
+      "date": "2026-11-16",
+      "start": "08:40",
+      "end": "09:40",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-p31eadf32nr6gi8bt4edb3p6ko",
+      "title": "Lääkäri: Henri Sihvonen (Pihlajalinna)",
+      "date": "2026-11-16",
+      "start": "08:40",
+      "end": "09:10",
       "kind": "cal",
       "place": "Pihlajalinna Kuopio, Leväsentie 1, Kuopio"
     },

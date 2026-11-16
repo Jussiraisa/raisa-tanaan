@@ -30,7 +30,7 @@
       "driver": "Jussi",
       "status": "us",
       "ride": "vie+hakee",
-      "note": "to 19.11. 17.00: Riikka (varmistamatta), Jussi poissa ti–to illat"
+      "note": "to 19.11. 17.00: Riikka vie (varmistamatta); haku 18.30 AUKI (Riikalla padel 18, Jussi poissa)"
     },
     "milla-etainfo": {
       "driver": "",
@@ -746,6 +746,14 @@
       "end": "13:00",
       "kind": "info",
       "note": "Käyttäjä 16.11."
+    },
+    {
+      "id": "cal-7hmp57ujrmb8gdbgg5g7ikrpvk",
+      "title": "Riikka · padel",
+      "date": "2026-11-19",
+      "start": "18:00",
+      "end": "19:00",
+      "kind": "cal"
     }
   ],
   "schoolLunch": {

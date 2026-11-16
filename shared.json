@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794806704957,
+  "updated": 1794824146132,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -461,23 +461,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-_74s46d9p6ksjiba48l2jab9k8ks3aba268r4ab9h6d238ci66l342hi684",
-      "title": "Lääkäri",
-      "date": "2026-11-16",
-      "start": "08:40",
-      "end": "09:40",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-p31eadf32nr6gi8bt4edb3p6ko",
-      "title": "Lääkäri: Henri Sihvonen (Pihlajalinna)",
-      "date": "2026-11-16",
-      "start": "08:40",
-      "end": "09:10",
-      "kind": "cal",
-      "place": "Pihlajalinna Kuopio, Leväsentie 1, Kuopio"
-    },
-    {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261117T150000Z",
       "title": "Mea valmennus",
       "date": "2026-11-17",
@@ -694,6 +677,16 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-milla-2026-11-16",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-11-16",
+      "start": "16:30",
+      "end": "18:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

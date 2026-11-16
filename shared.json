@@ -687,6 +687,15 @@
       "end": "18:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-ellen-ma7-koe-2026-11-23",
+      "who": "ellen",
+      "title": "MA7-koe (jakolasku)",
+      "date": "2026-11-23",
+      "start": "11:15",
+      "kind": "info",
+      "note": "Wilma 16.11.: s. 122–160 (Olli Laukkanen)"
     }
   ],
   "schoolLunch": {

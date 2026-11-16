@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794763521839,
+  "updated": 1794806487807,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -467,6 +467,21 @@
       "end": "09:10",
       "kind": "cal",
       "place": "Pihlajalinna Kuopio, Leväsentie 1, Kuopio"
+    },
+    {
+      "id": "cal-euec7dg7cvljjmesepl1d2or1c",
+      "title": "Mea · Influenssarokotus koululla",
+      "date": "2026-11-17",
+      "kind": "cal",
+      "place": "Jynkänlahden koulu"
+    },
+    {
+      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261117T150000Z",
+      "title": "Mea valmennus",
+      "date": "2026-11-17",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
     },
     {
       "id": "info-samuel-turnaus-2026-11-15",

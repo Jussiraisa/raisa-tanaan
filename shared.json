@@ -438,6 +438,18 @@
       "status": "",
       "ride": "",
       "note": "Mea valmennus ti 17.11. 17.00: kyyti auki"
+    },
+    "info-mea-koulu-2026-11-17": {
+      "driver": "Jussi vie · Riikka hakee",
+      "status": "us",
+      "ride": "vie+hakee",
+      "note": "Käyttäjä 16.11."
+    },
+    "cal-5u3ocn8sqpr00bla49trc13drs": {
+      "driver": "Riikka",
+      "status": "us",
+      "ride": "vie",
+      "note": "Riikka hakee koululta 11.30 ja vie terapiaan (käyttäjä 16.11.)"
     }
   },
   "cooks": {
@@ -704,6 +716,16 @@
       "start": "13:00",
       "end": "14:00",
       "kind": "cal"
+    },
+    {
+      "id": "info-mea-koulu-2026-11-17",
+      "who": "mea",
+      "title": "Mea koulu 8.00–11.30 (poikkeus)",
+      "date": "2026-11-17",
+      "start": "08:00",
+      "end": "11:30",
+      "kind": "info",
+      "note": "Käyttäjä 16.11.: Jussi vie, Riikka hakee ja vie terapiaan."
     }
   ],
   "schoolLunch": {

@@ -726,6 +726,16 @@
       "end": "11:30",
       "kind": "info",
       "note": "Käyttäjä 16.11.: Jussi vie, Riikka hakee ja vie terapiaan."
+    },
+    {
+      "id": "info-mea-koulu-2026-11-18",
+      "who": "mea",
+      "title": "Mea koulu 11.00–15.00 (poikkeus)",
+      "date": "2026-11-18",
+      "start": "11:00",
+      "end": "15:00",
+      "kind": "info",
+      "note": "Käyttäjä 16.11."
     }
   ],
   "schoolLunch": {

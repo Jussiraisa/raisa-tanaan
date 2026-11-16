@@ -754,6 +754,16 @@
       "start": "18:00",
       "end": "19:00",
       "kind": "cal"
+    },
+    {
+      "id": "info-mea-koulu-2026-11-20",
+      "who": "mea",
+      "title": "Mea koulu 11.00–14.45 (poikkeus)",
+      "date": "2026-11-20",
+      "start": "11:00",
+      "end": "14:45",
+      "kind": "info",
+      "note": "Käyttäjä 16.11."
     }
   ],
   "schoolLunch": {

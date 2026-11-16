@@ -9,10 +9,10 @@
       "note": "Oletus ti (vienti+haku meidän) · ti 17.11. Riikka (varmistamatta), Jussi poissa"
     },
     "ellen-ambrosia-pe": {
-      "driver": "Meidän",
+      "driver": "Jussi",
       "status": "us",
       "ride": "vie",
-      "note": "Oletus pe-vienti; WA 28.9. ei sanonut muuta (Fiilis)"
+      "note": "pe 20.11.: Jussi vie, ei hakua (käyttäjä 16.11.)"
     },
     "samuel-sahly-ma": {
       "driver": "Sini/Topias",
@@ -434,10 +434,10 @@
       "ride": "vie+hakee"
     },
     "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261117T150000Z": {
-      "driver": "varmistamatta",
-      "status": "",
-      "ride": "",
-      "note": "Mea valmennus ti 17.11. 17.00: kyyti auki"
+      "driver": "Riikka",
+      "status": "us",
+      "ride": "vie",
+      "note": "Käyttäjä 16.11.: Riikka vie Mean valmennukseen ti 17.11."
     },
     "info-mea-koulu-2026-11-17": {
       "driver": "Jussi vie · Riikka hakee",

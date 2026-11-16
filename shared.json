@@ -6,7 +6,7 @@
       "driver": "Meidän",
       "status": "us",
       "ride": "vie+hakee",
-      "note": "Oletus ti (vienti+haku meidän)"
+      "note": "Oletus ti (vienti+haku meidän) · ti 17.11. Riikka (varmistamatta), Jussi poissa"
     },
     "ellen-ambrosia-pe": {
       "driver": "Meidän",
@@ -17,17 +17,20 @@
     "samuel-sahly-ma": {
       "driver": "Sini/Topias",
       "status": "other",
-      "ride": ""
+      "ride": "",
+      "note": "ma 16.11. 17.00 Ylä-Pyörö: Sini/Topias (oletus, varmistamatta)"
     },
     "samuel-sahly-ti": {
-      "driver": "",
+      "driver": "varmistamatta",
       "status": "",
-      "ride": ""
+      "ride": "",
+      "note": "ti 17.11. 16.30 Lippumäki: kuski auki (Riikka hoitaa iltakyydit, Jussi poissa)"
     },
     "samuel-sahly": {
       "driver": "Jussi",
       "status": "us",
-      "ride": "vie+hakee"
+      "ride": "vie+hakee",
+      "note": "to 19.11. 17.00: Riikka (varmistamatta), Jussi poissa ti–to illat"
     },
     "milla-etainfo": {
       "driver": "",
@@ -429,6 +432,12 @@
       "driver": "Riikka vie, Jussi hakee",
       "status": "us",
       "ride": "vie+hakee"
+    },
+    "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261117T150000Z": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "",
+      "note": "Mea valmennus ti 17.11. 17.00: kyyti auki"
     }
   },
   "cooks": {
@@ -467,13 +476,6 @@
       "end": "09:10",
       "kind": "cal",
       "place": "Pihlajalinna Kuopio, Leväsentie 1, Kuopio"
-    },
-    {
-      "id": "cal-euec7dg7cvljjmesepl1d2or1c",
-      "title": "Mea · Influenssarokotus koululla",
-      "date": "2026-11-17",
-      "kind": "cal",
-      "place": "Jynkänlahden koulu"
     },
     {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261117T150000Z",
@@ -780,6 +782,7 @@
     "cal-op4ap26dior1cdrtlem8cjudmo": "ei näytetä (ei osallistuta)",
     "samuel-sahly": {
       "2026-11-12": "tänään erillisenä: Welhot 17–18.30, Riikka vie, Jussi hakee"
-    }
+    },
+    "cal-euec7dg7cvljjmesepl1d2or1c": "ei näytetä (ei osallistuta)"
   }
 }

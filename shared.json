@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794806487807,
+  "updated": 1794806704957,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -484,17 +484,6 @@
       "kind": "cal"
     },
     {
-      "id": "info-samuel-turnaus-2026-11-15",
-      "who": "samuel",
-      "title": "Welhot P9 turnaus Suonenjoki",
-      "date": "2026-11-15",
-      "place": "Suonenjoki",
-      "kind": "info",
-      "driver": "",
-      "status": "",
-      "note": "Kyyti varmistamatta: kuljettaja ja lähtöaika auki · Lintharju 8–16"
-    },
-    {
       "id": "info-samuel-turnaus-2026-11-28",
       "who": "samuel",
       "title": "Welhot P9 turnaus Siilinjärvi",
@@ -614,15 +603,6 @@
       "note": "25 paikkaa ilmoittautumisjärjestyksessä · lomake Wilma-viestissä Hyvönen Ossi 26.10."
     },
     {
-      "id": "info-wilma-mea-oppimiskeskustelu-varaus-2026-11-16",
-      "who": "mea",
-      "title": "DL: varaa oppimiskeskusteluaika",
-      "date": "2026-11-10",
-      "kind": "info",
-      "note": "Wilma 10.11.: aikoja 11.11. (ilmoittautuminen päättyy ti 10.11.), 13.11. (DL 12.11.), 18.11. (DL 14.11.), 19.11. (DL 15.11.). Keskustelulomake täytettävä ennen keskustelua. Ei kalenterimerkintää ennen varausta.",
-      "dateEnd": "2026-11-15"
-    },
-    {
       "id": "info-wilma-huoltajat-digiriskit-2026-12-16",
       "who": "perhe",
       "title": "Huoltajat: digiriskit-keskustelu (Teams, Samuel & Ellen)",
@@ -641,14 +621,6 @@
       "dateEnd": "2026-12-02",
       "kind": "info",
       "note": "Wilma 10.11.: yksityiskohdat myöhemmin. (Osittain päällekkäin Lontoon reissun 27.11.–2.12. kanssa.)"
-    },
-    {
-      "id": "info-wilma-samuel-kertotaulutesti-2026-11-13",
-      "who": "samuel",
-      "title": "Kertotaulutesti (2 ja 5)",
-      "date": "2026-11-13",
-      "kind": "info",
-      "note": "Wilma 10.11.: pe 13.11., kellonaika ei tiedossa."
     },
     {
       "id": "info-wilma-ellen-ena-sanakoe-2026-11-18",
@@ -674,6 +646,15 @@
       "dateEnd": "2026-11-27",
       "kind": "info",
       "note": "Wilma 15.11.: vko 48 tunnit joka arkipäivä 9.00–13.15 (kolme 75 min jaksoa): ma OP05.F/TO03.F, ti ÄI02.F/ÄI03.F, ke MU01.F, to KU01.F, pe YH01.3."
+    },
+    {
+      "id": "info-perhe-matka-2027-03-05",
+      "who": "perhe",
+      "title": "Perheen matka: Lontoo 6.–8.3., Benidorm 8.–15.3.",
+      "date": "2027-03-05",
+      "dateEnd": "2027-03-15",
+      "kind": "info",
+      "note": "Lennot: pe 5.3. HEL 23:40 → Stansted la 6.3. 00:50; ma 8.3. Gatwick 13:20 → Alicante 16:45; ma 15.3. Alicante 10:30 → HEL 15:50. Majoitus ja vuokra-auto Benidormissa ei vielä varattu. Lapset poissa koulusta pe 5.3.–ma 15.3."
     },
     {
       "id": "info-ambrosia-2026-11-22",
@@ -711,25 +692,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-milla-2026-11-13",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-11-13",
-      "start": "17:30",
-      "end": "20:00",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "info-perhe-matka-2027-03-05",
-      "who": "perhe",
-      "title": "Perheen matka: Lontoo 6.–8.3., Benidorm 8.–15.3.",
-      "date": "2027-03-05",
-      "dateEnd": "2027-03-15",
-      "kind": "info",
-      "note": "Lennot: pe 5.3. HEL 23:40 → Stansted la 6.3. 00:50; ma 8.3. Gatwick 13:20 → Alicante 16:45; ma 15.3. Alicante 10:30 → HEL 15:50. Majoitus ja vuokra-auto Benidormissa ei vielä varattu. Lapset poissa koulusta pe 5.3.–ma 15.3."
     }
   ],
   "schoolLunch": {

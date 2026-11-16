@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794824146132,
+  "updated": 1794849740281,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -473,6 +473,14 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
+      "id": "cal-5u3ocn8sqpr00bla49trc13drs",
+      "title": "Mea · terapia",
+      "date": "2026-11-17",
+      "start": "13:00",
+      "end": "14:00",
+      "kind": "cal"
+    },
+    {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261117T150000Z",
       "title": "Mea valmennus",
       "date": "2026-11-17",
@@ -710,14 +718,6 @@
       "note": "Wilma 16.11.: s. 122–160 (Olli Laukkanen)"
     },
     {
-      "id": "cal-5u3ocn8sqpr00bla49trc13drs",
-      "title": "Mea · terapia",
-      "date": "2026-11-17",
-      "start": "13:00",
-      "end": "14:00",
-      "kind": "cal"
-    },
-    {
       "id": "info-mea-koulu-2026-11-17",
       "who": "mea",
       "title": "Mea koulu 8.00–11.30 (poikkeus)",
@@ -746,14 +746,6 @@
       "end": "13:00",
       "kind": "info",
       "note": "Käyttäjä 16.11."
-    },
-    {
-      "id": "cal-7hmp57ujrmb8gdbgg5g7ikrpvk",
-      "title": "Riikka · padel",
-      "date": "2026-11-19",
-      "start": "18:00",
-      "end": "19:00",
-      "kind": "cal"
     },
     {
       "id": "info-mea-koulu-2026-11-20",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794849740281,
+  "updated": 1794892964856,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -662,53 +662,6 @@
       "note": "Lennot: pe 5.3. HEL 23:40 → Stansted la 6.3. 00:50; ma 8.3. Gatwick 13:20 → Alicante 16:45; ma 15.3. Alicante 10:30 → HEL 15:50. Majoitus ja vuokra-auto Benidormissa ei vielä varattu. Lapset poissa koulusta pe 5.3.–ma 15.3."
     },
     {
-      "id": "info-ambrosia-2026-11-22",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-22",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "note": "kulku Auto; yö Ei; kuski Kaarle, Pipsa+3, Mika+4"
-    },
-    {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; huoltaja Mika; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-milla-2026-11-16",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-11-16",
-      "start": "16:30",
-      "end": "18:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
       "id": "info-wilma-ellen-ma7-koe-2026-11-23",
       "who": "ellen",
       "title": "MA7-koe (jakolasku)",
@@ -765,6 +718,63 @@
       "start": "14:00",
       "kind": "info",
       "note": "Käyttäjä 16.11.: lähtö la klo 14. Kuski/yöpyminen auki."
+    },
+    {
+      "id": "info-ambrosia-2026-11-22",
+      "who": "ellen",
+      "title": "Ambrosia kisat · Jyväskylä",
+      "date": "2026-11-22",
+      "kind": "info",
+      "place": "Jyväskylä",
+      "note": "kulku Auto; yö Ei; kuski Kaarle, Pipsa+3, Mika+4"
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; huoltaja Mika; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-11-18",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-11-18",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-11-18",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-11-18",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

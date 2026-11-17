@@ -3350,6 +3350,24 @@
       "title": "Juhannuspäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
+    },
+    {
+      "date": "2026-11-20",
+      "who": "Mea",
+      "title": "MA3-koe",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe · aikaa ei merkitty"
+    },
+    {
+      "date": "2026-11-23",
+      "time": "11:15",
+      "end": "12:00",
+      "who": "Ellen",
+      "title": "MA7-koe (jakolasku)",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe · s. 122–160"
     }
   ],
   "schoolLunch": {

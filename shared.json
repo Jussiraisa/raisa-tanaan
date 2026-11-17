@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794893129526,
+  "updated": 1794911113775,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -681,16 +681,6 @@
       "start": "11:15",
       "kind": "info",
       "note": "Wilma 16.11.: s. 122–160 (Olli Laukkanen)"
-    },
-    {
-      "id": "info-mea-koulu-2026-11-17",
-      "who": "mea",
-      "title": "Mea koulu 8.00–11.30 (poikkeus)",
-      "date": "2026-11-17",
-      "start": "08:00",
-      "end": "11:30",
-      "kind": "info",
-      "note": "Käyttäjä 16.11.: Jussi vie, Riikka hakee ja vie terapiaan."
     },
     {
       "id": "info-mea-koulu-2026-11-18",

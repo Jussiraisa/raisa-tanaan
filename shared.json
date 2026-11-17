@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794911113775,
+  "updated": 1794928611601,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -472,14 +472,6 @@
   },
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
-    {
-      "id": "cal-5u3ocn8sqpr00bla49trc13drs",
-      "title": "Mea · terapia",
-      "date": "2026-11-17",
-      "start": "13:00",
-      "end": "14:00",
-      "kind": "cal"
-    },
     {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261117T150000Z",
       "title": "Mea valmennus",

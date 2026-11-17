@@ -2673,6 +2673,14 @@
       "source": "gcal:voimistelu"
     },
     {
+      "date": "2026-11-20",
+      "who": "Mea",
+      "title": "MA3-koe",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe · aikaa ei merkitty"
+    },
+    {
       "who": "Milla",
       "title": "Kisat tampere",
       "kind": "kisa",
@@ -2705,6 +2713,16 @@
       "title": "Vivida Elixiria Cup",
       "kind": "kisa",
       "source": "gcal:voimistelu"
+    },
+    {
+      "date": "2026-11-23",
+      "time": "11:15",
+      "end": "12:00",
+      "who": "Ellen",
+      "title": "MA7-koe (jakolasku)",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe · s. 122–160"
     },
     {
       "date": "2026-11-23",
@@ -2789,6 +2807,15 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "who": "Milla",
+      "title": "Yh koe",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-11-27",
+      "time": "21:00",
+      "end": "22:00"
     },
     {
       "date": "2026-11-27",
@@ -3350,24 +3377,6 @@
       "title": "Juhannuspäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
-    },
-    {
-      "date": "2026-11-20",
-      "who": "Mea",
-      "title": "MA3-koe",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "koe · aikaa ei merkitty"
-    },
-    {
-      "date": "2026-11-23",
-      "time": "11:15",
-      "end": "12:00",
-      "who": "Ellen",
-      "title": "MA7-koe (jakolasku)",
-      "kind": "muu",
-      "source": "gcal:perhe",
-      "note": "koe · s. 122–160"
     }
   ],
   "schoolLunch": {

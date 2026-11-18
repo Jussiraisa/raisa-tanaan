@@ -1,12 +1,12 @@
 {
   "v": 2,
-  "updated": "2026-11-18T07:57:05+02:00",
+  "updated": "2026-11-18T08:03:05+02:00",
   "drivers": {
     "ellen-ambrosia": {
-      "driver": "Meidän",
+      "driver": "Meidän (varmistamatta)",
       "status": "us",
-      "ride": "vie+hakee",
-      "note": "Oletus ti (vienti+haku meidän) · ti 17.11. Riikka (varmistamatta), Jussi poissa"
+      "ride": "hakee",
+      "note": "ke 18.11.: vienti Sofian perhe, haku 20.30 meidän (Riikka, Jussi poissa) – varmistamatta"
     },
     "ellen-ambrosia-pe": {
       "driver": "Jussi",
@@ -450,6 +450,12 @@
       "status": "us",
       "ride": "vie",
       "note": "Riikka hakee koululta 11.30 ja vie terapiaan (käyttäjä 16.11.)"
+    },
+    "sheet-milla-2026-11-18": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "",
+      "note": "ke 18.11. 18.00 BellaCenter: vienti ja haku 20.30 auki (Riikka hoitaa iltakyydit, Jussi poissa)"
     }
   },
   "cooks": {

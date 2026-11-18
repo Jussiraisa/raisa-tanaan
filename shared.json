@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-11-18T16:01:13+02:00",
+  "updated": 1795014982623,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -690,16 +690,6 @@
       "note": "Wilma 16.11.: s. 122–160 (Olli Laukkanen)"
     },
     {
-      "id": "info-mea-koulu-2026-11-18",
-      "who": "mea",
-      "title": "Mea koulu 11.00–15.00 (poikkeus)",
-      "date": "2026-11-18",
-      "start": "11:00",
-      "end": "15:00",
-      "kind": "info",
-      "note": "Käyttäjä 16.11."
-    },
-    {
       "id": "info-mea-koulu-2026-11-19",
       "who": "mea",
       "title": "Mea koulu 8.00–13.00 (poikkeus)",
@@ -727,6 +717,26 @@
       "start": "14:00",
       "kind": "info",
       "note": "Käyttäjä 16.11.: lähtö la klo 14. Kuski/yöpyminen auki."
+    },
+    {
+      "id": "info-wilma-milla-maa03-2026-11-20",
+      "who": "milla",
+      "title": "MAA03-koe (Geometria, kpl 6–15)",
+      "date": "2026-11-20",
+      "start": "08:50",
+      "end": "10:20",
+      "kind": "info",
+      "note": "Wilma 18.11. (iltapäivä). Aika 8.50–10.20 oletettu."
+    },
+    {
+      "id": "info-wilma-mea-ue3-2026-12-10",
+      "who": "mea",
+      "title": "UE3-koe (Kappaleet 3–5)",
+      "date": "2026-12-10",
+      "start": "10:00",
+      "end": "11:00",
+      "kind": "info",
+      "note": "Wilma 18.11. (iltapäivä). Aika 10.00–11.00 oletettu."
     },
     {
       "id": "info-ambrosia-2026-11-22",
@@ -784,26 +794,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-milla-maa03-2026-11-20",
-      "who": "milla",
-      "title": "MAA03-koe (Geometria, kpl 6–15)",
-      "date": "2026-11-20",
-      "start": "08:50",
-      "end": "10:20",
-      "kind": "info",
-      "note": "Wilma 18.11. (iltapäivä). Aika 8.50–10.20 oletettu."
-    },
-    {
-      "id": "info-wilma-mea-ue3-2026-12-10",
-      "who": "mea",
-      "title": "UE3-koe (Kappaleet 3–5)",
-      "date": "2026-12-10",
-      "start": "10:00",
-      "end": "11:00",
-      "kind": "info",
-      "note": "Wilma 18.11. (iltapäivä). Aika 10.00–11.00 oletettu."
     }
   ],
   "schoolLunch": {

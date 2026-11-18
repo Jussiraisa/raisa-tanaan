@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-11-18T08:03:05+02:00",
+  "updated": "2026-11-18T16:01:13+02:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -784,6 +784,26 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-milla-maa03-2026-11-20",
+      "who": "milla",
+      "title": "MAA03-koe (Geometria, kpl 6–15)",
+      "date": "2026-11-20",
+      "start": "08:50",
+      "end": "10:20",
+      "kind": "info",
+      "note": "Wilma 18.11. (iltapäivä). Aika 8.50–10.20 oletettu."
+    },
+    {
+      "id": "info-wilma-mea-ue3-2026-12-10",
+      "who": "mea",
+      "title": "UE3-koe (Kappaleet 3–5)",
+      "date": "2026-12-10",
+      "start": "10:00",
+      "end": "11:00",
+      "kind": "info",
+      "note": "Wilma 18.11. (iltapäivä). Aika 10.00–11.00 oletettu."
     }
   ],
   "schoolLunch": {
@@ -880,6 +900,12 @@
     },
     "sheet-mea-2026-11-18": {
       "2026-11-18": "Mea kipeä (käyttäjä 18.11.)"
+    },
+    "cal-320nc5q2q6b4uvq9j70cnjj42s": {
+      "2026-11-20": "duplikaatti (info-wilma)"
+    },
+    "cal-rb08uf0alrn5sfss3v8i5j3e08": {
+      "2026-12-10": "duplikaatti (info-wilma)"
     }
   }
 }

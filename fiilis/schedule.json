@@ -2725,6 +2725,15 @@
       "note": "koe · s. 122–160"
     },
     {
+      "who": "Milla",
+      "title": "VAPAAA PÄIVÄ",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-11-23",
+      "time": "14:00",
+      "end": "15:00"
+    },
+    {
       "date": "2026-11-23",
       "time": "17:30",
       "end": "18:30",
@@ -3046,6 +3055,15 @@
       "kind": "muu",
       "source": "gcal:perhe",
       "note": "koe klo 10.50–11.35 · Loisto 8 s. 100–139 + muistiinpanot + monisteet (AKa)"
+    },
+    {
+      "who": "Milla",
+      "title": "Milie valmennus",
+      "kind": "treeni",
+      "source": "ical:milla",
+      "date": "2026-12-08",
+      "time": "16:00",
+      "end": "17:00"
     },
     {
       "date": "2026-12-09",

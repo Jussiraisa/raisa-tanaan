@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794979631588,
+  "updated": "2026-11-18T07:57:05+02:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -868,6 +868,12 @@
       "2026-11-12": "tänään erillisenä: Welhot 17–18.30, Riikka vie, Jussi hakee"
     },
     "cal-euec7dg7cvljjmesepl1d2or1c": "ei näytetä (ei osallistuta)",
-    "cal-5onv0mil1gks8juc193ltm2o0c": "duplikaatti: info-wilma-ellen-ma7-koe-2026-11-23"
+    "cal-5onv0mil1gks8juc193ltm2o0c": "duplikaatti: info-wilma-ellen-ma7-koe-2026-11-23",
+    "info-mea-koulu-2026-11-18": {
+      "2026-11-18": "Mea kipeä (käyttäjä 18.11.)"
+    },
+    "sheet-mea-2026-11-18": {
+      "2026-11-18": "Mea kipeä (käyttäjä 18.11.)"
+    }
   }
 }

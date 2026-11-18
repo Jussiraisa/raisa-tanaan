@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1794936485223,
+  "updated": 1794979631588,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän",
@@ -482,6 +482,23 @@
       "id": "cal-8dbhf78ljtfgh90kig6gbgrrbc",
       "title": "Milla · OP05.F ilmastodiagrammitehtävä DL",
       "date": "2026-11-18",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-8r7avi6641is08okq67ptvhbnc",
+      "title": "Mea · Maksuton etävanhempainilta (Teams)",
+      "date": "2026-11-19",
+      "start": "18:00",
+      "end": "19:30",
+      "kind": "cal",
+      "place": "Teams"
+    },
+    {
+      "id": "cal-7hmp57ujrmb8gdbgg5g7ikrpvk",
+      "title": "Riikka · padel",
+      "date": "2026-11-19",
+      "start": "18:00",
+      "end": "19:00",
       "kind": "cal"
     },
     {

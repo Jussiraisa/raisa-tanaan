@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-11-19T07:57:13+02:00",
+  "updated": "2026-11-19T15:59:28+02:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -778,6 +778,22 @@
       "end": "20:30",
       "place": "",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-milla-rub12-2026-12-17",
+      "who": "milla",
+      "title": "RUB12 Delprov 3 (ruotsin koe)",
+      "date": "2026-12-17",
+      "kind": "info",
+      "note": "Wilma 19.11. Ei kellonaikaa."
+    },
+    {
+      "id": "info-wilma-milla-aanitiedosto-2027-01-14",
+      "who": "milla",
+      "title": "Äänitiedoston palautus",
+      "date": "2027-01-14",
+      "kind": "info",
+      "note": "Wilma 19.11. Ei kellonaikaa."
     }
   ],
   "schoolLunch": {
@@ -880,6 +896,12 @@
     },
     "cal-rb08uf0alrn5sfss3v8i5j3e08": {
       "2026-12-10": "duplikaatti (info-wilma)"
+    },
+    "cal-a11i4tpr893f804mjhoeln4s94": {
+      "2026-12-17": "duplikaatti (info-wilma)"
+    },
+    "cal-mb55ubtkgam8neikurf0s13dhc": {
+      "2027-01-14": "duplikaatti (info-wilma)"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795014982623,
+  "updated": 1795065405414,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -479,18 +479,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-6cjv2urc7lnufpn0v0e5399r8o",
-      "title": "Ellen · ENA-sanakoe",
-      "date": "2026-11-18",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-8dbhf78ljtfgh90kig6gbgrrbc",
-      "title": "Milla · OP05.F ilmastodiagrammitehtävä DL",
-      "date": "2026-11-18",
-      "kind": "cal"
-    },
-    {
       "id": "cal-8r7avi6641is08okq67ptvhbnc",
       "title": "Mea · Maksuton etävanhempainilta (Teams)",
       "date": "2026-11-19",
@@ -536,14 +524,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-wilma-milla-op05-ilmastodiagrammi-2026-11-18",
-      "who": "milla",
-      "title": "OP05.F ilmastodiagrammitehtävä DL (Teams)",
-      "date": "2026-11-18",
-      "kind": "info",
-      "note": "Wilma 10.11.: DL ke 18.11. Teamsiin."
     },
     {
       "id": "info-wilma-mea-ma3-koe-2026-11-20",
@@ -645,14 +625,6 @@
       "dateEnd": "2026-12-02",
       "kind": "info",
       "note": "Wilma 10.11.: yksityiskohdat myöhemmin. (Osittain päällekkäin Lontoon reissun 27.11.–2.12. kanssa.)"
-    },
-    {
-      "id": "info-wilma-ellen-ena-sanakoe-2026-11-18",
-      "who": "ellen",
-      "title": "ENA-sanakoe",
-      "date": "2026-11-18",
-      "kind": "info",
-      "note": "Wilma 11.11.: englannin sanakoe ke 18.11. (ei kellonaikaa)"
     },
     {
       "id": "info-wilma-milla-lukkari-2026-11-19",
@@ -776,23 +748,13 @@
       "dateEnd": "2027-06-13"
     },
     {
-      "id": "sheet-mea-2026-11-18",
+      "id": "sheet-mea-2026-11-20",
       "who": "mea",
       "title": "Lianna",
-      "date": "2026-11-18",
+      "date": "2026-11-20",
       "start": "18:00",
       "end": "20:30",
       "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-11-18",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-11-18",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
       "kind": "treeni"
     }
   ],

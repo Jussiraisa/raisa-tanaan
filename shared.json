@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795065405414,
+  "updated": 1795066042916,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -479,6 +479,14 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
+      "id": "cal-0lf5ons8meuesj7q7smp0nmksc",
+      "title": "Stay at Original Sokos Hotel Vantaa",
+      "date": "2026-11-18",
+      "dateEnd": "2026-11-19",
+      "kind": "cal",
+      "place": "Hertaksentie 2, Vantaa, Finland, 01300"
+    },
+    {
       "id": "cal-8r7avi6641is08okq67ptvhbnc",
       "title": "Mea · Maksuton etävanhempainilta (Teams)",
       "date": "2026-11-19",
@@ -493,6 +501,20 @@
       "date": "2026-11-19",
       "start": "18:00",
       "end": "19:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-rea2ge4sglaboamaac47ef1j68",
+      "title": "Mea · MA3-koe",
+      "date": "2026-11-20",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-320nc5q2q6b4uvq9j70cnjj42s",
+      "title": "Milla · MAA03-koe (Geometria, kpl 6–15)",
+      "date": "2026-11-20",
+      "start": "08:50",
+      "end": "10:20",
       "kind": "cal"
     },
     {

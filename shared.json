@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": "2026-11-19T15:59:28+02:00",
+  "updated": "2026-11-19T17:22:53+02:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -684,16 +684,6 @@
       "note": "Wilma 16.11.: s. 122–160 (Olli Laukkanen)"
     },
     {
-      "id": "info-mea-koulu-2026-11-19",
-      "who": "mea",
-      "title": "Mea koulu 8.00–13.00 (poikkeus)",
-      "date": "2026-11-19",
-      "start": "08:00",
-      "end": "13:00",
-      "kind": "info",
-      "note": "Käyttäjä 16.11."
-    },
-    {
       "id": "info-mea-koulu-2026-11-20",
       "who": "mea",
       "title": "Mea koulu 11.00–14.45 (poikkeus)",
@@ -731,6 +721,22 @@
       "end": "11:00",
       "kind": "info",
       "note": "Wilma 18.11. (iltapäivä). Aika 10.00–11.00 oletettu."
+    },
+    {
+      "id": "info-wilma-milla-rub12-2026-12-17",
+      "who": "milla",
+      "title": "RUB12 Delprov 3 (ruotsin koe)",
+      "date": "2026-12-17",
+      "kind": "info",
+      "note": "Wilma 19.11. Ei kellonaikaa."
+    },
+    {
+      "id": "info-wilma-milla-aanitiedosto-2027-01-14",
+      "who": "milla",
+      "title": "Äänitiedoston palautus",
+      "date": "2027-01-14",
+      "kind": "info",
+      "note": "Wilma 19.11. Ei kellonaikaa."
     },
     {
       "id": "info-ambrosia-2026-11-22",
@@ -778,22 +784,6 @@
       "end": "20:30",
       "place": "",
       "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-milla-rub12-2026-12-17",
-      "who": "milla",
-      "title": "RUB12 Delprov 3 (ruotsin koe)",
-      "date": "2026-12-17",
-      "kind": "info",
-      "note": "Wilma 19.11. Ei kellonaikaa."
-    },
-    {
-      "id": "info-wilma-milla-aanitiedosto-2027-01-14",
-      "who": "milla",
-      "title": "Äänitiedoston palautus",
-      "date": "2027-01-14",
-      "kind": "info",
-      "note": "Wilma 19.11. Ei kellonaikaa."
     }
   ],
   "schoolLunch": {

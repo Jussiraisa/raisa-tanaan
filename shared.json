@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795066042916,
+  "updated": "2026-11-19T07:57:13+02:00",
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -27,10 +27,10 @@
       "note": "ti 17.11. 16.30 Lippumäki: kuski auki (Riikka hoitaa iltakyydit, Jussi poissa)"
     },
     "samuel-sahly": {
-      "driver": "Jussi",
-      "status": "us",
-      "ride": "vie+hakee",
-      "note": "to 19.11. 17.00: Riikka vie (varmistamatta); haku 18.30 AUKI (Riikalla padel 18, Jussi poissa)"
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "",
+      "note": "to 19.11. 17.00: Riikka vie (varmistamatta); haku 18.30 varmistamatta (Riikalla padel 18, Jussi poissa)"
     },
     "milla-etainfo": {
       "driver": "",

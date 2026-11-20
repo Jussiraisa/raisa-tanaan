@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795152112477,
+  "updated": 1795154905596,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -421,6 +421,12 @@
       "status": "",
       "ride": "vie+hakee",
       "note": "Kyytiehdotus 11.11. · Lianna 18.00–20.30 vienti+haku meidän, varmistamatta. Paikka puuttuu tämän päivän sheet-riviltä (vanha ke-oletus BellaCenter)."
+    },
+    "sheet-mea-2026-11-20": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "pe 20.11. vienti 18.00 + haku 20.30 BellaCenter: varmistamatta"
     },
     "info-kyytiehdotus-2026-11-11": {
       "driver": "Meidän · ehdotus / varmistamatta",

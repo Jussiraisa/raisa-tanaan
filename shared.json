@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795447325553,
+  "updated": 1795454392396,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -484,6 +484,38 @@
   },
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
+    {
+      "id": "cal-_892j8chm8p148b9p652jgb9k8ks38b9o6kp4ab9n6or3ihhi84q46gpj8k",
+      "title": "Palaveri kys",
+      "date": "2026-11-24",
+      "start": "08:30",
+      "end": "09:30",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6p33gdi58p2j0b9i8d2j8b9k8l332b9p68q44b9l6osj6ea268q3egpk70",
+      "title": "Palaveri",
+      "date": "2026-11-24",
+      "start": "11:00",
+      "end": "12:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_6os4acq16ss3eb9g61234b9k68sjiba26d0k8b9k84s32h1l6l13ge1o64",
+      "title": "Milie valmennus Milla",
+      "date": "2026-11-24",
+      "start": "16:00",
+      "end": "17:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261124T150000Z",
+      "title": "Mea valmennus",
+      "date": "2026-11-24",
+      "start": "17:00",
+      "end": "17:45",
+      "kind": "cal"
+    },
     {
       "id": "info-samuel-turnaus-2026-11-28",
       "who": "samuel",

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795154905596,
+  "updated": 1795442556775,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -702,6 +702,68 @@
       "note": "Wilma 19.11. Ei kellonaikaa."
     },
     {
+      "id": "info-wilma-mea-ma3-koe-2026-12-17",
+      "who": "mea",
+      "title": "MA3-koe",
+      "date": "2026-12-17",
+      "kind": "info",
+      "note": "Wilma 23.11. Ei kellonaikaa."
+    },
+    {
+      "id": "info-wilma-milla-yh01-2026-11-27",
+      "who": "milla",
+      "title": "YH01.3-koe (Suomalainen yhteiskunta)",
+      "date": "2026-11-27",
+      "start": "09:00",
+      "end": "13:00",
+      "kind": "info",
+      "note": "Wilma 23.11.: päättöpäivän koe, sis. Studeo-tehtävät/oman oppimisen arviointi."
+    },
+    {
+      "id": "info-wilma-milla-ena01-valikoe-verbit-2026-12-15",
+      "who": "milla",
+      "title": "ENA01.6 välikoe (epäsäännölliset verbit)",
+      "date": "2026-12-15",
+      "start": "11:30",
+      "kind": "info",
+      "note": "Wilma 23.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-milla-ena01-valikoe-otava-2027-01-12",
+      "who": "milla",
+      "title": "ENA01.6 välikoe (Otavan kappaleet 2 & 5)",
+      "date": "2027-01-12",
+      "start": "11:30",
+      "kind": "info",
+      "note": "Wilma 23.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-milla-ena01-harjoitusaine-2027-01-18",
+      "who": "milla",
+      "title": "ENA01.6 pakollinen harjoitusaine (Abitti)",
+      "date": "2027-01-18",
+      "start": "13:05",
+      "kind": "info",
+      "note": "Wilma 23.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-milla-ena01-paattokoe-2027-01-28",
+      "who": "milla",
+      "title": "ENA01.6 päättökoe",
+      "date": "2027-01-28",
+      "start": "09:00",
+      "kind": "info",
+      "note": "Wilma 23.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-ellen-samuel-elokuvailta-2026-11-25",
+      "who": "perhe",
+      "title": "Elokuvailta 1–4-luokkalaisille (Ellen ja Samuel)",
+      "date": "2026-11-25",
+      "kind": "info",
+      "note": "Wilma-viesti, vanhempainyhdistys. Aika ei tiedossa."
+    },
+    {
       "id": "info-ambrosia-2026-11-22",
       "who": "ellen",
       "title": "Ambrosia kisat · Jyväskylä",
@@ -855,6 +917,24 @@
     },
     "cal-mb55ubtkgam8neikurf0s13dhc": {
       "2027-01-14": "duplikaatti (info-wilma)"
+    },
+    "cal-naloqn733r9u4k04e2udbd4gfo": {
+      "2026-12-17": "duplikaatti (info-wilma)"
+    },
+    "cal-9giiocq2am4811g75uu6fj4nsc": {
+      "2026-11-27": "duplikaatti (info-wilma)"
+    },
+    "cal-eoudiqcagdeth3hh6mdt0kq338": {
+      "2026-12-15": "duplikaatti (info-wilma)"
+    },
+    "cal-mp8setesc697pmdadpo0h6b4l8": {
+      "2027-01-12": "duplikaatti (info-wilma)"
+    },
+    "cal-hq1lntckm4k792sk6f4fan1u6c": {
+      "2027-01-18": "duplikaatti (info-wilma)"
+    },
+    "cal-j7n8nbbvnv7d2k8u455q6a9th0": {
+      "2027-01-28": "duplikaatti (info-wilma)"
     }
   }
 }

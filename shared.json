@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795442556775,
+  "updated": 1795447325553,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -485,20 +485,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-rea2ge4sglaboamaac47ef1j68",
-      "title": "Mea · MA3-koe",
-      "date": "2026-11-20",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-320nc5q2q6b4uvq9j70cnjj42s",
-      "title": "Milla · MAA03-koe (Geometria, kpl 6–15)",
-      "date": "2026-11-20",
-      "start": "08:50",
-      "end": "10:20",
-      "kind": "cal"
-    },
-    {
       "id": "info-samuel-turnaus-2026-11-28",
       "who": "samuel",
       "title": "Welhot P9 turnaus Siilinjärvi",
@@ -527,14 +513,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-wilma-mea-ma3-koe-2026-11-20",
-      "who": "mea",
-      "title": "MA3-koe",
-      "date": "2026-11-20",
-      "kind": "info",
-      "note": "Wilma koekalenteri 13.11., aika ei merkitty."
     },
     {
       "id": "info-wilma-mea-ena3-koe-2026-11-26",
@@ -647,35 +625,6 @@
       "note": "Wilma 16.11.: s. 122–160 (Olli Laukkanen)"
     },
     {
-      "id": "info-mea-koulu-2026-11-20",
-      "who": "mea",
-      "title": "Mea koulu 11.00–14.45 (poikkeus)",
-      "date": "2026-11-20",
-      "start": "11:00",
-      "end": "14:45",
-      "kind": "info",
-      "note": "Käyttäjä 16.11."
-    },
-    {
-      "id": "info-mea-tampere-lahto-2026-11-21",
-      "who": "mea",
-      "title": "Mea lähtö Tampereelle (Elixiria Cup)",
-      "date": "2026-11-21",
-      "start": "14:00",
-      "kind": "info",
-      "note": "Käyttäjä 16.11.: lähtö la klo 14. Kuski/yöpyminen auki."
-    },
-    {
-      "id": "info-wilma-milla-maa03-2026-11-20",
-      "who": "milla",
-      "title": "MAA03-koe (Geometria, kpl 6–15)",
-      "date": "2026-11-20",
-      "start": "08:50",
-      "end": "10:20",
-      "kind": "info",
-      "note": "Wilma 18.11. (iltapäivä). Aika 8.50–10.20 oletettu."
-    },
-    {
       "id": "info-wilma-mea-ue3-2026-12-10",
       "who": "mea",
       "title": "UE3-koe (Kappaleet 3–5)",
@@ -764,15 +713,6 @@
       "note": "Wilma-viesti, vanhempainyhdistys. Aika ei tiedossa."
     },
     {
-      "id": "info-ambrosia-2026-11-22",
-      "who": "ellen",
-      "title": "Ambrosia kisat · Jyväskylä",
-      "date": "2026-11-22",
-      "kind": "info",
-      "place": "Jyväskylä",
-      "note": "kulku Auto; yö Ei; kuski Kaarle, Pipsa+3, Mika+4"
-    },
-    {
       "id": "info-ambrosia-2026-12-04",
       "who": "ellen",
       "title": "Ambrosia leiri · Vierumäki",
@@ -799,16 +739,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-11-20",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-11-20",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
     }
   ],
   "schoolLunch": {

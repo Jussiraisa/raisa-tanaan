@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795454392396,
+  "updated": 1795497464974,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -648,15 +648,6 @@
       "note": "Lennot: pe 5.3. HEL 23:40 → Stansted la 6.3. 00:50; ma 8.3. Gatwick 13:20 → Alicante 16:45; ma 15.3. Alicante 10:30 → HEL 15:50. Majoitus ja vuokra-auto Benidormissa ei vielä varattu. Lapset poissa koulusta pe 5.3.–ma 15.3."
     },
     {
-      "id": "info-wilma-ellen-ma7-koe-2026-11-23",
-      "who": "ellen",
-      "title": "MA7-koe (jakolasku)",
-      "date": "2026-11-23",
-      "start": "11:15",
-      "kind": "info",
-      "note": "Wilma 16.11.: s. 122–160 (Olli Laukkanen)"
-    },
-    {
       "id": "info-wilma-mea-ue3-2026-12-10",
       "who": "mea",
       "title": "UE3-koe (Kappaleet 3–5)",
@@ -771,6 +762,26 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "sheet-mea-2026-11-25",
+      "who": "mea",
+      "title": "Lianna",
+      "date": "2026-11-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "",
+      "kind": "treeni"
+    },
+    {
+      "id": "sheet-milla-2026-11-25",
+      "who": "milla",
+      "title": "Vivida",
+      "date": "2026-11-25",
+      "start": "18:00",
+      "end": "20:30",
+      "place": "BellaCenter",
+      "kind": "treeni"
     }
   ],
   "schoolLunch": {

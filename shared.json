@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795533679134,
+  "updated": 1795540846089,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -502,14 +502,6 @@
   },
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
-    {
-      "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261124T150000Z",
-      "title": "Mea valmennus",
-      "date": "2026-11-24",
-      "start": "17:00",
-      "end": "17:45",
-      "kind": "cal"
-    },
     {
       "id": "cal-_70sj0h256crk8b9h68oj6b9k84o32b9p88pk2b9p68pk4c248co3ecpm64",
       "title": "Vieras",

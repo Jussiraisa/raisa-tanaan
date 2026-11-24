@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795528823078,
+  "updated": 1795533679134,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -503,14 +503,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-_6os4acq16ss3eb9g61234b9k68sjiba26d0k8b9k84s32h1l6l13ge1o64",
-      "title": "Milie valmennus Milla",
-      "date": "2026-11-24",
-      "start": "16:00",
-      "end": "17:00",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261124T150000Z",
       "title": "Mea valmennus",
       "date": "2026-11-24",
@@ -756,6 +748,14 @@
       "kind": "treeni"
     },
     {
+      "id": "info-wilma-samuel-arviointikeskustelu-varaus-2026-12-13",
+      "who": "samuel",
+      "title": "DL: varaa arviointikeskusteluaika",
+      "date": "2026-12-13",
+      "kind": "info",
+      "note": "Wilma 24.11. Satu Pesonen-Kokko · ajat viikoille 49–51 · varaus päättyy 13.12. klo 14"
+    },
+    {
       "id": "info-ambrosia-2026-12-04",
       "who": "ellen",
       "title": "Ambrosia leiri · Vierumäki",
@@ -802,14 +802,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-samuel-arviointikeskustelu-varaus-2026-12-13",
-      "who": "samuel",
-      "title": "DL: varaa arviointikeskusteluaika",
-      "date": "2026-12-13",
-      "kind": "info",
-      "note": "Wilma 24.11. Satu Pesonen-Kokko · ajat viikoille 49–51 · varaus päättyy 13.12. klo 14"
     }
   ],
   "schoolLunch": {

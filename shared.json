@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795497813556,
+  "updated": 1795498520933,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -23,8 +23,8 @@
     "samuel-sahly-ti": {
       "driver": "varmistamatta",
       "status": "",
-      "ride": "",
-      "note": "ti 17.11. 16.30 Lippumäki: kuski auki (Riikka hoitaa iltakyydit, Jussi poissa)"
+      "ride": "vie+hakee",
+      "note": "ti 24.11. 16.30–18.00 Lippumäki: vienti + haku varmistamatta"
     },
     "samuel-sahly": {
       "driver": "varmistamatta",
@@ -462,6 +462,24 @@
       "status": "",
       "ride": "",
       "note": "ke 18.11. 18.00 BellaCenter: vienti ja haku 20.30 auki (Riikka hoitaa iltakyydit, Jussi poissa)"
+    },
+    "cal-_710k8gi28cqjgb9n71330b9k89330b9o852jgb9j88p38chn6osk6ha36g_20261124T150000Z": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "ti 24.11. Mea valmennus 17.00–17.45: vienti + haku varmistamatta"
+    },
+    "kyyti-ellen-ambrosia-2026-11-24": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "ti 24.11. 17.00–18.30 Kuopiohalli: tiistai-oletuksella meidän vienti ja haku, varmistamatta"
+    },
+    "cal-_6os4acq16ss3eb9g61234b9k68sjiba26d0k8b9k84s32h1l6l13ge1o64": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "ti 24.11. Milie valmennus: Perhe-kalenteri 16.00–17.00 (Millan merkintä 17.11.). iCloud/Fiilis: Milie 17.00–18.00 (vanha, 22.9.) ja erillinen Lukutaidon koe 17.00–18.00. Kyyti varmistamatta; aika tarkistettava."
     }
   },
   "cooks": {
@@ -789,6 +807,16 @@
       "start": "18:00",
       "end": "20:30",
       "place": "BellaCenter",
+      "kind": "treeni"
+    },
+    {
+      "id": "kyyti-ellen-ambrosia-2026-11-24",
+      "who": "ellen",
+      "title": "Ambrosia",
+      "date": "2026-11-24",
+      "start": "17:00",
+      "end": "18:30",
+      "place": "Kuopiohalli",
       "kind": "treeni"
     }
   ],

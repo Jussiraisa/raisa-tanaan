@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795515768367,
+  "updated": 1795528823078,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -802,6 +802,14 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-samuel-arviointikeskustelu-varaus-2026-12-13",
+      "who": "samuel",
+      "title": "DL: varaa arviointikeskusteluaika",
+      "date": "2026-12-13",
+      "kind": "info",
+      "note": "Wilma 24.11. Satu Pesonen-Kokko · ajat viikoille 49–51 · varaus päättyy 13.12. klo 14"
     }
   ],
   "schoolLunch": {

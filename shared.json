@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795498520933,
+  "updated": 1795515768367,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -503,22 +503,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-_892j8chm8p148b9p652jgb9k8ks38b9o6kp4ab9n6or3ihhi84q46gpj8k",
-      "title": "Palaveri kys",
-      "date": "2026-11-24",
-      "start": "08:30",
-      "end": "09:30",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-_6p33gdi58p2j0b9i8d2j8b9k8l332b9p68q44b9l6osj6ea268q3egpk70",
-      "title": "Palaveri",
-      "date": "2026-11-24",
-      "start": "11:00",
-      "end": "12:00",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_6os4acq16ss3eb9g61234b9k68sjiba26d0k8b9k84s32h1l6l13ge1o64",
       "title": "Milie valmennus Milla",
       "date": "2026-11-24",
@@ -762,6 +746,16 @@
       "note": "Wilma-viesti, vanhempainyhdistys. Aika ei tiedossa."
     },
     {
+      "id": "kyyti-ellen-ambrosia-2026-11-24",
+      "who": "ellen",
+      "title": "Ambrosia",
+      "date": "2026-11-24",
+      "start": "17:00",
+      "end": "18:30",
+      "place": "Kuopiohalli",
+      "kind": "treeni"
+    },
+    {
       "id": "info-ambrosia-2026-12-04",
       "who": "ellen",
       "title": "Ambrosia leiri · Vierumäki",
@@ -807,16 +801,6 @@
       "start": "18:00",
       "end": "20:30",
       "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "kyyti-ellen-ambrosia-2026-11-24",
-      "who": "ellen",
-      "title": "Ambrosia",
-      "date": "2026-11-24",
-      "start": "17:00",
-      "end": "18:30",
-      "place": "Kuopiohalli",
       "kind": "treeni"
     }
   ],

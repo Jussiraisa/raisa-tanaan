@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795585421351,
+  "updated": 1795585938449,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -951,6 +951,9 @@
     },
     "sheet-milla-2026-12-02": {
       "2026-12-02": "lapset eivät mene treeneihin (Lähtö/paluu Lontoo)"
+    },
+    "sheet-milla-2026-11-27": {
+      "2026-11-27": "Milla junalla Lontoon matkalle (juna 16:12)"
     }
   }
 }

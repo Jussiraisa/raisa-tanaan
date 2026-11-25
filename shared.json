@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795585938449,
+  "updated": 1795602127491,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -516,14 +516,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-_70sj0h256crk8b9h68oj6b9k84o32b9p88pk2b9p68pk4c248co3ecpm64",
-      "title": "Vieras",
-      "date": "2026-11-25",
-      "start": "10:00",
-      "end": "11:00",
-      "kind": "cal"
-    },
-    {
       "id": "cal-r0p36ibcgvuk86kmeqn7a3bat8",
       "title": "Mea · ENA3-koe",
       "date": "2026-11-26",
@@ -758,6 +750,17 @@
       "note": "Wilma 24.11. Satu Pesonen-Kokko · ajat viikoille 49–51 · varaus päättyy 13.12. klo 14"
     },
     {
+      "id": "info-mea-milla-juna-2026-11-27",
+      "who": "perhe",
+      "title": "Mea ja Milla juna Kuopio → Helsinki-Vantaa",
+      "date": "2026-11-27",
+      "start": "16:12",
+      "end": "20:43",
+      "place": "Kuopio asema → Helsinki-Vantaa",
+      "kind": "info",
+      "note": "IC 72 Kuopio 16:12 → Tikkurila 20:27 (vaunu 6 alakerta, paikat 41 ikkuna ja 42 käytävä) + lähijuna I Tikkurila 20:36 → Lentoasema 20:43. Liput Jussin sähköpostissa, tilaus F6110292092755."
+    },
+    {
       "id": "info-ambrosia-2026-12-04",
       "who": "ellen",
       "title": "Ambrosia leiri · Vierumäki",
@@ -804,17 +807,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "info-mea-milla-juna-2026-11-27",
-      "who": "perhe",
-      "title": "Mea ja Milla juna Kuopio → Helsinki-Vantaa",
-      "date": "2026-11-27",
-      "start": "16:12",
-      "end": "20:43",
-      "place": "Kuopio asema → Helsinki-Vantaa",
-      "kind": "info",
-      "note": "IC 72 Kuopio 16:12 → Tikkurila 20:27 (vaunu 6 alakerta, paikat 41 ikkuna ja 42 käytävä) + lähijuna I Tikkurila 20:36 → Lentoasema 20:43. Liput Jussin sähköpostissa, tilaus F6110292092755."
     }
   ],
   "schoolLunch": {

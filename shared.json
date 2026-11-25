@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795615119563,
+  "updated": 1795624012957,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -761,6 +761,14 @@
       "note": "IC 72 Kuopio 16:12 → Tikkurila 20:27 (vaunu 6 alakerta, paikat 41 ikkuna ja 42 käytävä) + lähijuna I Tikkurila 20:36 → Lentoasema 20:43. Liput Jussin sähköpostissa, tilaus F6110292092755."
     },
     {
+      "id": "info-wilma-mea-hi3-koe-2026-12-02",
+      "who": "mea",
+      "title": "HI3-koe (Kappaleet 8–11)",
+      "date": "2026-12-02",
+      "kind": "info",
+      "note": "Wilma 25.11. Aika ei tiedossa. Lontoon paluupäivä (lento saapuu HEL 12.45)."
+    },
+    {
       "id": "info-ambrosia-2026-12-04",
       "who": "ellen",
       "title": "Ambrosia leiri · Vierumäki",
@@ -807,14 +815,6 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-mea-hi3-koe-2026-12-02",
-      "who": "mea",
-      "title": "HI3-koe (Kappaleet 8–11)",
-      "date": "2026-12-02",
-      "kind": "info",
-      "note": "Wilma 25.11. Aika ei tiedossa. Lontoon paluupäivä (lento saapuu HEL 12.45)."
     }
   ],
   "schoolLunch": {

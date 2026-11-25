@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795540846089,
+  "updated": 1795584272079,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -728,16 +728,6 @@
       "date": "2026-11-25",
       "kind": "info",
       "note": "Wilma-viesti, vanhempainyhdistys. Aika ei tiedossa."
-    },
-    {
-      "id": "kyyti-ellen-ambrosia-2026-11-24",
-      "who": "ellen",
-      "title": "Ambrosia",
-      "date": "2026-11-24",
-      "start": "17:00",
-      "end": "18:30",
-      "place": "Kuopiohalli",
-      "kind": "treeni"
     },
     {
       "id": "info-wilma-samuel-arviointikeskustelu-varaus-2026-12-13",

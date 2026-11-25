@@ -1,12 +1,12 @@
 {
   "v": 2,
-  "updated": 1795584489845,
+  "updated": 1795584706517,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
       "status": "us",
       "ride": "hakee",
-      "note": "ke 18.11.: vienti Sofian perhe, haku 20.30 meidän (Riikka, Jussi poissa) – varmistamatta"
+      "note": "ke 25.11.: vienti Sofian perhe (oletus), haku 20.30 Kuopiohallista meidän (oletus) – varmistamatta. Ei WA/Fiilis-poikkeusta."
     },
     "ellen-ambrosia-pe": {
       "driver": "Jussi",
@@ -480,6 +480,18 @@
       "status": "",
       "ride": "vie+hakee",
       "note": "ti 24.11. Milie valmennus: Perhe-kalenteri 16.00–17.00 (Millan merkintä 17.11.). iCloud/Fiilis: Milie 17.00–18.00 (vanha, 22.9.) ja erillinen Lukutaidon koe 17.00–18.00. Kyyti varmistamatta; aika tarkistettava."
+    },
+    "sheet-mea-2026-11-25": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "vie+hakee",
+      "note": "ke 25.11. 18.00–20.30 BellaCenter: vienti + haku varmistamatta"
+    },
+    "sheet-milla-2026-11-25": {
+      "driver": "varmistamatta",
+      "status": "",
+      "ride": "",
+      "note": "ke 25.11. 18.00–20.30 BellaCenter: kyyti varmistamatta (28.10. oletus: Milla skootterilla itse)"
     }
   },
   "cooks": {

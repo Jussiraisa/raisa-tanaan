@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795584272079,
+  "updated": 1795584489845,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -508,6 +508,12 @@
       "date": "2026-11-25",
       "start": "10:00",
       "end": "11:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-r0p36ibcgvuk86kmeqn7a3bat8",
+      "title": "Mea · ENA3-koe",
+      "date": "2026-11-26",
       "kind": "cal"
     },
     {

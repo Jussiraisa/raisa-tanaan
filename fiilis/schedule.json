@@ -2971,6 +2971,15 @@
       "note": "Riikan koulupäivät · lähtö 2.12 klo 15.30"
     },
     {
+      "who": "Milla",
+      "title": "Pikkujoulut?",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-12-04",
+      "time": "14:00",
+      "end": "15:00"
+    },
+    {
       "date": "2026-12-04",
       "time": "18:00",
       "end": "20:30",
@@ -3058,7 +3067,7 @@
     },
     {
       "who": "Milla",
-      "title": "Milie valmennus",
+      "title": "Milie valmennus + läheistreenit",
       "kind": "treeni",
       "source": "ical:milla",
       "date": "2026-12-08",
@@ -3084,6 +3093,15 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "who": "Milla",
+      "title": "Matikka välitesti",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-12-11",
+      "time": "09:00",
+      "end": "10:00"
     },
     {
       "date": "2026-12-11",
@@ -3171,6 +3189,15 @@
       "source": "gcal:voimistelu"
     },
     {
+      "who": "Milla",
+      "title": "En epäsäännölliset verbit",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-12-15",
+      "time": "14:00",
+      "end": "15:00"
+    },
+    {
       "date": "2026-12-16",
       "time": "18:00",
       "end": "20:30",
@@ -3189,6 +3216,15 @@
       "place": "Bella Center",
       "kind": "treeni",
       "source": "gcal:voimistelu"
+    },
+    {
+      "who": "Milla",
+      "title": "Delprov 3",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2026-12-17",
+      "time": "14:00",
+      "end": "15:00"
     },
     {
       "date": "2026-12-18",
@@ -3300,6 +3336,60 @@
       "date": "2027-01-09",
       "time": "13:00",
       "end": "14:00"
+    },
+    {
+      "who": "Milla",
+      "title": "En välikoe",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2027-01-12",
+      "time": "14:00",
+      "end": "15:00"
+    },
+    {
+      "who": "Milla",
+      "title": "Äänitiedoston palautus",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2027-01-14",
+      "time": "14:00",
+      "end": "15:00"
+    },
+    {
+      "who": "Milla",
+      "title": "Harjotuskirjotus abitissa enkku",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2027-01-18",
+      "time": "14:00",
+      "end": "15:00"
+    },
+    {
+      "who": "Milla",
+      "title": "Enkku koe päättöpäivä",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2027-01-28",
+      "time": "14:00",
+      "end": "15:00"
+    },
+    {
+      "who": "Milla",
+      "title": "Matikka 6-16",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2027-02-02",
+      "time": "21:00",
+      "end": "22:00"
+    },
+    {
+      "who": "Milla",
+      "title": "Päättötunti matikkakoe 17-24",
+      "kind": "muu",
+      "source": "ical:milla",
+      "date": "2027-02-25",
+      "time": "21:00",
+      "end": "22:00"
     },
     {
       "date": "2027-03-08",

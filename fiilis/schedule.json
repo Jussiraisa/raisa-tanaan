@@ -261,9 +261,49 @@
       "end": "13:15",
       "date": "2026-11-27",
       "source": "wilma:perhe"
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:40",
+      "end": "15:50",
+      "date": "2026-11-30",
+      "source": "wilma:perhe"
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:40",
+      "end": "14:20",
+      "date": "2026-12-01",
+      "source": "wilma:perhe"
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:40",
+      "end": "14:20",
+      "date": "2026-12-02",
+      "source": "wilma:perhe"
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "08:10",
+      "end": "15:50",
+      "date": "2026-12-03",
+      "source": "wilma:perhe"
+    },
+    {
+      "who": "Milla",
+      "label": "Koulu",
+      "time": "09:40",
+      "end": "14:20",
+      "date": "2026-12-04",
+      "source": "wilma:perhe"
     }
   ],
-  "note": "Lukkarimuutos: Mea ke 10–14.50, to 8–14.45 (sKU.2 to 8.00–9.45) (Wilma 12.11. viikkonäkymä, vko 46–47). Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus). Milla vko 48 (23.–27.11.) 9.00–13.15 joka arkipäivä (Wilma 15.11.).",
+  "note": "Lukkarimuutos: Mea ke 10–14.50, to 8–14.45 (sKU.2 to 8.00–9.45) (Wilma 12.11. viikkonäkymä, vko 46–47). Mean viikko 2.–8.11. käyttäjän ohitus Wilman lukujärjestykselle 2.11.2026 (koulu päiväkohtaisina schoolStarts date -riveinä, source perhe-ohitus). Milla vko 48 (23.–27.11.) 9.00–13.15 joka arkipäivä (Wilma 15.11.). Milla vko 49 (30.11.–4.12., jakso 3): ma 9.40–15.50, ti ja ke 9.40–14.20, to 8.10–15.50, pe 9.40–14.20 (Wilma 25.11.).",
   "events": [
     {
       "date": "2026-09-20",

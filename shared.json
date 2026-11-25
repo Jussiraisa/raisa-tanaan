@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795602127491,
+  "updated": 1795615119563,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -807,6 +807,14 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-mea-hi3-koe-2026-12-02",
+      "who": "mea",
+      "title": "HI3-koe (Kappaleet 8–11)",
+      "date": "2026-12-02",
+      "kind": "info",
+      "note": "Wilma 25.11. Aika ei tiedossa. Lontoon paluupäivä (lento saapuu HEL 12.45)."
     }
   ],
   "schoolLunch": {

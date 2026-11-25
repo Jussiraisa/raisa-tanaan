@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795584706517,
+  "updated": 1795585421351,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -185,9 +185,10 @@
       "note": "varmistamatta: kuljettaja ja lähtöaika auki (turnaus 8–16 Suonenjoki, Lintharju) · päätös la 14.11."
     },
     "info-samuel-turnaus-2026-11-28": {
-      "driver": "",
+      "driver": "ei osallistu (ilmoitettu)",
       "status": "",
-      "ride": ""
+      "ride": "",
+      "note": "Poissaolo ilmoitettu (käyttäjä 25.11.). Samuel Lontoossa 27.11.–2.12."
     },
     "info-samuel-turnaus-2026-12-19": {
       "driver": "",
@@ -536,7 +537,8 @@
       "place": "Siilinjärvi",
       "kind": "info",
       "driver": "",
-      "status": ""
+      "status": "ilmoitettu",
+      "note": "Poissaolo ilmoitettu (käyttäjä 25.11.). Samuel Lontoossa 27.11.–2.12."
     },
     {
       "id": "info-wilma-perhe-nikotiini-info-2026-12-01",
@@ -802,6 +804,17 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-mea-milla-juna-2026-11-27",
+      "who": "perhe",
+      "title": "Mea ja Milla juna Kuopio → Helsinki-Vantaa",
+      "date": "2026-11-27",
+      "start": "16:12",
+      "end": "20:43",
+      "place": "Kuopio asema → Helsinki-Vantaa",
+      "kind": "info",
+      "note": "IC 72 Kuopio 16:12 → Tikkurila 20:27 (vaunu 6 alakerta, paikat 41 ikkuna ja 42 käytävä) + lähijuna I Tikkurila 20:36 → Lentoasema 20:43. Liput Jussin sähköpostissa, tilaus F6110292092755."
     }
   ],
   "schoolLunch": {
@@ -833,7 +846,8 @@
       "2026-09-26": "NTV-kisat peruttu (Jussi: ei kisoja)",
       "2026-09-27": "NTV-kisat peruttu (Jussi: ei kisoja)",
       "2026-10-09": "Ellen ei mene Ambrosiaan (Jussi 8.10.)",
-      "2026-10-16": "Ellen ei treeneissä tällä viikolla (fiilis 14.10)"
+      "2026-10-16": "Ellen ei treeneissä tällä viikolla (fiilis 14.10)",
+      "2026-12-02": "lapset eivät mene treeneihin (Lähtö/paluu Lontoo)"
     },
     "info-kkp-2026-09-25": {
       "id": "info-kkp-2026-09-25",
@@ -928,6 +942,15 @@
     },
     "cal-j7n8nbbvnv7d2k8u455q6a9th0": {
       "2027-01-28": "duplikaatti (info-wilma)"
+    },
+    "cal-f7ef0m7r7some0ckhsvuqem3n0": {
+      "2026-11-27": "duplikaatti (info-mea-milla-juna-2026-11-27)"
+    },
+    "sheet-mea-2026-12-02": {
+      "2026-12-02": "lapset eivät mene treeneihin (Lähtö/paluu Lontoo)"
+    },
+    "sheet-milla-2026-12-02": {
+      "2026-12-02": "lapset eivät mene treeneihin (Lähtö/paluu Lontoo)"
     }
   }
 }

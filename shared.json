@@ -851,11 +851,11 @@
     {
       "id": "info-lontoo-kenttakuljetus-2026-11-27",
       "who": "perhe",
-      "title": "Lontoo: Riikan, Ellenin ja Samuelin kulku Helsinki-Vantaalle",
+      "title": "Lontoo: muut autolla Helsinki-Vantaalle",
       "date": "2026-11-27",
       "kind": "info",
-      "status": "varmistamatta",
-      "note": "Juna 16.12 varattu vain sinulle, Mealle ja Millalle. Riikan, Ellenin ja Samuelin kulku kentälle (FR2345 HEL 23:40) auki – varmistamatta."
+      "status": "sovittu",
+      "note": "Juna 16.12 vain Mealle ja Millalle. Jussi, Riikka, Ellen ja Samuel menevät autolla kentälle (FR2345 HEL 23:40)."
     }
   ],
   "schoolLunch": {

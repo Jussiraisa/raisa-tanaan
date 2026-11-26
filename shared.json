@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795668741958,
+  "updated": 1795670778685,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -522,6 +522,55 @@
       "kind": "cal"
     },
     {
+      "id": "cal-_e1in4q355lm6urjkdtniqrb1e9p62srbelqiqchg68r32c9i6t06ktbjedkg",
+      "title": "Lontoon reissu (Ryanair BVKZSC)",
+      "date": "2026-11-27",
+      "dateEnd": "2026-12-02",
+      "kind": "cal",
+      "place": "London Stansted (STN)"
+    },
+    {
+      "id": "cal-74qs97jljvuqp1d0t2l9rcrnfs",
+      "title": "Mea · RUB3-koe",
+      "date": "2026-11-27",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-9giiocq2am4811g75uu6fj4nsc",
+      "title": "Milla · YH01.3-koe (Suomalainen yhteiskunta)",
+      "date": "2026-11-27",
+      "start": "09:00",
+      "end": "13:00",
+      "kind": "cal"
+    },
+    {
+      "id": "cal-f7ef0m7r7some0ckhsvuqem3n0",
+      "title": "Mea ja Milla juna Kuopio → Helsinki-Vantaa",
+      "date": "2026-11-27",
+      "start": "16:12",
+      "end": "20:43",
+      "kind": "cal",
+      "place": "Kuopio asema → Helsinki-Vantaa (Helsinki Lentoasema)"
+    },
+    {
+      "id": "cal-p9cel64l76dlrkd0gv2go025sc",
+      "title": "Train to Tikkurila (Vantaa)",
+      "date": "2026-11-27",
+      "start": "16:12",
+      "end": "20:27",
+      "kind": "cal",
+      "place": "Kuopio"
+    },
+    {
+      "id": "cal-h53lujq41ebv00jggieqkft4ng",
+      "title": "Train to Helsinki Lentoasema",
+      "date": "2026-11-27",
+      "start": "20:36",
+      "end": "20:43",
+      "kind": "cal",
+      "place": "Tikkurila (Vantaa)"
+    },
+    {
       "id": "info-samuel-turnaus-2026-11-28",
       "who": "samuel",
       "title": "Welhot P9 turnaus Siilinjärvi",
@@ -734,14 +783,6 @@
       "note": "Wilma 23.11. Loppuaika ei tiedossa."
     },
     {
-      "id": "info-wilma-ellen-samuel-elokuvailta-2026-11-25",
-      "who": "perhe",
-      "title": "Elokuvailta 1–4-luokkalaisille (Ellen ja Samuel)",
-      "date": "2026-11-25",
-      "kind": "info",
-      "note": "Wilma-viesti, vanhempainyhdistys. Aika ei tiedossa."
-    },
-    {
       "id": "info-wilma-samuel-arviointikeskustelu-varaus-2026-12-13",
       "who": "samuel",
       "title": "DL: varaa arviointikeskusteluaika",
@@ -767,6 +808,17 @@
       "date": "2026-12-02",
       "kind": "info",
       "note": "Wilma 25.11. Aika ei tiedossa. Lontoon paluupäivä (lento saapuu HEL 12.45)."
+    },
+    {
+      "id": "info-wilma-perhe-liikuntalauantai-2026-11-28",
+      "who": "perhe",
+      "title": "Perheiden liikuntalauantai",
+      "date": "2026-11-28",
+      "start": "10:00",
+      "end": "11:30",
+      "place": "Puijonsarven koulu",
+      "kind": "info",
+      "note": "Wilma 26.11. HUOM: päällekkäin Lontoon reissun (27.11.–2.12.) kanssa."
     },
     {
       "id": "info-ambrosia-2026-12-04",
@@ -795,37 +847,6 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
-    },
-    {
-      "id": "sheet-mea-2026-11-25",
-      "who": "mea",
-      "title": "Lianna",
-      "date": "2026-11-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "",
-      "kind": "treeni"
-    },
-    {
-      "id": "sheet-milla-2026-11-25",
-      "who": "milla",
-      "title": "Vivida",
-      "date": "2026-11-25",
-      "start": "18:00",
-      "end": "20:30",
-      "place": "BellaCenter",
-      "kind": "treeni"
-    },
-    {
-      "id": "info-wilma-perhe-liikuntalauantai-2026-11-28",
-      "who": "perhe",
-      "title": "Perheiden liikuntalauantai",
-      "date": "2026-11-28",
-      "start": "10:00",
-      "end": "11:30",
-      "place": "Puijonsarven koulu",
-      "kind": "info",
-      "note": "Wilma 26.11. HUOM: päällekkäin Lontoon reissun (27.11.–2.12.) kanssa."
     }
   ],
   "schoolLunch": {

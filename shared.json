@@ -847,6 +847,15 @@
       "kind": "info",
       "place": "Espoo",
       "dateEnd": "2027-06-13"
+    },
+    {
+      "id": "info-lontoo-kenttakuljetus-2026-11-27",
+      "who": "perhe",
+      "title": "Lontoo: Riikan, Ellenin ja Samuelin kulku Helsinki-Vantaalle",
+      "date": "2026-11-27",
+      "kind": "info",
+      "status": "varmistamatta",
+      "note": "Juna 16.12 varattu vain sinulle, Mealle ja Millalle. Riikan, Ellenin ja Samuelin kulku kentälle (FR2345 HEL 23:40) auki – varmistamatta."
     }
   ],
   "schoolLunch": {
@@ -986,6 +995,9 @@
     },
     "sheet-milla-2026-11-27": {
       "2026-11-27": "Milla junalla Lontoon matkalle (juna 16:12)"
+    },
+    "ellen-ambrosia-pe": {
+      "2026-11-27": "Lontoo-lähtö (koko perhe FR2345 HEL 23:40)"
     }
   }
 }

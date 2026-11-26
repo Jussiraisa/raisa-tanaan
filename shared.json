@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795670778685,
+  "updated": 1795701484955,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -856,6 +856,51 @@
       "kind": "info",
       "status": "sovittu",
       "note": "Juna 16.12 vain Mealle ja Millalle. Jussi, Riikka, Ellen ja Samuel ajavat autolla Nooralle Keravalle, auto jää sinne. Esa vie lentokentälle pe n. klo 20.30 (FR2345 HEL 23:40)."
+    },
+    {
+      "id": "info-wilma-milla-fy-pistari1-2026-12-07",
+      "who": "milla",
+      "title": "FY Pistari 1 (fysiikka)",
+      "date": "2026-12-07",
+      "start": "09:40",
+      "kind": "info",
+      "note": "Wilma 26.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-milla-fy-pistari2-2026-12-21",
+      "who": "milla",
+      "title": "FY Pistari 2 (fysiikka)",
+      "date": "2026-12-21",
+      "start": "09:40",
+      "kind": "info",
+      "note": "Wilma 26.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-milla-fy-valitesti-2027-01-11",
+      "who": "milla",
+      "title": "FY välitesti (fysiikka)",
+      "date": "2027-01-11",
+      "start": "09:40",
+      "kind": "info",
+      "note": "Wilma 26.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-milla-fy-pistari3-2027-01-20",
+      "who": "milla",
+      "title": "FY Pistari 3 (fysiikka)",
+      "date": "2027-01-20",
+      "start": "13:05",
+      "kind": "info",
+      "note": "Wilma 26.11. Loppuaika ei tiedossa."
+    },
+    {
+      "id": "info-wilma-milla-fy-paattopaiva-2027-02-03",
+      "who": "milla",
+      "title": "FY päättöpäivä (ryhmätehtävä 8.30 + testi 9.10)",
+      "date": "2027-02-03",
+      "start": "08:30",
+      "kind": "info",
+      "note": "Wilma 26.11."
     }
   ],
   "schoolLunch": {

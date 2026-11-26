@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795624012957,
+  "updated": 1795668741958,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -815,6 +815,17 @@
       "end": "20:30",
       "place": "BellaCenter",
       "kind": "treeni"
+    },
+    {
+      "id": "info-wilma-perhe-liikuntalauantai-2026-11-28",
+      "who": "perhe",
+      "title": "Perheiden liikuntalauantai",
+      "date": "2026-11-28",
+      "start": "10:00",
+      "end": "11:30",
+      "place": "Puijonsarven koulu",
+      "kind": "info",
+      "note": "Wilma 26.11. HUOM: päällekkäin Lontoon reissun (27.11.–2.12.) kanssa."
     }
   ],
   "schoolLunch": {

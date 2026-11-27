@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795788280660,
+  "updated": 1795793393230,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -713,16 +713,6 @@
       "date": "2026-12-17",
       "kind": "info",
       "note": "Wilma 23.11. Ei kellonaikaa."
-    },
-    {
-      "id": "info-wilma-milla-yh01-2026-11-27",
-      "who": "milla",
-      "title": "YH01.3-koe (Suomalainen yhteiskunta)",
-      "date": "2026-11-27",
-      "start": "09:00",
-      "end": "13:00",
-      "kind": "info",
-      "note": "Wilma 23.11.: päättöpäivän koe, sis. Studeo-tehtävät/oman oppimisen arviointi."
     },
     {
       "id": "info-wilma-milla-ena01-valikoe-verbit-2026-12-15",

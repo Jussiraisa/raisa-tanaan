@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795757254453,
+  "updated": 1795778521795,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -527,14 +527,6 @@
       "id": "cal-74qs97jljvuqp1d0t2l9rcrnfs",
       "title": "Mea · RUB3-koe",
       "date": "2026-11-27",
-      "kind": "cal"
-    },
-    {
-      "id": "cal-9giiocq2am4811g75uu6fj4nsc",
-      "title": "Milla · YH01.3-koe (Suomalainen yhteiskunta)",
-      "date": "2026-11-27",
-      "start": "09:00",
-      "end": "13:00",
       "kind": "cal"
     },
     {

@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795701484955,
+  "updated": 1795757254453,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -516,12 +516,6 @@
   "note": "Tee: maksa Welhot 20544 100 € · Milla TTNV-bussi 8.30 Kuopio-Halli (kotona n. 22) · ilmoita Samuel joukkuekuvaukseen ti 3.11 (koodi JRAPCSE4FD) · Riikka lähtee ma 15.00 → alkuviikon kyydit Jussilla.",
   "extras": [
     {
-      "id": "cal-r0p36ibcgvuk86kmeqn7a3bat8",
-      "title": "Mea · ENA3-koe",
-      "date": "2026-11-26",
-      "kind": "cal"
-    },
-    {
       "id": "cal-_e1in4q355lm6urjkdtniqrb1e9p62srbelqiqchg68r32c9i6t06ktbjedkg",
       "title": "Lontoon reissu (Ryanair BVKZSC)",
       "date": "2026-11-27",
@@ -600,14 +594,6 @@
       "kind": "info",
       "driver": "",
       "status": ""
-    },
-    {
-      "id": "info-wilma-mea-ena3-koe-2026-11-26",
-      "who": "mea",
-      "title": "ENA3-koe",
-      "date": "2026-11-26",
-      "kind": "info",
-      "note": "Wilma 6.10. (12.11.) → 21.10. (19.11.) → koekalenteri 3.11.: to 26.11. \"Themes 1 & 2\" (IiM)"
     },
     {
       "id": "info-wilma-mea-rub3-koe-2026-11-27",
@@ -821,34 +807,6 @@
       "note": "Wilma 26.11. HUOM: päällekkäin Lontoon reissun (27.11.–2.12.) kanssa."
     },
     {
-      "id": "info-ambrosia-2026-12-04",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2026-12-04",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2026-12-05",
-      "note": "kulku Juna+taksi; huoltaja Mika; yö Vierumäki"
-    },
-    {
-      "id": "info-ambrosia-2027-03-19",
-      "who": "ellen",
-      "title": "Ambrosia leiri · Vierumäki",
-      "date": "2027-03-19",
-      "kind": "info",
-      "place": "Vierumäki",
-      "dateEnd": "2027-03-21"
-    },
-    {
-      "id": "info-ambrosia-2027-06-11",
-      "who": "ellen",
-      "title": "Ambrosia voimistelupäivät · Espoo",
-      "date": "2027-06-11",
-      "kind": "info",
-      "place": "Espoo",
-      "dateEnd": "2027-06-13"
-    },
-    {
       "id": "info-lontoo-kenttakuljetus-2026-11-27",
       "who": "perhe",
       "title": "Lontoo: auto Keravalle, Esa vie kentälle n. 20.30",
@@ -901,6 +859,34 @@
       "start": "08:30",
       "kind": "info",
       "note": "Wilma 26.11."
+    },
+    {
+      "id": "info-ambrosia-2026-12-04",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2026-12-04",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2026-12-05",
+      "note": "kulku Juna+taksi; huoltaja Mika; yö Vierumäki"
+    },
+    {
+      "id": "info-ambrosia-2027-03-19",
+      "who": "ellen",
+      "title": "Ambrosia leiri · Vierumäki",
+      "date": "2027-03-19",
+      "kind": "info",
+      "place": "Vierumäki",
+      "dateEnd": "2027-03-21"
+    },
+    {
+      "id": "info-ambrosia-2027-06-11",
+      "who": "ellen",
+      "title": "Ambrosia voimistelupäivät · Espoo",
+      "date": "2027-06-11",
+      "kind": "info",
+      "place": "Espoo",
+      "dateEnd": "2027-06-13"
     }
   ],
   "schoolLunch": {
@@ -1043,6 +1029,12 @@
     },
     "ellen-ambrosia-pe": {
       "2026-11-27": "Lontoo-lähtö (koko perhe FR2345 HEL 23:40)"
-    }
+    },
+    "sheet-mea-2026-11-28": {
+      "2026-11-28": "Mea Lontoossa 27.11.–2.12."
+    },
+    "cal-7p5c0lb58msndp0ef670q7b9d4": "duplikaatti: info-wilma-ellen-oppimiskeskustelu-varaus-2026-11-28",
+    "cal-dg3gei0k45bqgm85v3iirafgm4": "duplikaatti: info-samuel-turnaus-2026-11-28 (poissa, Lontoo)",
+    "cal-tqqof9b1k7ee9oi513nuacnhsc": "duplikaatti: info-wilma-perhe-liikuntalauantai-2026-11-28"
   }
 }

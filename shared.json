@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795778521795,
+  "updated": 1795788280660,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -603,7 +603,7 @@
       "start": "08:00",
       "end": "09:00",
       "kind": "info",
-      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko + monisteet; vihkotyön palautus (A-KS). Vahvistettu Wilma 3.11. HUOM: Lontoo 27.11.–2.12. Poissaoloanomus lähetetty 15.11. Jenni Kärkkäiselle."
+      "note": "kpl 7, 8, 10, 15–17 + ympäristöuhkia-taulukko + monisteet; vihkotyön palautus (A-KS). Lontoossa, sovi uusinta. Poissaolo hyväksytty 30.11.–2.12."
     },
     {
       "id": "info-wilma-mea-ke3-koe-2026-12-11",
@@ -784,8 +784,9 @@
       "who": "mea",
       "title": "HI3-koe (Kappaleet 8–11)",
       "date": "2026-12-02",
+      "start": "10:45",
       "kind": "info",
-      "note": "Wilma 25.11. Aika ei tiedossa. Lontoon paluupäivä (lento saapuu HEL 12.45)."
+      "note": "kpl 8–11. Wilma 27.11.: klo 10:45. Lontoossa, sovi uusinta. Paluulento saapuu HEL 12.45."
     },
     {
       "id": "info-wilma-perhe-liikuntalauantai-2026-11-28",
@@ -851,6 +852,14 @@
       "start": "08:30",
       "kind": "info",
       "note": "Wilma 26.11."
+    },
+    {
+      "id": "info-wilma-ellen-ue-koe-2026-12-04",
+      "who": "ellen",
+      "title": "UE-koe",
+      "date": "2026-12-04",
+      "kind": "info",
+      "note": "koe 6–13, HyOs. Wilma 27.11."
     },
     {
       "id": "info-ambrosia-2026-12-04",

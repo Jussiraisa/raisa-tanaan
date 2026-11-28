@@ -1,6 +1,6 @@
 {
   "v": 2,
-  "updated": 1795793393230,
+  "updated": 1795843441144,
   "drivers": {
     "ellen-ambrosia": {
       "driver": "Meidän (varmistamatta)",
@@ -524,37 +524,12 @@
       "place": "London Stansted (STN)"
     },
     {
-      "id": "cal-74qs97jljvuqp1d0t2l9rcrnfs",
-      "title": "Mea · RUB3-koe",
-      "date": "2026-11-27",
+      "id": "cal-ge7khu7jcr1k4kannsp6p3oufc_20261129T073000Z",
+      "title": "Milla · valmennus",
+      "date": "2026-11-29",
+      "start": "09:30",
+      "end": "11:30",
       "kind": "cal"
-    },
-    {
-      "id": "cal-f7ef0m7r7some0ckhsvuqem3n0",
-      "title": "Mea ja Milla juna Kuopio → Helsinki-Vantaa",
-      "date": "2026-11-27",
-      "start": "16:12",
-      "end": "20:43",
-      "kind": "cal",
-      "place": "Kuopio asema → Helsinki-Vantaa (Helsinki Lentoasema)"
-    },
-    {
-      "id": "cal-p9cel64l76dlrkd0gv2go025sc",
-      "title": "Train to Tikkurila (Vantaa)",
-      "date": "2026-11-27",
-      "start": "16:12",
-      "end": "20:27",
-      "kind": "cal",
-      "place": "Kuopio"
-    },
-    {
-      "id": "cal-h53lujq41ebv00jggieqkft4ng",
-      "title": "Train to Helsinki Lentoasema",
-      "date": "2026-11-27",
-      "start": "20:36",
-      "end": "20:43",
-      "kind": "cal",
-      "place": "Tikkurila (Vantaa)"
     },
     {
       "id": "info-samuel-turnaus-2026-11-28",

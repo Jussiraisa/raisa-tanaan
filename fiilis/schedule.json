@@ -2958,6 +2958,16 @@
     },
     {
       "date": "2026-12-02",
+      "time": "10:45",
+      "end": "11:30",
+      "who": "Mea",
+      "title": "HI3-koe",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "Lontoossa, sovi uusinta · paluulento HEL 12.45"
+    },
+    {
+      "date": "2026-12-02",
       "time": "18:00",
       "end": "20:30",
       "who": "Mea",
@@ -3031,6 +3041,14 @@
     },
     {
       "date": "2026-12-04",
+      "who": "Ellen",
+      "title": "UE-koe",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "koe 6–13, HyOs · aika ei tiedossa"
+    },
+    {
+      "date": "2026-12-04",
       "who": "Riikka",
       "title": "Oulu",
       "kind": "muu",
@@ -3073,6 +3091,16 @@
       "title": "Itsenäisyyspäivä",
       "kind": "juhla",
       "source": "gcal:juhlapyhat"
+    },
+    {
+      "date": "2026-12-07",
+      "time": "09:40",
+      "end": "10:25",
+      "who": "Milla",
+      "title": "FY Pistari 1",
+      "kind": "muu",
+      "source": "gcal:perhe",
+      "note": "fysiikka"
     },
     {
       "date": "2026-12-07",
